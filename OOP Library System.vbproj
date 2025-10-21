@@ -73,11 +73,28 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\Form1.vb">
+    <Compile Include="Forms\Panels\Books_Panel%28Librarian-Admin%29.Designer.vb">
+      <DependentUpon>Books_Panel%28Librarian-Admin%29.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Panels\Books_Panel%28Librarian-Admin%29.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="Forms\Panels\Home_Panel%28Admin%29.Designer.vb">
+      <DependentUpon>Home_Panel%28Admin%29.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Panels\Home_Panel%28Admin%29.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Panels\Home_Panel%28Librarian%29.Designer.vb">
+      <DependentUpon>Home_Panel%28Librarian%29.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Panels\Home_Panel%28Librarian%29.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Panels\Login_Panel%28Librarian-Admin%29.Designer.vb">
+      <DependentUpon>Login_Panel%28Librarian-Admin%29.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Panels\Login_Panel%28Librarian-Admin%29.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -97,6 +114,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Forms\Panels\Books_Panel%28Librarian-Admin%29.resx">
+      <DependentUpon>Books_Panel%28Librarian-Admin%29.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Panels\Login_Panel%28Librarian-Admin%29.resx">
+      <DependentUpon>Login_Panel%28Librarian-Admin%29.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
