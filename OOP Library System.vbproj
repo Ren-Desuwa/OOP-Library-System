@@ -73,11 +73,16 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\Form1.vb">
+    <Compile Include="LibraryCore\Forms\User\UserLogin\UserLogin.Designer.vb">
+      <DependentUpon>UserLogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LibraryCore\Forms\User\UserLogin\UserLogin.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="LibraryCore\Forms\User\UserLogin\UserRegister.Designer.vb">
+      <DependentUpon>UserRegister.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LibraryCore\Forms\User\UserLogin\UserRegister.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -117,9 +122,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Assets\" />
-    <Folder Include="Classes\" />
-    <Folder Include="Database\" />
+    <Folder Include="LibraryAdminApp\" />
+    <Folder Include="LibraryCore\Assets\" />
+    <Folder Include="LibraryCore\Classes\" />
+    <Folder Include="LibraryCore\Database\" />
+    <Folder Include="LibraryCore\Forms\Admin\AdminLogin\" />
+    <Folder Include="LibraryUserApp\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
