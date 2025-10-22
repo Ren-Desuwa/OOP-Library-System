@@ -133,6 +133,24 @@
     <Compile Include="Forms\Panels\user_req_view_profile.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\User Interface Folder\Forgot_Pass%28User%29.Designer.vb">
+      <DependentUpon>Forgot_Pass%28User%29.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User Interface Folder\Forgot_Pass%28User%29.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\User Interface Folder\Home_Panel%28User%29.Designer.vb">
+      <DependentUpon>Home_Panel%28User%29.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User Interface Folder\Home_Panel%28User%29.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\User Interface Folder\Signin_Panel%28User%29.Designer.vb">
+      <DependentUpon>Signin_Panel%28User%29.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User Interface Folder\Signin_Panel%28User%29.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
