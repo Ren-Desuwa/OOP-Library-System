@@ -26,4 +26,10 @@
     Private Sub Guna2CircleProgressBar1_ValueChanged(sender As Object, e As EventArgs) Handles Guna2CircleProgressBar1.ValueChanged
 
     End Sub
+
+    Private Sub Guna2Button3_Click(sender As Object, e As EventArgs) Handles Guna2Button3.Click
+        Dim manageUserForm As New Manage_User()
+        manageUserForm.Show()
+        Me.Hide() 'change to close lat8r
+    End Sub
 End Class

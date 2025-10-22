@@ -34,19 +34,19 @@ Partial Class user_credit_score_view
         Me.Guna2Panel4 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Guna2CircleProgressBar1 = New Guna.UI2.WinForms.Guna2CircleProgressBar()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Button3 = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Button4 = New Guna.UI2.WinForms.Guna2Button()
+        Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Guna2Panel1.SuspendLayout()
         Me.Guna2Panel2.SuspendLayout()
         Me.Guna2Panel3.SuspendLayout()
         Me.Guna2Panel4.SuspendLayout()
-        CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2CircleProgressBar1.SuspendLayout()
+        CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Guna2BorderlessForm1
@@ -153,19 +153,6 @@ Partial Class user_credit_score_view
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "User Information"
         '
-        'Guna2PictureBox1
-        '
-        Me.Guna2PictureBox1.BorderRadius = 3
-        Me.Guna2PictureBox1.FillColor = System.Drawing.Color.FloralWhite
-        Me.Guna2PictureBox1.Image = Global.OOP_Library_System.My.Resources.Resources.UCC__1_
-        Me.Guna2PictureBox1.ImageRotate = 0!
-        Me.Guna2PictureBox1.Location = New System.Drawing.Point(49, 73)
-        Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
-        Me.Guna2PictureBox1.Size = New System.Drawing.Size(208, 207)
-        Me.Guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.Guna2PictureBox1.TabIndex = 1
-        Me.Guna2PictureBox1.TabStop = False
-        '
         'Guna2CircleProgressBar1
         '
         Me.Guna2CircleProgressBar1.Controls.Add(Me.Label6)
@@ -255,6 +242,19 @@ Partial Class user_credit_score_view
         Me.Guna2Button4.TabIndex = 11
         Me.Guna2Button4.Text = "Remove"
         '
+        'Guna2PictureBox1
+        '
+        Me.Guna2PictureBox1.BorderRadius = 3
+        Me.Guna2PictureBox1.FillColor = System.Drawing.Color.FloralWhite
+        Me.Guna2PictureBox1.Image = Global.OOP_Library_System.My.Resources.Resources.UCC__1_
+        Me.Guna2PictureBox1.ImageRotate = 0!
+        Me.Guna2PictureBox1.Location = New System.Drawing.Point(49, 73)
+        Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
+        Me.Guna2PictureBox1.Size = New System.Drawing.Size(208, 207)
+        Me.Guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Guna2PictureBox1.TabIndex = 1
+        Me.Guna2PictureBox1.TabStop = False
+        '
         'user_credit_score_view
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -284,9 +284,9 @@ Partial Class user_credit_score_view
         Me.Guna2Panel3.PerformLayout()
         Me.Guna2Panel4.ResumeLayout(False)
         Me.Guna2Panel4.PerformLayout()
-        CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Guna2CircleProgressBar1.ResumeLayout(False)
         Me.Guna2CircleProgressBar1.PerformLayout()
+        CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
