@@ -42,7 +42,7 @@
     <OptionCompare>Binary</OptionCompare>
   </PropertyGroup>
   <PropertyGroup>
-    <OptionStrict>Off</OptionStrict>
+    <OptionStrict>On</OptionStrict>
   </PropertyGroup>
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
@@ -88,19 +88,23 @@
     <Compile Include="Forms\Panels\Books_Panel%28Librarian-Admin%29.Designer.vb">
       <DependentUpon>Books_Panel%28Librarian-Admin%29.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Panels\Books_Panel%28Librarian-Admin%29.vb">
+    <Compile Include="Forms\Panels\Books_Panel(Librarian-Admin).vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Panels\Home_Panel%28Admin%29.Designer.vb">
-      <DependentUpon>Home_Panel%28Admin%29.vb</DependentUpon>
+    <Compile Include="Forms\Panels\Home_Panel(Admin).Designer.vb">
+      <DependentUpon>Home_Panel(Admin).vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Panels\Home_Panel%28Admin%29.vb">
+    <Compile Include="Forms\Panels\Home_Panel(Admin).vb" />
+    <Compile Include="Forms\Panels\Home_Panel(Librarian).Designer.vb">
+      <DependentUpon>Home_Panel(Librarian).vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Panels\Home_Panel(Librarian).vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Panels\Home_Panel%28Librarian%29.Designer.vb">
-      <DependentUpon>Home_Panel%28Librarian%29.vb</DependentUpon>
+    <Compile Include="Forms\Panels\Login_Panel(Librarian-Admin).Designer.vb">
+      <DependentUpon>Login_Panel(Librarian-Admin).vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Panels\Home_Panel%28Librarian%29.vb">
+    <Compile Include="Forms\Panels\Login_Panel(Librarian-Admin).vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Panels\Librarian_MainForm.Designer.vb">
@@ -112,7 +116,7 @@
     <Compile Include="Forms\Panels\Login_Panel%28Librarian-Admin%29.Designer.vb">
       <DependentUpon>Login_Panel%28Librarian-Admin%29.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Panels\Login_Panel%28Librarian-Admin%29.vb">
+    <Compile Include="LibraryCore\Forms\User\UserLogin\UserRegister.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Panels\Manage_User.Designer.vb">
@@ -227,8 +231,26 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets\" />
-    <Folder Include="Classes\" />
     <Folder Include="Database\" />
+    <Folder Include="LibraryAdminApp\" />
+    <Folder Include="LibraryCore\Database\" />
+    <Folder Include="LibraryCore\Forms\Admin\AdminLogin\" />
+    <Folder Include="LibraryCore\Forms\User\Homepage\" />
+    <Folder Include="LibraryUserApp\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="LibraryCore\Assets\Bookcover\1984.jpg" />
+    <Content Include="LibraryCore\Assets\Bookcover\big_little_lies.jpg" />
+    <Content Include="LibraryCore\Assets\Bookcover\hobbit.jpg" />
+    <Content Include="LibraryCore\Assets\Bookcover\lord_of_the_rings_fellowship.jpg" />
+    <Content Include="LibraryCore\Assets\Bookcover\pride_and_prejudice.jpg" />
+    <Content Include="LibraryCore\Assets\Bookcover\sharp_objects.jpg" />
+    <Content Include="LibraryCore\Assets\Bookcover\the_adventure.jpg" />
+    <Content Include="LibraryCore\Assets\Bookcover\the_great_gatsby.jpg" />
+    <Content Include="LibraryCore\Assets\Bookcover\the_guest_list.jpg" />
+    <Content Include="LibraryCore\Assets\Bookcover\the_plot.jpg" />
+    <Content Include="LibraryCore\Assets\Bookcover\the_woman_in_the_window.jpg" />
+    <Content Include="LibraryCore\Assets\Bookcover\to_kill_a_mockingbird.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\373e7691ecf16e725e49890edbca1b57.jpg" />
