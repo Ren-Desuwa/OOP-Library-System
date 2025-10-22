@@ -73,6 +73,13 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LibraryCore\Classes\Account.vb" />
+    <Compile Include="LibraryCore\Classes\Announcement.vb" />
+    <Compile Include="LibraryCore\Classes\Book.vb" />
+    <Compile Include="LibraryCore\Classes\BookCopy.vb" />
+    <Compile Include="LibraryCore\Classes\Log.vb" />
+    <Compile Include="LibraryCore\Classes\Notification.vb" />
+    <Compile Include="LibraryCore\Classes\Transaction.vb" />
     <Compile Include="Forms\Form1.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -118,8 +125,13 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets\" />
-    <Folder Include="Classes\" />
     <Folder Include="Database\" />
+    <Folder Include="LibraryAdminApp\" />
+    <Folder Include="LibraryCore\Assets\" />
+    <Folder Include="LibraryCore\Database\" />
+    <Folder Include="LibraryCore\Forms\Admin\AdminLogin\" />
+    <Folder Include="LibraryCore\Forms\User\Homepage\" />
+    <Folder Include="LibraryUserApp\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
