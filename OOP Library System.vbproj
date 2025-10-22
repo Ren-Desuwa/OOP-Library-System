@@ -121,6 +121,12 @@
     <Compile Include="Forms\Panels\Login_Panel%28Librarian-Admin%29.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\Panels\user_request_view_profile.Designer.vb">
+      <DependentUpon>user_request_view_profile.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Panels\user_request_view_profile.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -157,6 +163,9 @@
     <EmbeddedResource Include="Forms\Panels\Login_Panel%28Librarian-Admin%29.resx">
       <DependentUpon>Login_Panel%28Librarian-Admin%29.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Panels\user_request_view_profile.resx">
+      <DependentUpon>user_request_view_profile.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -184,6 +193,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\373e7691ecf16e725e49890edbca1b57.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UCC %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
