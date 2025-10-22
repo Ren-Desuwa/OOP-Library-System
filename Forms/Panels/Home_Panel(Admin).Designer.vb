@@ -22,9 +22,16 @@ Partial Class Home_Panel_Admin_
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        components = New System.ComponentModel.Container
+        Me.SuspendLayout()
+        '
+        'Home_Panel_Admin_
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(811, 488)
+        Me.Name = "Home_Panel_Admin_"
         Me.Text = "Home_Panel_Admin_"
+        Me.ResumeLayout(False)
+
     End Sub
 End Class
