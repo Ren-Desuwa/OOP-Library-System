@@ -79,6 +79,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\Panels\admin-staff_BookDetails.Designer.vb">
+      <DependentUpon>admin-staff_BookDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Panels\admin-staff_BookDetails.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\Panels\Books_Panel%28Librarian-Admin%29.Designer.vb">
       <DependentUpon>Books_Panel%28Librarian-Admin%29.vb</DependentUpon>
     </Compile>
@@ -101,6 +107,12 @@
       <DependentUpon>Librarian_homepage.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\Panels\Librarian_homepage.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Panels\Librarian_MainForm.Designer.vb">
+      <DependentUpon>Librarian_MainForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Panels\Librarian_MainForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Panels\Login_Panel%28Librarian-Admin%29.Designer.vb">
@@ -127,6 +139,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Forms\Panels\admin-staff_BookDetails.resx">
+      <DependentUpon>admin-staff_BookDetails.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Panels\Books_Panel%28Librarian-Admin%29.resx">
       <DependentUpon>Books_Panel%28Librarian-Admin%29.vb</DependentUpon>
     </EmbeddedResource>
@@ -135,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Panels\Librarian_homepage.resx">
       <DependentUpon>Librarian_homepage.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Panels\Librarian_MainForm.resx">
+      <DependentUpon>Librarian_MainForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Panels\Login_Panel%28Librarian-Admin%29.resx">
       <DependentUpon>Login_Panel%28Librarian-Admin%29.vb</DependentUpon>
@@ -163,6 +181,9 @@
     <Folder Include="Assets\" />
     <Folder Include="Classes\" />
     <Folder Include="Database\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\373e7691ecf16e725e49890edbca1b57.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
