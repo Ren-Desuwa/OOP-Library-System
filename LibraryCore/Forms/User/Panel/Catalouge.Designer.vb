@@ -38,7 +38,9 @@ Partial Class Catalouge
         Me.btnGenre7 = New System.Windows.Forms.Button()
         Me.btnGenre8 = New System.Windows.Forms.Button()
         Me.pnlMainContent = New System.Windows.Forms.Panel()
-        Me.flpBooks = New System.Windows.Forms.FlowLayoutPanel()
+        Me.flpVerticalStack = New System.Windows.Forms.FlowLayoutPanel()
+        Me.lblHorrorHeader = New System.Windows.Forms.Label()
+        Me.flpHorrorBooks = New System.Windows.Forms.FlowLayoutPanel()
         Me.pnlBook1 = New System.Windows.Forms.Panel()
         Me.picBook1 = New System.Windows.Forms.PictureBox()
         Me.lblTitle1 = New System.Windows.Forms.Label()
@@ -51,6 +53,8 @@ Partial Class Catalouge
         Me.pnlBook4 = New System.Windows.Forms.Panel()
         Me.picBook4 = New System.Windows.Forms.PictureBox()
         Me.lblTitle4 = New System.Windows.Forms.Label()
+        Me.lblThrillerHeader = New System.Windows.Forms.Label()
+        Me.flpThrillerBooks = New System.Windows.Forms.FlowLayoutPanel()
         Me.pnlBook5 = New System.Windows.Forms.Panel()
         Me.picBook5 = New System.Windows.Forms.PictureBox()
         Me.lblTitle5 = New System.Windows.Forms.Label()
@@ -68,7 +72,8 @@ Partial Class Catalouge
         Me.pnlLeftMenu.SuspendLayout()
         Me.flpGenres.SuspendLayout()
         Me.pnlMainContent.SuspendLayout()
-        Me.flpBooks.SuspendLayout()
+        Me.flpVerticalStack.SuspendLayout()
+        Me.flpHorrorBooks.SuspendLayout()
         Me.pnlBook1.SuspendLayout()
         CType(Me.picBook1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlBook2.SuspendLayout()
@@ -77,6 +82,7 @@ Partial Class Catalouge
         CType(Me.picBook3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlBook4.SuspendLayout()
         CType(Me.picBook4, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.flpThrillerBooks.SuspendLayout()
         Me.pnlBook5.SuspendLayout()
         CType(Me.picBook5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlBook6.SuspendLayout()
@@ -247,41 +253,62 @@ Partial Class Catalouge
         '
         Me.pnlMainContent.AutoScroll = True
         Me.pnlMainContent.BackColor = System.Drawing.Color.AntiqueWhite
-        '
-        ' Note: To add the background logo from your mockup,
-        ' set the pnlMainContent.BackgroundImage property
-        ' in the designer or in code.
-        '
         Me.pnlMainContent.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.pnlMainContent.Controls.Add(Me.flpBooks)
+        Me.pnlMainContent.Controls.Add(Me.flpVerticalStack)
         Me.pnlMainContent.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlMainContent.Location = New System.Drawing.Point(180, 60)
         Me.pnlMainContent.Name = "pnlMainContent"
         Me.pnlMainContent.Size = New System.Drawing.Size(828, 669)
         Me.pnlMainContent.TabIndex = 2
         '
-        'flpBooks
+        'flpVerticalStack
         '
-        Me.flpBooks.Controls.Add(Me.pnlBook1)
-        Me.flpBooks.Controls.Add(Me.pnlBook2)
-        Me.flpBooks.Controls.Add(Me.pnlBook3)
-        Me.flpBooks.Controls.Add(Me.pnlBook4)
-        Me.flpBooks.Controls.Add(Me.pnlBook5)
-        Me.flpBooks.Controls.Add(Me.pnlBook6)
-        Me.flpBooks.Controls.Add(Me.pnlBook7)
-        Me.flpBooks.Controls.Add(Me.pnlBook8)
-        Me.flpBooks.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.flpBooks.Location = New System.Drawing.Point(0, 0)
-        Me.flpBooks.Name = "flpBooks"
-        Me.flpBooks.Padding = New System.Windows.Forms.Padding(20)
-        Me.flpBooks.Size = New System.Drawing.Size(828, 669)
-        Me.flpBooks.TabIndex = 0
+        Me.flpVerticalStack.AutoSize = True
+        Me.flpVerticalStack.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.flpVerticalStack.Controls.Add(Me.lblHorrorHeader)
+        Me.flpVerticalStack.Controls.Add(Me.flpHorrorBooks)
+        Me.flpVerticalStack.Controls.Add(Me.lblThrillerHeader)
+        Me.flpVerticalStack.Controls.Add(Me.flpThrillerBooks)
+        Me.flpVerticalStack.Dock = System.Windows.Forms.DockStyle.Top
+        Me.flpVerticalStack.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
+        Me.flpVerticalStack.Location = New System.Drawing.Point(0, 0)
+        Me.flpVerticalStack.Name = "flpVerticalStack"
+        Me.flpVerticalStack.Size = New System.Drawing.Size(828, 550)
+        Me.flpVerticalStack.TabIndex = 0
+        Me.flpVerticalStack.WrapContents = False
+        '
+        'lblHorrorHeader
+        '
+        Me.lblHorrorHeader.AutoSize = True
+        Me.lblHorrorHeader.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblHorrorHeader.Location = New System.Drawing.Point(15, 15)
+        Me.lblHorrorHeader.Margin = New System.Windows.Forms.Padding(15, 15, 3, 0)
+        Me.lblHorrorHeader.Name = "lblHorrorHeader"
+        Me.lblHorrorHeader.Size = New System.Drawing.Size(71, 25)
+        Me.lblHorrorHeader.TabIndex = 0
+        Me.lblHorrorHeader.Text = "Horror"
+        '
+        'flpHorrorBooks
+        '
+        Me.flpHorrorBooks.AutoScroll = True
+        Me.flpHorrorBooks.Controls.Add(Me.pnlBook1)
+        Me.flpHorrorBooks.Controls.Add(Me.pnlBook2)
+        Me.flpHorrorBooks.Controls.Add(Me.pnlBook3)
+        Me.flpHorrorBooks.Controls.Add(Me.pnlBook4)
+        Me.flpHorrorBooks.FlowDirection = System.Windows.Forms.FlowDirection.LeftToRight
+        Me.flpHorrorBooks.Location = New System.Drawing.Point(15, 43)
+        Me.flpHorrorBooks.Margin = New System.Windows.Forms.Padding(15, 3, 3, 3)
+        Me.flpHorrorBooks.Name = "flpHorrorBooks"
+        Me.flpHorrorBooks.Size = New System.Drawing.Size(780, 230)
+        Me.flpHorrorBooks.TabIndex = 1
+        Me.flpHorrorBooks.WrapContents = False
         '
         'pnlBook1
         '
         Me.pnlBook1.Controls.Add(Me.picBook1)
         Me.pnlBook1.Controls.Add(Me.lblTitle1)
-        Me.pnlBook1.Location = New System.Drawing.Point(23, 23)
+        Me.pnlBook1.Location = New System.Drawing.Point(10, 10)
+        Me.pnlBook1.Margin = New System.Windows.Forms.Padding(10)
         Me.pnlBook1.Name = "pnlBook1"
         Me.pnlBook1.Size = New System.Drawing.Size(150, 200)
         Me.pnlBook1.TabIndex = 0
@@ -313,7 +340,8 @@ Partial Class Catalouge
         '
         Me.pnlBook2.Controls.Add(Me.picBook2)
         Me.pnlBook2.Controls.Add(Me.lblTitle2)
-        Me.pnlBook2.Location = New System.Drawing.Point(179, 23)
+        Me.pnlBook2.Location = New System.Drawing.Point(180, 10)
+        Me.pnlBook2.Margin = New System.Windows.Forms.Padding(10)
         Me.pnlBook2.Name = "pnlBook2"
         Me.pnlBook2.Size = New System.Drawing.Size(150, 200)
         Me.pnlBook2.TabIndex = 1
@@ -345,7 +373,8 @@ Partial Class Catalouge
         '
         Me.pnlBook3.Controls.Add(Me.picBook3)
         Me.pnlBook3.Controls.Add(Me.lblTitle3)
-        Me.pnlBook3.Location = New System.Drawing.Point(335, 23)
+        Me.pnlBook3.Location = New System.Drawing.Point(350, 10)
+        Me.pnlBook3.Margin = New System.Windows.Forms.Padding(10)
         Me.pnlBook3.Name = "pnlBook3"
         Me.pnlBook3.Size = New System.Drawing.Size(150, 200)
         Me.pnlBook3.TabIndex = 2
@@ -377,7 +406,8 @@ Partial Class Catalouge
         '
         Me.pnlBook4.Controls.Add(Me.picBook4)
         Me.pnlBook4.Controls.Add(Me.lblTitle4)
-        Me.pnlBook4.Location = New System.Drawing.Point(491, 23)
+        Me.pnlBook4.Location = New System.Drawing.Point(520, 10)
+        Me.pnlBook4.Margin = New System.Windows.Forms.Padding(10)
         Me.pnlBook4.Name = "pnlBook4"
         Me.pnlBook4.Size = New System.Drawing.Size(150, 200)
         Me.pnlBook4.TabIndex = 3
@@ -405,11 +435,38 @@ Partial Class Catalouge
         Me.lblTitle4.Text = "Book"
         Me.lblTitle4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'lblThrillerHeader
+        '
+        Me.lblThrillerHeader.AutoSize = True
+        Me.lblThrillerHeader.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblThrillerHeader.Location = New System.Drawing.Point(15, 291)
+        Me.lblThrillerHeader.Margin = New System.Windows.Forms.Padding(15, 15, 3, 0)
+        Me.lblThrillerHeader.Name = "lblThrillerHeader"
+        Me.lblThrillerHeader.Size = New System.Drawing.Size(193, 25)
+        Me.lblThrillerHeader.TabIndex = 2
+        Me.lblThrillerHeader.Text = "Psychological Thriller"
+        '
+        'flpThrillerBooks
+        '
+        Me.flpThrillerBooks.AutoScroll = True
+        Me.flpThrillerBooks.Controls.Add(Me.pnlBook5)
+        Me.flpThrillerBooks.Controls.Add(Me.pnlBook6)
+        Me.flpThrillerBooks.Controls.Add(Me.pnlBook7)
+        Me.flpThrillerBooks.Controls.Add(Me.pnlBook8)
+        Me.flpThrillerBooks.FlowDirection = System.Windows.Forms.FlowDirection.LeftToRight
+        Me.flpThrillerBooks.Location = New System.Drawing.Point(15, 319)
+        Me.flpThrillerBooks.Margin = New System.Windows.Forms.Padding(15, 3, 3, 3)
+        Me.flpThrillerBooks.Name = "flpThrillerBooks"
+        Me.flpThrillerBooks.Size = New System.Drawing.Size(780, 230)
+        Me.flpThrillerBooks.TabIndex = 3
+        Me.flpThrillerBooks.WrapContents = False
+        '
         'pnlBook5
         '
         Me.pnlBook5.Controls.Add(Me.picBook5)
         Me.pnlBook5.Controls.Add(Me.lblTitle5)
-        Me.pnlBook5.Location = New System.Drawing.Point(23, 229)
+        Me.pnlBook5.Location = New System.Drawing.Point(10, 10)
+        Me.pnlBook5.Margin = New System.Windows.Forms.Padding(10)
         Me.pnlBook5.Name = "pnlBook5"
         Me.pnlBook5.Size = New System.Drawing.Size(150, 200)
         Me.pnlBook5.TabIndex = 4
@@ -441,7 +498,8 @@ Partial Class Catalouge
         '
         Me.pnlBook6.Controls.Add(Me.picBook6)
         Me.pnlBook6.Controls.Add(Me.lblTitle6)
-        Me.pnlBook6.Location = New System.Drawing.Point(179, 229)
+        Me.pnlBook6.Location = New System.Drawing.Point(180, 10)
+        Me.pnlBook6.Margin = New System.Windows.Forms.Padding(10)
         Me.pnlBook6.Name = "pnlBook6"
         Me.pnlBook6.Size = New System.Drawing.Size(150, 200)
         Me.pnlBook6.TabIndex = 5
@@ -473,7 +531,8 @@ Partial Class Catalouge
         '
         Me.pnlBook7.Controls.Add(Me.picBook7)
         Me.pnlBook7.Controls.Add(Me.lblTitle7)
-        Me.pnlBook7.Location = New System.Drawing.Point(335, 229)
+        Me.pnlBook7.Location = New System.Drawing.Point(350, 10)
+        Me.pnlBook7.Margin = New System.Windows.Forms.Padding(10)
         Me.pnlBook7.Name = "pnlBook7"
         Me.pnlBook7.Size = New System.Drawing.Size(150, 200)
         Me.pnlBook7.TabIndex = 6
@@ -505,7 +564,8 @@ Partial Class Catalouge
         '
         Me.pnlBook8.Controls.Add(Me.picBook8)
         Me.pnlBook8.Controls.Add(Me.lblTitle8)
-        Me.pnlBook8.Location = New System.Drawing.Point(491, 229)
+        Me.pnlBook8.Location = New System.Drawing.Point(520, 10)
+        Me.pnlBook8.Margin = New System.Windows.Forms.Padding(10)
         Me.pnlBook8.Name = "pnlBook8"
         Me.pnlBook8.Size = New System.Drawing.Size(150, 200)
         Me.pnlBook8.TabIndex = 7
@@ -550,7 +610,10 @@ Partial Class Catalouge
         Me.pnlLeftMenu.ResumeLayout(False)
         Me.flpGenres.ResumeLayout(False)
         Me.pnlMainContent.ResumeLayout(False)
-        Me.flpBooks.ResumeLayout(False)
+        Me.pnlMainContent.PerformLayout()
+        Me.flpVerticalStack.ResumeLayout(False)
+        Me.flpVerticalStack.PerformLayout()
+        Me.flpHorrorBooks.ResumeLayout(False)
         Me.pnlBook1.ResumeLayout(False)
         CType(Me.picBook1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlBook2.ResumeLayout(False)
@@ -559,6 +622,7 @@ Partial Class Catalouge
         CType(Me.picBook3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlBook4.ResumeLayout(False)
         CType(Me.picBook4, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.flpThrillerBooks.ResumeLayout(False)
         Me.pnlBook5.ResumeLayout(False)
         CType(Me.picBook5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlBook6.ResumeLayout(False)
@@ -587,7 +651,6 @@ Partial Class Catalouge
     Friend WithEvents btnGenre7 As Button
     Friend WithEvents btnGenre8 As Button
     Friend WithEvents pnlMainContent As Panel
-    Friend WithEvents flpBooks As FlowLayoutPanel
     Friend WithEvents pnlBook1 As Panel
     Friend WithEvents picBook1 As PictureBox
     Friend WithEvents lblTitle1 As Label
@@ -612,4 +675,9 @@ Partial Class Catalouge
     Friend WithEvents pnlBook8 As Panel
     Friend WithEvents picBook8 As PictureBox
     Friend WithEvents lblTitle8 As Label
+    Friend WithEvents flpVerticalStack As FlowLayoutPanel
+    Friend WithEvents lblHorrorHeader As Label
+    Friend WithEvents flpHorrorBooks As FlowLayoutPanel
+    Friend WithEvents lblThrillerHeader As Label
+    Friend WithEvents flpThrillerBooks As FlowLayoutPanel
 End Class
