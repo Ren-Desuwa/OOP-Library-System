@@ -135,6 +135,9 @@
     <EmbeddedResource Include="Forms\Panels\Books_Panel(Librarian-Admin).resx">
       <DependentUpon>Books_Panel(Librarian-Admin).vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Panels\Home_Panel%28Librarian%29.resx">
+      <DependentUpon>Home_Panel%28Librarian%29.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Panels\Login_Panel(Librarian-Admin).resx">
       <DependentUpon>Login_Panel(Librarian-Admin).vb</DependentUpon>
     </EmbeddedResource>
@@ -162,6 +165,7 @@
     <Folder Include="Assets\" />
     <Folder Include="Database\" />
     <Folder Include="LibraryAdminApp\" />
+    <Folder Include="LibraryCore\Assets\Colors\" />
     <Folder Include="LibraryCore\Database\" />
     <Folder Include="LibraryCore\Forms\Admin\AdminLogin\" />
     <Folder Include="LibraryCore\Forms\User\Homepage\" />
@@ -180,6 +184,7 @@
     <Content Include="LibraryCore\Assets\Bookcover\the_plot.jpg" />
     <Content Include="LibraryCore\Assets\Bookcover\the_woman_in_the_window.jpg" />
     <Content Include="LibraryCore\Assets\Bookcover\to_kill_a_mockingbird.jpg" />
+    <Content Include="Resources\Ucc Logo NoBG.png" />
     <None Include="Resources\ucc logo3.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
