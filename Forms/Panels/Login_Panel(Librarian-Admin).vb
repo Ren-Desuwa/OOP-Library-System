@@ -86,4 +86,19 @@
         ' This label doesn't have a 'Handles' clause, so it does nothing
     End Sub
 
+    Private Sub Guna2HtmlLabel1_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub Label1_Click_1(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub Guna2PictureBox1_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub Guna2PictureBox1_Paint(sender As Object, e As PaintEventArgs) Handles Guna2PictureBox1.Paint
+
+    End Sub
 End Class

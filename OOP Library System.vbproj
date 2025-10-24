@@ -185,6 +185,7 @@
     <Content Include="LibraryCore\Assets\Bookcover\the_woman_in_the_window.jpg" />
     <Content Include="LibraryCore\Assets\Bookcover\to_kill_a_mockingbird.jpg" />
     <Content Include="Resources\Ucc Logo NoBG.png" />
+    <None Include="Resources\Ucc Logo NoBG1.png" />
     <None Include="Resources\ucc logo3.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

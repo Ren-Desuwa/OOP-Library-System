@@ -23,6 +23,7 @@ Partial Class Login_Panel_Librarian_Admin_
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Login_Panel_Librarian_Admin_))
         Me.lbl_titlelogin = New System.Windows.Forms.Label()
         Me.lbl_show = New System.Windows.Forms.Label()
         Me.lbl_hide = New System.Windows.Forms.Label()
@@ -37,18 +38,20 @@ Partial Class Login_Panel_Librarian_Admin_
         Me.btn_cancel = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2DragControl1 = New Guna.UI2.WinForms.Guna2DragControl(Me.components)
         Me.Guna2DragControl2 = New Guna.UI2.WinForms.Guna2DragControl(Me.components)
+        Me.lbl_title = New System.Windows.Forms.Label()
         Me.Guna2Elipse1 = New Guna.UI2.WinForms.Guna2Elipse(Me.components)
         Me.Guna2CustomGradientPanel1 = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
-        Me.Guna2CustomGradientPanel2 = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
-        Me.Guna2CustomGradientPanel3 = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
-        Me.lbl_title = New System.Windows.Forms.Label()
-        Me.Guna2ControlBox3 = New Guna.UI2.WinForms.Guna2ControlBox()
-        Me.Guna2ControlBox1 = New Guna.UI2.WinForms.Guna2ControlBox()
         Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
+        Me.Guna2CustomGradientPanel2 = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
+        Me.Guna2ControlBox1 = New Guna.UI2.WinForms.Guna2ControlBox()
+        Me.Guna2ControlBox3 = New Guna.UI2.WinForms.Guna2ControlBox()
+        Me.Guna2CustomGradientPanel3 = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2CustomGradientPanel1.SuspendLayout()
+        CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2CustomGradientPanel2.SuspendLayout()
         Me.Guna2CustomGradientPanel3.SuspendLayout()
-        CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lbl_titlelogin
@@ -56,7 +59,7 @@ Partial Class Login_Panel_Librarian_Admin_
         Me.lbl_titlelogin.AutoSize = True
         Me.lbl_titlelogin.BackColor = System.Drawing.Color.Transparent
         Me.lbl_titlelogin.Font = New System.Drawing.Font("Roboto", 19.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_titlelogin.Location = New System.Drawing.Point(225, 45)
+        Me.lbl_titlelogin.Location = New System.Drawing.Point(233, 37)
         Me.lbl_titlelogin.Name = "lbl_titlelogin"
         Me.lbl_titlelogin.Size = New System.Drawing.Size(99, 39)
         Me.lbl_titlelogin.TabIndex = 13
@@ -66,7 +69,7 @@ Partial Class Login_Panel_Librarian_Admin_
         '
         Me.lbl_show.AutoSize = True
         Me.lbl_show.BackColor = System.Drawing.Color.White
-        Me.lbl_show.Location = New System.Drawing.Point(350, 250)
+        Me.lbl_show.Location = New System.Drawing.Point(341, 241)
         Me.lbl_show.Name = "lbl_show"
         Me.lbl_show.Size = New System.Drawing.Size(40, 16)
         Me.lbl_show.TabIndex = 10
@@ -76,7 +79,7 @@ Partial Class Login_Panel_Librarian_Admin_
         '
         Me.lbl_hide.AutoSize = True
         Me.lbl_hide.BackColor = System.Drawing.Color.White
-        Me.lbl_hide.Location = New System.Drawing.Point(353, 250)
+        Me.lbl_hide.Location = New System.Drawing.Point(344, 241)
         Me.lbl_hide.Name = "lbl_hide"
         Me.lbl_hide.Size = New System.Drawing.Size(36, 16)
         Me.lbl_hide.TabIndex = 9
@@ -85,7 +88,7 @@ Partial Class Login_Panel_Librarian_Admin_
         'lbl_forgotpass
         '
         Me.lbl_forgotpass.AutoSize = True
-        Me.lbl_forgotpass.Location = New System.Drawing.Point(302, 284)
+        Me.lbl_forgotpass.Location = New System.Drawing.Point(293, 275)
         Me.lbl_forgotpass.Name = "lbl_forgotpass"
         Me.lbl_forgotpass.Size = New System.Drawing.Size(109, 16)
         Me.lbl_forgotpass.TabIndex = 8
@@ -95,7 +98,7 @@ Partial Class Login_Panel_Librarian_Admin_
         '
         Me.lbl_verifiedid.AutoSize = True
         Me.lbl_verifiedid.BackColor = System.Drawing.Color.Transparent
-        Me.lbl_verifiedid.Location = New System.Drawing.Point(161, 310)
+        Me.lbl_verifiedid.Location = New System.Drawing.Point(152, 301)
         Me.lbl_verifiedid.Name = "lbl_verifiedid"
         Me.lbl_verifiedid.Size = New System.Drawing.Size(69, 16)
         Me.lbl_verifiedid.TabIndex = 7
@@ -105,7 +108,7 @@ Partial Class Login_Panel_Librarian_Admin_
         '
         Me.lbl_password.AutoSize = True
         Me.lbl_password.BackColor = System.Drawing.Color.Transparent
-        Me.lbl_password.Location = New System.Drawing.Point(161, 212)
+        Me.lbl_password.Location = New System.Drawing.Point(152, 203)
         Me.lbl_password.Name = "lbl_password"
         Me.lbl_password.Size = New System.Drawing.Size(67, 16)
         Me.lbl_password.TabIndex = 6
@@ -115,7 +118,7 @@ Partial Class Login_Panel_Librarian_Admin_
         '
         Me.lbl_username.AutoSize = True
         Me.lbl_username.BackColor = System.Drawing.Color.Transparent
-        Me.lbl_username.Location = New System.Drawing.Point(162, 125)
+        Me.lbl_username.Location = New System.Drawing.Point(153, 116)
         Me.lbl_username.Name = "lbl_username"
         Me.lbl_username.Size = New System.Drawing.Size(70, 16)
         Me.lbl_username.TabIndex = 5
@@ -137,7 +140,7 @@ Partial Class Login_Panel_Librarian_Admin_
         Me.txtBox_verifiedid.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtBox_verifiedid.ForeColor = System.Drawing.Color.Black
         Me.txtBox_verifiedid.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtBox_verifiedid.Location = New System.Drawing.Point(164, 330)
+        Me.txtBox_verifiedid.Location = New System.Drawing.Point(155, 321)
         Me.txtBox_verifiedid.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtBox_verifiedid.Name = "txtBox_verifiedid"
         Me.txtBox_verifiedid.PlaceholderForeColor = System.Drawing.Color.DarkGray
@@ -162,7 +165,7 @@ Partial Class Login_Panel_Librarian_Admin_
         Me.txtBox_password.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtBox_password.ForeColor = System.Drawing.Color.Black
         Me.txtBox_password.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtBox_password.Location = New System.Drawing.Point(164, 232)
+        Me.txtBox_password.Location = New System.Drawing.Point(155, 223)
         Me.txtBox_password.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtBox_password.Name = "txtBox_password"
         Me.txtBox_password.PlaceholderForeColor = System.Drawing.Color.DarkGray
@@ -187,7 +190,7 @@ Partial Class Login_Panel_Librarian_Admin_
         Me.txtBox_username.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtBox_username.ForeColor = System.Drawing.Color.Black
         Me.txtBox_username.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtBox_username.Location = New System.Drawing.Point(165, 145)
+        Me.txtBox_username.Location = New System.Drawing.Point(156, 136)
         Me.txtBox_username.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtBox_username.Name = "txtBox_username"
         Me.txtBox_username.PlaceholderForeColor = System.Drawing.Color.DarkGray
@@ -206,7 +209,7 @@ Partial Class Login_Panel_Librarian_Admin_
         Me.btn_login.FillColor = System.Drawing.Color.Tan
         Me.btn_login.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.btn_login.ForeColor = System.Drawing.Color.Black
-        Me.btn_login.Location = New System.Drawing.Point(78, 434)
+        Me.btn_login.Location = New System.Drawing.Point(69, 425)
         Me.btn_login.Name = "btn_login"
         Me.btn_login.Size = New System.Drawing.Size(180, 45)
         Me.btn_login.TabIndex = 1
@@ -223,7 +226,7 @@ Partial Class Login_Panel_Librarian_Admin_
         Me.btn_cancel.FillColor = System.Drawing.Color.FromArgb(CType(CType(207, Byte), Integer), CType(CType(207, Byte), Integer), CType(CType(207, Byte), Integer))
         Me.btn_cancel.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.btn_cancel.ForeColor = System.Drawing.Color.Black
-        Me.btn_cancel.Location = New System.Drawing.Point(318, 434)
+        Me.btn_cancel.Location = New System.Drawing.Point(309, 425)
         Me.btn_cancel.Name = "btn_cancel"
         Me.btn_cancel.Size = New System.Drawing.Size(180, 45)
         Me.btn_cancel.TabIndex = 0
@@ -240,6 +243,18 @@ Partial Class Login_Panel_Librarian_Admin_
         Me.Guna2DragControl2.TargetControl = Me.lbl_title
         Me.Guna2DragControl2.TransparentWhileDrag = False
         '
+        'lbl_title
+        '
+        Me.lbl_title.AutoSize = True
+        Me.lbl_title.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_title.Font = New System.Drawing.Font("Roboto", 19.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_title.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(232, Byte), Integer))
+        Me.lbl_title.Location = New System.Drawing.Point(435, 9)
+        Me.lbl_title.Name = "lbl_title"
+        Me.lbl_title.Size = New System.Drawing.Size(235, 117)
+        Me.lbl_title.TabIndex = 12
+        Me.lbl_title.Text = "Library System" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Hello"
+        '
         'Guna2Elipse1
         '
         Me.Guna2Elipse1.BorderRadius = 30
@@ -247,6 +262,8 @@ Partial Class Login_Panel_Librarian_Admin_
         '
         'Guna2CustomGradientPanel1
         '
+        Me.Guna2CustomGradientPanel1.Controls.Add(Me.Guna2HtmlLabel1)
+        Me.Guna2CustomGradientPanel1.Controls.Add(Me.Label1)
         Me.Guna2CustomGradientPanel1.Controls.Add(Me.Guna2PictureBox1)
         Me.Guna2CustomGradientPanel1.FillColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(232, Byte), Integer))
         Me.Guna2CustomGradientPanel1.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(216, Byte), Integer))
@@ -254,8 +271,24 @@ Partial Class Login_Panel_Librarian_Admin_
         Me.Guna2CustomGradientPanel1.FillColor4 = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(195, Byte), Integer), CType(CType(165, Byte), Integer))
         Me.Guna2CustomGradientPanel1.Location = New System.Drawing.Point(0, 0)
         Me.Guna2CustomGradientPanel1.Name = "Guna2CustomGradientPanel1"
-        Me.Guna2CustomGradientPanel1.Size = New System.Drawing.Size(554, 556)
+        Me.Guna2CustomGradientPanel1.Size = New System.Drawing.Size(549, 556)
         Me.Guna2CustomGradientPanel1.TabIndex = 0
+        '
+        'Guna2PictureBox1
+        '
+        Me.Guna2PictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.Guna2PictureBox1.FillColor = System.Drawing.Color.Transparent
+        Me.Guna2PictureBox1.Image = CType(resources.GetObject("Guna2PictureBox1.Image"), System.Drawing.Image)
+        Me.Guna2PictureBox1.ImageLocation = "C:\Users\ASUS\Source\Repos\OOP-Library-System\Resources\Ucc Logo NoBG.png"
+        Me.Guna2PictureBox1.ImageRotate = 0!
+        Me.Guna2PictureBox1.Location = New System.Drawing.Point(43, 67)
+        Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
+        Me.Guna2PictureBox1.Size = New System.Drawing.Size(462, 423)
+        Me.Guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.Guna2PictureBox1.TabIndex = 11
+        Me.Guna2PictureBox1.TabStop = False
+        Me.Guna2PictureBox1.UseTransparentBackground = True
         '
         'Guna2CustomGradientPanel2
         '
@@ -271,6 +304,36 @@ Partial Class Login_Panel_Librarian_Admin_
         Me.Guna2CustomGradientPanel2.Name = "Guna2CustomGradientPanel2"
         Me.Guna2CustomGradientPanel2.Size = New System.Drawing.Size(1067, 56)
         Me.Guna2CustomGradientPanel2.TabIndex = 1
+        '
+        'Guna2ControlBox1
+        '
+        Me.Guna2ControlBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Guna2ControlBox1.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2ControlBox1.ControlBoxStyle = Guna.UI2.WinForms.Enums.ControlBoxStyle.Custom
+        Me.Guna2ControlBox1.CustomIconSize = 13.0!
+        Me.Guna2ControlBox1.FillColor = System.Drawing.Color.Transparent
+        Me.Guna2ControlBox1.ForeColor = System.Drawing.Color.Black
+        Me.Guna2ControlBox1.IconColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(232, Byte), Integer))
+        Me.Guna2ControlBox1.Location = New System.Drawing.Point(1016, -4)
+        Me.Guna2ControlBox1.Name = "Guna2ControlBox1"
+        Me.Guna2ControlBox1.Size = New System.Drawing.Size(52, 59)
+        Me.Guna2ControlBox1.TabIndex = 13
+        '
+        'Guna2ControlBox3
+        '
+        Me.Guna2ControlBox3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Guna2ControlBox3.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2ControlBox3.BorderColor = System.Drawing.Color.Brown
+        Me.Guna2ControlBox3.ControlBoxStyle = Guna.UI2.WinForms.Enums.ControlBoxStyle.Custom
+        Me.Guna2ControlBox3.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox
+        Me.Guna2ControlBox3.CustomIconSize = 20.0!
+        Me.Guna2ControlBox3.FillColor = System.Drawing.Color.Transparent
+        Me.Guna2ControlBox3.ForeColor = System.Drawing.Color.Brown
+        Me.Guna2ControlBox3.IconColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(232, Byte), Integer))
+        Me.Guna2ControlBox3.Location = New System.Drawing.Point(954, -22)
+        Me.Guna2ControlBox3.Name = "Guna2ControlBox3"
+        Me.Guna2ControlBox3.Size = New System.Drawing.Size(75, 78)
+        Me.Guna2ControlBox3.TabIndex = 15
         '
         'Guna2CustomGradientPanel3
         '
@@ -290,61 +353,32 @@ Partial Class Login_Panel_Librarian_Admin_
         Me.Guna2CustomGradientPanel3.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(240, Byte), Integer))
         Me.Guna2CustomGradientPanel3.FillColor3 = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(232, Byte), Integer))
         Me.Guna2CustomGradientPanel3.FillColor4 = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.Guna2CustomGradientPanel3.Location = New System.Drawing.Point(531, 37)
+        Me.Guna2CustomGradientPanel3.Location = New System.Drawing.Point(542, 51)
         Me.Guna2CustomGradientPanel3.Name = "Guna2CustomGradientPanel3"
-        Me.Guna2CustomGradientPanel3.Size = New System.Drawing.Size(536, 519)
+        Me.Guna2CustomGradientPanel3.Size = New System.Drawing.Size(525, 505)
         Me.Guna2CustomGradientPanel3.TabIndex = 1
         '
-        'lbl_title
+        'Label1
         '
-        Me.lbl_title.AutoSize = True
-        Me.lbl_title.BackColor = System.Drawing.Color.Transparent
-        Me.lbl_title.Font = New System.Drawing.Font("Roboto", 19.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_title.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(232, Byte), Integer))
-        Me.lbl_title.Location = New System.Drawing.Point(435, 9)
-        Me.lbl_title.Name = "lbl_title"
-        Me.lbl_title.Size = New System.Drawing.Size(235, 39)
-        Me.lbl_title.TabIndex = 12
-        Me.lbl_title.Text = "Library System"
+        Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(232, Byte), Integer))
+        Me.Label1.Location = New System.Drawing.Point(1, 191)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(546, 175)
+        Me.Label1.TabIndex = 12
+        Me.Label1.Text = resources.GetString("Label1.Text")
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Guna2ControlBox3
+        'Guna2HtmlLabel1
         '
-        Me.Guna2ControlBox3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Guna2ControlBox3.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2ControlBox3.BorderColor = System.Drawing.Color.Brown
-        Me.Guna2ControlBox3.ControlBoxStyle = Guna.UI2.WinForms.Enums.ControlBoxStyle.Custom
-        Me.Guna2ControlBox3.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox
-        Me.Guna2ControlBox3.CustomIconSize = 20.0!
-        Me.Guna2ControlBox3.FillColor = System.Drawing.Color.Transparent
-        Me.Guna2ControlBox3.ForeColor = System.Drawing.Color.Brown
-        Me.Guna2ControlBox3.IconColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(232, Byte), Integer))
-        Me.Guna2ControlBox3.Location = New System.Drawing.Point(954, -22)
-        Me.Guna2ControlBox3.Name = "Guna2ControlBox3"
-        Me.Guna2ControlBox3.Size = New System.Drawing.Size(75, 78)
-        Me.Guna2ControlBox3.TabIndex = 15
-        '
-        'Guna2ControlBox1
-        '
-        Me.Guna2ControlBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Guna2ControlBox1.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2ControlBox1.ControlBoxStyle = Guna.UI2.WinForms.Enums.ControlBoxStyle.Custom
-        Me.Guna2ControlBox1.CustomIconSize = 13.0!
-        Me.Guna2ControlBox1.FillColor = System.Drawing.Color.Transparent
-        Me.Guna2ControlBox1.ForeColor = System.Drawing.Color.Black
-        Me.Guna2ControlBox1.IconColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(232, Byte), Integer))
-        Me.Guna2ControlBox1.Location = New System.Drawing.Point(1016, -4)
-        Me.Guna2ControlBox1.Name = "Guna2ControlBox1"
-        Me.Guna2ControlBox1.Size = New System.Drawing.Size(52, 59)
-        Me.Guna2ControlBox1.TabIndex = 13
-        '
-        'Guna2PictureBox1
-        '
-        Me.Guna2PictureBox1.ImageRotate = 0!
-        Me.Guna2PictureBox1.Location = New System.Drawing.Point(141, 182)
-        Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
-        Me.Guna2PictureBox1.Size = New System.Drawing.Size(300, 200)
-        Me.Guna2PictureBox1.TabIndex = 0
-        Me.Guna2PictureBox1.TabStop = False
+        Me.Guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel1.Location = New System.Drawing.Point(450, 405)
+        Me.Guna2HtmlLabel1.Name = "Guna2HtmlLabel1"
+        Me.Guna2HtmlLabel1.Size = New System.Drawing.Size(110, 18)
+        Me.Guna2HtmlLabel1.TabIndex = 13
+        Me.Guna2HtmlLabel1.Text = "Guna2HtmlLabel1"
         '
         'Login_Panel_Librarian_Admin_
         '
@@ -352,18 +386,20 @@ Partial Class Login_Panel_Librarian_Admin_
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1067, 554)
         Me.Controls.Add(Me.Guna2CustomGradientPanel2)
-        Me.Controls.Add(Me.Guna2CustomGradientPanel1)
         Me.Controls.Add(Me.Guna2CustomGradientPanel3)
+        Me.Controls.Add(Me.Guna2CustomGradientPanel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Margin = New System.Windows.Forms.Padding(4)
+        Me.MaximumSize = New System.Drawing.Size(1067, 554)
         Me.Name = "Login_Panel_Librarian_Admin_"
         Me.Text = "Login"
         Me.Guna2CustomGradientPanel1.ResumeLayout(False)
+        Me.Guna2CustomGradientPanel1.PerformLayout()
+        CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Guna2CustomGradientPanel2.ResumeLayout(False)
         Me.Guna2CustomGradientPanel2.PerformLayout()
         Me.Guna2CustomGradientPanel3.ResumeLayout(False)
         Me.Guna2CustomGradientPanel3.PerformLayout()
-        CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -389,4 +425,6 @@ Partial Class Login_Panel_Librarian_Admin_
     Friend WithEvents Guna2ControlBox1 As Guna.UI2.WinForms.Guna2ControlBox
     Friend WithEvents Guna2ControlBox3 As Guna.UI2.WinForms.Guna2ControlBox
     Friend WithEvents Guna2PictureBox1 As Guna.UI2.WinForms.Guna2PictureBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Guna2HtmlLabel1 As Guna.UI2.WinForms.Guna2HtmlLabel
 End Class
