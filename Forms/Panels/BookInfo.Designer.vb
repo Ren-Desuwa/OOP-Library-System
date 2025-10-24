@@ -44,10 +44,10 @@ Partial Class BookInfo
         Me.Guna2CustomGradientPanel1.Controls.Add(Me.txtTitle)
         Me.Guna2CustomGradientPanel1.Controls.Add(Me.picBook)
         Me.Guna2CustomGradientPanel1.Controls.Add(Me.Guna2ControlBox1)
-        Me.Guna2CustomGradientPanel1.FillColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(232, Byte), Integer))
-        Me.Guna2CustomGradientPanel1.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(216, Byte), Integer))
-        Me.Guna2CustomGradientPanel1.FillColor3 = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Guna2CustomGradientPanel1.FillColor4 = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(195, Byte), Integer), CType(CType(165, Byte), Integer))
+        Me.Guna2CustomGradientPanel1.FillColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(156, Byte), Integer))
+        Me.Guna2CustomGradientPanel1.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(164, Byte), Integer), CType(CType(120, Byte), Integer), CType(CType(84, Byte), Integer))
+        Me.Guna2CustomGradientPanel1.FillColor3 = System.Drawing.Color.FromArgb(CType(CType(154, Byte), Integer), CType(CType(111, Byte), Integer), CType(CType(74, Byte), Integer))
+        Me.Guna2CustomGradientPanel1.FillColor4 = System.Drawing.Color.FromArgb(CType(CType(139, Byte), Integer), CType(CType(103, Byte), Integer), CType(CType(67, Byte), Integer))
         Me.Guna2CustomGradientPanel1.Location = New System.Drawing.Point(-1, -72)
         Me.Guna2CustomGradientPanel1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Guna2CustomGradientPanel1.Name = "Guna2CustomGradientPanel1"
@@ -57,7 +57,7 @@ Partial Class BookInfo
         'txtISBN
         '
         Me.txtISBN.BackColor = System.Drawing.Color.Transparent
-        Me.txtISBN.BorderColor = System.Drawing.Color.Gray
+        Me.txtISBN.BorderColor = System.Drawing.Color.DarkGray
         Me.txtISBN.BorderRadius = 10
         Me.txtISBN.BorderThickness = 3
         Me.txtISBN.Cursor = System.Windows.Forms.Cursors.IBeam
@@ -80,7 +80,7 @@ Partial Class BookInfo
         'txtAuthor
         '
         Me.txtAuthor.BackColor = System.Drawing.Color.Transparent
-        Me.txtAuthor.BorderColor = System.Drawing.Color.Gray
+        Me.txtAuthor.BorderColor = System.Drawing.Color.DarkGray
         Me.txtAuthor.BorderRadius = 10
         Me.txtAuthor.BorderThickness = 3
         Me.txtAuthor.Cursor = System.Windows.Forms.Cursors.IBeam
@@ -103,7 +103,7 @@ Partial Class BookInfo
         'txtDesc
         '
         Me.txtDesc.BackColor = System.Drawing.Color.Transparent
-        Me.txtDesc.BorderColor = System.Drawing.Color.Gray
+        Me.txtDesc.BorderColor = System.Drawing.Color.DarkGray
         Me.txtDesc.BorderRadius = 10
         Me.txtDesc.BorderThickness = 3
         Me.txtDesc.Cursor = System.Windows.Forms.Cursors.IBeam
@@ -126,7 +126,7 @@ Partial Class BookInfo
         'txtTitle
         '
         Me.txtTitle.BackColor = System.Drawing.Color.Transparent
-        Me.txtTitle.BorderColor = System.Drawing.Color.Gray
+        Me.txtTitle.BorderColor = System.Drawing.Color.DarkGray
         Me.txtTitle.BorderRadius = 10
         Me.txtTitle.BorderThickness = 3
         Me.txtTitle.Cursor = System.Windows.Forms.Cursors.IBeam
@@ -148,9 +148,8 @@ Partial Class BookInfo
         '
         'picBook
         '
-        Me.picBook.AutoRoundedCorners = True
         Me.picBook.ImageRotate = 0!
-        Me.picBook.Location = New System.Drawing.Point(37, 117)
+        Me.picBook.Location = New System.Drawing.Point(38, 117)
         Me.picBook.Name = "picBook"
         Me.picBook.Size = New System.Drawing.Size(301, 260)
         Me.picBook.TabIndex = 15
@@ -164,11 +163,11 @@ Partial Class BookInfo
         Me.Guna2ControlBox1.CustomIconSize = 13.0!
         Me.Guna2ControlBox1.FillColor = System.Drawing.Color.Transparent
         Me.Guna2ControlBox1.ForeColor = System.Drawing.Color.Black
-        Me.Guna2ControlBox1.IconColor = System.Drawing.Color.FromArgb(CType(CType(154, Byte), Integer), CType(CType(111, Byte), Integer), CType(CType(74, Byte), Integer))
-        Me.Guna2ControlBox1.Location = New System.Drawing.Point(849, 72)
+        Me.Guna2ControlBox1.IconColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(232, Byte), Integer))
+        Me.Guna2ControlBox1.Location = New System.Drawing.Point(844, 72)
         Me.Guna2ControlBox1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Guna2ControlBox1.Name = "Guna2ControlBox1"
-        Me.Guna2ControlBox1.Size = New System.Drawing.Size(52, 53)
+        Me.Guna2ControlBox1.Size = New System.Drawing.Size(54, 48)
         Me.Guna2ControlBox1.TabIndex = 14
         '
         'Guna2Elipse1
@@ -180,7 +179,7 @@ Partial Class BookInfo
         '
         Me.Guna2DragControl1.DockIndicatorTransparencyValue = 0.6R
         Me.Guna2DragControl1.TargetControl = Me.Guna2CustomGradientPanel1
-        Me.Guna2DragControl1.UseTransparentDrag = True
+        Me.Guna2DragControl1.TransparentWhileDrag = False
         '
         'BookInfo
         '
@@ -202,9 +201,9 @@ Partial Class BookInfo
     Friend WithEvents Guna2Elipse1 As Guna.UI2.WinForms.Guna2Elipse
     Friend WithEvents Guna2ControlBox1 As Guna.UI2.WinForms.Guna2ControlBox
     Friend WithEvents Guna2DragControl1 As Guna.UI2.WinForms.Guna2DragControl
-    Friend WithEvents picBook As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents txtISBN As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents txtAuthor As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents txtDesc As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents txtTitle As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents picBook As Guna.UI2.WinForms.Guna2PictureBox
 End Class
