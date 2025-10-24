@@ -16,7 +16,7 @@ Public Class Notification
     Public Property Message As String
     Public Property DateSent As DateTime
     Public Property IsRead As Boolean
-    Public Property NotificationType As String ' "DueReminder", "Overdue", "Reserved", "General"
+    Public Property NotificationType As NotificationType ' "DueReminder", "Overdue", "Reserved", "General"
 
     Public Sub New()
         DateSent = DateTime.Now
@@ -34,7 +34,7 @@ Public Class Notification
             .AccountID = accountID,
             .TransactionID = transactionID,
             .Message = $"Reminder: Your book is due on {dueDate:MMM dd, yyyy}",
-            .NotificationType = "DueReminder"
+            .NotificationType = NotificationType.BookReminder
         }
     End Function
 End Class
