@@ -58,10 +58,10 @@ Partial Class Login_Panel_Librarian_Admin_
         '
         Me.lbl_titlelogin.AutoSize = True
         Me.lbl_titlelogin.BackColor = System.Drawing.Color.Transparent
-        Me.lbl_titlelogin.Font = New System.Drawing.Font("Roboto", 19.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_titlelogin.Font = New System.Drawing.Font("Microsoft Sans Serif", 19.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_titlelogin.Location = New System.Drawing.Point(222, 36)
         Me.lbl_titlelogin.Name = "lbl_titlelogin"
-        Me.lbl_titlelogin.Size = New System.Drawing.Size(99, 39)
+        Me.lbl_titlelogin.Size = New System.Drawing.Size(96, 38)
         Me.lbl_titlelogin.TabIndex = 13
         Me.lbl_titlelogin.Text = "Login"
         '
@@ -272,11 +272,11 @@ Partial Class Login_Panel_Librarian_Admin_
         '
         Me.lbl_title.AutoSize = True
         Me.lbl_title.BackColor = System.Drawing.Color.Transparent
-        Me.lbl_title.Font = New System.Drawing.Font("Roboto", 19.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_title.Font = New System.Drawing.Font("Microsoft Sans Serif", 19.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_title.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(232, Byte), Integer))
         Me.lbl_title.Location = New System.Drawing.Point(435, 9)
         Me.lbl_title.Name = "lbl_title"
-        Me.lbl_title.Size = New System.Drawing.Size(235, 117)
+        Me.lbl_title.Size = New System.Drawing.Size(236, 114)
         Me.lbl_title.TabIndex = 12
         Me.lbl_title.Text = "Library System" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Hello"
         '
