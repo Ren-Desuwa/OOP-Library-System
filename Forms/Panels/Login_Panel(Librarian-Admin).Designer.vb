@@ -25,8 +25,6 @@ Partial Class Login_Panel_Librarian_Admin_
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Login_Panel_Librarian_Admin_))
         Me.lbl_titlelogin = New System.Windows.Forms.Label()
-        Me.lbl_show = New System.Windows.Forms.Label()
-        Me.lbl_hide = New System.Windows.Forms.Label()
         Me.lbl_forgotpass = New System.Windows.Forms.Label()
         Me.lbl_verifiedid = New System.Windows.Forms.Label()
         Me.lbl_password = New System.Windows.Forms.Label()
@@ -48,10 +46,14 @@ Partial Class Login_Panel_Librarian_Admin_
         Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Guna2CustomGradientPanel3 = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
+        Me.img_hide = New Guna.UI2.WinForms.Guna2PictureBox()
+        Me.img_show = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.title_panel.SuspendLayout()
         Me.Guna2CustomGradientPanel1.SuspendLayout()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2CustomGradientPanel3.SuspendLayout()
+        CType(Me.img_hide, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.img_show, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lbl_titlelogin
@@ -64,27 +66,6 @@ Partial Class Login_Panel_Librarian_Admin_
         Me.lbl_titlelogin.Size = New System.Drawing.Size(99, 39)
         Me.lbl_titlelogin.TabIndex = 13
         Me.lbl_titlelogin.Text = "Login"
-        '
-        'lbl_show
-        '
-        Me.lbl_show.AutoSize = True
-        Me.lbl_show.BackColor = System.Drawing.Color.White
-        Me.lbl_show.Image = CType(resources.GetObject("lbl_show.Image"), System.Drawing.Image)
-        Me.lbl_show.Location = New System.Drawing.Point(330, 240)
-        Me.lbl_show.Name = "lbl_show"
-        Me.lbl_show.Size = New System.Drawing.Size(40, 16)
-        Me.lbl_show.TabIndex = 10
-        Me.lbl_show.Text = "Show"
-        '
-        'lbl_hide
-        '
-        Me.lbl_hide.AutoSize = True
-        Me.lbl_hide.BackColor = System.Drawing.Color.White
-        Me.lbl_hide.Location = New System.Drawing.Point(333, 240)
-        Me.lbl_hide.Name = "lbl_hide"
-        Me.lbl_hide.Size = New System.Drawing.Size(36, 16)
-        Me.lbl_hide.TabIndex = 9
-        Me.lbl_hide.Text = "Hide"
         '
         'lbl_forgotpass
         '
@@ -339,6 +320,7 @@ Partial Class Login_Panel_Librarian_Admin_
         '
         Me.Guna2PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.Guna2PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.Guna2PictureBox1.ErrorImage = Global.OOP_Library_System.My.Resources.Resources.Ucc_Logo_NoBG2
         Me.Guna2PictureBox1.FillColor = System.Drawing.Color.Transparent
         Me.Guna2PictureBox1.Image = Global.OOP_Library_System.My.Resources.Resources.Ucc_Logo_NoBG2
         Me.Guna2PictureBox1.ImageLocation = ""
@@ -366,8 +348,8 @@ Partial Class Login_Panel_Librarian_Admin_
         '
         'Guna2CustomGradientPanel3
         '
-        Me.Guna2CustomGradientPanel3.Controls.Add(Me.lbl_show)
-        Me.Guna2CustomGradientPanel3.Controls.Add(Me.lbl_hide)
+        Me.Guna2CustomGradientPanel3.Controls.Add(Me.img_show)
+        Me.Guna2CustomGradientPanel3.Controls.Add(Me.img_hide)
         Me.Guna2CustomGradientPanel3.Controls.Add(Me.lbl_titlelogin)
         Me.Guna2CustomGradientPanel3.Controls.Add(Me.txtBox_verifiedid)
         Me.Guna2CustomGradientPanel3.Controls.Add(Me.txtBox_password)
@@ -386,6 +368,32 @@ Partial Class Login_Panel_Librarian_Admin_
         Me.Guna2CustomGradientPanel3.Name = "Guna2CustomGradientPanel3"
         Me.Guna2CustomGradientPanel3.Size = New System.Drawing.Size(525, 505)
         Me.Guna2CustomGradientPanel3.TabIndex = 1
+        '
+        'img_hide
+        '
+        Me.img_hide.BackColor = System.Drawing.Color.White
+        Me.img_hide.FillColor = System.Drawing.Color.Transparent
+        Me.img_hide.Image = Global.OOP_Library_System.My.Resources.Resources.Hide_icon
+        Me.img_hide.ImageRotate = 0!
+        Me.img_hide.Location = New System.Drawing.Point(344, 232)
+        Me.img_hide.Name = "img_hide"
+        Me.img_hide.Size = New System.Drawing.Size(40, 32)
+        Me.img_hide.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.img_hide.TabIndex = 15
+        Me.img_hide.TabStop = False
+        '
+        'img_show
+        '
+        Me.img_show.BackColor = System.Drawing.Color.White
+        Me.img_show.FillColor = System.Drawing.Color.Transparent
+        Me.img_show.Image = Global.OOP_Library_System.My.Resources.Resources.Show_icon
+        Me.img_show.ImageRotate = 0!
+        Me.img_show.Location = New System.Drawing.Point(344, 232)
+        Me.img_show.Name = "img_show"
+        Me.img_show.Size = New System.Drawing.Size(40, 32)
+        Me.img_show.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.img_show.TabIndex = 16
+        Me.img_show.TabStop = False
         '
         'Login_Panel_Librarian_Admin_
         '
@@ -406,6 +414,8 @@ Partial Class Login_Panel_Librarian_Admin_
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Guna2CustomGradientPanel3.ResumeLayout(False)
         Me.Guna2CustomGradientPanel3.PerformLayout()
+        CType(Me.img_hide, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.img_show, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -417,8 +427,6 @@ Partial Class Login_Panel_Librarian_Admin_
     Friend WithEvents lbl_password As Label
     Friend WithEvents lbl_username As Label
     Friend WithEvents lbl_forgotpass As Label
-    Friend WithEvents lbl_hide As Label
-    Friend WithEvents lbl_show As Label
     Friend WithEvents txtBox_username As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents lbl_titlelogin As Label
     Friend WithEvents Guna2DragControl1 As Guna.UI2.WinForms.Guna2DragControl
@@ -433,4 +441,6 @@ Partial Class Login_Panel_Librarian_Admin_
     Friend WithEvents Guna2PictureBox1 As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
+    Friend WithEvents img_hide As Guna.UI2.WinForms.Guna2PictureBox
+    Friend WithEvents img_show As Guna.UI2.WinForms.Guna2PictureBox
 End Class

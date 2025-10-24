@@ -2,13 +2,11 @@
 
     ' This event runs when the form first loads
     Private Sub Login_Panel_Librarian_Admin__Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' Set the initial state for show/hide password
-        ' 1. Hide the password text
+
         txtBox_password.UseSystemPasswordChar = True
-        ' 2. Show the "Show" label
-        lbl_show.Visible = True
-        ' 3. Hide the "Hide" label
-        lbl_hide.Visible = False
+        img_show.Visible = True
+        img_hide.Visible = False
+
     End Sub
 
     ' REQUIREMENT: Close the form
@@ -49,25 +47,6 @@
         End If
     End Sub
 
-    ' REQUIREMENT: Show/Hide Password Logic
-    Private Sub lbl_show_Click(sender As Object, e As EventArgs) Handles lbl_show.Click
-        ' Show the password text
-        txtBox_password.UseSystemPasswordChar = False
-        ' Hide the "Show" label
-        lbl_show.Visible = False
-        ' Show the "Hide" label
-        lbl_hide.Visible = True
-    End Sub
-
-    Private Sub lbl_hide_Click(sender As Object, e As EventArgs) Handles lbl_hide.Click
-        ' Hide the password text
-        txtBox_password.UseSystemPasswordChar = True
-        ' Show the "Show" label
-        lbl_show.Visible = True
-        ' Hide the "Hide" label
-        lbl_hide.Visible = False
-    End Sub
-
     ' --- Other Events ---
     Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles btn_cancel.Click
         ' You might want to close the form here too
@@ -82,7 +61,16 @@
         ' Add code for forgot password later
     End Sub
 
-    Private Sub Label1_Click(sender As Object, e As EventArgs)
-        ' This label doesn't have a 'Handles' clause, so it does nothing
+    ' REQUIREMENT: Show/Hide Password Logic
+    Private Sub img_show_Click(sender As Object, e As EventArgs) Handles img_show.Click
+        txtBox_password.UseSystemPasswordChar = False
+        img_show.Visible = False
+        img_hide.Visible = True
+    End Sub
+
+    Private Sub img_hide_Click(sender As Object, e As EventArgs) Handles img_hide.Click
+        txtBox_password.UseSystemPasswordChar = True
+        img_show.Visible = True
+        img_hide.Visible = False
     End Sub
 End Class
