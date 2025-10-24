@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Login_Panel_Librarian_Admin_
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,362 +20,416 @@ Partial Class Login_Panel_Librarian_Admin_
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
-        Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.TableLayoutPanel5 = New System.Windows.Forms.TableLayoutPanel()
-        Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
-        Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
-        Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
+        Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Login_Panel_Librarian_Admin_))
+        Me.lbl_titlelogin = New System.Windows.Forms.Label()
+        Me.lbl_show = New System.Windows.Forms.Label()
+        Me.lbl_hide = New System.Windows.Forms.Label()
+        Me.lbl_forgotpass = New System.Windows.Forms.Label()
+        Me.lbl_verifiedid = New System.Windows.Forms.Label()
+        Me.lbl_password = New System.Windows.Forms.Label()
+        Me.lbl_username = New System.Windows.Forms.Label()
+        Me.txtBox_verifiedid = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.txtBox_password = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.txtBox_username = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.btn_login = New Guna.UI2.WinForms.Guna2Button()
+        Me.btn_cancel = New Guna.UI2.WinForms.Guna2Button()
+        Me.Guna2DragControl1 = New Guna.UI2.WinForms.Guna2DragControl(Me.components)
+        Me.title_panel = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
+        Me.Guna2ControlBox1 = New Guna.UI2.WinForms.Guna2ControlBox()
+        Me.lbl_title = New System.Windows.Forms.Label()
+        Me.Guna2ControlBox3 = New Guna.UI2.WinForms.Guna2ControlBox()
+        Me.Guna2DragControl2 = New Guna.UI2.WinForms.Guna2DragControl(Me.components)
+        Me.Guna2Elipse1 = New Guna.UI2.WinForms.Guna2Elipse(Me.components)
+        Me.Guna2CustomGradientPanel1 = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Guna2TextBoxPassword = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Guna2TextBoxID = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Guna2TextBoxUsername = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.TableLayoutPanel1.SuspendLayout()
-        Me.TableLayoutPanel3.SuspendLayout()
-        Me.Panel3.SuspendLayout()
-        Me.TableLayoutPanel4.SuspendLayout()
-        Me.Panel4.SuspendLayout()
-        Me.TableLayoutPanel5.SuspendLayout()
-        Me.Guna2Panel1.SuspendLayout()
-        Me.TableLayoutPanel2.SuspendLayout()
+        Me.Guna2CustomGradientPanel3 = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
+        Me.title_panel.SuspendLayout()
+        Me.Guna2CustomGradientPanel1.SuspendLayout()
+        CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Guna2CustomGradientPanel3.SuspendLayout()
         Me.SuspendLayout()
         '
-        'TableLayoutPanel1
+        'lbl_titlelogin
         '
-        Me.TableLayoutPanel1.ColumnCount = 2
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel3, 1, 1)
-        Me.TableLayoutPanel1.Controls.Add(Me.Guna2Panel1, 0, 0)
-        Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 0)
-        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
-        Me.TableLayoutPanel1.RowCount = 2
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(800, 450)
-        Me.TableLayoutPanel1.TabIndex = 0
+        Me.lbl_titlelogin.AutoSize = True
+        Me.lbl_titlelogin.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_titlelogin.Font = New System.Drawing.Font("Roboto", 19.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_titlelogin.Location = New System.Drawing.Point(222, 36)
+        Me.lbl_titlelogin.Name = "lbl_titlelogin"
+        Me.lbl_titlelogin.Size = New System.Drawing.Size(99, 39)
+        Me.lbl_titlelogin.TabIndex = 13
+        Me.lbl_titlelogin.Text = "Login"
         '
-        'TableLayoutPanel3
+        'lbl_show
         '
-        Me.TableLayoutPanel3.ColumnCount = 2
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel3.Controls.Add(Me.Panel3, 0, 1)
-        Me.TableLayoutPanel3.Controls.Add(Me.Panel4, 0, 2)
-        Me.TableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel3.Location = New System.Drawing.Point(403, 103)
-        Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
-        Me.TableLayoutPanel3.RowCount = 3
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.104651!))
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75.5814!))
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.02326!))
-        Me.TableLayoutPanel3.Size = New System.Drawing.Size(394, 344)
-        Me.TableLayoutPanel3.TabIndex = 1
+        Me.lbl_show.AutoSize = True
+        Me.lbl_show.BackColor = System.Drawing.Color.White
+        Me.lbl_show.Location = New System.Drawing.Point(330, 240)
+        Me.lbl_show.Name = "lbl_show"
+        Me.lbl_show.Size = New System.Drawing.Size(40, 16)
+        Me.lbl_show.TabIndex = 10
+        Me.lbl_show.Text = "Show"
         '
-        'Panel3
+        'lbl_hide
         '
-        Me.TableLayoutPanel3.SetColumnSpan(Me.Panel3, 2)
-        Me.Panel3.Controls.Add(Me.TableLayoutPanel4)
-        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel3.Location = New System.Drawing.Point(3, 24)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(388, 254)
-        Me.Panel3.TabIndex = 1
+        Me.lbl_hide.AutoSize = True
+        Me.lbl_hide.BackColor = System.Drawing.Color.White
+        Me.lbl_hide.Location = New System.Drawing.Point(333, 240)
+        Me.lbl_hide.Name = "lbl_hide"
+        Me.lbl_hide.Size = New System.Drawing.Size(36, 16)
+        Me.lbl_hide.TabIndex = 9
+        Me.lbl_hide.Text = "Hide"
         '
-        'TableLayoutPanel4
+        'lbl_forgotpass
         '
-        Me.TableLayoutPanel4.ColumnCount = 2
-        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 34.0!))
-        Me.TableLayoutPanel4.Controls.Add(Me.Guna2TextBoxPassword, 0, 5)
-        Me.TableLayoutPanel4.Controls.Add(Me.Guna2TextBoxUsername, 0, 1)
-        Me.TableLayoutPanel4.Controls.Add(Me.Label5, 0, 4)
-        Me.TableLayoutPanel4.Controls.Add(Me.Guna2TextBoxID, 0, 3)
-        Me.TableLayoutPanel4.Controls.Add(Me.Label4, 0, 2)
-        Me.TableLayoutPanel4.Controls.Add(Me.Label3, 0, 0)
-        Me.TableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel4.Location = New System.Drawing.Point(0, 0)
-        Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
-        Me.TableLayoutPanel4.RowCount = 7
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.37126!))
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.76647!))
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.96407!))
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.21622!))
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.83784!))
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667!))
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8.0!))
-        Me.TableLayoutPanel4.Size = New System.Drawing.Size(388, 254)
-        Me.TableLayoutPanel4.TabIndex = 0
+        Me.lbl_forgotpass.AutoSize = True
+        Me.lbl_forgotpass.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_forgotpass.Location = New System.Drawing.Point(282, 274)
+        Me.lbl_forgotpass.Name = "lbl_forgotpass"
+        Me.lbl_forgotpass.Size = New System.Drawing.Size(109, 16)
+        Me.lbl_forgotpass.TabIndex = 8
+        Me.lbl_forgotpass.Text = "Forgot Password"
         '
-        'Panel4
+        'lbl_verifiedid
         '
-        Me.TableLayoutPanel3.SetColumnSpan(Me.Panel4, 2)
-        Me.Panel4.Controls.Add(Me.TableLayoutPanel5)
-        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel4.Location = New System.Drawing.Point(3, 284)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(388, 57)
-        Me.Panel4.TabIndex = 2
+        Me.lbl_verifiedid.AutoSize = True
+        Me.lbl_verifiedid.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_verifiedid.Location = New System.Drawing.Point(141, 300)
+        Me.lbl_verifiedid.Name = "lbl_verifiedid"
+        Me.lbl_verifiedid.Size = New System.Drawing.Size(69, 16)
+        Me.lbl_verifiedid.TabIndex = 7
+        Me.lbl_verifiedid.Text = "Verified ID"
         '
-        'TableLayoutPanel5
+        'lbl_password
         '
-        Me.TableLayoutPanel5.ColumnCount = 3
-        Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 54.80226!))
-        Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45.19774!))
-        Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 33.0!))
-        Me.TableLayoutPanel5.Controls.Add(Me.Guna2Button2, 1, 0)
-        Me.TableLayoutPanel5.Controls.Add(Me.Guna2Button1, 0, 0)
-        Me.TableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel5.Location = New System.Drawing.Point(0, 0)
-        Me.TableLayoutPanel5.Name = "TableLayoutPanel5"
-        Me.TableLayoutPanel5.RowCount = 2
-        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 69.64286!))
-        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30.35714!))
-        Me.TableLayoutPanel5.Size = New System.Drawing.Size(388, 57)
-        Me.TableLayoutPanel5.TabIndex = 0
+        Me.lbl_password.AutoSize = True
+        Me.lbl_password.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_password.Location = New System.Drawing.Point(141, 202)
+        Me.lbl_password.Name = "lbl_password"
+        Me.lbl_password.Size = New System.Drawing.Size(67, 16)
+        Me.lbl_password.TabIndex = 6
+        Me.lbl_password.Text = "Password"
         '
-        'Guna2Button1
+        'lbl_username
         '
-        Me.Guna2Button1.BorderColor = System.Drawing.Color.Transparent
-        Me.Guna2Button1.BorderRadius = 5
-        Me.Guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.Guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.Guna2Button1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Guna2Button1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.Guna2Button1.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button1.Location = New System.Drawing.Point(3, 3)
-        Me.Guna2Button1.Name = "Guna2Button1"
-        Me.Guna2Button1.Size = New System.Drawing.Size(188, 33)
-        Me.Guna2Button1.TabIndex = 0
-        Me.Guna2Button1.Text = "Log In"
+        Me.lbl_username.AutoSize = True
+        Me.lbl_username.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_username.Location = New System.Drawing.Point(142, 115)
+        Me.lbl_username.Name = "lbl_username"
+        Me.lbl_username.Size = New System.Drawing.Size(70, 16)
+        Me.lbl_username.TabIndex = 5
+        Me.lbl_username.Text = "Username"
         '
-        'Guna2Button2
+        'txtBox_verifiedid
         '
-        Me.Guna2Button2.BorderColor = System.Drawing.Color.Transparent
-        Me.Guna2Button2.BorderRadius = 5
-        Me.Guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.Guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.Guna2Button2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Guna2Button2.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.Guna2Button2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.Guna2Button2.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button2.Location = New System.Drawing.Point(197, 3)
-        Me.Guna2Button2.Name = "Guna2Button2"
-        Me.Guna2Button2.Size = New System.Drawing.Size(154, 33)
-        Me.Guna2Button2.TabIndex = 1
-        Me.Guna2Button2.Text = "Cancel"
+        Me.txtBox_verifiedid.BackColor = System.Drawing.Color.Transparent
+        Me.txtBox_verifiedid.BorderColor = System.Drawing.Color.DarkGray
+        Me.txtBox_verifiedid.BorderRadius = 10
+        Me.txtBox_verifiedid.BorderThickness = 2
+        Me.txtBox_verifiedid.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtBox_verifiedid.DefaultText = ""
+        Me.txtBox_verifiedid.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtBox_verifiedid.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtBox_verifiedid.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtBox_verifiedid.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtBox_verifiedid.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtBox_verifiedid.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtBox_verifiedid.ForeColor = System.Drawing.Color.Black
+        Me.txtBox_verifiedid.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtBox_verifiedid.Location = New System.Drawing.Point(144, 320)
+        Me.txtBox_verifiedid.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtBox_verifiedid.Name = "txtBox_verifiedid"
+        Me.txtBox_verifiedid.PlaceholderForeColor = System.Drawing.Color.DarkGray
+        Me.txtBox_verifiedid.PlaceholderText = "Enter Verified ID"
+        Me.txtBox_verifiedid.SelectedText = ""
+        Me.txtBox_verifiedid.Size = New System.Drawing.Size(246, 48)
+        Me.txtBox_verifiedid.TabIndex = 4
         '
-        'Guna2Panel1
+        'txtBox_password
         '
-        Me.Guna2Panel1.BorderColor = System.Drawing.Color.Black
-        Me.Guna2Panel1.BorderRadius = 5
-        Me.Guna2Panel1.BorderThickness = 1
-        Me.TableLayoutPanel1.SetColumnSpan(Me.Guna2Panel1, 2)
-        Me.Guna2Panel1.Controls.Add(Me.TableLayoutPanel2)
-        Me.Guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Guna2Panel1.FillColor = System.Drawing.Color.Tan
-        Me.Guna2Panel1.Location = New System.Drawing.Point(3, 3)
-        Me.Guna2Panel1.Name = "Guna2Panel1"
-        Me.Guna2Panel1.Size = New System.Drawing.Size(794, 94)
-        Me.Guna2Panel1.TabIndex = 3
+        Me.txtBox_password.BackColor = System.Drawing.Color.Transparent
+        Me.txtBox_password.BorderColor = System.Drawing.Color.DarkGray
+        Me.txtBox_password.BorderRadius = 10
+        Me.txtBox_password.BorderThickness = 2
+        Me.txtBox_password.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtBox_password.DefaultText = ""
+        Me.txtBox_password.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtBox_password.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtBox_password.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtBox_password.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtBox_password.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtBox_password.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtBox_password.ForeColor = System.Drawing.Color.Black
+        Me.txtBox_password.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtBox_password.Location = New System.Drawing.Point(144, 222)
+        Me.txtBox_password.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtBox_password.Name = "txtBox_password"
+        Me.txtBox_password.PlaceholderForeColor = System.Drawing.Color.DarkGray
+        Me.txtBox_password.PlaceholderText = "Enter Password"
+        Me.txtBox_password.SelectedText = ""
+        Me.txtBox_password.Size = New System.Drawing.Size(246, 48)
+        Me.txtBox_password.TabIndex = 3
         '
-        'TableLayoutPanel2
+        'txtBox_username
         '
-        Me.TableLayoutPanel2.BackColor = System.Drawing.Color.Transparent
-        Me.TableLayoutPanel2.ColumnCount = 1
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel2.Controls.Add(Me.Label2, 0, 1)
-        Me.TableLayoutPanel2.Controls.Add(Me.Label1, 0, 0)
-        Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel2.Location = New System.Drawing.Point(0, 0)
-        Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
-        Me.TableLayoutPanel2.RowCount = 2
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel2.Size = New System.Drawing.Size(794, 94)
-        Me.TableLayoutPanel2.TabIndex = 0
+        Me.txtBox_username.BackColor = System.Drawing.Color.Transparent
+        Me.txtBox_username.BorderColor = System.Drawing.Color.DarkGray
+        Me.txtBox_username.BorderRadius = 10
+        Me.txtBox_username.BorderThickness = 2
+        Me.txtBox_username.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtBox_username.DefaultText = ""
+        Me.txtBox_username.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtBox_username.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtBox_username.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtBox_username.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtBox_username.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtBox_username.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtBox_username.ForeColor = System.Drawing.Color.Black
+        Me.txtBox_username.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtBox_username.Location = New System.Drawing.Point(145, 135)
+        Me.txtBox_username.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtBox_username.Name = "txtBox_username"
+        Me.txtBox_username.PlaceholderForeColor = System.Drawing.Color.DarkGray
+        Me.txtBox_username.PlaceholderText = "Enter Username"
+        Me.txtBox_username.SelectedText = ""
+        Me.txtBox_username.Size = New System.Drawing.Size(246, 48)
+        Me.txtBox_username.TabIndex = 2
+        '
+        'btn_login
+        '
+        Me.btn_login.BorderRadius = 10
+        Me.btn_login.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btn_login.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btn_login.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btn_login.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btn_login.FillColor = System.Drawing.Color.Tan
+        Me.btn_login.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btn_login.ForeColor = System.Drawing.Color.Black
+        Me.btn_login.Location = New System.Drawing.Point(58, 424)
+        Me.btn_login.Name = "btn_login"
+        Me.btn_login.Size = New System.Drawing.Size(180, 45)
+        Me.btn_login.TabIndex = 1
+        Me.btn_login.Text = "Confirm"
+        '
+        'btn_cancel
+        '
+        Me.btn_cancel.BorderColor = System.Drawing.Color.DimGray
+        Me.btn_cancel.BorderRadius = 10
+        Me.btn_cancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btn_cancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btn_cancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btn_cancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btn_cancel.FillColor = System.Drawing.Color.FromArgb(CType(CType(207, Byte), Integer), CType(CType(207, Byte), Integer), CType(CType(207, Byte), Integer))
+        Me.btn_cancel.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btn_cancel.ForeColor = System.Drawing.Color.Black
+        Me.btn_cancel.Location = New System.Drawing.Point(298, 424)
+        Me.btn_cancel.Name = "btn_cancel"
+        Me.btn_cancel.Size = New System.Drawing.Size(180, 45)
+        Me.btn_cancel.TabIndex = 0
+        Me.btn_cancel.Text = "Cancel"
+        '
+        'Guna2DragControl1
+        '
+        Me.Guna2DragControl1.DockIndicatorTransparencyValue = 0.6R
+        Me.Guna2DragControl1.TargetControl = Me.title_panel
+        Me.Guna2DragControl1.TransparentWhileDrag = False
+        '
+        'title_panel
+        '
+        Me.title_panel.Controls.Add(Me.Guna2ControlBox1)
+        Me.title_panel.Controls.Add(Me.lbl_title)
+        Me.title_panel.Controls.Add(Me.Guna2ControlBox3)
+        Me.title_panel.Dock = System.Windows.Forms.DockStyle.Top
+        Me.title_panel.FillColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(156, Byte), Integer))
+        Me.title_panel.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(164, Byte), Integer), CType(CType(120, Byte), Integer), CType(CType(84, Byte), Integer))
+        Me.title_panel.FillColor3 = System.Drawing.Color.FromArgb(CType(CType(154, Byte), Integer), CType(CType(111, Byte), Integer), CType(CType(74, Byte), Integer))
+        Me.title_panel.FillColor4 = System.Drawing.Color.FromArgb(CType(CType(139, Byte), Integer), CType(CType(103, Byte), Integer), CType(CType(67, Byte), Integer))
+        Me.title_panel.Location = New System.Drawing.Point(0, 0)
+        Me.title_panel.Name = "title_panel"
+        Me.title_panel.Size = New System.Drawing.Size(1067, 56)
+        Me.title_panel.TabIndex = 1
+        '
+        'Guna2ControlBox1
+        '
+        Me.Guna2ControlBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Guna2ControlBox1.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2ControlBox1.ControlBoxStyle = Guna.UI2.WinForms.Enums.ControlBoxStyle.Custom
+        Me.Guna2ControlBox1.CustomIconSize = 13.0!
+        Me.Guna2ControlBox1.FillColor = System.Drawing.Color.Transparent
+        Me.Guna2ControlBox1.ForeColor = System.Drawing.Color.Black
+        Me.Guna2ControlBox1.IconColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(232, Byte), Integer))
+        Me.Guna2ControlBox1.Location = New System.Drawing.Point(1016, -4)
+        Me.Guna2ControlBox1.Name = "Guna2ControlBox1"
+        Me.Guna2ControlBox1.Size = New System.Drawing.Size(52, 59)
+        Me.Guna2ControlBox1.TabIndex = 13
+        '
+        'lbl_title
+        '
+        Me.lbl_title.AutoSize = True
+        Me.lbl_title.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_title.Font = New System.Drawing.Font("Roboto", 19.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_title.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(232, Byte), Integer))
+        Me.lbl_title.Location = New System.Drawing.Point(435, 9)
+        Me.lbl_title.Name = "lbl_title"
+        Me.lbl_title.Size = New System.Drawing.Size(235, 117)
+        Me.lbl_title.TabIndex = 12
+        Me.lbl_title.Text = "Library System" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Hello"
+        '
+        'Guna2ControlBox3
+        '
+        Me.Guna2ControlBox3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Guna2ControlBox3.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2ControlBox3.BorderColor = System.Drawing.Color.Brown
+        Me.Guna2ControlBox3.ControlBoxStyle = Guna.UI2.WinForms.Enums.ControlBoxStyle.Custom
+        Me.Guna2ControlBox3.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox
+        Me.Guna2ControlBox3.CustomIconSize = 20.0!
+        Me.Guna2ControlBox3.FillColor = System.Drawing.Color.Transparent
+        Me.Guna2ControlBox3.ForeColor = System.Drawing.Color.Brown
+        Me.Guna2ControlBox3.IconColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(232, Byte), Integer))
+        Me.Guna2ControlBox3.Location = New System.Drawing.Point(954, -22)
+        Me.Guna2ControlBox3.Name = "Guna2ControlBox3"
+        Me.Guna2ControlBox3.Size = New System.Drawing.Size(75, 78)
+        Me.Guna2ControlBox3.TabIndex = 15
+        '
+        'Guna2DragControl2
+        '
+        Me.Guna2DragControl2.DockIndicatorTransparencyValue = 0.6R
+        Me.Guna2DragControl2.TargetControl = Me.lbl_title
+        Me.Guna2DragControl2.TransparentWhileDrag = False
+        '
+        'Guna2Elipse1
+        '
+        Me.Guna2Elipse1.BorderRadius = 30
+        Me.Guna2Elipse1.TargetControl = Me
+        '
+        'Guna2CustomGradientPanel1
+        '
+        Me.Guna2CustomGradientPanel1.Controls.Add(Me.Label1)
+        Me.Guna2CustomGradientPanel1.Controls.Add(Me.Guna2PictureBox1)
+        Me.Guna2CustomGradientPanel1.Controls.Add(Me.Label2)
+        Me.Guna2CustomGradientPanel1.FillColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(232, Byte), Integer))
+        Me.Guna2CustomGradientPanel1.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(216, Byte), Integer))
+        Me.Guna2CustomGradientPanel1.FillColor3 = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Guna2CustomGradientPanel1.FillColor4 = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(195, Byte), Integer), CType(CType(165, Byte), Integer))
+        Me.Guna2CustomGradientPanel1.Location = New System.Drawing.Point(0, 0)
+        Me.Guna2CustomGradientPanel1.Name = "Guna2CustomGradientPanel1"
+        Me.Guna2CustomGradientPanel1.Size = New System.Drawing.Size(549, 556)
+        Me.Guna2CustomGradientPanel1.TabIndex = 0
         '
         'Label1
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(3, 0)
+        Me.Label1.ForeColor = System.Drawing.Color.DimGray
+        Me.Label1.Location = New System.Drawing.Point(-3, 274)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(788, 47)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Library System"
+        Me.Label1.Size = New System.Drawing.Size(546, 200)
+        Me.Label1.TabIndex = 12
+        Me.Label1.Text = resources.GetString("Label1.Text")
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Guna2PictureBox1
+        '
+        Me.Guna2PictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.Guna2PictureBox1.FillColor = System.Drawing.Color.Transparent
+        Me.Guna2PictureBox1.Image = CType(resources.GetObject("Guna2PictureBox1.Image"), System.Drawing.Image)
+        Me.Guna2PictureBox1.ImageLocation = "C:\Users\ASUS\Source\Repos\OOP-Library-System\Resources\Ucc Logo NoBG.png"
+        Me.Guna2PictureBox1.ImageRotate = 0!
+        Me.Guna2PictureBox1.Location = New System.Drawing.Point(168, 40)
+        Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
+        Me.Guna2PictureBox1.Size = New System.Drawing.Size(211, 137)
+        Me.Guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.Guna2PictureBox1.TabIndex = 11
+        Me.Guna2PictureBox1.TabStop = False
+        Me.Guna2PictureBox1.UseTransparentBackground = True
         '
         'Label2
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label2.Font = New System.Drawing.Font("MingLiU-ExtB", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(3, 47)
+        Me.Label2.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 19.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.DimGray
+        Me.Label2.Location = New System.Drawing.Point(0, 136)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(788, 47)
-        Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Login"
+        Me.Label2.Size = New System.Drawing.Size(533, 88)
+        Me.Label2.TabIndex = 13
+        Me.Label2.Text = "Welcome To Library Management System"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Guna2TextBoxPassword
+        'Guna2CustomGradientPanel3
         '
-        Me.Guna2TextBoxPassword.BorderColor = System.Drawing.Color.Black
-        Me.Guna2TextBoxPassword.BorderRadius = 5
-        Me.Guna2TextBoxPassword.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.Guna2TextBoxPassword.DefaultText = ""
-        Me.Guna2TextBoxPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.Guna2TextBoxPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.Guna2TextBoxPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBoxPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBoxPassword.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Guna2TextBoxPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2TextBoxPassword.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2TextBoxPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2TextBoxPassword.Location = New System.Drawing.Point(4, 206)
-        Me.Guna2TextBoxPassword.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.Guna2TextBoxPassword.Name = "Guna2TextBoxPassword"
-        Me.Guna2TextBoxPassword.PlaceholderText = ""
-        Me.Guna2TextBoxPassword.SelectedText = ""
-        Me.Guna2TextBoxPassword.Size = New System.Drawing.Size(346, 33)
-        Me.Guna2TextBoxPassword.TabIndex = 6
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(3, 159)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(348, 43)
-        Me.Label5.TabIndex = 4
-        Me.Label5.Text = "Verified ID:"
-        Me.Label5.TextAlign = System.Drawing.ContentAlignment.BottomLeft
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(3, 76)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(348, 44)
-        Me.Label4.TabIndex = 2
-        Me.Label4.Text = "Password:"
-        Me.Label4.TextAlign = System.Drawing.ContentAlignment.BottomLeft
-        '
-        'Guna2TextBoxID
-        '
-        Me.Guna2TextBoxID.BorderColor = System.Drawing.Color.Black
-        Me.Guna2TextBoxID.BorderRadius = 5
-        Me.Guna2TextBoxID.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.Guna2TextBoxID.DefaultText = ""
-        Me.Guna2TextBoxID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.Guna2TextBoxID.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.Guna2TextBoxID.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBoxID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBoxID.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Guna2TextBoxID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2TextBoxID.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2TextBoxID.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2TextBoxID.Location = New System.Drawing.Point(4, 124)
-        Me.Guna2TextBoxID.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.Guna2TextBoxID.Name = "Guna2TextBoxID"
-        Me.Guna2TextBoxID.PlaceholderText = ""
-        Me.Guna2TextBoxID.SelectedText = ""
-        Me.Guna2TextBoxID.Size = New System.Drawing.Size(346, 31)
-        Me.Guna2TextBoxID.TabIndex = 5
-        '
-        'Guna2TextBoxUsername
-        '
-        Me.Guna2TextBoxUsername.BorderColor = System.Drawing.Color.Black
-        Me.Guna2TextBoxUsername.BorderRadius = 5
-        Me.Guna2TextBoxUsername.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.Guna2TextBoxUsername.DefaultText = ""
-        Me.Guna2TextBoxUsername.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.Guna2TextBoxUsername.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.Guna2TextBoxUsername.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBoxUsername.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBoxUsername.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Guna2TextBoxUsername.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2TextBoxUsername.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2TextBoxUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2TextBoxUsername.Location = New System.Drawing.Point(4, 39)
-        Me.Guna2TextBoxUsername.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.Guna2TextBoxUsername.Name = "Guna2TextBoxUsername"
-        Me.Guna2TextBoxUsername.PlaceholderText = ""
-        Me.Guna2TextBoxUsername.SelectedText = ""
-        Me.Guna2TextBoxUsername.Size = New System.Drawing.Size(346, 33)
-        Me.Guna2TextBoxUsername.TabIndex = 7
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(3, 0)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(348, 35)
-        Me.Label3.TabIndex = 0
-        Me.Label3.Text = "Username:"
-        Me.Label3.TextAlign = System.Drawing.ContentAlignment.BottomLeft
+        Me.Guna2CustomGradientPanel3.Controls.Add(Me.lbl_show)
+        Me.Guna2CustomGradientPanel3.Controls.Add(Me.lbl_hide)
+        Me.Guna2CustomGradientPanel3.Controls.Add(Me.lbl_titlelogin)
+        Me.Guna2CustomGradientPanel3.Controls.Add(Me.txtBox_verifiedid)
+        Me.Guna2CustomGradientPanel3.Controls.Add(Me.txtBox_password)
+        Me.Guna2CustomGradientPanel3.Controls.Add(Me.txtBox_username)
+        Me.Guna2CustomGradientPanel3.Controls.Add(Me.btn_login)
+        Me.Guna2CustomGradientPanel3.Controls.Add(Me.lbl_forgotpass)
+        Me.Guna2CustomGradientPanel3.Controls.Add(Me.lbl_username)
+        Me.Guna2CustomGradientPanel3.Controls.Add(Me.lbl_verifiedid)
+        Me.Guna2CustomGradientPanel3.Controls.Add(Me.btn_cancel)
+        Me.Guna2CustomGradientPanel3.Controls.Add(Me.lbl_password)
+        Me.Guna2CustomGradientPanel3.FillColor = System.Drawing.Color.FloralWhite
+        Me.Guna2CustomGradientPanel3.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(240, Byte), Integer))
+        Me.Guna2CustomGradientPanel3.FillColor3 = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(232, Byte), Integer))
+        Me.Guna2CustomGradientPanel3.FillColor4 = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.Guna2CustomGradientPanel3.Location = New System.Drawing.Point(542, 51)
+        Me.Guna2CustomGradientPanel3.Name = "Guna2CustomGradientPanel3"
+        Me.Guna2CustomGradientPanel3.Size = New System.Drawing.Size(525, 505)
+        Me.Guna2CustomGradientPanel3.TabIndex = 1
         '
         'Login_Panel_Librarian_Admin_
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.TableLayoutPanel1)
+        Me.ClientSize = New System.Drawing.Size(1067, 554)
+        Me.Controls.Add(Me.title_panel)
+        Me.Controls.Add(Me.Guna2CustomGradientPanel3)
+        Me.Controls.Add(Me.Guna2CustomGradientPanel1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Margin = New System.Windows.Forms.Padding(4)
+        Me.MaximumSize = New System.Drawing.Size(1067, 554)
         Me.Name = "Login_Panel_Librarian_Admin_"
         Me.Text = "Login"
-        Me.TableLayoutPanel1.ResumeLayout(False)
-        Me.TableLayoutPanel3.ResumeLayout(False)
-        Me.Panel3.ResumeLayout(False)
-        Me.TableLayoutPanel4.ResumeLayout(False)
-        Me.TableLayoutPanel4.PerformLayout()
-        Me.Panel4.ResumeLayout(False)
-        Me.TableLayoutPanel5.ResumeLayout(False)
-        Me.Guna2Panel1.ResumeLayout(False)
-        Me.TableLayoutPanel2.ResumeLayout(False)
-        Me.TableLayoutPanel2.PerformLayout()
+        Me.title_panel.ResumeLayout(False)
+        Me.title_panel.PerformLayout()
+        Me.Guna2CustomGradientPanel1.ResumeLayout(False)
+        CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Guna2CustomGradientPanel3.ResumeLayout(False)
+        Me.Guna2CustomGradientPanel3.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
-
-    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
-    Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
-    Friend WithEvents Panel3 As Panel
-    Friend WithEvents TableLayoutPanel4 As TableLayoutPanel
-    Friend WithEvents Panel4 As Panel
-    Friend WithEvents TableLayoutPanel5 As TableLayoutPanel
-    Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
+    Friend WithEvents btn_cancel As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btn_login As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents txtBox_verifiedid As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents txtBox_password As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents lbl_verifiedid As Label
+    Friend WithEvents lbl_password As Label
+    Friend WithEvents lbl_username As Label
+    Friend WithEvents lbl_forgotpass As Label
+    Friend WithEvents lbl_hide As Label
+    Friend WithEvents lbl_show As Label
+    Friend WithEvents txtBox_username As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents lbl_titlelogin As Label
+    Friend WithEvents Guna2DragControl1 As Guna.UI2.WinForms.Guna2DragControl
+    Friend WithEvents Guna2DragControl2 As Guna.UI2.WinForms.Guna2DragControl
+    Friend WithEvents Guna2Elipse1 As Guna.UI2.WinForms.Guna2Elipse
+    Friend WithEvents Guna2CustomGradientPanel1 As Guna.UI2.WinForms.Guna2CustomGradientPanel
+    Friend WithEvents title_panel As Guna.UI2.WinForms.Guna2CustomGradientPanel
+    Friend WithEvents lbl_title As Label
+    Friend WithEvents Guna2CustomGradientPanel3 As Guna.UI2.WinForms.Guna2CustomGradientPanel
+    Friend WithEvents Guna2ControlBox1 As Guna.UI2.WinForms.Guna2ControlBox
+    Friend WithEvents Guna2ControlBox3 As Guna.UI2.WinForms.Guna2ControlBox
+    Friend WithEvents Guna2PictureBox1 As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents Guna2TextBoxUsername As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Guna2TextBoxID As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label5 As Label
-    Friend WithEvents Guna2TextBoxPassword As Guna.UI2.WinForms.Guna2TextBox
 End Class
