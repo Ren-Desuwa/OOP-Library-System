@@ -79,6 +79,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\Panels\BookInfo.Designer.vb">
+      <DependentUpon>BookInfo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Panels\BookInfo.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="LibraryCore\Classes\Account.vb" />
     <Compile Include="LibraryCore\Classes\Announcement.vb" />
     <Compile Include="LibraryCore\Classes\Book.vb" />
@@ -132,6 +138,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Forms\Panels\BookInfo.resx">
+      <DependentUpon>BookInfo.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Panels\Books_Panel(Librarian-Admin).resx">
       <DependentUpon>Books_Panel(Librarian-Admin).vb</DependentUpon>
     </EmbeddedResource>
