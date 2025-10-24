@@ -142,6 +142,16 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="BookCart.Designer.vb">
+      <DependentUpon>BookCart.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BookCart.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewCart.Designer.vb">
+      <DependentUpon>ViewCart.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ViewCart.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Forms\Panels\Books_Panel(Librarian-Admin).resx">
@@ -161,6 +171,12 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BookCart.resx">
+      <DependentUpon>BookCart.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewCart.resx">
+      <DependentUpon>ViewCart.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -199,6 +215,7 @@
     <Content Include="LibraryCore\Assets\Bookcover\the_plot.jpg" />
     <Content Include="LibraryCore\Assets\Bookcover\the_woman_in_the_window.jpg" />
     <Content Include="LibraryCore\Assets\Bookcover\to_kill_a_mockingbird.jpg" />
+    <None Include="Resources\luffy.jpg" />
     <None Include="Resources\Ucc Logo NoBG2.png" />
     <None Include="Resources\Ucc Logo NoBG1.png" />
     <None Include="Resources\Hide_icon.png" />
