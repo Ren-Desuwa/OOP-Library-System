@@ -91,6 +91,18 @@
     <Compile Include="Forms\Panels\CreateBook.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\Panels\EditBook.Designer.vb">
+      <DependentUpon>EditBook.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Panels\EditBook.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Panels\Home_Panel%28Admin%29.Designer.vb">
+      <DependentUpon>Home_Panel%28Admin%29.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Panels\Home_Panel%28Admin%29.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="LibraryCore\Classes\Account.vb" />
     <Compile Include="LibraryCore\Classes\Announcement.vb" />
     <Compile Include="LibraryCore\Classes\Book.vb" />
@@ -104,10 +116,6 @@
     <Compile Include="Forms\Panels\Books_Panel(Librarian-Admin).vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Panels\Home_Panel(Admin).Designer.vb">
-      <DependentUpon>Home_Panel(Admin).vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Panels\Home_Panel(Admin).vb" />
     <Compile Include="Forms\Panels\Home_Panel(Librarian).Designer.vb">
       <DependentUpon>Home_Panel(Librarian).vb</DependentUpon>
     </Compile>
@@ -144,11 +152,20 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Forms\Panels\BookInfo.resx">
+      <DependentUpon>BookInfo.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Panels\Books_Panel(Librarian-Admin).resx">
       <DependentUpon>Books_Panel(Librarian-Admin).vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Panels\CreateBook.resx">
       <DependentUpon>CreateBook.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Panels\EditBook.resx">
+      <DependentUpon>EditBook.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Panels\Home_Panel%28Admin%29.resx">
+      <DependentUpon>Home_Panel%28Admin%29.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Panels\Home_Panel%28Librarian%29.resx">
       <DependentUpon>Home_Panel%28Librarian%29.vb</DependentUpon>

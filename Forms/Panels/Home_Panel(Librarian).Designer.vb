@@ -24,9 +24,7 @@ Partial Class Home_Panel_Librarian_
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.title_panel = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
-        Me.btn_profile = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Guna2ControlBox2 = New Guna.UI2.WinForms.Guna2ControlBox()
-        Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Guna2ControlBox1 = New Guna.UI2.WinForms.Guna2ControlBox()
         Me.Guna2ControlBox3 = New Guna.UI2.WinForms.Guna2ControlBox()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
@@ -35,17 +33,17 @@ Partial Class Home_Panel_Librarian_
         Me.Guna2DragControl1 = New Guna.UI2.WinForms.Guna2DragControl(Me.components)
         Me.Guna2DragControl2 = New Guna.UI2.WinForms.Guna2DragControl(Me.components)
         Me.Guna2CustomGradientPanel3 = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
-        Me.btn_Logs = New Guna.UI2.WinForms.Guna2Button()
         Me.btn_User = New Guna.UI2.WinForms.Guna2Button()
-        Me.btn_Librarian = New Guna.UI2.WinForms.Guna2Button()
         Me.btn_Books = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2CustomGradientPanel1 = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
         Me.Guna2DragControl3 = New Guna.UI2.WinForms.Guna2DragControl(Me.components)
+        Me.btn_profile = New Guna.UI2.WinForms.Guna2PictureBox()
+        Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.title_panel.SuspendLayout()
-        CType(Me.btn_profile, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.Guna2CustomGradientPanel3.SuspendLayout()
+        CType(Me.btn_profile, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'title_panel
@@ -67,23 +65,6 @@ Partial Class Home_Panel_Librarian_
         Me.title_panel.Size = New System.Drawing.Size(1072, 64)
         Me.title_panel.TabIndex = 2
         '
-        'btn_profile
-        '
-        Me.btn_profile.BackColor = System.Drawing.Color.Transparent
-        Me.btn_profile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.btn_profile.ErrorImage = Nothing
-        Me.btn_profile.FillColor = System.Drawing.Color.Transparent
-        Me.btn_profile.Image = Global.OOP_Library_System.My.Resources.Resources.Accountwhite0_icon
-        Me.btn_profile.ImageLocation = ""
-        Me.btn_profile.ImageRotate = 0!
-        Me.btn_profile.Location = New System.Drawing.Point(96, 13)
-        Me.btn_profile.Name = "btn_profile"
-        Me.btn_profile.Size = New System.Drawing.Size(72, 40)
-        Me.btn_profile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btn_profile.TabIndex = 18
-        Me.btn_profile.TabStop = False
-        Me.btn_profile.UseTransparentBackground = True
-        '
         'Guna2ControlBox2
         '
         Me.Guna2ControlBox2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -99,23 +80,6 @@ Partial Class Home_Panel_Librarian_
         Me.Guna2ControlBox2.Name = "Guna2ControlBox2"
         Me.Guna2ControlBox2.Size = New System.Drawing.Size(56, 80)
         Me.Guna2ControlBox2.TabIndex = 16
-        '
-        'Guna2PictureBox1
-        '
-        Me.Guna2PictureBox1.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.Guna2PictureBox1.ErrorImage = Nothing
-        Me.Guna2PictureBox1.FillColor = System.Drawing.Color.Transparent
-        Me.Guna2PictureBox1.Image = Global.OOP_Library_System.My.Resources.Resources.Ucc_Logo_NoBG1
-        Me.Guna2PictureBox1.ImageLocation = ""
-        Me.Guna2PictureBox1.ImageRotate = 0!
-        Me.Guna2PictureBox1.Location = New System.Drawing.Point(-16, 0)
-        Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
-        Me.Guna2PictureBox1.Size = New System.Drawing.Size(144, 88)
-        Me.Guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.Guna2PictureBox1.TabIndex = 11
-        Me.Guna2PictureBox1.TabStop = False
-        Me.Guna2PictureBox1.UseTransparentBackground = True
         '
         'Guna2ControlBox1
         '
@@ -202,9 +166,7 @@ Partial Class Home_Panel_Librarian_
         '
         Me.Guna2CustomGradientPanel3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Guna2CustomGradientPanel3.Controls.Add(Me.btn_Logs)
         Me.Guna2CustomGradientPanel3.Controls.Add(Me.btn_User)
-        Me.Guna2CustomGradientPanel3.Controls.Add(Me.btn_Librarian)
         Me.Guna2CustomGradientPanel3.Controls.Add(Me.btn_Books)
         Me.Guna2CustomGradientPanel3.FillColor = System.Drawing.Color.FloralWhite
         Me.Guna2CustomGradientPanel3.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(240, Byte), Integer))
@@ -214,22 +176,6 @@ Partial Class Home_Panel_Librarian_
         Me.Guna2CustomGradientPanel3.Name = "Guna2CustomGradientPanel3"
         Me.Guna2CustomGradientPanel3.Size = New System.Drawing.Size(275, 512)
         Me.Guna2CustomGradientPanel3.TabIndex = 4
-        '
-        'btn_Logs
-        '
-        Me.btn_Logs.BorderRadius = 10
-        Me.btn_Logs.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btn_Logs.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btn_Logs.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btn_Logs.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btn_Logs.FillColor = System.Drawing.Color.Tan
-        Me.btn_Logs.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.btn_Logs.ForeColor = System.Drawing.Color.Black
-        Me.btn_Logs.Location = New System.Drawing.Point(56, 264)
-        Me.btn_Logs.Name = "btn_Logs"
-        Me.btn_Logs.Size = New System.Drawing.Size(180, 45)
-        Me.btn_Logs.TabIndex = 21
-        Me.btn_Logs.Text = "Logs"
         '
         'btn_User
         '
@@ -246,22 +192,6 @@ Partial Class Home_Panel_Librarian_
         Me.btn_User.Size = New System.Drawing.Size(180, 45)
         Me.btn_User.TabIndex = 20
         Me.btn_User.Text = "User"
-        '
-        'btn_Librarian
-        '
-        Me.btn_Librarian.BorderRadius = 10
-        Me.btn_Librarian.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btn_Librarian.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btn_Librarian.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btn_Librarian.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btn_Librarian.FillColor = System.Drawing.Color.Tan
-        Me.btn_Librarian.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.btn_Librarian.ForeColor = System.Drawing.Color.Black
-        Me.btn_Librarian.Location = New System.Drawing.Point(56, 192)
-        Me.btn_Librarian.Name = "btn_Librarian"
-        Me.btn_Librarian.Size = New System.Drawing.Size(180, 45)
-        Me.btn_Librarian.TabIndex = 19
-        Me.btn_Librarian.Text = "Librarian"
         '
         'btn_Books
         '
@@ -299,6 +229,40 @@ Partial Class Home_Panel_Librarian_
         Me.Guna2DragControl3.TargetControl = Me.Guna2PictureBox1
         Me.Guna2DragControl3.TransparentWhileDrag = False
         '
+        'btn_profile
+        '
+        Me.btn_profile.BackColor = System.Drawing.Color.Transparent
+        Me.btn_profile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btn_profile.ErrorImage = Nothing
+        Me.btn_profile.FillColor = System.Drawing.Color.Transparent
+        Me.btn_profile.Image = Global.OOP_Library_System.My.Resources.Resources.Accountwhite0_icon
+        Me.btn_profile.ImageLocation = ""
+        Me.btn_profile.ImageRotate = 0!
+        Me.btn_profile.Location = New System.Drawing.Point(96, 13)
+        Me.btn_profile.Name = "btn_profile"
+        Me.btn_profile.Size = New System.Drawing.Size(72, 40)
+        Me.btn_profile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btn_profile.TabIndex = 18
+        Me.btn_profile.TabStop = False
+        Me.btn_profile.UseTransparentBackground = True
+        '
+        'Guna2PictureBox1
+        '
+        Me.Guna2PictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.Guna2PictureBox1.ErrorImage = Nothing
+        Me.Guna2PictureBox1.FillColor = System.Drawing.Color.Transparent
+        Me.Guna2PictureBox1.Image = Global.OOP_Library_System.My.Resources.Resources.Ucc_Logo_NoBG1
+        Me.Guna2PictureBox1.ImageLocation = ""
+        Me.Guna2PictureBox1.ImageRotate = 0!
+        Me.Guna2PictureBox1.Location = New System.Drawing.Point(-16, 0)
+        Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
+        Me.Guna2PictureBox1.Size = New System.Drawing.Size(144, 88)
+        Me.Guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.Guna2PictureBox1.TabIndex = 11
+        Me.Guna2PictureBox1.TabStop = False
+        Me.Guna2PictureBox1.UseTransparentBackground = True
+        '
         'Home_Panel_Librarian_
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -311,11 +275,11 @@ Partial Class Home_Panel_Librarian_
         Me.Name = "Home_Panel_Librarian_"
         Me.Text = "Home_Panel_Librarian_"
         Me.title_panel.ResumeLayout(False)
-        CType(Me.btn_profile, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TableLayoutPanel1.PerformLayout()
         Me.Guna2CustomGradientPanel3.ResumeLayout(False)
+        CType(Me.btn_profile, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -334,8 +298,6 @@ Partial Class Home_Panel_Librarian_
     Friend WithEvents Guna2CustomGradientPanel1 As Guna.UI2.WinForms.Guna2CustomGradientPanel
     Friend WithEvents Guna2DragControl3 As Guna.UI2.WinForms.Guna2DragControl
     Friend WithEvents btn_User As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents btn_Librarian As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btn_Books As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btn_profile As Guna.UI2.WinForms.Guna2PictureBox
-    Friend WithEvents btn_Logs As Guna.UI2.WinForms.Guna2Button
 End Class
