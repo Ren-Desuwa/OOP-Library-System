@@ -69,6 +69,7 @@ Partial Class Login_Panel_Librarian_Admin_
         '
         Me.lbl_show.AutoSize = True
         Me.lbl_show.BackColor = System.Drawing.Color.White
+        Me.lbl_show.Image = CType(resources.GetObject("lbl_show.Image"), System.Drawing.Image)
         Me.lbl_show.Location = New System.Drawing.Point(330, 240)
         Me.lbl_show.Name = "lbl_show"
         Me.lbl_show.Size = New System.Drawing.Size(40, 16)
@@ -276,9 +277,9 @@ Partial Class Login_Panel_Librarian_Admin_
         Me.lbl_title.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(232, Byte), Integer))
         Me.lbl_title.Location = New System.Drawing.Point(435, 9)
         Me.lbl_title.Name = "lbl_title"
-        Me.lbl_title.Size = New System.Drawing.Size(235, 117)
+        Me.lbl_title.Size = New System.Drawing.Size(235, 39)
         Me.lbl_title.TabIndex = 12
-        Me.lbl_title.Text = "Library System" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Hello"
+        Me.lbl_title.Text = "Library System"
         '
         'Guna2ControlBox3
         '
@@ -339,10 +340,10 @@ Partial Class Login_Panel_Librarian_Admin_
         Me.Guna2PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.Guna2PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.Guna2PictureBox1.FillColor = System.Drawing.Color.Transparent
-        Me.Guna2PictureBox1.Image = CType(resources.GetObject("Guna2PictureBox1.Image"), System.Drawing.Image)
-        Me.Guna2PictureBox1.ImageLocation = "C:\Users\ASUS\Source\Repos\OOP-Library-System\Resources\Ucc Logo NoBG.png"
+        Me.Guna2PictureBox1.Image = Global.OOP_Library_System.My.Resources.Resources.Ucc_Logo_NoBG2
+        Me.Guna2PictureBox1.ImageLocation = ""
         Me.Guna2PictureBox1.ImageRotate = 0!
-        Me.Guna2PictureBox1.Location = New System.Drawing.Point(168, 40)
+        Me.Guna2PictureBox1.Location = New System.Drawing.Point(152, 56)
         Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
         Me.Guna2PictureBox1.Size = New System.Drawing.Size(211, 137)
         Me.Guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
