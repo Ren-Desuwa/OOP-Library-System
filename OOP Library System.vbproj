@@ -85,6 +85,12 @@
     <Compile Include="Forms\Panels\BookInfo.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\Panels\CreateBook.Designer.vb">
+      <DependentUpon>CreateBook.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Panels\CreateBook.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="LibraryCore\Classes\Account.vb" />
     <Compile Include="LibraryCore\Classes\Announcement.vb" />
     <Compile Include="LibraryCore\Classes\Book.vb" />
