@@ -143,9 +143,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -184,9 +184,13 @@
     <Content Include="LibraryCore\Assets\Bookcover\the_plot.jpg" />
     <Content Include="LibraryCore\Assets\Bookcover\the_woman_in_the_window.jpg" />
     <Content Include="LibraryCore\Assets\Bookcover\to_kill_a_mockingbird.jpg" />
-    <Content Include="Resources\Ucc Logo NoBG.png" />
+    <None Include="Resources\Ucc Logo NoBG2.png" />
     <None Include="Resources\Ucc Logo NoBG1.png" />
-    <None Include="Resources\ucc logo3.png" />
+    <None Include="Resources\Hide_icon.png" />
+    <None Include="Resources\Show_icon.png" />
+    <None Include="Resources\Ucc Logo NoBG3.png" />
+    <None Include="Resources\Ucc Logo NoBG.png" />
+    <None Include="Resources\Accountwhite0_icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
