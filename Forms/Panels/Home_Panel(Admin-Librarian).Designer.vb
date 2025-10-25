@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Home_Panel_Admin_
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
+Partial Class Home_Panel_Librarian_Admin_
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Home_Panel_Admin_
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.title_panel = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
@@ -41,6 +41,7 @@ Partial Class Home_Panel_Admin_
         Me.Guna2DragControl1 = New Guna.UI2.WinForms.Guna2DragControl(Me.components)
         Me.Guna2DragControl2 = New Guna.UI2.WinForms.Guna2DragControl(Me.components)
         Me.Guna2DragControl3 = New Guna.UI2.WinForms.Guna2DragControl(Me.components)
+        Me.btn_logout = New Guna.UI2.WinForms.Guna2Button()
         Me.title_panel.SuspendLayout()
         CType(Me.btn_profile, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -185,6 +186,7 @@ Partial Class Home_Panel_Admin_
         '
         Me.Guna2CustomGradientPanel3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Guna2CustomGradientPanel3.Controls.Add(Me.btn_logout)
         Me.Guna2CustomGradientPanel3.Controls.Add(Me.btn_Logs)
         Me.Guna2CustomGradientPanel3.Controls.Add(Me.btn_User)
         Me.Guna2CustomGradientPanel3.Controls.Add(Me.btn_Librarian)
@@ -206,7 +208,7 @@ Partial Class Home_Panel_Admin_
         Me.btn_Logs.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btn_Logs.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.btn_Logs.FillColor = System.Drawing.Color.Tan
-        Me.btn_Logs.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btn_Logs.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_Logs.ForeColor = System.Drawing.Color.Black
         Me.btn_Logs.Location = New System.Drawing.Point(56, 264)
         Me.btn_Logs.Name = "btn_Logs"
@@ -222,7 +224,7 @@ Partial Class Home_Panel_Admin_
         Me.btn_User.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btn_User.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.btn_User.FillColor = System.Drawing.Color.Tan
-        Me.btn_User.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btn_User.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_User.ForeColor = System.Drawing.Color.Black
         Me.btn_User.Location = New System.Drawing.Point(56, 120)
         Me.btn_User.Name = "btn_User"
@@ -238,7 +240,7 @@ Partial Class Home_Panel_Admin_
         Me.btn_Librarian.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btn_Librarian.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.btn_Librarian.FillColor = System.Drawing.Color.Tan
-        Me.btn_Librarian.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btn_Librarian.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_Librarian.ForeColor = System.Drawing.Color.Black
         Me.btn_Librarian.Location = New System.Drawing.Point(56, 192)
         Me.btn_Librarian.Name = "btn_Librarian"
@@ -254,7 +256,7 @@ Partial Class Home_Panel_Admin_
         Me.btn_Books.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btn_Books.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.btn_Books.FillColor = System.Drawing.Color.Tan
-        Me.btn_Books.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btn_Books.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_Books.ForeColor = System.Drawing.Color.Black
         Me.btn_Books.Location = New System.Drawing.Point(56, 48)
         Me.btn_Books.Name = "btn_Books"
@@ -299,7 +301,24 @@ Partial Class Home_Panel_Admin_
         Me.Guna2DragControl3.TargetControl = Me.Guna2PictureBox1
         Me.Guna2DragControl3.TransparentWhileDrag = False
         '
-        'Home_Panel_Admin_
+        'btn_logout
+        '
+        Me.btn_logout.BorderColor = System.Drawing.Color.DimGray
+        Me.btn_logout.BorderRadius = 10
+        Me.btn_logout.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btn_logout.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btn_logout.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btn_logout.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btn_logout.FillColor = System.Drawing.Color.FromArgb(CType(CType(207, Byte), Integer), CType(CType(207, Byte), Integer), CType(CType(207, Byte), Integer))
+        Me.btn_logout.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.btn_logout.ForeColor = System.Drawing.Color.Black
+        Me.btn_logout.Location = New System.Drawing.Point(56, 432)
+        Me.btn_logout.Name = "btn_logout"
+        Me.btn_logout.Size = New System.Drawing.Size(180, 45)
+        Me.btn_logout.TabIndex = 23
+        Me.btn_logout.Text = "Log Out"
+        '
+        'Home_Panel_Librarian_Admin_
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -308,7 +327,7 @@ Partial Class Home_Panel_Admin_
         Me.Controls.Add(Me.Guna2CustomGradientPanel3)
         Me.Controls.Add(Me.Guna2CustomGradientPanel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "Home_Panel_Admin_"
+        Me.Name = "Home_Panel_Librarian_Admin_"
         Me.Text = "Home_Panel_Admin_"
         Me.title_panel.ResumeLayout(False)
         CType(Me.btn_profile, System.ComponentModel.ISupportInitialize).EndInit()
@@ -338,4 +357,5 @@ Partial Class Home_Panel_Admin_
     Friend WithEvents Guna2DragControl1 As Guna.UI2.WinForms.Guna2DragControl
     Friend WithEvents Guna2DragControl2 As Guna.UI2.WinForms.Guna2DragControl
     Friend WithEvents Guna2DragControl3 As Guna.UI2.WinForms.Guna2DragControl
+    Friend WithEvents btn_logout As Guna.UI2.WinForms.Guna2Button
 End Class
