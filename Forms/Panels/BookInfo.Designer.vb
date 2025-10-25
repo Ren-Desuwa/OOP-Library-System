@@ -28,10 +28,10 @@ Partial Class BookInfo
         Me.txtAuthor = New Guna.UI2.WinForms.Guna2TextBox()
         Me.txtDesc = New Guna.UI2.WinForms.Guna2TextBox()
         Me.txtTitle = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.picBook = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Guna2ControlBox1 = New Guna.UI2.WinForms.Guna2ControlBox()
         Me.Guna2Elipse1 = New Guna.UI2.WinForms.Guna2Elipse(Me.components)
         Me.Guna2DragControl1 = New Guna.UI2.WinForms.Guna2DragControl(Me.components)
+        Me.picBook = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Guna2CustomGradientPanel1.SuspendLayout()
         CType(Me.picBook, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -48,10 +48,9 @@ Partial Class BookInfo
         Me.Guna2CustomGradientPanel1.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(164, Byte), Integer), CType(CType(120, Byte), Integer), CType(CType(84, Byte), Integer))
         Me.Guna2CustomGradientPanel1.FillColor3 = System.Drawing.Color.FromArgb(CType(CType(154, Byte), Integer), CType(CType(111, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.Guna2CustomGradientPanel1.FillColor4 = System.Drawing.Color.FromArgb(CType(CType(139, Byte), Integer), CType(CType(103, Byte), Integer), CType(CType(67, Byte), Integer))
-        Me.Guna2CustomGradientPanel1.Location = New System.Drawing.Point(-1, -72)
-        Me.Guna2CustomGradientPanel1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.Guna2CustomGradientPanel1.Location = New System.Drawing.Point(-1, -58)
         Me.Guna2CustomGradientPanel1.Name = "Guna2CustomGradientPanel1"
-        Me.Guna2CustomGradientPanel1.Size = New System.Drawing.Size(901, 695)
+        Me.Guna2CustomGradientPanel1.Size = New System.Drawing.Size(801, 666)
         Me.Guna2CustomGradientPanel1.TabIndex = 1
         '
         'txtISBN
@@ -69,12 +68,12 @@ Partial Class BookInfo
         Me.txtISBN.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtISBN.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtISBN.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtISBN.Location = New System.Drawing.Point(362, 299)
-        Me.txtISBN.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.txtISBN.Location = New System.Drawing.Point(322, 239)
+        Me.txtISBN.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtISBN.Name = "txtISBN"
         Me.txtISBN.PlaceholderText = ""
         Me.txtISBN.SelectedText = ""
-        Me.txtISBN.Size = New System.Drawing.Size(500, 78)
+        Me.txtISBN.Size = New System.Drawing.Size(444, 62)
         Me.txtISBN.TabIndex = 22
         '
         'txtAuthor
@@ -84,7 +83,7 @@ Partial Class BookInfo
         Me.txtAuthor.BorderRadius = 10
         Me.txtAuthor.BorderThickness = 3
         Me.txtAuthor.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtAuthor.DefaultText = ""
+        Me.txtAuthor.DefaultText = "Author"
         Me.txtAuthor.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
         Me.txtAuthor.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.txtAuthor.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
@@ -92,12 +91,12 @@ Partial Class BookInfo
         Me.txtAuthor.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtAuthor.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtAuthor.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtAuthor.Location = New System.Drawing.Point(362, 211)
-        Me.txtAuthor.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.txtAuthor.Location = New System.Drawing.Point(322, 169)
+        Me.txtAuthor.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtAuthor.Name = "txtAuthor"
         Me.txtAuthor.PlaceholderText = ""
         Me.txtAuthor.SelectedText = ""
-        Me.txtAuthor.Size = New System.Drawing.Size(500, 78)
+        Me.txtAuthor.Size = New System.Drawing.Size(444, 62)
         Me.txtAuthor.TabIndex = 21
         '
         'txtDesc
@@ -115,12 +114,12 @@ Partial Class BookInfo
         Me.txtDesc.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtDesc.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtDesc.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtDesc.Location = New System.Drawing.Point(25, 401)
-        Me.txtDesc.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.txtDesc.Location = New System.Drawing.Point(16, 488)
+        Me.txtDesc.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtDesc.Name = "txtDesc"
         Me.txtDesc.PlaceholderText = ""
         Me.txtDesc.SelectedText = ""
-        Me.txtDesc.Size = New System.Drawing.Size(851, 187)
+        Me.txtDesc.Size = New System.Drawing.Size(756, 150)
         Me.txtDesc.TabIndex = 20
         '
         'txtTitle
@@ -130,7 +129,7 @@ Partial Class BookInfo
         Me.txtTitle.BorderRadius = 10
         Me.txtTitle.BorderThickness = 3
         Me.txtTitle.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtTitle.DefaultText = ""
+        Me.txtTitle.DefaultText = "Title"
         Me.txtTitle.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
         Me.txtTitle.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.txtTitle.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
@@ -138,22 +137,13 @@ Partial Class BookInfo
         Me.txtTitle.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtTitle.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtTitle.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtTitle.Location = New System.Drawing.Point(362, 129)
-        Me.txtTitle.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.txtTitle.Location = New System.Drawing.Point(322, 103)
+        Me.txtTitle.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtTitle.Name = "txtTitle"
         Me.txtTitle.PlaceholderText = ""
         Me.txtTitle.SelectedText = ""
-        Me.txtTitle.Size = New System.Drawing.Size(500, 72)
+        Me.txtTitle.Size = New System.Drawing.Size(444, 58)
         Me.txtTitle.TabIndex = 17
-        '
-        'picBook
-        '
-        Me.picBook.ImageRotate = 0!
-        Me.picBook.Location = New System.Drawing.Point(38, 117)
-        Me.picBook.Name = "picBook"
-        Me.picBook.Size = New System.Drawing.Size(301, 260)
-        Me.picBook.TabIndex = 15
-        Me.picBook.TabStop = False
         '
         'Guna2ControlBox1
         '
@@ -164,10 +154,9 @@ Partial Class BookInfo
         Me.Guna2ControlBox1.FillColor = System.Drawing.Color.Transparent
         Me.Guna2ControlBox1.ForeColor = System.Drawing.Color.Black
         Me.Guna2ControlBox1.IconColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(232, Byte), Integer))
-        Me.Guna2ControlBox1.Location = New System.Drawing.Point(844, 72)
-        Me.Guna2ControlBox1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.Guna2ControlBox1.Location = New System.Drawing.Point(750, 58)
         Me.Guna2ControlBox1.Name = "Guna2ControlBox1"
-        Me.Guna2ControlBox1.Size = New System.Drawing.Size(54, 48)
+        Me.Guna2ControlBox1.Size = New System.Drawing.Size(48, 38)
         Me.Guna2ControlBox1.TabIndex = 14
         '
         'Guna2Elipse1
@@ -181,14 +170,30 @@ Partial Class BookInfo
         Me.Guna2DragControl1.TargetControl = Me.Guna2CustomGradientPanel1
         Me.Guna2DragControl1.TransparentWhileDrag = False
         '
+        'picBook
+        '
+        Me.picBook.BackColor = System.Drawing.Color.Transparent
+        Me.picBook.BorderRadius = 30
+        Me.picBook.FillColor = System.Drawing.Color.Transparent
+        Me.picBook.Image = Global.OOP_Library_System.My.Resources.Resources.the_adventure
+        Me.picBook.ImageRotate = 0!
+        Me.picBook.Location = New System.Drawing.Point(24, 96)
+        Me.picBook.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.picBook.Name = "picBook"
+        Me.picBook.Size = New System.Drawing.Size(268, 370)
+        Me.picBook.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picBook.TabIndex = 15
+        Me.picBook.TabStop = False
+        '
         'BookInfo
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(900, 550)
+        Me.ClientSize = New System.Drawing.Size(800, 600)
         Me.Controls.Add(Me.Guna2CustomGradientPanel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "BookInfo"
         Me.Text = "BookInfo"
         Me.Guna2CustomGradientPanel1.ResumeLayout(False)

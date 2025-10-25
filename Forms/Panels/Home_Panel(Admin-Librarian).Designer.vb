@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class Home_Panel_Librarian_
+Partial Class Home_Panel_Librarian_Admin_
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -31,16 +31,17 @@ Partial Class Home_Panel_Librarian_
         Me.Guna2ControlBox3 = New Guna.UI2.WinForms.Guna2ControlBox()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.lbl_title = New System.Windows.Forms.Label()
-        Me.Guna2Elipse1 = New Guna.UI2.WinForms.Guna2Elipse(Me.components)
-        Me.Guna2DragControl1 = New Guna.UI2.WinForms.Guna2DragControl(Me.components)
-        Me.Guna2DragControl2 = New Guna.UI2.WinForms.Guna2DragControl(Me.components)
         Me.Guna2CustomGradientPanel3 = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
         Me.btn_Logs = New Guna.UI2.WinForms.Guna2Button()
         Me.btn_User = New Guna.UI2.WinForms.Guna2Button()
         Me.btn_Librarian = New Guna.UI2.WinForms.Guna2Button()
         Me.btn_Books = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2CustomGradientPanel1 = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
+        Me.Guna2Elipse1 = New Guna.UI2.WinForms.Guna2Elipse(Me.components)
+        Me.Guna2DragControl1 = New Guna.UI2.WinForms.Guna2DragControl(Me.components)
+        Me.Guna2DragControl2 = New Guna.UI2.WinForms.Guna2DragControl(Me.components)
         Me.Guna2DragControl3 = New Guna.UI2.WinForms.Guna2DragControl(Me.components)
+        Me.btn_logout = New Guna.UI2.WinForms.Guna2Button()
         Me.title_panel.SuspendLayout()
         CType(Me.btn_profile, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -65,7 +66,7 @@ Partial Class Home_Panel_Librarian_
         Me.title_panel.Location = New System.Drawing.Point(0, 0)
         Me.title_panel.Name = "title_panel"
         Me.title_panel.Size = New System.Drawing.Size(1072, 64)
-        Me.title_panel.TabIndex = 2
+        Me.title_panel.TabIndex = 5
         '
         'btn_profile
         '
@@ -181,27 +182,11 @@ Partial Class Home_Panel_Librarian_
         Me.lbl_title.Text = "Home Panel"
         Me.lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Guna2Elipse1
-        '
-        Me.Guna2Elipse1.BorderRadius = 30
-        Me.Guna2Elipse1.TargetControl = Me
-        '
-        'Guna2DragControl1
-        '
-        Me.Guna2DragControl1.DockIndicatorTransparencyValue = 0.6R
-        Me.Guna2DragControl1.TargetControl = Me.TableLayoutPanel1
-        Me.Guna2DragControl1.TransparentWhileDrag = False
-        '
-        'Guna2DragControl2
-        '
-        Me.Guna2DragControl2.DockIndicatorTransparencyValue = 0.6R
-        Me.Guna2DragControl2.TargetControl = Me.lbl_title
-        Me.Guna2DragControl2.TransparentWhileDrag = False
-        '
         'Guna2CustomGradientPanel3
         '
         Me.Guna2CustomGradientPanel3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Guna2CustomGradientPanel3.Controls.Add(Me.btn_logout)
         Me.Guna2CustomGradientPanel3.Controls.Add(Me.btn_Logs)
         Me.Guna2CustomGradientPanel3.Controls.Add(Me.btn_User)
         Me.Guna2CustomGradientPanel3.Controls.Add(Me.btn_Librarian)
@@ -213,7 +198,7 @@ Partial Class Home_Panel_Librarian_
         Me.Guna2CustomGradientPanel3.Location = New System.Drawing.Point(792, 48)
         Me.Guna2CustomGradientPanel3.Name = "Guna2CustomGradientPanel3"
         Me.Guna2CustomGradientPanel3.Size = New System.Drawing.Size(275, 512)
-        Me.Guna2CustomGradientPanel3.TabIndex = 4
+        Me.Guna2CustomGradientPanel3.TabIndex = 7
         '
         'btn_Logs
         '
@@ -223,7 +208,7 @@ Partial Class Home_Panel_Librarian_
         Me.btn_Logs.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btn_Logs.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.btn_Logs.FillColor = System.Drawing.Color.Tan
-        Me.btn_Logs.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btn_Logs.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_Logs.ForeColor = System.Drawing.Color.Black
         Me.btn_Logs.Location = New System.Drawing.Point(56, 264)
         Me.btn_Logs.Name = "btn_Logs"
@@ -239,7 +224,7 @@ Partial Class Home_Panel_Librarian_
         Me.btn_User.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btn_User.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.btn_User.FillColor = System.Drawing.Color.Tan
-        Me.btn_User.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btn_User.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_User.ForeColor = System.Drawing.Color.Black
         Me.btn_User.Location = New System.Drawing.Point(56, 120)
         Me.btn_User.Name = "btn_User"
@@ -255,7 +240,7 @@ Partial Class Home_Panel_Librarian_
         Me.btn_Librarian.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btn_Librarian.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.btn_Librarian.FillColor = System.Drawing.Color.Tan
-        Me.btn_Librarian.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btn_Librarian.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_Librarian.ForeColor = System.Drawing.Color.Black
         Me.btn_Librarian.Location = New System.Drawing.Point(56, 192)
         Me.btn_Librarian.Name = "btn_Librarian"
@@ -271,7 +256,7 @@ Partial Class Home_Panel_Librarian_
         Me.btn_Books.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btn_Books.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.btn_Books.FillColor = System.Drawing.Color.Tan
-        Me.btn_Books.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btn_Books.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_Books.ForeColor = System.Drawing.Color.Black
         Me.btn_Books.Location = New System.Drawing.Point(56, 48)
         Me.btn_Books.Name = "btn_Books"
@@ -291,7 +276,24 @@ Partial Class Home_Panel_Librarian_
         Me.Guna2CustomGradientPanel1.Location = New System.Drawing.Point(0, 32)
         Me.Guna2CustomGradientPanel1.Name = "Guna2CustomGradientPanel1"
         Me.Guna2CustomGradientPanel1.Size = New System.Drawing.Size(816, 529)
-        Me.Guna2CustomGradientPanel1.TabIndex = 3
+        Me.Guna2CustomGradientPanel1.TabIndex = 6
+        '
+        'Guna2Elipse1
+        '
+        Me.Guna2Elipse1.BorderRadius = 30
+        Me.Guna2Elipse1.TargetControl = Me
+        '
+        'Guna2DragControl1
+        '
+        Me.Guna2DragControl1.DockIndicatorTransparencyValue = 0.6R
+        Me.Guna2DragControl1.TargetControl = Me.TableLayoutPanel1
+        Me.Guna2DragControl1.TransparentWhileDrag = False
+        '
+        'Guna2DragControl2
+        '
+        Me.Guna2DragControl2.DockIndicatorTransparencyValue = 0.6R
+        Me.Guna2DragControl2.TargetControl = Me.lbl_title
+        Me.Guna2DragControl2.TransparentWhileDrag = False
         '
         'Guna2DragControl3
         '
@@ -299,7 +301,24 @@ Partial Class Home_Panel_Librarian_
         Me.Guna2DragControl3.TargetControl = Me.Guna2PictureBox1
         Me.Guna2DragControl3.TransparentWhileDrag = False
         '
-        'Home_Panel_Librarian_
+        'btn_logout
+        '
+        Me.btn_logout.BorderColor = System.Drawing.Color.DimGray
+        Me.btn_logout.BorderRadius = 10
+        Me.btn_logout.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btn_logout.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btn_logout.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btn_logout.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btn_logout.FillColor = System.Drawing.Color.FromArgb(CType(CType(207, Byte), Integer), CType(CType(207, Byte), Integer), CType(CType(207, Byte), Integer))
+        Me.btn_logout.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.btn_logout.ForeColor = System.Drawing.Color.Black
+        Me.btn_logout.Location = New System.Drawing.Point(56, 432)
+        Me.btn_logout.Name = "btn_logout"
+        Me.btn_logout.Size = New System.Drawing.Size(180, 45)
+        Me.btn_logout.TabIndex = 23
+        Me.btn_logout.Text = "Log Out"
+        '
+        'Home_Panel_Librarian_Admin_
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -308,8 +327,8 @@ Partial Class Home_Panel_Librarian_
         Me.Controls.Add(Me.Guna2CustomGradientPanel3)
         Me.Controls.Add(Me.Guna2CustomGradientPanel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "Home_Panel_Librarian_"
-        Me.Text = "Home_Panel_Librarian_"
+        Me.Name = "Home_Panel_Librarian_Admin_"
+        Me.Text = "Home_Panel_Admin_"
         Me.title_panel.ResumeLayout(False)
         CType(Me.btn_profile, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -321,21 +340,22 @@ Partial Class Home_Panel_Librarian_
     End Sub
 
     Friend WithEvents title_panel As Guna.UI2.WinForms.Guna2CustomGradientPanel
-    Friend WithEvents Guna2ControlBox1 As Guna.UI2.WinForms.Guna2ControlBox
-    Friend WithEvents lbl_title As Label
-    Friend WithEvents Guna2ControlBox3 As Guna.UI2.WinForms.Guna2ControlBox
-    Friend WithEvents Guna2Elipse1 As Guna.UI2.WinForms.Guna2Elipse
+    Friend WithEvents btn_profile As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents Guna2ControlBox2 As Guna.UI2.WinForms.Guna2ControlBox
-    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
-    Friend WithEvents Guna2DragControl1 As Guna.UI2.WinForms.Guna2DragControl
-    Friend WithEvents Guna2DragControl2 As Guna.UI2.WinForms.Guna2DragControl
     Friend WithEvents Guna2PictureBox1 As Guna.UI2.WinForms.Guna2PictureBox
+    Friend WithEvents Guna2ControlBox1 As Guna.UI2.WinForms.Guna2ControlBox
+    Friend WithEvents Guna2ControlBox3 As Guna.UI2.WinForms.Guna2ControlBox
+    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
+    Friend WithEvents lbl_title As Label
     Friend WithEvents Guna2CustomGradientPanel3 As Guna.UI2.WinForms.Guna2CustomGradientPanel
-    Friend WithEvents Guna2CustomGradientPanel1 As Guna.UI2.WinForms.Guna2CustomGradientPanel
-    Friend WithEvents Guna2DragControl3 As Guna.UI2.WinForms.Guna2DragControl
+    Friend WithEvents btn_Logs As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btn_User As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btn_Librarian As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btn_Books As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents btn_profile As Guna.UI2.WinForms.Guna2PictureBox
-    Friend WithEvents btn_Logs As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Guna2CustomGradientPanel1 As Guna.UI2.WinForms.Guna2CustomGradientPanel
+    Friend WithEvents Guna2Elipse1 As Guna.UI2.WinForms.Guna2Elipse
+    Friend WithEvents Guna2DragControl1 As Guna.UI2.WinForms.Guna2DragControl
+    Friend WithEvents Guna2DragControl2 As Guna.UI2.WinForms.Guna2DragControl
+    Friend WithEvents Guna2DragControl3 As Guna.UI2.WinForms.Guna2DragControl
+    Friend WithEvents btn_logout As Guna.UI2.WinForms.Guna2Button
 End Class

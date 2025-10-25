@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class Login_Panel_Librarian_Admin_
+Partial Class Login_Panel_Student_
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -23,7 +23,6 @@ Partial Class Login_Panel_Librarian_Admin_
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Login_Panel_Librarian_Admin_))
         Me.lbl_titlelogin = New System.Windows.Forms.Label()
         Me.lbl_forgotpass = New System.Windows.Forms.Label()
         Me.lbl_password = New System.Windows.Forms.Label()
@@ -46,6 +45,7 @@ Partial Class Login_Panel_Librarian_Admin_
         Me.Guna2CustomGradientPanel3 = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
         Me.img_show = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.img_hide = New Guna.UI2.WinForms.Guna2PictureBox()
+        Me.btn_createaccount = New Guna.UI2.WinForms.Guna2Button()
         Me.title_panel.SuspendLayout()
         Me.Guna2CustomGradientPanel1.SuspendLayout()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -128,6 +128,7 @@ Partial Class Login_Panel_Librarian_Admin_
         Me.txtBox_username.BackColor = System.Drawing.Color.Transparent
         Me.txtBox_username.BorderColor = System.Drawing.Color.DarkGray
         Me.txtBox_username.BorderRadius = 10
+        Me.txtBox_username.BorderThickness = 2
         Me.txtBox_username.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtBox_username.DefaultText = ""
         Me.txtBox_username.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
@@ -157,7 +158,7 @@ Partial Class Login_Panel_Librarian_Admin_
         Me.btn_login.FillColor = System.Drawing.Color.Tan
         Me.btn_login.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_login.ForeColor = System.Drawing.Color.Black
-        Me.btn_login.Location = New System.Drawing.Point(58, 424)
+        Me.btn_login.Location = New System.Drawing.Point(58, 409)
         Me.btn_login.Name = "btn_login"
         Me.btn_login.Size = New System.Drawing.Size(180, 45)
         Me.btn_login.TabIndex = 3
@@ -174,7 +175,7 @@ Partial Class Login_Panel_Librarian_Admin_
         Me.btn_cancel.FillColor = System.Drawing.Color.FromArgb(CType(CType(207, Byte), Integer), CType(CType(207, Byte), Integer), CType(CType(207, Byte), Integer))
         Me.btn_cancel.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_cancel.ForeColor = System.Drawing.Color.Black
-        Me.btn_cancel.Location = New System.Drawing.Point(298, 424)
+        Me.btn_cancel.Location = New System.Drawing.Point(298, 409)
         Me.btn_cancel.Name = "btn_cancel"
         Me.btn_cancel.Size = New System.Drawing.Size(180, 45)
         Me.btn_cancel.TabIndex = 4
@@ -274,11 +275,12 @@ Partial Class Login_Panel_Librarian_Admin_
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.DimGray
-        Me.Label1.Location = New System.Drawing.Point(1, 274)
+        Me.Label1.Location = New System.Drawing.Point(-3, 274)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(546, 200)
         Me.Label1.TabIndex = 12
-        Me.Label1.Text = resources.GetString("Label1.Text")
+        Me.Label1.Text = "Unlock Worlds of Knowledge! " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Dive into our vast collection, " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Discover your next" &
+    " favorite read, " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "And borrow books effortlessly." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Your adventure begins here!"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Guna2PictureBox1
@@ -306,13 +308,14 @@ Partial Class Login_Panel_Librarian_Admin_
         Me.Label2.ForeColor = System.Drawing.Color.DimGray
         Me.Label2.Location = New System.Drawing.Point(5, 168)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(544, 88)
+        Me.Label2.Size = New System.Drawing.Size(533, 88)
         Me.Label2.TabIndex = 13
         Me.Label2.Text = "Welcome To Library Management System"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Guna2CustomGradientPanel3
         '
+        Me.Guna2CustomGradientPanel3.Controls.Add(Me.btn_createaccount)
         Me.Guna2CustomGradientPanel3.Controls.Add(Me.img_show)
         Me.Guna2CustomGradientPanel3.Controls.Add(Me.img_hide)
         Me.Guna2CustomGradientPanel3.Controls.Add(Me.lbl_titlelogin)
@@ -358,7 +361,26 @@ Partial Class Login_Panel_Librarian_Admin_
         Me.img_hide.TabIndex = 15
         Me.img_hide.TabStop = False
         '
-        'Login_Panel_Librarian_Admin_
+        'btn_createaccount
+        '
+        Me.btn_createaccount.BackColor = System.Drawing.Color.Transparent
+        Me.btn_createaccount.BorderColor = System.Drawing.Color.Transparent
+        Me.btn_createaccount.BorderRadius = 10
+        Me.btn_createaccount.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btn_createaccount.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btn_createaccount.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btn_createaccount.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btn_createaccount.FillColor = System.Drawing.Color.Transparent
+        Me.btn_createaccount.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btn_createaccount.ForeColor = System.Drawing.Color.Black
+        Me.btn_createaccount.Location = New System.Drawing.Point(200, 463)
+        Me.btn_createaccount.Name = "btn_createaccount"
+        Me.btn_createaccount.Size = New System.Drawing.Size(136, 32)
+        Me.btn_createaccount.TabIndex = 5
+        Me.btn_createaccount.Text = "Create Account"
+        Me.btn_createaccount.UseTransparentBackground = True
+        '
+        'Login_Panel_Student_
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -369,7 +391,7 @@ Partial Class Login_Panel_Librarian_Admin_
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MaximumSize = New System.Drawing.Size(1067, 554)
-        Me.Name = "Login_Panel_Librarian_Admin_"
+        Me.Name = "Login_Panel_Student_"
         Me.Text = "Login"
         Me.title_panel.ResumeLayout(False)
         Me.title_panel.PerformLayout()
@@ -404,4 +426,5 @@ Partial Class Login_Panel_Librarian_Admin_
     Friend WithEvents Label2 As Label
     Friend WithEvents img_hide As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents img_show As Guna.UI2.WinForms.Guna2PictureBox
+    Friend WithEvents btn_createaccount As Guna.UI2.WinForms.Guna2Button
 End Class

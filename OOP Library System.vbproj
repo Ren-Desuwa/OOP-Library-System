@@ -91,6 +91,24 @@
     <Compile Include="Forms\Panels\CreateBook.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\Panels\EditBook.Designer.vb">
+      <DependentUpon>EditBook.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Panels\EditBook.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Panels\Home_Panel%28Admin-Librarian%29.Designer.vb">
+      <DependentUpon>Home_Panel%28Admin-Librarian%29.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Panels\Home_Panel%28Admin-Librarian%29.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\User Interface\Login_Panel%28Student%29.Designer.vb">
+      <DependentUpon>Login_Panel%28Student%29.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User Interface\Login_Panel%28Student%29.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="LibraryCore\Classes\Account.vb" />
     <Compile Include="LibraryCore\Classes\Announcement.vb" />
     <Compile Include="LibraryCore\Classes\Book.vb" />
@@ -102,16 +120,6 @@
       <DependentUpon>Books_Panel(Librarian-Admin).vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\Panels\Books_Panel(Librarian-Admin).vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Panels\Home_Panel(Admin).Designer.vb">
-      <DependentUpon>Home_Panel(Admin).vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Panels\Home_Panel(Admin).vb" />
-    <Compile Include="Forms\Panels\Home_Panel(Librarian).Designer.vb">
-      <DependentUpon>Home_Panel(Librarian).vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Panels\Home_Panel(Librarian).vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Panels\Login_Panel(Librarian-Admin).Designer.vb">
@@ -144,17 +152,26 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Forms\Panels\BookInfo.resx">
+      <DependentUpon>BookInfo.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Panels\Books_Panel(Librarian-Admin).resx">
       <DependentUpon>Books_Panel(Librarian-Admin).vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Panels\CreateBook.resx">
       <DependentUpon>CreateBook.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Panels\Home_Panel%28Librarian%29.resx">
-      <DependentUpon>Home_Panel%28Librarian%29.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\Panels\EditBook.resx">
+      <DependentUpon>EditBook.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Panels\Home_Panel%28Admin-Librarian%29.resx">
+      <DependentUpon>Home_Panel%28Admin-Librarian%29.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Panels\Login_Panel(Librarian-Admin).resx">
       <DependentUpon>Login_Panel(Librarian-Admin).vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User Interface\Login_Panel%28Student%29.resx">
+      <DependentUpon>Login_Panel%28Student%29.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -179,6 +196,8 @@
   <ItemGroup>
     <Folder Include="Assets\" />
     <Folder Include="Database\" />
+    <Folder Include="Forms\Admin-Librarian Interface\" />
+    <Folder Include="Forms\Panels\User Control Panel\" />
     <Folder Include="LibraryAdminApp\" />
     <Folder Include="LibraryCore\Assets\Colors\" />
     <Folder Include="LibraryCore\Database\" />
@@ -199,6 +218,9 @@
     <Content Include="LibraryCore\Assets\Bookcover\the_plot.jpg" />
     <Content Include="LibraryCore\Assets\Bookcover\the_woman_in_the_window.jpg" />
     <Content Include="LibraryCore\Assets\Bookcover\to_kill_a_mockingbird.jpg" />
+    <None Include="Resources\Hide_icon1.png" />
+    <None Include="Resources\Show_icon1.png" />
+    <None Include="Resources\the_adventure.jpg" />
     <None Include="Resources\Ucc Logo NoBG2.png" />
     <None Include="Resources\Ucc Logo NoBG1.png" />
     <None Include="Resources\Hide_icon.png" />
