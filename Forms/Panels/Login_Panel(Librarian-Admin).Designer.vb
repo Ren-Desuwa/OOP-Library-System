@@ -73,7 +73,7 @@ Partial Class Login_Panel_Librarian_Admin_
         Me.lbl_forgotpass.Location = New System.Drawing.Point(280, 333)
         Me.lbl_forgotpass.Name = "lbl_forgotpass"
         Me.lbl_forgotpass.Size = New System.Drawing.Size(136, 20)
-        Me.lbl_forgotpass.TabIndex = 3
+        Me.lbl_forgotpass.TabIndex = 2
         Me.lbl_forgotpass.Text = "Forgot Password"
         '
         'lbl_password
@@ -121,7 +121,7 @@ Partial Class Login_Panel_Librarian_Admin_
         Me.txtBox_password.PlaceholderText = "Enter Password"
         Me.txtBox_password.SelectedText = ""
         Me.txtBox_password.Size = New System.Drawing.Size(278, 57)
-        Me.txtBox_password.TabIndex = 3
+        Me.txtBox_password.TabIndex = 1
         '
         'txtBox_username
         '
@@ -145,7 +145,7 @@ Partial Class Login_Panel_Librarian_Admin_
         Me.txtBox_username.PlaceholderText = "Enter Username or ID"
         Me.txtBox_username.SelectedText = ""
         Me.txtBox_username.Size = New System.Drawing.Size(278, 57)
-        Me.txtBox_username.TabIndex = 2
+        Me.txtBox_username.TabIndex = 0
         '
         'btn_login
         '
@@ -160,7 +160,7 @@ Partial Class Login_Panel_Librarian_Admin_
         Me.btn_login.Location = New System.Drawing.Point(58, 424)
         Me.btn_login.Name = "btn_login"
         Me.btn_login.Size = New System.Drawing.Size(180, 45)
-        Me.btn_login.TabIndex = 4
+        Me.btn_login.TabIndex = 3
         Me.btn_login.Text = "Confirm"
         '
         'btn_cancel
@@ -177,7 +177,7 @@ Partial Class Login_Panel_Librarian_Admin_
         Me.btn_cancel.Location = New System.Drawing.Point(298, 424)
         Me.btn_cancel.Name = "btn_cancel"
         Me.btn_cancel.Size = New System.Drawing.Size(180, 45)
-        Me.btn_cancel.TabIndex = 5
+        Me.btn_cancel.TabIndex = 4
         Me.btn_cancel.Text = "Cancel"
         '
         'Guna2DragControl1
