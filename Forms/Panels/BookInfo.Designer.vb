@@ -44,10 +44,10 @@ Partial Class BookInfo
         Me.Guna2CustomGradientPanel1.Controls.Add(Me.txtTitle)
         Me.Guna2CustomGradientPanel1.Controls.Add(Me.picBook)
         Me.Guna2CustomGradientPanel1.Controls.Add(Me.Guna2ControlBox1)
-        Me.Guna2CustomGradientPanel1.FillColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(156, Byte), Integer))
-        Me.Guna2CustomGradientPanel1.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(164, Byte), Integer), CType(CType(120, Byte), Integer), CType(CType(84, Byte), Integer))
-        Me.Guna2CustomGradientPanel1.FillColor3 = System.Drawing.Color.FromArgb(CType(CType(154, Byte), Integer), CType(CType(111, Byte), Integer), CType(CType(74, Byte), Integer))
-        Me.Guna2CustomGradientPanel1.FillColor4 = System.Drawing.Color.FromArgb(CType(CType(139, Byte), Integer), CType(CType(103, Byte), Integer), CType(CType(67, Byte), Integer))
+        Me.Guna2CustomGradientPanel1.FillColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(232, Byte), Integer))
+        Me.Guna2CustomGradientPanel1.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(216, Byte), Integer))
+        Me.Guna2CustomGradientPanel1.FillColor3 = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Guna2CustomGradientPanel1.FillColor4 = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(195, Byte), Integer), CType(CType(165, Byte), Integer))
         Me.Guna2CustomGradientPanel1.Location = New System.Drawing.Point(-1, -72)
         Me.Guna2CustomGradientPanel1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Guna2CustomGradientPanel1.Name = "Guna2CustomGradientPanel1"
@@ -163,7 +163,7 @@ Partial Class BookInfo
         Me.Guna2ControlBox1.CustomIconSize = 13.0!
         Me.Guna2ControlBox1.FillColor = System.Drawing.Color.Transparent
         Me.Guna2ControlBox1.ForeColor = System.Drawing.Color.Black
-        Me.Guna2ControlBox1.IconColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(232, Byte), Integer))
+        Me.Guna2ControlBox1.IconColor = System.Drawing.Color.FromArgb(CType(CType(139, Byte), Integer), CType(CType(103, Byte), Integer), CType(CType(67, Byte), Integer))
         Me.Guna2ControlBox1.Location = New System.Drawing.Point(844, 72)
         Me.Guna2ControlBox1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Guna2ControlBox1.Name = "Guna2ControlBox1"
