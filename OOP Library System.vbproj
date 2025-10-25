@@ -216,6 +216,7 @@
     <Content Include="LibraryCore\Assets\Bookcover\the_plot.jpg" />
     <Content Include="LibraryCore\Assets\Bookcover\the_woman_in_the_window.jpg" />
     <Content Include="LibraryCore\Assets\Bookcover\to_kill_a_mockingbird.jpg" />
+    <None Include="Resources\the_adventure.jpg" />
     <None Include="Resources\Ucc Logo NoBG2.png" />
     <None Include="Resources\Ucc Logo NoBG1.png" />
     <None Include="Resources\Hide_icon.png" />
