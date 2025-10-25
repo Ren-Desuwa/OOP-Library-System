@@ -29,8 +29,8 @@ Partial Class Manage_User
         Me.Guna2Button3 = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2CircleProgressBar1 = New Guna.UI2.WinForms.Guna2CircleProgressBar()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
@@ -103,7 +103,7 @@ Partial Class Manage_User
         'Guna2CircleProgressBar1
         '
         Me.Guna2CircleProgressBar1.Controls.Add(Me.Label3)
-        Me.Guna2CircleProgressBar1.FillColor = System.Drawing.Color.Gray
+        Me.Guna2CircleProgressBar1.FillColor = System.Drawing.Color.Chartreuse
         Me.Guna2CircleProgressBar1.FillThickness = 7
         Me.Guna2CircleProgressBar1.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.Guna2CircleProgressBar1.ForeColor = System.Drawing.Color.White
@@ -115,9 +115,20 @@ Partial Class Manage_User
         Me.Guna2CircleProgressBar1.TabIndex = 13
         Me.Guna2CircleProgressBar1.Text = "Guna2CircleProgressBar1"
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.Tan
+        Me.Label3.ForeColor = System.Drawing.Color.Black
+        Me.Label3.Location = New System.Drawing.Point(13, 20)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(45, 28)
+        Me.Label3.TabIndex = 0
+        Me.Label3.Text = "100"
+        '
         'DataGridView1
         '
-        Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace
+        Me.DataGridView1.BackgroundColor = System.Drawing.Color.Linen
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Location = New System.Drawing.Point(23, 98)
         Me.DataGridView1.Name = "DataGridView1"
@@ -125,17 +136,6 @@ Partial Class Manage_User
         Me.DataGridView1.RowTemplate.Height = 24
         Me.DataGridView1.Size = New System.Drawing.Size(962, 376)
         Me.DataGridView1.TabIndex = 14
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.BackColor = System.Drawing.Color.OldLace
-        Me.Label3.ForeColor = System.Drawing.Color.Black
-        Me.Label3.Location = New System.Drawing.Point(13, 20)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(45, 28)
-        Me.Label3.TabIndex = 0
-        Me.Label3.Text = "100"
         '
         'Label4
         '
@@ -212,7 +212,7 @@ Partial Class Manage_User
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.Linen
+        Me.BackColor = System.Drawing.Color.Tan
         Me.ClientSize = New System.Drawing.Size(1009, 645)
         Me.Controls.Add(Me.Guna2Button5)
         Me.Controls.Add(Me.Guna2Button4)

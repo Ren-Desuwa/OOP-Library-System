@@ -1,6 +1,4 @@
-﻿Imports System.Linq
-
-Public Class Log
+﻿Public Class Log
     Public Property LogID As Integer
     Public Property AccountID As Integer?
     Public Property Action As String
