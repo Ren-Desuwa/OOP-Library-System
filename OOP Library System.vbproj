@@ -144,9 +144,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Forms\Panels\BookInfo.resx">
-      <DependentUpon>BookInfo.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Panels\Books_Panel(Librarian-Admin).resx">
       <DependentUpon>Books_Panel(Librarian-Admin).vb</DependentUpon>
     </EmbeddedResource>
