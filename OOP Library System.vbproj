@@ -103,11 +103,35 @@
     <Compile Include="Forms\Panels\Home_Panel%28Admin-Librarian%29.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\User Interface\Login_Panel%28Student%29.Designer.vb">
+    <Compile Include="Forms\Student Interface\Signup_Panel%28Student%29.Designer.vb">
+      <DependentUpon>Signup_Panel%28Student%29.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Student Interface\Signup_Panel%28Student%29.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Student Interface\Login_Panel%28Student%29.Designer.vb">
       <DependentUpon>Login_Panel%28Student%29.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\User Interface\Login_Panel%28Student%29.vb">
+    <Compile Include="Forms\Student Interface\Login_Panel%28Student%29.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Student Interface\UC Student\UC_Signup2_student.Designer.vb">
+      <DependentUpon>UC_Signup2_student.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Student Interface\UC Student\UC_Signup2_student.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Student Interface\UC Student\UC_Signup_student.Designer.vb">
+      <DependentUpon>UC_Signup_student.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Student Interface\UC Student\UC_Signup_student.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Student Interface\UC Student\UC_Welcome_message_student.Designer.vb">
+      <DependentUpon>UC_Welcome_message_student.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Student Interface\UC Student\UC_Welcome_message_student.vb">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="LibraryCore\Classes\Account.vb" />
     <Compile Include="LibraryCore\Classes\Announcement.vb" />
@@ -170,8 +194,20 @@
     <EmbeddedResource Include="Forms\Panels\Login_Panel(Librarian-Admin).resx">
       <DependentUpon>Login_Panel(Librarian-Admin).vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\User Interface\Login_Panel%28Student%29.resx">
+    <EmbeddedResource Include="Forms\Student Interface\Signup_Panel%28Student%29.resx">
+      <DependentUpon>Signup_Panel%28Student%29.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Student Interface\Login_Panel%28Student%29.resx">
       <DependentUpon>Login_Panel%28Student%29.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Student Interface\UC Student\UC_Signup2_student.resx">
+      <DependentUpon>UC_Signup2_student.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Student Interface\UC Student\UC_Signup_student.resx">
+      <DependentUpon>UC_Signup_student.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Student Interface\UC Student\UC_Welcome_message_student.resx">
+      <DependentUpon>UC_Welcome_message_student.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -197,7 +233,6 @@
     <Folder Include="Assets\" />
     <Folder Include="Database\" />
     <Folder Include="Forms\Admin-Librarian Interface\" />
-    <Folder Include="Forms\Panels\User Control Panel\" />
     <Folder Include="LibraryAdminApp\" />
     <Folder Include="LibraryCore\Assets\Colors\" />
     <Folder Include="LibraryCore\Database\" />

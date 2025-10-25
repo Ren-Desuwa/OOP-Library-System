@@ -59,7 +59,7 @@ Partial Class Login_Panel_Librarian_Admin_
         Me.lbl_titlelogin.AutoSize = True
         Me.lbl_titlelogin.BackColor = System.Drawing.Color.Transparent
         Me.lbl_titlelogin.Font = New System.Drawing.Font("Roboto", 19.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_titlelogin.Location = New System.Drawing.Point(222, 36)
+        Me.lbl_titlelogin.Location = New System.Drawing.Point(200, 36)
         Me.lbl_titlelogin.Name = "lbl_titlelogin"
         Me.lbl_titlelogin.Size = New System.Drawing.Size(99, 39)
         Me.lbl_titlelogin.TabIndex = 13
@@ -70,7 +70,7 @@ Partial Class Login_Panel_Librarian_Admin_
         Me.lbl_forgotpass.AutoSize = True
         Me.lbl_forgotpass.BackColor = System.Drawing.Color.Transparent
         Me.lbl_forgotpass.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_forgotpass.Location = New System.Drawing.Point(280, 333)
+        Me.lbl_forgotpass.Location = New System.Drawing.Point(288, 333)
         Me.lbl_forgotpass.Name = "lbl_forgotpass"
         Me.lbl_forgotpass.Size = New System.Drawing.Size(136, 20)
         Me.lbl_forgotpass.TabIndex = 2
@@ -81,7 +81,7 @@ Partial Class Login_Panel_Librarian_Admin_
         Me.lbl_password.AutoSize = True
         Me.lbl_password.BackColor = System.Drawing.Color.Transparent
         Me.lbl_password.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_password.Location = New System.Drawing.Point(104, 245)
+        Me.lbl_password.Location = New System.Drawing.Point(120, 245)
         Me.lbl_password.Name = "lbl_password"
         Me.lbl_password.Size = New System.Drawing.Size(98, 25)
         Me.lbl_password.TabIndex = 6
@@ -92,7 +92,7 @@ Partial Class Login_Panel_Librarian_Admin_
         Me.lbl_username.AutoSize = True
         Me.lbl_username.BackColor = System.Drawing.Color.Transparent
         Me.lbl_username.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_username.Location = New System.Drawing.Point(104, 121)
+        Me.lbl_username.Location = New System.Drawing.Point(120, 121)
         Me.lbl_username.Name = "lbl_username"
         Me.lbl_username.Size = New System.Drawing.Size(148, 25)
         Me.lbl_username.TabIndex = 5
@@ -114,7 +114,7 @@ Partial Class Login_Panel_Librarian_Admin_
         Me.txtBox_password.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtBox_password.ForeColor = System.Drawing.Color.Black
         Me.txtBox_password.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtBox_password.Location = New System.Drawing.Point(112, 276)
+        Me.txtBox_password.Location = New System.Drawing.Point(128, 276)
         Me.txtBox_password.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtBox_password.Name = "txtBox_password"
         Me.txtBox_password.PlaceholderForeColor = System.Drawing.Color.DarkGray
@@ -138,7 +138,7 @@ Partial Class Login_Panel_Librarian_Admin_
         Me.txtBox_username.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtBox_username.ForeColor = System.Drawing.Color.Black
         Me.txtBox_username.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtBox_username.Location = New System.Drawing.Point(112, 152)
+        Me.txtBox_username.Location = New System.Drawing.Point(128, 152)
         Me.txtBox_username.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtBox_username.Name = "txtBox_username"
         Me.txtBox_username.PlaceholderForeColor = System.Drawing.Color.DarkGray
@@ -338,7 +338,7 @@ Partial Class Login_Panel_Librarian_Admin_
         Me.img_show.FillColor = System.Drawing.Color.Transparent
         Me.img_show.Image = Global.OOP_Library_System.My.Resources.Resources.Show_icon1
         Me.img_show.ImageRotate = 0!
-        Me.img_show.Location = New System.Drawing.Point(352, 293)
+        Me.img_show.Location = New System.Drawing.Point(368, 293)
         Me.img_show.Name = "img_show"
         Me.img_show.Size = New System.Drawing.Size(24, 22)
         Me.img_show.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -351,7 +351,7 @@ Partial Class Login_Panel_Librarian_Admin_
         Me.img_hide.FillColor = System.Drawing.Color.Transparent
         Me.img_hide.Image = Global.OOP_Library_System.My.Resources.Resources.Hide_icon1
         Me.img_hide.ImageRotate = 0!
-        Me.img_hide.Location = New System.Drawing.Point(352, 293)
+        Me.img_hide.Location = New System.Drawing.Point(368, 293)
         Me.img_hide.Name = "img_hide"
         Me.img_hide.Size = New System.Drawing.Size(24, 22)
         Me.img_hide.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom

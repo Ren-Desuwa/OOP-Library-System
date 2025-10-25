@@ -88,4 +88,8 @@
         img_show.Visible = True
         img_hide.Visible = False
     End Sub
+
+    Private Sub btn_createaccount_Click(sender As Object, e As EventArgs) Handles btn_createaccount.Click
+
+    End Sub
 End Class
