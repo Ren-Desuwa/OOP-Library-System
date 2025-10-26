@@ -126,16 +126,6 @@
     <Compile Include="Forms\Admin\Panel\EditBook.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Admin\Panel\Home_Panel%28Admin%29.Designer.vb">
-      <DependentUpon>Home_Panel%28Admin%29.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Admin\Panel\Home_Panel%28Admin%29.vb" />
-    <Compile Include="Forms\Admin\Panel\Home_Panel%28Librarian%29.Designer.vb">
-      <DependentUpon>Home_Panel%28Librarian%29.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Admin\Panel\Home_Panel%28Librarian%29.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Forms\Admin\Panel\Home_Panel_Admin_Librarian.Designer.vb">
       <DependentUpon>Home_Panel_Admin_Librarian.vb</DependentUpon>
     </Compile>
@@ -225,9 +215,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin\Panel\EditBook.resx">
       <DependentUpon>EditBook.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Admin\Panel\Home_Panel%28Librarian%29.resx">
-      <DependentUpon>Home_Panel%28Librarian%29.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin\Panel\Home_Panel_Admin_Librarian.resx">
       <DependentUpon>Home_Panel_Admin_Librarian.vb</DependentUpon>
