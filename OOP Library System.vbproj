@@ -6,11 +6,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{985F421D-0F74-4602-858B-EC5CA98B46E5}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>OOP_Library_System.My.MyApplication</StartupObject>
+    <StartupObject>OOP_Library_System.Program</StartupObject>
     <RootNamespace>OOP_Library_System</RootNamespace>
     <AssemblyName>OOP Library System</AssemblyName>
     <FileAlignment>512</FileAlignment>
-    <MyType>WindowsForms</MyType>
+    <MyType>WindowsFormsWithCustomSubMain</MyType>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -89,6 +89,7 @@
     <Compile Include="Classes\DataAccessObjects\DBcon.vb" />
     <Compile Include="Classes\DataAccessObjects\LogDAO.vb" />
     <Compile Include="Classes\DataAccessObjects\NotificationDAO.vb" />
+    <Compile Include="Classes\DataAccessObjects\OtpDAO.vb" />
     <Compile Include="Classes\DataAccessObjects\TransactionDAO.vb" />
     <Compile Include="Classes\Models\Account.vb" />
     <Compile Include="Classes\Models\Announcement.vb" />
@@ -97,11 +98,13 @@
     <Compile Include="Classes\Models\Log.vb" />
     <Compile Include="Classes\Models\Notification.vb" />
     <Compile Include="Classes\Models\Transaction.vb" />
-    <Compile Include="Classes\Services\announcementService.vb" />
-    <Compile Include="Classes\Services\authService.vb" />
-    <Compile Include="Classes\Services\borrowService.vb" />
-    <Compile Include="Classes\Services\catalougeService.vb" />
-    <Compile Include="Classes\Services\registrationService.vb" />
+    <Compile Include="Classes\Services\AnnouncementService.vb" />
+    <Compile Include="Classes\Services\AuthService.vb" />
+    <Compile Include="Classes\Services\BorrowService.vb" />
+    <Compile Include="Classes\Services\CatalougeService.vb" />
+    <Compile Include="Classes\Services\NotificationService.vb" />
+    <Compile Include="Classes\Services\OtpService.vb" />
+    <Compile Include="Classes\Services\RegistrationService.vb" />
     <Compile Include="Forms\Admin\Panel\BookInfo.Designer.vb">
       <DependentUpon>BookInfo.vb</DependentUpon>
     </Compile>
@@ -148,6 +151,12 @@
       <DependentUpon>Login_Panel_Student.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\Student Interface\Login_Panel_Student.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Student Interface\TestWindow.Designer.vb">
+      <DependentUpon>TestWindow.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Student Interface\TestWindow.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Student Interface\UC Student\UC_Signup2_student.Designer.vb">
@@ -203,21 +212,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Program.vb" />
-    <Compile Include="Tests\DataAccessObjects\AccountDAOTest.vb" />
-    <Compile Include="Tests\DataAccessObjects\AnnouncementDAOTest.vb" />
-    <Compile Include="Tests\DataAccessObjects\BookCopyDAOTest.vb" />
-    <Compile Include="Tests\DataAccessObjects\BookDAOTest.vb" />
-    <Compile Include="Tests\DataAccessObjects\LogDAOTest.vb" />
-    <Compile Include="Tests\DataAccessObjects\NotificationDAOTest.vb" />
-    <Compile Include="Tests\DataAccessObjects\TransactionDAOTest.vb" />
-    <Compile Include="Tests\Models\AccountModelTests.vb" />
-    <Compile Include="Tests\Models\AnnouncementModelTest.vb" />
-    <Compile Include="Tests\Models\BaseDAOTest.vb" />
-    <Compile Include="Tests\Models\BookCopyModelTest.vb" />
-    <Compile Include="Tests\Models\BookModelTest.vb" />
-    <Compile Include="Tests\Models\LogModelTest.vb" />
-    <Compile Include="Tests\Models\NotificationModelTest.vb" />
-    <Compile Include="Tests\Models\TransactionModelTest.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Forms\Admin\Panel\BookInfo.resx">
@@ -243,6 +237,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Student Interface\Login_Panel_Student.resx">
       <DependentUpon>Login_Panel_Student.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Student Interface\TestWindow.resx">
+      <DependentUpon>TestWindow.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Student Interface\UC Student\UC_Signup2_student.resx">
       <DependentUpon>UC_Signup2_student.vb</DependentUpon>
@@ -273,7 +270,6 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

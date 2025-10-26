@@ -17,6 +17,7 @@
 
         ' --- 3. Connect to Step 2 Control (UC_Signup2_student1) ---
         AddHandler UC_Signup2_student1.BackClicked, AddressOf HandleBackClicked
+        AddHandler UC_Signup2_student1.ConfirmClicked, AddressOf HandleConfirmClicked
 
         ' --- 4. Set Initial State ---
         UC_Signup2_student1.Visible = True
@@ -62,6 +63,10 @@
     Private Sub HandleLoginClicked(sender As Object, e As EventArgs)
         ' Close this signup form and return to the login form
         Me.Close()
+    End Sub
+
+    Private Sub HandleConfirmClicked(sender As Object, e As EventArgs)
+
     End Sub
 
 End Class

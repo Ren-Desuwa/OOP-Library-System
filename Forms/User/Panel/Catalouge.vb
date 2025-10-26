@@ -6,7 +6,7 @@ Imports System.IO
 Public Class Catalouge
 
     Private ReadOnly _dbCon As New DBcon("ooplibrary") '
-    Private ReadOnly _catalogueService As catalougeService
+    Private ReadOnly _catalogueService As CatalougeService
 
     ' Keep track of the currently "maximized" genre controls
     Private _maximizedGenreLabel As Label = Nothing
@@ -15,7 +15,7 @@ Public Class Catalouge
 
     Public Sub New()
         InitializeComponent() '
-        _catalogueService = New catalougeService(_dbCon) '
+        _catalogueService = New CatalougeService(_dbCon) '
         ' --- ADD HANDLER FOR SEARCH TEXT CHANGED ---
         AddHandler txtSearch.TextChanged, AddressOf txtSearch_TextChanged ' Or use KeyDown for Enter
     End Sub

@@ -74,6 +74,26 @@ Public Class AccountDAO
         Return list
     End Function
 
+    Public Function GetByEmail(email As String) As Account
+        Dim sql = "SELECT * FROM accounts WHERE email = @Email"
+        Using cmd As New MySqlCommand(sql, _transaction.Connection, _transaction)
+            cmd.Parameters.AddWithValue("@Email", email)
+            Using reader = cmd.ExecuteReader()
+                Return If(reader.Read(), MapToAccount(reader), Nothing)
+            End Using
+        End Using
+    End Function
+
+    Public Function GetByContactNumber(contact As String) As Account
+        Dim sql = "SELECT * FROM accounts WHERE contact_number = @Contact_Number"
+        Using cmd As New MySqlCommand(sql, _transaction.Connection, _transaction)
+            cmd.Parameters.AddWithValue("@Contact_Number", contact)
+            Using reader = cmd.ExecuteReader()
+                Return If(reader.Read(), MapToAccount(reader), Nothing)
+            End Using
+        End Using
+    End Function
+
     ' #################### UPDATE ####################
     Public Sub Update(account As Account)
         Dim sql = "UPDATE accounts SET " &

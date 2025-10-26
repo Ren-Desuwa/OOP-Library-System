@@ -5,10 +5,9 @@ Public Module Program
     ' --- Central Storage for all your services ---
     ' Members of a Module are already shared, so we just declare them.
     Public ReadOnly mainDbConnection As DBcon
-    Public ReadOnly AuthSvc As authService
+    Public ReadOnly AuthSvc As AuthService
     Public ReadOnly RegSvc As registrationService
-    Public ReadOnly CatSvc As catalougeService
-    ' ... add all other services here ...
+    Public ReadOnly CatSvc As CatalougeService
 
     ' --- Static Constructor (Runs ONCE) ---
     ' "Shared Sub New" IS correct for a Module.
@@ -18,9 +17,9 @@ Public Module Program
             mainDbConnection = New DBcon("ooplibrary") ' Or "library_test"
 
             ' 2. Create all services and INJECT the connection
-            AuthSvc = New authService(mainDbConnection)
+            AuthSvc = New AuthService(mainDbConnection)
             RegSvc = New registrationService(mainDbConnection)
-            CatSvc = New catalougeService(mainDbConnection)
+            CatSvc = New CatalougeService(mainDbConnection)
             ' ... initialize other services here ...
 
         Catch ex As Exception
@@ -55,12 +54,12 @@ Public Module Program
         If result = DialogResult.Yes Then
             ' --- Run the ADMIN/LIBRARIAN App ---
             ' Make sure your Frm_Login constructor is updated
-            Dim adminLoginForm As New Catalouge()
+            Dim adminLoginForm As New Login_Panel_Student()
             Application.Run(adminLoginForm)
         Else
             ' --- Run the KIOSK App ---
             ' Make sure your Frm_Kiosk_Main constructor is updated
-            Dim kioskMainForm As New Catalouge()
+            Dim kioskMainForm As New Login_Panel_Student()
             Application.Run(kioskMainForm)
         End If
 

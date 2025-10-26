@@ -27,31 +27,16 @@
         ' --- Mockup Database Check (CHANGED) ---
 
         ' Account 1: Student
-        If (inputUserOrID = "Rhea" OrElse inputUserOrID = "20240136-C") AndAlso
-           inputPassword = "123" Then
-
-            loggedInUsername = "Rhea"
-
+        Dim loginAccount As Account = AuthSvc.Login(inputUserOrID, inputPassword)
+        If Not loginAccount Is Nothing Then
+            Dim StudentForm As New TestWindow()
+            Me.Hide()
+            StudentForm.ShowDialog()
+            Me.Show()
+            Return
         End If
-        ' -------------------------------
-
-        ' Check if login was successful (CHANGED)
-        If Not String.IsNullOrEmpty(loggedInUsername) Then
-
-            ' --- UPDATED LINE ---
-            ' Passes only the username as requested.
-            ' You will need to update the Home_Panel_Librarian_Admin_
-            ' constructor to accept only one string.
-            ' Dim homePanel As New Home_Panel_Librarian_Admin_(loggedInUsername)
-
-            ' homePanel.Show()
-            MessageBox.Show(loggedInUsername + " Logged In")
-            Me.Close()
-
-        Else
-            ' Requirement 4: Failed login
-            MessageBox.Show("Invalid Username, ID, or Password")
-        End If
+        ' Requirement 4: Failed login
+        MessageBox.Show("Invalid Username, ID, or Password")
     End Sub
 
     ' --- Other Events ---
