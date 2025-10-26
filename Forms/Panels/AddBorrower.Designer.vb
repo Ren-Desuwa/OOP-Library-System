@@ -77,7 +77,7 @@ Partial Class AddBorrower
         Me.addBorrrower.Location = New System.Drawing.Point(2, 0)
         Me.addBorrrower.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.addBorrrower.Name = "addBorrrower"
-        Me.addBorrrower.Size = New System.Drawing.Size(746, 75)
+        Me.addBorrrower.Size = New System.Drawing.Size(696, 61)
         Me.addBorrrower.TabIndex = 0
         Me.addBorrrower.Text = "Add Borrower"
         Me.addBorrrower.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -96,7 +96,7 @@ Partial Class AddBorrower
         Me.TableLayoutPanel1.RowCount = 1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(750, 75)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(700, 61)
         Me.TableLayoutPanel1.TabIndex = 0
         '
         'Guna2CustomGradientPanel1
@@ -110,7 +110,7 @@ Partial Class AddBorrower
         Me.Guna2CustomGradientPanel1.Location = New System.Drawing.Point(0, 0)
         Me.Guna2CustomGradientPanel1.Margin = New System.Windows.Forms.Padding(2)
         Me.Guna2CustomGradientPanel1.Name = "Guna2CustomGradientPanel1"
-        Me.Guna2CustomGradientPanel1.Size = New System.Drawing.Size(750, 75)
+        Me.Guna2CustomGradientPanel1.Size = New System.Drawing.Size(700, 61)
         Me.Guna2CustomGradientPanel1.TabIndex = 0
         '
         'Guna2TextBox2
@@ -127,11 +127,11 @@ Partial Class AddBorrower
         Me.Guna2TextBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Guna2TextBox2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2TextBox2.Location = New System.Drawing.Point(79, 119)
+        Me.Guna2TextBox2.Location = New System.Drawing.Point(54, 107)
         Me.Guna2TextBox2.Name = "Guna2TextBox2"
         Me.Guna2TextBox2.PlaceholderText = ""
         Me.Guna2TextBox2.SelectedText = ""
-        Me.Guna2TextBox2.Size = New System.Drawing.Size(288, 28)
+        Me.Guna2TextBox2.Size = New System.Drawing.Size(288, 25)
         Me.Guna2TextBox2.TabIndex = 11
         '
         'Guna2TextBox1
@@ -148,11 +148,11 @@ Partial Class AddBorrower
         Me.Guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Guna2TextBox1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2TextBox1.Location = New System.Drawing.Point(79, 59)
+        Me.Guna2TextBox1.Location = New System.Drawing.Point(54, 53)
         Me.Guna2TextBox1.Name = "Guna2TextBox1"
         Me.Guna2TextBox1.PlaceholderText = ""
         Me.Guna2TextBox1.SelectedText = ""
-        Me.Guna2TextBox1.Size = New System.Drawing.Size(288, 28)
+        Me.Guna2TextBox1.Size = New System.Drawing.Size(288, 25)
         Me.Guna2TextBox1.TabIndex = 10
         '
         'TableLayoutPanel2
@@ -189,7 +189,7 @@ Partial Class AddBorrower
         Me.TableLayoutPanel2.Controls.Add(Me.Guna2Button2, 6, 12)
         Me.TableLayoutPanel2.Controls.Add(Me.Guna2Button1, 5, 12)
         Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel2.Location = New System.Drawing.Point(0, 75)
+        Me.TableLayoutPanel2.Location = New System.Drawing.Point(0, 61)
         Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
         Me.TableLayoutPanel2.RowCount = 14
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.143265!))
@@ -206,7 +206,7 @@ Partial Class AddBorrower
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.143265!))
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.71061!))
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.570204!))
-        Me.TableLayoutPanel2.Size = New System.Drawing.Size(750, 425)
+        Me.TableLayoutPanel2.Size = New System.Drawing.Size(700, 389)
         Me.TableLayoutPanel2.TabIndex = 1
         '
         'Guna2TextBox3
@@ -223,11 +223,11 @@ Partial Class AddBorrower
         Me.Guna2TextBox3.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Guna2TextBox3.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Guna2TextBox3.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2TextBox3.Location = New System.Drawing.Point(79, 179)
+        Me.Guna2TextBox3.Location = New System.Drawing.Point(54, 161)
         Me.Guna2TextBox3.Name = "Guna2TextBox3"
         Me.Guna2TextBox3.PlaceholderText = ""
         Me.Guna2TextBox3.SelectedText = ""
-        Me.Guna2TextBox3.Size = New System.Drawing.Size(288, 28)
+        Me.Guna2TextBox3.Size = New System.Drawing.Size(288, 25)
         Me.Guna2TextBox3.TabIndex = 12
         '
         'Guna2ComboBox1
@@ -243,7 +243,7 @@ Partial Class AddBorrower
         Me.Guna2ComboBox1.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.Guna2ComboBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.Guna2ComboBox1.ItemHeight = 30
-        Me.Guna2ComboBox1.Location = New System.Drawing.Point(79, 236)
+        Me.Guna2ComboBox1.Location = New System.Drawing.Point(54, 212)
         Me.Guna2ComboBox1.Margin = New System.Windows.Forms.Padding(3, 0, 3, 3)
         Me.Guna2ComboBox1.Name = "Guna2ComboBox1"
         Me.Guna2ComboBox1.Size = New System.Drawing.Size(288, 36)
@@ -258,11 +258,11 @@ Partial Class AddBorrower
         Me.Guna2DateTimePicker1.FillColor = System.Drawing.Color.LightSalmon
         Me.Guna2DateTimePicker1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Guna2DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
-        Me.Guna2DateTimePicker1.Location = New System.Drawing.Point(79, 299)
+        Me.Guna2DateTimePicker1.Location = New System.Drawing.Point(54, 269)
         Me.Guna2DateTimePicker1.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
         Me.Guna2DateTimePicker1.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
         Me.Guna2DateTimePicker1.Name = "Guna2DateTimePicker1"
-        Me.Guna2DateTimePicker1.Size = New System.Drawing.Size(288, 28)
+        Me.Guna2DateTimePicker1.Size = New System.Drawing.Size(288, 25)
         Me.Guna2DateTimePicker1.TabIndex = 14
         Me.Guna2DateTimePicker1.Value = New Date(2025, 10, 26, 12, 54, 28, 632)
         '
@@ -271,7 +271,7 @@ Partial Class AddBorrower
         Me.Guna2HtmlLabel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel1.Location = New System.Drawing.Point(33, 276)
+        Me.Guna2HtmlLabel1.Location = New System.Drawing.Point(31, 246)
         Me.Guna2HtmlLabel1.Name = "Guna2HtmlLabel1"
         Me.Guna2HtmlLabel1.Size = New System.Drawing.Size(71, 17)
         Me.Guna2HtmlLabel1.TabIndex = 15
@@ -283,7 +283,7 @@ Partial Class AddBorrower
         Me.Guna2HtmlLabel2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel2.Location = New System.Drawing.Point(380, 36)
+        Me.Guna2HtmlLabel2.Location = New System.Drawing.Point(355, 30)
         Me.Guna2HtmlLabel2.Name = "Guna2HtmlLabel2"
         Me.Guna2HtmlLabel2.Size = New System.Drawing.Size(74, 17)
         Me.Guna2HtmlLabel2.TabIndex = 16
@@ -295,7 +295,7 @@ Partial Class AddBorrower
         Me.Guna2HtmlLabel3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel3.Location = New System.Drawing.Point(380, 96)
+        Me.Guna2HtmlLabel3.Location = New System.Drawing.Point(355, 84)
         Me.Guna2HtmlLabel3.Name = "Guna2HtmlLabel3"
         Me.Guna2HtmlLabel3.Size = New System.Drawing.Size(105, 17)
         Me.Guna2HtmlLabel3.TabIndex = 17
@@ -307,7 +307,7 @@ Partial Class AddBorrower
         Me.Guna2HtmlLabel4.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel4.Location = New System.Drawing.Point(380, 156)
+        Me.Guna2HtmlLabel4.Location = New System.Drawing.Point(355, 138)
         Me.Guna2HtmlLabel4.Name = "Guna2HtmlLabel4"
         Me.Guna2HtmlLabel4.Size = New System.Drawing.Size(67, 17)
         Me.Guna2HtmlLabel4.TabIndex = 18
@@ -319,7 +319,7 @@ Partial Class AddBorrower
         Me.Guna2HtmlLabel5.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel5.Location = New System.Drawing.Point(380, 216)
+        Me.Guna2HtmlLabel5.Location = New System.Drawing.Point(355, 192)
         Me.Guna2HtmlLabel5.Name = "Guna2HtmlLabel5"
         Me.Guna2HtmlLabel5.Size = New System.Drawing.Size(44, 17)
         Me.Guna2HtmlLabel5.TabIndex = 19
@@ -331,7 +331,7 @@ Partial Class AddBorrower
         Me.Guna2HtmlLabel6.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel6.Location = New System.Drawing.Point(380, 276)
+        Me.Guna2HtmlLabel6.Location = New System.Drawing.Point(355, 246)
         Me.Guna2HtmlLabel6.Name = "Guna2HtmlLabel6"
         Me.Guna2HtmlLabel6.Size = New System.Drawing.Size(47, 17)
         Me.Guna2HtmlLabel6.TabIndex = 20
@@ -343,7 +343,7 @@ Partial Class AddBorrower
         Me.Guna2HtmlLabel7.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Guna2HtmlLabel7.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel7.Location = New System.Drawing.Point(33, 156)
+        Me.Guna2HtmlLabel7.Location = New System.Drawing.Point(31, 138)
         Me.Guna2HtmlLabel7.Name = "Guna2HtmlLabel7"
         Me.Guna2HtmlLabel7.Size = New System.Drawing.Size(93, 17)
         Me.Guna2HtmlLabel7.TabIndex = 21
@@ -355,7 +355,7 @@ Partial Class AddBorrower
         Me.Guna2HtmlLabel8.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Guna2HtmlLabel8.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel8.Location = New System.Drawing.Point(33, 96)
+        Me.Guna2HtmlLabel8.Location = New System.Drawing.Point(31, 84)
         Me.Guna2HtmlLabel8.Name = "Guna2HtmlLabel8"
         Me.Guna2HtmlLabel8.Size = New System.Drawing.Size(77, 17)
         Me.Guna2HtmlLabel8.TabIndex = 22
@@ -366,7 +366,7 @@ Partial Class AddBorrower
         Me.Guna2HtmlLabel9.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Guna2HtmlLabel9.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel9.Location = New System.Drawing.Point(33, 36)
+        Me.Guna2HtmlLabel9.Location = New System.Drawing.Point(31, 30)
         Me.Guna2HtmlLabel9.Name = "Guna2HtmlLabel9"
         Me.Guna2HtmlLabel9.Size = New System.Drawing.Size(76, 17)
         Me.Guna2HtmlLabel9.TabIndex = 23
@@ -378,7 +378,7 @@ Partial Class AddBorrower
         Me.Guna2HtmlLabel10.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Guna2HtmlLabel10.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel10.Location = New System.Drawing.Point(33, 216)
+        Me.Guna2HtmlLabel10.Location = New System.Drawing.Point(31, 192)
         Me.Guna2HtmlLabel10.Name = "Guna2HtmlLabel10"
         Me.Guna2HtmlLabel10.Size = New System.Drawing.Size(43, 17)
         Me.Guna2HtmlLabel10.TabIndex = 24
@@ -399,11 +399,11 @@ Partial Class AddBorrower
         Me.Guna2TextBox4.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Guna2TextBox4.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Guna2TextBox4.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2TextBox4.Location = New System.Drawing.Point(430, 59)
+        Me.Guna2TextBox4.Location = New System.Drawing.Point(381, 53)
         Me.Guna2TextBox4.Name = "Guna2TextBox4"
         Me.Guna2TextBox4.PlaceholderText = ""
         Me.Guna2TextBox4.SelectedText = ""
-        Me.Guna2TextBox4.Size = New System.Drawing.Size(284, 28)
+        Me.Guna2TextBox4.Size = New System.Drawing.Size(284, 25)
         Me.Guna2TextBox4.TabIndex = 25
         '
         'Guna2TextBox5
@@ -420,11 +420,11 @@ Partial Class AddBorrower
         Me.Guna2TextBox5.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Guna2TextBox5.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Guna2TextBox5.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2TextBox5.Location = New System.Drawing.Point(430, 119)
+        Me.Guna2TextBox5.Location = New System.Drawing.Point(381, 107)
         Me.Guna2TextBox5.Name = "Guna2TextBox5"
         Me.Guna2TextBox5.PlaceholderText = ""
         Me.Guna2TextBox5.SelectedText = ""
-        Me.Guna2TextBox5.Size = New System.Drawing.Size(284, 28)
+        Me.Guna2TextBox5.Size = New System.Drawing.Size(284, 25)
         Me.Guna2TextBox5.TabIndex = 26
         '
         'Guna2TextBox6
@@ -441,11 +441,11 @@ Partial Class AddBorrower
         Me.Guna2TextBox6.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Guna2TextBox6.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Guna2TextBox6.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2TextBox6.Location = New System.Drawing.Point(430, 179)
+        Me.Guna2TextBox6.Location = New System.Drawing.Point(381, 161)
         Me.Guna2TextBox6.Name = "Guna2TextBox6"
         Me.Guna2TextBox6.PlaceholderText = ""
         Me.Guna2TextBox6.SelectedText = ""
-        Me.Guna2TextBox6.Size = New System.Drawing.Size(284, 28)
+        Me.Guna2TextBox6.Size = New System.Drawing.Size(284, 25)
         Me.Guna2TextBox6.TabIndex = 27
         '
         'Guna2TextBox7
@@ -462,11 +462,11 @@ Partial Class AddBorrower
         Me.Guna2TextBox7.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Guna2TextBox7.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Guna2TextBox7.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2TextBox7.Location = New System.Drawing.Point(430, 239)
+        Me.Guna2TextBox7.Location = New System.Drawing.Point(381, 215)
         Me.Guna2TextBox7.Name = "Guna2TextBox7"
         Me.Guna2TextBox7.PlaceholderText = ""
         Me.Guna2TextBox7.SelectedText = ""
-        Me.Guna2TextBox7.Size = New System.Drawing.Size(284, 28)
+        Me.Guna2TextBox7.Size = New System.Drawing.Size(284, 25)
         Me.Guna2TextBox7.TabIndex = 28
         '
         'Guna2ImageButton1
@@ -479,10 +479,10 @@ Partial Class AddBorrower
         Me.Guna2ImageButton1.Image = CType(resources.GetObject("Guna2ImageButton1.Image"), System.Drawing.Image)
         Me.Guna2ImageButton1.ImageOffset = New System.Drawing.Point(0, 0)
         Me.Guna2ImageButton1.ImageRotate = 0!
-        Me.Guna2ImageButton1.Location = New System.Drawing.Point(430, 299)
+        Me.Guna2ImageButton1.Location = New System.Drawing.Point(381, 269)
         Me.Guna2ImageButton1.Name = "Guna2ImageButton1"
         Me.Guna2ImageButton1.PressedState.ImageSize = New System.Drawing.Size(64, 64)
-        Me.Guna2ImageButton1.Size = New System.Drawing.Size(284, 28)
+        Me.Guna2ImageButton1.Size = New System.Drawing.Size(284, 25)
         Me.Guna2ImageButton1.TabIndex = 29
         '
         'Guna2Button2
@@ -496,9 +496,9 @@ Partial Class AddBorrower
         Me.Guna2Button2.FillColor = System.Drawing.Color.Sienna
         Me.Guna2Button2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Guna2Button2.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button2.Location = New System.Drawing.Point(603, 363)
+        Me.Guna2Button2.Location = New System.Drawing.Point(562, 327)
         Me.Guna2Button2.Name = "Guna2Button2"
-        Me.Guna2Button2.Size = New System.Drawing.Size(111, 43)
+        Me.Guna2Button2.Size = New System.Drawing.Size(103, 39)
         Me.Guna2Button2.TabIndex = 31
         Me.Guna2Button2.Text = "Confirm"
         '
@@ -513,9 +513,9 @@ Partial Class AddBorrower
         Me.Guna2Button1.FillColor = System.Drawing.Color.Tan
         Me.Guna2Button1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Guna2Button1.ForeColor = System.Drawing.Color.Black
-        Me.Guna2Button1.Location = New System.Drawing.Point(486, 363)
+        Me.Guna2Button1.Location = New System.Drawing.Point(453, 327)
         Me.Guna2Button1.Name = "Guna2Button1"
-        Me.Guna2Button1.Size = New System.Drawing.Size(111, 43)
+        Me.Guna2Button1.Size = New System.Drawing.Size(103, 39)
         Me.Guna2Button1.TabIndex = 32
         Me.Guna2Button1.Text = "Cancel"
         '
@@ -524,7 +524,7 @@ Partial Class AddBorrower
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Linen
-        Me.ClientSize = New System.Drawing.Size(750, 500)
+        Me.ClientSize = New System.Drawing.Size(700, 450)
         Me.Controls.Add(Me.TableLayoutPanel2)
         Me.Controls.Add(Me.Guna2CustomGradientPanel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
