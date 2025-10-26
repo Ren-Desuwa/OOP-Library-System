@@ -1,5 +1,5 @@
 ﻿Public Class AddBorrower
-    Private Sub btn_login_Click(sender As Object, e As EventArgs)
+    Sub addBorrrower_Click(sender As Object, e As EventArgs) Handles addBorrrower.Click
 
     End Sub
 End Class

@@ -131,7 +131,9 @@
     <Compile Include="Forms\Panels\Login_Panel(Librarian-Admin).Designer.vb">
       <DependentUpon>Login_Panel(Librarian-Admin).vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Panels\Login_Panel(Librarian-Admin).vb" />
+    <Compile Include="Forms\Panels\Login_Panel(Librarian-Admin).vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="LibraryCore\Forms\User\UserLogin\UserRegister.Designer.vb">
       <DependentUpon>UserRegister.vb</DependentUpon>
     </Compile>
