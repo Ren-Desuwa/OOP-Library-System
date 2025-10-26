@@ -26,7 +26,6 @@ Partial Class BorrowerProfile
         Me.Guna2Elipse1 = New Guna.UI2.WinForms.Guna2Elipse(Me.components)
         Me.Guna2CustomGradientPanel1 = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.imgBorrower = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.txtboxName = New Guna.UI2.WinForms.Guna2TextBox()
         Me.txtboxCourse = New Guna.UI2.WinForms.Guna2TextBox()
         Me.txtboxStudentID = New Guna.UI2.WinForms.Guna2TextBox()
@@ -37,6 +36,7 @@ Partial Class BorrowerProfile
         Me.btnManage = New Guna.UI2.WinForms.Guna2Button()
         Me.btnRemove = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2DragControl1 = New Guna.UI2.WinForms.Guna2DragControl(Me.components)
+        Me.imgBorrower = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Guna2CustomGradientPanel1.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
         CType(Me.imgBorrower, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -103,20 +103,6 @@ Partial Class BorrowerProfile
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.59424!))
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(600, 380)
         Me.TableLayoutPanel1.TabIndex = 0
-        '
-        'imgBorrower
-        '
-        Me.imgBorrower.BorderRadius = 5
-        Me.TableLayoutPanel1.SetColumnSpan(Me.imgBorrower, 3)
-        Me.imgBorrower.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.imgBorrower.FillColor = System.Drawing.Color.AntiqueWhite
-        Me.imgBorrower.ImageRotate = 0!
-        Me.imgBorrower.Location = New System.Drawing.Point(32, 29)
-        Me.imgBorrower.Name = "imgBorrower"
-        Me.TableLayoutPanel1.SetRowSpan(Me.imgBorrower, 8)
-        Me.imgBorrower.Size = New System.Drawing.Size(193, 218)
-        Me.imgBorrower.TabIndex = 0
-        Me.imgBorrower.TabStop = False
         '
         'txtboxName
         '
@@ -297,6 +283,20 @@ Partial Class BorrowerProfile
         Me.Guna2DragControl1.DockIndicatorTransparencyValue = 0.6R
         Me.Guna2DragControl1.TargetControl = Me.TableLayoutPanel1
         Me.Guna2DragControl1.TransparentWhileDrag = False
+        '
+        'imgBorrower
+        '
+        Me.imgBorrower.BorderRadius = 5
+        Me.TableLayoutPanel1.SetColumnSpan(Me.imgBorrower, 3)
+        Me.imgBorrower.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.imgBorrower.FillColor = System.Drawing.Color.AntiqueWhite
+        Me.imgBorrower.ImageRotate = 0!
+        Me.imgBorrower.Location = New System.Drawing.Point(32, 29)
+        Me.imgBorrower.Name = "imgBorrower"
+        Me.TableLayoutPanel1.SetRowSpan(Me.imgBorrower, 8)
+        Me.imgBorrower.Size = New System.Drawing.Size(193, 218)
+        Me.imgBorrower.TabIndex = 0
+        Me.imgBorrower.TabStop = False
         '
         'BorrowerProfile
         '
