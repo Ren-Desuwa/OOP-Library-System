@@ -202,6 +202,22 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Program.vb" />
+    <Compile Include="Tests\DataAccessObjects\AccountDAOTest.vb" />
+    <Compile Include="Tests\DataAccessObjects\AnnouncementDAOTest.vb" />
+    <Compile Include="Tests\DataAccessObjects\BookCopyDAOTest.vb" />
+    <Compile Include="Tests\DataAccessObjects\BookDAOTest.vb" />
+    <Compile Include="Tests\DataAccessObjects\LogDAOTest.vb" />
+    <Compile Include="Tests\DataAccessObjects\NotificationDAOTest.vb" />
+    <Compile Include="Tests\DataAccessObjects\TransactionDAOTest.vb" />
+    <Compile Include="Tests\Models\AccountModelTests.vb" />
+    <Compile Include="Tests\Models\AnnouncementModelTest.vb" />
+    <Compile Include="Tests\Models\BaseDAOTest.vb" />
+    <Compile Include="Tests\Models\BookCopyModelTest.vb" />
+    <Compile Include="Tests\Models\BookModelTest.vb" />
+    <Compile Include="Tests\Models\LogModelTest.vb" />
+    <Compile Include="Tests\Models\NotificationModelTest.vb" />
+    <Compile Include="Tests\Models\TransactionModelTest.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Forms\Admin\Panel\BookInfo.resx">
@@ -261,7 +277,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Assets\" />
     <Folder Include="Database\" />
     <Folder Include="Forms\Admin-Librarian Interface\" />
     <Folder Include="Forms\Admin\Login\" />
@@ -273,6 +288,18 @@
     <Folder Include="LibraryUserApp\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Bookcover\1984.jpg" />
+    <Content Include="Assets\Bookcover\big_little_lies.jpg" />
+    <Content Include="Assets\Bookcover\hobbit.jpg" />
+    <Content Include="Assets\Bookcover\lord_of_the_rings_fellowship.jpg" />
+    <Content Include="Assets\Bookcover\pride_and_prejudice.jpg" />
+    <Content Include="Assets\Bookcover\sharp_objects.jpg" />
+    <Content Include="Assets\Bookcover\the_adventure.jpg" />
+    <Content Include="Assets\Bookcover\the_great_gatsby.jpg" />
+    <Content Include="Assets\Bookcover\the_guest_list.jpg" />
+    <Content Include="Assets\Bookcover\the_plot.jpg" />
+    <Content Include="Assets\Bookcover\the_woman_in_the_window.jpg" />
+    <Content Include="Assets\Bookcover\to_kill_a_mockingbird.jpg" />
     <Content Include="LibraryCore\Assets\Bookcover\1984.jpg" />
     <Content Include="LibraryCore\Assets\Bookcover\big_little_lies.jpg" />
     <Content Include="LibraryCore\Assets\Bookcover\hobbit.jpg" />
