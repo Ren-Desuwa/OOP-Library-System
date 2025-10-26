@@ -1,4 +1,4 @@
-﻿Public Class Login_Panel_Librarian_Admin_
+﻿Public Class Login_Panel_Librarian_Admin
 
     ' This event runs when the form first loads
     Private Sub Login_Panel_Librarian_Admin__Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -48,7 +48,7 @@
 
             ' --- UPDATED LINE ---
             ' No longer passes "Me"
-            Dim homePanel As New Home_Panel_Librarian_Admin_(loggedInUsername, userRole)
+            Dim homePanel As New Home_Panel_Admin_Librarian(loggedInUsername, userRole)
 
             homePanel.Show()
 
