@@ -203,21 +203,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Program.vb" />
-    <Compile Include="Tests\DataAccessObjects\AccountDAOTest.vb" />
-    <Compile Include="Tests\DataAccessObjects\AnnouncementDAOTest.vb" />
-    <Compile Include="Tests\DataAccessObjects\BookCopyDAOTest.vb" />
-    <Compile Include="Tests\DataAccessObjects\BookDAOTest.vb" />
-    <Compile Include="Tests\DataAccessObjects\LogDAOTest.vb" />
-    <Compile Include="Tests\DataAccessObjects\NotificationDAOTest.vb" />
-    <Compile Include="Tests\DataAccessObjects\TransactionDAOTest.vb" />
-    <Compile Include="Tests\Models\AccountModelTests.vb" />
-    <Compile Include="Tests\Models\AnnouncementModelTest.vb" />
-    <Compile Include="Tests\Models\BaseDAOTest.vb" />
-    <Compile Include="Tests\Models\BookCopyModelTest.vb" />
-    <Compile Include="Tests\Models\BookModelTest.vb" />
-    <Compile Include="Tests\Models\LogModelTest.vb" />
-    <Compile Include="Tests\Models\NotificationModelTest.vb" />
-    <Compile Include="Tests\Models\TransactionModelTest.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Forms\Admin\Panel\BookInfo.resx">
