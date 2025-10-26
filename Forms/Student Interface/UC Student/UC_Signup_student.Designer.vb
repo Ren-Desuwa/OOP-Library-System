@@ -176,11 +176,11 @@ Partial Class UC_Signup_student
         Me.lbl_titlesignup.AutoSize = True
         Me.lbl_titlesignup.BackColor = System.Drawing.Color.Transparent
         Me.lbl_titlesignup.Font = New System.Drawing.Font("Roboto", 19.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_titlesignup.Location = New System.Drawing.Point(200, 30)
+        Me.lbl_titlesignup.Location = New System.Drawing.Point(168, 32)
         Me.lbl_titlesignup.Name = "lbl_titlesignup"
-        Me.lbl_titlesignup.Size = New System.Drawing.Size(119, 39)
+        Me.lbl_titlesignup.Size = New System.Drawing.Size(193, 39)
         Me.lbl_titlesignup.TabIndex = 13
-        Me.lbl_titlesignup.Text = "Signup"
+        Me.lbl_titlesignup.Text = "Registration"
         '
         'txtBox_password
         '
