@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MyApplicationData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <MySubMain>false</MySubMain>
-  <MainForm>Login_Panel_Student</MainForm>
+  <MainForm>Signup_Panel_Student</MainForm>
   <SingleInstance>false</SingleInstance>
   <ShutdownMode>1</ShutdownMode>
   <EnableVisualStyles>true</EnableVisualStyles>
