@@ -1,27 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="packages\Microsoft.NET.Test.Sdk.18.0.0\build\net462\Microsoft.NET.Test.Sdk.props" Condition="Exists('packages\Microsoft.NET.Test.Sdk.18.0.0\build\net462\Microsoft.NET.Test.Sdk.props')" />
-  <Import Project="packages\Microsoft.CodeCoverage.18.0.0\build\netstandard2.0\Microsoft.CodeCoverage.props" Condition="Exists('packages\Microsoft.CodeCoverage.18.0.0\build\netstandard2.0\Microsoft.CodeCoverage.props')" />
-  <Import Project="packages\MSTest.TestAdapter.4.0.1\build\net462\MSTest.TestAdapter.props" Condition="Exists('packages\MSTest.TestAdapter.4.0.1\build\net462\MSTest.TestAdapter.props')" />
-  <Import Project="packages\Microsoft.Testing.Extensions.Telemetry.2.0.1\build\netstandard2.0\Microsoft.Testing.Extensions.Telemetry.props" Condition="Exists('packages\Microsoft.Testing.Extensions.Telemetry.2.0.1\build\netstandard2.0\Microsoft.Testing.Extensions.Telemetry.props')" />
-  <Import Project="packages\Microsoft.Testing.Platform.MSBuild.2.0.1\build\Microsoft.Testing.Platform.MSBuild.props" Condition="Exists('packages\Microsoft.Testing.Platform.MSBuild.2.0.1\build\Microsoft.Testing.Platform.MSBuild.props')" />
-  <Import Project="packages\Microsoft.Testing.Platform.2.0.1\build\netstandard2.0\Microsoft.Testing.Platform.props" Condition="Exists('packages\Microsoft.Testing.Platform.2.0.1\build\netstandard2.0\Microsoft.Testing.Platform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{985F421D-0F74-4602-858B-EC5CA98B46E5}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>OOP_Library_System.Program</StartupObject>
+    <StartupObject>OOP_Library_System.My.MyApplication</StartupObject>
     <RootNamespace>OOP_Library_System</RootNamespace>
     <AssemblyName>OOP Library System</AssemblyName>
     <FileAlignment>512</FileAlignment>
-    <MyType>WindowsFormsWithCustomSubMain</MyType>
+    <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -56,209 +48,15 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Azure.Core, Version=1.49.0.0, Culture=neutral, PublicKeyToken=92742159e12e44c8, processorArchitecture=MSIL">
-      <HintPath>packages\Azure.Core.1.49.0\lib\net472\Azure.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Azure.Identity, Version=1.17.0.0, Culture=neutral, PublicKeyToken=92742159e12e44c8, processorArchitecture=MSIL">
-      <HintPath>packages\Azure.Identity.1.17.0\lib\netstandard2.0\Azure.Identity.dll</HintPath>
-    </Reference>
-    <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
-      <HintPath>packages\BouncyCastle.Cryptography.2.6.2\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.Protobuf, Version=3.32.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
-      <HintPath>packages\Google.Protobuf.3.32.0\lib\net45\Google.Protobuf.dll</HintPath>
-    </Reference>
     <Reference Include="Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
       <HintPath>packages\Guna.UI2.WinForms.2.0.4.7\lib\net472\Guna.UI2.dll</HintPath>
     </Reference>
-    <Reference Include="K4os.Compression.LZ4, Version=1.3.8.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
-      <HintPath>packages\K4os.Compression.LZ4.1.3.8\lib\net462\K4os.Compression.LZ4.dll</HintPath>
-    </Reference>
-    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.3.8.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
-      <HintPath>packages\K4os.Compression.LZ4.Streams.1.3.8\lib\net462\K4os.Compression.LZ4.Streams.dll</HintPath>
-    </Reference>
-    <Reference Include="K4os.Hash.xxHash, Version=1.0.8.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
-      <HintPath>packages\K4os.Hash.xxHash.1.0.8\lib\net462\K4os.Hash.xxHash.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.ApplicationInsights, Version=2.23.0.29, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.ApplicationInsights.2.23.0\lib\net46\Microsoft.ApplicationInsights.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=9.0.0.10, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.9.0.10\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Bcl.Cryptography, Version=9.0.0.10, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Bcl.Cryptography.9.0.10\lib\net462\Microsoft.Bcl.Cryptography.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Bcl.TimeProvider, Version=8.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Bcl.TimeProvider.8.0.1\lib\net462\Microsoft.Bcl.TimeProvider.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.Data.SqlClient, Version=6.0.0.0, Culture=neutral, PublicKeyToken=23ec7fc2d6eaa4a5, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Data.SqlClient.6.1.2\lib\net462\Microsoft.Data.SqlClient.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Extensions.Caching.Abstractions, Version=9.0.0.10, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Extensions.Caching.Abstractions.9.0.10\lib\net462\Microsoft.Extensions.Caching.Abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Extensions.Caching.Memory, Version=9.0.0.10, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Extensions.Caching.Memory.9.0.10\lib\net462\Microsoft.Extensions.Caching.Memory.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=9.0.0.10, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Extensions.DependencyInjection.Abstractions.9.0.10\lib\net462\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=9.0.0.10, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Extensions.Logging.Abstractions.9.0.10\lib\net462\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Extensions.Options, Version=9.0.0.10, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Extensions.Options.9.0.10\lib\net462\Microsoft.Extensions.Options.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Extensions.Primitives, Version=9.0.0.10, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Extensions.Primitives.9.0.10\lib\net462\Microsoft.Extensions.Primitives.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Identity.Client, Version=4.77.1.0, Culture=neutral, PublicKeyToken=0a613f4dd989e8ae, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Identity.Client.4.77.1\lib\net472\Microsoft.Identity.Client.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Identity.Client.Extensions.Msal, Version=4.77.1.0, Culture=neutral, PublicKeyToken=0a613f4dd989e8ae, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Identity.Client.Extensions.Msal.4.77.1\lib\netstandard2.0\Microsoft.Identity.Client.Extensions.Msal.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.IdentityModel.Abstractions, Version=8.14.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.IdentityModel.Abstractions.8.14.0\lib\net472\Microsoft.IdentityModel.Abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.IdentityModel.JsonWebTokens, Version=8.14.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.IdentityModel.JsonWebTokens.8.14.0\lib\net472\Microsoft.IdentityModel.JsonWebTokens.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.IdentityModel.Logging, Version=8.14.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.IdentityModel.Logging.8.14.0\lib\net472\Microsoft.IdentityModel.Logging.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.IdentityModel.Protocols, Version=8.14.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.IdentityModel.Protocols.8.14.0\lib\net472\Microsoft.IdentityModel.Protocols.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.IdentityModel.Protocols.OpenIdConnect, Version=8.14.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.IdentityModel.Protocols.OpenIdConnect.8.14.0\lib\net472\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.IdentityModel.Tokens, Version=8.14.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.IdentityModel.Tokens.8.14.0\lib\net472\Microsoft.IdentityModel.Tokens.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Testing.Extensions.MSBuild, Version=2.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Testing.Platform.MSBuild.2.0.1\lib\netstandard2.0\Microsoft.Testing.Extensions.MSBuild.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Testing.Extensions.Telemetry, Version=2.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Testing.Extensions.Telemetry.2.0.1\lib\netstandard2.0\Microsoft.Testing.Extensions.Telemetry.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Testing.Extensions.TrxReport.Abstractions, Version=2.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Testing.Extensions.TrxReport.Abstractions.2.0.1\lib\netstandard2.0\Microsoft.Testing.Extensions.TrxReport.Abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Testing.Extensions.VSTestBridge, Version=2.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Testing.Extensions.VSTestBridge.2.0.1\lib\netstandard2.0\Microsoft.Testing.Extensions.VSTestBridge.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Testing.Platform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Testing.Platform.2.0.1\lib\netstandard2.0\Microsoft.Testing.Platform.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.TestPlatform.AdapterUtilities, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.TestPlatform.AdapterUtilities.18.0.0\lib\net462\Microsoft.TestPlatform.AdapterUtilities.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.TestPlatform.CoreUtilities, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.TestPlatform.ObjectModel.18.0.0\lib\net462\Microsoft.TestPlatform.CoreUtilities.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.TestPlatform.PlatformAbstractions, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.TestPlatform.ObjectModel.18.0.0\lib\net462\Microsoft.TestPlatform.PlatformAbstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.VisualStudio.CodeCoverage.Shim, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.CodeCoverage.18.0.0\lib\net462\Microsoft.VisualStudio.CodeCoverage.Shim.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.VisualStudio.TestPlatform.ObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.TestPlatform.ObjectModel.18.0.0\lib\net462\Microsoft.VisualStudio.TestPlatform.ObjectModel.dll</HintPath>
-    </Reference>
-    <Reference Include="MSTest.TestFramework, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\MSTest.TestFramework.4.0.1\lib\net462\MSTest.TestFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="MSTest.TestFramework.Extensions, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\MSTest.TestFramework.4.0.1\lib\net462\MSTest.TestFramework.Extensions.dll</HintPath>
-    </Reference>
-    <Reference Include="MySql.Data, Version=9.5.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <HintPath>packages\MySql.Data.9.5.0\lib\net462\MySql.Data.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Buffers, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.Buffers.4.6.1\lib\net462\System.Buffers.dll</HintPath>
-    </Reference>
-    <Reference Include="System.ClientModel, Version=1.7.0.0, Culture=neutral, PublicKeyToken=92742159e12e44c8, processorArchitecture=MSIL">
-      <HintPath>packages\System.ClientModel.1.7.0\lib\netstandard2.0\System.ClientModel.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Collections.Immutable, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\System.Collections.Immutable.8.0.0\lib\net462\System.Collections.Immutable.dll</HintPath>
-    </Reference>
-    <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Configuration" />
-    <Reference Include="System.Configuration.ConfigurationManager, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.Configuration.ConfigurationManager.8.0.0\lib\net462\System.Configuration.ConfigurationManager.dll</HintPath>
-    </Reference>
     <Reference Include="System.Data" />
-    <Reference Include="System.Data.Common, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\System.Data.Common.4.3.0\lib\net451\System.Data.Common.dll</HintPath>
-      <Private>True</Private>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System.Deployment" />
     <Reference Include="System.Design" />
-    <Reference Include="System.Diagnostics.DiagnosticSource, Version=9.0.0.10, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.Diagnostics.DiagnosticSource.9.0.10\lib\net462\System.Diagnostics.DiagnosticSource.dll</HintPath>
-    </Reference>
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Formats.Asn1, Version=9.0.0.10, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.Formats.Asn1.9.0.10\lib\net462\System.Formats.Asn1.dll</HintPath>
-    </Reference>
-    <Reference Include="System.IdentityModel" />
-    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=8.14.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\System.IdentityModel.Tokens.Jwt.8.14.0\lib\net472\System.IdentityModel.Tokens.Jwt.dll</HintPath>
-    </Reference>
-    <Reference Include="System.IO.FileSystem.AccessControl, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\System.IO.FileSystem.AccessControl.5.0.0\lib\net461\System.IO.FileSystem.AccessControl.dll</HintPath>
-    </Reference>
-    <Reference Include="System.IO.Pipelines, Version=9.0.0.10, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.IO.Pipelines.9.0.10\lib\net462\System.IO.Pipelines.dll</HintPath>
-    </Reference>
     <Reference Include="System.Management" />
-    <Reference Include="System.Memory, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.Memory.4.6.3\lib\net462\System.Memory.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Memory.Data, Version=9.0.0.10, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.Memory.Data.9.0.10\lib\net462\System.Memory.Data.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Numerics" />
-    <Reference Include="System.Numerics.Vectors, Version=4.1.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\System.Numerics.Vectors.4.6.1\lib\net462\System.Numerics.Vectors.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Reflection.Metadata, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\System.Reflection.Metadata.8.0.0\lib\net462\System.Reflection.Metadata.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime" />
-    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.6.1.2\lib\net462\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Security" />
-    <Reference Include="System.Security.AccessControl, Version=6.0.0.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\System.Security.AccessControl.6.0.1\lib\net461\System.Security.AccessControl.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Security.Cryptography.Pkcs, Version=9.0.0.10, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\System.Security.Cryptography.Pkcs.9.0.10\lib\net462\System.Security.Cryptography.Pkcs.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Security.Cryptography.ProtectedData, Version=9.0.0.10, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\System.Security.Cryptography.ProtectedData.9.0.10\lib\net462\System.Security.Cryptography.ProtectedData.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Security.Principal.Windows, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\System.Security.Principal.Windows.5.0.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Text.Encodings.Web, Version=9.0.0.10, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.Text.Encodings.Web.9.0.10\lib\net462\System.Text.Encodings.Web.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Text.Json, Version=9.0.0.10, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.Text.Json.9.0.10\lib\net462\System.Text.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.4.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.Threading.Tasks.Extensions.4.6.3\lib\net462\System.Threading.Tasks.Extensions.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Transactions" />
     <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
@@ -266,9 +64,6 @@
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Net.Http" />
-    <Reference Include="ZstdSharp, Version=0.8.6.0, Culture=neutral, PublicKeyToken=8d151af33a4ad5cf, processorArchitecture=MSIL">
-      <HintPath>packages\ZstdSharp.Port.0.8.6\lib\net462\ZstdSharp.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />
@@ -284,82 +79,85 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\DataAccessObjects\AccountDAO.vb" />
-    <Compile Include="Classes\DataAccessObjects\AnnouncementDAO.vb" />
-    <Compile Include="Classes\DataAccessObjects\BookCopyDAO.vb" />
-    <Compile Include="Classes\DataAccessObjects\BookDAO.vb" />
-    <Compile Include="Classes\DataAccessObjects\DBcon.vb" />
-    <Compile Include="Classes\DataAccessObjects\LogDAO.vb" />
-    <Compile Include="Classes\DataAccessObjects\NotificationDAO.vb" />
-    <Compile Include="Classes\DataAccessObjects\TransactionDAO.vb" />
-    <Compile Include="Classes\Models\Account.vb" />
-    <Compile Include="Classes\Models\Announcement.vb" />
-    <Compile Include="Classes\Models\Book.vb" />
-    <Compile Include="Classes\Models\BookCopy.vb" />
-    <Compile Include="Classes\Models\Log.vb" />
-    <Compile Include="Classes\Models\Notification.vb" />
-    <Compile Include="Classes\Models\Transaction.vb" />
-    <Compile Include="Classes\Services\announcementService.vb" />
-    <Compile Include="Classes\Services\authService.vb" />
-    <Compile Include="Classes\Services\borrowService.vb" />
-    <Compile Include="Classes\Services\catalougeService.vb" />
-    <Compile Include="Classes\Services\registrationService.vb" />
-    <Compile Include="Forms\Admin\Panel\Books_Panel%28Librarian-Admin%29.Designer.vb">
-      <DependentUpon>Books_Panel%28Librarian-Admin%29.vb</DependentUpon>
+    <Compile Include="Forms\Panels\BookInfo.Designer.vb">
+      <DependentUpon>BookInfo.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Admin\Panel\Books_Panel%28Librarian-Admin%29.vb">
+    <Compile Include="Forms\Panels\BookInfo.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Admin\Panel\Home_Panel%28Admin%29.Designer.vb">
-      <DependentUpon>Home_Panel%28Admin%29.vb</DependentUpon>
+    <Compile Include="Forms\Panels\CreateBook.Designer.vb">
+      <DependentUpon>CreateBook.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Admin\Panel\Home_Panel%28Admin%29.vb" />
-    <Compile Include="Forms\Admin\Panel\Home_Panel%28Librarian%29.Designer.vb">
-      <DependentUpon>Home_Panel%28Librarian%29.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Admin\Panel\Home_Panel%28Librarian%29.vb">
+    <Compile Include="Forms\Panels\CreateBook.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Admin\Login\Login_Panel%28Librarian-Admin%29.Designer.vb">
-      <DependentUpon>Login_Panel%28Librarian-Admin%29.vb</DependentUpon>
+    <Compile Include="Forms\Panels\EditBook.Designer.vb">
+      <DependentUpon>EditBook.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Admin\Login\Login_Panel%28Librarian-Admin%29.vb">
+    <Compile Include="Forms\Panels\EditBook.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\User\Panel\BookSortedList.Designer.vb">
-      <DependentUpon>BookSortedList.vb</DependentUpon>
+    <Compile Include="Forms\Panels\Home_Panel_Admin_Librarian.Designer.vb">
+      <DependentUpon>Home_Panel_Admin_Librarian.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\User\Panel\BookSortedList.vb">
+    <Compile Include="Forms\Panels\Home_Panel_Admin_Librarian.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Student Interface\Signup_Panel_Student.Designer.vb">
+      <DependentUpon>Signup_Panel_Student.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Student Interface\Signup_Panel_Student.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Student Interface\Login_Panel_Student.Designer.vb">
+      <DependentUpon>Login_Panel_Student.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Student Interface\Login_Panel_Student.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Student Interface\UC Student\UC_Signup2_student.Designer.vb">
+      <DependentUpon>UC_Signup2_student.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Student Interface\UC Student\UC_Signup2_student.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\User\Panel\Catalouge.Designer.vb">
-      <DependentUpon>Catalouge.vb</DependentUpon>
+    <Compile Include="Forms\Student Interface\UC Student\UC_Signup_student.Designer.vb">
+      <DependentUpon>UC_Signup_student.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\User\Panel\Catalouge.vb">
+    <Compile Include="Forms\Student Interface\UC Student\UC_Signup_student.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Student Interface\UC Student\UC_Welcome_message_student.Designer.vb">
+      <DependentUpon>UC_Welcome_message_student.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Student Interface\UC Student\UC_Welcome_message_student.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LibraryCore\Classes\Account.vb" />
+    <Compile Include="LibraryCore\Classes\Announcement.vb" />
+    <Compile Include="LibraryCore\Classes\Book.vb" />
+    <Compile Include="LibraryCore\Classes\BookCopy.vb" />
+    <Compile Include="LibraryCore\Classes\Log.vb" />
+    <Compile Include="LibraryCore\Classes\Notification.vb" />
+    <Compile Include="LibraryCore\Classes\Transaction.vb" />
+    <Compile Include="Forms\Panels\Books_Panel(Librarian-Admin).Designer.vb">
+      <DependentUpon>Books_Panel(Librarian-Admin).vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Panels\Books_Panel(Librarian-Admin).vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\User\UserLogin\UserRegister.Designer.vb">
+    <Compile Include="Forms\Panels\Login_Panel_Librarian_Admin.Designer.vb">
+      <DependentUpon>Login_Panel_Librarian_Admin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Panels\Login_Panel_Librarian_Admin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LibraryCore\Forms\User\UserLogin\UserRegister.Designer.vb">
       <DependentUpon>UserRegister.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\User\UserLogin\UserRegister.vb">
+    <Compile Include="LibraryCore\Forms\User\UserLogin\UserRegister.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Program.vb" />
-    <Compile Include="Tests\DataAccessObjects\AccountDAOTest.vb" />
-    <Compile Include="Tests\Models\AccountModelTests.vb" />
-    <Compile Include="Tests\DataAccessObjects\AnnouncementDAOTest.vb" />
-    <Compile Include="Tests\Models\AnnouncementModelTest.vb" />
-    <Compile Include="Tests\Models\BaseDAOTest.vb" />
-    <Compile Include="Tests\DataAccessObjects\BookCopyDAOTest.vb" />
-    <Compile Include="Tests\Models\BookCopyModelTest.vb" />
-    <Compile Include="Tests\DataAccessObjects\BookDAOTest.vb" />
-    <Compile Include="Tests\Models\BookModelTest.vb" />
-    <Compile Include="Tests\DataAccessObjects\LogDAOTest.vb" />
-    <Compile Include="Tests\Models\LogModelTest.vb" />
-    <Compile Include="Tests\DataAccessObjects\NotificationDAOTest.vb" />
-    <Compile Include="Tests\Models\NotificationModelTest.vb" />
-    <Compile Include="Tests\DataAccessObjects\TransactionDAOTest.vb" />
-    <Compile Include="Tests\Models\TransactionModelTest.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -378,20 +176,44 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Forms\Admin\Panel\Books_Panel%28Librarian-Admin%29.resx">
-      <DependentUpon>Books_Panel%28Librarian-Admin%29.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\Panels\BookInfo.resx">
+      <DependentUpon>BookInfo.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Admin\Login\Login_Panel%28Librarian-Admin%29.resx">
-      <DependentUpon>Login_Panel%28Librarian-Admin%29.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\Panels\Books_Panel(Librarian-Admin).resx">
+      <DependentUpon>Books_Panel(Librarian-Admin).vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\User\Panel\Catalouge.resx">
-      <DependentUpon>Catalouge.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\Panels\CreateBook.resx">
+      <DependentUpon>CreateBook.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Panels\EditBook.resx">
+      <DependentUpon>EditBook.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Panels\Home_Panel_Admin_Librarian.resx">
+      <DependentUpon>Home_Panel_Admin_Librarian.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Panels\Login_Panel_Librarian_Admin.resx">
+      <DependentUpon>Login_Panel_Librarian_Admin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Student Interface\Signup_Panel_Student.resx">
+      <DependentUpon>Signup_Panel_Student.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Student Interface\Login_Panel_Student.resx">
+      <DependentUpon>Login_Panel_Student.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Student Interface\UC Student\UC_Signup2_student.resx">
+      <DependentUpon>UC_Signup2_student.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Student Interface\UC Student\UC_Signup_student.resx">
+      <DependentUpon>UC_Signup_student.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Student Interface\UC Student\UC_Welcome_message_student.resx">
+      <DependentUpon>UC_Welcome_message_student.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -407,53 +229,40 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Content Include="Assets\Bookcover\1984.jpg" />
-    <Content Include="Assets\Bookcover\big_little_lies.jpg" />
-    <Content Include="Assets\Bookcover\hobbit.jpg" />
-    <Content Include="Assets\Bookcover\lord_of_the_rings_fellowship.jpg" />
-    <Content Include="Assets\Bookcover\pride_and_prejudice.jpg" />
-    <Content Include="Assets\Bookcover\sharp_objects.jpg" />
-    <Content Include="Assets\Bookcover\the_adventure.jpg" />
-    <Content Include="Assets\Bookcover\the_great_gatsby.jpg" />
-    <Content Include="Assets\Bookcover\the_guest_list.jpg" />
-    <Content Include="Assets\Bookcover\the_plot.jpg" />
-    <Content Include="Assets\Bookcover\the_woman_in_the_window.jpg" />
-    <Content Include="Assets\Bookcover\to_kill_a_mockingbird.jpg" />
-    <Content Include="Resources\Ucc Logo NoBG.png" />
-    <Content Include="Resources\Ucc Logo NoBG1.png" />
-    <Content Include="Resources\ucc logo3.png" />
+    <Folder Include="Assets\" />
+    <Folder Include="Database\" />
+    <Folder Include="Forms\Admin-Librarian Interface\" />
+    <Folder Include="LibraryAdminApp\" />
+    <Folder Include="LibraryCore\Assets\Colors\" />
+    <Folder Include="LibraryCore\Database\" />
+    <Folder Include="LibraryCore\Forms\Admin\AdminLogin\" />
+    <Folder Include="LibraryCore\Forms\User\Homepage\" />
+    <Folder Include="LibraryUserApp\" />
   </ItemGroup>
   <ItemGroup>
-    <Analyzer Include="packages\MSTest.Analyzers.4.0.1\analyzers\dotnet\vb\MSTest.Analyzers.dll" />
+    <Content Include="LibraryCore\Assets\Bookcover\1984.jpg" />
+    <Content Include="LibraryCore\Assets\Bookcover\big_little_lies.jpg" />
+    <Content Include="LibraryCore\Assets\Bookcover\hobbit.jpg" />
+    <Content Include="LibraryCore\Assets\Bookcover\lord_of_the_rings_fellowship.jpg" />
+    <Content Include="LibraryCore\Assets\Bookcover\pride_and_prejudice.jpg" />
+    <Content Include="LibraryCore\Assets\Bookcover\sharp_objects.jpg" />
+    <Content Include="LibraryCore\Assets\Bookcover\the_adventure.jpg" />
+    <Content Include="LibraryCore\Assets\Bookcover\the_great_gatsby.jpg" />
+    <Content Include="LibraryCore\Assets\Bookcover\the_guest_list.jpg" />
+    <Content Include="LibraryCore\Assets\Bookcover\the_plot.jpg" />
+    <Content Include="LibraryCore\Assets\Bookcover\the_woman_in_the_window.jpg" />
+    <Content Include="LibraryCore\Assets\Bookcover\to_kill_a_mockingbird.jpg" />
+    <None Include="Resources\Hide_icon1.png" />
+    <None Include="Resources\Show_icon1.png" />
+    <None Include="Resources\the_adventure.jpg" />
+    <None Include="Resources\Ucc Logo NoBG2.png" />
+    <None Include="Resources\Ucc Logo NoBG1.png" />
+    <None Include="Resources\Hide_icon.png" />
+    <None Include="Resources\Show_icon.png" />
+    <None Include="Resources\Ucc Logo NoBG3.png" />
+    <None Include="Resources\Ucc Logo NoBG.png" />
+    <None Include="Resources\Accountwhite0_icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
-  <Import Project="packages\Microsoft.Data.SqlClient.SNI.6.0.2\build\net462\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('packages\Microsoft.Data.SqlClient.SNI.6.0.2\build\net462\Microsoft.Data.SqlClient.SNI.targets')" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('packages\Microsoft.Data.SqlClient.SNI.6.0.2\build\net462\Microsoft.Data.SqlClient.SNI.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.Data.SqlClient.SNI.6.0.2\build\net462\Microsoft.Data.SqlClient.SNI.targets'))" />
-    <Error Condition="!Exists('packages\System.ValueTuple.4.6.1\build\net471\System.ValueTuple.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\System.ValueTuple.4.6.1\build\net471\System.ValueTuple.targets'))" />
-    <Error Condition="!Exists('packages\MSTest.TestFramework.4.0.1\build\net462\MSTest.TestFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\MSTest.TestFramework.4.0.1\build\net462\MSTest.TestFramework.targets'))" />
-    <Error Condition="!Exists('packages\Microsoft.Testing.Platform.2.0.1\build\netstandard2.0\Microsoft.Testing.Platform.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.Testing.Platform.2.0.1\build\netstandard2.0\Microsoft.Testing.Platform.props'))" />
-    <Error Condition="!Exists('packages\Microsoft.Testing.Platform.2.0.1\build\netstandard2.0\Microsoft.Testing.Platform.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.Testing.Platform.2.0.1\build\netstandard2.0\Microsoft.Testing.Platform.targets'))" />
-    <Error Condition="!Exists('packages\Microsoft.Testing.Platform.MSBuild.2.0.1\build\Microsoft.Testing.Platform.MSBuild.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.Testing.Platform.MSBuild.2.0.1\build\Microsoft.Testing.Platform.MSBuild.props'))" />
-    <Error Condition="!Exists('packages\Microsoft.Testing.Platform.MSBuild.2.0.1\build\Microsoft.Testing.Platform.MSBuild.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.Testing.Platform.MSBuild.2.0.1\build\Microsoft.Testing.Platform.MSBuild.targets'))" />
-    <Error Condition="!Exists('packages\Microsoft.Testing.Extensions.Telemetry.2.0.1\build\netstandard2.0\Microsoft.Testing.Extensions.Telemetry.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.Testing.Extensions.Telemetry.2.0.1\build\netstandard2.0\Microsoft.Testing.Extensions.Telemetry.props'))" />
-    <Error Condition="!Exists('packages\MSTest.TestAdapter.4.0.1\build\net462\MSTest.TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\MSTest.TestAdapter.4.0.1\build\net462\MSTest.TestAdapter.props'))" />
-    <Error Condition="!Exists('packages\MSTest.TestAdapter.4.0.1\build\net462\MSTest.TestAdapter.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\MSTest.TestAdapter.4.0.1\build\net462\MSTest.TestAdapter.targets'))" />
-    <Error Condition="!Exists('packages\Microsoft.CodeCoverage.18.0.0\build\netstandard2.0\Microsoft.CodeCoverage.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeCoverage.18.0.0\build\netstandard2.0\Microsoft.CodeCoverage.props'))" />
-    <Error Condition="!Exists('packages\Microsoft.CodeCoverage.18.0.0\build\netstandard2.0\Microsoft.CodeCoverage.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeCoverage.18.0.0\build\netstandard2.0\Microsoft.CodeCoverage.targets'))" />
-    <Error Condition="!Exists('packages\Microsoft.NET.Test.Sdk.18.0.0\build\net462\Microsoft.NET.Test.Sdk.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.NET.Test.Sdk.18.0.0\build\net462\Microsoft.NET.Test.Sdk.props'))" />
-    <Error Condition="!Exists('packages\Microsoft.NET.Test.Sdk.18.0.0\build\net462\Microsoft.NET.Test.Sdk.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.NET.Test.Sdk.18.0.0\build\net462\Microsoft.NET.Test.Sdk.targets'))" />
-  </Target>
-  <Import Project="packages\System.ValueTuple.4.6.1\build\net471\System.ValueTuple.targets" Condition="Exists('packages\System.ValueTuple.4.6.1\build\net471\System.ValueTuple.targets')" />
-  <Import Project="packages\MSTest.TestFramework.4.0.1\build\net462\MSTest.TestFramework.targets" Condition="Exists('packages\MSTest.TestFramework.4.0.1\build\net462\MSTest.TestFramework.targets')" />
-  <Import Project="packages\Microsoft.Testing.Platform.2.0.1\build\netstandard2.0\Microsoft.Testing.Platform.targets" Condition="Exists('packages\Microsoft.Testing.Platform.2.0.1\build\netstandard2.0\Microsoft.Testing.Platform.targets')" />
-  <Import Project="packages\Microsoft.Testing.Platform.MSBuild.2.0.1\build\Microsoft.Testing.Platform.MSBuild.targets" Condition="Exists('packages\Microsoft.Testing.Platform.MSBuild.2.0.1\build\Microsoft.Testing.Platform.MSBuild.targets')" />
-  <Import Project="packages\MSTest.TestAdapter.4.0.1\build\net462\MSTest.TestAdapter.targets" Condition="Exists('packages\MSTest.TestAdapter.4.0.1\build\net462\MSTest.TestAdapter.targets')" />
-  <Import Project="packages\Microsoft.CodeCoverage.18.0.0\build\netstandard2.0\Microsoft.CodeCoverage.targets" Condition="Exists('packages\Microsoft.CodeCoverage.18.0.0\build\netstandard2.0\Microsoft.CodeCoverage.targets')" />
-  <Import Project="packages\Microsoft.NET.Test.Sdk.18.0.0\build\net462\Microsoft.NET.Test.Sdk.targets" Condition="Exists('packages\Microsoft.NET.Test.Sdk.18.0.0\build\net462\Microsoft.NET.Test.Sdk.targets')" />
 </Project>

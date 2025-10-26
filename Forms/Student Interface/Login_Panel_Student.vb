@@ -1,4 +1,4 @@
-﻿Public Class Login_Panel_Student_
+﻿Public Class Login_Panel_Student
 
     ' This event runs when the form first loads
     ' (NAME CORRECTED)
@@ -57,9 +57,20 @@
     ' --- Other Events ---
 
     ' (NAME CORRECTED)
-    Private Sub btn_cancel_Click(sender As Object, e As EventArgs) Handles btn_cancel.Click
-        ' You might want to close the form here too
-        Me.Close()
+    Private Sub btn_register_Click(sender As Object, e As EventArgs) Handles btn_register.Click
+        ' 1. Create a new instance of your signup form
+        Dim signupForm As New Signup_Panel_Student()
+
+        ' 2. Hide the current login form
+        Me.Hide()
+
+        ' 3. Show the signup form as a dialog.
+        ' This pauses the code here until the signup form is closed.
+        signupForm.ShowDialog()
+
+        ' 4. After the signup form is closed (e.g., they click
+        ' "Back to Login" ), show the login form again.
+        Me.Show()
     End Sub
 
     ' (NO CHANGES - Kept as requested)
@@ -89,7 +100,11 @@
         img_hide.Visible = False
     End Sub
 
-    Private Sub btn_createaccount_Click(sender As Object, e As EventArgs) Handles btn_createaccount.Click
+    Private Sub btn_createaccount_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub login_form_container_Paint(sender As Object, e As PaintEventArgs) Handles title_panel.Paint
 
     End Sub
 End Class
