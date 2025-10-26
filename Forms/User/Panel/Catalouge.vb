@@ -265,5 +265,15 @@ Public Class Catalouge
         End If
     End Sub
 
+    Private Sub gbFilter_Enter(sender As Object, e As EventArgs)
 
+    End Sub
+
+    Private Sub flpVerticalStack_Paint(sender As Object, e As PaintEventArgs) Handles flpVerticalStack.Paint
+
+    End Sub
+
+    Private Sub pnlHeader_Paint(sender As Object, e As PaintEventArgs) Handles pnlHeader.Paint
+
+    End Sub
 End Class

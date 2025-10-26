@@ -33,11 +33,11 @@ Partial Class Login_Panel_Student
         Me.btn_register = New Guna.UI2.WinForms.Guna2Button()
         Me.title_panel = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
         Me.login_form_container = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
+        Me.UC_Welcome_message_student1 = New OOP_Library_System.UC_Welcome_message_student()
         Me.Guna2CustomGradientPanel3 = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
         Me.img_show = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.img_hide = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Guna2Elipse1 = New Guna.UI2.WinForms.Guna2Elipse(Me.components)
-        Me.UC_Welcome_message_student1 = New OOP_Library_System.UC_Welcome_message_student()
         Me.title_panel.SuspendLayout()
         Me.login_form_container.SuspendLayout()
         Me.Guna2CustomGradientPanel3.SuspendLayout()
@@ -49,10 +49,11 @@ Partial Class Login_Panel_Student
         '
         Me.lbl_titlelogin.AutoSize = True
         Me.lbl_titlelogin.BackColor = System.Drawing.Color.Transparent
-        Me.lbl_titlelogin.Font = New System.Drawing.Font("Roboto", 19.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_titlelogin.Location = New System.Drawing.Point(200, 36)
+        Me.lbl_titlelogin.Font = New System.Drawing.Font("Microsoft Sans Serif", 19.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_titlelogin.Location = New System.Drawing.Point(152, 32)
+        Me.lbl_titlelogin.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbl_titlelogin.Name = "lbl_titlelogin"
-        Me.lbl_titlelogin.Size = New System.Drawing.Size(99, 39)
+        Me.lbl_titlelogin.Size = New System.Drawing.Size(80, 31)
         Me.lbl_titlelogin.TabIndex = 13
         Me.lbl_titlelogin.Text = "Login"
         '
@@ -61,9 +62,10 @@ Partial Class Login_Panel_Student
         Me.lbl_forgotpass.AutoSize = True
         Me.lbl_forgotpass.BackColor = System.Drawing.Color.Transparent
         Me.lbl_forgotpass.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_forgotpass.Location = New System.Drawing.Point(288, 333)
+        Me.lbl_forgotpass.Location = New System.Drawing.Point(216, 271)
+        Me.lbl_forgotpass.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbl_forgotpass.Name = "lbl_forgotpass"
-        Me.lbl_forgotpass.Size = New System.Drawing.Size(136, 20)
+        Me.lbl_forgotpass.Size = New System.Drawing.Size(114, 17)
         Me.lbl_forgotpass.TabIndex = 2
         Me.lbl_forgotpass.Text = "Forgot Password"
         '
@@ -72,9 +74,10 @@ Partial Class Login_Panel_Student
         Me.lbl_password.AutoSize = True
         Me.lbl_password.BackColor = System.Drawing.Color.Transparent
         Me.lbl_password.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_password.Location = New System.Drawing.Point(120, 245)
+        Me.lbl_password.Location = New System.Drawing.Point(90, 199)
+        Me.lbl_password.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbl_password.Name = "lbl_password"
-        Me.lbl_password.Size = New System.Drawing.Size(98, 25)
+        Me.lbl_password.Size = New System.Drawing.Size(78, 20)
         Me.lbl_password.TabIndex = 6
         Me.lbl_password.Text = "Password"
         '
@@ -83,9 +86,10 @@ Partial Class Login_Panel_Student
         Me.lbl_username.AutoSize = True
         Me.lbl_username.BackColor = System.Drawing.Color.Transparent
         Me.lbl_username.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_username.Location = New System.Drawing.Point(120, 121)
+        Me.lbl_username.Location = New System.Drawing.Point(90, 98)
+        Me.lbl_username.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbl_username.Name = "lbl_username"
-        Me.lbl_username.Size = New System.Drawing.Size(148, 25)
+        Me.lbl_username.Size = New System.Drawing.Size(122, 20)
         Me.lbl_username.TabIndex = 5
         Me.lbl_username.Text = "Username or ID"
         '
@@ -105,13 +109,13 @@ Partial Class Login_Panel_Student
         Me.txtBox_password.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtBox_password.ForeColor = System.Drawing.Color.Black
         Me.txtBox_password.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtBox_password.Location = New System.Drawing.Point(128, 276)
-        Me.txtBox_password.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtBox_password.Location = New System.Drawing.Point(96, 224)
+        Me.txtBox_password.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.txtBox_password.Name = "txtBox_password"
         Me.txtBox_password.PlaceholderForeColor = System.Drawing.Color.DarkGray
         Me.txtBox_password.PlaceholderText = "Enter Password"
         Me.txtBox_password.SelectedText = ""
-        Me.txtBox_password.Size = New System.Drawing.Size(278, 57)
+        Me.txtBox_password.Size = New System.Drawing.Size(208, 46)
         Me.txtBox_password.TabIndex = 1
         '
         'txtBox_username
@@ -130,13 +134,13 @@ Partial Class Login_Panel_Student
         Me.txtBox_username.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtBox_username.ForeColor = System.Drawing.Color.Black
         Me.txtBox_username.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtBox_username.Location = New System.Drawing.Point(128, 152)
-        Me.txtBox_username.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtBox_username.Location = New System.Drawing.Point(96, 124)
+        Me.txtBox_username.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.txtBox_username.Name = "txtBox_username"
         Me.txtBox_username.PlaceholderForeColor = System.Drawing.Color.DarkGray
         Me.txtBox_username.PlaceholderText = "Enter Username or ID"
         Me.txtBox_username.SelectedText = ""
-        Me.txtBox_username.Size = New System.Drawing.Size(278, 57)
+        Me.txtBox_username.Size = New System.Drawing.Size(208, 46)
         Me.txtBox_username.TabIndex = 0
         '
         'btn_login
@@ -149,9 +153,10 @@ Partial Class Login_Panel_Student
         Me.btn_login.FillColor = System.Drawing.Color.Tan
         Me.btn_login.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_login.ForeColor = System.Drawing.Color.Black
-        Me.btn_login.Location = New System.Drawing.Point(58, 409)
+        Me.btn_login.Location = New System.Drawing.Point(44, 332)
+        Me.btn_login.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btn_login.Name = "btn_login"
-        Me.btn_login.Size = New System.Drawing.Size(180, 45)
+        Me.btn_login.Size = New System.Drawing.Size(135, 37)
         Me.btn_login.TabIndex = 3
         Me.btn_login.Text = "Confirm"
         '
@@ -166,9 +171,10 @@ Partial Class Login_Panel_Student
         Me.btn_register.FillColor = System.Drawing.Color.FromArgb(CType(CType(207, Byte), Integer), CType(CType(207, Byte), Integer), CType(CType(207, Byte), Integer))
         Me.btn_register.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_register.ForeColor = System.Drawing.Color.Black
-        Me.btn_register.Location = New System.Drawing.Point(298, 409)
+        Me.btn_register.Location = New System.Drawing.Point(224, 332)
+        Me.btn_register.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btn_register.Name = "btn_register"
-        Me.btn_register.Size = New System.Drawing.Size(180, 45)
+        Me.btn_register.Size = New System.Drawing.Size(135, 37)
         Me.btn_register.TabIndex = 4
         Me.btn_register.Text = "Register"
         '
@@ -181,8 +187,9 @@ Partial Class Login_Panel_Student
         Me.title_panel.FillColor3 = System.Drawing.Color.FromArgb(CType(CType(154, Byte), Integer), CType(CType(111, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.title_panel.FillColor4 = System.Drawing.Color.FromArgb(CType(CType(139, Byte), Integer), CType(CType(103, Byte), Integer), CType(CType(67, Byte), Integer))
         Me.title_panel.Location = New System.Drawing.Point(0, 0)
+        Me.title_panel.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.title_panel.Name = "title_panel"
-        Me.title_panel.Size = New System.Drawing.Size(1248, 705)
+        Me.title_panel.Size = New System.Drawing.Size(936, 573)
         Me.title_panel.TabIndex = 1
         '
         'login_form_container
@@ -198,12 +205,22 @@ Partial Class Login_Panel_Student
         Me.login_form_container.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(216, Byte), Integer))
         Me.login_form_container.FillColor3 = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.login_form_container.FillColor4 = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(195, Byte), Integer), CType(CType(165, Byte), Integer))
-        Me.login_form_container.Location = New System.Drawing.Point(100, 100)
-        Me.login_form_container.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.login_form_container.MaximumSize = New System.Drawing.Size(1048, 505)
+        Me.login_form_container.Location = New System.Drawing.Point(75, 81)
+        Me.login_form_container.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.login_form_container.MaximumSize = New System.Drawing.Size(786, 410)
         Me.login_form_container.Name = "login_form_container"
-        Me.login_form_container.Size = New System.Drawing.Size(1048, 505)
+        Me.login_form_container.Size = New System.Drawing.Size(786, 410)
         Me.login_form_container.TabIndex = 15
+        '
+        'UC_Welcome_message_student1
+        '
+        Me.UC_Welcome_message_student1.BackColor = System.Drawing.Color.Transparent
+        Me.UC_Welcome_message_student1.Dock = System.Windows.Forms.DockStyle.Left
+        Me.UC_Welcome_message_student1.Location = New System.Drawing.Point(0, 0)
+        Me.UC_Welcome_message_student1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.UC_Welcome_message_student1.Name = "UC_Welcome_message_student1"
+        Me.UC_Welcome_message_student1.Size = New System.Drawing.Size(394, 410)
+        Me.UC_Welcome_message_student1.TabIndex = 2
         '
         'Guna2CustomGradientPanel3
         '
@@ -225,9 +242,10 @@ Partial Class Login_Panel_Student
         Me.Guna2CustomGradientPanel3.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(240, Byte), Integer))
         Me.Guna2CustomGradientPanel3.FillColor3 = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(232, Byte), Integer))
         Me.Guna2CustomGradientPanel3.FillColor4 = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.Guna2CustomGradientPanel3.Location = New System.Drawing.Point(523, 0)
+        Me.Guna2CustomGradientPanel3.Location = New System.Drawing.Point(392, 0)
+        Me.Guna2CustomGradientPanel3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Guna2CustomGradientPanel3.Name = "Guna2CustomGradientPanel3"
-        Me.Guna2CustomGradientPanel3.Size = New System.Drawing.Size(525, 505)
+        Me.Guna2CustomGradientPanel3.Size = New System.Drawing.Size(394, 410)
         Me.Guna2CustomGradientPanel3.TabIndex = 1
         '
         'img_show
@@ -236,9 +254,10 @@ Partial Class Login_Panel_Student
         Me.img_show.FillColor = System.Drawing.Color.Transparent
         Me.img_show.Image = Global.OOP_Library_System.My.Resources.Resources.Show_icon1
         Me.img_show.ImageRotate = 0!
-        Me.img_show.Location = New System.Drawing.Point(368, 293)
+        Me.img_show.Location = New System.Drawing.Point(276, 238)
+        Me.img_show.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.img_show.Name = "img_show"
-        Me.img_show.Size = New System.Drawing.Size(24, 22)
+        Me.img_show.Size = New System.Drawing.Size(18, 18)
         Me.img_show.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.img_show.TabIndex = 16
         Me.img_show.TabStop = False
@@ -249,9 +268,10 @@ Partial Class Login_Panel_Student
         Me.img_hide.FillColor = System.Drawing.Color.Transparent
         Me.img_hide.Image = Global.OOP_Library_System.My.Resources.Resources.Hide_icon1
         Me.img_hide.ImageRotate = 0!
-        Me.img_hide.Location = New System.Drawing.Point(368, 293)
+        Me.img_hide.Location = New System.Drawing.Point(276, 238)
+        Me.img_hide.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.img_hide.Name = "img_hide"
-        Me.img_hide.Size = New System.Drawing.Size(24, 22)
+        Me.img_hide.Size = New System.Drawing.Size(18, 18)
         Me.img_hide.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.img_hide.TabIndex = 15
         Me.img_hide.TabStop = False
@@ -261,23 +281,13 @@ Partial Class Login_Panel_Student
         Me.Guna2Elipse1.BorderRadius = 30
         Me.Guna2Elipse1.TargetControl = Me
         '
-        'UC_Welcome_message_student1
-        '
-        Me.UC_Welcome_message_student1.BackColor = System.Drawing.Color.Transparent
-        Me.UC_Welcome_message_student1.Dock = System.Windows.Forms.DockStyle.Left
-        Me.UC_Welcome_message_student1.Location = New System.Drawing.Point(0, 0)
-        Me.UC_Welcome_message_student1.Name = "UC_Welcome_message_student1"
-        Me.UC_Welcome_message_student1.Size = New System.Drawing.Size(525, 505)
-        Me.UC_Welcome_message_student1.TabIndex = 2
-        '
         'Login_Panel_Student
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1248, 705)
+        Me.ClientSize = New System.Drawing.Size(936, 573)
         Me.Controls.Add(Me.title_panel)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Login_Panel_Student"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Login"
