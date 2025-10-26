@@ -24,6 +24,7 @@
 
     ' This is the method for your account (Requirement 3)
     Private Sub CheckLogin()
+
         Dim username As String = "Jestine"
         Dim password As String = "123"
         Dim verifiedID As String = "1456-AD"

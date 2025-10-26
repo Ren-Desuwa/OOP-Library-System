@@ -12,11 +12,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{985F421D-0F74-4602-858B-EC5CA98B46E5}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>OOP_Library_System.My.MyApplication</StartupObject>
+    <StartupObject>OOP_Library_System.Program</StartupObject>
     <RootNamespace>OOP_Library_System</RootNamespace>
     <AssemblyName>OOP Library System</AssemblyName>
     <FileAlignment>512</FileAlignment>
-    <MyType>WindowsForms</MyType>
+    <MyType>WindowsFormsWithCustomSubMain</MyType>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -284,75 +284,82 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LibraryCore\Classes\DataAccessObjects\AccountDAO.vb" />
-    <Compile Include="LibraryCore\Classes\DataAccessObjects\AnnouncementDAO.vb" />
-    <Compile Include="LibraryCore\Classes\DataAccessObjects\BookCopyDAO.vb" />
-    <Compile Include="LibraryCore\Classes\DataAccessObjects\BookDAO.vb" />
-    <Compile Include="LibraryCore\Classes\DataAccessObjects\DBcon.vb" />
-    <Compile Include="LibraryCore\Classes\DataAccessObjects\LogDAO.vb" />
-    <Compile Include="LibraryCore\Classes\DataAccessObjects\NotificationDAO.vb" />
-    <Compile Include="LibraryCore\Classes\DataAccessObjects\TransactionDAO.vb" />
-    <Compile Include="LibraryCore\Classes\Models\Account.vb" />
-    <Compile Include="LibraryCore\Classes\Models\Announcement.vb" />
-    <Compile Include="LibraryCore\Classes\Models\Book.vb" />
-    <Compile Include="LibraryCore\Classes\Models\BookCopy.vb" />
-    <Compile Include="LibraryCore\Classes\Models\Log.vb" />
-    <Compile Include="LibraryCore\Classes\Models\Notification.vb" />
-    <Compile Include="LibraryCore\Classes\Models\Transaction.vb" />
-    <Compile Include="LibraryCore\Classes\Services\announcementService.vb" />
-    <Compile Include="LibraryCore\Classes\Services\authService.vb" />
-    <Compile Include="LibraryCore\Classes\Services\borrowService.vb" />
-    <Compile Include="LibraryCore\Classes\Services\catalougeService.vb" />
-    <Compile Include="LibraryCore\Classes\Services\registrationService.vb" />
-    <Compile Include="LibraryCore\Forms\Admin\Panel\Books_Panel%28Librarian-Admin%29.Designer.vb">
+    <Compile Include="Classes\DataAccessObjects\AccountDAO.vb" />
+    <Compile Include="Classes\DataAccessObjects\AnnouncementDAO.vb" />
+    <Compile Include="Classes\DataAccessObjects\BookCopyDAO.vb" />
+    <Compile Include="Classes\DataAccessObjects\BookDAO.vb" />
+    <Compile Include="Classes\DataAccessObjects\DBcon.vb" />
+    <Compile Include="Classes\DataAccessObjects\LogDAO.vb" />
+    <Compile Include="Classes\DataAccessObjects\NotificationDAO.vb" />
+    <Compile Include="Classes\DataAccessObjects\TransactionDAO.vb" />
+    <Compile Include="Classes\Models\Account.vb" />
+    <Compile Include="Classes\Models\Announcement.vb" />
+    <Compile Include="Classes\Models\Book.vb" />
+    <Compile Include="Classes\Models\BookCopy.vb" />
+    <Compile Include="Classes\Models\Log.vb" />
+    <Compile Include="Classes\Models\Notification.vb" />
+    <Compile Include="Classes\Models\Transaction.vb" />
+    <Compile Include="Classes\Services\announcementService.vb" />
+    <Compile Include="Classes\Services\authService.vb" />
+    <Compile Include="Classes\Services\borrowService.vb" />
+    <Compile Include="Classes\Services\catalougeService.vb" />
+    <Compile Include="Classes\Services\registrationService.vb" />
+    <Compile Include="Forms\Admin\Panel\Books_Panel%28Librarian-Admin%29.Designer.vb">
       <DependentUpon>Books_Panel%28Librarian-Admin%29.vb</DependentUpon>
     </Compile>
-    <Compile Include="LibraryCore\Forms\Admin\Panel\Books_Panel%28Librarian-Admin%29.vb">
+    <Compile Include="Forms\Admin\Panel\Books_Panel%28Librarian-Admin%29.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LibraryCore\Forms\Admin\Panel\Home_Panel%28Admin%29.Designer.vb">
+    <Compile Include="Forms\Admin\Panel\Home_Panel%28Admin%29.Designer.vb">
       <DependentUpon>Home_Panel%28Admin%29.vb</DependentUpon>
     </Compile>
-    <Compile Include="LibraryCore\Forms\Admin\Panel\Home_Panel%28Admin%29.vb" />
-    <Compile Include="LibraryCore\Forms\Admin\Panel\Home_Panel%28Librarian%29.Designer.vb">
+    <Compile Include="Forms\Admin\Panel\Home_Panel%28Admin%29.vb" />
+    <Compile Include="Forms\Admin\Panel\Home_Panel%28Librarian%29.Designer.vb">
       <DependentUpon>Home_Panel%28Librarian%29.vb</DependentUpon>
     </Compile>
-    <Compile Include="LibraryCore\Forms\Admin\Panel\Home_Panel%28Librarian%29.vb">
+    <Compile Include="Forms\Admin\Panel\Home_Panel%28Librarian%29.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LibraryCore\Forms\Admin\Login\Login_Panel%28Librarian-Admin%29.Designer.vb">
+    <Compile Include="Forms\Admin\Login\Login_Panel%28Librarian-Admin%29.Designer.vb">
       <DependentUpon>Login_Panel%28Librarian-Admin%29.vb</DependentUpon>
     </Compile>
-    <Compile Include="LibraryCore\Forms\Admin\Login\Login_Panel%28Librarian-Admin%29.vb">
+    <Compile Include="Forms\Admin\Login\Login_Panel%28Librarian-Admin%29.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LibraryCore\Forms\User\Panel\Catalouge.Designer.vb">
+    <Compile Include="Forms\User\Panel\BookSortedList.Designer.vb">
+      <DependentUpon>BookSortedList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User\Panel\BookSortedList.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\User\Panel\Catalouge.Designer.vb">
       <DependentUpon>Catalouge.vb</DependentUpon>
     </Compile>
-    <Compile Include="LibraryCore\Forms\User\Panel\Catalouge.vb">
+    <Compile Include="Forms\User\Panel\Catalouge.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LibraryCore\Forms\User\UserLogin\UserRegister.Designer.vb">
+    <Compile Include="Forms\User\UserLogin\UserRegister.Designer.vb">
       <DependentUpon>UserRegister.vb</DependentUpon>
     </Compile>
-    <Compile Include="LibraryCore\Forms\User\UserLogin\UserRegister.vb">
+    <Compile Include="Forms\User\UserLogin\UserRegister.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LibraryCore\Tests\DataAccessObjects\AccountDAOTest.vb" />
-    <Compile Include="LibraryCore\Tests\Models\AccountModelTests.vb" />
-    <Compile Include="LibraryCore\Tests\DataAccessObjects\AnnouncementDAOTest.vb" />
-    <Compile Include="LibraryCore\Tests\Models\AnnouncementModelTest.vb" />
-    <Compile Include="LibraryCore\Tests\Models\BaseDAOTest.vb" />
-    <Compile Include="LibraryCore\Tests\DataAccessObjects\BookCopyDAOTest.vb" />
-    <Compile Include="LibraryCore\Tests\Models\BookCopyModelTest.vb" />
-    <Compile Include="LibraryCore\Tests\DataAccessObjects\BookDAOTest.vb" />
-    <Compile Include="LibraryCore\Tests\Models\BookModelTest.vb" />
-    <Compile Include="LibraryCore\Tests\DataAccessObjects\LogDAOTest.vb" />
-    <Compile Include="LibraryCore\Tests\Models\LogModelTest.vb" />
-    <Compile Include="LibraryCore\Tests\DataAccessObjects\NotificationDAOTest.vb" />
-    <Compile Include="LibraryCore\Tests\Models\NotificationModelTest.vb" />
-    <Compile Include="LibraryCore\Tests\DataAccessObjects\TransactionDAOTest.vb" />
-    <Compile Include="LibraryCore\Tests\Models\TransactionModelTest.vb" />
+    <Compile Include="Program.vb" />
+    <Compile Include="Tests\DataAccessObjects\AccountDAOTest.vb" />
+    <Compile Include="Tests\Models\AccountModelTests.vb" />
+    <Compile Include="Tests\DataAccessObjects\AnnouncementDAOTest.vb" />
+    <Compile Include="Tests\Models\AnnouncementModelTest.vb" />
+    <Compile Include="Tests\Models\BaseDAOTest.vb" />
+    <Compile Include="Tests\DataAccessObjects\BookCopyDAOTest.vb" />
+    <Compile Include="Tests\Models\BookCopyModelTest.vb" />
+    <Compile Include="Tests\DataAccessObjects\BookDAOTest.vb" />
+    <Compile Include="Tests\Models\BookModelTest.vb" />
+    <Compile Include="Tests\DataAccessObjects\LogDAOTest.vb" />
+    <Compile Include="Tests\Models\LogModelTest.vb" />
+    <Compile Include="Tests\DataAccessObjects\NotificationDAOTest.vb" />
+    <Compile Include="Tests\Models\NotificationModelTest.vb" />
+    <Compile Include="Tests\DataAccessObjects\TransactionDAOTest.vb" />
+    <Compile Include="Tests\Models\TransactionModelTest.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -371,13 +378,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="LibraryCore\Forms\Admin\Panel\Books_Panel%28Librarian-Admin%29.resx">
+    <EmbeddedResource Include="Forms\Admin\Panel\Books_Panel%28Librarian-Admin%29.resx">
       <DependentUpon>Books_Panel%28Librarian-Admin%29.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LibraryCore\Forms\Admin\Login\Login_Panel%28Librarian-Admin%29.resx">
+    <EmbeddedResource Include="Forms\Admin\Login\Login_Panel%28Librarian-Admin%29.resx">
       <DependentUpon>Login_Panel%28Librarian-Admin%29.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LibraryCore\Forms\User\Panel\Catalouge.resx">
+    <EmbeddedResource Include="Forms\User\Panel\Catalouge.resx">
       <DependentUpon>Catalouge.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -400,25 +407,23 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Assets\" />
-    <Folder Include="Database\" />
-    <Folder Include="LibraryAdminApp\" />
-    <Folder Include="LibraryUserApp\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="LibraryCore\Assets\Bookcover\1984.jpg" />
-    <Content Include="LibraryCore\Assets\Bookcover\big_little_lies.jpg" />
-    <Content Include="LibraryCore\Assets\Bookcover\hobbit.jpg" />
-    <Content Include="LibraryCore\Assets\Bookcover\lord_of_the_rings_fellowship.jpg" />
-    <Content Include="LibraryCore\Assets\Bookcover\pride_and_prejudice.jpg" />
-    <Content Include="LibraryCore\Assets\Bookcover\sharp_objects.jpg" />
-    <Content Include="LibraryCore\Assets\Bookcover\the_adventure.jpg" />
-    <Content Include="LibraryCore\Assets\Bookcover\the_great_gatsby.jpg" />
-    <Content Include="LibraryCore\Assets\Bookcover\the_guest_list.jpg" />
-    <Content Include="LibraryCore\Assets\Bookcover\the_plot.jpg" />
-    <Content Include="LibraryCore\Assets\Bookcover\the_woman_in_the_window.jpg" />
-    <Content Include="LibraryCore\Assets\Bookcover\to_kill_a_mockingbird.jpg" />
+    <Content Include="Assets\Bookcover\1984.jpg" />
+    <Content Include="Assets\Bookcover\big_little_lies.jpg" />
+    <Content Include="Assets\Bookcover\hobbit.jpg" />
+    <Content Include="Assets\Bookcover\lord_of_the_rings_fellowship.jpg" />
+    <Content Include="Assets\Bookcover\pride_and_prejudice.jpg" />
+    <Content Include="Assets\Bookcover\sharp_objects.jpg" />
+    <Content Include="Assets\Bookcover\the_adventure.jpg" />
+    <Content Include="Assets\Bookcover\the_great_gatsby.jpg" />
+    <Content Include="Assets\Bookcover\the_guest_list.jpg" />
+    <Content Include="Assets\Bookcover\the_plot.jpg" />
+    <Content Include="Assets\Bookcover\the_woman_in_the_window.jpg" />
+    <Content Include="Assets\Bookcover\to_kill_a_mockingbird.jpg" />
+    <Content Include="Resources\Ucc Logo NoBG.png" />
+    <Content Include="Resources\Ucc Logo NoBG1.png" />
+    <Content Include="Resources\ucc logo3.png" />
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="packages\MSTest.Analyzers.4.0.1\analyzers\dotnet\vb\MSTest.Analyzers.dll" />

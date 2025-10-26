@@ -123,7 +123,7 @@ Partial Class Catalouge
         Me.lblUser.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblUser.Location = New System.Drawing.Point(895, 19)
         Me.lblUser.Name = "lblUser"
-        Me.lblUser.Size = New System.Drawing.Size(55, 21)
+        Me.lblUser.Size = New System.Drawing.Size(51, 21)
         Me.lblUser.TabIndex = 1
         Me.lblUser.Text = "Guest"
         '
@@ -273,7 +273,7 @@ Partial Class Catalouge
         Me.flpVerticalStack.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
         Me.flpVerticalStack.Location = New System.Drawing.Point(0, 0)
         Me.flpVerticalStack.Name = "flpVerticalStack"
-        Me.flpVerticalStack.Size = New System.Drawing.Size(828, 550)
+        Me.flpVerticalStack.Size = New System.Drawing.Size(828, 546)
         Me.flpVerticalStack.TabIndex = 0
         Me.flpVerticalStack.WrapContents = False
         '
@@ -284,7 +284,7 @@ Partial Class Catalouge
         Me.lblHorrorHeader.Location = New System.Drawing.Point(15, 15)
         Me.lblHorrorHeader.Margin = New System.Windows.Forms.Padding(15, 15, 3, 0)
         Me.lblHorrorHeader.Name = "lblHorrorHeader"
-        Me.lblHorrorHeader.Size = New System.Drawing.Size(71, 25)
+        Me.lblHorrorHeader.Size = New System.Drawing.Size(71, 22)
         Me.lblHorrorHeader.TabIndex = 0
         Me.lblHorrorHeader.Text = "Horror"
         '
@@ -295,8 +295,7 @@ Partial Class Catalouge
         Me.flpHorrorBooks.Controls.Add(Me.pnlBook2)
         Me.flpHorrorBooks.Controls.Add(Me.pnlBook3)
         Me.flpHorrorBooks.Controls.Add(Me.pnlBook4)
-        Me.flpHorrorBooks.FlowDirection = System.Windows.Forms.FlowDirection.LeftToRight
-        Me.flpHorrorBooks.Location = New System.Drawing.Point(15, 43)
+        Me.flpHorrorBooks.Location = New System.Drawing.Point(15, 40)
         Me.flpHorrorBooks.Margin = New System.Windows.Forms.Padding(15, 3, 3, 3)
         Me.flpHorrorBooks.Name = "flpHorrorBooks"
         Me.flpHorrorBooks.Size = New System.Drawing.Size(780, 230)
@@ -439,10 +438,10 @@ Partial Class Catalouge
         '
         Me.lblThrillerHeader.AutoSize = True
         Me.lblThrillerHeader.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblThrillerHeader.Location = New System.Drawing.Point(15, 291)
+        Me.lblThrillerHeader.Location = New System.Drawing.Point(15, 288)
         Me.lblThrillerHeader.Margin = New System.Windows.Forms.Padding(15, 15, 3, 0)
         Me.lblThrillerHeader.Name = "lblThrillerHeader"
-        Me.lblThrillerHeader.Size = New System.Drawing.Size(193, 25)
+        Me.lblThrillerHeader.Size = New System.Drawing.Size(213, 22)
         Me.lblThrillerHeader.TabIndex = 2
         Me.lblThrillerHeader.Text = "Psychological Thriller"
         '
@@ -453,8 +452,7 @@ Partial Class Catalouge
         Me.flpThrillerBooks.Controls.Add(Me.pnlBook6)
         Me.flpThrillerBooks.Controls.Add(Me.pnlBook7)
         Me.flpThrillerBooks.Controls.Add(Me.pnlBook8)
-        Me.flpThrillerBooks.FlowDirection = System.Windows.Forms.FlowDirection.LeftToRight
-        Me.flpThrillerBooks.Location = New System.Drawing.Point(15, 319)
+        Me.flpThrillerBooks.Location = New System.Drawing.Point(15, 313)
         Me.flpThrillerBooks.Margin = New System.Windows.Forms.Padding(15, 3, 3, 3)
         Me.flpThrillerBooks.Name = "flpThrillerBooks"
         Me.flpThrillerBooks.Size = New System.Drawing.Size(780, 230)
@@ -593,7 +591,7 @@ Partial Class Catalouge
         Me.lblTitle8.Text = "Book"
         Me.lblTitle8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Form1
+        'Catalouge
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -602,7 +600,7 @@ Partial Class Catalouge
         Me.Controls.Add(Me.pnlLeftMenu)
         Me.Controls.Add(Me.pnlHeader)
         Me.MinimumSize = New System.Drawing.Size(800, 600)
-        Me.Name = "Form1"
+        Me.Name = "Catalouge"
         Me.Text = "Library"
         Me.pnlHeader.ResumeLayout(False)
         Me.pnlHeader.PerformLayout()
