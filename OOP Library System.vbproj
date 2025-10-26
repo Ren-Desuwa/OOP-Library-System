@@ -109,6 +109,12 @@
     <Compile Include="Forms\Panels\Home_Panel%28Admin-Librarian%29.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\Panels\PenaltyView.Designer.vb">
+      <DependentUpon>PenaltyView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Panels\PenaltyView.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\User Interface\Login_Panel%28Student%29.Designer.vb">
       <DependentUpon>Login_Panel%28Student%29.vb</DependentUpon>
     </Compile>
@@ -178,6 +184,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Panels\Login_Panel(Librarian-Admin).resx">
       <DependentUpon>Login_Panel(Librarian-Admin).vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Panels\PenaltyView.resx">
+      <DependentUpon>PenaltyView.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\User Interface\Login_Panel%28Student%29.resx">
       <DependentUpon>Login_Panel%28Student%29.vb</DependentUpon>

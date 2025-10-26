@@ -49,13 +49,13 @@ Partial Class AddBorrower
         Me.txtboxCourseYr = New Guna.UI2.WinForms.Guna2TextBox()
         Me.txtboxContact = New Guna.UI2.WinForms.Guna2TextBox()
         Me.txtboxEmail = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.imgButton = New Guna.UI2.WinForms.Guna2ImageButton()
         Me.confirmButton = New Guna.UI2.WinForms.Guna2Button()
         Me.cancelButton = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2HtmlLabel11 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel12 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.txtboxPass = New Guna.UI2.WinForms.Guna2TextBox()
         Me.txtboxConfirmPass = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.imgButton = New Guna.UI2.WinForms.Guna2ImageButton()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.Guna2CustomGradientPanel1.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
@@ -479,22 +479,6 @@ Partial Class AddBorrower
         Me.txtboxEmail.Size = New System.Drawing.Size(284, 29)
         Me.txtboxEmail.TabIndex = 28
         '
-        'imgButton
-        '
-        Me.imgButton.BackColor = System.Drawing.Color.LightSalmon
-        Me.imgButton.CheckedState.ImageSize = New System.Drawing.Size(64, 64)
-        Me.TableLayoutPanel2.SetColumnSpan(Me.imgButton, 2)
-        Me.imgButton.Dock = System.Windows.Forms.DockStyle.Right
-        Me.imgButton.HoverState.ImageSize = New System.Drawing.Size(64, 64)
-        Me.imgButton.Image = CType(resources.GetObject("imgButton.Image"), System.Drawing.Image)
-        Me.imgButton.ImageOffset = New System.Drawing.Point(0, 0)
-        Me.imgButton.ImageRotate = 0!
-        Me.imgButton.Location = New System.Drawing.Point(54, 331)
-        Me.imgButton.Name = "imgButton"
-        Me.imgButton.PressedState.ImageSize = New System.Drawing.Size(64, 64)
-        Me.imgButton.Size = New System.Drawing.Size(288, 25)
-        Me.imgButton.TabIndex = 29
-        '
         'confirmButton
         '
         Me.confirmButton.BorderRadius = 10
@@ -594,6 +578,22 @@ Partial Class AddBorrower
         Me.txtboxConfirmPass.SelectedText = ""
         Me.txtboxConfirmPass.Size = New System.Drawing.Size(284, 25)
         Me.txtboxConfirmPass.TabIndex = 36
+        '
+        'imgButton
+        '
+        Me.imgButton.BackColor = System.Drawing.Color.LightSalmon
+        Me.imgButton.CheckedState.ImageSize = New System.Drawing.Size(64, 64)
+        Me.TableLayoutPanel2.SetColumnSpan(Me.imgButton, 2)
+        Me.imgButton.Dock = System.Windows.Forms.DockStyle.Right
+        Me.imgButton.HoverState.ImageSize = New System.Drawing.Size(64, 64)
+        Me.imgButton.Image = CType(resources.GetObject("imgButton.Image"), System.Drawing.Image)
+        Me.imgButton.ImageOffset = New System.Drawing.Point(0, 0)
+        Me.imgButton.ImageRotate = 0!
+        Me.imgButton.Location = New System.Drawing.Point(54, 331)
+        Me.imgButton.Name = "imgButton"
+        Me.imgButton.PressedState.ImageSize = New System.Drawing.Size(64, 64)
+        Me.imgButton.Size = New System.Drawing.Size(288, 25)
+        Me.imgButton.TabIndex = 29
         '
         'AddBorrower
         '
