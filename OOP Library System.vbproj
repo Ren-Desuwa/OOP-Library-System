@@ -51,6 +51,9 @@
     <Reference Include="Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
       <HintPath>packages\Guna.UI2.WinForms.2.0.4.7\lib\net472\Guna.UI2.dll</HintPath>
     </Reference>
+    <Reference Include="MySql.Data">
+      <HintPath>..\..\..\Documents\School\Jestine\Programming\Information Management\DocUCare\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -79,28 +82,70 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\Panels\BookInfo.Designer.vb">
+    <Compile Include="Classes\DataAccessObjects\AccountDAO.vb" />
+    <Compile Include="Classes\DataAccessObjects\AnnouncementDAO.vb" />
+    <Compile Include="Classes\DataAccessObjects\BookCopyDAO.vb" />
+    <Compile Include="Classes\DataAccessObjects\BookDAO.vb" />
+    <Compile Include="Classes\DataAccessObjects\DBcon.vb" />
+    <Compile Include="Classes\DataAccessObjects\LogDAO.vb" />
+    <Compile Include="Classes\DataAccessObjects\NotificationDAO.vb" />
+    <Compile Include="Classes\DataAccessObjects\TransactionDAO.vb" />
+    <Compile Include="Classes\Models\Account.vb" />
+    <Compile Include="Classes\Models\Announcement.vb" />
+    <Compile Include="Classes\Models\Book.vb" />
+    <Compile Include="Classes\Models\BookCopy.vb" />
+    <Compile Include="Classes\Models\Log.vb" />
+    <Compile Include="Classes\Models\Notification.vb" />
+    <Compile Include="Classes\Models\Transaction.vb" />
+    <Compile Include="Classes\Services\announcementService.vb" />
+    <Compile Include="Classes\Services\authService.vb" />
+    <Compile Include="Classes\Services\borrowService.vb" />
+    <Compile Include="Classes\Services\catalougeService.vb" />
+    <Compile Include="Classes\Services\registrationService.vb" />
+    <Compile Include="Forms\Admin\Panel\BookInfo.Designer.vb">
       <DependentUpon>BookInfo.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Panels\BookInfo.vb">
+    <Compile Include="Forms\Admin\Panel\BookInfo.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Panels\CreateBook.Designer.vb">
+    <Compile Include="Forms\Admin\Panel\Books_Panel%28Librarian-Admin%29.Designer.vb">
+      <DependentUpon>Books_Panel%28Librarian-Admin%29.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\Panel\Books_Panel%28Librarian-Admin%29.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\Panel\CreateBook.Designer.vb">
       <DependentUpon>CreateBook.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Panels\CreateBook.vb">
+    <Compile Include="Forms\Admin\Panel\CreateBook.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Panels\EditBook.Designer.vb">
+    <Compile Include="Forms\Admin\Panel\EditBook.Designer.vb">
       <DependentUpon>EditBook.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Panels\EditBook.vb">
+    <Compile Include="Forms\Admin\Panel\EditBook.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Panels\Home_Panel_Admin_Librarian.Designer.vb">
+    <Compile Include="Forms\Admin\Panel\Home_Panel%28Admin%29.Designer.vb">
+      <DependentUpon>Home_Panel%28Admin%29.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\Panel\Home_Panel%28Admin%29.vb" />
+    <Compile Include="Forms\Admin\Panel\Home_Panel%28Librarian%29.Designer.vb">
+      <DependentUpon>Home_Panel%28Librarian%29.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\Panel\Home_Panel%28Librarian%29.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\Panel\Home_Panel_Admin_Librarian.Designer.vb">
       <DependentUpon>Home_Panel_Admin_Librarian.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Panels\Home_Panel_Admin_Librarian.vb">
+    <Compile Include="Forms\Admin\Panel\Home_Panel_Admin_Librarian.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\Panel\Login_Panel_Librarian_Admin.Designer.vb">
+      <DependentUpon>Login_Panel_Librarian_Admin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\Panel\Login_Panel_Librarian_Admin.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Student Interface\Signup_Panel_Student.Designer.vb">
@@ -133,29 +178,22 @@
     <Compile Include="Forms\Student Interface\UC Student\UC_Welcome_message_student.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="LibraryCore\Classes\Account.vb" />
-    <Compile Include="LibraryCore\Classes\Announcement.vb" />
-    <Compile Include="LibraryCore\Classes\Book.vb" />
-    <Compile Include="LibraryCore\Classes\BookCopy.vb" />
-    <Compile Include="LibraryCore\Classes\Log.vb" />
-    <Compile Include="LibraryCore\Classes\Notification.vb" />
-    <Compile Include="LibraryCore\Classes\Transaction.vb" />
-    <Compile Include="Forms\Panels\Books_Panel(Librarian-Admin).Designer.vb">
-      <DependentUpon>Books_Panel(Librarian-Admin).vb</DependentUpon>
+    <Compile Include="Forms\User\Panel\BookSortedList.Designer.vb">
+      <DependentUpon>BookSortedList.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Panels\Books_Panel(Librarian-Admin).vb">
+    <Compile Include="Forms\User\Panel\BookSortedList.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\User\Panel\Catalouge.Designer.vb">
+      <DependentUpon>Catalouge.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User\Panel\Catalouge.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Panels\Login_Panel_Librarian_Admin.Designer.vb">
-      <DependentUpon>Login_Panel_Librarian_Admin.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Panels\Login_Panel_Librarian_Admin.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="LibraryCore\Forms\User\UserLogin\UserRegister.Designer.vb">
+    <Compile Include="Forms\User\UserLogin\UserRegister.Designer.vb">
       <DependentUpon>UserRegister.vb</DependentUpon>
     </Compile>
-    <Compile Include="LibraryCore\Forms\User\UserLogin\UserRegister.vb">
+    <Compile Include="Forms\User\UserLogin\UserRegister.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -176,22 +214,25 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Forms\Panels\BookInfo.resx">
+    <EmbeddedResource Include="Forms\Admin\Panel\BookInfo.resx">
       <DependentUpon>BookInfo.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Panels\Books_Panel(Librarian-Admin).resx">
-      <DependentUpon>Books_Panel(Librarian-Admin).vb</DependentUpon>
+    <EmbeddedResource Include="Forms\Admin\Panel\Books_Panel%28Librarian-Admin%29.resx">
+      <DependentUpon>Books_Panel%28Librarian-Admin%29.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Panels\CreateBook.resx">
+    <EmbeddedResource Include="Forms\Admin\Panel\CreateBook.resx">
       <DependentUpon>CreateBook.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Panels\EditBook.resx">
+    <EmbeddedResource Include="Forms\Admin\Panel\EditBook.resx">
       <DependentUpon>EditBook.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Panels\Home_Panel_Admin_Librarian.resx">
+    <EmbeddedResource Include="Forms\Admin\Panel\Home_Panel%28Librarian%29.resx">
+      <DependentUpon>Home_Panel%28Librarian%29.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\Panel\Home_Panel_Admin_Librarian.resx">
       <DependentUpon>Home_Panel_Admin_Librarian.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Panels\Login_Panel_Librarian_Admin.resx">
+    <EmbeddedResource Include="Forms\Admin\Panel\Login_Panel_Librarian_Admin.resx">
       <DependentUpon>Login_Panel_Librarian_Admin.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Student Interface\Signup_Panel_Student.resx">
@@ -208,6 +249,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Student Interface\UC Student\UC_Welcome_message_student.resx">
       <DependentUpon>UC_Welcome_message_student.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User\Panel\Catalouge.resx">
+      <DependentUpon>Catalouge.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -233,6 +277,7 @@
     <Folder Include="Assets\" />
     <Folder Include="Database\" />
     <Folder Include="Forms\Admin-Librarian Interface\" />
+    <Folder Include="Forms\Admin\Login\" />
     <Folder Include="LibraryAdminApp\" />
     <Folder Include="LibraryCore\Assets\Colors\" />
     <Folder Include="LibraryCore\Database\" />
