@@ -35,9 +35,9 @@ Partial Class PenaltyView
         Me.Guna2ControlBox1 = New Guna.UI2.WinForms.Guna2ControlBox()
         Me.Guna2HtmlLabel3 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel4 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Guna2DragControl1 = New Guna.UI2.WinForms.Guna2DragControl(Me.components)
-        Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
+        Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
+        Me.Guna2DragControl1 = New Guna.UI2.WinForms.Guna2DragControl(Me.components)
         Me.Guna2CustomGradientPanel1.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
         CType(Me.Guna2DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -52,7 +52,7 @@ Partial Class PenaltyView
         '
         Me.Guna2CustomGradientPanel1.Controls.Add(Me.TableLayoutPanel1)
         Me.Guna2CustomGradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Guna2CustomGradientPanel1.FillColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(232, Byte), Integer))
+        Me.Guna2CustomGradientPanel1.FillColor = System.Drawing.Color.FromArgb(CType(CType(164, Byte), Integer), CType(CType(120, Byte), Integer), CType(CType(84, Byte), Integer))
         Me.Guna2CustomGradientPanel1.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(216, Byte), Integer))
         Me.Guna2CustomGradientPanel1.FillColor3 = System.Drawing.Color.FromArgb(CType(CType(154, Byte), Integer), CType(CType(111, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.Guna2CustomGradientPanel1.FillColor4 = System.Drawing.Color.FromArgb(CType(CType(139, Byte), Integer), CType(CType(103, Byte), Integer), CType(CType(67, Byte), Integer))
@@ -99,7 +99,7 @@ Partial Class PenaltyView
         '
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
         Me.Guna2DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
-        Me.Guna2DataGridView1.BackgroundColor = System.Drawing.Color.OldLace
+        Me.Guna2DataGridView1.BackgroundColor = System.Drawing.Color.AntiqueWhite
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -108,7 +108,8 @@ Partial Class PenaltyView
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.Guna2DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
-        Me.Guna2DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.Guna2DataGridView1.ColumnHeadersHeight = 4
+        Me.Guna2DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
         Me.TableLayoutPanel1.SetColumnSpan(Me.Guna2DataGridView1, 4)
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
@@ -130,13 +131,13 @@ Partial Class PenaltyView
         Me.Guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty
         Me.Guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty
         Me.Guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty
-        Me.Guna2DataGridView1.ThemeStyle.BackColor = System.Drawing.Color.OldLace
+        Me.Guna2DataGridView1.ThemeStyle.BackColor = System.Drawing.Color.AntiqueWhite
         Me.Guna2DataGridView1.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Guna2DataGridView1.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Guna2DataGridView1.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         Me.Guna2DataGridView1.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2DataGridView1.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
-        Me.Guna2DataGridView1.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.Guna2DataGridView1.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
         Me.Guna2DataGridView1.ThemeStyle.HeaderStyle.Height = 4
         Me.Guna2DataGridView1.ThemeStyle.ReadOnly = False
         Me.Guna2DataGridView1.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White
@@ -207,31 +208,6 @@ Partial Class PenaltyView
         Me.Guna2HtmlLabel4.TabIndex = 5
         Me.Guna2HtmlLabel4.Text = "Penalty Type:"
         '
-        'Guna2DragControl1
-        '
-        Me.Guna2DragControl1.DockIndicatorTransparencyValue = 0.6R
-        Me.Guna2DragControl1.TargetControl = Me.TableLayoutPanel1
-        Me.Guna2DragControl1.TransparentWhileDrag = False
-        '
-        'Guna2Button1
-        '
-        Me.Guna2Button1.BorderColor = System.Drawing.Color.Sienna
-        Me.Guna2Button1.BorderRadius = 5
-        Me.Guna2Button1.BorderThickness = 1
-        Me.Guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.Guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.Guna2Button1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Guna2Button1.FillColor = System.Drawing.Color.LightSalmon
-        Me.Guna2Button1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2Button1.ForeColor = System.Drawing.Color.Black
-        Me.Guna2Button1.Location = New System.Drawing.Point(357, 321)
-        Me.Guna2Button1.Name = "Guna2Button1"
-        Me.Guna2Button1.Size = New System.Drawing.Size(108, 38)
-        Me.Guna2Button1.TabIndex = 6
-        Me.Guna2Button1.Text = "Clear Fine"
-        '
         'Guna2Button2
         '
         Me.Guna2Button2.BorderColor = System.Drawing.Color.LightSalmon
@@ -244,12 +220,37 @@ Partial Class PenaltyView
         Me.Guna2Button2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Guna2Button2.FillColor = System.Drawing.Color.Sienna
         Me.Guna2Button2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2Button2.ForeColor = System.Drawing.Color.White
+        Me.Guna2Button2.ForeColor = System.Drawing.Color.AntiqueWhite
         Me.Guna2Button2.Location = New System.Drawing.Point(471, 321)
         Me.Guna2Button2.Name = "Guna2Button2"
         Me.Guna2Button2.Size = New System.Drawing.Size(108, 38)
         Me.Guna2Button2.TabIndex = 7
         Me.Guna2Button2.Text = "Lift Suspension"
+        '
+        'Guna2Button1
+        '
+        Me.Guna2Button1.BorderColor = System.Drawing.Color.Sienna
+        Me.Guna2Button1.BorderRadius = 5
+        Me.Guna2Button1.BorderThickness = 1
+        Me.Guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.Guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.Guna2Button1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Guna2Button1.FillColor = System.Drawing.Color.AntiqueWhite
+        Me.Guna2Button1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2Button1.ForeColor = System.Drawing.Color.SaddleBrown
+        Me.Guna2Button1.Location = New System.Drawing.Point(357, 321)
+        Me.Guna2Button1.Name = "Guna2Button1"
+        Me.Guna2Button1.Size = New System.Drawing.Size(108, 38)
+        Me.Guna2Button1.TabIndex = 6
+        Me.Guna2Button1.Text = "Clear Fine"
+        '
+        'Guna2DragControl1
+        '
+        Me.Guna2DragControl1.DockIndicatorTransparencyValue = 0.6R
+        Me.Guna2DragControl1.TargetControl = Me.TableLayoutPanel1
+        Me.Guna2DragControl1.TransparentWhileDrag = False
         '
         'PenaltyView
         '

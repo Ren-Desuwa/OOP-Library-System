@@ -40,7 +40,6 @@ Partial Class AddBorrower
         Me.Guna2HtmlLabel3 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel4 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel5 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Guna2HtmlLabel6 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel7 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel8 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel9 = New Guna.UI2.WinForms.Guna2HtmlLabel()
@@ -49,8 +48,9 @@ Partial Class AddBorrower
         Me.txtboxCourseYr = New Guna.UI2.WinForms.Guna2TextBox()
         Me.txtboxContact = New Guna.UI2.WinForms.Guna2TextBox()
         Me.txtboxEmail = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.confirmButton = New Guna.UI2.WinForms.Guna2Button()
         Me.cancelButton = New Guna.UI2.WinForms.Guna2Button()
+        Me.confirmButton = New Guna.UI2.WinForms.Guna2Button()
+        Me.Guna2HtmlLabel6 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel11 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel12 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.txtboxPass = New Guna.UI2.WinForms.Guna2TextBox()
@@ -307,7 +307,7 @@ Partial Class AddBorrower
         Me.Guna2HtmlLabel3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2HtmlLabel3.Location = New System.Drawing.Point(355, 84)
         Me.Guna2HtmlLabel3.Name = "Guna2HtmlLabel3"
-        Me.Guna2HtmlLabel3.Size = New System.Drawing.Size(105, 17)
+        Me.Guna2HtmlLabel3.Size = New System.Drawing.Size(92, 17)
         Me.Guna2HtmlLabel3.TabIndex = 17
         Me.Guna2HtmlLabel3.Text = "Course/Yr./Sec.:"
         Me.Guna2HtmlLabel3.TextAlignment = System.Drawing.ContentAlignment.BottomCenter
@@ -331,22 +331,10 @@ Partial Class AddBorrower
         Me.Guna2HtmlLabel5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2HtmlLabel5.Location = New System.Drawing.Point(355, 192)
         Me.Guna2HtmlLabel5.Name = "Guna2HtmlLabel5"
-        Me.Guna2HtmlLabel5.Size = New System.Drawing.Size(44, 17)
+        Me.Guna2HtmlLabel5.Size = New System.Drawing.Size(44, 13)
         Me.Guna2HtmlLabel5.TabIndex = 19
         Me.Guna2HtmlLabel5.Text = "Email:"
         Me.Guna2HtmlLabel5.TextAlignment = System.Drawing.ContentAlignment.BottomCenter
-        '
-        'Guna2HtmlLabel6
-        '
-        Me.Guna2HtmlLabel6.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel6.Location = New System.Drawing.Point(31, 308)
-        Me.Guna2HtmlLabel6.Name = "Guna2HtmlLabel6"
-        Me.Guna2HtmlLabel6.Size = New System.Drawing.Size(47, 17)
-        Me.Guna2HtmlLabel6.TabIndex = 20
-        Me.Guna2HtmlLabel6.Text = "Image:"
-        Me.Guna2HtmlLabel6.TextAlignment = System.Drawing.ContentAlignment.BottomCenter
         '
         'Guna2HtmlLabel7
         '
@@ -355,7 +343,7 @@ Partial Class AddBorrower
         Me.Guna2HtmlLabel7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2HtmlLabel7.Location = New System.Drawing.Point(31, 138)
         Me.Guna2HtmlLabel7.Name = "Guna2HtmlLabel7"
-        Me.Guna2HtmlLabel7.Size = New System.Drawing.Size(93, 17)
+        Me.Guna2HtmlLabel7.Size = New System.Drawing.Size(92, 17)
         Me.Guna2HtmlLabel7.TabIndex = 21
         Me.Guna2HtmlLabel7.Text = "Middle Name:"
         Me.Guna2HtmlLabel7.TextAlignment = System.Drawing.ContentAlignment.BottomCenter
@@ -390,7 +378,7 @@ Partial Class AddBorrower
         Me.Guna2HtmlLabel10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2HtmlLabel10.Location = New System.Drawing.Point(31, 192)
         Me.Guna2HtmlLabel10.Name = "Guna2HtmlLabel10"
-        Me.Guna2HtmlLabel10.Size = New System.Drawing.Size(43, 17)
+        Me.Guna2HtmlLabel10.Size = New System.Drawing.Size(43, 13)
         Me.Guna2HtmlLabel10.TabIndex = 24
         Me.Guna2HtmlLabel10.Text = "Suffix:          "
         Me.Guna2HtmlLabel10.TextAlignment = System.Drawing.ContentAlignment.BottomCenter
@@ -479,6 +467,23 @@ Partial Class AddBorrower
         Me.txtboxEmail.Size = New System.Drawing.Size(284, 29)
         Me.txtboxEmail.TabIndex = 28
         '
+        'cancelButton
+        '
+        Me.cancelButton.BorderRadius = 10
+        Me.cancelButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.cancelButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.cancelButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.cancelButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.cancelButton.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.cancelButton.FillColor = System.Drawing.Color.Tan
+        Me.cancelButton.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.cancelButton.ForeColor = System.Drawing.Color.Black
+        Me.cancelButton.Location = New System.Drawing.Point(453, 380)
+        Me.cancelButton.Name = "cancelButton"
+        Me.cancelButton.Size = New System.Drawing.Size(103, 38)
+        Me.cancelButton.TabIndex = 32
+        Me.cancelButton.Text = "Cancel"
+        '
         'confirmButton
         '
         Me.confirmButton.BorderRadius = 10
@@ -496,22 +501,17 @@ Partial Class AddBorrower
         Me.confirmButton.TabIndex = 31
         Me.confirmButton.Text = "Confirm"
         '
-        'cancelButton
+        'Guna2HtmlLabel6
         '
-        Me.cancelButton.BorderRadius = 10
-        Me.cancelButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.cancelButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.cancelButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.cancelButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.cancelButton.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.cancelButton.FillColor = System.Drawing.Color.Tan
-        Me.cancelButton.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.cancelButton.ForeColor = System.Drawing.Color.Black
-        Me.cancelButton.Location = New System.Drawing.Point(453, 380)
-        Me.cancelButton.Name = "cancelButton"
-        Me.cancelButton.Size = New System.Drawing.Size(103, 38)
-        Me.cancelButton.TabIndex = 32
-        Me.cancelButton.Text = "Cancel"
+        Me.Guna2HtmlLabel6.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel6.Location = New System.Drawing.Point(31, 308)
+        Me.Guna2HtmlLabel6.Name = "Guna2HtmlLabel6"
+        Me.Guna2HtmlLabel6.Size = New System.Drawing.Size(47, 17)
+        Me.Guna2HtmlLabel6.TabIndex = 20
+        Me.Guna2HtmlLabel6.Text = "Image:"
+        Me.Guna2HtmlLabel6.TextAlignment = System.Drawing.ContentAlignment.BottomCenter
         '
         'Guna2HtmlLabel11
         '
