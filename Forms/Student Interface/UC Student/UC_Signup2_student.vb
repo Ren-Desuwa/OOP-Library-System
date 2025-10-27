@@ -12,6 +12,12 @@ Public Class UC_Signup2_student
     Public Event ConfirmClicked As EventHandler
 
     ' --- NEW: Public properties to expose data ---
+
+    Private Sub UC_Signup2_student_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' This line manually forces the timer to connect to the Tick event.
+        ' This fixes the bug where the designer fails to hook up the event.
+        AddHandler otpTimer.Tick, AddressOf otpTimer_Tick
+    End Sub
     Public ReadOnly Property ContactInfo As String
         Get
             Return txtBox_contactInfo.Text.Trim()

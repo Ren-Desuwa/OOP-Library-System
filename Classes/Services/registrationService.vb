@@ -86,17 +86,18 @@ Public Class registrationService
             Dim otpCode As String = _otpService.GenerateOtpForRegistration(contactInfo)
 
             If String.IsNullOrEmpty(otpCode) Then
+
                 Throw New Exception("Failed to generate a verification code. Please try again.")
             End If
 
             ' 2. Call NotificationService to SEND the code
             If contactType = ContactType.Email Then
+
                 ' Use the email method
                 ' --- FIX: Added Await and corrected function name ---
                 Await _notificationService.SendRegistrationOtpAsync(contactInfo, otpCode)
             ElseIf contactType = ContactType.Phone Then
-                ' Use the SMS method
-
+                ' Use the SMS methoD
                 Dim message As String = $"Your one-time password is: {otpCode}.It will expire in 5 minutes."
                 Await _notificationService.SendSms(contactInfo, message)
             End If
