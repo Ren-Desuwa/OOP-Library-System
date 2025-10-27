@@ -168,6 +168,12 @@
     <Compile Include="Forms\Student Interface\UC Student\UC_Welcome_message_student.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Forms\User\Panel\BooksFromProfile.Designer.vb">
+      <DependentUpon>BooksFromProfile.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User\Panel\BooksFromProfile.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Forms\User\Panel\BookSortedList.Designer.vb">
       <DependentUpon>BookSortedList.vb</DependentUpon>
     </Compile>
@@ -244,6 +250,9 @@
     <EmbeddedResource Include="Forms\Student Interface\UC Student\UC_Welcome_message_student.resx">
       <DependentUpon>UC_Welcome_message_student.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User\Panel\BooksFromProfile.resx">
+      <DependentUpon>BooksFromProfile.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\User\Panel\Catalouge.resx">
       <DependentUpon>Catalouge.vb</DependentUpon>
     </EmbeddedResource>
@@ -306,6 +315,8 @@
     <Content Include="LibraryCore\Assets\Bookcover\the_plot.jpg" />
     <Content Include="LibraryCore\Assets\Bookcover\the_woman_in_the_window.jpg" />
     <Content Include="LibraryCore\Assets\Bookcover\to_kill_a_mockingbird.jpg" />
+    <None Include="Resources\pfp.jpg" />
+    <None Include="Resources\Untitled design.png" />
     <None Include="Resources\LoGO.png" />
     <None Include="Resources\Hide_icon1.png" />
     <None Include="Resources\Show_icon1.png" />

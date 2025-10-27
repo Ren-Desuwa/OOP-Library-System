@@ -85,4 +85,12 @@
     Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles Guna2Button2.Click
 
     End Sub
+
+    Private Sub Guna2ProgressBar1_ValueChanged(sender As Object, e As EventArgs) Handles Guna2ProgressBar1.ValueChanged
+
+    End Sub
+
+    Private Sub TableLayoutPanel1_Paint_1(sender As Object, e As PaintEventArgs) Handles TableLayoutPanel1.Paint
+
+    End Sub
 End Class
