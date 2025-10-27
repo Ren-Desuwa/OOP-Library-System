@@ -23,8 +23,8 @@ Partial Class UC_booklist_container
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.booklist_container_panel = New Guna.UI2.WinForms.Guna2Panel()
-        Me.lbl_genre = New System.Windows.Forms.Label()
         Me.flow_book_panel = New System.Windows.Forms.FlowLayoutPanel()
+        Me.lbl_genre = New System.Windows.Forms.Label()
         Me.booklist_container_panel.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -38,8 +38,18 @@ Partial Class UC_booklist_container
         Me.booklist_container_panel.Controls.Add(Me.lbl_genre)
         Me.booklist_container_panel.Location = New System.Drawing.Point(0, 0)
         Me.booklist_container_panel.Name = "booklist_container_panel"
-        Me.booklist_container_panel.Size = New System.Drawing.Size(616, 288)
+        Me.booklist_container_panel.Size = New System.Drawing.Size(616, 319)
         Me.booklist_container_panel.TabIndex = 11
+        '
+        'flow_book_panel
+        '
+        Me.flow_book_panel.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.flow_book_panel.Location = New System.Drawing.Point(8, 40)
+        Me.flow_book_panel.Name = "flow_book_panel"
+        Me.flow_book_panel.Size = New System.Drawing.Size(600, 270)
+        Me.flow_book_panel.TabIndex = 12
         '
         'lbl_genre
         '
@@ -56,16 +66,6 @@ Partial Class UC_booklist_container
         Me.lbl_genre.Text = "Genre"
         Me.lbl_genre.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'flow_book_panel
-        '
-        Me.flow_book_panel.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.flow_book_panel.Location = New System.Drawing.Point(8, 40)
-        Me.flow_book_panel.Name = "flow_book_panel"
-        Me.flow_book_panel.Size = New System.Drawing.Size(600, 240)
-        Me.flow_book_panel.TabIndex = 12
-        '
         'UC_booklist_container
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -73,7 +73,7 @@ Partial Class UC_booklist_container
         Me.BackColor = System.Drawing.Color.Transparent
         Me.Controls.Add(Me.booklist_container_panel)
         Me.Name = "UC_booklist_container"
-        Me.Size = New System.Drawing.Size(616, 288)
+        Me.Size = New System.Drawing.Size(616, 319)
         Me.booklist_container_panel.ResumeLayout(False)
         Me.booklist_container_panel.PerformLayout()
         Me.ResumeLayout(False)

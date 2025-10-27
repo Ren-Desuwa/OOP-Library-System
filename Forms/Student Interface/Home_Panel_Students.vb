@@ -21,37 +21,37 @@ Partial Class Home_Panel_Students
 
         Dim book1 = New Book()
         book1.BookID = 1
-        book1.Title = "The Way of Kings"
+        book1.Title = "1984"
         book1.Genre = "Fantasy"
         book1.CoverUrl = "1984.jpg" ' Path doesn't matter
         mockList.Add(book1)
 
         Dim book2 = New Book()
         book2.BookID = 2
-        book2.Title = "Dune"
+        book2.Title = "Big Little Lies"
         book2.Genre = "Sci-Fi"
-        book2.CoverUrl = "book2.jpg"
+        book2.CoverUrl = "big_little_lies.jpg"
         mockList.Add(book2)
 
         Dim book3 = New Book()
         book3.BookID = 3
-        book3.Title = "Words of Radiance"
+        book3.Title = "Hobbit"
         book3.Genre = "Fantasy"
-        book3.CoverUrl = "book3.jpg"
+        book3.CoverUrl = "hobbit.jpg"
         mockList.Add(book3)
 
         Dim book4 = New Book()
         book4.BookID = 4
-        book4.Title = "Foundation"
+        book4.Title = "The Plot"
         book4.Genre = "Sci-Fi"
-        book4.CoverUrl = "book4.jpg"
+        book4.CoverUrl = "the_plot.jpg"
         mockList.Add(book4)
 
         Dim book5 = New Book()
         book5.BookID = 5
-        book5.Title = "A Brief History of Time"
+        book5.Title = "Sharp Objects"
         book5.Genre = "Science"
-        book5.CoverUrl = "book5.jpg"
+        book5.CoverUrl = "sharp_objects.jpg"
         mockList.Add(book5)
 
         Return mockList

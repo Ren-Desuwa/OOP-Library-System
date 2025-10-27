@@ -34,11 +34,11 @@ Partial Class UC_book_container
         Me.book_container_panel.BackColor = System.Drawing.Color.Transparent
         Me.book_container_panel.BorderRadius = 20
         Me.book_container_panel.BorderThickness = 1
-        Me.book_container_panel.Controls.Add(Me.picbox_book)
         Me.book_container_panel.Controls.Add(Me.lbl_title)
+        Me.book_container_panel.Controls.Add(Me.picbox_book)
         Me.book_container_panel.Location = New System.Drawing.Point(0, 0)
         Me.book_container_panel.Name = "book_container_panel"
-        Me.book_container_panel.Size = New System.Drawing.Size(144, 232)
+        Me.book_container_panel.Size = New System.Drawing.Size(178, 270)
         Me.book_container_panel.TabIndex = 15
         '
         'picbox_book
@@ -50,8 +50,8 @@ Partial Class UC_book_container
         Me.picbox_book.ImageRotate = 0!
         Me.picbox_book.Location = New System.Drawing.Point(0, 0)
         Me.picbox_book.Name = "picbox_book"
-        Me.picbox_book.Size = New System.Drawing.Size(144, 200)
-        Me.picbox_book.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.picbox_book.Size = New System.Drawing.Size(178, 240)
+        Me.picbox_book.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.picbox_book.TabIndex = 16
         Me.picbox_book.TabStop = False
         '
@@ -61,9 +61,9 @@ Partial Class UC_book_container
         Me.lbl_title.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.lbl_title.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_title.ForeColor = System.Drawing.Color.Black
-        Me.lbl_title.Location = New System.Drawing.Point(0, 200)
+        Me.lbl_title.Location = New System.Drawing.Point(0, 216)
         Me.lbl_title.Name = "lbl_title"
-        Me.lbl_title.Size = New System.Drawing.Size(144, 32)
+        Me.lbl_title.Size = New System.Drawing.Size(178, 54)
         Me.lbl_title.TabIndex = 17
         Me.lbl_title.Text = "Title"
         Me.lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -75,7 +75,7 @@ Partial Class UC_book_container
         Me.BackColor = System.Drawing.Color.Transparent
         Me.Controls.Add(Me.book_container_panel)
         Me.Name = "UC_book_container"
-        Me.Size = New System.Drawing.Size(144, 232)
+        Me.Size = New System.Drawing.Size(178, 270)
         Me.book_container_panel.ResumeLayout(False)
         CType(Me.picbox_book, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
