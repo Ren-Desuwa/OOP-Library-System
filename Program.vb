@@ -6,21 +6,25 @@ Public Module Program
     ' Members of a Module are already shared, so we just declare them.
     Public ReadOnly mainDbConnection As DBcon
     Public ReadOnly AuthSvc As AuthService
-    Public ReadOnly RegSvc As registrationService
     Public ReadOnly CatSvc As CatalougeService
+    Public ReadOnly OtpSvc As OtpService
+    Public ReadOnly NotifSvc As NotificationService
+    Public ReadOnly RegSvc As registrationService
+    ' ... other services ...
 
     ' --- Static Constructor (Runs ONCE) ---
     ' "Shared Sub New" IS correct for a Module.
     Sub New()
         Try
             ' 1. Create the ONE database connection object
-            mainDbConnection = New DBcon("ooplibrary") ' Or "library_test"
+            mainDbConnection = New DBcon("ooplibrary")
 
-            ' 2. Create all services and INJECT the connection
+            ' 2. Create all services and INJECT dependencies
             AuthSvc = New AuthService(mainDbConnection)
-            RegSvc = New registrationService(mainDbConnection)
             CatSvc = New CatalougeService(mainDbConnection)
-            ' ... initialize other services here ...
+            OtpSvc = New OtpService(mainDbConnection)
+            NotifSvc = New NotificationService()
+            RegSvc = New registrationService(mainDbConnection, OtpSvc, NotifSvc)
 
         Catch ex As Exception
             ' If this fails, the app can't run. Show error and exit.

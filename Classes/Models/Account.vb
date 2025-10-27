@@ -8,6 +8,9 @@ Public Class Account
     Public Property Role As String ' "Admin", "Librarian", "Member"
     Public Property Name As String
     Public Property Email As String
+    Public Property ContactNumber As String ' <-- ADDED (to match DAO)
+    Public Property Birthday As Date? ' <-- ADDED (from schema)
+    Public Property FavBookDesign As Boolean ' <-- ADDED (from schema, tinyint(1) -> Boolean)
     Public Property DateCreated As DateTime
     Public Property IsActive As Boolean
 

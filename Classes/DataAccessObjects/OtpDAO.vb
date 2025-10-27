@@ -1,4 +1,5 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports System.Diagnostics.Eventing
+Imports MySql.Data.MySqlClient
 
 ' This helper structure passes key data from DAO to Service
 Public Structure OtpRecord
@@ -59,14 +60,14 @@ Public Class OtpDAO
 
     Private Function MapToOtpRecord(reader As MySqlDataReader) As OtpRecord
         Return New OtpRecord With {
-            .ID = reader.GetInt32("id"),
+            .ID = reader.GetInt32("otp_id"),
             .ExpiresAt = reader.GetDateTime("expires_at"),
             .IsUsed = reader.GetBoolean("is_used")
         }
     End Function
 
     Public Function FindActiveOtpByUser(userId As Integer, otpCode As String) As OtpRecord?
-        Dim sql As String = "SELECT id, expires_at, is_used FROM user_otp WHERE user_id = @userId AND otp_code = @otpCode ORDER BY id DESC LIMIT 1"
+        Dim sql As String = "SELECT otp_id, expires_at, is_used FROM user_otp WHERE user_id = @userId AND otp_code = @otpCode ORDER BY otp_id DESC LIMIT 1"
         Using cmd As New MySqlCommand(sql, _transaction.Connection, _transaction)
             cmd.Parameters.AddWithValue("@userId", userId)
             cmd.Parameters.AddWithValue("@otpCode", otpCode)
@@ -77,22 +78,34 @@ Public Class OtpDAO
     End Function
 
     Public Function FindActiveOtpByTarget(target As String, otpCode As String) As OtpRecord?
-        Dim sql As String = "SELECT id, expires_at, is_used FROM user_otp WHERE verification_target = @target AND otp_code = @otpCode ORDER BY id DESC LIMIT 1"
-        Using cmd As New MySqlCommand(sql, _transaction.Connection, _transaction)
-            cmd.Parameters.AddWithValue("@target", target)
-            cmd.Parameters.AddWithValue("@otpCode", otpCode)
-            Using reader As MySqlDataReader = cmd.ExecuteReader()
-                Return If(reader.Read(), MapToOtpRecord(reader), Nothing)
+        Dim sql As String = "SELECT otp_id, expires_at, is_used FROM user_otp WHERE verification_target = @target AND otp_code = @otpCode ORDER BY otp_id DESC LIMIT 1"
+        Try
+            Using cmd As New MySqlCommand(sql, _transaction.Connection, _transaction)
+                cmd.Parameters.AddWithValue("@target", target)
+                cmd.Parameters.AddWithValue("@otpCode", otpCode)
+                Using reader As MySqlDataReader = cmd.ExecuteReader()
+
+                    If reader.Read() Then
+                        Return MapToOtpRecord(reader)
+                    Else
+                        Return Nothing
+                    End If
+
+                End Using
             End Using
-        End Using
+
+        Catch ex As Exception
+            Return Nothing
+        End Try
+
     End Function
 
     ' --- Mark as Used (after successful verification) ---
 
     Public Sub MarkOtpAsUsed(id As Integer)
-        Dim sql As String = "UPDATE user_otp SET is_used = 1 WHERE id = @id"
+        Dim sql As String = "UPDATE user_otp SET is_used = 1 WHERE otp_id = @otp_id"
         Using cmd As New MySqlCommand(sql, _transaction.Connection, _transaction)
-            cmd.Parameters.AddWithValue("@id", id)
+            cmd.Parameters.AddWithValue("@otp_id", id)
             cmd.ExecuteNonQuery()
         End Using
     End Sub
