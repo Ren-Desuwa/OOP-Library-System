@@ -29,9 +29,9 @@
         ' Account 1: Student
         Dim loginAccount As Account = AuthSvc.Login(inputUserOrID, inputPassword)
         If Not loginAccount Is Nothing Then
-            Dim StudentForm As New TestWindow(CatSvc.GetBookById(1))
+            Dim StudentHomePanel As New Home_Panel_Students()
             Me.Hide()
-            StudentForm.ShowDialog()
+            StudentHomePanel.ShowDialog()
             Me.Show()
             Return
         End If

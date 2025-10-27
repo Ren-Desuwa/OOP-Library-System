@@ -4,9 +4,9 @@
   <MainForm>TestWindow</MainForm>
   <SingleInstance>false</SingleInstance>
   <ShutdownMode>1</ShutdownMode>
-  <EnableVisualStyles>true</EnableVisualStyles>
+  <EnableVisualStyles>false</EnableVisualStyles>
   <AuthenticationMode>0</AuthenticationMode>
   <MinimumSplashScreenDisplayTime>0</MinimumSplashScreenDisplayTime>
-  <SaveMySettingsOnExit>true</SaveMySettingsOnExit>
+  <SaveMySettingsOnExit>false</SaveMySettingsOnExit>
   <HighDpiMode>0</HighDpiMode>
 </MyApplicationData>
