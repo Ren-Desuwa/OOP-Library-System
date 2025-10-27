@@ -167,6 +167,24 @@
     <Compile Include="Forms\Student Interface\TestWindow.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\Student Interface\UC Student\UC_booklist_container.Designer.vb">
+      <DependentUpon>UC_booklist_container.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Student Interface\UC Student\UC_booklist_container.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Student Interface\UC Student\UC_book_container.Designer.vb">
+      <DependentUpon>UC_book_container.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Student Interface\UC Student\UC_book_container.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Student Interface\UC Student\UC_btn_genre.Designer.vb">
+      <DependentUpon>UC_btn_genre.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Student Interface\UC Student\UC_btn_genre.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Forms\Student Interface\UC Student\UC_Signup2_student.Designer.vb">
       <DependentUpon>UC_Signup2_student.vb</DependentUpon>
     </Compile>
@@ -252,6 +270,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Student Interface\TestWindow.resx">
       <DependentUpon>TestWindow.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Student Interface\UC Student\UC_booklist_container.resx">
+      <DependentUpon>UC_booklist_container.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Student Interface\UC Student\UC_book_container.resx">
+      <DependentUpon>UC_book_container.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Student Interface\UC Student\UC_btn_genre.resx">
+      <DependentUpon>UC_btn_genre.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Student Interface\UC Student\UC_Signup2_student.resx">
       <DependentUpon>UC_Signup2_student.vb</DependentUpon>
