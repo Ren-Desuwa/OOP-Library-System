@@ -97,6 +97,12 @@
     <Compile Include="Forms\Panels\BorrowerProfile.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\Panels\BorrowHistoryLibrarian.Designer.vb">
+      <DependentUpon>BorrowHistoryLibrarian.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Panels\BorrowHistoryLibrarian.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\Panels\CreateBook.Designer.vb">
       <DependentUpon>CreateBook.vb</DependentUpon>
     </Compile>
@@ -125,6 +131,12 @@
       <DependentUpon>PenaltyView.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\Panels\PenaltyView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Panels\UserReqViewProfile.Designer.vb">
+      <DependentUpon>UserReqViewProfile.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Panels\UserReqViewProfile.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\User Interface\Login_Panel%28Student%29.Designer.vb">
@@ -188,6 +200,9 @@
     <EmbeddedResource Include="Forms\Panels\BorrowerProfile.resx">
       <DependentUpon>BorrowerProfile.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Panels\BorrowHistoryLibrarian.resx">
+      <DependentUpon>BorrowHistoryLibrarian.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Panels\CreateBook.resx">
       <DependentUpon>CreateBook.vb</DependentUpon>
     </EmbeddedResource>
@@ -205,6 +220,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Panels\PenaltyView.resx">
       <DependentUpon>PenaltyView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Panels\UserReqViewProfile.resx">
+      <DependentUpon>UserReqViewProfile.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\User Interface\Login_Panel%28Student%29.resx">
       <DependentUpon>Login_Panel%28Student%29.vb</DependentUpon>

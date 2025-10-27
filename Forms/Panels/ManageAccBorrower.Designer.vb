@@ -146,7 +146,7 @@ Partial Class ManageAccBorrower
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.borrowedGrid.DefaultCellStyle = DataGridViewCellStyle3
         Me.borrowedGrid.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.borrowedGrid.GridColor = System.Drawing.Color.AntiqueWhite
+        Me.borrowedGrid.GridColor = System.Drawing.Color.SaddleBrown
         Me.borrowedGrid.Location = New System.Drawing.Point(32, 54)
         Me.borrowedGrid.Name = "borrowedGrid"
         Me.borrowedGrid.RowHeadersVisible = False
@@ -158,7 +158,7 @@ Partial Class ManageAccBorrower
         Me.borrowedGrid.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty
         Me.borrowedGrid.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty
         Me.borrowedGrid.ThemeStyle.BackColor = System.Drawing.Color.AntiqueWhite
-        Me.borrowedGrid.ThemeStyle.GridColor = System.Drawing.Color.AntiqueWhite
+        Me.borrowedGrid.ThemeStyle.GridColor = System.Drawing.Color.SaddleBrown
         Me.borrowedGrid.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.borrowedGrid.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         Me.borrowedGrid.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))

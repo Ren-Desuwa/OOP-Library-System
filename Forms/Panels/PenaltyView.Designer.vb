@@ -120,7 +120,7 @@ Partial Class PenaltyView
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.penaltyList.DefaultCellStyle = DataGridViewCellStyle3
         Me.penaltyList.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.penaltyList.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.penaltyList.GridColor = System.Drawing.Color.SaddleBrown
         Me.penaltyList.Location = New System.Drawing.Point(21, 54)
         Me.penaltyList.Name = "penaltyList"
         Me.penaltyList.RowHeadersVisible = False
@@ -132,7 +132,7 @@ Partial Class PenaltyView
         Me.penaltyList.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty
         Me.penaltyList.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty
         Me.penaltyList.ThemeStyle.BackColor = System.Drawing.Color.AntiqueWhite
-        Me.penaltyList.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.penaltyList.ThemeStyle.GridColor = System.Drawing.Color.SaddleBrown
         Me.penaltyList.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.penaltyList.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         Me.penaltyList.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
