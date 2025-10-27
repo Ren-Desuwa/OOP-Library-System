@@ -180,6 +180,12 @@
     <Compile Include="Forms\User\Panel\Catalouge.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\User\Panel\UserProfile.Designer.vb">
+      <DependentUpon>UserProfile.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User\Panel\UserProfile.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\User\UserLogin\UserRegister.Designer.vb">
       <DependentUpon>UserRegister.vb</DependentUpon>
     </Compile>
@@ -241,6 +247,9 @@
     <EmbeddedResource Include="Forms\User\Panel\Catalouge.resx">
       <DependentUpon>Catalouge.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User\Panel\UserProfile.resx">
+      <DependentUpon>UserProfile.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
@@ -297,6 +306,7 @@
     <Content Include="LibraryCore\Assets\Bookcover\the_plot.jpg" />
     <Content Include="LibraryCore\Assets\Bookcover\the_woman_in_the_window.jpg" />
     <Content Include="LibraryCore\Assets\Bookcover\to_kill_a_mockingbird.jpg" />
+    <None Include="Resources\LoGO.png" />
     <None Include="Resources\Hide_icon1.png" />
     <None Include="Resources\Show_icon1.png" />
     <None Include="Resources\the_adventure.jpg" />
