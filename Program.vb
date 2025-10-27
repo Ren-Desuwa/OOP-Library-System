@@ -55,12 +55,12 @@ Public Module Program
         If result = DialogResult.Yes Then
             ' --- Run the ADMIN/LIBRARIAN App ---
             ' Make sure your Frm_Login constructor is updated
-            Dim adminLoginForm As New Catalouge()
+            Dim adminLoginForm As New Home_Panel_Students()
             Application.Run(adminLoginForm)
         Else
             ' --- Run the KIOSK App ---
             ' Make sure your Frm_Kiosk_Main constructor is updated
-            Dim kioskMainForm As New Catalouge()
+            Dim kioskMainForm As New Home_Panel_Students()
             Application.Run(kioskMainForm)
         End If
 

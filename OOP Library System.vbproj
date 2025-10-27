@@ -6,11 +6,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{985F421D-0F74-4602-858B-EC5CA98B46E5}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>OOP_Library_System.My.MyApplication</StartupObject>
+    <StartupObject>OOP_Library_System.Program</StartupObject>
     <RootNamespace>OOP_Library_System</RootNamespace>
     <AssemblyName>OOP Library System</AssemblyName>
     <FileAlignment>512</FileAlignment>
-    <MyType>WindowsForms</MyType>
+    <MyType>WindowsFormsWithCustomSubMain</MyType>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -61,6 +61,7 @@
     <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Management" />
+    <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
@@ -157,6 +158,24 @@
     <Compile Include="Forms\Student Interface\Login_Panel_Student.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\Student Interface\UC Student\UC_booklist_container.Designer.vb">
+      <DependentUpon>UC_booklist_container.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Student Interface\UC Student\UC_booklist_container.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Student Interface\UC Student\UC_book_container.Designer.vb">
+      <DependentUpon>UC_book_container.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Student Interface\UC Student\UC_book_container.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Student Interface\UC Student\UC_btn_genre.Designer.vb">
+      <DependentUpon>UC_btn_genre.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Student Interface\UC Student\UC_btn_genre.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Forms\Student Interface\UC Student\UC_Signup2_student.Designer.vb">
       <DependentUpon>UC_Signup2_student.vb</DependentUpon>
     </Compile>
@@ -238,6 +257,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Student Interface\Login_Panel_Student.resx">
       <DependentUpon>Login_Panel_Student.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Student Interface\UC Student\UC_booklist_container.resx">
+      <DependentUpon>UC_booklist_container.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Student Interface\UC Student\UC_book_container.resx">
+      <DependentUpon>UC_book_container.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Student Interface\UC Student\UC_btn_genre.resx">
+      <DependentUpon>UC_btn_genre.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Student Interface\UC Student\UC_Signup2_student.resx">
       <DependentUpon>UC_Signup2_student.vb</DependentUpon>

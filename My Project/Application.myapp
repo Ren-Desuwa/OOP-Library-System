@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MyApplicationData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <MySubMain>true</MySubMain>
-  <MainForm>Signup_Panel_Student</MainForm>
+  <MySubMain>false</MySubMain>
+  <MainForm>Login_Panel_Librarian_Admin</MainForm>
   <SingleInstance>false</SingleInstance>
   <ShutdownMode>1</ShutdownMode>
-  <EnableVisualStyles>true</EnableVisualStyles>
+  <EnableVisualStyles>false</EnableVisualStyles>
   <AuthenticationMode>0</AuthenticationMode>
   <MinimumSplashScreenDisplayTime>0</MinimumSplashScreenDisplayTime>
-  <SaveMySettingsOnExit>true</SaveMySettingsOnExit>
+  <SaveMySettingsOnExit>false</SaveMySettingsOnExit>
   <HighDpiMode>0</HighDpiMode>
 </MyApplicationData>
