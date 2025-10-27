@@ -2,7 +2,12 @@
 
     Private Sub UserProfile_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        Guna2Button2.BorderRadius = Guna2Button2.Width \ 2
+        Dim profileUC As New BooksFromProfile()
+        profileUC.Dock = DockStyle.Fill
+
+        Panel1.Controls.Clear()         ' remove previous UC (if any)
+        Panel1.Controls.Add(profileUC)  ' add the new one
+        profileUC.BringToFront()
 
     End Sub
 
@@ -83,6 +88,19 @@
     End Sub
 
     Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles Guna2Button2.Click
+        Dim message As String =
+    "📘 Credit Score (CP) Info" & vbCrLf & vbCrLf &
+    "Your CP shows how responsible you are in borrowing and returning books." & vbCrLf & vbCrLf &
+    "✅ On-time/Early Return: +5 CP" & vbCrLf &
+    "⚠️ Max: 100 CP" & vbCrLf & vbCrLf &
+    "Penalties:" & vbCrLf &
+    "• Lost Book: -50 CP & ₱500 Fine" & vbCrLf &
+    "  (Paying restores +20 CP, total 70 CP)" & vbCrLf &
+    "• Damaged Book: -30 CP" & vbCrLf &
+    "• Overdue Book: -10 CP" & vbCrLf & vbCrLf &
+    "Keep your CP high — return books on time!"
+
+        MessageBox.Show(message, "Credit Score Info", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
     End Sub
 
@@ -91,6 +109,10 @@
     End Sub
 
     Private Sub TableLayoutPanel1_Paint_1(sender As Object, e As PaintEventArgs) Handles TableLayoutPanel1.Paint
+
+    End Sub
+
+    Private Sub TableLayoutPanel3_Paint(sender As Object, e As PaintEventArgs) Handles TableLayoutPanel3.Paint
 
     End Sub
 End Class
