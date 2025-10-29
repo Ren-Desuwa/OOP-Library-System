@@ -143,6 +143,12 @@
     <Compile Include="Forms\Admin\Panel\Login_Panel_Librarian_Admin.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\Student Interface\Home_Panel_Guest.Designer.vb">
+      <DependentUpon>Home_Panel_Guest.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Student Interface\Home_Panel_Guest.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\Student Interface\Home_Panel_Students.Designer.vb">
       <DependentUpon>Home_Panel_Students.vb</DependentUpon>
     </Compile>
@@ -183,6 +189,30 @@
       <DependentUpon>UC_btn_genre.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\Student Interface\UC Student\UC_btn_genre.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Student Interface\UC Student\UC_HPS_borrowed_books_tab.Designer.vb">
+      <DependentUpon>UC_HPS_borrowed_books_tab.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Student Interface\UC Student\UC_HPS_borrowed_books_tab.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Student Interface\UC Student\UC_HPS_catalouge_tab.Designer.vb">
+      <DependentUpon>UC_HPS_catalouge_tab.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Student Interface\UC Student\UC_HPS_catalouge_tab.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Student Interface\UC Student\UC_HPS_home_tab.Designer.vb">
+      <DependentUpon>UC_HPS_home_tab.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Student Interface\UC Student\UC_HPS_home_tab.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Student Interface\UC Student\UC_HPS_penalty_tab.Designer.vb">
+      <DependentUpon>UC_HPS_penalty_tab.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Student Interface\UC Student\UC_HPS_penalty_tab.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Forms\Student Interface\UC Student\UC_Signup2_student.Designer.vb">
@@ -259,6 +289,9 @@
     <EmbeddedResource Include="Forms\Admin\Panel\Login_Panel_Librarian_Admin.resx">
       <DependentUpon>Login_Panel_Librarian_Admin.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Student Interface\Home_Panel_Guest.resx">
+      <DependentUpon>Home_Panel_Guest.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Student Interface\Home_Panel_Students.resx">
       <DependentUpon>Home_Panel_Students.vb</DependentUpon>
     </EmbeddedResource>
@@ -279,6 +312,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Student Interface\UC Student\UC_btn_genre.resx">
       <DependentUpon>UC_btn_genre.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Student Interface\UC Student\UC_HPS_borrowed_books_tab.resx">
+      <DependentUpon>UC_HPS_borrowed_books_tab.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Student Interface\UC Student\UC_HPS_catalouge_tab.resx">
+      <DependentUpon>UC_HPS_catalouge_tab.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Student Interface\UC Student\UC_HPS_home_tab.resx">
+      <DependentUpon>UC_HPS_home_tab.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Student Interface\UC Student\UC_HPS_penalty_tab.resx">
+      <DependentUpon>UC_HPS_penalty_tab.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Student Interface\UC Student\UC_Signup2_student.resx">
       <DependentUpon>UC_Signup2_student.vb</DependentUpon>

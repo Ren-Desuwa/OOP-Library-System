@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class Home_Panel_Students
+Partial Class Home_Panel_Guest
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -25,21 +25,21 @@ Partial Class Home_Panel_Students
         Me.components = New System.ComponentModel.Container()
         Me.title_panel = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.lbl_user = New System.Windows.Forms.Label()
-        Me.btn_profile = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.txtBox_username = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2Elipse1 = New Guna.UI2.WinForms.Guna2Elipse(Me.components)
         Me.genre_panel = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
         Me.flow_genre_panel = New System.Windows.Forms.FlowLayoutPanel()
         Me.container_panel = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
         Me.flow_main_book_panel = New System.Windows.Forms.FlowLayoutPanel()
+        Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
+        Me.btn_profile = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.title_panel.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
-        CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btn_profile, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.genre_panel.SuspendLayout()
         Me.container_panel.SuspendLayout()
+        CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btn_profile, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'title_panel
@@ -77,25 +77,6 @@ Partial Class Home_Panel_Students
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(918, 64)
         Me.TableLayoutPanel1.TabIndex = 17
         '
-        'Guna2PictureBox1
-        '
-        Me.Guna2PictureBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Guna2PictureBox1.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.Guna2PictureBox1.ErrorImage = Nothing
-        Me.Guna2PictureBox1.FillColor = System.Drawing.Color.Transparent
-        Me.Guna2PictureBox1.Image = Global.OOP_Library_System.My.Resources.Resources.Ucc_Logo_NoBG_Big1
-        Me.Guna2PictureBox1.ImageLocation = ""
-        Me.Guna2PictureBox1.ImageRotate = 0!
-        Me.Guna2PictureBox1.Location = New System.Drawing.Point(21, 3)
-        Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
-        Me.Guna2PictureBox1.Size = New System.Drawing.Size(63, 58)
-        Me.Guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.Guna2PictureBox1.TabIndex = 11
-        Me.Guna2PictureBox1.TabStop = False
-        Me.Guna2PictureBox1.UseTransparentBackground = True
-        '
         'lbl_user
         '
         Me.lbl_user.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -107,27 +88,8 @@ Partial Class Home_Panel_Students
         Me.lbl_user.Name = "lbl_user"
         Me.lbl_user.Size = New System.Drawing.Size(188, 32)
         Me.lbl_user.TabIndex = 12
-        Me.lbl_user.Text = "User"
+        Me.lbl_user.Text = "Guest"
         Me.lbl_user.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'btn_profile
-        '
-        Me.btn_profile.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.btn_profile.BackColor = System.Drawing.Color.Transparent
-        Me.btn_profile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.btn_profile.ErrorImage = Nothing
-        Me.btn_profile.FillColor = System.Drawing.Color.Transparent
-        Me.btn_profile.Image = Global.OOP_Library_System.My.Resources.Resources.Accountwhite0_icon
-        Me.btn_profile.ImageLocation = ""
-        Me.btn_profile.ImageRotate = 0!
-        Me.btn_profile.Location = New System.Drawing.Point(832, 3)
-        Me.btn_profile.Name = "btn_profile"
-        Me.btn_profile.Size = New System.Drawing.Size(58, 58)
-        Me.btn_profile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btn_profile.TabIndex = 18
-        Me.btn_profile.TabStop = False
-        Me.btn_profile.UseTransparentBackground = True
         '
         'txtBox_username
         '
@@ -171,9 +133,9 @@ Partial Class Home_Panel_Students
         Me.genre_panel.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(216, Byte), Integer))
         Me.genre_panel.FillColor3 = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.genre_panel.FillColor4 = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(195, Byte), Integer), CType(CType(165, Byte), Integer))
-        Me.genre_panel.Location = New System.Drawing.Point(0, 64)
+        Me.genre_panel.Location = New System.Drawing.Point(0, 48)
         Me.genre_panel.Name = "genre_panel"
-        Me.genre_panel.Size = New System.Drawing.Size(272, 489)
+        Me.genre_panel.Size = New System.Drawing.Size(272, 505)
         Me.genre_panel.TabIndex = 7
         '
         'flow_genre_panel
@@ -183,7 +145,7 @@ Partial Class Home_Panel_Students
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.flow_genre_panel.BackColor = System.Drawing.Color.Transparent
         Me.flow_genre_panel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
-        Me.flow_genre_panel.Location = New System.Drawing.Point(8, 8)
+        Me.flow_genre_panel.Location = New System.Drawing.Point(8, 24)
         Me.flow_genre_panel.Name = "flow_genre_panel"
         Me.flow_genre_panel.Size = New System.Drawing.Size(256, 464)
         Me.flow_genre_panel.TabIndex = 0
@@ -219,7 +181,45 @@ Partial Class Home_Panel_Students
         Me.flow_main_book_panel.Size = New System.Drawing.Size(624, 464)
         Me.flow_main_book_panel.TabIndex = 0
         '
-        'Home_Panel_Students
+        'Guna2PictureBox1
+        '
+        Me.Guna2PictureBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Guna2PictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.Guna2PictureBox1.ErrorImage = Nothing
+        Me.Guna2PictureBox1.FillColor = System.Drawing.Color.Transparent
+        Me.Guna2PictureBox1.Image = Global.OOP_Library_System.My.Resources.Resources.Ucc_Logo_NoBG_Big1
+        Me.Guna2PictureBox1.ImageLocation = ""
+        Me.Guna2PictureBox1.ImageRotate = 0!
+        Me.Guna2PictureBox1.Location = New System.Drawing.Point(21, 3)
+        Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
+        Me.Guna2PictureBox1.Size = New System.Drawing.Size(63, 58)
+        Me.Guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.Guna2PictureBox1.TabIndex = 11
+        Me.Guna2PictureBox1.TabStop = False
+        Me.Guna2PictureBox1.UseTransparentBackground = True
+        '
+        'btn_profile
+        '
+        Me.btn_profile.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.btn_profile.BackColor = System.Drawing.Color.Transparent
+        Me.btn_profile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btn_profile.ErrorImage = Nothing
+        Me.btn_profile.FillColor = System.Drawing.Color.Transparent
+        Me.btn_profile.Image = Global.OOP_Library_System.My.Resources.Resources.Accountwhite0_icon
+        Me.btn_profile.ImageLocation = ""
+        Me.btn_profile.ImageRotate = 0!
+        Me.btn_profile.Location = New System.Drawing.Point(832, 3)
+        Me.btn_profile.Name = "btn_profile"
+        Me.btn_profile.Size = New System.Drawing.Size(58, 58)
+        Me.btn_profile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btn_profile.TabIndex = 18
+        Me.btn_profile.TabStop = False
+        Me.btn_profile.UseTransparentBackground = True
+        '
+        'Home_Panel_Guest
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -229,17 +229,17 @@ Partial Class Home_Panel_Students
         Me.Controls.Add(Me.genre_panel)
         Me.Controls.Add(Me.container_panel)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "Home_Panel_Students"
+        Me.Name = "Home_Panel_Guest"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Home Panel"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.title_panel.ResumeLayout(False)
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TableLayoutPanel1.PerformLayout()
-        CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btn_profile, System.ComponentModel.ISupportInitialize).EndInit()
         Me.genre_panel.ResumeLayout(False)
         Me.container_panel.ResumeLayout(False)
+        CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btn_profile, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
