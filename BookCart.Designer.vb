@@ -23,49 +23,77 @@ Partial Class BookCart
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.lblBookTitle = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.BookTitle = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Guna2CheckBox1 = New Guna.UI2.WinForms.Guna2CheckBox()
+        Me.BookImage = New System.Windows.Forms.PictureBox()
         Me.TableLayoutPanel1.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
+        CType(Me.BookImage, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TableLayoutPanel1
         '
         Me.TableLayoutPanel1.ColumnCount = 1
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.Controls.Add(Me.lblBookTitle, 0, 1)
-        Me.TableLayoutPanel1.Controls.Add(Me.PictureBox1, 0, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.BookTitle, 0, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.Panel1, 0, 0)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 0)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 2
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 82.78481!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.21519!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(289, 395)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(180, 250)
         Me.TableLayoutPanel1.TabIndex = 0
         '
-        'lblBookTitle
+        'BookTitle
         '
-        Me.lblBookTitle.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.lblBookTitle.AutoSize = True
-        Me.lblBookTitle.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblBookTitle.Location = New System.Drawing.Point(83, 327)
-        Me.lblBookTitle.Name = "lblBookTitle"
-        Me.lblBookTitle.Size = New System.Drawing.Size(123, 29)
-        Me.lblBookTitle.TabIndex = 0
-        Me.lblBookTitle.Text = "Book Title"
+        Me.BookTitle.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.BookTitle.AutoSize = True
+        Me.BookTitle.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BookTitle.Location = New System.Drawing.Point(28, 206)
+        Me.BookTitle.Name = "BookTitle"
+        Me.BookTitle.Size = New System.Drawing.Size(123, 29)
+        Me.BookTitle.TabIndex = 0
+        Me.BookTitle.Text = "Book Title"
         '
-        'PictureBox1
+        'Panel1
         '
-        Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PictureBox1.Image = Global.OOP_Library_System.My.Resources.Resources.luffy
-        Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(0)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(289, 327)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 1
-        Me.PictureBox1.TabStop = False
+        Me.Panel1.Controls.Add(Me.Guna2CheckBox1)
+        Me.Panel1.Controls.Add(Me.BookImage)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel1.Location = New System.Drawing.Point(3, 3)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(174, 200)
+        Me.Panel1.TabIndex = 1
+        '
+        'Guna2CheckBox1
+        '
+        Me.Guna2CheckBox1.AutoSize = True
+        Me.Guna2CheckBox1.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Guna2CheckBox1.CheckedState.BorderRadius = 0
+        Me.Guna2CheckBox1.CheckedState.BorderThickness = 0
+        Me.Guna2CheckBox1.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Guna2CheckBox1.Location = New System.Drawing.Point(156, 3)
+        Me.Guna2CheckBox1.Name = "Guna2CheckBox1"
+        Me.Guna2CheckBox1.Size = New System.Drawing.Size(15, 14)
+        Me.Guna2CheckBox1.TabIndex = 1
+        Me.Guna2CheckBox1.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
+        Me.Guna2CheckBox1.UncheckedState.BorderRadius = 0
+        Me.Guna2CheckBox1.UncheckedState.BorderThickness = 0
+        Me.Guna2CheckBox1.UncheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
+        '
+        'BookImage
+        '
+        Me.BookImage.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.BookImage.Image = Global.OOP_Library_System.My.Resources.Resources.luffy
+        Me.BookImage.Location = New System.Drawing.Point(0, 0)
+        Me.BookImage.Name = "BookImage"
+        Me.BookImage.Size = New System.Drawing.Size(174, 200)
+        Me.BookImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.BookImage.TabIndex = 0
+        Me.BookImage.TabStop = False
         '
         'BookCart
         '
@@ -73,15 +101,19 @@ Partial Class BookCart
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Name = "BookCart"
-        Me.Size = New System.Drawing.Size(289, 395)
+        Me.Size = New System.Drawing.Size(180, 250)
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TableLayoutPanel1.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        CType(Me.BookImage, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
-    Friend WithEvents lblBookTitle As Label
-    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents BookTitle As Label
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Guna2CheckBox1 As Guna.UI2.WinForms.Guna2CheckBox
+    Friend WithEvents BookImage As PictureBox
 End Class

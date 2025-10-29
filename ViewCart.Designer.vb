@@ -38,6 +38,7 @@ Partial Class ViewCart
         Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         Me.tlpViewCart = New System.Windows.Forms.TableLayoutPanel()
+        Me.flpCart = New System.Windows.Forms.FlowLayoutPanel()
         Me.Panel1.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -47,6 +48,7 @@ Partial Class ViewCart
         Me.TableLayoutPanel3.SuspendLayout()
         Me.TableLayoutPanel4.SuspendLayout()
         Me.Guna2Panel1.SuspendLayout()
+        Me.tlpViewCart.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -68,7 +70,7 @@ Partial Class ViewCart
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.125!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 61.64773!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.528409!))
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 101.0!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 110.0!))
         Me.TableLayoutPanel2.Controls.Add(Me.Label1, 4, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.PictureBox1, 2, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.Guna2CirclePictureBox1, 3, 0)
@@ -98,7 +100,7 @@ Partial Class ViewCart
         '
         Me.PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Right
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(582, 0)
+        Me.PictureBox1.Location = New System.Drawing.Point(575, 0)
         Me.PictureBox1.Margin = New System.Windows.Forms.Padding(0)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(62, 59)
@@ -110,10 +112,10 @@ Partial Class ViewCart
         '
         Me.Guna2CirclePictureBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Guna2CirclePictureBox1.ImageRotate = 0!
-        Me.Guna2CirclePictureBox1.Location = New System.Drawing.Point(647, 3)
+        Me.Guna2CirclePictureBox1.Location = New System.Drawing.Point(640, 3)
         Me.Guna2CirclePictureBox1.Name = "Guna2CirclePictureBox1"
         Me.Guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
-        Me.Guna2CirclePictureBox1.Size = New System.Drawing.Size(46, 53)
+        Me.Guna2CirclePictureBox1.Size = New System.Drawing.Size(45, 53)
         Me.Guna2CirclePictureBox1.TabIndex = 3
         Me.Guna2CirclePictureBox1.TabStop = False
         '
@@ -279,6 +281,7 @@ Partial Class ViewCart
         '
         Me.tlpViewCart.ColumnCount = 1
         Me.tlpViewCart.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.tlpViewCart.Controls.Add(Me.flpCart, 0, 0)
         Me.tlpViewCart.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tlpViewCart.Location = New System.Drawing.Point(0, 0)
         Me.tlpViewCart.Name = "tlpViewCart"
@@ -286,6 +289,16 @@ Partial Class ViewCart
         Me.tlpViewCart.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.tlpViewCart.Size = New System.Drawing.Size(760, 318)
         Me.tlpViewCart.TabIndex = 0
+        '
+        'flpCart
+        '
+        Me.flpCart.AutoScroll = True
+        Me.flpCart.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.flpCart.Location = New System.Drawing.Point(3, 3)
+        Me.flpCart.Name = "flpCart"
+        Me.flpCart.Padding = New System.Windows.Forms.Padding(10)
+        Me.flpCart.Size = New System.Drawing.Size(754, 312)
+        Me.flpCart.TabIndex = 0
         '
         'ViewCart
         '
@@ -305,6 +318,7 @@ Partial Class ViewCart
         Me.TableLayoutPanel3.ResumeLayout(False)
         Me.TableLayoutPanel4.ResumeLayout(False)
         Me.Guna2Panel1.ResumeLayout(False)
+        Me.tlpViewCart.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -324,4 +338,28 @@ Partial Class ViewCart
     Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents tlpViewCart As TableLayoutPanel
+    Friend WithEvents flpCart As FlowLayoutPanel
+
+    Private Sub ViewCart_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim books = New List(Of (Title As String, ImagePath As String)) From {
+        ("One Piece", "D:\Images\luffy.jpg"),
+        ("Naruto", "D:\Images\naruto.jpg"),
+        ("Bleach", "D:\Images\bleach.jpg")
+    }
+
+        flpCart.Controls.Clear()
+        For Each b In books
+            Dim card As New BookCart()
+            card.BookTitleText = b.Title
+
+            If IO.File.Exists(b.ImagePath) Then
+                card.BookImagePic = Image.FromFile(b.ImagePath)
+            End If
+
+            ' add spacing around each card
+            card.Margin = New Padding(10)
+
+            flpCart.Controls.Add(card)
+        Next
+    End Sub
 End Class
