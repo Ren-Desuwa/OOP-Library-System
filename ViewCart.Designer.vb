@@ -25,7 +25,7 @@ Partial Class ViewCart
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ViewCart))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lblUsername = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Guna2CirclePictureBox1 = New Guna.UI2.WinForms.Guna2CirclePictureBox()
         Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
@@ -35,7 +35,7 @@ Partial Class ViewCart
         Me.Guna2TextBox1 = New Guna.UI2.WinForms.Guna2TextBox()
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
         Me.Guna2Button4 = New Guna.UI2.WinForms.Guna2Button()
-        Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
+        Me.Guna2ButtonBorrow = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         Me.tlpViewCart = New System.Windows.Forms.TableLayoutPanel()
         Me.flpCart = New System.Windows.Forms.FlowLayoutPanel()
@@ -70,8 +70,8 @@ Partial Class ViewCart
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.125!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 61.64773!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.528409!))
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 110.0!))
-        Me.TableLayoutPanel2.Controls.Add(Me.Label1, 4, 0)
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 118.0!))
+        Me.TableLayoutPanel2.Controls.Add(Me.lblUsername, 4, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.PictureBox1, 2, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.Guna2CirclePictureBox1, 3, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.Guna2Button1, 1, 0)
@@ -84,23 +84,23 @@ Partial Class ViewCart
         Me.TableLayoutPanel2.Size = New System.Drawing.Size(800, 59)
         Me.TableLayoutPanel2.TabIndex = 0
         '
-        'Label1
+        'lblUsername
         '
-        Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.Right
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(714, 19)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(83, 20)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Username"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.lblUsername.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.lblUsername.AutoSize = True
+        Me.lblUsername.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblUsername.Location = New System.Drawing.Point(731, 19)
+        Me.lblUsername.Name = "lblUsername"
+        Me.lblUsername.Size = New System.Drawing.Size(66, 20)
+        Me.lblUsername.TabIndex = 1
+        Me.lblUsername.Text = "Bossing"
+        Me.lblUsername.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'PictureBox1
         '
         Me.PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Right
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(575, 0)
+        Me.PictureBox1.Location = New System.Drawing.Point(567, 0)
         Me.PictureBox1.Margin = New System.Windows.Forms.Padding(0)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(62, 59)
@@ -112,7 +112,7 @@ Partial Class ViewCart
         '
         Me.Guna2CirclePictureBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Guna2CirclePictureBox1.ImageRotate = 0!
-        Me.Guna2CirclePictureBox1.Location = New System.Drawing.Point(640, 3)
+        Me.Guna2CirclePictureBox1.Location = New System.Drawing.Point(632, 3)
         Me.Guna2CirclePictureBox1.Name = "Guna2CirclePictureBox1"
         Me.Guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
         Me.Guna2CirclePictureBox1.Size = New System.Drawing.Size(45, 53)
@@ -194,7 +194,7 @@ Partial Class ViewCart
         Me.Guna2TextBox1.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Guna2TextBox1.BorderRadius = 8
         Me.Guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.Guna2TextBox1.DefaultText = "Search: "
+        Me.Guna2TextBox1.DefaultText = ""
         Me.Guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
         Me.Guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.Guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
@@ -205,7 +205,8 @@ Partial Class ViewCart
         Me.Guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Guna2TextBox1.Location = New System.Drawing.Point(23, 3)
         Me.Guna2TextBox1.Name = "Guna2TextBox1"
-        Me.Guna2TextBox1.PlaceholderText = ""
+        Me.Guna2TextBox1.PlaceholderForeColor = System.Drawing.Color.Black
+        Me.Guna2TextBox1.PlaceholderText = "Search: "
         Me.Guna2TextBox1.SelectedText = ""
         Me.Guna2TextBox1.Size = New System.Drawing.Size(267, 26)
         Me.Guna2TextBox1.TabIndex = 0
@@ -217,7 +218,7 @@ Partial Class ViewCart
         Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.73684!))
         Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.63158!))
         Me.TableLayoutPanel4.Controls.Add(Me.Guna2Button4, 1, 0)
-        Me.TableLayoutPanel4.Controls.Add(Me.Guna2Button2, 2, 0)
+        Me.TableLayoutPanel4.Controls.Add(Me.Guna2ButtonBorrow, 2, 0)
         Me.TableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel4.Location = New System.Drawing.Point(20, 350)
         Me.TableLayoutPanel4.Margin = New System.Windows.Forms.Padding(0)
@@ -246,24 +247,24 @@ Partial Class ViewCart
         Me.Guna2Button4.TabIndex = 2
         Me.Guna2Button4.Text = "Remove"
         '
-        'Guna2Button2
+        'Guna2ButtonBorrow
         '
-        Me.Guna2Button2.BorderRadius = 5
-        Me.Guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.Guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.Guna2Button2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Guna2Button2.FillColor = System.Drawing.Color.White
-        Me.Guna2Button2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.Guna2Button2.ForeColor = System.Drawing.Color.Black
-        Me.Guna2Button2.Location = New System.Drawing.Point(665, 2)
-        Me.Guna2Button2.Margin = New System.Windows.Forms.Padding(2)
-        Me.Guna2Button2.Name = "Guna2Button2"
-        Me.Guna2Button2.PressedColor = System.Drawing.Color.White
-        Me.Guna2Button2.Size = New System.Drawing.Size(93, 37)
-        Me.Guna2Button2.TabIndex = 0
-        Me.Guna2Button2.Text = "Back"
+        Me.Guna2ButtonBorrow.BorderRadius = 5
+        Me.Guna2ButtonBorrow.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2ButtonBorrow.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2ButtonBorrow.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.Guna2ButtonBorrow.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.Guna2ButtonBorrow.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Guna2ButtonBorrow.FillColor = System.Drawing.Color.White
+        Me.Guna2ButtonBorrow.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Guna2ButtonBorrow.ForeColor = System.Drawing.Color.Black
+        Me.Guna2ButtonBorrow.Location = New System.Drawing.Point(665, 2)
+        Me.Guna2ButtonBorrow.Margin = New System.Windows.Forms.Padding(2)
+        Me.Guna2ButtonBorrow.Name = "Guna2ButtonBorrow"
+        Me.Guna2ButtonBorrow.PressedColor = System.Drawing.Color.White
+        Me.Guna2ButtonBorrow.Size = New System.Drawing.Size(93, 37)
+        Me.Guna2ButtonBorrow.TabIndex = 0
+        Me.Guna2ButtonBorrow.Text = "Borrow"
         '
         'Guna2Panel1
         '
@@ -327,7 +328,7 @@ Partial Class ViewCart
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
     Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Label1 As Label
+    Friend WithEvents lblUsername As Label
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Guna2CirclePictureBox1 As Guna.UI2.WinForms.Guna2CirclePictureBox
     Friend WithEvents Guna2GradientPanel1 As Guna.UI2.WinForms.Guna2GradientPanel
@@ -335,7 +336,7 @@ Partial Class ViewCart
     Friend WithEvents Guna2TextBox1 As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents TableLayoutPanel4 As TableLayoutPanel
     Friend WithEvents Guna2Button4 As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Guna2ButtonBorrow As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents tlpViewCart As TableLayoutPanel
     Friend WithEvents flpCart As FlowLayoutPanel
@@ -362,4 +363,109 @@ Partial Class ViewCart
             flpCart.Controls.Add(card)
         Next
     End Sub
+
+    Private Sub Guna2TextBox1_TextChanged(sender As Object, e As EventArgs) Handles Guna2TextBox1.TextChanged
+        Guna2TextBox1.PlaceholderText = "Search :"
+        Dim keyword As String = Guna2TextBox1.Text.Trim().ToLower()
+
+        For Each ctrl As Control In flpCart.Controls
+            If TypeOf ctrl Is BookCart Then
+                Dim bookCard As BookCart = DirectCast(ctrl, BookCart)
+                Dim title As String = bookCard.BookTitle.Text.ToLower()
+
+                ' Show only if title contains the keyword
+                bookCard.Visible = title.Contains(keyword)
+            End If
+        Next
+    End Sub
+
+    Private Sub Guna2ButtonBorrow_Click(sender As Object, e As EventArgs) Handles Guna2ButtonBorrow.Click
+        ' Collect all checked book titles
+        Dim selectedBooks As New List(Of String)
+
+        For Each ctrl As Control In flpCart.Controls
+            If TypeOf ctrl Is BookCart Then
+                Dim card As BookCart = DirectCast(ctrl, BookCart)
+                If card.BookCheckBox.Checked Then
+                    selectedBooks.Add(card.BookTitle.Text)
+                End If
+            End If
+        Next
+
+        If selectedBooks.Count = 0 Then
+            MessageBox.Show("Please select at least one book to borrow.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Exit Sub
+        End If
+
+        ' ✅ Confirmation message formatting
+        Dim bookList As String = String.Join(vbCrLf & "• ", selectedBooks)
+        Dim confirmMsg As String =
+            "You are about to borrow the following book(s):" & vbCrLf &
+            vbCrLf & "• " & bookList &
+            vbCrLf & vbCrLf &
+            "Do you want to proceed?"
+
+        Dim confirm As DialogResult = MessageBox.Show(
+            confirmMsg,
+            "Confirm Borrow",
+            MessageBoxButtons.YesNo,
+            MessageBoxIcon.Question
+        )
+
+        If confirm = DialogResult.No Then Exit Sub
+
+        ' Open BeforeApproval form
+        Dim beforeForm As New BeforeApproval()
+        beforeForm.lblBookNames.Text = String.Join(", ", selectedBooks)
+        beforeForm.lblDate.Text = Date.Now.ToString("MMMM dd, yyyy")
+        beforeForm.lblTime.Text = Date.Now.ToString("hh:mm tt")
+        beforeForm.lblUsername.Text = lblUsername.Text  ' from ViewCart
+
+        beforeForm.ShowDialog()
+    End Sub
+
+    Private Sub Guna2Button4_Click(sender As Object, e As EventArgs) Handles Guna2Button4.Click
+        ' Collect selected cards
+        Dim toRemove As New List(Of BookCart)
+
+        For Each ctrl As Control In flpCart.Controls
+            If TypeOf ctrl Is BookCart Then
+                Dim card As BookCart = DirectCast(ctrl, BookCart)
+                If card.BookCheckBox.Checked Then
+                    toRemove.Add(card)
+                End If
+            End If
+        Next
+
+        ' If nothing is selected
+        If toRemove.Count = 0 Then
+            MessageBox.Show("Please select at least one book to remove.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Exit Sub
+        End If
+
+        ' ✅ Format book titles for message
+        Dim bookList As String = String.Join(vbCrLf & "• ", toRemove.Select(Function(c) c.BookTitle.Text))
+        Dim confirmMsg As String =
+        "You are about to remove the following book(s):" & vbCrLf &
+        vbCrLf & "• " & bookList &
+        vbCrLf & vbCrLf &
+        "Do you want to proceed?"
+
+        ' ✅ Confirmation dialog
+        Dim result As DialogResult = MessageBox.Show(
+        confirmMsg,
+        "Confirm Remove",
+        MessageBoxButtons.YesNo,
+        MessageBoxIcon.Question
+    )
+
+        ' ✅ Remove books if confirmed
+        If result = DialogResult.Yes Then
+            For Each card In toRemove
+                flpCart.Controls.Remove(card)
+            Next
+            MessageBox.Show("Selected book(s) have been removed successfully.", "Removed", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
+    End Sub
+
 End Class

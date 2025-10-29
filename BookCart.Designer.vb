@@ -25,7 +25,7 @@ Partial Class BookCart
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.BookTitle = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Guna2CheckBox1 = New Guna.UI2.WinForms.Guna2CheckBox()
+        Me.BookCheckBox = New Guna.UI2.WinForms.Guna2CheckBox()
         Me.BookImage = New System.Windows.Forms.PictureBox()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -60,7 +60,7 @@ Partial Class BookCart
         '
         'Panel1
         '
-        Me.Panel1.Controls.Add(Me.Guna2CheckBox1)
+        Me.Panel1.Controls.Add(Me.BookCheckBox)
         Me.Panel1.Controls.Add(Me.BookImage)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(3, 3)
@@ -68,21 +68,21 @@ Partial Class BookCart
         Me.Panel1.Size = New System.Drawing.Size(174, 200)
         Me.Panel1.TabIndex = 1
         '
-        'Guna2CheckBox1
+        'BookCheckBox
         '
-        Me.Guna2CheckBox1.AutoSize = True
-        Me.Guna2CheckBox1.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2CheckBox1.CheckedState.BorderRadius = 0
-        Me.Guna2CheckBox1.CheckedState.BorderThickness = 0
-        Me.Guna2CheckBox1.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2CheckBox1.Location = New System.Drawing.Point(156, 3)
-        Me.Guna2CheckBox1.Name = "Guna2CheckBox1"
-        Me.Guna2CheckBox1.Size = New System.Drawing.Size(15, 14)
-        Me.Guna2CheckBox1.TabIndex = 1
-        Me.Guna2CheckBox1.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
-        Me.Guna2CheckBox1.UncheckedState.BorderRadius = 0
-        Me.Guna2CheckBox1.UncheckedState.BorderThickness = 0
-        Me.Guna2CheckBox1.UncheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
+        Me.BookCheckBox.AutoSize = True
+        Me.BookCheckBox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.BookCheckBox.CheckedState.BorderRadius = 0
+        Me.BookCheckBox.CheckedState.BorderThickness = 0
+        Me.BookCheckBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.BookCheckBox.Location = New System.Drawing.Point(156, 3)
+        Me.BookCheckBox.Name = "BookCheckBox"
+        Me.BookCheckBox.Size = New System.Drawing.Size(15, 14)
+        Me.BookCheckBox.TabIndex = 1
+        Me.BookCheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
+        Me.BookCheckBox.UncheckedState.BorderRadius = 0
+        Me.BookCheckBox.UncheckedState.BorderThickness = 0
+        Me.BookCheckBox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
         '
         'BookImage
         '
@@ -114,6 +114,6 @@ Partial Class BookCart
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents BookTitle As Label
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents Guna2CheckBox1 As Guna.UI2.WinForms.Guna2CheckBox
+    Friend WithEvents BookCheckBox As Guna.UI2.WinForms.Guna2CheckBox
     Friend WithEvents BookImage As PictureBox
 End Class

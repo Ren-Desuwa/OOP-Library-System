@@ -79,6 +79,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BeforeApproval.Designer.vb">
+      <DependentUpon>BeforeApproval.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BeforeApproval.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\Panels\BookInfo.Designer.vb">
       <DependentUpon>BookInfo.vb</DependentUpon>
     </Compile>
@@ -154,6 +160,9 @@
     <Compile Include="ViewCart.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="BeforeApproval.resx">
+      <DependentUpon>BeforeApproval.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Panels\Books_Panel(Librarian-Admin).resx">
       <DependentUpon>Books_Panel(Librarian-Admin).vb</DependentUpon>
     </EmbeddedResource>
