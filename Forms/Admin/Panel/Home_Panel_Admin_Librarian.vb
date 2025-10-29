@@ -1,4 +1,4 @@
-﻿Public Class Home_Panel_Librarian_Admin_
+﻿Public Class Home_Panel_Admin_Librarian
 
     ' --- UPDATED CONSTRUCTOR ---
     ' It no longer accepts the login form as a parameter
@@ -45,7 +45,7 @@
 
             ' --- NEW LOGOUT LOGIC ---
             ' 1. Create a NEW instance of the login form
-            Dim newLoginForm As New Login_Panel_Librarian_Admin_()
+            Dim newLoginForm As New Login_Panel_Librarian_Admin()
 
             ' 2. Show the new login form
             newLoginForm.Show()

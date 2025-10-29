@@ -32,9 +32,12 @@ Partial Class UC_Welcome_message_student
         '
         'Guna2CustomGradientPanel1
         '
+        Me.Guna2CustomGradientPanel1.BorderRadius = 30
         Me.Guna2CustomGradientPanel1.Controls.Add(Me.Label1)
         Me.Guna2CustomGradientPanel1.Controls.Add(Me.Guna2PictureBox1)
         Me.Guna2CustomGradientPanel1.Controls.Add(Me.Label2)
+        Me.Guna2CustomGradientPanel1.CustomizableEdges.BottomRight = False
+        Me.Guna2CustomGradientPanel1.CustomizableEdges.TopRight = False
         Me.Guna2CustomGradientPanel1.FillColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(232, Byte), Integer))
         Me.Guna2CustomGradientPanel1.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(216, Byte), Integer))
         Me.Guna2CustomGradientPanel1.FillColor3 = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(192, Byte), Integer))
@@ -92,6 +95,7 @@ Partial Class UC_Welcome_message_student
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.Transparent
         Me.Controls.Add(Me.Guna2CustomGradientPanel1)
         Me.Name = "UC_Welcome_message_student"
         Me.Size = New System.Drawing.Size(525, 505)

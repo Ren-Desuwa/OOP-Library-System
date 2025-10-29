@@ -1,4 +1,4 @@
-﻿Public Class Signup_Panel_Student_
+﻿Public Class Signup_Panel_Student
 
     ' --- 1. Variables to store data from all steps ---
     Private studentUsername As String
