@@ -85,6 +85,18 @@
     <Compile Include="BeforeApproval.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="BorrowedBooks.Designer.vb">
+      <DependentUpon>BorrowedBooks.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BorrowedBooks.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BorrowedBooksCard.Designer.vb">
+      <DependentUpon>BorrowedBooksCard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BorrowedBooksCard.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Forms\Panels\BookInfo.Designer.vb">
       <DependentUpon>BookInfo.vb</DependentUpon>
     </Compile>
@@ -162,6 +174,12 @@
   <ItemGroup>
     <EmbeddedResource Include="BeforeApproval.resx">
       <DependentUpon>BeforeApproval.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BorrowedBooks.resx">
+      <DependentUpon>BorrowedBooks.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BorrowedBooksCard.resx">
+      <DependentUpon>BorrowedBooksCard.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Panels\Books_Panel(Librarian-Admin).resx">
       <DependentUpon>Books_Panel(Librarian-Admin).vb</DependentUpon>
