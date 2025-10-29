@@ -1,7 +1,7 @@
 ﻿' Import all your DAOs and Models
 Imports MySql.Data.MySqlClient
 
-Public Class authService
+Public Class AuthService
     Private ReadOnly _dbCon As DBcon
 
     Public Sub New(dbConnector As DBcon)

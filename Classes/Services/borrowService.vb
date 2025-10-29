@@ -1,3 +1,3 @@
-﻿Public Class borrowService
+﻿Public Class BorrowService
 
 End Class

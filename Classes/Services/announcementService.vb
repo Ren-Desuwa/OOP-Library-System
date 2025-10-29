@@ -1,3 +1,3 @@
-﻿Public Class announcementService
+﻿Public Class AnnouncementService
 
 End Class

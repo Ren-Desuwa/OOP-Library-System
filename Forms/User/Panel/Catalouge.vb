@@ -3,7 +3,7 @@ Imports System.IO
 
 Public Class Catalouge
 
-    Private ReadOnly _dbCon As New DBcon("ooplibrary")
+    Private ReadOnly _dbCon As New DBcon("ooplibrary") '
     Private ReadOnly _catalogueService As catalougeService
 
     ' Data Storage
@@ -189,7 +189,7 @@ Public Class Catalouge
 
             If _booksByGenre.ContainsKey(genreName) Then
                 Dim genreRow As New GenreRowControl() With {
-                    .GenreName = genreName,
+                    .genreName = genreName,
                     .Width = rowWidth,
                     .Anchor = AnchorStyles.Left Or AnchorStyles.Right,
                     .Margin = New Padding(5, 5, 5, 10)
