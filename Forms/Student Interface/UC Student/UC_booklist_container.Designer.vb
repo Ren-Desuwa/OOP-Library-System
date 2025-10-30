@@ -23,6 +23,7 @@ Partial Class UC_booklist_container
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.booklist_container_panel = New Guna.UI2.WinForms.Guna2Panel()
+        Me.btn_SeeAll = New Guna.UI2.WinForms.Guna2Button()
         Me.flow_book_panel = New System.Windows.Forms.FlowLayoutPanel()
         Me.lbl_genre = New System.Windows.Forms.Label()
         Me.booklist_container_panel.SuspendLayout()
@@ -34,12 +35,32 @@ Partial Class UC_booklist_container
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.booklist_container_panel.BackColor = System.Drawing.Color.Transparent
+        Me.booklist_container_panel.Controls.Add(Me.btn_SeeAll)
         Me.booklist_container_panel.Controls.Add(Me.flow_book_panel)
         Me.booklist_container_panel.Controls.Add(Me.lbl_genre)
         Me.booklist_container_panel.Location = New System.Drawing.Point(0, 0)
         Me.booklist_container_panel.Name = "booklist_container_panel"
         Me.booklist_container_panel.Size = New System.Drawing.Size(616, 319)
         Me.booklist_container_panel.TabIndex = 11
+        '
+        'btn_SeeAll
+        '
+        Me.btn_SeeAll.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btn_SeeAll.BorderRadius = 10
+        Me.btn_SeeAll.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btn_SeeAll.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btn_SeeAll.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btn_SeeAll.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btn_SeeAll.FillColor = System.Drawing.Color.Tan
+        Me.btn_SeeAll.Font = New System.Drawing.Font("Segoe UI", 10.2!)
+        Me.btn_SeeAll.ForeColor = System.Drawing.Color.Black
+        Me.btn_SeeAll.Location = New System.Drawing.Point(440, 8)
+        Me.btn_SeeAll.Name = "btn_SeeAll"
+        Me.btn_SeeAll.Size = New System.Drawing.Size(164, 24)
+        Me.btn_SeeAll.TabIndex = 12
+        Me.btn_SeeAll.Text = "See All"
+        Me.btn_SeeAll.Visible = False
         '
         'flow_book_panel
         '
@@ -83,4 +104,5 @@ Partial Class UC_booklist_container
     Friend WithEvents booklist_container_panel As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents lbl_genre As Label
     Friend WithEvents flow_book_panel As FlowLayoutPanel
+    Friend WithEvents btn_SeeAll As Guna.UI2.WinForms.Guna2Button
 End Class

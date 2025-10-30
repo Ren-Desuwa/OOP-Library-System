@@ -215,6 +215,18 @@
     <Compile Include="Forms\Student Interface\UC Student\UC_HPS_penalty_tab.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Forms\Student Interface\UC Student\UC_Loading_Panel.Designer.vb">
+      <DependentUpon>UC_Loading_Panel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Student Interface\UC Student\UC_Loading_Panel.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Student Interface\UC Student\UC_pagination_controls.Designer.vb">
+      <DependentUpon>UC_pagination_controls.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Student Interface\UC Student\UC_pagination_controls.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Forms\Student Interface\UC Student\UC_Signup2_student.Designer.vb">
       <DependentUpon>UC_Signup2_student.vb</DependentUpon>
     </Compile>
@@ -325,6 +337,12 @@
     <EmbeddedResource Include="Forms\Student Interface\UC Student\UC_HPS_penalty_tab.resx">
       <DependentUpon>UC_HPS_penalty_tab.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Student Interface\UC Student\UC_Loading_Panel.resx">
+      <DependentUpon>UC_Loading_Panel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Student Interface\UC Student\UC_pagination_controls.resx">
+      <DependentUpon>UC_pagination_controls.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Student Interface\UC Student\UC_Signup2_student.resx">
       <DependentUpon>UC_Signup2_student.vb</DependentUpon>
     </EmbeddedResource>
@@ -345,6 +363,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="bin\Debug\OOP Library System.exe.config" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
@@ -1816,6 +1835,9 @@
     <Content Include="packages\ZstdSharp.Port.0.8.6\lib\netcoreapp3.1\ZstdSharp.dll" />
     <Content Include="packages\ZstdSharp.Port.0.8.6\lib\netstandard2.0\ZstdSharp.dll" />
     <Content Include="packages\ZstdSharp.Port.0.8.6\lib\netstandard2.1\ZstdSharp.dll" />
+    <None Include="Resources\Loading_Circle1.gif" />
+    <None Include="Resources\Loading_Circle.gif" />
+    <None Include="Resources\Cart_icon.png" />
     <None Include="packages\Azure.Core.1.49.0\.signature.p7s" />
     <None Include="packages\Azure.Core.1.49.0\Azure.Core.1.49.0.nupkg" />
     <None Include="packages\Azure.Core.1.49.0\CHANGELOG.md" />
