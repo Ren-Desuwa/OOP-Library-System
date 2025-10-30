@@ -21,51 +21,51 @@ Public Class Signup_Panel_Student
         ' --- Fix for the SLIDE animation (Guna2Transition1) ---
         Guna2Transition1.DefaultAnimation.SlideCoeff = New System.Drawing.PointF(1.0F, 0F)
 
-        ' --- 2. Connect to Step 1 Control (UC_Signup_student1) ---
-        AddHandler UC_Signup_student1.ValidationPassed, AddressOf HandleValidationPassed
-        AddHandler UC_Signup_student1.LoginClicked, AddressOf HandleLoginClicked
+        ' --- 2. Connect to Step 1 Control (UC_Signup_student2) --- [FIXED]
+        AddHandler UC_Signup_student2.ValidationPassed, AddressOf HandleValidationPassed
+        AddHandler UC_Signup_student2.LoginClicked, AddressOf HandleLoginClicked
 
-        ' --- 3. Connect to Step 2 Control (UC_Signup2_student1) ---
-        AddHandler UC_Signup2_student1.BackClicked, AddressOf HandleBackClicked
+        ' --- 3. Connect to Step 2 Control (UC_Signup2_student2) --- [FIXED]
+        AddHandler UC_Signup2_student2.BackClicked, AddressOf HandleBackClicked
         ' Connect the UC's "Confirm" button to our handler
-        AddHandler UC_Signup2_student1.ConfirmClicked, AddressOf HandleConfirmClicked
+        AddHandler UC_Signup2_student2.ConfirmClicked, AddressOf HandleConfirmClicked
         ' Connect the UC's "Send Code" button to our new handler
-        AddHandler UC_Signup2_student1.SendCodeClicked, AddressOf HandleSendCodeClicked
+        AddHandler UC_Signup2_student2.SendCodeClicked, AddressOf HandleSendCodeClicked
 
-        ' --- 4. Set Initial State ---
-        UC_Signup2_student1.Visible = True
-        UC_Signup_student1.BringToFront()
-        UC_Signup2_student1.Visible = False
+        ' --- 4. Set Initial State --- [FIXED]
+        UC_Signup_student2.Visible = True ' Show Step 1 first
+        UC_Signup_student2.BringToFront()
+        UC_Signup2_student2.Visible = False ' Hide Step 2
 
     End Sub
 
     ' Runs when Step 1's "Next" button is clicked
     Private Sub HandleValidationPassed(sender As Object, e As EventArgs)
 
-        ' --- 5. Get and Store Data from Step 1 ---
-        studentUsername = UC_Signup_student1.txtBox_username.Text
-        studentID = UC_Signup_student1.txtBox_studentid.Text
-        studentPassword = UC_Signup_student1.txtBox_password.Text
+        ' --- 5. Get and Store Data from Step 1 --- [FIXED]
+        studentUsername = UC_Signup_student2.txtBox_username.Text
+        studentID = UC_Signup_student2.txtBox_studentid.Text
+        studentPassword = UC_Signup_student2.txtBox_password.Text
 
-        ' --- 6. Run the "Next" Animation ---
+        ' --- 6. Run the "Next" Animation --- [FIXED]
 
         ' Use .Show and .Hide to run animations at the SAME time
-        Guna2Transition2.Show(UC_Signup2_student1) ' Starts fading in
-        Guna2Transition1.Hide(UC_Signup_student1) ' Starts sliding out
+        Guna2Transition2.Show(UC_Signup2_student2) ' Starts fading in
+        Guna2Transition1.Hide(UC_Signup_student2) ' Starts sliding out
 
-        UC_Signup2_student1.SendToBack()
+        UC_Signup2_student2.SendToBack()
 
     End Sub
 
     ' Runs when Step 2's "Back" button is clicked
     Private Sub HandleBackClicked(sender As Object, e As EventArgs)
 
-        ' --- 7. Run the "Back" Animation ---
+        ' --- 7. Run the "Back" Animation --- [FIXED]
 
         ' Use .Show and .Hide to run animations at the SAME time
-        Guna2Transition1.Show(UC_Signup_student1) ' Starts sliding in
-        UC_Signup_student1.BringToFront()
-        Guna2Transition2.Hide(UC_Signup2_student1) ' Starts fading out
+        Guna2Transition1.Show(UC_Signup_student2) ' Starts sliding in
+        UC_Signup_student2.BringToFront()
+        Guna2Transition2.Hide(UC_Signup2_student2) ' Starts fading out
 
     End Sub
 
@@ -77,7 +77,7 @@ Public Class Signup_Panel_Student
 
     ' --- NEW: Runs when Step 2's "Send Code" button is clicked ---
     Private Async Sub HandleSendCodeClicked(sender As Object, e As EventArgs)
-        Dim contactInfo As String = UC_Signup2_student1.ContactInfo
+        Dim contactInfo As String = UC_Signup2_student2.ContactInfo '[FIXED]
         Try
             ' 1. Call the service to request the OTP
             ' (Assuming RegSvc is a form-level variable you instantiated)
@@ -90,9 +90,9 @@ Public Class Signup_Panel_Student
             End If
 
 
-            ' 2. If successful, tell the UC to start its countdown
-            UC_Signup2_student1.StartOtpCountdown()
-            UC_Signup2_student1.SetContactInfoValid()
+            ' 2. If successful, tell the UC to start its countdown [FIXED]
+            UC_Signup2_student2.StartOtpCountdown()
+            UC_Signup2_student2.SetContactInfoValid()
         Catch ex As Exception
             ' 3. If it fails, show an error and mark the UC textbox as invalid
             ' --- MODIFIED: Show the FULL error message, including inner exceptions ---
@@ -101,16 +101,16 @@ Public Class Signup_Panel_Student
                 errorDetails &= $"Inner Exception: {ex.InnerException.Message}"
             End If
 
-
-            UC_Signup2_student1.SetContactInfoInvalid()
+            ' [FIXED]
+            UC_Signup2_student2.SetContactInfoInvalid()
         End Try
     End Sub
 
     ' --- MODIFIED: Runs when Step 2's "Verify" (Confirm) button is clicked ---
     Private Sub HandleConfirmClicked(sender As Object, e As EventArgs)
-        ' 1. Get data from Step 2
-        Dim contactInfo As String = UC_Signup2_student1.ContactInfo
-        Dim otpInput As String = UC_Signup2_student1.OtpCode
+        ' 1. Get data from Step 2 [FIXED]
+        Dim contactInfo As String = UC_Signup2_student2.ContactInfo
+        Dim otpInput As String = UC_Signup2_student2.OtpCode
 
         Try
             ' 2. Get data from Step 1 (already stored in form variables)
@@ -130,7 +130,7 @@ Public Class Signup_Panel_Student
             ' 5. Failure
             MessageBox.Show(ex.Message, "Registration Failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
             ' Tell the UC to show the error state
-            UC_Signup2_student1.SetOtpInvalid()
+            UC_Signup2_student2.SetOtpInvalid() '[FIXED]
         End Try
     End Sub
 
