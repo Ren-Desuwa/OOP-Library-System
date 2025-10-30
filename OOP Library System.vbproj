@@ -186,6 +186,12 @@
     <Compile Include="Forms\User\Panel\Catalouge.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\User\Panel\EditProfile.Designer.vb">
+      <DependentUpon>EditProfile.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User\Panel\EditProfile.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\User\Panel\UserProfile.Designer.vb">
       <DependentUpon>UserProfile.vb</DependentUpon>
     </Compile>
@@ -255,6 +261,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\User\Panel\Catalouge.resx">
       <DependentUpon>Catalouge.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User\Panel\EditProfile.resx">
+      <DependentUpon>EditProfile.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\User\Panel\UserProfile.resx">
       <DependentUpon>UserProfile.vb</DependentUpon>
