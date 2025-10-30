@@ -1,5 +1,6 @@
 ﻿Imports System.IO
 Imports System.Windows.Forms
+Imports System.Linq ' <-- Make sure this is at the top
 
 Public Class UC_HPS_catalouge_tab
 
@@ -11,7 +12,7 @@ Public Class UC_HPS_catalouge_tab
 
     ' --- Pagination Settings ---
     Private Const GENRES_PER_PAGE As Integer = 5
-    Private Const BOOKS_PER_PAGE As Integer = 15 ' 4 rows of 5
+    Private Const BOOKS_PER_PAGE As Integer = 15 ' 3 rows of 5
 
     ' --- Layout Settings ---
     Private Const BOOKS_PER_ROW As Integer = 5      ' For grid view (See All / Search)
@@ -26,7 +27,7 @@ Public Class UC_HPS_catalouge_tab
     Private selectedGenre As String = ""
 
     ' --- Mock Data Toggle ---
-    Private Const USE_MOCK_DATA As Boolean = True
+    Private Const USE_MOCK_DATA As Boolean = False ' <-- Set to False to use the database
 
 #End Region
 
@@ -41,10 +42,10 @@ Public Class UC_HPS_catalouge_tab
         ' LEAVE THIS COMPLETELY EMPTY.
         ' We are no longer starting the load from here.
     End Sub
+
     ' Note: We accept the parentForm as a parameter
     Public Async Sub BeginLoading(ByVal parentForm As Home_Panel_Students)
         ' This is called by the parent form *after* it has maximized.
-
         ' 1. First, tell the parent to show the loading screen.
         '    (We pass the parentForm reference along)
         SetupLoadingState(parentForm, True, "Loading Catalogue...")
@@ -92,9 +93,6 @@ Public Class UC_HPS_catalouge_tab
     ' Note: We accept parentForm as a parameter
     Private Sub SetupLoadingState(ByVal parentForm As Home_Panel_Students, isLoading As Boolean, Optional message As String = "")
 
-        ' REMOVED: Dim mainForm As Home_Panel_Students = TryCast(Me.ParentForm, Home_Panel_Students)
-
-        ' Now, parentForm is guaranteed to be valid and not Nothing
         If parentForm IsNot Nothing Then
             ' Call the parent's public method to show/hide the main loading label
             parentForm.ToggleLoading(isLoading, message)
@@ -111,8 +109,6 @@ Public Class UC_HPS_catalouge_tab
             ' Show all main UI elements inside this UserControl
             genre_panel.Visible = True
             container_panel.Visible = True
-            ' Note: The pagination and back button visibility
-            ' will be set correctly by DisplayCataloguePage or DisplayBookPage.
         End If
     End Sub
 
@@ -121,9 +117,10 @@ Public Class UC_HPS_catalouge_tab
     ''' </summary>
     Private Sub LoadAllBooks()
         If USE_MOCK_DATA Then
-            allBooks = CreateMockBookList()
+            'allBooks = CreateMockBookList()
         Else
             Try
+                ' Use the global service from Program.vb
                 allBooks = Program.CatSvc.GetAllBooks()
             Catch ex As Exception
                 MessageBox.Show("Error fetching books: " & ex.Message)
@@ -133,19 +130,24 @@ Public Class UC_HPS_catalouge_tab
     End Sub
 
     ''' <summary>
-    ''' **BUG FIX**: Creates the master list of genres, fixing duplicates.
+    ''' **FIXED**: Creates the master list of genres from the List(Of Genre).
     ''' </summary>
     Private Sub PopulateUniqueGenreList()
         ' Use StringComparer.OrdinalIgnoreCase to treat "Fantasy" and "fantasy" as the same
         Dim uniqueGenreSet As New HashSet(Of String)(StringComparer.OrdinalIgnoreCase)
         For Each book As Book In allBooks
-            If Not String.IsNullOrWhiteSpace(book.Genre) Then
-                uniqueGenreSet.Add(book.Genre.Trim()) ' Trim whitespace
+            If book.Genres IsNot Nothing Then ' Check if the list exists
+                For Each genre As Genre In book.Genres ' Iterate the list
+                    If genre IsNot Nothing AndAlso Not String.IsNullOrWhiteSpace(genre.Name) Then
+                        uniqueGenreSet.Add(genre.Name.Trim()) ' Add the genre's name
+                    End If
+                Next
             End If
         Next
         uniqueGenres = New List(Of String)(uniqueGenreSet)
         uniqueGenres.Sort()
     End Sub
+
 
     ''' <summary>
     ''' Populates the genre buttons on the LEFT panel.
@@ -239,23 +241,23 @@ Public Class UC_HPS_catalouge_tab
             ' **NEW**: Listen for the "See All" click from this specific list
             AddHandler bookList.SeeAllClicked, AddressOf SeeAll_Clicked
 
-            ' 6. Get all books for this genre
-            Dim booksInGenre = allBooks.Where(Function(b) b.Genre.Trim().Equals(genreName, StringComparison.OrdinalIgnoreCase)).ToList()
+            ' 6. **FIXED**: Get all books for this genre by checking the Genres list
+            Dim booksInGenre = allBooks.Where(Function(b) b.Genres IsNot Nothing AndAlso b.Genres.Any(Function(g) g IsNot Nothing AndAlso g.Name.Trim().Equals(genreName, StringComparison.OrdinalIgnoreCase))).ToList()
 
             ' 7. Add up to 5 books to the preview
-            For Each book As Book In booksInGenre.Take(8)
-                ' *** NEW: Set margin for preview list ***
-                Dim bookCard = CreateBookCard(book)
-                bookCard.Margin = New Padding(BOOK_PREVIEW_SPACING)
-                bookList.AddBook(bookCard)
-            Next
+            For Each book As Book In booksInGenre.Take(8) '
+                                                      ' *** NEW: Set margin for preview list ***
+                                                      Dim bookCard = CreateBookCard(book)
+                                                      bookCard.Margin = New Padding(BOOK_PREVIEW_SPACING)
+                                                      bookList.AddBook(bookCard)
+                                                  Next
 
-            ' 8. Show "See All" button if there are more than 5 books
-            If booksInGenre.Count > 8 Then
-                bookList.btn_SeeAll.Visible = True
-            End If
+                                                  ' 8. Show "See All" button if there are more than 5 books
+                                                  If booksInGenre.Count > 8 Then
+                                                      bookList.btn_SeeAll.Visible = True
+                                                  End If
 
-            flow_main_book_panel.Controls.Add(bookList)
+                                                  flow_main_book_panel.Controls.Add(bookList)
         Next
 
         ' 9. Resume layout
@@ -317,29 +319,29 @@ Public Class UC_HPS_catalouge_tab
         flow_main_book_panel.SuspendLayout()
         flow_main_book_panel.Controls.Clear()
 
-        ' 3. Get all books for this genre
-        Dim allBooksInGenre = allBooks.Where(Function(b) b.Genre.Trim().Equals(genre, StringComparison.OrdinalIgnoreCase)).ToList()
+        ' 3. **FIXED**: Get all books for this genre
+        Dim allBooksInGenre = allBooks.Where(Function(b) b.Genres IsNot Nothing AndAlso b.Genres.Any(Function(g) g IsNot Nothing AndAlso g.Name.Trim().Equals(genre, StringComparison.OrdinalIgnoreCase))).ToList()
 
         ' 4. Calculate pages
         Dim totalPages = CInt(Math.Ceiling(allBooksInGenre.Count / BOOKS_PER_PAGE))
-        UC_pagination_controls1.UpdateControls(currentBookPage, totalPages)
+                                                 UC_pagination_controls1.UpdateControls(currentBookPage, totalPages)
 
-        ' 5. Get the 20 books for this page
-        Dim booksToShow = allBooksInGenre.Skip((pageNumber - 1) * BOOKS_PER_PAGE).Take(BOOKS_PER_PAGE)
+                                                 ' 5. Get the 20 books for this page
+                                                 Dim booksToShow = allBooksInGenre.Skip((pageNumber - 1) * BOOKS_PER_PAGE).Take(BOOKS_PER_PAGE)
 
-        ' 6. Add book cards
-        For Each book As Book In booksToShow
-            ' Create the card
-            Dim bookCard = CreateBookCard(book)
-            ' **SET THE CALCULATED WIDTH AND MARGIN**
-            bookCard.Width = cardWidth
-            bookCard.Margin = New Padding(actualSpacing)
-            ' Add it to the panel
-            flow_main_book_panel.Controls.Add(bookCard)
-        Next
+                                                 ' 6. Add book cards
+                                                 For Each book As Book In booksToShow
+                                                     ' Create the card
+                                                     Dim bookCard = CreateBookCard(book)
+                                                     ' **SET THE CALCULATED WIDTH AND MARGIN**
+                                                     bookCard.Width = cardWidth
+                                                     bookCard.Margin = New Padding(actualSpacing)
+                                                     ' Add it to the panel
+                                                     flow_main_book_panel.Controls.Add(bookCard)
+                                                 Next
 
-        ' 7. Resume layout
-        flow_main_book_panel.ResumeLayout()
+                                                 ' 7. Resume layout
+                                                 flow_main_book_panel.ResumeLayout()
     End Sub
 
 #End Region
@@ -407,7 +409,15 @@ Public Class UC_HPS_catalouge_tab
             Dim filteredBooks As New List(Of Book)
             Dim lowerSearchTerm = searchTerm.ToLower()
             For Each book As Book In allBooks
-                If book.Title.ToLower().Contains(lowerSearchTerm) Then
+                ' **FIXED**: Also search authors and check if genres list contains the search term
+                Dim titleMatch = book.Title.ToLower().Contains(lowerSearchTerm)
+                Dim authorMatch = book.Author.ToLower().Contains(lowerSearchTerm)
+                Dim genreMatch = False
+                If book.Genres IsNot Nothing Then
+                    genreMatch = book.Genres.Any(Function(g) g IsNot Nothing AndAlso g.Name.ToLower().Contains(lowerSearchTerm))
+                End If
+
+                If titleMatch Or authorMatch Or genreMatch Then
                     filteredBooks.Add(book)
                 End If
             Next
@@ -427,23 +437,33 @@ Public Class UC_HPS_catalouge_tab
         flow_main_book_panel.ResumeLayout()
     End Sub
 
+
     ''' <summary>
-    ''' Helper function to create a book card.
-    ''' This function now ONLY creates the card and sets its data.
-    ''' The calling function is responsible for setting the width and margin.
+    ''' **FIXED**: Helper function to create a book card.
+    ''' Uses the Book.GetCoverFileName() helper.
     ''' </summary>
     Private Function CreateBookCard(ByVal book As Book) As UC_book_container
         Dim bookCard = New UC_book_container()
         bookCard.BookTitle = book.Title
         bookCard.BookID = book.BookID
-        Dim coverLink As String = Path.Combine(Application.StartupPath, "..\..\Assets\Bookcover", book.CoverUrl)
+
+        ' --- Use the helper function from the Book model ---
+        Dim coverFileName As String = book.GetCoverFileName()
+        Dim coverPath As String = Path.Combine(Application.StartupPath, "..\..\Assets\Bookcover", coverFileName)
 
         Try
-            If Not String.IsNullOrWhiteSpace(coverLink) AndAlso System.IO.File.Exists(coverLink) Then
-                bookCard.BookCover = Image.FromFile(coverLink)
+            If System.IO.File.Exists(coverPath) Then
+                bookCard.BookCover = Image.FromFile(coverPath)
+            Else
+                ' Optional: Log if the specific cover file is missing
+                If coverFileName <> "default_cover.png" Then
+                    Debug.WriteLine($"Cover image not found: {coverPath}")
+                End If
+                ' If file doesn't exist, it will keep the default image from the designer
             End If
         Catch imgEx As Exception
-            ' Do nothing.
+            Debug.WriteLine($"Error loading image {coverPath}: {imgEx.Message}")
+            ' Keep the default image on error
         End Try
 
         AddHandler bookCard.BookClicked, AddressOf BookCard_Clicked
@@ -533,56 +553,68 @@ Public Class UC_HPS_catalouge_tab
 
 #Region "Mock Data Function"
 
-    Private Function CreateMockBookList() As List(Of Book)
-        Dim mockList As New List(Of Book)
+    ''' <summary>
+    ''' **FIXED**: This function now creates mock data
+    ''' using the correct `List(Of Genre)` model.
+    ''' </summary>
+    'Private Function CreateMockBookList() As List(Of Book)
+    '    Dim mockList As New List(Of Book)
 
-        ' Add 6 books for "Fantasy" to test "See All"
-        For i = 1 To 6
-            Dim book = New Book() With {
-                .BookID = i,
-                .Title = $"Fantasy Book {i}",
-                .Genre = "Fantasy",
-                .CoverUrl = "hobbit.jpg"
-            }
-            mockList.Add(book)
-        Next
+    '    ' Add 6 books for "Fantasy" to test "See All"
+    '    For i = 1 To 6
+    '        Dim book = New Book() With {
+    '            .BookID = i,
+    '            .Title = $"Fantasy Book {i}",
+    '            .Author = "Mock Author",
+    '            .Genres = New List(Of Genre) From {New Genre With {.Name = "Fantasy"}},
+    '            .CoverUrl = "hobbit.jpg"
+    '        }
+    '        mockList.Add(book)
+    '    Next
 
-        ' Add 30 books for "Sci-Fi" to test book pagination
-        For i = 1 To 30
-            Dim book = New Book() With {
-                .BookID = 100 + i,
-                .Title = $"Sci-Fi Book {i}",
-                .Genre = "Sci-Fi",
-                .CoverUrl = "1984.jpg"
-            }
-            mockList.Add(book)
-        Next
+    '    ' Add 30 books for "Sci-Fi" to test book pagination
+    '    For i = 1 To 30
+    '        Dim book = New Book() With {
+    '            .BookID = 100 + i,
+    '            .Title = $"Sci-Fi Book {i}",
+    '            .Author = "Mock Author",
+    '            .Genres = New List(Of Genre) From {New Genre With {.Name = "Sci-Fi"}},
+    '            .CoverUrl = "1984.jpg"
+    '        }
+    '        mockList.Add(book)
+    '    Next
 
-        ' Add some other genres to test genre pagination
-        Dim genres = {"Science", "Mystery", "History", "Romance", "Biography"}
-        For Each g In genres
-            For i = 1 To 3 ' Add 3 books for each
-                Dim book = New Book() With {
-                    .BookID = 200 + i,
-                    .Title = $"{g} Book {i}",
-                    .Genre = g,
-                    .CoverUrl = "the_plot.jpg"
-                }
-                mockList.Add(book)
-            Next
-        Next
+    '    ' Add some other genres to test genre pagination
+    '    Dim genres = {"Science", "Mystery", "History", "Romance", "Biography"}
+    '    For Each g In genres
+    '        For i = 1 To 3 ' Add 3 books for each
+    '            Dim book = New Book() With {
+    '                .BookID = 200 + i + genres.IndexOf(g),
+    '                .Title = $"{g} Book {i}",
+    '                .Author = "Mock Author",
+    '                .Genres = New List(Of Genre) From {New Genre With {.Name = g}},
+    '                .CoverUrl = "the_plot.jpg"
+    '            }
+    '            mockList.Add(book)
+    '        Next
+    '    Next
 
-        ' Add a duplicate, poorly-cased genre to test bug fix
-        Dim dupeBook = New Book() With {
-            .BookID = 999,
-            .Title = "Duplicate Test",
-            .Genre = "  fantasy  ", ' Note the spaces and lowercase
-            .CoverUrl = "big_little_lies.jpg"
-        }
-        mockList.Add(dupeBook)
+    '    ' Add a duplicate, poorly-cased genre to test bug fix
+    '    ' Also test multiple genres
+    '    Dim dupeBook = New Book() With {
+    '        .BookID = 999,
+    '        .Title = "Duplicate Test",
+    '        .Author = "Mock Author",
+    '        .Genres = New List(Of Genre) From {
+    '            New Genre With {.Name = "  fantasy  "}, ' Note the spaces and lowercase
+    '            New Genre With {.Name = "Mystery"}
+    '        },
+    '        .CoverUrl = "big_little_lies.jpg"
+    '    }
+    '    mockList.Add(dupeBook)
 
-        Return mockList
-    End Function
+    '    Return mockList
+    'End Function
 
 #End Region
 

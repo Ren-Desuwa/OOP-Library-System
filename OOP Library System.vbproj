@@ -220,6 +220,18 @@
     <Compile Include="Forms\Student Interface\UC Student\UC_HPS_penalty_tab.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Forms\Student Interface\UC Student\UC_Loading_Panel.Designer.vb">
+      <DependentUpon>UC_Loading_Panel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Student Interface\UC Student\UC_Loading_Panel.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Student Interface\UC Student\UC_pagination_controls.Designer.vb">
+      <DependentUpon>UC_pagination_controls.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Student Interface\UC Student\UC_pagination_controls.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Forms\Student Interface\UC Student\UC_Signup2_student.Designer.vb">
       <DependentUpon>UC_Signup2_student.vb</DependentUpon>
     </Compile>
@@ -308,6 +320,12 @@
     <EmbeddedResource Include="Forms\Student Interface\UC Student\UC_HPS_penalty_tab.resx">
       <DependentUpon>UC_HPS_penalty_tab.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Student Interface\UC Student\UC_Loading_Panel.resx">
+      <DependentUpon>UC_Loading_Panel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Student Interface\UC Student\UC_pagination_controls.resx">
+      <DependentUpon>UC_pagination_controls.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Student Interface\UC Student\UC_Signup2_student.resx" />
     <EmbeddedResource Include="Forms\Student Interface\UC Student\UC_Signup_student.resx" />
     <EmbeddedResource Include="Forms\Student Interface\UC Student\UC_Welcome_message_student.resx" />
@@ -351,8 +369,11 @@
     <Content Include="Assets\Bookcover\to_kill_a_mockingbird.jpg" />
     <None Include="Classes\sample.md" />
     <Content Include="Resources\Accountwhite0_icon.png" />
+    <Content Include="Resources\Cart_icon.png" />
     <Content Include="Resources\Hide_icon.png" />
     <Content Include="Resources\Hide_icon1.png" />
+    <Content Include="Resources\Loading_Circle.gif" />
+    <Content Include="Resources\Loading_Circle1.gif" />
     <Content Include="Resources\luffy.jpg" />
     <Content Include="Resources\Show_icon.png" />
     <Content Include="Resources\Show_icon1.png" />

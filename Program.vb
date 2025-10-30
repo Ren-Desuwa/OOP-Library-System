@@ -104,17 +104,6 @@ Public Module Program
         StudentPanel.Show()
     End Sub
 
-    If result = DialogResult.Yes Then
-    ' --- Run the ADMIN/LIBRARIAN App ---
-    ' Make sure your Frm_Login constructor is updated
-    Dim adminLoginForm As New Home_Panel_Students()
-            Application.Run(adminLoginForm)
-        Else
-    ' --- Run the KIOSK App ---
-    ' Make sure your Frm_Kiosk_Main constructor is updated
-    Dim kioskMainForm As New Home_Panel_Guest()
-            Application.Run(kioskMainForm)
-        End If
     ' From Student Panel (Logout) -> Guest Panel
     Private Sub ShowGuestPanel(sender As Object, e As EventArgs)
         currentAccount = Nothing ' Clear logged-in user
@@ -126,7 +115,6 @@ Public Module Program
     ' The AddHandler in your Main Sub is already pointing to "ShowLoginPanel"
     ' You can probably delete this one.
     Sub HandlesOpenLogin(sender As Object, e As EventArgs)
-        MessageBox.Show("Opening Login Panel")
         GuestPanel.Hide()
         Dim loginForm As New Login_Panel_Student()
         loginForm.ShowDialog()
