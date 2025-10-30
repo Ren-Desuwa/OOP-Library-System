@@ -17,12 +17,12 @@ Public Class NotificationService
     ''' Sends an OTP for a new user registration.
     ''' </summary>
     ' --- MODIFIED: Changed to Async Function returning Task ---
-    Public Async Function SendRegistrationOtpAsync(targetEmail As String, otpCode As String) As Task
+    Public Async Function SendRegistrationOtpAsync(targetEmail As String, otpCode As String) As Task(Of Boolean)
         ' You can add more logic here (e.g., HTML templates)
         Dim subject As String = "Verify Your Library Account"
         Dim body As String = $"Your one-time password is: {otpCode}. It will expire in 5 minutes."
         ' --- MODIFIED: Await the new async email sender ---
-        Await SendEmailAsync(targetEmail, subject, body)
+        Return Await SendEmailAsync(targetEmail, subject, body)
     End Function
 
     ''' <summary>
@@ -94,16 +94,21 @@ Public Class NotificationService
 
     ' --- Private Email Helper ---
     ' --- MODIFIED: Changed to Async Function returning Task ---
-    Private Async Function SendEmailAsync(recipientEmail As String, subject As String, body As String) As Task
+    ' --- MODIFIED: Returns a Task(Of Boolean) ---
+    Private Async Function SendEmailAsync(recipientEmail As String, subject As String, body As String) As Task(Of Boolean)
         ' --- CONFIGURATION ---
-        ' !! Store these in App.config, not hard-coded !!
         Dim senderEmail As String = ConfigurationManager.AppSettings("SmtpSenderEmail")
         Dim senderPassword As String = ConfigurationManager.AppSettings("SmtpSenderPassword")
         Dim senderName As String = ConfigurationManager.AppSettings("SmtpSenderName")
 
         Dim smtpHost As String = "smtp.gmail.com"
         Dim smtpPort As Integer = 587
-
+        'MessageBox.Show($"Sender Email: {senderEmail}" & vbCrLf &
+        '    $"Recipient Email: {recipientEmail}" & vbCrLf &
+        '    $"Subject: {subject}" & vbCrLf &
+        '    $"Body: {body}" &
+        '    $"password: {senderPassword}",
+        '    "Debug: SendEmailAsync", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Try
             Dim mail As New MailMessage()
             mail.From = New MailAddress(senderEmail, senderName)
@@ -115,15 +120,20 @@ Public Class NotificationService
             Using smtp As New SmtpClient(smtpHost, smtpPort)
                 smtp.Credentials = New NetworkCredential(senderEmail, senderPassword)
                 smtp.EnableSsl = True
-                ' --- MODIFIED: Use SendMailAsync ---
+
                 Await smtp.SendMailAsync(mail)
+
+                ' --- MODIFIED: If it gets here, it succeeded ---
+                Return True
             End Using
 
         Catch ex As Exception
-            ' In a real app, you should log this error
+            ' Log the error so you can debug it
             Debug.WriteLine("Email Send Error: " & ex.Message)
-            ' We throw the exception so the calling service knows it failed.
-            Throw New Exception("Failed to send email. " & ex.Message)
+
+            ' --- MODIFIED: Tell the caller it failed ---
+            Return False
         End Try
+        ' No Finally block needed
     End Function
 End Class

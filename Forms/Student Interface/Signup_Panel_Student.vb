@@ -82,9 +82,13 @@ Public Class Signup_Panel_Student
             ' 1. Call the service to request the OTP
             ' (Assuming RegSvc is a form-level variable you instantiated)
 
-            Await RegSvc.RequestRegistrationOtp(contactInfo)
+            If Await RegSvc.RequestRegistrationOtp(contactInfo) Then
+                MessageBox.Show("Verification code sent! Please check your email or phone.", "Code Sent", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Else
+                MessageBox.Show("Verification code not send", "Code not Sent", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Throw New Exception("di nag send")
+            End If
 
-            MessageBox.Show("Verification code sent! Please check your email or phone.", "Code Sent", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
             ' 2. If successful, tell the UC to start its countdown
             UC_Signup2_student1.StartOtpCountdown()

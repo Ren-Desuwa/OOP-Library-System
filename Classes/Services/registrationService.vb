@@ -1,4 +1,5 @@
 ﻿Imports System.Text.RegularExpressions
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement.Tab
 Imports MySql.Data.MySqlClient
 
 Public Class registrationService
@@ -40,7 +41,7 @@ Public Class registrationService
     ''' STEP 1: Called when user provides email OR phone and asks for a code.
     ''' </summary>
     ''' <param name="contactInfo">The email OR phone number to verify.</param>
-    Public Async Function RequestRegistrationOtp(contactInfo As String) As Task
+    Public Async Function RequestRegistrationOtp(contactInfo As String) As Task(Of Boolean)
         Dim contactType As ContactType = GetContactType(contactInfo)
 
         If contactType = ContactType.Invalid Then
@@ -50,20 +51,21 @@ Public Class registrationService
         ' --- We need a quick DB check *before* sending the OTP ---
         If Not _dbCon.OpenConnection() Then Throw New Exception("Could not connect to the database.")
         Dim transaction As MySqlTransaction = _dbCon.GetConnection().BeginTransaction()
-
         Try
+
             Dim accountDAO As New AccountDAO(transaction)
 
             ' --- Business Logic: Check if contact info is already taken ---
             If contactType = ContactType.Email Then
                 If accountDAO.GetByEmail(contactInfo) IsNot Nothing Then
+
                     Throw New Exception("This email address is already in use.")
                 End If
             ElseIf contactType = ContactType.Phone Then
 
-                If accountDAO.GetByContactNumber(contactInfo) IsNot Nothing Then
-                    Throw New Exception("This phone number is already in use.")
-                End If
+                'If accountDAO.GetByContactNumber(contactInfo) IsNot Nothing Then
+                '    Throw New Exception("This phone number is already in use.")
+                'End If
             End If
 
             ' Rollback since we were just reading
@@ -82,6 +84,7 @@ Public Class registrationService
 
             ' 1. Call OtpService to CREATE the code in the DB
             '    This uses the generic "target" method, so it works for both
+
             Dim otpCode As String = _otpService.GenerateOtpForRegistration(contactInfo)
 
             If String.IsNullOrEmpty(otpCode) Then
@@ -90,16 +93,17 @@ Public Class registrationService
             End If
 
             ' 2. Call NotificationService to SEND the code
-            'If contactType = ContactType.Email Then
+            If contactType = ContactType.Email Then
 
-            ' Use the email method
-            ' --- FIX: Added Await and corrected function name ---
-            'Await _notificationService.SendRegistrationOtpAsync(contactInfo, otpCode)
-            'ElseIf contactType = ContactType.Phone Then
-            '    ' Use the SMS methoD
-            '    Dim message As String = $"Your one-time password is: {otpCode}.It will expire in 5 minutes."
-            '    Await _notificationService.SendSms(contactInfo, message)
-            'End If
+                ' Use the email method
+                ' --- FIX: Added Await and corrected function name ---
+                Return Await _notificationService.SendRegistrationOtpAsync(contactInfo, otpCode)
+            ElseIf contactType = ContactType.Phone Then
+                ' Use the SMS methoD
+                Dim message As String = $"Your one-time password is: {otpCode}.It will expire in 5 minutes."
+                'Await _notificationService.SendSms(contactInfo, message)
+                MessageBox.Show("di na send di naka code")
+            End If
 
         Catch ex As Exception
             ' This will catch DB errors from OtpService or sending errors from NotificationService
