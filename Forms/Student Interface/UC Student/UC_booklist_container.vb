@@ -13,6 +13,13 @@ Public Class UC_booklist_container
             lbl_genre.Text = value
         End Set
     End Property
+    ' --- NEW: Public Event for the "See All" button ---
+    Public Event SeeAllClicked As EventHandler
+    Private Sub btn_SeeAll_Click(sender As Object, e As EventArgs) Handles btn_SeeAll.Click
+        ' When "See All" is clicked, raise our new event
+        ' We pass 'Me' so the main form knows WHICH genre was clicked
+        RaiseEvent SeeAllClicked(Me, e)
+    End Sub
 
     ' --- Public Method to add books ---
 

@@ -23,8 +23,8 @@ Partial Class UC_book_container
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.book_container_panel = New Guna.UI2.WinForms.Guna2Panel()
-        Me.picbox_book = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.lbl_title = New System.Windows.Forms.Label()
+        Me.picbox_book = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.book_container_panel.SuspendLayout()
         CType(Me.picbox_book, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -37,9 +37,23 @@ Partial Class UC_book_container
         Me.book_container_panel.Controls.Add(Me.lbl_title)
         Me.book_container_panel.Controls.Add(Me.picbox_book)
         Me.book_container_panel.Location = New System.Drawing.Point(0, 0)
+        Me.book_container_panel.MaximumSize = New System.Drawing.Size(178, 270)
         Me.book_container_panel.Name = "book_container_panel"
         Me.book_container_panel.Size = New System.Drawing.Size(178, 270)
         Me.book_container_panel.TabIndex = 15
+        '
+        'lbl_title
+        '
+        Me.lbl_title.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_title.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.lbl_title.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_title.ForeColor = System.Drawing.Color.Black
+        Me.lbl_title.Location = New System.Drawing.Point(0, 216)
+        Me.lbl_title.Name = "lbl_title"
+        Me.lbl_title.Size = New System.Drawing.Size(178, 54)
+        Me.lbl_title.TabIndex = 17
+        Me.lbl_title.Text = "Title"
+        Me.lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'picbox_book
         '
@@ -54,19 +68,6 @@ Partial Class UC_book_container
         Me.picbox_book.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.picbox_book.TabIndex = 16
         Me.picbox_book.TabStop = False
-        '
-        'lbl_title
-        '
-        Me.lbl_title.BackColor = System.Drawing.Color.Transparent
-        Me.lbl_title.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.lbl_title.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_title.ForeColor = System.Drawing.Color.Black
-        Me.lbl_title.Location = New System.Drawing.Point(0, 216)
-        Me.lbl_title.Name = "lbl_title"
-        Me.lbl_title.Size = New System.Drawing.Size(178, 54)
-        Me.lbl_title.TabIndex = 17
-        Me.lbl_title.Text = "Title"
-        Me.lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'UC_book_container
         '
