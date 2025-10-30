@@ -8,6 +8,7 @@ Public Class DBcon
 
     Public Sub New(databaseName As String)
         Try
+            'hello
             ' --- IMPORTANT ---
             ' Make sure your port is correct. 3307 is common if you have 
             ' multiple MySQL instances, but 3306 is the default.
