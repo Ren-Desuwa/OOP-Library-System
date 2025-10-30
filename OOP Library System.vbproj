@@ -126,6 +126,12 @@
     <Compile Include="Forms\Admin\Panel\EditBook.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\Admin\Panel\LibrarianList.Designer.vb">
+      <DependentUpon>LibrarianList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\Panel\LibrarianList.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\Admin\Panel\Home_Panel_Admin_Librarian.Designer.vb">
       <DependentUpon>Home_Panel_Admin_Librarian.vb</DependentUpon>
     </Compile>
@@ -148,6 +154,12 @@
       <DependentUpon>Login_Panel_Student.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\Student Interface\Login_Panel_Student.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Student Interface\UC Student\BookPopup.Designer.vb">
+      <DependentUpon>BookPopup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Student Interface\UC Student\BookPopup.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Student Interface\UC Student\UC_Signup2_student.Designer.vb">
@@ -220,6 +232,9 @@
     <EmbeddedResource Include="Forms\Admin\Panel\Home_Panel_Admin_Librarian.resx">
       <DependentUpon>Home_Panel_Admin_Librarian.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\Panel\LibrarianList.resx">
+      <DependentUpon>LibrarianList.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin\Panel\Login_Panel_Librarian_Admin.resx">
       <DependentUpon>Login_Panel_Librarian_Admin.vb</DependentUpon>
     </EmbeddedResource>
@@ -228,6 +243,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Student Interface\Login_Panel_Student.resx">
       <DependentUpon>Login_Panel_Student.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Student Interface\UC Student\BookPopup.resx">
+      <DependentUpon>BookPopup.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Student Interface\UC Student\UC_Signup2_student.resx">
       <DependentUpon>UC_Signup2_student.vb</DependentUpon>
@@ -265,6 +283,7 @@
     <Folder Include="Database\" />
     <Folder Include="Forms\Admin-Librarian Interface\" />
     <Folder Include="Forms\Admin\Login\" />
+    <Folder Include="Librarian\" />
     <Folder Include="LibraryAdminApp\" />
     <Folder Include="LibraryCore\Assets\Colors\" />
     <Folder Include="LibraryCore\Database\" />
