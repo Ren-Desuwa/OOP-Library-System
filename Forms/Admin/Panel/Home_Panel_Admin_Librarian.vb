@@ -55,4 +55,12 @@
         End If
         ' If the user clicks "No", nothing happens.
     End Sub
+
+    Private Sub Guna2CustomGradientPanel1_Paint(sender As Object, e As PaintEventArgs) Handles Guna2CustomGradientPanel1.Paint
+
+    End Sub
+
+    Private Sub lbl_title_Click(sender As Object, e As EventArgs) Handles lbl_title.Click
+
+    End Sub
 End Class
