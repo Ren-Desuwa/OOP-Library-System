@@ -133,6 +133,12 @@
     <Compile Include="Classes\Services\NotificationService.vb" />
     <Compile Include="Classes\Services\OtpService.vb" />
     <Compile Include="Classes\Services\registrationService.vb" />
+    <Compile Include="Forms\Admin\Panel\AddBorrower.Designer.vb">
+      <DependentUpon>AddBorrower.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\Panel\AddBorrower.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\Admin\Panel\BookInfo.Designer.vb">
       <DependentUpon>BookInfo.vb</DependentUpon>
     </Compile>
@@ -143,6 +149,18 @@
       <DependentUpon>Books_Panel%28Librarian-Admin%29.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\Admin\Panel\Books_Panel%28Librarian-Admin%29.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\Panel\BorrowerProfile.Designer.vb">
+      <DependentUpon>BorrowerProfile.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\Panel\BorrowerProfile.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\Panel\BorrowHistoryLibrarian.Designer.vb">
+      <DependentUpon>BorrowHistoryLibrarian.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\Panel\BorrowHistoryLibrarian.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Admin\Panel\CreateBook.Designer.vb">
@@ -173,6 +191,24 @@
       <DependentUpon>Login_Panel_Librarian_Admin.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\Admin\Panel\Login_Panel_Librarian_Admin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\Panel\ManageAccBorrower.Designer.vb">
+      <DependentUpon>ManageAccBorrower.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\Panel\ManageAccBorrower.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\Panel\PenaltyView.Designer.vb">
+      <DependentUpon>PenaltyView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\Panel\PenaltyView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\Panel\UserReqViewProfile.Designer.vb">
+      <DependentUpon>UserReqViewProfile.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\Panel\UserReqViewProfile.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Student Interface\Home_Panel_Guest.Designer.vb">
@@ -265,6 +301,54 @@
     <Compile Include="Forms\Student Interface\UC Student\UC_Welcome_message_student.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Forms\User\Panel\BookItemControl.Designer.vb">
+      <DependentUpon>BookItemControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User\Panel\BookItemControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\User\Panel\BooksFromProfile.Designer.vb">
+      <DependentUpon>BooksFromProfile.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User\Panel\BooksFromProfile.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\User\Panel\Catalouge.Designer.vb">
+      <DependentUpon>Catalouge.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User\Panel\Catalouge.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\User\Panel\EditProfile.Designer.vb">
+      <DependentUpon>EditProfile.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User\Panel\EditProfile.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\User\Panel\GenrePageControl.Designer.vb">
+      <DependentUpon>GenrePageControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User\Panel\GenrePageControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\User\Panel\GenreRowControl.Designer.vb">
+      <DependentUpon>GenreRowControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User\Panel\GenreRowControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\User\Panel\UserProfile.Designer.vb">
+      <DependentUpon>UserProfile.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User\Panel\UserProfile.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\User\UserLogin\UserRegister.Designer.vb">
+      <DependentUpon>UserRegister.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User\UserLogin\UserRegister.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -296,11 +380,20 @@
     <EmbeddedResource Include="BorrowedBooksCard.resx">
       <DependentUpon>BorrowedBooksCard.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\Panel\AddBorrower.resx">
+      <DependentUpon>AddBorrower.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin\Panel\BookInfo.resx">
       <DependentUpon>BookInfo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin\Panel\Books_Panel%28Librarian-Admin%29.resx">
       <DependentUpon>Books_Panel%28Librarian-Admin%29.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\Panel\BorrowerProfile.resx">
+      <DependentUpon>BorrowerProfile.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\Panel\BorrowHistoryLibrarian.resx">
+      <DependentUpon>BorrowHistoryLibrarian.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin\Panel\EditBook.resx">
       <DependentUpon>EditBook.vb</DependentUpon>
@@ -313,6 +406,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin\Panel\Login_Panel_Librarian_Admin.resx">
       <DependentUpon>Login_Panel_Librarian_Admin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\Panel\ManageAccBorrower.resx">
+      <DependentUpon>ManageAccBorrower.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\Panel\PenaltyView.resx">
+      <DependentUpon>PenaltyView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\Panel\UserReqViewProfile.resx">
+      <DependentUpon>UserReqViewProfile.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Student Interface\Home_Panel_Guest.resx">
       <DependentUpon>Home_Panel_Guest.vb</DependentUpon>
@@ -353,6 +455,18 @@
     <EmbeddedResource Include="Forms\Student Interface\UC Student\UC_Signup2_student.resx" />
     <EmbeddedResource Include="Forms\Student Interface\UC Student\UC_Signup_student.resx" />
     <EmbeddedResource Include="Forms\Student Interface\UC Student\UC_Welcome_message_student.resx" />
+    <EmbeddedResource Include="Forms\User\Panel\BooksFromProfile.resx">
+      <DependentUpon>BooksFromProfile.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User\Panel\Catalouge.resx">
+      <DependentUpon>Catalouge.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User\Panel\EditProfile.resx">
+      <DependentUpon>EditProfile.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User\Panel\UserProfile.resx">
+      <DependentUpon>UserProfile.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
@@ -390,11 +504,14 @@
     <Content Include="Assets\Bookcover\the_plot.jpg" />
     <Content Include="Assets\Bookcover\the_woman_in_the_window.jpg" />
     <Content Include="Assets\Bookcover\to_kill_a_mockingbird.jpg" />
+    <Content Include="Resources\Untitled design.png" />
     <None Include="Classes\sample.md" />
     <Content Include="Resources\Accountwhite0_icon.png" />
     <Content Include="Resources\Hide_icon.png" />
     <Content Include="Resources\Hide_icon1.png" />
+    <Content Include="Resources\LoGO.png" />
     <Content Include="Resources\luffy.jpg" />
+    <Content Include="Resources\pfp.jpg" />
     <Content Include="Resources\Show_icon.png" />
     <Content Include="Resources\Show_icon1.png" />
     <Content Include="Resources\the_adventure.jpg" />
