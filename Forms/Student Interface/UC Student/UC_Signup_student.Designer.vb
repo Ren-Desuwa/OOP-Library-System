@@ -161,7 +161,7 @@ Partial Class UC_Signup_student
         '
         Me.img_hide.BackColor = System.Drawing.Color.White
         Me.img_hide.FillColor = System.Drawing.Color.Transparent
-        Me.img_hide.Image = Global.OOP_Library_System.My.Resources.Resources.Hide_icon1
+        'Me.img_hide.Image = Global.OOP_Library_System.My.Resources.Resources.Hide_icon1
         Me.img_hide.ImageRotate = 0!
         Me.img_hide.Location = New System.Drawing.Point(368, 297)
         Me.img_hide.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
