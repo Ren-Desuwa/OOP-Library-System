@@ -11,7 +11,6 @@ Public Class BookDAO
     ' Helper to map from reader, including calculated fields
     Private Function MapToBook(reader As MySqlDataReader) As Book
         ' --- FIX: Get column indexes once for safety ---
-        Dim colGenre = reader.GetOrdinal("genre")
         Dim colPublisher = reader.GetOrdinal("publisher")
         Dim colYearPublished = reader.GetOrdinal("year_published")
         Dim colDescription = reader.GetOrdinal("description")
@@ -22,7 +21,6 @@ Public Class BookDAO
             .Title = reader.GetString("title"),
             .Author = reader.GetString("author"),
             .ISBN = reader.GetString("isbn"),
-            .Genre = If(reader.IsDBNull(colGenre), Nothing, reader.GetString(colGenre)),
             .Publisher = If(reader.IsDBNull(colPublisher), Nothing, reader.GetString(colPublisher)),
             .YearPublished = If(reader.IsDBNull(colYearPublished), 0, reader.GetInt32(colYearPublished)),
             .Description = If(reader.IsDBNull(colDescription), Nothing, reader.GetString(colDescription)),
@@ -44,13 +42,12 @@ Public Class BookDAO
     '#################### CREATE ####################
     Public Function Create(book As Book) As Integer
         ' Note: We only insert the non-calculated fields
-        Dim sql = "INSERT INTO books (title, author, genre, isbn, publisher, year_published, description, cover_url) " & ' <-- ADD cover_url
-                  "VALUES (@Title, @Author, @Genre, @ISBN, @Publisher, @YearPublished, @Description, @CoverUrl);" & ' <-- ADD @CoverUrl
+        Dim sql = "INSERT INTO books (title, author, isbn, publisher, year_published, description, cover_url) " & ' <-- ADD cover_url
+                  "VALUES (@Title, @Author, @ISBN, @Publisher, @YearPublished, @Description, @CoverUrl);" & ' <-- ADD @CoverUrl
                   "SELECT LAST_INSERT_ID();"
         Using cmd As New MySqlCommand(sql, _transaction.Connection, _transaction)
             cmd.Parameters.AddWithValue("@Title", book.Title)
             cmd.Parameters.AddWithValue("@Author", book.Author)
-            cmd.Parameters.AddWithValue("@Genre", If(book.Genre Is Nothing, Nothing, book.Genre))
             cmd.Parameters.AddWithValue("@ISBN", book.ISBN)
             cmd.Parameters.AddWithValue("@Publisher", If(book.Publisher Is Nothing, Nothing, book.Publisher))
             cmd.Parameters.AddWithValue("@YearPublished", If(book.YearPublished = 0, Nothing, book.YearPublished))
@@ -102,14 +99,13 @@ Public Class BookDAO
     ' #################### UPDATE ####################
     Public Sub Update(book As Book)
         Dim sql = "UPDATE books SET " &
-                  "title = @Title, author = @Author, genre = @Genre, isbn = @ISBN, " &
+                  "title = @Title, author = @Author, isbn = @ISBN, " &
                   "publisher = @Publisher, year_published = @YearPublished, description = @Description, " &
                   "cover_url = @CoverUrl " & ' <-- ADD cover_url
                   "WHERE book_id = @Id"
         Using cmd As New MySqlCommand(sql, _transaction.Connection, _transaction)
             cmd.Parameters.AddWithValue("@Title", book.Title)
             cmd.Parameters.AddWithValue("@Author", book.Author)
-            cmd.Parameters.AddWithValue("@Genre", If(book.Genre Is Nothing, Nothing, book.Genre))
             cmd.Parameters.AddWithValue("@ISBN", book.ISBN)
             cmd.Parameters.AddWithValue("@Publisher", If(book.Publisher Is Nothing, Nothing, book.Publisher))
             cmd.Parameters.AddWithValue("@YearPublished", If(book.YearPublished = 0, Nothing, book.YearPublished))
@@ -139,7 +135,6 @@ Public Class BookDAO
                   " OR b.author LIKE @SearchTerm " &
                   " OR b.isbn LIKE @SearchTerm " &
                   " OR b.description LIKE @SearchTerm " &
-                  " OR b.genre LIKE @SearchTerm " &
                   " ORDER BY b.title"
 
         Using cmd As New MySqlCommand(sql, _transaction.Connection, _transaction)

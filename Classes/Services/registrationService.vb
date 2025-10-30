@@ -90,16 +90,16 @@ Public Class registrationService
             End If
 
             ' 2. Call NotificationService to SEND the code
-            If contactType = ContactType.Email Then
+            'If contactType = ContactType.Email Then
 
-                ' Use the email method
-                ' --- FIX: Added Await and corrected function name ---
-                Await _notificationService.SendRegistrationOtpAsync(contactInfo, otpCode)
-            ElseIf contactType = ContactType.Phone Then
-                ' Use the SMS methoD
-                Dim message As String = $"Your one-time password is: {otpCode}.It will expire in 5 minutes."
-                Await _notificationService.SendSms(contactInfo, message)
-            End If
+            ' Use the email method
+            ' --- FIX: Added Await and corrected function name ---
+            'Await _notificationService.SendRegistrationOtpAsync(contactInfo, otpCode)
+            'ElseIf contactType = ContactType.Phone Then
+            '    ' Use the SMS methoD
+            '    Dim message As String = $"Your one-time password is: {otpCode}.It will expire in 5 minutes."
+            '    Await _notificationService.SendSms(contactInfo, message)
+            'End If
 
         Catch ex As Exception
             ' This will catch DB errors from OtpService or sending errors from NotificationService

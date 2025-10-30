@@ -3,7 +3,6 @@
 Public Module Program
 
     ' --- Central Storage for all your services ---
-    ' Members of a Module are already shared, so we just declare them.
     Public ReadOnly mainDbConnection As DBcon
     Public ReadOnly AuthSvc As AuthService
     Public ReadOnly CatSvc As CatalougeService
@@ -13,13 +12,13 @@ Public Module Program
     ' ... other services ...
 
     ' --- Static Constructor (Runs ONCE) ---
-    ' "Shared Sub New" IS correct for a Module.
+    ' This Sub New now ONLY handles non-UI services
     Sub New()
         Try
             ' 1. Create the ONE database connection object
             mainDbConnection = New DBcon("ooplibrary")
 
-            ' 2. Create all services and INJECT dependencies
+            ' 2. Create all services
             AuthSvc = New AuthService(mainDbConnection)
             CatSvc = New CatalougeService(mainDbConnection)
             OtpSvc = New OtpService(mainDbConnection)
@@ -27,46 +26,100 @@ Public Module Program
             RegSvc = New registrationService(mainDbConnection, OtpSvc, NotifSvc)
 
         Catch ex As Exception
-            ' If this fails, the app can't run. Show error and exit.
+            ' If this fails, the app can't run
             MessageBox.Show("Fatal Error: Could not initialize services." & vbCrLf & ex.Message,
-                            "Application Startup Error",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Error)
-            ' End the application
+                         "Application Startup Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End
         End Try
     End Sub
 
 
+    ' --- Panels (Forms) ---
+    ' Declare them here, but create them in Main
+    Private GuestPanel As Home_Panel_Guest
+    Private LoginPanel As Login_Panel_Student
+    Private SignupPanel As Signup_Panel_Student
+    Private StudentPanel As Home_Panel_Students
+    Private currentAccount As Account
+
+
     ' --- Main Entry Point ---
     <STAThread>
     Sub Main()
-        ' This makes your forms look modern
+        ' --- MOVED FROM Sub New ---
+        ' 1. Set application styles FIRST (This fixes the crash)
         Application.EnableVisualStyles()
         Application.SetCompatibleTextRenderingDefault(False)
 
-        ' --- Logic to decide which form to launch ---
-        Dim result = MessageBox.Show(
-            "Are you a staff member?" & vbCrLf & vbCrLf &
-            "Click 'Yes' for Admin/Librarian Login" & vbCrLf &
-            "Click 'No' for the User Kiosk",
-            "Select Application Mode",
-            MessageBoxButtons.YesNo,
-            MessageBoxIcon.Question
-        )
+        Try
+            ' 2. Initialize the main forms
+            GuestPanel = New Home_Panel_Guest()
+            LoginPanel = New Login_Panel_Student()
+            SignupPanel = New Signup_Panel_Student()
+            StudentPanel = New Home_Panel_Students() ' Assumes Home_Panel_Students exists
 
-        If result = DialogResult.Yes Then
-            ' --- Run the ADMIN/LIBRARIAN App ---
-            ' Make sure your Frm_Login constructor is updated
-            Dim adminLoginForm As New Login_Panel_Student()
-            Application.Run(adminLoginForm)
-        Else
-            ' --- Run the KIOSK App ---
-            ' Make sure your Frm_Kiosk_Main constructor is updated
-            Dim kioskMainForm As New Login_Panel_Student()
-            Application.Run(kioskMainForm)
-        End If
+            ' 3. Wire up event handlers for navigation
+            AddHandler GuestPanel.OpenLogin, AddressOf ShowLoginPanel
+            'AddHandler LoginPanel.RegisterClicked, AddressOf ShowSignupPanel ' Assumes LoginPanel raises 'RegisterClicked'
+            'AddHandler SignupPanel.LoginClicked, AddressOf ShowLoginPanelFromSignup ' Handles "Back to Login"
+            'AddHandler LoginPanel.LoginSuccess, AddressOf ShowStudentPanel ' Assumes LoginPanel raises 'LoginSuccess' with Account info
+            ' AddHandler StudentPanel.LogoutClicked, AddressOf ShowGuestPanel ' Assumes StudentPanel raises 'LogoutClicked'
 
+            ' 4. Start by showing the Guest Panel
+            Application.Run(GuestPanel)
+
+        Catch ex As Exception
+            MessageBox.Show("Fatal Error: Could not initialize application UI." & vbCrLf & ex.Message,
+                         "Application Startup Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End
+        End Try
+        ' --- END OF MOVED CODE ---
+
+    End Sub
+
+    ' --- Navigation Subroutines (These are all correct) ---
+
+    Private Sub ShowLoginPanel(sender As Object, e As EventArgs)
+        GuestPanel.Hide()
+        LoginPanel.Show() ' Use Show() instead of ShowDialog() for main navigation
+    End Sub
+
+    ' From Login Panel "Register" Button -> Signup Panel
+    Private Sub ShowSignupPanel(sender As Object, e As EventArgs)
+        LoginPanel.Hide()
+        SignupPanel.Show()
+    End Sub
+
+    ' From Signup Panel "Back to Login" Button -> Login Panel
+    Private Sub ShowLoginPanelFromSignup(sender As Object, e As EventArgs)
+        SignupPanel.Hide()
+        LoginPanel.Show()
+    End Sub
+
+    ' From Login Panel (Successful Login) -> Student Panel
+    Private Sub ShowStudentPanel(sender As Object, loggedInAccount As Account)
+        currentAccount = loggedInAccount ' Store the logged-in user
+        LoginPanel.Hide()
+        ' StudentPanel.SetCurrentUser(currentAccount)
+        StudentPanel.Show()
+    End Sub
+
+    ' From Student Panel (Logout) -> Guest Panel
+    Private Sub ShowGuestPanel(sender As Object, e As EventArgs)
+        currentAccount = Nothing ' Clear logged-in user
+        StudentPanel.Hide()
+        GuestPanel.Show()
+    End Sub
+
+    ' This Sub looks like a mistake or old code.
+    ' The AddHandler in your Main Sub is already pointing to "ShowLoginPanel"
+    ' You can probably delete this one.
+    Sub HandlesOpenLogin(sender As Object, e As EventArgs)
+        MessageBox.Show("Opening Login Panel")
+        GuestPanel.Hide()
+        Dim loginForm As New Login_Panel_Student()
+        loginForm.ShowDialog()
+        GuestPanel.Show()
     End Sub
 
 End Module

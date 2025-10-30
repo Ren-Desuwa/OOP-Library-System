@@ -2,7 +2,7 @@
     Public Property BookID As Integer
     Public Property Title As String
     Public Property Author As String
-    Public Property Genre As String
+    Public Property Genres As List(Of Genre)
     Public Property ISBN As String
     Public Property Publisher As String
     Public Property YearPublished As Integer

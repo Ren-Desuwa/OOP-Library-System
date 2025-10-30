@@ -41,56 +41,56 @@ Public Class NotificationService
     ''' <summary>
     ''' Sends an SMS using a provider (e.g., Twilio).
     ''' </summary>
-    Public Async Function SendSms(mobileNumber As String, message As String) As Task(Of Boolean)
-        ' --- CONFIGURATION (Now read from App.config) ---
-        Dim accountSid As String = ConfigurationManager.AppSettings("TwilioAccountSid")
-        Dim authToken As String = ConfigurationManager.AppSettings("TwilioAuthToken")
-        Dim twilioNumber As String = ConfigurationManager.AppSettings("TwilioPhoneNumber")
-        ' ---------------------
+    'Public Async Function SendSms(mobileNumber As String, message As String) As Task(Of Boolean)
+    '    ' --- CONFIGURATION (Now read from App.config) ---
+    '    Dim accountSid As String = ConfigurationManager.AppSettings("TwilioAccountSid")
+    '    Dim authToken As String = ConfigurationManager.AppSettings("TwilioAuthToken")
+    '    Dim twilioNumber As String = ConfigurationManager.AppSettings("TwilioPhoneNumber")
+    '    ' ---------------------
 
-        ' --- !!! NEW DEBUG MSGBOX !!! ---
-        Dim isAuthTokenEmpty As String = If(String.IsNullOrWhiteSpace(authToken), "YES (This is a problem!)", "NO (Loaded)")
-        Dim debugMsg As String = $"--- Debug: SendSms ---" & vbCrLf &
-                                 $"Input Number: {mobileNumber}" & vbCrLf &
-                                 $"From Number (Config): {twilioNumber}" & vbCrLf &
-                                 $"Account SID (Config): {accountSid}" & vbCrLf &
-                                 $"Is Auth Token Empty? (Config): {isAuthTokenEmpty}"
-        MessageBox.Show(debugMsg, "Debug: SMS Service", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        ' --- !!! END DEBUG !!! ---
+    '    ' --- !!! NEW DEBUG MSGBOX !!! ---
+    '    Dim isAuthTokenEmpty As String = If(String.IsNullOrWhiteSpace(authToken), "YES (This is a problem!)", "NO (Loaded)")
+    '    Dim debugMsg As String = $"--- Debug: SendSms ---" & vbCrLf &
+    '                             $"Input Number: {mobileNumber}" & vbCrLf &
+    '                             $"From Number (Config): {twilioNumber}" & vbCrLf &
+    '                             $"Account SID (Config): {accountSid}" & vbCrLf &
+    '                             $"Is Auth Token Empty? (Config): {isAuthTokenEmpty}"
+    '    MessageBox.Show(debugMsg, "Debug: SMS Service", MessageBoxButtons.OK, MessageBoxIcon.Information)
+    '    ' --- !!! END DEBUG !!! ---
 
-        Dim formattedNumber As String = mobileNumber
-        If formattedNumber.StartsWith("09") Then
-            formattedNumber = "+63" & formattedNumber.Substring(1)
-        End If
+    '    Dim formattedNumber As String = mobileNumber
+    '    If formattedNumber.StartsWith("09") Then
+    '        formattedNumber = "+63" & formattedNumber.Substring(1)
+    '    End If
 
-        Dim apiUrl As String = $"https://api.twilio.com/2010-04-01/Accounts/{accountSid}/Messages.json"
-        Using client As New HttpClient()
-            Dim authHeader As String = Convert.ToBase64String(Encoding.ASCII.GetBytes($"{accountSid}:{authToken}"))
-            client.DefaultRequestHeaders.Authorization = New Headers.AuthenticationHeaderValue("Basic", authHeader)
+    '    Dim apiUrl As String = $"https://api.twilio.com/2010-04-01/Accounts/{accountSid}/Messages.json"
+    '    Using client As New HttpClient()
+    '        Dim authHeader As String = Convert.ToBase64String(Encoding.ASCII.GetBytes($"{accountSid}:{authToken}"))
+    '        client.DefaultRequestHeaders.Authorization = New Headers.AuthenticationHeaderValue("Basic", authHeader)
 
-            Dim messageContent = New Dictionary(Of String, String)()
-            messageContent.Add("To", formattedNumber)
-            messageContent.Add("From", twilioNumber)
-            messageContent.Add("Body", message)
+    '        Dim messageContent = New Dictionary(Of String, String)()
+    '        messageContent.Add("To", formattedNumber)
+    '        messageContent.Add("From", twilioNumber)
+    '        messageContent.Add("Body", message)
 
-            Try
-                Dim response = Await client.PostAsync(apiUrl, New FormUrlEncodedContent(messageContent))
-                ' --- MODIFIED: Check response and throw error if not successful ---
-                If Not response.IsSuccessStatusCode Then
-                    ' This will give us the error from Twilio (e.G., "Auth failed", "Out of funds")
-                    Dim errorContent = Await response.Content.ReadAsStringAsync()
-                    Throw New Exception($"Twilio API failed with status: {response.StatusCode}. Details: {errorContent}")
-                End If
-                Return response.IsSuccessStatusCode
-            Catch ex As Exception
-                Debug.WriteLine("SMS Send Error: ", ex.Message)
-                ' --- MODIFIED: THROW the exception so the UI can see it ---
-                ' Was: Return False (This was swallowing the error)
-                ' Now:
-                Throw New Exception("Failed to send SMS. " & ex.Message, ex)
-            End Try
-        End Using
-    End Function
+    '        Try
+    '            Dim response = Await client.PostAsync(apiUrl, New FormUrlEncodedContent(messageContent))
+    '            ' --- MODIFIED: Check response and throw error if not successful ---
+    '            If Not response.IsSuccessStatusCode Then
+    '                ' This will give us the error from Twilio (e.G., "Auth failed", "Out of funds")
+    '                Dim errorContent = Await response.Content.ReadAsStringAsync()
+    '                Throw New Exception($"Twilio API failed with status: {response.StatusCode}. Details: {errorContent}")
+    '            End If
+    '            Return response.IsSuccessStatusCode
+    '        Catch ex As Exception
+    '            Debug.WriteLine("SMS Send Error: ", ex.Message)
+    '            ' --- MODIFIED: THROW the exception so the UI can see it ---
+    '            ' Was: Return False (This was swallowing the error)
+    '            ' Now:
+    '            Throw New Exception("Failed to send SMS. " & ex.Message, ex)
+    '        End Try
+    '    End Using
+    'End Function
 
     ' --- Private Email Helper ---
     ' --- MODIFIED: Changed to Async Function returning Task ---

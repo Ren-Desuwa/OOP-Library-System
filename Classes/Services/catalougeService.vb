@@ -22,7 +22,12 @@ Public Class CatalougeService
 
         Try
             Dim bookDAO As New BookDAO(transaction)
+            Dim genreDAO As New GenreDAO(transaction)
             Dim book = bookDAO.GetById(bookId)
+
+            If book IsNot Nothing Then
+                book.Genres = genreDAO.GetGenresByBookId(book.BookID)
+            End If
 
             ' No changes, so we can roll back (or just not commit)
             transaction.Rollback()
@@ -47,7 +52,13 @@ Public Class CatalougeService
 
         Try
             Dim bookDAO As New BookDAO(transaction)
+            Dim genreDAO As New GenreDAO(transaction)
+            Dim bookGenreDAO As New BookGenreDAO(transaction)
             Dim books = bookDAO.GetAll()
+
+            For Each book In books
+                book.Genres = genreDAO.GetGenresByBookId(book.BookID)
+            Next
 
             transaction.Rollback() ' Read-only operation
             Return books
@@ -123,11 +134,19 @@ Public Class CatalougeService
         Try
             Dim bookDAO As New BookDAO(transaction)
             Dim bookCopyDAO As New BookCopyDAO(transaction)
+            Dim bookGenreDAO As New BookGenreDAO(transaction)
+
             Dim logDAO As New LogDAO(transaction)
 
             ' 1. Create the main book entry
             Dim newBookId As Integer = bookDAO.Create(book)
             book.BookID = newBookId
+
+            If book.Genres IsNot Nothing AndAlso book.Genres.Any() Then
+                For Each genre As Genre In book.Genres
+                    bookGenreDAO.AddGenreToBook(newBookId, genre.GenreID)
+                Next
+            End If
 
             ' 2. Create the initial copies
             If initialCopies <= 0 Then initialCopies = 1 ' Must add at least one copy
@@ -170,9 +189,18 @@ Public Class CatalougeService
         Try
             Dim bookDAO As New BookDAO(transaction)
             Dim logDAO As New LogDAO(transaction)
+            Dim bookGenreDAO As New BookGenreDAO(transaction) ' <-- ADD
 
             ' 1. Update the book
             bookDAO.Update(book)
+
+            bookGenreDAO.ClearGenresForBook(book.BookID)
+
+            If book.Genres IsNot Nothing AndAlso book.Genres.Any() Then
+                For Each genre As Genre In book.Genres
+                    bookGenreDAO.AddGenreToBook(book.BookID, genre.GenreID)
+                Next
+            End If
 
             ' 2. Log the action
             logDAO.Create(Log.RecordAction(adminAccountId, "Catalogue Update", $"Book '{book.Title}' (ID: {book.BookID}) details updated.", "Info"))

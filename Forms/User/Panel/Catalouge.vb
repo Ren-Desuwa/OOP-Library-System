@@ -126,21 +126,21 @@ Public Class Catalouge
 
             _booksByGenre.Clear()
 
-            For Each book In _allBooks
-                Dim genres As String() = If(String.IsNullOrWhiteSpace(book.Genre),
-                                           New String() {"Uncategorized"},
-                                           book.Genre.Split(","c))
+            'For Each book In _allBooks
+            '    Dim genres As String() = If(String.IsNullOrWhiteSpace(book.Genre),
+            '                               New String() {"Uncategorized"},
+            '                               book.Genre.Split(","c))
 
-                For Each genre In genres
-                    Dim trimmedGenre = genre.Trim()
-                    If Not String.IsNullOrWhiteSpace(trimmedGenre) Then
-                        If Not _booksByGenre.ContainsKey(trimmedGenre) Then
-                            _booksByGenre.Add(trimmedGenre, New List(Of Book)())
-                        End If
-                        _booksByGenre(trimmedGenre).Add(book)
-                    End If
-                Next
-            Next
+            '    For Each genre In genres
+            '        Dim trimmedGenre = genre.Trim()
+            '        If Not String.IsNullOrWhiteSpace(trimmedGenre) Then
+            '            If Not _booksByGenre.ContainsKey(trimmedGenre) Then
+            '                _booksByGenre.Add(trimmedGenre, New List(Of Book)())
+            '            End If
+            '            _booksByGenre(trimmedGenre).Add(book)
+            '        End If
+            '    Next
+            'Next
 
             _sortedGenreNames = _booksByGenre.Keys.OrderBy(Function(k) k).ToList()
 
