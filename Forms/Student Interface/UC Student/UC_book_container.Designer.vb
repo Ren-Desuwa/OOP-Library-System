@@ -46,7 +46,7 @@ Partial Class UC_book_container
         Me.picbox_book.BackColor = System.Drawing.Color.Transparent
         Me.picbox_book.Dock = System.Windows.Forms.DockStyle.Top
         Me.picbox_book.FillColor = System.Drawing.Color.Transparent
-        Me.picbox_book.Image = Global.OOP_Library_System.My.Resources.Resources.Ucc_Logo_NoBG_Big2
+        'Me.picbox_book.Image = Global.OOP_Library_System.My.Resources.Resources.Ucc_Logo_NoBG_Big2
         Me.picbox_book.ImageRotate = 0!
         Me.picbox_book.Location = New System.Drawing.Point(0, 0)
         Me.picbox_book.Name = "picbox_book"

@@ -175,7 +175,7 @@ Partial Class BookInfo
         Me.picBook.BackColor = System.Drawing.Color.Transparent
         Me.picBook.BorderRadius = 30
         Me.picBook.FillColor = System.Drawing.Color.Transparent
-        Me.picBook.Image = Global.OOP_Library_System.My.Resources.Resources.the_adventure
+        'Me.picBook.Image = Global.OOP_Library_System.My.Resources.Resources.the_adventure
         Me.picBook.ImageRotate = 0!
         Me.picBook.Location = New System.Drawing.Point(24, 96)
         Me.picBook.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)

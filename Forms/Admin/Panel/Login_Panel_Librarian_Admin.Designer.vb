@@ -228,7 +228,7 @@ Partial Class Login_Panel_Librarian_Admin
         '
         Me.img_show.BackColor = System.Drawing.Color.White
         Me.img_show.FillColor = System.Drawing.Color.Transparent
-        Me.img_show.Image = Global.OOP_Library_System.My.Resources.Resources.Show_icon1
+        'Me.img_show.Image = Global.OOP_Library_System.My.Resources.Resources.Show_icon1
         Me.img_show.ImageRotate = 0!
         Me.img_show.Location = New System.Drawing.Point(368, 293)
         Me.img_show.Name = "img_show"
@@ -241,7 +241,7 @@ Partial Class Login_Panel_Librarian_Admin
         '
         Me.img_hide.BackColor = System.Drawing.Color.White
         Me.img_hide.FillColor = System.Drawing.Color.Transparent
-        Me.img_hide.Image = Global.OOP_Library_System.My.Resources.Resources.Hide_icon1
+        'Me.img_hide.Image = Global.OOP_Library_System.My.Resources.Resources.Hide_icon1
         Me.img_hide.ImageRotate = 0!
         Me.img_hide.Location = New System.Drawing.Point(368, 293)
         Me.img_hide.Name = "img_hide"

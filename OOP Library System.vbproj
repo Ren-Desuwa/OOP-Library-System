@@ -10,7 +10,7 @@
     <RootNamespace>OOP_Library_System</RootNamespace>
     <AssemblyName>OOP Library System</AssemblyName>
     <FileAlignment>512</FileAlignment>
-    <MyType>WindowsForms</MyType>
+    <MyType>WindowsFormsWithCustomSubMain</MyType>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -83,6 +83,30 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BeforeApproval.Designer.vb">
+      <DependentUpon>BeforeApproval.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BeforeApproval.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BookCart.Designer.vb">
+      <DependentUpon>BookCart.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BookCart.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BorrowedBooks.Designer.vb">
+      <DependentUpon>BorrowedBooks.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BorrowedBooks.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BorrowedBooksCard.Designer.vb">
+      <DependentUpon>BorrowedBooksCard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BorrowedBooksCard.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Classes\DataAccessObjects\AccountDAO.vb" />
     <Compile Include="Classes\DataAccessObjects\AnnouncementDAO.vb" />
     <Compile Include="Classes\DataAccessObjects\BookCopyDAO.vb" />
@@ -254,6 +278,18 @@
     <Compile Include="Program.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="BeforeApproval.resx">
+      <DependentUpon>BeforeApproval.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BookCart.resx">
+      <DependentUpon>BookCart.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BorrowedBooks.resx">
+      <DependentUpon>BorrowedBooks.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BorrowedBooksCard.resx">
+      <DependentUpon>BorrowedBooksCard.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin\Panel\BookInfo.resx">
       <DependentUpon>BookInfo.vb</DependentUpon>
     </EmbeddedResource>
@@ -349,6 +385,7 @@
     <Content Include="Resources\Accountwhite0_icon.png" />
     <Content Include="Resources\Hide_icon.png" />
     <Content Include="Resources\Hide_icon1.png" />
+    <Content Include="Resources\luffy.jpg" />
     <Content Include="Resources\Show_icon.png" />
     <Content Include="Resources\Show_icon1.png" />
     <Content Include="Resources\the_adventure.jpg" />
