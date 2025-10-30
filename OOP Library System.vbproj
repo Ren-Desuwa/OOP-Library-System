@@ -42,7 +42,7 @@
     <OptionCompare>Binary</OptionCompare>
   </PropertyGroup>
   <PropertyGroup>
-    <OptionStrict>Off</OptionStrict>
+    <OptionStrict>On</OptionStrict>
   </PropertyGroup>
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
@@ -50,6 +50,9 @@
   <ItemGroup>
     <Reference Include="Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
       <HintPath>packages\Guna.UI2.WinForms.2.0.4.7\lib\net472\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data">
+      <HintPath>..\..\..\Documents\School\Jestine\Programming\Information Management\DocUCare\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -79,26 +82,115 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LibraryCore\Forms\User\UserLogin\UserLogin.Designer.vb">
-      <DependentUpon>UserLogin.vb</DependentUpon>
+    <Compile Include="Classes\DataAccessObjects\AccountDAO.vb" />
+    <Compile Include="Classes\DataAccessObjects\AnnouncementDAO.vb" />
+    <Compile Include="Classes\DataAccessObjects\BookCopyDAO.vb" />
+    <Compile Include="Classes\DataAccessObjects\BookDAO.vb" />
+    <Compile Include="Classes\DataAccessObjects\DBcon.vb" />
+    <Compile Include="Classes\DataAccessObjects\LogDAO.vb" />
+    <Compile Include="Classes\DataAccessObjects\NotificationDAO.vb" />
+    <Compile Include="Classes\DataAccessObjects\TransactionDAO.vb" />
+    <Compile Include="Classes\Models\Account.vb" />
+    <Compile Include="Classes\Models\Announcement.vb" />
+    <Compile Include="Classes\Models\Book.vb" />
+    <Compile Include="Classes\Models\BookCopy.vb" />
+    <Compile Include="Classes\Models\Log.vb" />
+    <Compile Include="Classes\Models\Notification.vb" />
+    <Compile Include="Classes\Models\Transaction.vb" />
+    <Compile Include="Classes\Services\announcementService.vb" />
+    <Compile Include="Classes\Services\authService.vb" />
+    <Compile Include="Classes\Services\borrowService.vb" />
+    <Compile Include="Classes\Services\catalougeService.vb" />
+    <Compile Include="Classes\Services\registrationService.vb" />
+    <Compile Include="Forms\Admin\Panel\BookInfo.Designer.vb">
+      <DependentUpon>BookInfo.vb</DependentUpon>
     </Compile>
-    <Compile Include="LibraryCore\Forms\User\UserLogin\UserLogin.vb">
+    <Compile Include="Forms\Admin\Panel\BookInfo.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LibraryCore\Forms\User\UserLogin\UserRegister.Designer.vb">
+    <Compile Include="Forms\Admin\Panel\Books_Panel%28Librarian-Admin%29.Designer.vb">
+      <DependentUpon>Books_Panel%28Librarian-Admin%29.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\Panel\Books_Panel%28Librarian-Admin%29.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\Panel\CreateBook.Designer.vb">
+      <DependentUpon>CreateBook.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\Panel\CreateBook.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\Panel\EditBook.Designer.vb">
+      <DependentUpon>EditBook.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\Panel\EditBook.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\Panel\Home_Panel_Admin_Librarian.Designer.vb">
+      <DependentUpon>Home_Panel_Admin_Librarian.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\Panel\Home_Panel_Admin_Librarian.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\Panel\Login_Panel_Librarian_Admin.Designer.vb">
+      <DependentUpon>Login_Panel_Librarian_Admin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\Panel\Login_Panel_Librarian_Admin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Student Interface\Signup_Panel_Student.Designer.vb">
+      <DependentUpon>Signup_Panel_Student.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Student Interface\Signup_Panel_Student.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Student Interface\Login_Panel_Student.Designer.vb">
+      <DependentUpon>Login_Panel_Student.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Student Interface\Login_Panel_Student.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Student Interface\UC Student\UC_Signup2_student.Designer.vb">
+      <DependentUpon>UC_Signup2_student.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Student Interface\UC Student\UC_Signup2_student.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Student Interface\UC Student\UC_Signup_student.Designer.vb">
+      <DependentUpon>UC_Signup_student.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Student Interface\UC Student\UC_Signup_student.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Student Interface\UC Student\UC_Welcome_message_student.Designer.vb">
+      <DependentUpon>UC_Welcome_message_student.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Student Interface\UC Student\UC_Welcome_message_student.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\User\Panel\BookSortedList.Designer.vb">
+      <DependentUpon>BookSortedList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User\Panel\BookSortedList.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\User\Panel\Catalouge.Designer.vb">
+      <DependentUpon>Catalouge.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User\Panel\Catalouge.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\User\UserLogin\UserRegister.Designer.vb">
       <DependentUpon>UserRegister.vb</DependentUpon>
     </Compile>
-    <Compile Include="LibraryCore\Forms\User\UserLogin\UserRegister.vb">
+    <Compile Include="Forms\User\UserLogin\UserRegister.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login Form.Designer.vb">
-      <DependentUpon>Login Form.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Login Form.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -110,16 +202,50 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Program.vb" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Login Form.resx">
-      <DependentUpon>Login Form.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\Admin\Panel\BookInfo.resx">
+      <DependentUpon>BookInfo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\Panel\Books_Panel%28Librarian-Admin%29.resx">
+      <DependentUpon>Books_Panel%28Librarian-Admin%29.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\Panel\CreateBook.resx">
+      <DependentUpon>CreateBook.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\Panel\EditBook.resx">
+      <DependentUpon>EditBook.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\Panel\Home_Panel_Admin_Librarian.resx">
+      <DependentUpon>Home_Panel_Admin_Librarian.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\Panel\Login_Panel_Librarian_Admin.resx">
+      <DependentUpon>Login_Panel_Librarian_Admin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Student Interface\Signup_Panel_Student.resx">
+      <DependentUpon>Signup_Panel_Student.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Student Interface\Login_Panel_Student.resx">
+      <DependentUpon>Login_Panel_Student.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Student Interface\UC Student\UC_Signup2_student.resx">
+      <DependentUpon>UC_Signup2_student.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Student Interface\UC Student\UC_Signup_student.resx">
+      <DependentUpon>UC_Signup_student.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Student Interface\UC Student\UC_Welcome_message_student.resx">
+      <DependentUpon>UC_Welcome_message_student.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User\Panel\Catalouge.resx">
+      <DependentUpon>Catalouge.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -136,12 +262,51 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Database\" />
+    <Folder Include="Forms\Admin-Librarian Interface\" />
+    <Folder Include="Forms\Admin\Login\" />
     <Folder Include="LibraryAdminApp\" />
-    <Folder Include="LibraryCore\Assets\" />
-    <Folder Include="LibraryCore\Classes\" />
+    <Folder Include="LibraryCore\Assets\Colors\" />
     <Folder Include="LibraryCore\Database\" />
     <Folder Include="LibraryCore\Forms\Admin\AdminLogin\" />
+    <Folder Include="LibraryCore\Forms\User\Homepage\" />
     <Folder Include="LibraryUserApp\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Bookcover\1984.jpg" />
+    <Content Include="Assets\Bookcover\big_little_lies.jpg" />
+    <Content Include="Assets\Bookcover\hobbit.jpg" />
+    <Content Include="Assets\Bookcover\lord_of_the_rings_fellowship.jpg" />
+    <Content Include="Assets\Bookcover\pride_and_prejudice.jpg" />
+    <Content Include="Assets\Bookcover\sharp_objects.jpg" />
+    <Content Include="Assets\Bookcover\the_adventure.jpg" />
+    <Content Include="Assets\Bookcover\the_great_gatsby.jpg" />
+    <Content Include="Assets\Bookcover\the_guest_list.jpg" />
+    <Content Include="Assets\Bookcover\the_plot.jpg" />
+    <Content Include="Assets\Bookcover\the_woman_in_the_window.jpg" />
+    <Content Include="Assets\Bookcover\to_kill_a_mockingbird.jpg" />
+    <Content Include="LibraryCore\Assets\Bookcover\1984.jpg" />
+    <Content Include="LibraryCore\Assets\Bookcover\big_little_lies.jpg" />
+    <Content Include="LibraryCore\Assets\Bookcover\hobbit.jpg" />
+    <Content Include="LibraryCore\Assets\Bookcover\lord_of_the_rings_fellowship.jpg" />
+    <Content Include="LibraryCore\Assets\Bookcover\pride_and_prejudice.jpg" />
+    <Content Include="LibraryCore\Assets\Bookcover\sharp_objects.jpg" />
+    <Content Include="LibraryCore\Assets\Bookcover\the_adventure.jpg" />
+    <Content Include="LibraryCore\Assets\Bookcover\the_great_gatsby.jpg" />
+    <Content Include="LibraryCore\Assets\Bookcover\the_guest_list.jpg" />
+    <Content Include="LibraryCore\Assets\Bookcover\the_plot.jpg" />
+    <Content Include="LibraryCore\Assets\Bookcover\the_woman_in_the_window.jpg" />
+    <Content Include="LibraryCore\Assets\Bookcover\to_kill_a_mockingbird.jpg" />
+    <None Include="Resources\Hide_icon1.png" />
+    <None Include="Resources\Show_icon1.png" />
+    <None Include="Resources\the_adventure.jpg" />
+    <None Include="Resources\Ucc Logo NoBG2.png" />
+    <None Include="Resources\Ucc Logo NoBG1.png" />
+    <None Include="Resources\Hide_icon.png" />
+    <None Include="Resources\Show_icon.png" />
+    <None Include="Resources\Ucc Logo NoBG3.png" />
+    <None Include="Resources\Ucc Logo NoBG.png" />
+    <None Include="Resources\Accountwhite0_icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
