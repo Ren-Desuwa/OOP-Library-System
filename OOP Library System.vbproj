@@ -226,6 +226,7 @@
     <Compile Include="Forms\Student Interface\Home_Panel_Students.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\Student Interface\ILoadingContainer.vb" />
     <Compile Include="Forms\Student Interface\Login_Panel_Student.Designer.vb">
       <DependentUpon>Login_Panel_Student.vb</DependentUpon>
     </Compile>
