@@ -52,6 +52,7 @@ Partial Class UserProfile
         Me.TableLayoutPanel12 = New System.Windows.Forms.TableLayoutPanel()
         Me.Guna2Button3 = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2GradientPanel1 = New Guna.UI2.WinForms.Guna2GradientPanel()
+        Me.Guna2Button4 = New Guna.UI2.WinForms.Guna2Button()
         Me.TableLayoutPanel2.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
         CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -81,7 +82,7 @@ Partial Class UserProfile
         Me.TableLayoutPanel2.RowCount = 2
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 29.46428!))
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70.53571!))
-        Me.TableLayoutPanel2.Size = New System.Drawing.Size(573, 672)
+        Me.TableLayoutPanel2.Size = New System.Drawing.Size(527, 672)
         Me.TableLayoutPanel2.TabIndex = 0
         '
         'TableLayoutPanel3
@@ -99,7 +100,7 @@ Partial Class UserProfile
         Me.TableLayoutPanel3.RowCount = 2
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 38.02083!))
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 61.97917!))
-        Me.TableLayoutPanel3.Size = New System.Drawing.Size(567, 191)
+        Me.TableLayoutPanel3.Size = New System.Drawing.Size(521, 191)
         Me.TableLayoutPanel3.TabIndex = 0
         '
         'Guna2PictureBox2
@@ -108,9 +109,9 @@ Partial Class UserProfile
         Me.Guna2PictureBox2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Guna2PictureBox2.Image = Global.OOP_Library_System.My.Resources.Resources.Accountwhite0_icon
         Me.Guna2PictureBox2.ImageRotate = 0!
-        Me.Guna2PictureBox2.Location = New System.Drawing.Point(202, 75)
+        Me.Guna2PictureBox2.Location = New System.Drawing.Point(186, 75)
         Me.Guna2PictureBox2.Name = "Guna2PictureBox2"
-        Me.Guna2PictureBox2.Size = New System.Drawing.Size(123, 113)
+        Me.Guna2PictureBox2.Size = New System.Drawing.Size(112, 113)
         Me.Guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.Guna2PictureBox2.TabIndex = 2
         Me.Guna2PictureBox2.TabStop = False
@@ -129,7 +130,7 @@ Partial Class UserProfile
         Me.TableLayoutPanel4.RowCount = 2
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.919028!))
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90.08097!))
-        Me.TableLayoutPanel4.Size = New System.Drawing.Size(567, 469)
+        Me.TableLayoutPanel4.Size = New System.Drawing.Size(521, 469)
         Me.TableLayoutPanel4.TabIndex = 1
         '
         'TableLayoutPanel5
@@ -145,7 +146,7 @@ Partial Class UserProfile
         Me.TableLayoutPanel5.Name = "TableLayoutPanel5"
         Me.TableLayoutPanel5.RowCount = 1
         Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel5.Size = New System.Drawing.Size(561, 40)
+        Me.TableLayoutPanel5.Size = New System.Drawing.Size(515, 40)
         Me.TableLayoutPanel5.TabIndex = 0
         '
         'Label1
@@ -154,9 +155,9 @@ Partial Class UserProfile
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label1.Font = New System.Drawing.Font("Consolas", 21.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(168, 0)
+        Me.Label1.Location = New System.Drawing.Point(154, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(180, 40)
+        Me.Label1.Size = New System.Drawing.Size(165, 40)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Bossing"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -189,7 +190,7 @@ Partial Class UserProfile
         Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.610984!))
         Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.18764!))
         Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 43.70709!))
-        Me.TableLayoutPanel6.Size = New System.Drawing.Size(561, 417)
+        Me.TableLayoutPanel6.Size = New System.Drawing.Size(515, 417)
         Me.TableLayoutPanel6.TabIndex = 1
         '
         'TableLayoutPanel10
@@ -201,13 +202,13 @@ Partial Class UserProfile
         Me.TableLayoutPanel10.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 53.52113!))
         Me.TableLayoutPanel10.Controls.Add(Me.Guna2Button1, 1, 1)
         Me.TableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel10.Location = New System.Drawing.Point(259, 237)
+        Me.TableLayoutPanel10.Location = New System.Drawing.Point(238, 237)
         Me.TableLayoutPanel10.Name = "TableLayoutPanel10"
         Me.TableLayoutPanel10.RowCount = 3
         Me.TableLayoutPanel10.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 46.92738!))
         Me.TableLayoutPanel10.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.40782!))
         Me.TableLayoutPanel10.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 39.10614!))
-        Me.TableLayoutPanel10.Size = New System.Drawing.Size(299, 177)
+        Me.TableLayoutPanel10.Size = New System.Drawing.Size(274, 177)
         Me.TableLayoutPanel10.TabIndex = 13
         '
         'Guna2Button1
@@ -221,9 +222,9 @@ Partial Class UserProfile
         Me.Guna2Button1.FillColor = System.Drawing.Color.Linen
         Me.Guna2Button1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2Button1.ForeColor = System.Drawing.Color.Black
-        Me.Guna2Button1.Location = New System.Drawing.Point(15, 86)
+        Me.Guna2Button1.Location = New System.Drawing.Point(14, 86)
         Me.Guna2Button1.Name = "Guna2Button1"
-        Me.Guna2Button1.Size = New System.Drawing.Size(120, 17)
+        Me.Guna2Button1.Size = New System.Drawing.Size(109, 17)
         Me.Guna2Button1.TabIndex = 20
         Me.Guna2Button1.Text = "Log Out"
         '
@@ -233,9 +234,9 @@ Partial Class UserProfile
         Me.Label9.BackColor = System.Drawing.Color.Transparent
         Me.Label9.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label9.Font = New System.Drawing.Font("Consolas", 18.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(259, 135)
+        Me.Label9.Location = New System.Drawing.Point(238, 135)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(299, 40)
+        Me.Label9.Size = New System.Drawing.Size(274, 40)
         Me.Label9.TabIndex = 8
         Me.Label9.Text = "21"
         Me.Label9.TextAlign = System.Drawing.ContentAlignment.BottomLeft
@@ -248,7 +249,7 @@ Partial Class UserProfile
         Me.Label8.Font = New System.Drawing.Font("Consolas", 18.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.Location = New System.Drawing.Point(3, 135)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(250, 40)
+        Me.Label8.Size = New System.Drawing.Size(229, 40)
         Me.Label8.TabIndex = 7
         Me.Label8.Text = "Age:"
         Me.Label8.TextAlign = System.Drawing.ContentAlignment.BottomRight
@@ -259,9 +260,9 @@ Partial Class UserProfile
         Me.Label7.BackColor = System.Drawing.Color.Transparent
         Me.Label7.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label7.Font = New System.Drawing.Font("Consolas", 18.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(259, 90)
+        Me.Label7.Location = New System.Drawing.Point(238, 90)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(299, 45)
+        Me.Label7.Size = New System.Drawing.Size(274, 45)
         Me.Label7.TabIndex = 6
         Me.Label7.Text = "01/01/2001"
         Me.Label7.TextAlign = System.Drawing.ContentAlignment.BottomLeft
@@ -274,7 +275,7 @@ Partial Class UserProfile
         Me.Label6.Font = New System.Drawing.Font("Consolas", 18.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.Location = New System.Drawing.Point(3, 90)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(250, 45)
+        Me.Label6.Size = New System.Drawing.Size(229, 45)
         Me.Label6.TabIndex = 5
         Me.Label6.Text = "Birthday:"
         Me.Label6.TextAlign = System.Drawing.ContentAlignment.BottomRight
@@ -285,9 +286,9 @@ Partial Class UserProfile
         Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label5.Font = New System.Drawing.Font("Consolas", 18.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(259, 45)
+        Me.Label5.Location = New System.Drawing.Point(238, 45)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(299, 45)
+        Me.Label5.Size = New System.Drawing.Size(274, 45)
         Me.Label5.TabIndex = 4
         Me.Label5.Text = "Bossing"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.BottomLeft
@@ -300,7 +301,7 @@ Partial Class UserProfile
         Me.Label4.Font = New System.Drawing.Font("Consolas", 18.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(3, 45)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(250, 45)
+        Me.Label4.Size = New System.Drawing.Size(229, 45)
         Me.Label4.TabIndex = 3
         Me.Label4.Text = "Fullname:"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.BottomRight
@@ -311,9 +312,9 @@ Partial Class UserProfile
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label3.Font = New System.Drawing.Font("Consolas", 18.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(259, 0)
+        Me.Label3.Location = New System.Drawing.Point(238, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(299, 45)
+        Me.Label3.Size = New System.Drawing.Size(274, 45)
         Me.Label3.TabIndex = 2
         Me.Label3.Text = "Bossing@yahoo.com"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.BottomLeft
@@ -326,7 +327,7 @@ Partial Class UserProfile
         Me.Label2.Font = New System.Drawing.Font("Consolas", 18.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(3, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(250, 45)
+        Me.Label2.Size = New System.Drawing.Size(229, 45)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Email:"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.BottomRight
@@ -339,11 +340,11 @@ Partial Class UserProfile
         Me.TableLayoutPanel7.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.14286!))
         Me.TableLayoutPanel7.Controls.Add(Me.Guna2ProgressBar1, 0, 0)
         Me.TableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel7.Location = New System.Drawing.Point(259, 178)
+        Me.TableLayoutPanel7.Location = New System.Drawing.Point(238, 178)
         Me.TableLayoutPanel7.Name = "TableLayoutPanel7"
         Me.TableLayoutPanel7.RowCount = 1
         Me.TableLayoutPanel7.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel7.Size = New System.Drawing.Size(299, 53)
+        Me.TableLayoutPanel7.Size = New System.Drawing.Size(274, 53)
         Me.TableLayoutPanel7.TabIndex = 10
         '
         'Guna2ProgressBar1
@@ -354,7 +355,7 @@ Partial Class UserProfile
         Me.Guna2ProgressBar1.Location = New System.Drawing.Point(3, 24)
         Me.Guna2ProgressBar1.Name = "Guna2ProgressBar1"
         Me.Guna2ProgressBar1.ShowText = True
-        Me.Guna2ProgressBar1.Size = New System.Drawing.Size(146, 26)
+        Me.Guna2ProgressBar1.Size = New System.Drawing.Size(133, 26)
         Me.Guna2ProgressBar1.TabIndex = 11
         Me.Guna2ProgressBar1.Text = "Guna2ProgressBar1"
         Me.Guna2ProgressBar1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
@@ -373,7 +374,7 @@ Partial Class UserProfile
         Me.TableLayoutPanel8.Name = "TableLayoutPanel8"
         Me.TableLayoutPanel8.RowCount = 1
         Me.TableLayoutPanel8.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel8.Size = New System.Drawing.Size(250, 53)
+        Me.TableLayoutPanel8.Size = New System.Drawing.Size(229, 53)
         Me.TableLayoutPanel8.TabIndex = 11
         '
         'Label10
@@ -382,9 +383,9 @@ Partial Class UserProfile
         Me.Label10.BackColor = System.Drawing.Color.Transparent
         Me.Label10.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label10.Font = New System.Drawing.Font("Consolas", 18.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(127, 0)
+        Me.Label10.Location = New System.Drawing.Point(116, 0)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(120, 53)
+        Me.Label10.Size = New System.Drawing.Size(110, 53)
         Me.Label10.TabIndex = 12
         Me.Label10.Text = "Credit Score:"
         Me.Label10.TextAlign = System.Drawing.ContentAlignment.BottomRight
@@ -400,9 +401,9 @@ Partial Class UserProfile
         Me.Guna2Button2.FillColor = System.Drawing.Color.FromArgb(CType(CType(165, Byte), Integer), CType(CType(145, Byte), Integer), CType(CType(121, Byte), Integer))
         Me.Guna2Button2.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Guna2Button2.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button2.Location = New System.Drawing.Point(106, 11)
+        Me.Guna2Button2.Location = New System.Drawing.Point(97, 11)
         Me.Guna2Button2.Name = "Guna2Button2"
-        Me.Guna2Button2.Size = New System.Drawing.Size(15, 39)
+        Me.Guna2Button2.Size = New System.Drawing.Size(13, 39)
         Me.Guna2Button2.TabIndex = 13
         Me.Guna2Button2.Text = "i"
         '
@@ -421,7 +422,7 @@ Partial Class UserProfile
         Me.TableLayoutPanel9.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 46.92738!))
         Me.TableLayoutPanel9.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.84916!))
         Me.TableLayoutPanel9.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 39.66481!))
-        Me.TableLayoutPanel9.Size = New System.Drawing.Size(250, 177)
+        Me.TableLayoutPanel9.Size = New System.Drawing.Size(229, 177)
         Me.TableLayoutPanel9.TabIndex = 12
         '
         'btn_Books
@@ -435,9 +436,9 @@ Partial Class UserProfile
         Me.btn_Books.FillColor = System.Drawing.Color.Linen
         Me.btn_Books.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_Books.ForeColor = System.Drawing.Color.Black
-        Me.btn_Books.Location = New System.Drawing.Point(108, 86)
+        Me.btn_Books.Location = New System.Drawing.Point(99, 86)
         Me.btn_Books.Name = "btn_Books"
-        Me.btn_Books.Size = New System.Drawing.Size(128, 16)
+        Me.btn_Books.Size = New System.Drawing.Size(116, 16)
         Me.btn_Books.TabIndex = 19
         Me.btn_Books.Text = "Edit Profile"
         '
@@ -445,8 +446,8 @@ Partial Class UserProfile
         '
         Me.TableLayoutPanel1.BackColor = System.Drawing.Color.Transparent
         Me.TableLayoutPanel1.ColumnCount = 2
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.32979!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.67021!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.25177!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.74823!))
         Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel2, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel11, 1, 0)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
@@ -465,22 +466,23 @@ Partial Class UserProfile
         Me.TableLayoutPanel11.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.41805!))
         Me.TableLayoutPanel11.Controls.Add(Me.Panel1, 1, 1)
         Me.TableLayoutPanel11.Controls.Add(Me.TableLayoutPanel12, 1, 2)
+        Me.TableLayoutPanel11.Controls.Add(Me.Guna2Button4, 2, 0)
         Me.TableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel11.Location = New System.Drawing.Point(582, 3)
+        Me.TableLayoutPanel11.Location = New System.Drawing.Point(536, 3)
         Me.TableLayoutPanel11.Name = "TableLayoutPanel11"
         Me.TableLayoutPanel11.RowCount = 3
         Me.TableLayoutPanel11.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.482142!))
         Me.TableLayoutPanel11.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 78.86905!))
         Me.TableLayoutPanel11.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.79762!))
-        Me.TableLayoutPanel11.Size = New System.Drawing.Size(543, 672)
+        Me.TableLayoutPanel11.Size = New System.Drawing.Size(589, 672)
         Me.TableLayoutPanel11.TabIndex = 1
         '
         'Panel1
         '
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel1.Location = New System.Drawing.Point(86, 59)
+        Me.Panel1.Location = New System.Drawing.Point(94, 59)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(391, 523)
+        Me.Panel1.Size = New System.Drawing.Size(424, 523)
         Me.Panel1.TabIndex = 0
         '
         'TableLayoutPanel12
@@ -490,13 +492,13 @@ Partial Class UserProfile
         Me.TableLayoutPanel12.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.20205!))
         Me.TableLayoutPanel12.Controls.Add(Me.Guna2Button3, 1, 1)
         Me.TableLayoutPanel12.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel12.Location = New System.Drawing.Point(86, 588)
+        Me.TableLayoutPanel12.Location = New System.Drawing.Point(94, 588)
         Me.TableLayoutPanel12.Name = "TableLayoutPanel12"
         Me.TableLayoutPanel12.RowCount = 3
         Me.TableLayoutPanel12.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.81481!))
         Me.TableLayoutPanel12.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35.80247!))
         Me.TableLayoutPanel12.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.38272!))
-        Me.TableLayoutPanel12.Size = New System.Drawing.Size(391, 81)
+        Me.TableLayoutPanel12.Size = New System.Drawing.Size(424, 81)
         Me.TableLayoutPanel12.TabIndex = 22
         '
         'Guna2Button3
@@ -510,9 +512,9 @@ Partial Class UserProfile
         Me.Guna2Button3.FillColor = System.Drawing.Color.Linen
         Me.Guna2Button3.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2Button3.ForeColor = System.Drawing.Color.Black
-        Me.Guna2Button3.Location = New System.Drawing.Point(271, 14)
+        Me.Guna2Button3.Location = New System.Drawing.Point(294, 14)
         Me.Guna2Button3.Name = "Guna2Button3"
-        Me.Guna2Button3.Size = New System.Drawing.Size(117, 23)
+        Me.Guna2Button3.Size = New System.Drawing.Size(127, 23)
         Me.Guna2Button3.TabIndex = 21
         Me.Guna2Button3.Text = "Edit displayed books"
         '
@@ -526,6 +528,24 @@ Partial Class UserProfile
         Me.Guna2GradientPanel1.Name = "Guna2GradientPanel1"
         Me.Guna2GradientPanel1.Size = New System.Drawing.Size(1128, 678)
         Me.Guna2GradientPanel1.TabIndex = 3
+        '
+        'Guna2Button4
+        '
+        Me.Guna2Button4.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2Button4.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2Button4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2Button4.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.Guna2Button4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.Guna2Button4.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Guna2Button4.FillColor = System.Drawing.Color.Linen
+        Me.Guna2Button4.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2Button4.ForeColor = System.Drawing.Color.Black
+        Me.Guna2Button4.Location = New System.Drawing.Point(541, 20)
+        Me.Guna2Button4.Margin = New System.Windows.Forms.Padding(20)
+        Me.Guna2Button4.Name = "Guna2Button4"
+        Me.Guna2Button4.Size = New System.Drawing.Size(28, 16)
+        Me.Guna2Button4.TabIndex = 22
+        Me.Guna2Button4.Text = "X"
         '
         'UserProfile
         '
@@ -591,4 +611,5 @@ Partial Class UserProfile
     Friend WithEvents Panel1 As Panel
     Friend WithEvents TableLayoutPanel12 As TableLayoutPanel
     Friend WithEvents Guna2Button3 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Guna2Button4 As Guna.UI2.WinForms.Guna2Button
 End Class
