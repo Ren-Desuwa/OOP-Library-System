@@ -16,7 +16,7 @@ Public Class DBcon
             ' For testing, you will pass "library_test" as the databaseName.
             ' For your real app, you will pass "library".
             ' ---
-            connectionString = $"Server=127.0.0.1;Port=3307;Database={databaseName};Uid=root;Pwd=;"
+            connectionString = $"Server=127.0.0.1;Port=3306;Database={databaseName};Uid=root;Pwd=;"
             connection = New MySqlConnection(connectionString)
         Catch ex As Exception
             ' Throw an exception instead of showing a message box

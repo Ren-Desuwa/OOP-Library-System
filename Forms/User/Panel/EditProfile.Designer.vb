@@ -198,7 +198,7 @@ Partial Class EditProfile
         Me.Controls.Add(Me.Guna2DateTimePicker1)
         Me.Controls.Add(Me.Guna2HtmlLabel2)
         Me.Name = "EditProfile"
-        Me.Text = "EditProfile"
+        Me.Text = "3"
         CType(Me.Guna2CirclePictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
