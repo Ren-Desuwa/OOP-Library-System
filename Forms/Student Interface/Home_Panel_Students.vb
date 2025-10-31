@@ -28,12 +28,9 @@ Partial Public Class Home_Panel_Students
         UC_Loading_Panel1.BringToFront()
     End Sub
     ' This new event handles the loading *after* the form is maximized and visible.
-    Private Async Sub Home_Panel_Students_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
-        ' 1. Await a very small delay. This lets the UI finish painting *before* we show the loading screen.
-        Await Task.Delay(20)
-
-        ' 2. Now that the form is fully visible,
-        ' we tell the catalogue tab to start its loading process.
+    Private Sub Home_Panel_Students_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
+        ' We no longer await. We just "fire and forget".
+        ' This lets the home screen be interactive while catalogue loads in background.
         UC_HPS_catalouge_tab1.BeginLoading(Me)
     End Sub
     ' This is your button named btn_Home_tab 
@@ -42,19 +39,32 @@ Partial Public Class Home_Panel_Students
     End Sub
 
     ' This is your button named btn_Catalouge_tab 
-    ' This is your button named btn_Catalouge_tab 
     Private Async Sub btn_Catalouge_tab_Click(sender As Object, e As EventArgs) Handles btn_Catalouge_tab.Click
-        ' 1. Show the loading screen
+        ' 1. If it's already visible, do nothing (as you requested).
+        If UC_HPS_catalouge_tab1.Visible Then
+            Return
+        End If
+
+        ' 2. Show the loading screen.
         ToggleLoading(True, "Loading Catalogue...")
+        Await Task.Delay(5) ' Let animation start
 
-        ' 2. Wait for the loading screen to appear and animate
-        Await Task.Delay(5)
+        Try
+            ' 3. AWAIT the task.
+            ' If loading is already finished, this returns instantly.
+            ' If it's still loading (from _Shown), this will WAIT here.
+            Await UC_HPS_catalouge_tab1.AwaitInitialLoad()
 
-        ' 3. Do the work (show the panel)
-        ShowTabPanel(UC_HPS_catalouge_tab1)
+            ' 4. Now that we're 100% sure it's loaded and painted, show the panel.
+            ShowTabPanel(UC_HPS_catalouge_tab1)
 
-        ' 4. Hide the loading screen
-        ToggleLoading(False)
+        Catch ex As Exception
+            ' If the background loading failed, show the error here.
+            MessageBox.Show("Failed to load catalogue: " & ex.Message)
+        Finally
+            ' 5. ALWAYS hide the loading screen.
+            ToggleLoading(False)
+        End Try
     End Sub
     Private Async Sub txtBox_search_TextChanged(sender As Object, e As EventArgs) Handles txtBox_search.TextChanged
         ' Only search if the catalogue tab is currently visible

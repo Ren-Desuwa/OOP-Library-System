@@ -5,6 +5,8 @@ Imports System.Linq ' <-- Make sure this is imported
 Public Class UC_HPS_catalouge_tab
 
 #Region "Class-Level Variables"
+    ' This Task will store a reference to the main loading process
+    Private _initialLoadTask As Task = Nothing
     ' --- Parent Reference ---
     Private _parentContainer As ILoadingContainer
 
@@ -45,35 +47,35 @@ Public Class UC_HPS_catalouge_tab
         ' We are no longer starting the load from here.
     End Sub
 
-    ' Note: We accept the parentForm as a parameter
-    Public Async Sub BeginLoading(ByVal parentForm As ILoadingContainer)
+    Public Sub BeginLoading(ByVal parentForm As ILoadingContainer)
         Me._parentContainer = parentForm
-        ' This is called by the parent form *after* it has maximized.
-        ' 1. First, tell the parent to show the loading screen.
-        '    (We pass the parentForm reference along)
         SetupLoadingState(True, "Loading Catalogue...")
 
-        ' 2. --- THIS IS THE FIX ---
-        ' We await a small delay to let the UI draw the label.
-        Await Task.Delay(5) ' Increased slightly to be safe
-
-        ' 3. Now that the loading label is *actually visible*,
-        '    we start the real async data loading.
-        LoadDataAsync(parentForm)
+        ' Start the async load and IMMEDIATELY save the Task
+        _initialLoadTask = LoadDataAsync(parentForm)
     End Sub
-
+    ''' <summary>
+    ''' A new public method that allows the parent form to "wait"
+    ''' for the initial load to be 100% complete.
+    ''' </summary>
+    Public Async Function AwaitInitialLoad() As Task
+        If _initialLoadTask IsNot Nothing Then
+            ' Await the task that was started in BeginLoading
+            Await _initialLoadTask
+        End If
+    End Function
     ' Note: We accept and pass the parentForm
-    Private Async Sub LoadDataAsync(ByVal parentForm As ILoadingContainer)
+    Private Async Function LoadDataAsync(ByVal parentForm As ILoadingContainer) As Task
         ' Give the UI thread a tiny break
         Await Task.Delay(100)
 
         Try
             ' --- 1. DO THE SLOW WORK ON A BACKGROUND THREAD ---
             Await Task.Run(Sub()
-                ' These functions are slow but don't touch the UI.
-                LoadAllBooks()
-                PopulateUniqueGenreList()
-            End Sub)
+                               ' These functions are slow but don't touch the UI.
+                               LoadAllBooks()
+                               PopulateUniqueGenreList()
+                           End Sub)
 
             ' --- 2. WE ARE NOW BACK ON THE UI THREAD ---
             Await PopulateGenreButtons()
@@ -88,7 +90,7 @@ Public Class UC_HPS_catalouge_tab
 
         ' --- 3. HIDE LOADING STATE ---
         SetupLoadingState(False)
-    End Sub
+    End Function
 
     ''' <summary>
     ''' Central function to show/hide loading label BY CALLING THE PARENT FORM

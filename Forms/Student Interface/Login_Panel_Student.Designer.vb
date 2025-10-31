@@ -37,7 +37,6 @@ Partial Class Login_Panel_Student
         Me.img_show = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.img_hide = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Guna2Elipse1 = New Guna.UI2.WinForms.Guna2Elipse(Me.components)
-        Me.UC_Welcome_message_student1 = New OOP_Library_System.UC_Welcome_message_student()
         Me.title_panel.SuspendLayout()
         Me.login_form_container.SuspendLayout()
         Me.Guna2CustomGradientPanel3.SuspendLayout()
@@ -195,7 +194,6 @@ Partial Class Login_Panel_Student
         Me.login_form_container.BorderColor = System.Drawing.Color.DimGray
         Me.login_form_container.BorderRadius = 30
         Me.login_form_container.BorderThickness = 1
-        Me.login_form_container.Controls.Add(Me.UC_Welcome_message_student1)
         Me.login_form_container.Controls.Add(Me.Guna2CustomGradientPanel3)
         Me.login_form_container.FillColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(232, Byte), Integer))
         Me.login_form_container.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(216, Byte), Integer))
@@ -238,6 +236,7 @@ Partial Class Login_Panel_Student
         '
         Me.img_show.BackColor = System.Drawing.Color.White
         Me.img_show.FillColor = System.Drawing.Color.Transparent
+        Me.img_show.Image = Global.OOP_Library_System.My.Resources.Resources.Show_icon1
         Me.img_show.ImageRotate = 0!
         Me.img_show.Location = New System.Drawing.Point(368, 293)
         Me.img_show.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
@@ -251,6 +250,7 @@ Partial Class Login_Panel_Student
         '
         Me.img_hide.BackColor = System.Drawing.Color.White
         Me.img_hide.FillColor = System.Drawing.Color.Transparent
+        Me.img_hide.Image = Global.OOP_Library_System.My.Resources.Resources.Hide_icon1
         Me.img_hide.ImageRotate = 0!
         Me.img_hide.Location = New System.Drawing.Point(368, 293)
         Me.img_hide.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
@@ -264,15 +264,6 @@ Partial Class Login_Panel_Student
         '
         Me.Guna2Elipse1.BorderRadius = 30
         Me.Guna2Elipse1.TargetControl = Me
-        '
-        'UC_Welcome_message_student1
-        '
-        Me.UC_Welcome_message_student1.BackColor = System.Drawing.Color.Transparent
-        Me.UC_Welcome_message_student1.Dock = System.Windows.Forms.DockStyle.Left
-        Me.UC_Welcome_message_student1.Location = New System.Drawing.Point(0, 0)
-        Me.UC_Welcome_message_student1.Name = "UC_Welcome_message_student1"
-        Me.UC_Welcome_message_student1.Size = New System.Drawing.Size(525, 505)
-        Me.UC_Welcome_message_student1.TabIndex = 2
         '
         'Login_Panel_Student
         '
