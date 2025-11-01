@@ -118,7 +118,8 @@
 
 
     Private Sub Guna2Button3_Click(sender As Object, e As EventArgs) Handles Guna2Button3.Click
-
+        Dim edit As New editDisplayedBooks()
+        edit.Show()
     End Sub
 
     Private editForm As EditProfile = Nothing
