@@ -115,4 +115,25 @@
     Private Sub TableLayoutPanel3_Paint(sender As Object, e As PaintEventArgs) Handles TableLayoutPanel3.Paint
 
     End Sub
+
+
+    Private Sub Guna2Button3_Click(sender As Object, e As EventArgs) Handles Guna2Button3.Click
+
+    End Sub
+
+    Private editForm As EditProfile = Nothing
+    Private Sub btn_Books_Click(sender As Object, e As EventArgs) Handles btn_Books.Click
+        If editForm Is Nothing OrElse editForm.IsDisposed Then
+            editForm = New EditProfile()
+        End If
+
+        ' Show the form and bring it to front
+        editForm.Show()
+        editForm.BringToFront()
+
+    End Sub
+
+    Private Sub Guna2Button4_Click(sender As Object, e As EventArgs) Handles Guna2Button4.Click
+        Me.Close()
+    End Sub
 End Class

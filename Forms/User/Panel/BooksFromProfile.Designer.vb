@@ -44,7 +44,7 @@ Partial Class BooksFromProfile
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(180, Byte), Integer), CType(CType(160, Byte), Integer), CType(CType(136, Byte), Integer))
+        Me.BackColor = System.Drawing.Color.Linen
         Me.Controls.Add(Me.Guna2PictureBox1)
         Me.Name = "BooksFromProfile"
         Me.Size = New System.Drawing.Size(391, 550)
