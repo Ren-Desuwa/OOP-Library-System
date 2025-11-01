@@ -5,10 +5,14 @@ Imports System.Linq ' <-- Make sure this is imported
 Public Class UC_HPS_catalouge_tab
 
 #Region "Class-Level Variables"
+    ' This Task will store a reference to the main loading process
+    Private _initialLoadTask As Task = Nothing
+    ' --- Parent Reference ---
+    Private _parentContainer As ILoadingContainer
 
     ' --- Data ---
-    Private allBooks As List(Of Book)
-    Private uniqueGenres As List(Of String)
+    Private allBooks As New List(Of Book)()
+    Private uniqueGenres As New List(Of String)()
 
     ' --- Pagination Settings ---
     Private Const GENRES_PER_PAGE As Integer = 5
@@ -43,24 +47,25 @@ Public Class UC_HPS_catalouge_tab
         ' We are no longer starting the load from here.
     End Sub
 
-    ' Note: We accept the parentForm as a parameter
-    Public Async Sub BeginLoading(ByVal parentForm As Home_Panel_Students)
-        ' This is called by the parent form *after* it has maximized.
-        ' 1. First, tell the parent to show the loading screen.
-        '    (We pass the parentForm reference along)
-        SetupLoadingState(parentForm, True, "Loading Catalogue...")
+    Public Sub BeginLoading(ByVal parentForm As ILoadingContainer)
+        Me._parentContainer = parentForm
+        SetupLoadingState(True, "Loading Catalogue...")
 
-        ' 2. --- THIS IS THE FIX ---
-        ' We await a small delay to let the UI draw the label.
-        Await Task.Delay(5) ' Increased slightly to be safe
-
-        ' 3. Now that the loading label is *actually visible*,
-        '    we start the real async data loading.
-        LoadDataAsync(parentForm)
+        ' Start the async load and IMMEDIATELY save the Task
+        _initialLoadTask = LoadDataAsync(parentForm)
     End Sub
-
+    ''' <summary>
+    ''' A new public method that allows the parent form to "wait"
+    ''' for the initial load to be 100% complete.
+    ''' </summary>
+    Public Async Function AwaitInitialLoad() As Task
+        If _initialLoadTask IsNot Nothing Then
+            ' Await the task that was started in BeginLoading
+            Await _initialLoadTask
+        End If
+    End Function
     ' Note: We accept and pass the parentForm
-    Private Async Sub LoadDataAsync(ByVal parentForm As Home_Panel_Students)
+    Private Async Function LoadDataAsync(ByVal parentForm As ILoadingContainer) As Task
         ' Give the UI thread a tiny break
         Await Task.Delay(100)
 
@@ -73,29 +78,29 @@ Public Class UC_HPS_catalouge_tab
                            End Sub)
 
             ' --- 2. WE ARE NOW BACK ON THE UI THREAD ---
-            PopulateGenreButtons()
-            DisplayCataloguePage(1)
+            Await PopulateGenreButtons()
+            Await DisplayCataloguePage(1)
 
         Catch ex As Exception
             ' If something went wrong, show the error *before* hiding loading
-            SetupLoadingState(parentForm, True, "Error!")
+            SetupLoadingState(True, "Error!")
             MessageBox.Show("Error loading book catalogue: " & ex.Message)
             Return
         End Try
 
         ' --- 3. HIDE LOADING STATE ---
-        SetupLoadingState(parentForm, False)
-    End Sub
+        SetupLoadingState(False)
+    End Function
 
     ''' <summary>
     ''' Central function to show/hide loading label BY CALLING THE PARENT FORM
     ''' </summary>
     ' Note: We accept parentForm as a parameter
-    Private Sub SetupLoadingState(ByVal parentForm As Home_Panel_Students, isLoading As Boolean, Optional message As String = "")
+    Private Sub SetupLoadingState(isLoading As Boolean, Optional message As String = "")
 
-        If parentForm IsNot Nothing Then
+        If Me._parentContainer IsNot Nothing Then
             ' Call the parent's public method to show/hide the main loading label
-            parentForm.ToggleLoading(isLoading, message)
+            Me._parentContainer.ToggleLoading(isLoading, message)
         End If
 
         If isLoading Then
@@ -155,7 +160,7 @@ Public Class UC_HPS_catalouge_tab
     ''' <summary>
     ''' Populates the genre buttons on the LEFT panel.
     ''' </summary>
-    Private Sub PopulateGenreButtons()
+    Private Async Function PopulateGenreButtons() As Task
         flow_genre_panel.SuspendLayout()
         flow_genre_panel.Controls.Clear()
 
@@ -164,32 +169,39 @@ Public Class UC_HPS_catalouge_tab
             Return
         End If
 
-        ' Add "Show All" button
-        Dim allButton = New UC_btn_genre()
-        allButton.GenreText = "Show All"
+        ' --- Run the heavy work (creating buttons) on a BACKGROUND THREAD ---
+        Dim buttons As List(Of Control) = Await Task.Run(Function()
+            Dim tempList As New List(Of Control)
 
-        ' *** NEW FIX ***: Base calculation on the VISIBLE parent panel
-        Dim leftMargin = CInt((genre_panel.ClientSize.Width - allButton.Width) / 2)
+            ' Add "Show All" button
+            Dim allButton = New UC_btn_genre()
+            allButton.GenreText = "Show All"
+            Dim leftMargin = CInt((genre_panel.ClientSize.Width - allButton.Width) / 2)
+            allButton.Margin = New Padding(If(leftMargin > 0, leftMargin, 0), 3, 3, 3)
+            AddHandler allButton.GenreClicked, AddressOf ShowAllBooks_Clicked
+            tempList.Add(allButton)
 
-        allButton.Margin = New Padding(If(leftMargin > 0, leftMargin, 0), 3, 3, 3)
-        AddHandler allButton.GenreClicked, AddressOf ShowAllBooks_Clicked
-        flow_genre_panel.Controls.Add(allButton)
+            ' Add a button for each unique genre
+            For Each genreName As String In uniqueGenres
+                Dim genreButton = New UC_btn_genre()
+                genreButton.GenreText = genreName
+                leftMargin = CInt((genre_panel.ClientSize.Width - genreButton.Width) / 2)
+                genreButton.Margin = New Padding(If(leftMargin > 0, leftMargin, 0), 3, 3, 3)
+                AddHandler genreButton.GenreClicked, AddressOf GenreButton_Clicked
+                tempList.Add(genreButton)
+            Next
 
-        ' Add a button for each unique genre
-        For Each genreName As String In uniqueGenres
-            Dim genreButton = New UC_btn_genre()
-            genreButton.GenreText = genreName
+            Return tempList
+        End Function)
+        ' --- We are now back on the UI thread ---
 
-            ' *** NEW FIX ***: Base calculation on the VISIBLE parent panel
-            leftMargin = CInt((genre_panel.ClientSize.Width - genreButton.Width) / 2)
-
-            genreButton.Margin = New Padding(If(leftMargin > 0, leftMargin, 0), 3, 3, 3)
-            AddHandler genreButton.GenreClicked, AddressOf GenreButton_Clicked
-            flow_genre_panel.Controls.Add(genreButton)
-        Next
-
+        ' Add all buttons at once (this is the only part that will freeze)
+        flow_genre_panel.Controls.AddRange(buttons.ToArray())
         flow_genre_panel.ResumeLayout()
-    End Sub
+
+        ' FORCE THE UI TO PAINT the new buttons *before* we hide the loading screen
+        flow_genre_panel.Refresh()
+    End Function
 
 #End Region
 
@@ -198,7 +210,7 @@ Public Class UC_HPS_catalouge_tab
     ''' <summary>
     ''' **VIEW 1**: Displays the main catalogue view (list of genres).
     ''' </summary>
-    Private Sub DisplayCataloguePage(pageNumber As Integer)
+    Private Async Function DisplayCataloguePage(pageNumber As Integer) As Task
         ' 1. Set state
         currentView = "Catalogue"
         currentGenrePage = pageNumber
@@ -225,39 +237,55 @@ Public Class UC_HPS_catalouge_tab
         ' 4. Get the 5 genres for this page
         Dim genresToShow = uniqueGenres.Skip((pageNumber - 1) * GENRES_PER_PAGE).Take(GENRES_PER_PAGE)
 
-        ' 5. Create a UC_booklist_container for each of the 5 genres
+        ' 5. Create a temporary list to hold the main genre panels
+        Dim genrePanels As New List(Of Control)
+
+        ' 6. Create a UC_booklist_container for each of the 5 genres
         For Each genreName As String In genresToShow
             Dim bookList = New UC_booklist_container()
             bookList.GenreTitle = genreName
             bookList.Width = flow_main_book_panel.ClientSize.Width - SystemInformation.VerticalScrollBarWidth - 5
             AddHandler bookList.SeeAllClicked, AddressOf SeeAll_Clicked
 
-            ' 6. **REFACTORED**: Get all books for this genre using the new model
+            ' 7. Get all books for this genre
             Dim booksInGenre = allBooks.Where(Function(b) b.Genres IsNot Nothing AndAlso b.Genres.Any(Function(g) g IsNot Nothing AndAlso g.Name.Equals(genreName, StringComparison.OrdinalIgnoreCase))).ToList()
 
-            ' 7. Add up to 8 books to the preview
-            For Each book As Book In booksInGenre.Take(8)
-                                                      Dim bookCard = CreateBookCard(book)
-                                                      bookCard.Margin = New Padding(BOOK_PREVIEW_SPACING)
-                                                      bookList.AddBook(bookCard)
-                                                  Next
+            ' 8. Run the heavy work (creating book cards) on a background thread
+            Dim bookCards As List(Of UC_book_container) = Await Task.Run(Function()
+                Dim tempList As New List(Of UC_book_container)
+                For Each book As Book In booksInGenre.Take(8)
+                    Dim bookCard = CreateBookCard(book) ' This loads the image
+                    bookCard.Margin = New Padding(BOOK_PREVIEW_SPACING)
+                    tempList.Add(bookCard)
+                Next
+                Return tempList
+            End Function)
+            ' --- We are now back on the UI thread ---
 
-                                                  ' 8. Show "See All" button if there are more than 8 books
-                                                  If booksInGenre.Count > 8 Then
-                                                      bookList.btn_SeeAll.Visible = True
-                                                  End If
+            ' 9. Add all cards at once to the *horizontal* panel
+            bookList.flow_book_panel.Controls.AddRange(bookCards.ToArray())
 
-                                                  flow_main_book_panel.Controls.Add(bookList)
+            ' 10. Show "See All" button
+            If booksInGenre.Count > 8 Then
+                bookList.btn_SeeAll.Visible = True
+            End If
+
+            ' 11. Add the fully prepared genre panel to our temporary list
+            genrePanels.Add(bookList)
         Next
 
-        ' 9. Resume layout
+        ' 12. NOW, add all main panels at once (this will freeze the UI)
+        flow_main_book_panel.Controls.AddRange(genrePanels.ToArray())
         flow_main_book_panel.ResumeLayout()
-    End Sub
+
+        ' 13. FORCE THE UI TO PAINT the new controls *before* we hide the loading screen
+        flow_main_book_panel.Refresh() ' <-- This forces the panel to paint NOW
+    End Function
 
     ''' <summary>
     ''' **VIEW 2**: Displays the detail view (grid of books for one genre).
     ''' </summary>
-    Private Sub DisplayBookPage(genre As String, pageNumber As Integer)
+    Private Async Function DisplayBookPage(genre As String, pageNumber As Integer) As Task
         ' 1. Set state
         currentView = "GenreDetail"
         currentBookPage = pageNumber
@@ -286,28 +314,41 @@ Public Class UC_HPS_catalouge_tab
         ' 2. Suspend layout
         flow_main_book_panel.SuspendLayout()
         flow_main_book_panel.Controls.Clear()
+        Await Task.Delay(1) ' <-- This lets the UI thread breathe
 
         ' 3. **REFACTORED**: Get all books for this genre using the new model
         Dim allBooksInGenre = allBooks.Where(Function(b) b.Genres IsNot Nothing AndAlso b.Genres.Any(Function(g) g IsNot Nothing AndAlso g.Name.Equals(genre, StringComparison.OrdinalIgnoreCase))).ToList()
 
         ' 4. Calculate pages
         Dim totalPages = CInt(Math.Ceiling(allBooksInGenre.Count / BOOKS_PER_PAGE))
-                                                 UC_pagination_controls1.UpdateControls(currentBookPage, totalPages)
+        UC_pagination_controls1.UpdateControls(currentBookPage, totalPages)
 
-                                                 ' 5. Get the books for this page
-                                                 Dim booksToShow = allBooksInGenre.Skip((pageNumber - 1) * BOOKS_PER_PAGE).Take(BOOKS_PER_PAGE)
+        ' 5. Get the books for this page
+        Dim booksToShow = allBooksInGenre.Skip((pageNumber - 1) * BOOKS_PER_PAGE).Take(BOOKS_PER_PAGE)
 
-                                                 ' 6. Add book cards
-                                                 For Each book As Book In booksToShow
-                                                     Dim bookCard = CreateBookCard(book)
-                                                     bookCard.Width = cardWidth
-                                                     bookCard.Margin = New Padding(actualSpacing)
-                                                     flow_main_book_panel.Controls.Add(bookCard)
-                                                 Next
+        ' 6. Clear the panel (this is fast UI work)
+        flow_main_book_panel.Controls.Clear()
 
-                                                 ' 7. Resume layout
-                                                 flow_main_book_panel.ResumeLayout()
-    End Sub
+        ' 7. --- Run the heavy work (creating cards) on a BACKGROUND THREAD ---
+        Dim bookCards As List(Of UC_book_container) = Await Task.Run(Function()
+            Dim tempList As New List(Of UC_book_container)
+            For Each book As Book In booksToShow
+                Dim bookCard = CreateBookCard(book) ' This loads the image
+                bookCard.Width = cardWidth
+                bookCard.Margin = New Padding(actualSpacing)
+                tempList.Add(bookCard)
+            Next
+            Return tempList
+        End Function)
+        ' --- We are now back on the UI thread ---
+
+        ' 8. Add all controls at once (this is the only part that will freeze)
+        flow_main_book_panel.Controls.AddRange(bookCards.ToArray())
+        flow_main_book_panel.ResumeLayout()
+
+        ' 9. FORCE THE UI TO PAINT the new controls *before* we hide the loading screen
+        flow_main_book_panel.Refresh() ' <-- This forces the panel to paint NOW
+    End Function
 
 #End Region
 
@@ -316,12 +357,12 @@ Public Class UC_HPS_catalouge_tab
     ''' <summary>
     ''' Public function that the main form calls to search.
     ''' </summary>
-    Public Sub Search(searchTerm As String)
+    Public Async Function Search(searchTerm As String) As Task
         flow_main_book_panel.SuspendLayout()
 
         If String.IsNullOrWhiteSpace(searchTerm) Then
             ' If search is empty, show the main catalogue
-            DisplayCataloguePage(1)
+            Await DisplayCataloguePage(1)
         Else
             ' If searching, show a simple grid of results
             currentView = "Search"
@@ -367,17 +408,29 @@ Public Class UC_HPS_catalouge_tab
                 End If
             Next
 
-            ' Add book cards for results
-            For Each book As Book In filteredBooks
-                Dim bookCard = CreateBookCard(book)
-                bookCard.Width = cardWidth
-                bookCard.Margin = New Padding(actualSpacing)
-                flow_main_book_panel.Controls.Add(bookCard)
-            Next
-        End If
+            ' --- Run the heavy work (creating cards) on a BACKGROUND THREAD ---
+            Dim bookCards As List(Of UC_book_container) = Await Task.Run(Function()
+                Dim tempList As New List(Of UC_book_container)
+                For Each book As Book In filteredBooks
+                    Dim bookCard = CreateBookCard(book) ' This loads the image
+                    bookCard.Width = cardWidth
+                    bookCard.Margin = New Padding(actualSpacing)
+                    tempList.Add(bookCard)
+                Next
+                Return tempList
+            End Function)
+            ' --- We are now back on the UI thread ---
+
+            ' Add all controls at once (this will freeze the UI)
+            flow_main_book_panel.Controls.AddRange(bookCards.ToArray())
+
+            ' FORCE THE UI TO PAINT the new controls *before* we hide the loading screen
+            flow_main_book_panel.Refresh() ' <-- This forces the panel to paint NOW
+
+        End If ' <--- THIS IS THE MISSING LINE
 
         flow_main_book_panel.ResumeLayout()
-    End Sub
+    End Function
 
     ''' <summary>
     ''' Helper function to create a book card.
@@ -414,23 +467,34 @@ Public Class UC_HPS_catalouge_tab
 #Region "Event Handlers"
 
     ' --- Navigation Clicks (Left Panel) ---
-    Private Sub ShowAllBooks_Clicked(sender As Object, e As EventArgs)
-        DisplayCataloguePage(1)
+    Private Async Sub ShowAllBooks_Clicked(sender As Object, e As EventArgs)
+        SetupLoadingState(True, "Loading Catalogue...")
+        Await Task.Delay(5) ' Give UI time to show loading
+        Await DisplayCataloguePage(1)
+        SetupLoadingState(False)
     End Sub
 
-    Private Sub GenreButton_Clicked(sender As Object, e As EventArgs)
+    Private Async Sub GenreButton_Clicked(sender As Object, e As EventArgs)
         Dim clickedButton = CType(sender, UC_btn_genre)
-        DisplayBookPage(clickedButton.GenreText, 1)
+        SetupLoadingState(True, $"Loading {clickedButton.GenreText}...")
+        Await Task.Delay(5) ' Give UI time to show loading
+        Await DisplayBookPage(clickedButton.GenreText, 1)
+        SetupLoadingState(False)
     End Sub
 
     ' --- Main UI Clicks ---
-    Private Sub SeeAll_Clicked(sender As Object, e As EventArgs)
+    Private Async Sub SeeAll_Clicked(sender As Object, e As EventArgs)
         Dim clickedList = CType(sender, UC_booklist_container)
-        DisplayBookPage(clickedList.GenreTitle, 1)
+        SetupLoadingState(True, $"Loading {clickedList.GenreTitle}...")
+        Await Task.Delay(5) ' Give UI time to show loading
+        Await DisplayBookPage(clickedList.GenreTitle, 1)
+        SetupLoadingState(False)
     End Sub
-
-    Private Sub btn_Back_Click(sender As Object, e As EventArgs) Handles btn_Back.Click
-        DisplayCataloguePage(currentGenrePage)
+    Private Async Sub btn_Back_Click(sender As Object, e As EventArgs) Handles btn_Back.Click
+        SetupLoadingState(True, "Loading Catalogue...")
+        Await Task.Delay(5) ' Give UI time to show loading
+        Await DisplayCataloguePage(currentGenrePage)
+        SetupLoadingState(False)
     End Sub
 
     Private Sub BookCard_Clicked(sender As Object, e As EventArgs)
@@ -449,24 +513,30 @@ Public Class UC_HPS_catalouge_tab
     End Sub
 
     ' --- Pagination Clicks (Bottom) ---
-    Private Sub paginationControls_NextClicked(sender As Object, e As EventArgs) Handles UC_pagination_controls1.NextClicked
+    Private Async Sub paginationControls_NextClicked(sender As Object, e As EventArgs) Handles UC_pagination_controls1.NextClicked
+        SetupLoadingState(True, "Loading Page...")
+        Await Task.Delay(5) ' Give UI time to show loading
         If currentView = "Catalogue" Then
             currentGenrePage += 1
-            DisplayCataloguePage(currentGenrePage)
+            Await DisplayCataloguePage(currentGenrePage)
         ElseIf currentView = "GenreDetail" Then
             currentBookPage += 1
-            DisplayBookPage(selectedGenre, currentBookPage)
+            Await DisplayBookPage(selectedGenre, currentBookPage)
         End If
+        SetupLoadingState(False)
     End Sub
 
-    Private Sub paginationControls_PrevClicked(sender As Object, e As EventArgs) Handles UC_pagination_controls1.PrevClicked
+    Private Async Sub paginationControls_PrevClicked(sender As Object, e As EventArgs) Handles UC_pagination_controls1.PrevClicked
+        SetupLoadingState(True, "Loading Page...")
+        Await Task.Delay(5) ' Give UI time to show loading
         If currentView = "Catalogue" Then
             currentGenrePage -= 1
-            DisplayCataloguePage(currentGenrePage)
+            Await DisplayCataloguePage(currentGenrePage)
         ElseIf currentView = "GenreDetail" Then
             currentBookPage -= 1
-            DisplayBookPage(selectedGenre, currentBookPage)
+            Await DisplayBookPage(selectedGenre, currentBookPage)
         End If
+        SetupLoadingState(False)
     End Sub
 
 #End Region

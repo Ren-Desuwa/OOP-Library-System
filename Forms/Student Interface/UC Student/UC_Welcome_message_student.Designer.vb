@@ -65,9 +65,9 @@ Partial Class UC_Welcome_message_student
         '
         Me.Guna2PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.Guna2PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.Guna2PictureBox1.ErrorImage = Global.OOP_Library_System.My.Resources.Resources.Ucc_Logo_NoBG2
+        Me.Guna2PictureBox1.ErrorImage = Nothing
         Me.Guna2PictureBox1.FillColor = System.Drawing.Color.Transparent
-        Me.Guna2PictureBox1.Image = Global.OOP_Library_System.My.Resources.Resources.Ucc_Logo_NoBG2
+        Me.Guna2PictureBox1.Image = Global.OOP_Library_System.My.Resources.Resources.Ucc_Logo_NoBG_Big2
         Me.Guna2PictureBox1.ImageLocation = ""
         Me.Guna2PictureBox1.ImageRotate = 0!
         Me.Guna2PictureBox1.Location = New System.Drawing.Point(152, 24)

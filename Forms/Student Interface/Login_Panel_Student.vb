@@ -84,12 +84,4 @@
         img_show.Visible = True
         img_hide.Visible = False
     End Sub
-
-    Private Sub btn_createaccount_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub login_form_container_Paint(sender As Object, e As PaintEventArgs) Handles title_panel.Paint
-
-    End Sub
 End Class

@@ -27,8 +27,6 @@ Partial Class UC_Signup_student
         Me.txtBox_studentid = New Guna.UI2.WinForms.Guna2TextBox()
         Me.lbl_confirmpassword = New System.Windows.Forms.Label()
         Me.txtBox_confirmpassword = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.img_show = New Guna.UI2.WinForms.Guna2PictureBox()
-        Me.img_hide = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.lbl_titlesignup = New System.Windows.Forms.Label()
         Me.txtBox_password = New Guna.UI2.WinForms.Guna2TextBox()
         Me.txtBox_username = New Guna.UI2.WinForms.Guna2TextBox()
@@ -36,6 +34,8 @@ Partial Class UC_Signup_student
         Me.lbl_username = New System.Windows.Forms.Label()
         Me.btn_login = New Guna.UI2.WinForms.Guna2Button()
         Me.lbl_password = New System.Windows.Forms.Label()
+        Me.img_show = New Guna.UI2.WinForms.Guna2PictureBox()
+        Me.img_hide = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Panel_Step1.SuspendLayout()
         CType(Me.img_show, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.img_hide, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -142,34 +142,6 @@ Partial Class UC_Signup_student
         Me.txtBox_confirmpassword.SelectedText = ""
         Me.txtBox_confirmpassword.Size = New System.Drawing.Size(277, 57)
         Me.txtBox_confirmpassword.TabIndex = 17
-        '
-        'img_show
-        '
-        Me.img_show.BackColor = System.Drawing.Color.White
-        Me.img_show.FillColor = System.Drawing.Color.Transparent
-        'Me.img_show.Image = Global.OOP_Library_System.My.Resources.Resources.Show_icon1
-        Me.img_show.ImageRotate = 0!
-        Me.img_show.Location = New System.Drawing.Point(368, 297)
-        Me.img_show.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.img_show.Name = "img_show"
-        Me.img_show.Size = New System.Drawing.Size(24, 22)
-        Me.img_show.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.img_show.TabIndex = 16
-        Me.img_show.TabStop = False
-        '
-        'img_hide
-        '
-        Me.img_hide.BackColor = System.Drawing.Color.White
-        Me.img_hide.FillColor = System.Drawing.Color.Transparent
-        'Me.img_hide.Image = Global.OOP_Library_System.My.Resources.Resources.Hide_icon1
-        Me.img_hide.ImageRotate = 0!
-        Me.img_hide.Location = New System.Drawing.Point(368, 297)
-        Me.img_hide.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.img_hide.Name = "img_hide"
-        Me.img_hide.Size = New System.Drawing.Size(24, 22)
-        Me.img_hide.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.img_hide.TabIndex = 15
-        Me.img_hide.TabStop = False
         '
         'lbl_titlesignup
         '
@@ -290,6 +262,34 @@ Partial Class UC_Signup_student
         Me.lbl_password.Size = New System.Drawing.Size(83, 20)
         Me.lbl_password.TabIndex = 6
         Me.lbl_password.Text = "Password"
+        '
+        'img_show
+        '
+        Me.img_show.BackColor = System.Drawing.Color.White
+        Me.img_show.FillColor = System.Drawing.Color.Transparent
+        Me.img_show.Image = Global.OOP_Library_System.My.Resources.Resources.Show_icon1
+        Me.img_show.ImageRotate = 0!
+        Me.img_show.Location = New System.Drawing.Point(368, 297)
+        Me.img_show.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.img_show.Name = "img_show"
+        Me.img_show.Size = New System.Drawing.Size(24, 22)
+        Me.img_show.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.img_show.TabIndex = 16
+        Me.img_show.TabStop = False
+        '
+        'img_hide
+        '
+        Me.img_hide.BackColor = System.Drawing.Color.White
+        Me.img_hide.FillColor = System.Drawing.Color.Transparent
+        Me.img_hide.Image = Global.OOP_Library_System.My.Resources.Resources.Hide_icon1
+        Me.img_hide.ImageRotate = 0!
+        Me.img_hide.Location = New System.Drawing.Point(368, 297)
+        Me.img_hide.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.img_hide.Name = "img_hide"
+        Me.img_hide.Size = New System.Drawing.Size(24, 22)
+        Me.img_hide.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.img_hide.TabIndex = 15
+        Me.img_hide.TabStop = False
         '
         'UC_Signup_student
         '

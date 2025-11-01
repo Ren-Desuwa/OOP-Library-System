@@ -153,6 +153,16 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property Show_icon1() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Show_icon1", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property the_adventure() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("the_adventure", resourceCulture)
@@ -166,6 +176,26 @@ Namespace My.Resources
         Friend ReadOnly Property Ucc_Logo_NoBG() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Ucc_Logo_NoBG", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property Ucc_Logo_NoBG_Big1() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Ucc_Logo_NoBG_Big1", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property Ucc_Logo_NoBG_Big2() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Ucc_Logo_NoBG_Big2", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

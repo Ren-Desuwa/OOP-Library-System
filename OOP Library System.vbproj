@@ -238,6 +238,7 @@
     <Compile Include="Forms\Student Interface\Home_Panel_Students.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\Student Interface\ILoadingContainer.vb" />
     <Compile Include="Forms\Student Interface\Login_Panel_Student.Designer.vb">
       <DependentUpon>Login_Panel_Student.vb</DependentUpon>
     </Compile>
@@ -571,6 +572,9 @@
     <Content Include="Resources\Cart_icon.png" />
     <Content Include="Resources\Loading_Circle.gif" />
     <Content Include="Resources\Loading_Circle1.gif" />
+    <None Include="Resources\Ucc Logo NoBG Big1.png" />
+    <None Include="Resources\Ucc Logo NoBG Big2.png" />
+    <None Include="Resources\Show_icon1.png" />
     <Content Include="Resources\Untitled design.png" />
     <None Include="Classes\sample.md" />
     <Content Include="Resources\Accountwhite0_icon.png" />
@@ -580,10 +584,7 @@
     <Content Include="Resources\luffy.jpg" />
     <Content Include="Resources\pfp.jpg" />
     <Content Include="Resources\Show_icon.png" />
-    <Content Include="Resources\Show_icon1.png" />
     <Content Include="Resources\the_adventure.jpg" />
-    <Content Include="Resources\Ucc Logo NoBG Big1.png" />
-    <Content Include="Resources\Ucc Logo NoBG Big2.png" />
     <Content Include="Resources\Ucc Logo NoBG.png" />
     <Content Include="Resources\Ucc Logo NoBG1.png" />
     <Content Include="Resources\Ucc Logo NoBG2.png" />

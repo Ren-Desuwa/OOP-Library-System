@@ -36,6 +36,11 @@ Public Class UC_Signup2_student
         RaiseEvent BackClicked(Me, EventArgs.Empty)
     End Sub
 
+    Private Sub txtBox_contactInfo_TextChanged(sender As Object, e As EventArgs) Handles txtBox_contactInfo.TextChanged
+        ' As soon as the user starts typing, reset the error colors
+        SetContactInfoValid()
+    End Sub
+
     ' --- 2. All phone formatting logic removed (KeyPress, TextChanged, KeyDown) ---
     ' Validation is now handled by the service layer.
 
