@@ -66,6 +66,7 @@ Public Module Program
             ' AddHandler StudentPanel.LogoutClicked, AddressOf ShowGuestPanel ' Assumes StudentPanel raises 'LogoutClicked'
 
             ' 4. Start by showing the Guest Panel
+            Dim panel As New EditProfile()
             Application.Run(GuestPanel)
 
         Catch ex As Exception
