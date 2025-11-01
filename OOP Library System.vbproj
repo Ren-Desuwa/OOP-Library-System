@@ -178,6 +178,12 @@
     <Compile Include="Forms\Admin\Panel\EditBook.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\Admin\Panel\ForgotPass.Designer.vb">
+      <DependentUpon>ForgotPass.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\Panel\ForgotPass.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\Admin\Panel\Home_Panel_Admin_Librarian.Designer.vb">
       <DependentUpon>Home_Panel_Admin_Librarian.vb</DependentUpon>
     </Compile>
@@ -412,6 +418,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin\Panel\EditBook.resx">
       <DependentUpon>EditBook.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\Panel\ForgotPass.resx">
+      <DependentUpon>ForgotPass.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin\Panel\Home_Panel_Admin_Librarian.resx">
       <DependentUpon>Home_Panel_Admin_Librarian.vb</DependentUpon>
