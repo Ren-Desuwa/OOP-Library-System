@@ -67,7 +67,7 @@ Public Module Program
 
             ' 4. Start by showing the Guest Panel
             Dim panel As New EditProfile()
-            Application.Run(panel)
+            Application.Run(GuestPanel)
 
         Catch ex As Exception
             MessageBox.Show("Fatal Error: Could not initialize application UI." & vbCrLf & ex.Message,

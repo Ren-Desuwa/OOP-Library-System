@@ -190,6 +190,12 @@
     <Compile Include="Forms\Admin\Panel\Home_Panel_Admin_Librarian.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\Admin\Panel\LibrarianList.Designer.vb">
+      <DependentUpon>LibrarianList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\Panel\LibrarianList.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\Admin\Panel\LibrarianProfile.Designer.vb">
       <DependentUpon>LibrarianProfile.vb</DependentUpon>
     </Compile>
@@ -248,6 +254,18 @@
       <DependentUpon>TestWindow.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\Student Interface\TestWindow.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Student Interface\UC Student\BookPopup.Designer.vb">
+      <DependentUpon>BookPopup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Student Interface\UC Student\BookPopup.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Student Interface\UC Student\Book_PopUP.Designer.vb">
+      <DependentUpon>Book_PopUP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Student Interface\UC Student\Book_PopUP.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Student Interface\UC Student\UC_booklist_container.Designer.vb">
@@ -387,6 +405,10 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Program.vb" />
+    <Compile Include="ViewCart.Designer.vb">
+      <DependentUpon>ViewCart.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ViewCart.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="BeforeApproval.resx">
@@ -425,6 +447,9 @@
     <EmbeddedResource Include="Forms\Admin\Panel\Home_Panel_Admin_Librarian.resx">
       <DependentUpon>Home_Panel_Admin_Librarian.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\Panel\LibrarianList.resx">
+      <DependentUpon>LibrarianList.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin\Panel\LibrarianProfile.resx">
       <DependentUpon>LibrarianProfile.vb</DependentUpon>
     </EmbeddedResource>
@@ -454,6 +479,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Student Interface\TestWindow.resx">
       <DependentUpon>TestWindow.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Student Interface\UC Student\BookPopup.resx">
+      <DependentUpon>BookPopup.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Student Interface\UC Student\Book_PopUP.resx">
+      <DependentUpon>Book_PopUP.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Student Interface\UC Student\UC_booklist_container.resx">
       <DependentUpon>UC_booklist_container.vb</DependentUpon>
@@ -502,6 +533,9 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewCart.resx">
+      <DependentUpon>ViewCart.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
