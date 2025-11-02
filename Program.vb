@@ -10,6 +10,7 @@ Public Module Program
     Public ReadOnly OtpSvc As OtpService
     Public ReadOnly NotifSvc As NotificationService
     Public ReadOnly RegSvc As registrationService
+    Public ReadOnly CartSvc As New CartService()
     ' ... other services ...
 
     ' --- Static Constructor (Runs ONCE) ---
@@ -29,7 +30,7 @@ Public Module Program
         Catch ex As Exception
             ' If this fails, the app can't run
             MessageBox.Show("Fatal Error: Could not initialize services." & vbCrLf & ex.Message,
-                         "Application Startup Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                          "Application Startup Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End
         End Try
     End Sub
@@ -73,12 +74,13 @@ Public Module Program
             ' AddHandler StudentPanel.LogoutClicked, AddressOf ShowGuestPanel
 
             ' 4. Start by showing the Guest Panel
-            Dim panel As New EditProfile()
+            ' --- EDITED THIS LINE ---
+            ' Dim panel As New EditProfile() ' (This line seemed to be for testing, I've commented it out)
             Application.Run(GuestPanel)
 
         Catch ex As Exception
             MessageBox.Show("Fatal Error: Could not initialize application UI." & vbCrLf & ex.Message,
-                         "Application Startup Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                          "Application Startup Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End
         End Try
         ' --- END OF MOVED CODE ---
@@ -174,6 +176,11 @@ Public Module Program
         Try
             ' 2. Show the StudentPanel (triggers "Shown")
             StudentPanel.Show()
+
+            ' --- NEW LINE ADDED ---
+            ' Use the method we created to set the student's name on the panel
+            StudentPanel.SetStudentName(currentAccount.Name)
+            ' --- END OF NEW LINE ---
 
             ' 3. Home_Panel_Students ALREADY has an async loading method!
             ' We will wait for its *internal* loading to finish.

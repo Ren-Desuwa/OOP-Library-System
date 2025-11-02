@@ -22,6 +22,7 @@ Partial Class BeforeApproval
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.lblBookNames = New System.Windows.Forms.Label()
         Me.lblDate = New System.Windows.Forms.Label()
         Me.lblTime = New System.Windows.Forms.Label()
@@ -32,15 +33,17 @@ Partial Class BeforeApproval
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.Guna2Elipse1 = New Guna.UI2.WinForms.Guna2Elipse(Me.components)
         Me.SuspendLayout()
         '
         'lblBookNames
         '
         Me.lblBookNames.AutoSize = True
         Me.lblBookNames.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblBookNames.Location = New System.Drawing.Point(156, 31)
+        Me.lblBookNames.Location = New System.Drawing.Point(219, 38)
+        Me.lblBookNames.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblBookNames.Name = "lblBookNames"
-        Me.lblBookNames.Size = New System.Drawing.Size(104, 20)
+        Me.lblBookNames.Size = New System.Drawing.Size(130, 25)
         Me.lblBookNames.TabIndex = 0
         Me.lblBookNames.Text = "Book Names:"
         '
@@ -48,9 +51,10 @@ Partial Class BeforeApproval
         '
         Me.lblDate.AutoSize = True
         Me.lblDate.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDate.Location = New System.Drawing.Point(156, 64)
+        Me.lblDate.Location = New System.Drawing.Point(219, 79)
+        Me.lblDate.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblDate.Name = "lblDate"
-        Me.lblDate.Size = New System.Drawing.Size(124, 20)
+        Me.lblDate.Size = New System.Drawing.Size(152, 25)
         Me.lblDate.TabIndex = 1
         Me.lblDate.Text = "Date Borrowed: "
         '
@@ -58,9 +62,10 @@ Partial Class BeforeApproval
         '
         Me.lblTime.AutoSize = True
         Me.lblTime.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTime.Location = New System.Drawing.Point(156, 99)
+        Me.lblTime.Location = New System.Drawing.Point(219, 122)
+        Me.lblTime.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblTime.Name = "lblTime"
-        Me.lblTime.Size = New System.Drawing.Size(51, 20)
+        Me.lblTime.Size = New System.Drawing.Size(67, 25)
         Me.lblTime.TabIndex = 2
         Me.lblTime.Text = "Time: "
         '
@@ -68,9 +73,10 @@ Partial Class BeforeApproval
         '
         Me.lblUsername.AutoSize = True
         Me.lblUsername.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblUsername.Location = New System.Drawing.Point(156, 131)
+        Me.lblUsername.Location = New System.Drawing.Point(219, 161)
+        Me.lblUsername.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblUsername.Name = "lblUsername"
-        Me.lblUsername.Size = New System.Drawing.Size(91, 20)
+        Me.lblUsername.Size = New System.Drawing.Size(113, 25)
         Me.lblUsername.TabIndex = 3
         Me.lblUsername.Text = "Username: "
         '
@@ -78,9 +84,10 @@ Partial Class BeforeApproval
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(75, 328)
+        Me.Label5.Location = New System.Drawing.Point(91, 392)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(206, 40)
+        Me.Label5.Size = New System.Drawing.Size(254, 50)
         Me.Label5.TabIndex = 4
         Me.Label5.Text = """Please proceed to librarian " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "coutner for approval"""
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -95,9 +102,10 @@ Partial Class BeforeApproval
         Me.Guna2Button1.FillColor = System.Drawing.Color.White
         Me.Guna2Button1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2Button1.ForeColor = System.Drawing.Color.Black
-        Me.Guna2Button1.Location = New System.Drawing.Point(112, 389)
+        Me.Guna2Button1.Location = New System.Drawing.Point(140, 467)
+        Me.Guna2Button1.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2Button1.Name = "Guna2Button1"
-        Me.Guna2Button1.Size = New System.Drawing.Size(121, 30)
+        Me.Guna2Button1.Size = New System.Drawing.Size(161, 37)
         Me.Guna2Button1.TabIndex = 5
         Me.Guna2Button1.Text = "Confirm"
         '
@@ -105,9 +113,10 @@ Partial Class BeforeApproval
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(59, 131)
+        Me.Label1.Location = New System.Drawing.Point(90, 161)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(91, 20)
+        Me.Label1.Size = New System.Drawing.Size(113, 25)
         Me.Label1.TabIndex = 6
         Me.Label1.Text = "Username: "
         '
@@ -115,9 +124,10 @@ Partial Class BeforeApproval
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(99, 99)
+        Me.Label2.Location = New System.Drawing.Point(143, 122)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(51, 20)
+        Me.Label2.Size = New System.Drawing.Size(67, 25)
         Me.Label2.TabIndex = 7
         Me.Label2.Text = "Time: "
         '
@@ -125,9 +135,10 @@ Partial Class BeforeApproval
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(26, 64)
+        Me.Label3.Location = New System.Drawing.Point(46, 79)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(124, 20)
+        Me.Label3.Size = New System.Drawing.Size(152, 25)
         Me.Label3.TabIndex = 8
         Me.Label3.Text = "Date Borrowed: "
         '
@@ -135,17 +146,23 @@ Partial Class BeforeApproval
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(46, 31)
+        Me.Label4.Location = New System.Drawing.Point(72, 38)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(104, 20)
+        Me.Label4.Size = New System.Drawing.Size(130, 25)
         Me.Label4.TabIndex = 9
         Me.Label4.Text = "Book Names:"
         '
+        'Guna2Elipse1
+        '
+        Me.Guna2Elipse1.BorderRadius = 30
+        Me.Guna2Elipse1.TargetControl = Me
+        '
         'BeforeApproval
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(364, 431)
+        Me.ClientSize = New System.Drawing.Size(439, 530)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
@@ -156,7 +173,8 @@ Partial Class BeforeApproval
         Me.Controls.Add(Me.lblTime)
         Me.Controls.Add(Me.lblDate)
         Me.Controls.Add(Me.lblBookNames)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "BeforeApproval"
@@ -178,4 +196,5 @@ Partial Class BeforeApproval
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
+    Friend WithEvents Guna2Elipse1 As Guna.UI2.WinForms.Guna2Elipse
 End Class

@@ -82,8 +82,7 @@ Partial Class Book_PopUP
         '
         'btn_AddtoCart
         '
-        Me.btn_AddtoCart.AutoRoundedCorners = True
-        Me.btn_AddtoCart.BorderRadius = 25
+        Me.btn_AddtoCart.BorderRadius = 20
         Me.btn_AddtoCart.DisabledState.BorderColor = System.Drawing.Color.DarkGray
         Me.btn_AddtoCart.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
         Me.btn_AddtoCart.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
@@ -99,8 +98,7 @@ Partial Class Book_PopUP
         '
         'btn_Borrow
         '
-        Me.btn_Borrow.AutoRoundedCorners = True
-        Me.btn_Borrow.BorderRadius = 25
+        Me.btn_Borrow.BorderRadius = 20
         Me.btn_Borrow.DisabledState.BorderColor = System.Drawing.Color.DarkGray
         Me.btn_Borrow.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
         Me.btn_Borrow.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))

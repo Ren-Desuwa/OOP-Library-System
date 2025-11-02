@@ -18,12 +18,16 @@ Public Class UC_HPS_catalouge_tab
 
     ' --- Pagination Settings ---
     Private Const GENRES_PER_PAGE As Integer = 5
-    Private Const BOOKS_PER_PAGE As Integer = 15 ' 3 rows of 5
+    Private Const BOOKS_PER_PAGE As Integer = 20 ' 3 rows of 5
 
     ' --- Layout Settings ---
     Private Const BOOKS_PER_ROW As Integer = 5      ' For grid view (See All / Search)
-    Private Const BOOK_GRID_SPACING As Integer = 5  ' Padding on ALL sides in grid view
-    Private Const BOOK_PREVIEW_SPACING As Integer = 10 ' Padding on ALL sides in catalogue preview
+    Private Const BOOK_GRID_SPACING As Integer = 5  ' <<< SET TO 5 (for See All / Search)
+    Private Const BOOK_PREVIEW_SPACING As Integer = 10 ' <<< SET TO 10 (for Catalogue Preview)
+
+    ' --- NEW: Adjustable spacing for the vertical genre rows ---
+    Private Const GENRE_ROW_VERTICAL_SPACING As Integer = 15 ' (e.g., 5px top, 5px bottom)
+
     Private Const MIN_BOOK_CARD_WIDTH As Integer = 120 ' <<<--- NEW: Set this to your UC_book_container's MinimumSize.Width
 
     ' --- State Management ---
@@ -56,6 +60,7 @@ Public Class UC_HPS_catalouge_tab
         ' Start the async load and IMMEDIATELY save the Task
         _initialLoadTask = LoadDataAsync(parentForm, showLoading)
     End Sub
+
     ''' <summary>
     ''' A new public method that allows the parent form to "wait"
     ''' for the initial load to be 100% complete.
@@ -66,6 +71,7 @@ Public Class UC_HPS_catalouge_tab
             Await _initialLoadTask
         End If
     End Function
+
     ' Note: We accept and pass the parentForm
     Private Async Function LoadDataAsync(ByVal parentForm As ILoadingContainer, ByVal showLoading As Boolean) As Task
         ' Give the UI thread a tiny break
@@ -74,10 +80,10 @@ Public Class UC_HPS_catalouge_tab
         Try
             ' --- 1. DO THE SLOW WORK ON A BACKGROUND THREAD ---
             Await Task.Run(Sub()
-                ' These functions are slow but don't touch the UI.
-                LoadAllBooks()
-                PopulateUniqueGenreList()
-            End Sub)
+                               ' These functions are slow but don't touch the UI.
+                               LoadAllBooks()
+                               PopulateUniqueGenreList()
+                           End Sub)
 
             ' --- 2. WE ARE NOW BACK ON THE UI THREAD ---
             Await PopulateGenreButtons()
@@ -173,28 +179,28 @@ Public Class UC_HPS_catalouge_tab
 
         ' --- Run the heavy work (creating buttons) on a BACKGROUND THREAD ---
         Dim buttons As List(Of Control) = Await Task.Run(Function()
-            Dim tempList As New List(Of Control)
+        Dim tempList As New List(Of Control)
 
-            ' Add "Show All" button
-            Dim allButton = New UC_btn_genre()
-            allButton.GenreText = "Show All"
-            Dim leftMargin = CInt((genre_panel.ClientSize.Width - allButton.Width) / 2)
-            allButton.Margin = New Padding(If(leftMargin > 0, leftMargin, 0), 3, 3, 3)
-            AddHandler allButton.GenreClicked, AddressOf ShowAllBooks_Clicked
-            tempList.Add(allButton)
+        ' Add "Show All" button
+        Dim allButton = New UC_btn_genre()
+        allButton.GenreText = "Show All"
+        Dim leftMargin = CInt((genre_panel.ClientSize.Width - allButton.Width) / 2)
+        allButton.Margin = New Padding(If(leftMargin > 0, leftMargin, 0), 3, 3, 3)
+        AddHandler allButton.GenreClicked, AddressOf ShowAllBooks_Clicked
+        tempList.Add(allButton)
 
-            ' Add a button for each unique genre
-            For Each genreName As String In uniqueGenres
-                Dim genreButton = New UC_btn_genre()
-                genreButton.GenreText = genreName
-                leftMargin = CInt((genre_panel.ClientSize.Width - genreButton.Width) / 2)
-                genreButton.Margin = New Padding(If(leftMargin > 0, leftMargin, 0), 3, 3, 3)
-                AddHandler genreButton.GenreClicked, AddressOf GenreButton_Clicked
-                tempList.Add(genreButton)
-            Next
+        ' Add a button for each unique genre
+        For Each genreName As String In uniqueGenres
+            Dim genreButton = New UC_btn_genre()
+            genreButton.GenreText = genreName
+            leftMargin = CInt((genre_panel.ClientSize.Width - genreButton.Width) / 2)
+            genreButton.Margin = New Padding(If(leftMargin > 0, leftMargin, 0), 3, 3, 3)
+            AddHandler genreButton.GenreClicked, AddressOf GenreButton_Clicked
+            tempList.Add(genreButton)
+        Next
 
-            Return tempList
-        End Function)
+        Return tempList
+    End Function)
         ' --- We are now back on the UI thread ---
 
         ' Add all buttons at once (this is the only part that will freeze)
@@ -222,7 +228,7 @@ Public Class UC_HPS_catalouge_tab
         genre_panel.Visible = True
         flow_genre_panel.Visible = True
 
-        flow_main_book_panel.FlowDirection = FlowDirection.TopDown ' Vertical list
+        flow_main_book_panel.FlowDirection = FlowDirection.TopDown
         flow_main_book_panel.WrapContents = False ' Force vertical stacking
         flow_main_book_panel.AutoScroll = False ' Ensure vertical scrolling is on
         flow_main_book_panel.AutoScroll = True
@@ -247,6 +253,16 @@ Public Class UC_HPS_catalouge_tab
             Dim bookList = New UC_booklist_container()
             bookList.GenreTitle = genreName
             bookList.Width = flow_main_book_panel.ClientSize.Width - SystemInformation.VerticalScrollBarWidth - 5
+
+            ' --- 
+            ' --- MODIFICATION: Add vertical margin between genre rows ---
+            ' ---
+            ' Use integer division "\" instead of floating-point division "/"
+            bookList.Margin = New Padding(0, (GENRE_ROW_VERTICAL_SPACING \ 2), 0, (GENRE_ROW_VERTICAL_SPACING \ 2))
+            ' ---
+            ' --- END OF MODIFICATION ---
+            ' --- 
+
             AddHandler bookList.SeeAllClicked, AddressOf SeeAll_Clicked
 
             ' 7. Get all books for this genre

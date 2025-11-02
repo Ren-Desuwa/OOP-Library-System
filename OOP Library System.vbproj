@@ -86,16 +86,17 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BeforeApproval.Designer.vb">
+    <Compile Include="Classes\Services\CartServices.vb" />
+    <Compile Include="Forms\Student Interface\UC Student\BeforeApproval.Designer.vb">
       <DependentUpon>BeforeApproval.vb</DependentUpon>
     </Compile>
-    <Compile Include="BeforeApproval.vb">
+    <Compile Include="Forms\Student Interface\UC Student\BeforeApproval.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BookCart.Designer.vb">
+    <Compile Include="Forms\Student Interface\UC Student\BookCart.Designer.vb">
       <DependentUpon>BookCart.vb</DependentUpon>
     </Compile>
-    <Compile Include="BookCart.vb">
+    <Compile Include="Forms\Student Interface\UC Student\BookCart.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="BorrowedBooks.Designer.vb">
@@ -406,18 +407,18 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Program.vb" />
-    <Compile Include="ViewCart.Designer.vb">
+    <Compile Include="Forms\Student Interface\UC Student\ViewCart.Designer.vb">
       <DependentUpon>ViewCart.vb</DependentUpon>
     </Compile>
-    <Compile Include="ViewCart.vb">
+    <Compile Include="Forms\Student Interface\UC Student\ViewCart.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="BeforeApproval.resx">
+    <EmbeddedResource Include="Forms\Student Interface\UC Student\BeforeApproval.resx">
       <DependentUpon>BeforeApproval.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BookCart.resx">
+    <EmbeddedResource Include="Forms\Student Interface\UC Student\BookCart.resx">
       <DependentUpon>BookCart.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BorrowedBooks.resx">
@@ -537,7 +538,7 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="ViewCart.resx">
+    <EmbeddedResource Include="Forms\Student Interface\UC Student\ViewCart.resx">
       <DependentUpon>ViewCart.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>

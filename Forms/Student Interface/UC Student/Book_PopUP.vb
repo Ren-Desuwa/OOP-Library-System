@@ -7,7 +7,8 @@ Public Class Book_PopUP
     Private _book As Book
 
     ''' <summary>
-    ''' This is the new constructor. It accepts a Book object AND a flag for guest mode.
+    ''' This is the new constructor.
+    ''' It accepts a Book object AND a flag for guest mode.
     ''' </summary>
     Public Sub New(ByVal book As Book, ByVal isGuest As Boolean)
         ' This call is required by the designer.
@@ -95,11 +96,12 @@ Public Class Book_PopUP
     ''' 4. Handles the "Add to Cart" button click.
     ''' </summary>
     Private Sub btn_AddtoCart_Click(sender As Object, e As EventArgs) Handles btn_AddtoCart.Click
-        ' TODO: Add your cart logic here
-        ' MessageBox.Show("Add to Cart logic for '" & _book.Title & "' goes here.")
+        ' --- ADDED THIS LINE ---
+        ' Add the book (stored in Me._book) to the central cart service
+        Program.CartSvc.AddToCart(Me._book)
+        ' --- END OF ADDITION ---
 
         messagedialogAdded.Show("Successfully Added to Cart.", "Success")
-        ' Example: Program.CartSvc.AddToCart(currentUser.ID, _book.BookID)
     End Sub
 
     ''' <summary>

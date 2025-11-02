@@ -30,16 +30,22 @@ Partial Class UC_btn_genre
         'btn_genre
         '
         Me.btn_genre.BackColor = System.Drawing.Color.Transparent
-        Me.btn_genre.BorderColor = System.Drawing.Color.Gray
+        Me.btn_genre.BorderColor = System.Drawing.Color.FromArgb(CType(CType(122, Byte), Integer), CType(CType(107, Byte), Integer), CType(CType(84, Byte), Integer))
         Me.btn_genre.BorderRadius = 10
         Me.btn_genre.BorderThickness = 1
+        Me.btn_genre.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(42, Byte), Integer))
+        Me.btn_genre.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(42, Byte), Integer))
+        Me.btn_genre.CheckedState.ForeColor = System.Drawing.Color.White
         Me.btn_genre.DisabledState.BorderColor = System.Drawing.Color.DarkGray
         Me.btn_genre.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
         Me.btn_genre.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btn_genre.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btn_genre.FillColor = System.Drawing.Color.PeachPuff
+        Me.btn_genre.FillColor = System.Drawing.Color.Transparent
         Me.btn_genre.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        Me.btn_genre.ForeColor = System.Drawing.Color.Black
+        Me.btn_genre.ForeColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(42, Byte), Integer))
+        Me.btn_genre.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(122, Byte), Integer), CType(CType(107, Byte), Integer), CType(CType(84, Byte), Integer))
+        Me.btn_genre.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(201, Byte), Integer), CType(CType(166, Byte), Integer))
+        Me.btn_genre.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(42, Byte), Integer))
         Me.btn_genre.Location = New System.Drawing.Point(0, 0)
         Me.btn_genre.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn_genre.Name = "btn_genre"

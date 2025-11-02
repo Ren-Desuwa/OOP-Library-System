@@ -101,10 +101,31 @@ Partial Public Class Home_Panel_Students
     End Sub
 
     Private Sub btn_cart_Click(sender As Object, e As EventArgs) Handles btn_cart.Click
+        ' --- ADDED THIS ---
+        ' Create and show the ViewCart form
+        Dim cartForm As New ViewCart()
 
+        ' Set the username from the main panel to the cart
+        cartForm.SetUsername(Me.lbl_user.Text)
+
+        cartForm.ShowDialog() ' Use ShowDialog to "pause" this form
+        ' --- END OF ADDITION ---
     End Sub
 
     Private Sub btn_profile_Click(sender As Object, e As EventArgs) Handles btn_profile.Click
 
     End Sub
+
+    ' --- ADDED THIS PUBLIC METHOD ---
+    ''' <summary>
+    ''' Public method to set the student's name on the panel.
+    ''' </summary>
+    Public Sub SetStudentName(name As String)
+        If String.IsNullOrWhiteSpace(name) Then
+            lbl_user.Text = "Student"
+        Else
+            lbl_user.Text = name
+        End If
+    End Sub
+    ' --- END OF ADDITION ---
 End Class
