@@ -32,17 +32,17 @@ Partial Class Home_Panel_Students
         Me.btn_cart = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Guna2Elipse1 = New Guna.UI2.WinForms.Guna2Elipse(Me.components)
         Me.tab_container_panel = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
-        Me.UC_Loading_Panel1 = New OOP_Library_System.UC_Loading_Panel()
-        Me.UC_HPS_penalty_tab1 = New OOP_Library_System.UC_HPS_penalty_tab()
-        Me.UC_HPS_borrowed_books_tab1 = New OOP_Library_System.UC_HPS_borrowed_books_tab()
-        Me.UC_HPS_home_tab1 = New OOP_Library_System.UC_HPS_home_tab()
-        Me.UC_HPS_catalouge_tab1 = New OOP_Library_System.UC_HPS_catalouge_tab()
         Me.Guna2CustomGradientPanel1 = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
         Me.btn_Home_tab = New Guna.UI2.WinForms.Guna2Button()
         Me.btn_Catalouge_tab = New Guna.UI2.WinForms.Guna2Button()
         Me.btn_Borrowed_Books_tab = New Guna.UI2.WinForms.Guna2Button()
         Me.btn_Penalty_tab = New Guna.UI2.WinForms.Guna2Button()
         Me.color_holder_panel = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
+        Me.UC_Loading_Panel1 = New OOP_Library_System.UC_Loading_Panel()
+        Me.UC_HPS_penalty_tab1 = New OOP_Library_System.UC_HPS_penalty_tab()
+        Me.UC_HPS_borrowed_books_tab1 = New OOP_Library_System.UC_HPS_borrowed_books_tab()
+        Me.UC_HPS_home_tab1 = New OOP_Library_System.UC_HPS_home_tab()
+        Me.UC_HPS_catalouge_tab1 = New OOP_Library_System.UC_HPS_catalouge_tab()
         Me.title_panel.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -211,55 +211,6 @@ Partial Class Home_Panel_Students
         Me.tab_container_panel.Size = New System.Drawing.Size(920, 541)
         Me.tab_container_panel.TabIndex = 9
         '
-        'UC_Loading_Panel1
-        '
-        Me.UC_Loading_Panel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.UC_Loading_Panel1.Location = New System.Drawing.Point(0, 64)
-        Me.UC_Loading_Panel1.Name = "UC_Loading_Panel1"
-        Me.UC_Loading_Panel1.Size = New System.Drawing.Size(918, 538)
-        Me.UC_Loading_Panel1.TabIndex = 16
-        '
-        'UC_HPS_penalty_tab1
-        '
-        Me.UC_HPS_penalty_tab1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.UC_HPS_penalty_tab1.Location = New System.Drawing.Point(0, 48)
-        Me.UC_HPS_penalty_tab1.Name = "UC_HPS_penalty_tab1"
-        Me.UC_HPS_penalty_tab1.Size = New System.Drawing.Size(918, 489)
-        Me.UC_HPS_penalty_tab1.TabIndex = 11
-        '
-        'UC_HPS_borrowed_books_tab1
-        '
-        Me.UC_HPS_borrowed_books_tab1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.UC_HPS_borrowed_books_tab1.Location = New System.Drawing.Point(0, 48)
-        Me.UC_HPS_borrowed_books_tab1.Name = "UC_HPS_borrowed_books_tab1"
-        Me.UC_HPS_borrowed_books_tab1.Size = New System.Drawing.Size(918, 489)
-        Me.UC_HPS_borrowed_books_tab1.TabIndex = 10
-        '
-        'UC_HPS_home_tab1
-        '
-        Me.UC_HPS_home_tab1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.UC_HPS_home_tab1.Location = New System.Drawing.Point(0, 48)
-        Me.UC_HPS_home_tab1.Name = "UC_HPS_home_tab1"
-        Me.UC_HPS_home_tab1.Size = New System.Drawing.Size(918, 489)
-        Me.UC_HPS_home_tab1.TabIndex = 9
-        '
-        'UC_HPS_catalouge_tab1
-        '
-        Me.UC_HPS_catalouge_tab1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.UC_HPS_catalouge_tab1.BackColor = System.Drawing.Color.FloralWhite
-        Me.UC_HPS_catalouge_tab1.Location = New System.Drawing.Point(0, 48)
-        Me.UC_HPS_catalouge_tab1.Name = "UC_HPS_catalouge_tab1"
-        Me.UC_HPS_catalouge_tab1.Size = New System.Drawing.Size(920, 488)
-        Me.UC_HPS_catalouge_tab1.TabIndex = 8
-        '
         'Guna2CustomGradientPanel1
         '
         Me.Guna2CustomGradientPanel1.BackColor = System.Drawing.Color.Transparent
@@ -363,6 +314,56 @@ Partial Class Home_Panel_Students
         Me.color_holder_panel.Name = "color_holder_panel"
         Me.color_holder_panel.Size = New System.Drawing.Size(272, 541)
         Me.color_holder_panel.TabIndex = 10
+        '
+        'UC_Loading_Panel1
+        '
+        Me.UC_Loading_Panel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.UC_Loading_Panel1.Location = New System.Drawing.Point(0, 64)
+        Me.UC_Loading_Panel1.Name = "UC_Loading_Panel1"
+        Me.UC_Loading_Panel1.Size = New System.Drawing.Size(918, 538)
+        Me.UC_Loading_Panel1.TabIndex = 16
+        '
+        'UC_HPS_penalty_tab1
+        '
+        Me.UC_HPS_penalty_tab1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.UC_HPS_penalty_tab1.Location = New System.Drawing.Point(0, 48)
+        Me.UC_HPS_penalty_tab1.Name = "UC_HPS_penalty_tab1"
+        Me.UC_HPS_penalty_tab1.Size = New System.Drawing.Size(918, 489)
+        Me.UC_HPS_penalty_tab1.TabIndex = 11
+        '
+        'UC_HPS_borrowed_books_tab1
+        '
+        Me.UC_HPS_borrowed_books_tab1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.UC_HPS_borrowed_books_tab1.Location = New System.Drawing.Point(0, 48)
+        Me.UC_HPS_borrowed_books_tab1.Name = "UC_HPS_borrowed_books_tab1"
+        Me.UC_HPS_borrowed_books_tab1.Size = New System.Drawing.Size(918, 489)
+        Me.UC_HPS_borrowed_books_tab1.TabIndex = 10
+        '
+        'UC_HPS_home_tab1
+        '
+        Me.UC_HPS_home_tab1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.UC_HPS_home_tab1.Location = New System.Drawing.Point(0, 48)
+        Me.UC_HPS_home_tab1.Name = "UC_HPS_home_tab1"
+        Me.UC_HPS_home_tab1.Size = New System.Drawing.Size(918, 489)
+        Me.UC_HPS_home_tab1.TabIndex = 9
+        '
+        'UC_HPS_catalouge_tab1
+        '
+        Me.UC_HPS_catalouge_tab1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.UC_HPS_catalouge_tab1.BackColor = System.Drawing.Color.FloralWhite
+        Me.UC_HPS_catalouge_tab1.IsGuestMode = False
+        Me.UC_HPS_catalouge_tab1.Location = New System.Drawing.Point(0, 48)
+        Me.UC_HPS_catalouge_tab1.Name = "UC_HPS_catalouge_tab1"
+        Me.UC_HPS_catalouge_tab1.Size = New System.Drawing.Size(920, 488)
+        Me.UC_HPS_catalouge_tab1.TabIndex = 8
         '
         'Home_Panel_Students
         '

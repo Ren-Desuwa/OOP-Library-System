@@ -1,5 +1,6 @@
-﻿Public Class Login_Panel_Student
-
+﻿Imports System.Threading.Tasks
+Imports System.Windows.Forms
+Public Class Login_Panel_Student
     ' This event runs when the form first loads
     ' (NAME CORRECTED)
     Private Sub Login_Panel_Student__Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -9,53 +10,63 @@
         img_hide.Visible = False
 
     End Sub
+    ' --- 1. SIGNALS this form can send ---
+    Public Event RegisterClicked As EventHandler
+    Public Event LoginSuccess As EventHandler(Of Account) ' Sends the logged-in account
 
-    ' REQUIREMENT: Login logic and confirmation
+    ' --- 2. For Asynchronous Loading ---
+    Private _loadingTcs As TaskCompletionSource(Of Boolean)
+
+    ' --- 3. NEW: This event runs every time the form is SHOWN ---
+    ' We use this to signal when loading is "done"
+    Private Async Sub Login_Panel_Student_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
+        ' Re-create the "signal" each time the form is shown
+        _loadingTcs = New TaskCompletionSource(Of Boolean)()
+
+        ' --- Simulate loading ---
+        ' (Your form is fast, so we add a tiny delay
+        ' to ensure the async pattern works)
+        Await Task.Delay(50)
+        ' --- End simulation ---
+
+        ' Signal that loading is complete!
+        _loadingTcs.SetResult(True)
+    End Sub
+    ' --- 4. NEW: Public function for Program.vb to "wait" on ---
+    Public Function AwaitLoadingAsync() As Task
+        ' If the signal hasn't been created yet, return a completed task
+        If _loadingTcs Is Nothing Then
+            Return Task.CompletedTask
+        End If
+        Return _loadingTcs.Task
+    End Function
+
+    ' --- 5. MODIFIED: Login button now raises an event ---
     Private Sub btn_login_Click(sender As Object, e As EventArgs) Handles btn_login.Click
         CheckLogin()
     End Sub
 
-    ' This is the method for your account
+    ' --- 6. MODIFIED: CheckLogin raises an event on success ---
     Private Sub CheckLogin()
-        ' Get input from textboxes
         Dim inputUserOrID As String = txtBox_username.Text
         Dim inputPassword As String = txtBox_password.Text
+        Dim loggedInUsername As String = ""
 
-        ' (userRole variable removed)
-        Dim loggedInUsername As String = "" ' To store the username
-
-        ' --- Mockup Database Check (CHANGED) ---
-
-        ' Account 1: Student
         Dim loginAccount As Account = Program.AuthSvc.Login(inputUserOrID, inputPassword)
+
         If Not loginAccount Is Nothing Then
-            Dim StudentHomePanel As New Home_Panel_Students()
-            Me.Hide()
-            StudentHomePanel.ShowDialog()
-            Me.Show()
-            Return
+            ' --- SUCCESS: Raise the event and send the account ---
+            RaiseEvent LoginSuccess(Me, loginAccount)
+        Else
+            ' Requirement 4: Failed login
+            MessageBox.Show("Invalid Username, ID, or Password")
         End If
-        ' Requirement 4: Failed login
-        MessageBox.Show("Invalid Username, ID, or Password")
     End Sub
 
-    ' --- Other Events ---
-
-    ' (NAME CORRECTED)
+    ' --- 7. MODIFIED: Register button now raises an event ---
     Private Sub btn_register_Click(sender As Object, e As EventArgs) Handles btn_register.Click
-        ' 1. Create a new instance of your signup form
-        Dim signupForm As New Signup_Panel_Student()
-
-        ' 2. Hide the current login form
-        Me.Hide()
-
-        ' 3. Show the signup form as a dialog.
-        ' This pauses the code here until the signup form is closed.
-        signupForm.ShowDialog()
-
-        ' 4. After the signup form is closed (e.g., they click
-        ' "Back to Login" ), show the login form again.
-        Me.Show()
+        ' --- Raise the signal for Program.vb to handle ---
+        RaiseEvent RegisterClicked(Me, EventArgs.Empty)
     End Sub
 
     ' (NO CHANGES - Kept as requested)

@@ -99,4 +99,12 @@ Partial Public Class Home_Panel_Students
             UC_Loading_Panel1.Visible = False
         End If
     End Sub
+
+    Private Sub btn_cart_Click(sender As Object, e As EventArgs) Handles btn_cart.Click
+
+    End Sub
+
+    Private Sub btn_profile_Click(sender As Object, e As EventArgs) Handles btn_profile.Click
+
+    End Sub
 End Class

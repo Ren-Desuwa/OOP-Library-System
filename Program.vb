@@ -1,4 +1,5 @@
 ﻿Imports System.Windows.Forms
+Imports System.Threading.Tasks
 
 Public Module Program
 
@@ -58,12 +59,18 @@ Public Module Program
             SignupPanel = New Signup_Panel_Student()
             StudentPanel = New Home_Panel_Students() ' Assumes Home_Panel_Students exists
 
-            ' 3. Wire up event handlers for navigation
+            ' --- 3. MODIFIED: Wire up all event handlers ---
             AddHandler GuestPanel.OpenLogin, AddressOf ShowLoginPanel
-            'AddHandler LoginPanel.RegisterClicked, AddressOf ShowSignupPanel ' Assumes LoginPanel raises 'RegisterClicked'
-            'AddHandler SignupPanel.LoginClicked, AddressOf ShowLoginPanelFromSignup ' Handles "Back to Login"
-            'AddHandler LoginPanel.LoginSuccess, AddressOf ShowStudentPanel ' Assumes LoginPanel raises 'LoginSuccess' with Account info
-            ' AddHandler StudentPanel.LogoutClicked, AddressOf ShowGuestPanel ' Assumes StudentPanel raises 'LogoutClicked'
+
+            ' Connect to the new events from LoginPanel
+            AddHandler LoginPanel.RegisterClicked, AddressOf ShowSignupPanel
+            AddHandler LoginPanel.LoginSuccess, AddressOf ShowStudentPanel
+
+            ' We now listen for our custom "Back" event
+            AddHandler SignupPanel.BackToLoginClicked, AddressOf ShowLoginPanelFromSignup
+
+            ' Connect to the (assumed) Logout button from StudentPanel
+            ' AddHandler StudentPanel.LogoutClicked, AddressOf ShowGuestPanel
 
             ' 4. Start by showing the Guest Panel
             Dim panel As New EditProfile()
@@ -78,49 +85,141 @@ Public Module Program
 
     End Sub
 
-    ' --- Navigation Subroutines (These are all correct) ---
+    ' --- 4. MODIFIED: All Navigation Subroutines are now Async ---
 
-    Private Sub ShowLoginPanel(sender As Object, e As EventArgs)
-        GuestPanel.Hide()
-        LoginPanel.Show() ' Use Show() instead of ShowDialog() for main navigation
+    ' This is the one you specifically asked for!
+    Private Async Sub ShowLoginPanel(sender As Object, e As EventArgs)
+        ' Get the form that is currently open
+        Dim guestForm = CType(sender, Home_Panel_Guest)
+
+        ' 1. Show the loading panel on the CURRENT form
+        guestForm.ToggleLoading(True, "Loading...")
+
+        Try
+            ' 2. Show the LoginPanel (it's invisible, but this triggers its "Shown" event)
+            LoginPanel.Show()
+
+            ' 3. PAUSE here and wait for LoginPanel to signal it's done
+            Await LoginPanel.AwaitLoadingAsync()
+
+            ' 4. --- Loading is Complete ---
+            ' Hide the old GuestPanel
+            guestForm.Hide()
+
+            ' 5. Bring the fully loaded LoginPanel to the front
+            LoginPanel.BringToFront()
+
+        Catch ex As Exception
+            MessageBox.Show("Error loading login panel: " & ex.Message)
+            LoginPanel.Hide() ' Hide the broken panel
+            guestForm.Show() ' Show the guest panel again
+        Finally
+            ' 6. ALWAYS hide the loading panel
+            guestForm.ToggleLoading(False)
+        End Try
     End Sub
 
     ' From Login Panel "Register" Button -> Signup Panel
-    Private Sub ShowSignupPanel(sender As Object, e As EventArgs)
+    Private Async Sub ShowSignupPanel(sender As Object, e As EventArgs)
+        ' 1. Show the loading panel on the CURRENT form (LoginPanel)
+        ' NOTE: LoginPanel does not have a loading panel.
+        ' We will just hide/show it. For forms without loading panels,
+        ' the transition will be fast but still correct.
         LoginPanel.Hide()
-        SignupPanel.Show()
+
+        Try
+            ' 2. Show the SignupPanel (triggers "Shown")
+            SignupPanel.Show()
+
+            ' 3. Wait for it to be ready
+            Await SignupPanel.AwaitLoadingAsync()
+
+            ' 4. Bring it to the front (it's already the only one)
+            SignupPanel.BringToFront()
+
+        Catch ex As Exception
+            MessageBox.Show("Error loading signup panel: " & ex.Message)
+            SignupPanel.Hide()
+            LoginPanel.Show() ' Show login panel again
+        End Try
     End Sub
 
+    ' --- THIS IS THE FIXED SUBROUTINE ---
     ' From Signup Panel "Back to Login" Button -> Login Panel
-    Private Sub ShowLoginPanelFromSignup(sender As Object, e As EventArgs)
-        SignupPanel.Hide()
-        LoginPanel.Show()
+    Private Async Sub ShowLoginPanelFromSignup(sender As Object, e As EventArgs)
+        ' 1. The "sender" is the SignupPanel
+        Dim signupForm = CType(sender, Signup_Panel_Student)
+
+        ' 2. Hide the signup form
+        signupForm.Hide()
+
+        ' 3. Now, we run the SAME logic as your previous fix
+        Try
+            LoginPanel.Show()
+            Await LoginPanel.AwaitLoadingAsync()
+            LoginPanel.BringToFront()
+        Catch ex As Exception
+            MessageBox.Show("Error re-loading login panel: " & ex.Message)
+        End Try
     End Sub
 
     ' From Login Panel (Successful Login) -> Student Panel
-    Private Sub ShowStudentPanel(sender As Object, loggedInAccount As Account)
+    Private Async Sub ShowStudentPanel(sender As Object, loggedInAccount As Account)
         currentAccount = loggedInAccount ' Store the logged-in user
+
+        ' 1. Show a loading message on the LoginPanel
+        ' (Again, no loading panel, so we'll just hide it)
         LoginPanel.Hide()
-        ' StudentPanel.SetCurrentUser(currentAccount)
-        StudentPanel.Show()
+
+        Try
+            ' 2. Show the StudentPanel (triggers "Shown")
+            StudentPanel.Show()
+
+            ' 3. Home_Panel_Students ALREADY has an async loading method!
+            ' We will wait for its *internal* loading to finish.
+            Await StudentPanel.UC_HPS_catalouge_tab1.AwaitInitialLoad()
+
+            ' 4. --- Loading is Complete ---
+            StudentPanel.BringToFront()
+
+        Catch ex As Exception
+            MessageBox.Show("Error loading student panel: " & ex.Message)
+            StudentPanel.Hide()
+            LoginPanel.Show() ' Show login panel again
+        Finally
+            ' 5. Hide the loading screen (if StudentPanel had one)
+            ' StudentPanel.ToggleLoading(False)
+        End Try
     End Sub
 
     ' From Student Panel (Logout) -> Guest Panel
-    Private Sub ShowGuestPanel(sender As Object, e As EventArgs)
+    Private Async Sub ShowGuestPanel(sender As Object, e As EventArgs)
         currentAccount = Nothing ' Clear logged-in user
-        StudentPanel.Hide()
-        GuestPanel.Show()
-    End Sub
 
-    ' This Sub looks like a mistake or old code.
-    ' The AddHandler in your Main Sub is already pointing to "ShowLoginPanel"
-    ' You can probably delete this one.
-    Sub HandlesOpenLogin(sender As Object, e As EventArgs)
-        MessageBox.Show("Opening Login Panel")
-        GuestPanel.Hide()
-        Dim loginForm As New Login_Panel_Student()
-        loginForm.ShowDialog()
-        GuestPanel.Show()
+        ' 1. Get the StudentPanel and show its loading screen
+        Dim studentForm = CType(sender, Home_Panel_Students)
+        studentForm.ToggleLoading(True, "Logging out...")
+
+        Try
+            ' 2. Show the GuestPanel (triggers "Shown")
+            GuestPanel.Show()
+
+            ' 3. Wait for GuestPanel's catalogue to load
+            ' (We'll use its AwaitInitialLoad, just like the student panel)
+            Await GuestPanel.UC_HPS_catalouge_tab1.AwaitInitialLoad()
+
+            ' 4. --- Loading is Complete ---
+            studentForm.Hide()
+            GuestPanel.BringToFront()
+
+        Catch ex As Exception
+            MessageBox.Show("Error loading guest panel: " & ex.Message)
+            GuestPanel.Hide()
+            studentForm.Show()
+        Finally
+            ' 5. Always hide the student panel's loading screen
+            studentForm.ToggleLoading(False)
+        End Try
     End Sub
 
 End Module

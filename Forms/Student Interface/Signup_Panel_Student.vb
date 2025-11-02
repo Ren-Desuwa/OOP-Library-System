@@ -1,7 +1,8 @@
 ﻿Imports System.Text.RegularExpressions
-
+Imports System.Threading.Tasks
 Public Class Signup_Panel_Student
 
+    Public Event BackToLoginClicked As EventHandler
     ' --- 1. Variables to store data from all steps ---
     Private studentUsername As String
     Private studentID As String
@@ -14,7 +15,30 @@ Public Class Signup_Panel_Student
     ' Private ReadOnly OtpSvc As New OtpService(_db)
     ' Private ReadOnly RegSvc As New registrationService(_db, OtpSvc, NotifSvc)
 
+    ' --- 1. For Asynchronous Loading ---
+    Private _loadingTcs As TaskCompletionSource(Of Boolean)
 
+    ' --- 2. NEW: This event runs every time the form is SHOWN ---
+    Private Async Sub Signup_Panel_Student_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
+        ' Re-create the "signal" each time the form is shown
+        _loadingTcs = New TaskCompletionSource(Of Boolean)()
+
+        ' --- Simulate loading ---
+        Await Task.Delay(50)
+        ' --- End simulation ---
+
+        ' Signal that loading is complete!
+        _loadingTcs.SetResult(True)
+    End Sub
+
+    ' --- 3. NEW: Public function for Program.vb to "wait" on ---
+    Public Function AwaitLoadingAsync() As Task
+        ' If the signal hasn't been created yet, return a completed task
+        If _loadingTcs Is Nothing Then
+            Return Task.CompletedTask
+        End If
+        Return _loadingTcs.Task
+    End Function
     ' This event runs when the FORM loads
     Private Sub Signup_Panel_Student_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -69,10 +93,11 @@ Public Class Signup_Panel_Student
 
     End Sub
 
-    ' Runs when Step 1's "Back to Login" button is clicked
+    ' --- 4. MODIFIED: This event (from UC_Signup_student2) now closes the form ---
     Private Sub HandleLoginClicked(sender As Object, e As EventArgs)
-        ' Close this signup form and return to the login form
-        Me.Close()
+        ' DO NOT CLOSE THE FORM.
+        ' Instead, raise our new event to tell Program.vb to handle it.
+        RaiseEvent BackToLoginClicked(Me, EventArgs.Empty)
     End Sub
 
     ' --- NEW: Runs when Step 2's "Send Code" button is clicked ---

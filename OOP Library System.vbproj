@@ -409,7 +409,9 @@
     <Compile Include="ViewCart.Designer.vb">
       <DependentUpon>ViewCart.vb</DependentUpon>
     </Compile>
-    <Compile Include="ViewCart.vb" />
+    <Compile Include="ViewCart.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="BeforeApproval.resx">
