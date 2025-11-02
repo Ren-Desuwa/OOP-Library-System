@@ -31,7 +31,7 @@ Partial Public Class Home_Panel_Students
     Private Sub Home_Panel_Students_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
         ' We no longer await. We just "fire and forget".
         ' This lets the home screen be interactive while catalogue loads in background.
-        UC_HPS_catalouge_tab1.BeginLoading(Me)
+        UC_HPS_catalouge_tab1.BeginLoading(Me, False) ' <-- Pass False to load silently
     End Sub
     ' This is your button named btn_Home_tab 
     Private Sub btn_Home_tab_Click(sender As Object, e As EventArgs) Handles btn_Home_tab.Click

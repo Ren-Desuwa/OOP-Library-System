@@ -47,12 +47,12 @@ Public Class UC_HPS_catalouge_tab
         ' We are no longer starting the load from here.
     End Sub
 
-    Public Sub BeginLoading(ByVal parentForm As ILoadingContainer)
+    Public Sub BeginLoading(ByVal parentForm As ILoadingContainer, Optional ByVal showLoading As Boolean = True)
         Me._parentContainer = parentForm
-        SetupLoadingState(True, "Loading Catalogue...")
+        If showLoading Then SetupLoadingState(True, "Loading Catalogue...")
 
         ' Start the async load and IMMEDIATELY save the Task
-        _initialLoadTask = LoadDataAsync(parentForm)
+        _initialLoadTask = LoadDataAsync(parentForm, showLoading)
     End Sub
     ''' <summary>
     ''' A new public method that allows the parent form to "wait"
@@ -65,7 +65,7 @@ Public Class UC_HPS_catalouge_tab
         End If
     End Function
     ' Note: We accept and pass the parentForm
-    Private Async Function LoadDataAsync(ByVal parentForm As ILoadingContainer) As Task
+    Private Async Function LoadDataAsync(ByVal parentForm As ILoadingContainer, ByVal showLoading As Boolean) As Task
         ' Give the UI thread a tiny break
         Await Task.Delay(100)
 
@@ -89,7 +89,7 @@ Public Class UC_HPS_catalouge_tab
         End Try
 
         ' --- 3. HIDE LOADING STATE ---
-        SetupLoadingState(False)
+        If showLoading Then SetupLoadingState(False)
     End Function
 
     ''' <summary>
