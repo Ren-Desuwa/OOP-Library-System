@@ -27,7 +27,7 @@
         ' --- Mockup Database Check (CHANGED) ---
 
         ' Account 1: Student
-        Dim loginAccount As Account = AuthSvc.Login(inputUserOrID, inputPassword)
+        Dim loginAccount As Account = Program.AuthSvc.Login(inputUserOrID, inputPassword)
         If Not loginAccount Is Nothing Then
             Dim StudentHomePanel As New Home_Panel_Students()
             Me.Hide()
