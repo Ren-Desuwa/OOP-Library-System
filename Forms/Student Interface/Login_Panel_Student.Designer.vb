@@ -37,6 +37,7 @@ Partial Class Login_Panel_Student
         Me.img_show = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.img_hide = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Guna2Elipse1 = New Guna.UI2.WinForms.Guna2Elipse(Me.components)
+        Me.Welcome_message_student = New OOP_Library_System.UC_Welcome_message_student()
         Me.title_panel.SuspendLayout()
         Me.login_form_container.SuspendLayout()
         Me.Guna2CustomGradientPanel3.SuspendLayout()
@@ -194,6 +195,7 @@ Partial Class Login_Panel_Student
         Me.login_form_container.BorderColor = System.Drawing.Color.DimGray
         Me.login_form_container.BorderRadius = 30
         Me.login_form_container.BorderThickness = 1
+        Me.login_form_container.Controls.Add(Me.Welcome_message_student)
         Me.login_form_container.Controls.Add(Me.Guna2CustomGradientPanel3)
         Me.login_form_container.FillColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(232, Byte), Integer))
         Me.login_form_container.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(216, Byte), Integer))
@@ -265,6 +267,15 @@ Partial Class Login_Panel_Student
         Me.Guna2Elipse1.BorderRadius = 30
         Me.Guna2Elipse1.TargetControl = Me
         '
+        'Welcome_message_student
+        '
+        Me.Welcome_message_student.BackColor = System.Drawing.Color.Transparent
+        Me.Welcome_message_student.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Welcome_message_student.Location = New System.Drawing.Point(0, 0)
+        Me.Welcome_message_student.Name = "Welcome_message_student"
+        Me.Welcome_message_student.Size = New System.Drawing.Size(525, 505)
+        Me.Welcome_message_student.TabIndex = 2
+        '
         'Login_Panel_Student
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -300,5 +311,5 @@ Partial Class Login_Panel_Student
     Friend WithEvents img_hide As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents img_show As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents login_form_container As Guna.UI2.WinForms.Guna2CustomGradientPanel
-    Friend WithEvents UC_Welcome_message_student1 As UC_Welcome_message_student
+    Friend WithEvents Welcome_message_student As UC_Welcome_message_student
 End Class

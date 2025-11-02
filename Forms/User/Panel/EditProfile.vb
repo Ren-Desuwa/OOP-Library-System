@@ -39,9 +39,6 @@ Public Class EditProfile
         ' SaveProfile(email, nickname, birthday)
     End Sub
 
-    Private Sub Guna2Button3_Click(sender As Object, e As EventArgs) Handles Guna2Button3.Click
-        Me.Close() ' Close the current form
-    End Sub
 
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
         Dim openFile As New OpenFileDialog()

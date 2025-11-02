@@ -22,16 +22,18 @@ Partial Class Book_PopUP
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Book_PopUP))
+        Me.components = New System.ComponentModel.Container()
         Me.pbBookCover = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.lblBookTitle = New System.Windows.Forms.Label()
         Me.btnAddtoCart = New Guna.UI2.WinForms.Guna2Button()
         Me.btnBorrow = New Guna.UI2.WinForms.Guna2Button()
         Me.lblAuthor = New System.Windows.Forms.Label()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
         Me.lblBookDescription = New System.Windows.Forms.Label()
+        Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
         Me.messagedialogAdded = New Guna.UI2.WinForms.Guna2MessageDialog()
+        Me.Guna2Elipse1 = New Guna.UI2.WinForms.Guna2Elipse(Me.components)
+        Me.btn_close = New Guna.UI2.WinForms.Guna2Button()
         CType(Me.pbBookCover, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2Panel1.SuspendLayout()
         Me.Guna2Panel2.SuspendLayout()
@@ -39,7 +41,8 @@ Partial Class Book_PopUP
         '
         'pbBookCover
         '
-        Me.pbBookCover.Image = CType(resources.GetObject("pbBookCover.Image"), System.Drawing.Image)
+        Me.pbBookCover.BorderRadius = 10
+        Me.pbBookCover.Image = Global.OOP_Library_System.My.Resources.Resources.Ucc_Logo_NoBG_Big2
         Me.pbBookCover.ImageRotate = 0!
         Me.pbBookCover.Location = New System.Drawing.Point(26, 12)
         Me.pbBookCover.Name = "pbBookCover"
@@ -54,7 +57,7 @@ Partial Class Book_PopUP
         Me.lblBookTitle.Font = New System.Drawing.Font("Microsoft Sans Serif", 19.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblBookTitle.Location = New System.Drawing.Point(47, 10)
         Me.lblBookTitle.Name = "lblBookTitle"
-        Me.lblBookTitle.Size = New System.Drawing.Size(414, 39)
+        Me.lblBookTitle.Size = New System.Drawing.Size(400, 38)
         Me.lblBookTitle.TabIndex = 1
         Me.lblBookTitle.Text = "Beyond The Ocean Door"
         '
@@ -111,16 +114,6 @@ Partial Class Book_PopUP
         Me.Guna2Panel1.Size = New System.Drawing.Size(499, 170)
         Me.Guna2Panel1.TabIndex = 5
         '
-        'Guna2Panel2
-        '
-        Me.Guna2Panel2.BackColor = System.Drawing.Color.White
-        Me.Guna2Panel2.Controls.Add(Me.lblAuthor)
-        Me.Guna2Panel2.Controls.Add(Me.lblBookTitle)
-        Me.Guna2Panel2.Location = New System.Drawing.Point(349, 28)
-        Me.Guna2Panel2.Name = "Guna2Panel2"
-        Me.Guna2Panel2.Size = New System.Drawing.Size(498, 100)
-        Me.Guna2Panel2.TabIndex = 6
-        '
         'lblBookDescription
         '
         Me.lblBookDescription.AutoSize = True
@@ -132,6 +125,16 @@ Partial Class Book_PopUP
         Me.lblBookDescription.TabIndex = 0
         Me.lblBookDescription.Text = "Book Description"
         '
+        'Guna2Panel2
+        '
+        Me.Guna2Panel2.BackColor = System.Drawing.Color.White
+        Me.Guna2Panel2.Controls.Add(Me.lblAuthor)
+        Me.Guna2Panel2.Controls.Add(Me.lblBookTitle)
+        Me.Guna2Panel2.Location = New System.Drawing.Point(349, 28)
+        Me.Guna2Panel2.Name = "Guna2Panel2"
+        Me.Guna2Panel2.Size = New System.Drawing.Size(498, 100)
+        Me.Guna2Panel2.TabIndex = 6
+        '
         'messagedialogAdded
         '
         Me.messagedialogAdded.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK
@@ -141,12 +144,35 @@ Partial Class Book_PopUP
         Me.messagedialogAdded.Style = Guna.UI2.WinForms.MessageDialogStyle.[Default]
         Me.messagedialogAdded.Text = "Successfully Added to Cart."
         '
+        'Guna2Elipse1
+        '
+        Me.Guna2Elipse1.BorderRadius = 30
+        Me.Guna2Elipse1.TargetControl = Me
+        '
+        'btn_close
+        '
+        Me.btn_close.AutoRoundedCorners = True
+        Me.btn_close.BorderRadius = 24
+        Me.btn_close.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btn_close.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btn_close.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btn_close.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btn_close.FillColor = System.Drawing.Color.Transparent
+        Me.btn_close.Font = New System.Drawing.Font("Segoe UI Semibold", 19.8!, System.Drawing.FontStyle.Bold)
+        Me.btn_close.ForeColor = System.Drawing.Color.Black
+        Me.btn_close.Location = New System.Drawing.Point(848, 0)
+        Me.btn_close.Name = "btn_close"
+        Me.btn_close.Size = New System.Drawing.Size(51, 52)
+        Me.btn_close.TabIndex = 7
+        Me.btn_close.Text = "X"
+        '
         'Book_PopUP
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.NavajoWhite
         Me.ClientSize = New System.Drawing.Size(902, 403)
+        Me.Controls.Add(Me.btn_close)
         Me.Controls.Add(Me.Guna2Panel2)
         Me.Controls.Add(Me.Guna2Panel1)
         Me.Controls.Add(Me.btnBorrow)
@@ -173,4 +199,6 @@ Partial Class Book_PopUP
     Friend WithEvents lblBookDescription As Label
     Friend WithEvents Guna2Panel2 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents messagedialogAdded As Guna.UI2.WinForms.Guna2MessageDialog
+    Friend WithEvents Guna2Elipse1 As Guna.UI2.WinForms.Guna2Elipse
+    Friend WithEvents btn_close As Guna.UI2.WinForms.Guna2Button
 End Class
