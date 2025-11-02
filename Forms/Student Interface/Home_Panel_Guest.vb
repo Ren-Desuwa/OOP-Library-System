@@ -31,14 +31,12 @@ Partial Class Home_Panel_Guest
     ' --- 3. THIS IS THE MODIFIED LOAD EVENT ---
     ' Note: We MUST make this event "Async Sub"
     Private Async Sub Home_Panel_Guest_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' 1. THIS IS THE FIX:
-        ' We "await" a tiny delay. This forces the Load event to pause,
-        ' giving the UI thread time to finish drawing the form.
-        Await Task.Delay(50) ' 50 milliseconds is plenty
+        Await Task.Delay(50)
 
-        ' 2. NOW that the form is visible,
-        ' we tell the catalogue tab to start its loading process.
-        ' We pass "Me" (this form) as the ILoadingContainer.
+        ' --- ADD THIS LINE ---
+        UC_HPS_catalouge_tab1.IsGuestMode = True
+        ' --- END ADDITION ---
+
         UC_HPS_catalouge_tab1.BeginLoading(Me)
     End Sub
 

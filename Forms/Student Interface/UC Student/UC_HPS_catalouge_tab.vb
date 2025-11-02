@@ -5,6 +5,8 @@ Imports System.Linq ' <-- Make sure this is imported
 Public Class UC_HPS_catalouge_tab
 
 #Region "Class-Level Variables"
+    ' --- NEW: This flag will be set by the parent form (Guest or Student) ---
+    Public Property IsGuestMode As Boolean = False
     ' This Task will store a reference to the main loading process
     Private _initialLoadTask As Task = Nothing
     ' --- Parent Reference ---
@@ -72,10 +74,10 @@ Public Class UC_HPS_catalouge_tab
         Try
             ' --- 1. DO THE SLOW WORK ON A BACKGROUND THREAD ---
             Await Task.Run(Sub()
-                               ' These functions are slow but don't touch the UI.
-                               LoadAllBooks()
-                               PopulateUniqueGenreList()
-                           End Sub)
+                ' These functions are slow but don't touch the UI.
+                LoadAllBooks()
+                PopulateUniqueGenreList()
+            End Sub)
 
             ' --- 2. WE ARE NOW BACK ON THE UI THREAD ---
             Await PopulateGenreButtons()
@@ -504,8 +506,11 @@ Public Class UC_HPS_catalouge_tab
         Dim selectedBook As Book = allBooks.FirstOrDefault(Function(b) b.BookID = clickedCard.BookID)
 
         If selectedBook IsNot Nothing Then
-            ' 2. Create and show the TestWindow (or your actual Book Details form)
-            Dim detailsForm As New TestWindow(selectedBook) ' Pass the whole Book object
+            ' --- MODIFIED LINE ---
+            ' We now pass our new "IsGuestMode" property to the popup
+            Dim detailsForm As New Book_PopUP(selectedBook, Me.IsGuestMode)
+            ' --- END MODIFICATION ---
+
             detailsForm.ShowDialog() ' Use ShowDialog to make it modal
         Else
             MessageBox.Show("Could not find book details for ID: " & clickedCard.BookID, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)

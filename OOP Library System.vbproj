@@ -257,12 +257,6 @@
     <Compile Include="Forms\Student Interface\TestWindow.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Student Interface\UC Student\BookPopup.Designer.vb">
-      <DependentUpon>BookPopup.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Student Interface\UC Student\BookPopup.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Forms\Student Interface\UC Student\Book_PopUP.Designer.vb">
       <DependentUpon>Book_PopUP.vb</DependentUpon>
     </Compile>
@@ -486,9 +480,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Student Interface\TestWindow.resx">
       <DependentUpon>TestWindow.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Student Interface\UC Student\BookPopup.resx">
-      <DependentUpon>BookPopup.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Student Interface\UC Student\Book_PopUP.resx">
       <DependentUpon>Book_PopUP.vb</DependentUpon>
