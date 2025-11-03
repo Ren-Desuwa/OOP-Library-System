@@ -7,6 +7,7 @@ Public Class Account
     Public Property PasswordHash As String
     Public Property Role As String ' "Admin", "Librarian", "Member"
     Public Property Name As String
+    Public Property StudentID As String  ' <-- ADD THIS LINE
     Public Property Email As String
     Public Property ContactNumber As String ' <-- ADDED (to match DAO)
     Public Property Birthday As Date? ' <-- ADDED (from schema)

@@ -118,7 +118,7 @@ Public Class registrationService
     ''' </summary>
     ''' <returns>The AccountID of the new user.</returns>
     ''' <exception cref="Exception">Throws if OTP is wrong or on DB error.</exception>
-    Public Function CompleteRegistration(username As String, password As String, name As String, contactInfo As String, otpInput As String) As Integer
+    Public Function CompleteRegistration(username As String, password As String, studentID As String, contactInfo As String, otpInput As String) As Integer
 
         ' 1. --- Verify the OTP first ---
 
@@ -139,15 +139,16 @@ Public Class registrationService
             ' Check if username is already taken
             If accountDAO.GetByUsername(username) IsNot Nothing Then
                 Throw New Exception("Username is already taken.")
-   
-         End If
+
+            End If
 
             Dim passwordHash = Account.HashPassword(password)
 
             Dim newAccount As New Account With {
                 .Username = username,
                 .PasswordHash = passwordHash,
-                .Name = name,
+                .Name = username,
+                .StudentID = studentID,
                 .Role = "Member"
             }
 
