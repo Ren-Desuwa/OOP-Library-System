@@ -49,7 +49,6 @@ Partial Class Home_Panel_Guest
 
     ' --- 5. THIS IS YOUR EXISTING LOGIN BUTTON CODE ---
     Private Sub btn_Open_Login(sender As Object, e As EventArgs) Handles btn_profile.Click, lbl_user.Click
-        MessageBox.Show("clicked")
         RaiseEvent OpenLogin(Me, EventArgs.Empty)
     End Sub
 

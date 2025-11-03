@@ -47,11 +47,13 @@ Partial Class Book_PopUP
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.lblStatus = New System.Windows.Forms.Label()
+        Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
         CType(Me.picbox_book, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnl_Title.SuspendLayout()
         Me.Guna2CustomGradientPanel1.SuspendLayout()
         Me.table_container.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
+        CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'picbox_book
@@ -234,6 +236,7 @@ Partial Class Book_PopUP
         Me.Guna2CustomGradientPanel1.Controls.Add(Me.btn_Borrow)
         Me.Guna2CustomGradientPanel1.Controls.Add(Me.picbox_book)
         Me.Guna2CustomGradientPanel1.Controls.Add(Me.btn_AddtoCart)
+        Me.Guna2CustomGradientPanel1.Controls.Add(Me.Guna2PictureBox1)
         Me.Guna2CustomGradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Guna2CustomGradientPanel1.FillColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(230, Byte), Integer))
         Me.Guna2CustomGradientPanel1.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(211, Byte), Integer))
@@ -377,6 +380,18 @@ Partial Class Book_PopUP
         Me.lblStatus.TabIndex = 7
         Me.lblStatus.Text = "(Place Holder)"
         '
+        'Guna2PictureBox1
+        '
+        Me.Guna2PictureBox1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Guna2PictureBox1.FillColor = System.Drawing.Color.Transparent
+        Me.Guna2PictureBox1.Image = Global.OOP_Library_System.My.Resources.Resources.titi_ni_ren_baluktot_nakita_ko
+        Me.Guna2PictureBox1.ImageRotate = 0!
+        Me.Guna2PictureBox1.Location = New System.Drawing.Point(0, 0)
+        Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
+        Me.Guna2PictureBox1.Size = New System.Drawing.Size(941, 457)
+        Me.Guna2PictureBox1.TabIndex = 10
+        Me.Guna2PictureBox1.TabStop = False
+        '
         'Book_PopUP
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -394,6 +409,7 @@ Partial Class Book_PopUP
         Me.table_container.ResumeLayout(False)
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TableLayoutPanel1.PerformLayout()
+        CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -422,4 +438,5 @@ Partial Class Book_PopUP
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents table_container As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents Guna2PictureBox1 As Guna.UI2.WinForms.Guna2PictureBox
 End Class

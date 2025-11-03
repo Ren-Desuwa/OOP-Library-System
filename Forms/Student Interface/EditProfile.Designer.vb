@@ -32,12 +32,15 @@ Partial Class EditProfile
         Me.btn_back = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2HtmlLabel3 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
         CType(Me.picBox_profile, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picbox_QRcode, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'picBox_profile
         '
+        Me.picBox_profile.BackColor = System.Drawing.Color.Transparent
         Me.picBox_profile.FillColor = System.Drawing.Color.Transparent
         Me.picBox_profile.Image = Global.OOP_Library_System.My.Resources.Resources.Accountwhite0_icon
         Me.picBox_profile.ImageRotate = 0!
@@ -185,6 +188,20 @@ Partial Class EditProfile
         Me.Guna2HtmlLabel1.TabIndex = 15
         Me.Guna2HtmlLabel1.Text = "Birthday:"
         '
+        'Guna2PictureBox1
+        '
+        Me.Guna2PictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2PictureBox1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Guna2PictureBox1.FillColor = System.Drawing.Color.Transparent
+        Me.Guna2PictureBox1.Image = Global.OOP_Library_System.My.Resources.Resources.titi_ni_ren_baluktot_nakita_ko
+        Me.Guna2PictureBox1.ImageRotate = 0!
+        Me.Guna2PictureBox1.Location = New System.Drawing.Point(0, 0)
+        Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
+        Me.Guna2PictureBox1.Size = New System.Drawing.Size(456, 504)
+        Me.Guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Guna2PictureBox1.TabIndex = 16
+        Me.Guna2PictureBox1.TabStop = False
+        '
         'EditProfile
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -200,12 +217,14 @@ Partial Class EditProfile
         Me.Controls.Add(Me.btn_confirmchanges)
         Me.Controls.Add(Me.Guna2DateTimePicker1)
         Me.Controls.Add(Me.Guna2HtmlLabel2)
+        Me.Controls.Add(Me.Guna2PictureBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "EditProfile"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "3"
         CType(Me.picBox_profile, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picbox_QRcode, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -229,4 +248,5 @@ Partial Class EditProfile
     Friend WithEvents Guna2DateTimePicker1 As Guna.UI2.WinForms.Guna2DateTimePicker
     Friend WithEvents Guna2HtmlLabel3 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2HtmlLabel1 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents Guna2PictureBox1 As Guna.UI2.WinForms.Guna2PictureBox
 End Class

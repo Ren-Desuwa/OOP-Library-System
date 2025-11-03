@@ -100,7 +100,4 @@
 
     End Sub
 
-    Private Sub UC_Welcome_message_student1_Load(sender As Object, e As EventArgs) Handles UC_Welcome_message_student1.Load
-
-    End Sub
 End Class

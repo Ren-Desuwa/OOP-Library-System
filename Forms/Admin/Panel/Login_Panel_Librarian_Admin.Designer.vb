@@ -39,7 +39,6 @@ Partial Class Login_Panel_Librarian_Admin
         Me.img_hide = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Guna2DragControl2 = New Guna.UI2.WinForms.Guna2DragControl(Me.components)
         Me.Guna2Elipse1 = New Guna.UI2.WinForms.Guna2Elipse(Me.components)
-        Me.UC_Welcome_message_student1 = New OOP_Library_System.UC_Welcome_message_student()
         Me.title_panel.SuspendLayout()
         Me.login_form_container.SuspendLayout()
         Me.Guna2CustomGradientPanel3.SuspendLayout()
@@ -207,7 +206,6 @@ Partial Class Login_Panel_Librarian_Admin
         Me.login_form_container.BorderRadius = 30
         Me.login_form_container.BorderThickness = 1
         Me.login_form_container.Controls.Add(Me.Guna2CustomGradientPanel3)
-        Me.login_form_container.Controls.Add(Me.UC_Welcome_message_student1)
         Me.login_form_container.FillColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(232, Byte), Integer))
         Me.login_form_container.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(216, Byte), Integer))
         Me.login_form_container.FillColor3 = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(192, Byte), Integer))
@@ -280,16 +278,6 @@ Partial Class Login_Panel_Librarian_Admin
         Me.Guna2Elipse1.BorderRadius = 30
         Me.Guna2Elipse1.TargetControl = Me
         '
-        'UC_Welcome_message_student1
-        '
-        Me.UC_Welcome_message_student1.BackColor = System.Drawing.Color.Transparent
-        Me.UC_Welcome_message_student1.Dock = System.Windows.Forms.DockStyle.Left
-        Me.UC_Welcome_message_student1.Location = New System.Drawing.Point(0, 0)
-        Me.UC_Welcome_message_student1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.UC_Welcome_message_student1.Name = "UC_Welcome_message_student1"
-        Me.UC_Welcome_message_student1.Size = New System.Drawing.Size(394, 410)
-        Me.UC_Welcome_message_student1.TabIndex = 2
-        '
         'Login_Panel_Librarian_Admin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -325,5 +313,4 @@ Partial Class Login_Panel_Librarian_Admin
     Friend WithEvents img_hide As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents img_show As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents login_form_container As Guna.UI2.WinForms.Guna2CustomGradientPanel
-    Friend WithEvents UC_Welcome_message_student1 As UC_Welcome_message_student
 End Class
