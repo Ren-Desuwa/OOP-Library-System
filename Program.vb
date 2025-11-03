@@ -9,7 +9,6 @@ Public Module Program
     Public ReadOnly CatSvc As CatalougeService
     Public ReadOnly OtpSvc As OtpService
     Public ReadOnly NotifSvc As NotificationService
-    Public ReadOnly RegSvc As registrationService
     Public ReadOnly CartSvc As New CartService()
     Public ReadOnly BorrowSvc As BorrowService
     ' ... other services ...
@@ -22,11 +21,10 @@ Public Module Program
             mainDbConnection = New DBcon("ooplibrary")
 
             ' 2. Create all services
-            AuthSvc = New AuthService(mainDbConnection)
             CatSvc = New CatalougeService(mainDbConnection)
             OtpSvc = New OtpService(mainDbConnection)
             NotifSvc = New NotificationService()
-            RegSvc = New registrationService(mainDbConnection, OtpSvc, NotifSvc)
+            AuthSvc = New AuthService(mainDbConnection, OtpSvc, NotifSvc)
             BorrowSvc = New BorrowService(mainDbConnection)
 
         Catch ex As Exception

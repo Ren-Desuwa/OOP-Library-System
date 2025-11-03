@@ -137,7 +137,6 @@
     <Compile Include="Classes\Services\catalougeService.vb" />
     <Compile Include="Classes\Services\NotificationService.vb" />
     <Compile Include="Classes\Services\OtpService.vb" />
-    <Compile Include="Classes\Services\registrationService.vb" />
     <Compile Include="Forms\Admin\Panel\AddBorrower.Designer.vb">
       <DependentUpon>AddBorrower.vb</DependentUpon>
     </Compile>

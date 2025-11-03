@@ -25,12 +25,14 @@ Partial Class ForgotPass_Student
         Me.components = New System.ComponentModel.Container()
         Me.Guna2Elipse1 = New Guna.UI2.WinForms.Guna2Elipse(Me.components)
         Me.Guna2CustomGradientPanel1 = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
-        Me.btn_close = New Guna.UI2.WinForms.Guna2Button()
-        Me.btn_Borrow = New Guna.UI2.WinForms.Guna2Button()
+        Me.txtBox_username = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.lbl_username = New System.Windows.Forms.Label()
+        Me.btn_sendcode = New Guna.UI2.WinForms.Guna2Button()
         Me.btn_verifynum = New Guna.UI2.WinForms.Guna2Button()
         Me.txtbox_otp = New Guna.UI2.WinForms.Guna2TextBox()
         Me.lbl_otp = New System.Windows.Forms.Label()
-        Me.btn_sendcode = New Guna.UI2.WinForms.Guna2Button()
+        Me.btn_close = New Guna.UI2.WinForms.Guna2Button()
+        Me.btn_Borrow = New Guna.UI2.WinForms.Guna2Button()
         Me.lbl_confirmpassword = New System.Windows.Forms.Label()
         Me.txtBox_confirmpassword = New Guna.UI2.WinForms.Guna2TextBox()
         Me.img_show = New Guna.UI2.WinForms.Guna2PictureBox()
@@ -38,8 +40,6 @@ Partial Class ForgotPass_Student
         Me.txtBox_password = New Guna.UI2.WinForms.Guna2TextBox()
         Me.lbl_password = New System.Windows.Forms.Label()
         Me.btn_confirm = New Guna.UI2.WinForms.Guna2Button()
-        Me.txtBox_username = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.lbl_username = New System.Windows.Forms.Label()
         Me.otpTimer = New System.Windows.Forms.Timer(Me.components)
         Me.Guna2CustomGradientPanel1.SuspendLayout()
         CType(Me.img_show, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -83,38 +83,61 @@ Partial Class ForgotPass_Student
         Me.Guna2CustomGradientPanel1.Size = New System.Drawing.Size(525, 505)
         Me.Guna2CustomGradientPanel1.TabIndex = 9
         '
-        'btn_close
+        'txtBox_username
         '
-        Me.btn_close.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btn_close.BorderRadius = 10
-        Me.btn_close.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btn_close.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btn_close.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btn_close.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btn_close.FillColor = System.Drawing.Color.Transparent
-        Me.btn_close.Font = New System.Drawing.Font("Segoe UI Semibold", 19.8!, System.Drawing.FontStyle.Bold)
-        Me.btn_close.ForeColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(42, Byte), Integer))
-        Me.btn_close.Location = New System.Drawing.Point(469, 0)
-        Me.btn_close.Name = "btn_close"
-        Me.btn_close.Size = New System.Drawing.Size(56, 52)
-        Me.btn_close.TabIndex = 7
-        Me.btn_close.Text = "X"
+        Me.txtBox_username.BackColor = System.Drawing.Color.Transparent
+        Me.txtBox_username.BorderColor = System.Drawing.Color.DarkGray
+        Me.txtBox_username.BorderRadius = 10
+        Me.txtBox_username.BorderThickness = 2
+        Me.txtBox_username.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtBox_username.DefaultText = ""
+        Me.txtBox_username.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtBox_username.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtBox_username.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtBox_username.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtBox_username.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtBox_username.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.txtBox_username.ForeColor = System.Drawing.Color.Black
+        Me.txtBox_username.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtBox_username.Location = New System.Drawing.Point(128, 64)
+        Me.txtBox_username.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtBox_username.MaxLength = 10
+        Me.txtBox_username.Name = "txtBox_username"
+        Me.txtBox_username.PlaceholderForeColor = System.Drawing.Color.DarkGray
+        Me.txtBox_username.PlaceholderText = "Enter Email"
+        Me.txtBox_username.SelectedText = ""
+        Me.txtBox_username.Size = New System.Drawing.Size(277, 57)
+        Me.txtBox_username.TabIndex = 35
         '
-        'btn_Borrow
+        'lbl_username
         '
-        Me.btn_Borrow.BorderRadius = 20
-        Me.btn_Borrow.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btn_Borrow.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btn_Borrow.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btn_Borrow.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btn_Borrow.FillColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(42, Byte), Integer))
-        Me.btn_Borrow.Font = New System.Drawing.Font("Segoe UI", 10.8!, System.Drawing.FontStyle.Bold)
-        Me.btn_Borrow.ForeColor = System.Drawing.Color.White
-        Me.btn_Borrow.Location = New System.Drawing.Point(688, 392)
-        Me.btn_Borrow.Name = "btn_Borrow"
-        Me.btn_Borrow.Size = New System.Drawing.Size(171, 52)
-        Me.btn_Borrow.TabIndex = 3
-        Me.btn_Borrow.Text = "Borrow"
+        Me.lbl_username.AutoSize = True
+        Me.lbl_username.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_username.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_username.ForeColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(42, Byte), Integer))
+        Me.lbl_username.Location = New System.Drawing.Point(128, 44)
+        Me.lbl_username.Name = "lbl_username"
+        Me.lbl_username.Size = New System.Drawing.Size(51, 20)
+        Me.lbl_username.TabIndex = 36
+        Me.lbl_username.Text = "Email"
+        '
+        'btn_sendcode
+        '
+        Me.btn_sendcode.BorderColor = System.Drawing.Color.Transparent
+        Me.btn_sendcode.BorderRadius = 10
+        Me.btn_sendcode.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btn_sendcode.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btn_sendcode.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btn_sendcode.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btn_sendcode.FillColor = System.Drawing.Color.Transparent
+        Me.btn_sendcode.Font = New System.Drawing.Font("Segoe UI", 7.8!)
+        Me.btn_sendcode.ForeColor = System.Drawing.Color.RoyalBlue
+        Me.btn_sendcode.Location = New System.Drawing.Point(176, 208)
+        Me.btn_sendcode.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btn_sendcode.Name = "btn_sendcode"
+        Me.btn_sendcode.Size = New System.Drawing.Size(168, 25)
+        Me.btn_sendcode.TabIndex = 27
+        Me.btn_sendcode.Text = "Send Code"
         '
         'btn_verifynum
         '
@@ -171,23 +194,38 @@ Partial Class ForgotPass_Student
         Me.lbl_otp.TabIndex = 24
         Me.lbl_otp.Text = "Verification Code"
         '
-        'btn_sendcode
+        'btn_close
         '
-        Me.btn_sendcode.BorderColor = System.Drawing.Color.Transparent
-        Me.btn_sendcode.BorderRadius = 10
-        Me.btn_sendcode.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btn_sendcode.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btn_sendcode.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btn_sendcode.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btn_sendcode.FillColor = System.Drawing.Color.Transparent
-        Me.btn_sendcode.Font = New System.Drawing.Font("Segoe UI", 7.8!)
-        Me.btn_sendcode.ForeColor = System.Drawing.Color.RoyalBlue
-        Me.btn_sendcode.Location = New System.Drawing.Point(176, 208)
-        Me.btn_sendcode.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btn_sendcode.Name = "btn_sendcode"
-        Me.btn_sendcode.Size = New System.Drawing.Size(168, 25)
-        Me.btn_sendcode.TabIndex = 27
-        Me.btn_sendcode.Text = "Send Code"
+        Me.btn_close.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btn_close.BorderRadius = 10
+        Me.btn_close.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btn_close.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btn_close.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btn_close.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btn_close.FillColor = System.Drawing.Color.Transparent
+        Me.btn_close.Font = New System.Drawing.Font("Segoe UI Semibold", 19.8!, System.Drawing.FontStyle.Bold)
+        Me.btn_close.ForeColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(42, Byte), Integer))
+        Me.btn_close.Location = New System.Drawing.Point(469, 0)
+        Me.btn_close.Name = "btn_close"
+        Me.btn_close.Size = New System.Drawing.Size(56, 52)
+        Me.btn_close.TabIndex = 7
+        Me.btn_close.Text = "X"
+        '
+        'btn_Borrow
+        '
+        Me.btn_Borrow.BorderRadius = 20
+        Me.btn_Borrow.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btn_Borrow.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btn_Borrow.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btn_Borrow.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btn_Borrow.FillColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(42, Byte), Integer))
+        Me.btn_Borrow.Font = New System.Drawing.Font("Segoe UI", 10.8!, System.Drawing.FontStyle.Bold)
+        Me.btn_Borrow.ForeColor = System.Drawing.Color.White
+        Me.btn_Borrow.Location = New System.Drawing.Point(688, 392)
+        Me.btn_Borrow.Name = "btn_Borrow"
+        Me.btn_Borrow.Size = New System.Drawing.Size(171, 52)
+        Me.btn_Borrow.TabIndex = 3
+        Me.btn_Borrow.Text = "Borrow"
         '
         'lbl_confirmpassword
         '
@@ -316,44 +354,6 @@ Partial Class ForgotPass_Student
         Me.btn_confirm.TabIndex = 34
         Me.btn_confirm.Text = "Confirm"
         Me.btn_confirm.Visible = False
-        '
-        'txtBox_username
-        '
-        Me.txtBox_username.BackColor = System.Drawing.Color.Transparent
-        Me.txtBox_username.BorderColor = System.Drawing.Color.DarkGray
-        Me.txtBox_username.BorderRadius = 10
-        Me.txtBox_username.BorderThickness = 2
-        Me.txtBox_username.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtBox_username.DefaultText = ""
-        Me.txtBox_username.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtBox_username.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtBox_username.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtBox_username.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtBox_username.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtBox_username.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        Me.txtBox_username.ForeColor = System.Drawing.Color.Black
-        Me.txtBox_username.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtBox_username.Location = New System.Drawing.Point(128, 64)
-        Me.txtBox_username.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.txtBox_username.MaxLength = 10
-        Me.txtBox_username.Name = "txtBox_username"
-        Me.txtBox_username.PlaceholderForeColor = System.Drawing.Color.DarkGray
-        Me.txtBox_username.PlaceholderText = "Enter Username "
-        Me.txtBox_username.SelectedText = ""
-        Me.txtBox_username.Size = New System.Drawing.Size(277, 57)
-        Me.txtBox_username.TabIndex = 35
-        '
-        'lbl_username
-        '
-        Me.lbl_username.AutoSize = True
-        Me.lbl_username.BackColor = System.Drawing.Color.Transparent
-        Me.lbl_username.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_username.ForeColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(42, Byte), Integer))
-        Me.lbl_username.Location = New System.Drawing.Point(128, 44)
-        Me.lbl_username.Name = "lbl_username"
-        Me.lbl_username.Size = New System.Drawing.Size(86, 20)
-        Me.lbl_username.TabIndex = 36
-        Me.lbl_username.Text = "Username"
         '
         'otpTimer
         '

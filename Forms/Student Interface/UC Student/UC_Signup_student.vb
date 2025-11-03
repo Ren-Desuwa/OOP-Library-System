@@ -64,11 +64,7 @@ Public Class UC_Signup_student
 
     ' This code correctly handles the txtBox_username
     Private Sub txtBox_username_TextChanged(sender As Object, e As EventArgs) Handles txtBox_username.TextChanged
-        If txtBox_username.Text.Contains("-") Then
-            lbl_username.Text = "Student ID"
-        Else
-            lbl_username.Text = "Username"
-        End If
+
     End Sub
 
     ' --- Student ID Auto-Formatting Logic ---

@@ -135,7 +135,7 @@ Partial Class UC_Signup_student
         Me.txtBox_confirmpassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtBox_confirmpassword.Location = New System.Drawing.Point(128, 357)
         Me.txtBox_confirmpassword.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.txtBox_confirmpassword.MaxLength = 10
+        Me.txtBox_confirmpassword.MaxLength = 12
         Me.txtBox_confirmpassword.Name = "txtBox_confirmpassword"
         Me.txtBox_confirmpassword.PlaceholderForeColor = System.Drawing.Color.DarkGray
         Me.txtBox_confirmpassword.PlaceholderText = "Enter Password"
@@ -200,7 +200,7 @@ Partial Class UC_Signup_student
         Me.txtBox_password.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtBox_password.Location = New System.Drawing.Point(128, 279)
         Me.txtBox_password.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.txtBox_password.MaxLength = 10
+        Me.txtBox_password.MaxLength = 12
         Me.txtBox_password.Name = "txtBox_password"
         Me.txtBox_password.PlaceholderForeColor = System.Drawing.Color.DarkGray
         Me.txtBox_password.PlaceholderText = "Enter Password"
@@ -226,10 +226,10 @@ Partial Class UC_Signup_student
         Me.txtBox_username.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtBox_username.Location = New System.Drawing.Point(128, 118)
         Me.txtBox_username.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.txtBox_username.MaxLength = 10
+        Me.txtBox_username.MaxLength = 30
         Me.txtBox_username.Name = "txtBox_username"
         Me.txtBox_username.PlaceholderForeColor = System.Drawing.Color.DarkGray
-        Me.txtBox_username.PlaceholderText = "Enter Username "
+        Me.txtBox_username.PlaceholderText = "Enter Full Name"
         Me.txtBox_username.SelectedText = ""
         Me.txtBox_username.Size = New System.Drawing.Size(277, 57)
         Me.txtBox_username.TabIndex = 0
@@ -258,9 +258,9 @@ Partial Class UC_Signup_student
         Me.lbl_username.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_username.Location = New System.Drawing.Point(128, 98)
         Me.lbl_username.Name = "lbl_username"
-        Me.lbl_username.Size = New System.Drawing.Size(86, 20)
+        Me.lbl_username.Size = New System.Drawing.Size(85, 20)
         Me.lbl_username.TabIndex = 5
-        Me.lbl_username.Text = "Username"
+        Me.lbl_username.Text = "Full Name"
         '
         'btn_login
         '

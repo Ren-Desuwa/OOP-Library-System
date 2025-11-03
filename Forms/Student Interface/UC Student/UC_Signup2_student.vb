@@ -141,4 +141,15 @@ Public Class UC_Signup2_student
         ' As soon as the user starts typing, reset the error colors
         SetOtpValid()
     End Sub
+
+    ' --- ADD THIS NEW FUNCTION ---
+    ''' <summary>
+    ''' Public method to stop the timer and reset the button text.
+    ''' </summary>
+    Public Sub ResetTimer()
+        otpTimer.Stop()
+        btn_sendcode.Enabled = True
+        btn_sendcode.Text = "Send Code"
+        _countdownSeconds = 60
+    End Sub
 End Class

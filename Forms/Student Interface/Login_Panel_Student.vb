@@ -57,6 +57,8 @@ Public Class Login_Panel_Student
         If Not loginAccount Is Nothing Then
             ' --- SUCCESS: Raise the event and send the account ---
             RaiseEvent LoginSuccess(Me, loginAccount)
+            txtBox_username.Text = ""
+            txtBox_password.Text = ""
         Else
             ' Requirement 4: Failed login
             MessageBox.Show("Invalid Username, ID, or Password")
