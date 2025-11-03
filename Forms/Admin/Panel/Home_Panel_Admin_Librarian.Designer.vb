@@ -203,10 +203,10 @@ Partial Class Home_Panel_Admin_Librarian
         Me.Guna2CustomGradientPanel3.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(240, Byte), Integer))
         Me.Guna2CustomGradientPanel3.FillColor3 = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(232, Byte), Integer))
         Me.Guna2CustomGradientPanel3.FillColor4 = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.Guna2CustomGradientPanel3.Location = New System.Drawing.Point(594, 39)
+        Me.Guna2CustomGradientPanel3.Location = New System.Drawing.Point(594, 52)
         Me.Guna2CustomGradientPanel3.Margin = New System.Windows.Forms.Padding(2)
         Me.Guna2CustomGradientPanel3.Name = "Guna2CustomGradientPanel3"
-        Me.Guna2CustomGradientPanel3.Size = New System.Drawing.Size(206, 416)
+        Me.Guna2CustomGradientPanel3.Size = New System.Drawing.Size(206, 403)
         Me.Guna2CustomGradientPanel3.TabIndex = 7
         '
         'btn_logout
@@ -307,7 +307,7 @@ Partial Class Home_Panel_Admin_Librarian
         Me.Guna2CustomGradientPanel1.Location = New System.Drawing.Point(0, 26)
         Me.Guna2CustomGradientPanel1.Margin = New System.Windows.Forms.Padding(2)
         Me.Guna2CustomGradientPanel1.Name = "Guna2CustomGradientPanel1"
-        Me.Guna2CustomGradientPanel1.Size = New System.Drawing.Size(612, 430)
+        Me.Guna2CustomGradientPanel1.Size = New System.Drawing.Size(617, 430)
         Me.Guna2CustomGradientPanel1.TabIndex = 6
         '
         'Guna2Elipse1
