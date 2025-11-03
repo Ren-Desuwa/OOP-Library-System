@@ -1,10 +1,10 @@
 ﻿Imports Guna.UI2.WinForms
 
 Public Class EditProfile
-    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
+    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles btn_confirmchanges.Click
         ' Get user input
-        Dim email As String = Guna2TextBox2.Text.Trim()
-        Dim nickname As String = Guna2TextBox2.Text.Trim()
+        Dim email As String = txtbox_username.Text.Trim()
+        Dim nickname As String = txtbox_username.Text.Trim()
         Dim birthday As Date = Guna2DateTimePicker1.Value
 
         ' Basic validations
@@ -40,11 +40,11 @@ Public Class EditProfile
     End Sub
 
 
-    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
+    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lbl_editavatar.LinkClicked
         Dim openFile As New OpenFileDialog()
         openFile.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp"
         If openFile.ShowDialog() = DialogResult.OK Then
-            Guna2CirclePictureBox1.Image = Image.FromFile(openFile.FileName)
+            picBox_profile.Image = Image.FromFile(openFile.FileName)
         End If
     End Sub
 
@@ -60,7 +60,7 @@ Public Class EditProfile
 
     End Sub
 
-    Private Sub Guna2Button3_Click(sender As Object, e As EventArgs) Handles Guna2Button3.Click
+    Private Sub Guna2Button3_Click(sender As Object, e As EventArgs) Handles btn_back.Click
         Me.Close()
     End Sub
 End Class

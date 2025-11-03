@@ -71,7 +71,7 @@ Public Module Program
 
             ' We now listen for our custom "Back" event
             AddHandler SignupPanel.BackToLoginClicked, AddressOf ShowLoginPanelFromSignup
-
+            AddHandler StudentPanel.LogoutClicked, AddressOf ShowGuestPanel
             ' Connect to the (assumed) Logout button from StudentPanel
             ' AddHandler StudentPanel.LogoutClicked, AddressOf ShowGuestPanel
 

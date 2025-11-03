@@ -6,6 +6,7 @@ Imports System.Linq ' <-- Make sure this is at the top
 Partial Public Class Home_Panel_Students
     Implements ILoadingContainer
     ' This helper function will hide all panels, then show the one you want.
+    Public Event LogoutClicked As EventHandler
     Private Sub ShowTabPanel(ByVal tabToShow As UserControl)
         ' 1. Hide ALL your tab panels
         UC_HPS_home_tab1.Visible = False
@@ -113,7 +114,21 @@ Partial Public Class Home_Panel_Students
     End Sub
 
     Private Sub btn_profile_Click(sender As Object, e As EventArgs) Handles btn_profile.Click
+        ' --- START OF NEW CODE ---
 
+        ' 1. Check if the user is logged in
+        If Program.currentAccount Is Nothing Then
+            MessageBox.Show("Error: No user is currently logged in.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End If
+
+        ' 2. Create the UserProfile form, passing in the logged-in account
+        Dim profileForm As New UserProfile(Program.currentAccount)
+
+        ' 3. Show it as a dialog (modal), just like the cart
+        profileForm.ShowDialog()
+
+        ' --- END OF NEW CODE ---
     End Sub
 
     ' --- ADDED THIS PUBLIC METHOD ---
@@ -126,6 +141,11 @@ Partial Public Class Home_Panel_Students
         Else
             lbl_user.Text = name
         End If
+    End Sub
+
+    Private Sub btn_logout_Click(sender As Object, e As EventArgs) Handles btn_logout.Click
+        ' Send the "LogoutClicked" signal to Program.vb
+        RaiseEvent LogoutClicked(Me, EventArgs.Empty)
     End Sub
     ' --- END OF ADDITION ---
 End Class

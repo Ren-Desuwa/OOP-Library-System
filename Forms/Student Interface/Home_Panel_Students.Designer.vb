@@ -33,6 +33,7 @@ Partial Class Home_Panel_Students
         Me.Guna2Elipse1 = New Guna.UI2.WinForms.Guna2Elipse(Me.components)
         Me.tab_container_panel = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
         Me.Guna2CustomGradientPanel1 = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
+        Me.btn_logout = New Guna.UI2.WinForms.Guna2Button()
         Me.btn_Home_tab = New Guna.UI2.WinForms.Guna2Button()
         Me.btn_Catalouge_tab = New Guna.UI2.WinForms.Guna2Button()
         Me.btn_Borrowed_Books_tab = New Guna.UI2.WinForms.Guna2Button()
@@ -214,6 +215,7 @@ Partial Class Home_Panel_Students
         'Guna2CustomGradientPanel1
         '
         Me.Guna2CustomGradientPanel1.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2CustomGradientPanel1.Controls.Add(Me.btn_logout)
         Me.Guna2CustomGradientPanel1.Controls.Add(Me.btn_Home_tab)
         Me.Guna2CustomGradientPanel1.Controls.Add(Me.btn_Catalouge_tab)
         Me.Guna2CustomGradientPanel1.Controls.Add(Me.btn_Borrowed_Books_tab)
@@ -229,6 +231,24 @@ Partial Class Home_Panel_Students
         Me.Guna2CustomGradientPanel1.Name = "Guna2CustomGradientPanel1"
         Me.Guna2CustomGradientPanel1.Size = New System.Drawing.Size(920, 56)
         Me.Guna2CustomGradientPanel1.TabIndex = 12
+        '
+        'btn_logout
+        '
+        Me.btn_logout.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btn_logout.BackColor = System.Drawing.Color.Transparent
+        Me.btn_logout.BorderRadius = 10
+        Me.btn_logout.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btn_logout.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btn_logout.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btn_logout.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btn_logout.FillColor = System.Drawing.Color.Tan
+        Me.btn_logout.Font = New System.Drawing.Font("Segoe UI", 10.2!)
+        Me.btn_logout.ForeColor = System.Drawing.Color.Black
+        Me.btn_logout.Location = New System.Drawing.Point(728, 8)
+        Me.btn_logout.Name = "btn_logout"
+        Me.btn_logout.Size = New System.Drawing.Size(180, 32)
+        Me.btn_logout.TabIndex = 8
+        Me.btn_logout.Text = "Log out"
         '
         'btn_Home_tab
         '
@@ -412,4 +432,5 @@ Partial Class Home_Panel_Students
     Friend WithEvents UC_Loading_Panel1 As UC_Loading_Panel
     Friend WithEvents Guna2CustomGradientPanel1 As Guna.UI2.WinForms.Guna2CustomGradientPanel
     Friend WithEvents color_holder_panel As Guna.UI2.WinForms.Guna2CustomGradientPanel
+    Friend WithEvents btn_logout As Guna.UI2.WinForms.Guna2Button
 End Class

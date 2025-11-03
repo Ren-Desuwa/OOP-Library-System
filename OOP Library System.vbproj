@@ -180,10 +180,10 @@
     <Compile Include="Forms\Admin\Panel\EditBook.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Admin\Panel\ForgotPass.Designer.vb">
+    <Compile Include="Forms\Student Interface\ForgotPass.Designer.vb">
       <DependentUpon>ForgotPass.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Admin\Panel\ForgotPass.vb">
+    <Compile Include="Forms\Student Interface\ForgotPass.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Admin\Panel\Home_Panel_Admin_Librarian.Designer.vb">
@@ -343,10 +343,10 @@
     <Compile Include="Forms\User\Panel\BookItemControl.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\User\Panel\BooksFromProfile.Designer.vb">
+    <Compile Include="Forms\Student Interface\UC Student\BooksFromProfile.Designer.vb">
       <DependentUpon>BooksFromProfile.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\User\Panel\BooksFromProfile.vb">
+    <Compile Include="Forms\Student Interface\UC Student\BooksFromProfile.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Forms\User\Panel\Catalouge.Designer.vb">
@@ -361,10 +361,10 @@
     <Compile Include="Forms\User\Panel\editDisplayedBooks.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\User\Panel\EditProfile.Designer.vb">
+    <Compile Include="Forms\Student Interface\EditProfile.Designer.vb">
       <DependentUpon>EditProfile.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\User\Panel\EditProfile.vb">
+    <Compile Include="Forms\Student Interface\EditProfile.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\User\Panel\GenrePageControl.Designer.vb">
@@ -379,10 +379,10 @@
     <Compile Include="Forms\User\Panel\GenreRowControl.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\User\Panel\UserProfile.Designer.vb">
+    <Compile Include="Forms\Student Interface\UserProfile.Designer.vb">
       <DependentUpon>UserProfile.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\User\Panel\UserProfile.vb">
+    <Compile Include="Forms\Student Interface\UserProfile.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\User\UserLogin\UserRegister.Designer.vb">
@@ -446,7 +446,7 @@
     <EmbeddedResource Include="Forms\Admin\Panel\EditBook.resx">
       <DependentUpon>EditBook.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Admin\Panel\ForgotPass.resx">
+    <EmbeddedResource Include="Forms\Student Interface\ForgotPass.resx">
       <DependentUpon>ForgotPass.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin\Panel\Home_Panel_Admin_Librarian.resx">
@@ -518,7 +518,7 @@
     <EmbeddedResource Include="Forms\Student Interface\UC Student\UC_Signup2_student.resx" />
     <EmbeddedResource Include="Forms\Student Interface\UC Student\UC_Signup_student.resx" />
     <EmbeddedResource Include="Forms\Student Interface\UC Student\UC_Welcome_message_student.resx" />
-    <EmbeddedResource Include="Forms\User\Panel\BooksFromProfile.resx">
+    <EmbeddedResource Include="Forms\Student Interface\UC Student\BooksFromProfile.resx">
       <DependentUpon>BooksFromProfile.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\User\Panel\Catalouge.resx">
@@ -527,10 +527,10 @@
     <EmbeddedResource Include="Forms\User\Panel\editDisplayedBooks.resx">
       <DependentUpon>editDisplayedBooks.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\User\Panel\EditProfile.resx">
+    <EmbeddedResource Include="Forms\Student Interface\EditProfile.resx">
       <DependentUpon>EditProfile.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\User\Panel\UserProfile.resx">
+    <EmbeddedResource Include="Forms\Student Interface\UserProfile.resx">
       <DependentUpon>UserProfile.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
