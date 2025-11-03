@@ -11,6 +11,7 @@ Public Module Program
     Public ReadOnly NotifSvc As NotificationService
     Public ReadOnly RegSvc As registrationService
     Public ReadOnly CartSvc As New CartService()
+    Public ReadOnly BorrowSvc As BorrowService
     ' ... other services ...
 
     ' --- Static Constructor (Runs ONCE) ---
@@ -26,6 +27,7 @@ Public Module Program
             OtpSvc = New OtpService(mainDbConnection)
             NotifSvc = New NotificationService()
             RegSvc = New registrationService(mainDbConnection, OtpSvc, NotifSvc)
+            BorrowSvc = New BorrowService(mainDbConnection)
 
         Catch ex As Exception
             ' If this fails, the app can't run
@@ -42,7 +44,7 @@ Public Module Program
     Private LoginPanel As Login_Panel_Student
     Private SignupPanel As Signup_Panel_Student
     Private StudentPanel As Home_Panel_Students
-    Private currentAccount As Account
+    Public currentAccount As Account
 
 
     ' --- Main Entry Point ---

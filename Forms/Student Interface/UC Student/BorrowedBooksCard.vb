@@ -26,4 +26,27 @@
             lblDueDate.Text = value
         End Set
     End Property
+
+    ' --- ADD THIS NEW FUNCTION ---
+    Public Property BookCover As Image
+        Get
+            Return picbox_bookcover.Image
+        End Get
+        Set(value As Image)
+            picbox_bookcover.Image = value
+        End Set
+    End Property
+
+    ' --- ADD THIS NEW FUNCTION ---
+    ''' <summary>
+    ''' Sets the background color of the card and the status indicator.
+    ''' </summary>
+    Public Sub SetCardColor(color As Color)
+        ' Guna2Panel1 is the main background panel
+        Guna2Panel1.FillColor = color
+        ' pnl_colorindicate is the small square
+        pnl_colorindicate.FillColor = color
+    End Sub
+    ' --- END OF NEW FUNCTION ---
+
 End Class

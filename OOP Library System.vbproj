@@ -86,6 +86,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Services\BorrowedBookDetails.vb" />
     <Compile Include="Classes\Services\CartServices.vb" />
     <Compile Include="Forms\Student Interface\UC Student\BeforeApproval.Designer.vb">
       <DependentUpon>BeforeApproval.vb</DependentUpon>
@@ -99,16 +100,16 @@
     <Compile Include="Forms\Student Interface\UC Student\BookCart.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="BorrowedBooks.Designer.vb">
+    <Compile Include="Forms\Student Interface\UC Student\BorrowedBooks.Designer.vb">
       <DependentUpon>BorrowedBooks.vb</DependentUpon>
     </Compile>
-    <Compile Include="BorrowedBooks.vb">
+    <Compile Include="Forms\Student Interface\UC Student\BorrowedBooks.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="BorrowedBooksCard.Designer.vb">
+    <Compile Include="Forms\Student Interface\UC Student\BorrowedBooksCard.Designer.vb">
       <DependentUpon>BorrowedBooksCard.vb</DependentUpon>
     </Compile>
-    <Compile Include="BorrowedBooksCard.vb">
+    <Compile Include="Forms\Student Interface\UC Student\BorrowedBooksCard.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Classes\DataAccessObjects\AccountDAO.vb" />
@@ -421,10 +422,10 @@
     <EmbeddedResource Include="Forms\Student Interface\UC Student\BookCart.resx">
       <DependentUpon>BookCart.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BorrowedBooks.resx">
+    <EmbeddedResource Include="Forms\Student Interface\UC Student\BorrowedBooks.resx">
       <DependentUpon>BorrowedBooks.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BorrowedBooksCard.resx">
+    <EmbeddedResource Include="Forms\Student Interface\UC Student\BorrowedBooksCard.resx">
       <DependentUpon>BorrowedBooksCard.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin\Panel\AddBorrower.resx">
