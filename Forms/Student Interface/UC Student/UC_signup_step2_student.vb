@@ -1,7 +1,7 @@
 ﻿Imports System.Drawing
 Imports System.Text.RegularExpressions
 
-Public Class UC_Signup2_student
+Public Class UC_signup_step2_student
 
     ' --- NEW: Variables for OTP Countdown and Verification ---
     Private _countdownSeconds As Integer = 60
@@ -14,7 +14,8 @@ Public Class UC_Signup2_student
     ' --- NEW: Public properties to expose data ---
 
     Private Sub UC_Signup2_student_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' This line manually forces the timer to connect to the Tick event.
+        ' This line manually forces 
+        ' the timer to connect to the Tick event.
         ' This fixes the bug where the designer fails to hook up the event.
         AddHandler otpTimer.Tick, AddressOf otpTimer_Tick
     End Sub
@@ -30,6 +31,7 @@ Public Class UC_Signup2_student
         End Get
     End Property
 
+
     ' This handles the "Back" button click
     Private Sub btn_login_Click(sender As Object, e As EventArgs) Handles btn_backstepone.Click
         ' Send the "BackClicked" signal to the parent form
@@ -43,7 +45,6 @@ Public Class UC_Signup2_student
 
     ' --- 2. All phone formatting logic removed (KeyPress, TextChanged, KeyDown) ---
     ' Validation is now handled by the service layer.
-
     ' --- 3. HELPER METHODS FOR VALIDATION ---
     ''' <summary>
     ''' Sets the textbox border to red to show an error (e.g., OTP failed).
@@ -61,6 +62,7 @@ Public Class UC_Signup2_student
     End Sub
 
     ''' <summary>
+
     ''' Sets the OTP textbox and Verify button to red to show an error.
     ''' </summary>
     Public Sub SetOtpInvalid()
@@ -87,6 +89,7 @@ Public Class UC_Signup2_student
 
     ' --- 4. HANDLE "SEND CODE" CLICK (MODIFIED) ---
     Private Sub btn_sendcode_Click(sender As Object, e As EventArgs) Handles btn_sendcode.Click
+
         ' Just raise the event. The parent form will handle the logic.
         RaiseEvent SendCodeClicked(Me, EventArgs.Empty)
     End Sub
@@ -102,6 +105,7 @@ Public Class UC_Signup2_student
         ' 3. Start the timer
         otpTimer.Start()
 
+
         ' 4. Enable the controls for verification
         txtbox_otp.Enabled = True
         btn_verifynum.Enabled = True
@@ -109,24 +113,7 @@ Public Class UC_Signup2_student
 
     ' --- 5. HANDLE THE TIMER COUNTDOWN (UNCHANGED) ---
     Private Sub otpTimer_Tick(sender As Object, e As EventArgs) Handles otpTimer.Tick
-        If _countdownSeconds > 0 Then
-            ' Decrease time
-            _countdownSeconds -= 1
 
-            ' Format the time as "mm:ss" (e.g., "00:59")
-            Dim timeRemaining = TimeSpan.FromSeconds(_countdownSeconds)
-            btn_sendcode.Text = $"Resend in {timeRemaining:mm\:ss}"
-        Else
-            ' --- Time's up! ---
-            ' 1. Stop the timer
-            otpTimer.Stop()
-
-            ' 2. Re-enable the button
-            btn_sendcode.Enabled = True
-
-            ' 3. Reset the text
-            btn_sendcode.Text = "Send Code"
-        End If
     End Sub
 
     ' --- 6. HANDLE "VERIFY" CLICK (MODIFIED) ---

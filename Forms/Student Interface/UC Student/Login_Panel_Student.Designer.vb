@@ -33,16 +33,18 @@ Partial Class Login_Panel_Student
         Me.btn_register = New Guna.UI2.WinForms.Guna2Button()
         Me.title_panel = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
         Me.login_form_container = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
+        Me.UC_welcome_message1_student1 = New OOP_Library_System.UC_welcome_message1_student()
         Me.Guna2CustomGradientPanel3 = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
         Me.img_show = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.img_hide = New Guna.UI2.WinForms.Guna2PictureBox()
+        Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Guna2Elipse1 = New Guna.UI2.WinForms.Guna2Elipse(Me.components)
-        Me.Welcome_message_student = New OOP_Library_System.UC_Welcome_message_student()
         Me.title_panel.SuspendLayout()
         Me.login_form_container.SuspendLayout()
         Me.Guna2CustomGradientPanel3.SuspendLayout()
         CType(Me.img_show, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.img_hide, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lbl_titlelogin
@@ -177,6 +179,7 @@ Partial Class Login_Panel_Student
         'title_panel
         '
         Me.title_panel.Controls.Add(Me.login_form_container)
+        Me.title_panel.Controls.Add(Me.Guna2PictureBox1)
         Me.title_panel.Dock = System.Windows.Forms.DockStyle.Fill
         Me.title_panel.FillColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(156, Byte), Integer))
         Me.title_panel.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(164, Byte), Integer), CType(CType(120, Byte), Integer), CType(CType(84, Byte), Integer))
@@ -192,10 +195,9 @@ Partial Class Login_Panel_Student
         '
         Me.login_form_container.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.login_form_container.BackColor = System.Drawing.Color.Transparent
-        Me.login_form_container.BorderColor = System.Drawing.Color.DimGray
+        Me.login_form_container.BorderColor = System.Drawing.Color.Transparent
         Me.login_form_container.BorderRadius = 30
-        Me.login_form_container.BorderThickness = 1
-        Me.login_form_container.Controls.Add(Me.Welcome_message_student)
+        Me.login_form_container.Controls.Add(Me.UC_welcome_message1_student1)
         Me.login_form_container.Controls.Add(Me.Guna2CustomGradientPanel3)
         Me.login_form_container.FillColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(232, Byte), Integer))
         Me.login_form_container.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(216, Byte), Integer))
@@ -207,6 +209,15 @@ Partial Class Login_Panel_Student
         Me.login_form_container.Name = "login_form_container"
         Me.login_form_container.Size = New System.Drawing.Size(1048, 505)
         Me.login_form_container.TabIndex = 15
+        '
+        'UC_welcome_message1_student1
+        '
+        Me.UC_welcome_message1_student1.BackColor = System.Drawing.Color.Transparent
+        Me.UC_welcome_message1_student1.Dock = System.Windows.Forms.DockStyle.Left
+        Me.UC_welcome_message1_student1.Location = New System.Drawing.Point(0, 0)
+        Me.UC_welcome_message1_student1.Name = "UC_welcome_message1_student1"
+        Me.UC_welcome_message1_student1.Size = New System.Drawing.Size(525, 505)
+        Me.UC_welcome_message1_student1.TabIndex = 2
         '
         'Guna2CustomGradientPanel3
         '
@@ -262,19 +273,23 @@ Partial Class Login_Panel_Student
         Me.img_hide.TabIndex = 15
         Me.img_hide.TabStop = False
         '
+        'Guna2PictureBox1
+        '
+        Me.Guna2PictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2PictureBox1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Guna2PictureBox1.FillColor = System.Drawing.Color.Transparent
+        Me.Guna2PictureBox1.Image = Global.OOP_Library_System.My.Resources.Resources.titi_ni_ren_baluktot_nakita_ko
+        Me.Guna2PictureBox1.ImageRotate = 0!
+        Me.Guna2PictureBox1.Location = New System.Drawing.Point(0, 0)
+        Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
+        Me.Guna2PictureBox1.Size = New System.Drawing.Size(1248, 705)
+        Me.Guna2PictureBox1.TabIndex = 16
+        Me.Guna2PictureBox1.TabStop = False
+        '
         'Guna2Elipse1
         '
         Me.Guna2Elipse1.BorderRadius = 30
         Me.Guna2Elipse1.TargetControl = Me
-        '
-        'Welcome_message_student
-        '
-        Me.Welcome_message_student.BackColor = System.Drawing.Color.Transparent
-        Me.Welcome_message_student.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Welcome_message_student.Location = New System.Drawing.Point(0, 0)
-        Me.Welcome_message_student.Name = "Welcome_message_student"
-        Me.Welcome_message_student.Size = New System.Drawing.Size(525, 505)
-        Me.Welcome_message_student.TabIndex = 2
         '
         'Login_Panel_Student
         '
@@ -294,6 +309,7 @@ Partial Class Login_Panel_Student
         Me.Guna2CustomGradientPanel3.PerformLayout()
         CType(Me.img_show, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.img_hide, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -311,5 +327,6 @@ Partial Class Login_Panel_Student
     Friend WithEvents img_hide As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents img_show As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents login_form_container As Guna.UI2.WinForms.Guna2CustomGradientPanel
-    Friend WithEvents Welcome_message_student As UC_Welcome_message_student
+    Friend WithEvents UC_welcome_message1_student1 As UC_welcome_message1_student
+    Friend WithEvents Guna2PictureBox1 As Guna.UI2.WinForms.Guna2PictureBox
 End Class

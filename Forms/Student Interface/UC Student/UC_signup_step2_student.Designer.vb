@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class UC_Signup2_student
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+Partial Class UC_signup_step2_student
     Inherits System.Windows.Forms.UserControl
 
     'UserControl overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()>
+    <System.Diagnostics.DebuggerNonUserCode()> _
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,12 +20,12 @@ Partial Class UC_Signup2_student
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()>
+    <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.Panel_Step1 = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
-        Me.btn_verifynum = New Guna.UI2.WinForms.Guna2Button()
         Me.txtBox_contactInfo = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.btn_verifynum = New Guna.UI2.WinForms.Guna2Button()
         Me.txtbox_otp = New Guna.UI2.WinForms.Guna2TextBox()
         Me.lbl_otp = New System.Windows.Forms.Label()
         Me.lbl_titlesignup = New System.Windows.Forms.Label()
@@ -33,7 +33,6 @@ Partial Class UC_Signup2_student
         Me.lbl_contactInfo = New System.Windows.Forms.Label()
         Me.btn_backstepone = New Guna.UI2.WinForms.Guna2Button()
         Me.btn_sendcode = New Guna.UI2.WinForms.Guna2Button()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.otpTimer = New System.Windows.Forms.Timer(Me.components)
         Me.Panel_Step1.SuspendLayout()
         Me.SuspendLayout()
@@ -52,6 +51,7 @@ Partial Class UC_Signup2_student
         Me.Panel_Step1.Controls.Add(Me.btn_sendcode)
         Me.Panel_Step1.CustomizableEdges.BottomLeft = False
         Me.Panel_Step1.CustomizableEdges.TopLeft = False
+        Me.Panel_Step1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel_Step1.FillColor = System.Drawing.Color.FloralWhite
         Me.Panel_Step1.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(240, Byte), Integer))
         Me.Panel_Step1.FillColor3 = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(232, Byte), Integer))
@@ -60,24 +60,7 @@ Partial Class UC_Signup2_student
         Me.Panel_Step1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel_Step1.Name = "Panel_Step1"
         Me.Panel_Step1.Size = New System.Drawing.Size(525, 505)
-        Me.Panel_Step1.TabIndex = 3
-        '
-        'btn_verifynum
-        '
-        Me.btn_verifynum.BorderRadius = 10
-        Me.btn_verifynum.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btn_verifynum.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btn_verifynum.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btn_verifynum.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btn_verifynum.FillColor = System.Drawing.Color.Tan
-        Me.btn_verifynum.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        Me.btn_verifynum.ForeColor = System.Drawing.Color.Black
-        Me.btn_verifynum.Location = New System.Drawing.Point(59, 433)
-        Me.btn_verifynum.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btn_verifynum.Name = "btn_verifynum"
-        Me.btn_verifynum.Size = New System.Drawing.Size(180, 46)
-        Me.btn_verifynum.TabIndex = 23
-        Me.btn_verifynum.Text = "Verify"
+        Me.Panel_Step1.TabIndex = 4
         '
         'txtBox_contactInfo
         '
@@ -104,6 +87,23 @@ Partial Class UC_Signup2_student
         Me.txtBox_contactInfo.SelectedText = ""
         Me.txtBox_contactInfo.Size = New System.Drawing.Size(336, 57)
         Me.txtBox_contactInfo.TabIndex = 0
+        '
+        'btn_verifynum
+        '
+        Me.btn_verifynum.BorderRadius = 10
+        Me.btn_verifynum.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btn_verifynum.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btn_verifynum.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btn_verifynum.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btn_verifynum.FillColor = System.Drawing.Color.Tan
+        Me.btn_verifynum.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.btn_verifynum.ForeColor = System.Drawing.Color.Black
+        Me.btn_verifynum.Location = New System.Drawing.Point(59, 433)
+        Me.btn_verifynum.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btn_verifynum.Name = "btn_verifynum"
+        Me.btn_verifynum.Size = New System.Drawing.Size(180, 46)
+        Me.btn_verifynum.TabIndex = 23
+        Me.btn_verifynum.Text = "Verify"
         '
         'txtbox_otp
         '
@@ -222,14 +222,13 @@ Partial Class UC_Signup2_student
         '
         Me.otpTimer.Interval = 1000
         '
-        'UC_Signup2_student
+        'UC_signup_step2_student
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Transparent
         Me.Controls.Add(Me.Panel_Step1)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.Name = "UC_Signup2_student"
+        Me.Name = "UC_signup_step2_student"
         Me.Size = New System.Drawing.Size(525, 505)
         Me.Panel_Step1.ResumeLayout(False)
         Me.Panel_Step1.PerformLayout()
@@ -238,15 +237,14 @@ Partial Class UC_Signup2_student
     End Sub
 
     Friend WithEvents Panel_Step1 As Guna.UI2.WinForms.Guna2CustomGradientPanel
+    Friend WithEvents txtBox_contactInfo As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents btn_verifynum As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents txtbox_otp As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents lbl_otp As Label
     Friend WithEvents lbl_titlesignup As Label
-    Friend WithEvents txtBox_contactInfo As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents btn_register As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents lbl_contactInfo As Label
     Friend WithEvents btn_backstepone As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents txtbox_otp As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents btn_sendcode As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents btn_verifynum As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Timer1 As Timer
     Friend WithEvents otpTimer As Timer
 End Class

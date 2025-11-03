@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class UC_Signup_student
+Partial Class UC_signup_step1_student
     Inherits System.Windows.Forms.UserControl
 
     'UserControl overrides dispose to clean up the component list.
@@ -27,8 +27,6 @@ Partial Class UC_Signup_student
         Me.txtBox_studentid = New Guna.UI2.WinForms.Guna2TextBox()
         Me.lbl_confirmpassword = New System.Windows.Forms.Label()
         Me.txtBox_confirmpassword = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.img_show = New Guna.UI2.WinForms.Guna2PictureBox()
-        Me.img_hide = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.lbl_titlesignup = New System.Windows.Forms.Label()
         Me.txtBox_password = New Guna.UI2.WinForms.Guna2TextBox()
         Me.txtBox_username = New Guna.UI2.WinForms.Guna2TextBox()
@@ -36,6 +34,8 @@ Partial Class UC_Signup_student
         Me.lbl_username = New System.Windows.Forms.Label()
         Me.btn_login = New Guna.UI2.WinForms.Guna2Button()
         Me.lbl_password = New System.Windows.Forms.Label()
+        Me.img_show = New Guna.UI2.WinForms.Guna2PictureBox()
+        Me.img_hide = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Panel_Step1.SuspendLayout()
         CType(Me.img_show, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.img_hide, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -59,6 +59,7 @@ Partial Class UC_Signup_student
         Me.Panel_Step1.Controls.Add(Me.lbl_password)
         Me.Panel_Step1.CustomizableEdges.BottomLeft = False
         Me.Panel_Step1.CustomizableEdges.TopLeft = False
+        Me.Panel_Step1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel_Step1.FillColor = System.Drawing.Color.FloralWhite
         Me.Panel_Step1.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(240, Byte), Integer))
         Me.Panel_Step1.FillColor3 = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(232, Byte), Integer))
@@ -67,7 +68,7 @@ Partial Class UC_Signup_student
         Me.Panel_Step1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel_Step1.Name = "Panel_Step1"
         Me.Panel_Step1.Size = New System.Drawing.Size(525, 505)
-        Me.Panel_Step1.TabIndex = 2
+        Me.Panel_Step1.TabIndex = 3
         '
         'lbl_studentid
         '
@@ -142,34 +143,6 @@ Partial Class UC_Signup_student
         Me.txtBox_confirmpassword.SelectedText = ""
         Me.txtBox_confirmpassword.Size = New System.Drawing.Size(277, 57)
         Me.txtBox_confirmpassword.TabIndex = 17
-        '
-        'img_show
-        '
-        Me.img_show.BackColor = System.Drawing.Color.White
-        Me.img_show.FillColor = System.Drawing.Color.Transparent
-        Me.img_show.Image = Global.OOP_Library_System.My.Resources.Resources.Show_icon1
-        Me.img_show.ImageRotate = 0!
-        Me.img_show.Location = New System.Drawing.Point(368, 297)
-        Me.img_show.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.img_show.Name = "img_show"
-        Me.img_show.Size = New System.Drawing.Size(24, 22)
-        Me.img_show.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.img_show.TabIndex = 16
-        Me.img_show.TabStop = False
-        '
-        'img_hide
-        '
-        Me.img_hide.BackColor = System.Drawing.Color.White
-        Me.img_hide.FillColor = System.Drawing.Color.Transparent
-        Me.img_hide.Image = Global.OOP_Library_System.My.Resources.Resources.Hide_icon1
-        Me.img_hide.ImageRotate = 0!
-        Me.img_hide.Location = New System.Drawing.Point(368, 297)
-        Me.img_hide.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.img_hide.Name = "img_hide"
-        Me.img_hide.Size = New System.Drawing.Size(24, 22)
-        Me.img_hide.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.img_hide.TabIndex = 15
-        Me.img_hide.TabStop = False
         '
         'lbl_titlesignup
         '
@@ -291,14 +264,42 @@ Partial Class UC_Signup_student
         Me.lbl_password.TabIndex = 6
         Me.lbl_password.Text = "Password"
         '
-        'UC_Signup_student
+        'img_show
+        '
+        Me.img_show.BackColor = System.Drawing.Color.White
+        Me.img_show.FillColor = System.Drawing.Color.Transparent
+        Me.img_show.Image = Global.OOP_Library_System.My.Resources.Resources.Show_icon1
+        Me.img_show.ImageRotate = 0!
+        Me.img_show.Location = New System.Drawing.Point(368, 297)
+        Me.img_show.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.img_show.Name = "img_show"
+        Me.img_show.Size = New System.Drawing.Size(24, 22)
+        Me.img_show.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.img_show.TabIndex = 16
+        Me.img_show.TabStop = False
+        '
+        'img_hide
+        '
+        Me.img_hide.BackColor = System.Drawing.Color.White
+        Me.img_hide.FillColor = System.Drawing.Color.Transparent
+        Me.img_hide.Image = Global.OOP_Library_System.My.Resources.Resources.Hide_icon1
+        Me.img_hide.ImageRotate = 0!
+        Me.img_hide.Location = New System.Drawing.Point(368, 297)
+        Me.img_hide.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.img_hide.Name = "img_hide"
+        Me.img_hide.Size = New System.Drawing.Size(24, 22)
+        Me.img_hide.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.img_hide.TabIndex = 15
+        Me.img_hide.TabStop = False
+        '
+        'UC_signup_step1_student
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Transparent
         Me.Controls.Add(Me.Panel_Step1)
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Name = "UC_Signup_student"
+        Me.Name = "UC_signup_step1_student"
         Me.Size = New System.Drawing.Size(525, 505)
         Me.Panel_Step1.ResumeLayout(False)
         Me.Panel_Step1.PerformLayout()

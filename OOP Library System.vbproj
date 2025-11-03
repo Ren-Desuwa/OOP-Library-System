@@ -88,6 +88,24 @@
   <ItemGroup>
     <Compile Include="Classes\Services\BorrowedBookDetails.vb" />
     <Compile Include="Classes\Services\CartServices.vb" />
+    <Compile Include="Forms\Student Interface\UC Student\UC_signup_step1_student.Designer.vb">
+      <DependentUpon>UC_signup_step1_student.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Student Interface\UC Student\UC_signup_step1_student.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Student Interface\UC Student\UC_signup_step2_student.Designer.vb">
+      <DependentUpon>UC_signup_step2_student.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Student Interface\UC Student\UC_signup_step2_student.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Student Interface\UC Student\UC_welcome_message1_student.Designer.vb">
+      <DependentUpon>UC_welcome_message1_student.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Student Interface\UC Student\UC_welcome_message1_student.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Forms\Student Interface\UC Student\BeforeApproval.Designer.vb">
       <DependentUpon>BeforeApproval.vb</DependentUpon>
     </Compile>
@@ -240,16 +258,16 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Student Interface\ILoadingContainer.vb" />
-    <Compile Include="Forms\Student Interface\Login_Panel_Student.Designer.vb">
+    <Compile Include="Forms\Student Interface\UC Student\Login_Panel_Student.Designer.vb">
       <DependentUpon>Login_Panel_Student.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Student Interface\Login_Panel_Student.vb">
+    <Compile Include="Forms\Student Interface\UC Student\Login_Panel_Student.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Student Interface\Signup_Panel_Student.Designer.vb">
+    <Compile Include="Forms\Student Interface\UC Student\Signup_Panel_Student.Designer.vb">
       <DependentUpon>Signup_Panel_Student.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Student Interface\Signup_Panel_Student.vb">
+    <Compile Include="Forms\Student Interface\UC Student\Signup_Panel_Student.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Student Interface\TestWindow.Designer.vb">
@@ -316,24 +334,6 @@
       <DependentUpon>UC_pagination_controls.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\Student Interface\UC Student\UC_pagination_controls.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Forms\Student Interface\UC Student\UC_Signup2_student.Designer.vb">
-      <DependentUpon>UC_Signup2_student.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Student Interface\UC Student\UC_Signup2_student.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Forms\Student Interface\UC Student\UC_Signup_student.Designer.vb">
-      <DependentUpon>UC_Signup_student.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Student Interface\UC Student\UC_Signup_student.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Forms\Student Interface\UC Student\UC_Welcome_message_student.Designer.vb">
-      <DependentUpon>UC_Welcome_message_student.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Student Interface\UC Student\UC_Welcome_message_student.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Forms\User\Panel\BookItemControl.Designer.vb">
@@ -415,6 +415,15 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Forms\Student Interface\UC Student\UC_signup_step1_student.resx">
+      <DependentUpon>UC_signup_step1_student.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Student Interface\UC Student\UC_signup_step2_student.resx">
+      <DependentUpon>UC_signup_step2_student.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Student Interface\UC Student\UC_welcome_message1_student.resx">
+      <DependentUpon>UC_welcome_message1_student.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Student Interface\UC Student\BeforeApproval.resx">
       <DependentUpon>BeforeApproval.vb</DependentUpon>
     </EmbeddedResource>
@@ -475,11 +484,12 @@
     <EmbeddedResource Include="Forms\Student Interface\Home_Panel_Students.resx">
       <DependentUpon>Home_Panel_Students.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Student Interface\Login_Panel_Student.resx">
+    <EmbeddedResource Include="Forms\Student Interface\UC Student\Login_Panel_Student.resx">
       <DependentUpon>Login_Panel_Student.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Student Interface\Signup_Panel_Student.resx">
+    <EmbeddedResource Include="Forms\Student Interface\UC Student\Signup_Panel_Student.resx">
       <DependentUpon>Signup_Panel_Student.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Student Interface\TestWindow.resx">
       <DependentUpon>TestWindow.vb</DependentUpon>
@@ -514,9 +524,6 @@
     <EmbeddedResource Include="Forms\Student Interface\UC Student\UC_pagination_controls.resx">
       <DependentUpon>UC_pagination_controls.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Student Interface\UC Student\UC_Signup2_student.resx" />
-    <EmbeddedResource Include="Forms\Student Interface\UC Student\UC_Signup_student.resx" />
-    <EmbeddedResource Include="Forms\Student Interface\UC Student\UC_Welcome_message_student.resx" />
     <EmbeddedResource Include="Forms\Student Interface\UC Student\BooksFromProfile.resx">
       <DependentUpon>BooksFromProfile.vb</DependentUpon>
     </EmbeddedResource>
@@ -578,6 +585,7 @@
     <None Include="Resources\Ucc Logo NoBG Big1.png" />
     <None Include="Resources\Ucc Logo NoBG Big2.png" />
     <None Include="Resources\Show_icon1.png" />
+    <None Include="Resources\titi ni ren baluktot nakita ko.png" />
     <Content Include="Resources\Untitled design.png" />
     <None Include="Classes\sample.md" />
     <Content Include="Resources\Accountwhite0_icon.png" />
