@@ -20,6 +20,7 @@ CREATE TABLE `accounts` (
   `password_hash` varchar(64) NOT NULL,
   `role` varchar(50) NOT NULL DEFAULT 'Member',
   `name` varchar(255) NOT NULL,
+  `student_id` varchar(255) NOT NULL ,
   `email` varchar(255) NOT NULL,
   `birthday` date DEFAULT NULL,
   `contact_number` varchar(20) DEFAULT NULL,
@@ -29,6 +30,7 @@ CREATE TABLE `accounts` (
   PRIMARY KEY (`account_id`),
   UNIQUE KEY `UK_username` (`username`),
   UNIQUE KEY `UK_email` (`email`),
+  UNIQUE KEY `UK_student_id` (`student_id`),
   KEY `IX_role` (`role`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 

@@ -31,10 +31,13 @@ Public Class AuthService
             Dim userAccount = accountDAO.GetByUsername(username)
 
             If userAccount Is Nothing Then
-                ' User not found
-                logDAO.Create(Log.RecordAction(Nothing, "Login Failure", $"Attempted login for non-existent user '{username}'."))
-                transaction.Commit() ' Commit the log entry
-                Return Nothing
+                userAccount = accountDAO.GetByStudentID(username)
+                If userAccount Is Nothing Then
+                    ' User not found
+                    logDAO.Create(Log.RecordAction(Nothing, "Login Failure", $"Attempted login for non-existent user '{username}'."))
+                    transaction.Commit() ' Commit the log entry
+                    Return Nothing
+                End If
             End If
 
             ' 2. --- Verify Password ---

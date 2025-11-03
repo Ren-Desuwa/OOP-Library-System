@@ -138,14 +138,11 @@ Public Class Signup_Panel_Student
         Dim otpInput As String = UC_Signup2_student2.OtpCode
 
         Try
-            ' 2. Get data from Step 1 (already stored in form variables)
-            ' We will use the StudentID as the 'Name' for the account
-            Dim studentName As String = studentID
 
             ' 3. Call the registration service to create the account
             ' (Assuming RegSvc is a form-level variable)
             ' This new signature is simpler and handles email/phone logic in the service
-            Dim newAccountId As Integer = RegSvc.CompleteRegistration(studentUsername, studentPassword, studentName, contactInfo, otpInput)
+            Dim newAccountId As Integer = RegSvc.CompleteRegistration(studentUsername, studentPassword, studentID, contactInfo, otpInput)
 
             ' 4. Success!
             MessageBox.Show("Registration Successful! You can now log in.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)

@@ -14,6 +14,7 @@ Public Class AccountDAO
         Dim colContactNumber = reader.GetOrdinal("contact_number")
         Dim colBirthday = reader.GetOrdinal("birthday") ' <-- ADDED
         Dim colFavBookDesign = reader.GetOrdinal("fav_book_design") ' <-- ADDED
+        Dim colStudentID = reader.GetOrdinal("student_id")
 
         Return New Account With {
             .AccountID = reader.GetInt32("account_id"),
@@ -21,6 +22,7 @@ Public Class AccountDAO
             .PasswordHash = reader.GetString("password_hash"),
             .Role = reader.GetString("role"),
             .Name = reader.GetString("name"),
+            .StudentID = If(reader.IsDBNull(colStudentID), Nothing, reader.GetString(colStudentID)),
             .Email = If(reader.IsDBNull(colEmail), Nothing, reader.GetString(colEmail)),
             .ContactNumber = If(reader.IsDBNull(colContactNumber), Nothing, reader.GetString(colContactNumber)),
             .Birthday = If(reader.IsDBNull(colBirthday), CType(Nothing, Date?), reader.GetDateTime(colBirthday)), ' <-- ADDED
@@ -33,14 +35,15 @@ Public Class AccountDAO
     ' #################### CREATE ####################
     Public Function Create(account As Account) As Integer
         ' <-- MODIFIED SQL
-        Dim sql = "INSERT INTO accounts (username, password_hash, role, name, email, contact_number, birthday, fav_book_design, date_created, is_active) " &
-                  "VALUES (@Username, @PasswordHash, @Role, @Name, @Email, @ContactNumber, @Birthday, @FavBookDesign, @DateCreated, @IsActive); " &
+        Dim sql = "INSERT INTO accounts (username, password_hash, role, name, student_id, email, contact_number, birthday, fav_book_design, date_created, is_active) " &
+                  "VALUES (@Username, @PasswordHash, @Role, @Name, @StudentID, @Email, @ContactNumber, @Birthday, @FavBookDesign, @DateCreated, @IsActive); " &
                   "SELECT LAST_INSERT_ID();"
         Using cmd As New MySqlCommand(sql, _transaction.Connection, _transaction)
             cmd.Parameters.AddWithValue("@Username", account.Username)
             cmd.Parameters.AddWithValue("@PasswordHash", account.PasswordHash)
             cmd.Parameters.AddWithValue("@Role", account.Role)
             cmd.Parameters.AddWithValue("@Name", account.Name)
+            cmd.Parameters.AddWithValue("@StudentID", If(account.StudentID Is Nothing, CType(DBNull.Value, Object), account.StudentID))
             ' Handle null values correctly for email and phone
             cmd.Parameters.AddWithValue("@Email", If(account.Email Is Nothing, CType(DBNull.Value, Object), account.Email))
             cmd.Parameters.AddWithValue("@ContactNumber", If(account.ContactNumber Is Nothing, CType(DBNull.Value, Object), account.ContactNumber))
@@ -69,6 +72,16 @@ Public Class AccountDAO
         Dim sql = "SELECT * FROM accounts WHERE username = @Username"
         Using cmd As New MySqlCommand(sql, _transaction.Connection, _transaction)
             cmd.Parameters.AddWithValue("@Username", username)
+            Using reader = cmd.ExecuteReader()
+                Return If(reader.Read(), MapToAccount(reader), Nothing)
+            End Using
+        End Using
+    End Function
+
+    Public Function GetByStudentID(student_id As String) As Account
+        Dim sql = "SELECT * FROM accounts WHERE student_id = @Student_ID"
+        Using cmd As New MySqlCommand(sql, _transaction.Connection, _transaction)
+            cmd.Parameters.AddWithValue("@Student_ID", student_id)
             Using reader = cmd.ExecuteReader()
                 Return If(reader.Read(), MapToAccount(reader), Nothing)
             End Using
@@ -113,7 +126,7 @@ Public Class AccountDAO
         ' <-- MODIFIED SQL
         Dim sql = "UPDATE accounts SET " &
                   "username = @Username, password_hash = @PasswordHash, role = @Role, " &
-                  "name = @Name, email = @Email, contact_number = @ContactNumber, " &
+                  "name = @Name, student_id = @StudentID, email = @Email, contact_number = @ContactNumber, " &
                   "birthday = @Birthday, fav_book_design = @FavBookDesign, is_active = @IsActive " &
                   "WHERE account_id = @Id"
         Using cmd As New MySqlCommand(sql, _transaction.Connection, _transaction)
@@ -121,6 +134,7 @@ Public Class AccountDAO
             cmd.Parameters.AddWithValue("@PasswordHash", account.PasswordHash)
             cmd.Parameters.AddWithValue("@Role", account.Role)
             cmd.Parameters.AddWithValue("@Name", account.Name)
+            cmd.Parameters.AddWithValue("@StudentID", If(account.StudentID Is Nothing, CType(DBNull.Value, Object), account.StudentID))
             cmd.Parameters.AddWithValue("@Email", If(account.Email Is Nothing, CType(DBNull.Value, Object), account.Email))
             cmd.Parameters.AddWithValue("@ContactNumber", If(account.ContactNumber Is Nothing, CType(DBNull.Value, Object), account.ContactNumber))
             cmd.Parameters.AddWithValue("@Birthday", If(account.Birthday.HasValue, CType(account.Birthday.Value, Object), DBNull.Value)) ' <-- ADDED

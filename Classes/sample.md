@@ -7,13 +7,13 @@ SET foreign_key_checks = 0;
 --
 -- Populating table `accounts`
 -- Note: Passwords are hashed using SHA2('password', 256).
--- The actual passwords are 'adminpass', 'libpass123', 'mypassword'
+-- The actual passwords are 'adminpass', 'libpass123', 'password', 
 --
 TRUNCATE TABLE `accounts`;
-INSERT INTO `accounts` (`account_id`, `username`, `password_hash`, `role`, `name`, `email`, `birthday`, `contact_number`, `date_created`, `is_active`) VALUES
-(1, 'admin', '5f94a1a56f34e339a43a88b50f75b8061f8f9c65eb4111354921509355743147', 'Admin', 'Admin User', 'admin@library.com', '1990-01-01', '09171234567', '2025-01-01 10:00:00', 1),
-(2, 'jane', 'b18018ae50d885611440a3258163f5b5b5463f0f7f4e91f0e4953c89422a16d8', 'Librarian', 'Jane Dela Cruz', 'jane.d@library.com', '1995-05-15', '09287654321', '2025-01-15 11:00:00', 1),
-(3, 'alex', 'ef92b778bafe771e89245b89ecbc08a44a4e166c06659911881f383d4473e94f', 'Student', 'Alex Reyes', 'alex.reyes@student.edu', '2002-08-30', '09451112233', '2025-02-10 14:30:00', 1);
+INSERT INTO `accounts` (`account_id`, `username`, `password_hash`, `role`, `name`, `student_id`, `email`, `birthday`, `contact_number`, `date_created`, `is_active`) VALUES
+(1, 'Admin John', '5f94a1a56f34e339a43a88b50f75b8061f8f9c65eb4111354921509355743147', 'Admin', 'Admin John', '20240001-C', 'admin@library.com', '1990-01-01', '09171234567', '2025-01-01 10:00:00', 1),
+(2, 'Jane Dela Cruz', 'b18018ae50d885611440a3258163f5b5b5463f0f7f4e91f0e4953c89422a16d8', 'Librarian', 'Jane Dela Cruz', '20240002-C', 'jane.d@library.com', '1995-05-15', '09287654321', '2025-01-15 11:00:00', 1),
+(3, 'Alex Reyes', 'ef92b778bafe771e89245b89ecbc08a44a4e166c06659911881f383d4473e94f', 'Student', 'Alex Reyes', '20240003-C', 'alex.reyes@student.edu', '2002-08-30', '09451112233', '2025-02-10 14:30:00', 1);
 
 --
 -- Populating table `transactions`
