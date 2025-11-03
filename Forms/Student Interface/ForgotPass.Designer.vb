@@ -101,7 +101,7 @@ Partial Class ForgotPass_Student
         Me.txtBox_username.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtBox_username.Location = New System.Drawing.Point(128, 64)
         Me.txtBox_username.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.txtBox_username.MaxLength = 10
+        Me.txtBox_username.MaxLength = 100
         Me.txtBox_username.Name = "txtBox_username"
         Me.txtBox_username.PlaceholderForeColor = System.Drawing.Color.DarkGray
         Me.txtBox_username.PlaceholderText = "Enter Email"

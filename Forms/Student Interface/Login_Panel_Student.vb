@@ -81,8 +81,15 @@ Public Class Login_Panel_Student
         End If
     End Sub
 
-    Private Sub Label4_Click(sender As Object, e As EventArgs) Handles lbl_forgotpass.Click
-        ' Add code for forgot password later
+    Private Sub lbl_forgotpass_Click(sender As Object, e As EventArgs) Handles lbl_forgotpass.Click
+        ' 1. Create an instance of the ForgotPass_Student form
+        Dim forgotPassForm As New ForgotPass_Student()
+
+        ' 2. Show it as a dialog. This will pause the login form.
+        forgotPassForm.ShowDialog()
+
+        ' 3. When the user closes the forgot password form,
+        '    code execution will resume here.
     End Sub
 
     ' REQUIREMENT: Show/Hide Password Logic

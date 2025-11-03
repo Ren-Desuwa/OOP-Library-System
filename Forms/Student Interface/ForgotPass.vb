@@ -9,30 +9,32 @@ Public Class ForgotPass_Student
     Private Sub ForgotPass_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' This ensures the timer is connected
         AddHandler otpTimer.Tick, AddressOf otpTimer_Tick
-        ' Set the initial UI state
-        SetInitialState()
 
         ' --- NEW: Update UI to ask for Email ---
         txtBox_username.PlaceholderText = "Enter Email Address"
         lbl_username.Text = "Email"
         ' --- END NEW ---
+
+        ' Set the initial UI state
+        SetInitialState()
     End Sub
 
     ' --- UI STATE MANAGEMENT ---
 
     ''' <summary>
-    ''' State 1: Show only the email field.
+    ''' State 1: Show Email & OTP fields.
+    ''' Only Email-related controls are enabled.
     ''' </summary>
     Private Sub SetInitialState()
-        ' Show these
+        ' --- Show Email and OTP sections ---
         lbl_username.Visible = True
         txtBox_username.Visible = True
         btn_sendcode.Visible = True
+        lbl_otp.Visible = True
+        txtbox_otp.Visible = True
+        btn_verifynum.Visible = True
 
-        ' Hide these
-        lbl_otp.Visible = False
-        txtbox_otp.Visible = False
-        btn_verifynum.Visible = False
+        ' --- Hide Password section ---
         lbl_password.Visible = False
         txtBox_password.Visible = False
         lbl_confirmpassword.Visible = False
@@ -41,29 +43,53 @@ Public Class ForgotPass_Student
         img_show.Visible = False
         img_hide.Visible = False
 
-        ' Enable controls
-        txtBox_username.Enabled = True
+        ' --- Set initial enabled state ---
+        txtBox_username.Enabled = True  ' Can edit email
+        btn_sendcode.Enabled = True     ' Can send code
+        txtbox_otp.Enabled = False      ' CANNOT type OTP yet
+        btn_verifynum.Enabled = False   ' CANNOT verify yet
     End Sub
 
     ''' <summary>
-    ''' State 2: Show the password fields after successful OTP verification.
+    ''' State 2: Code sent.
+    ''' Locks Email, enables OTP fields.
+    ''' </summary>
+    Private Sub StartOtpCountdown()
+        _countdownSeconds = 60
+
+        ' --- Lock Email field, disable Send button ---
+        txtBox_username.Enabled = False
+        btn_sendcode.Enabled = False
+
+        ' --- Enable OTP fields ---
+        txtbox_otp.Enabled = True
+        btn_verifynum.Enabled = True
+
+        ' Start timer
+        otpTimer.Start()
+    End Sub
+
+
+    ''' <summary>
+    ''' State 3: OTP Verified.
+    ''' Locks Email/OTP fields, shows Password fields.
     ''' </summary>
     Private Sub SetVerifiedState()
-        ' Show these
+        ' --- Lock Email and OTP fields ---
+        txtBox_username.Enabled = False
+        txtbox_otp.Enabled = False
+
+        ' --- Hide/Disable OTP buttons ---
+        btn_sendcode.Visible = False ' Hide "Send Code"
+        btn_verifynum.Visible = False ' Hide "Verify" (as requested)
+
+        ' --- Show Password section ---
         lbl_password.Visible = True
         txtBox_password.Visible = True
         lbl_confirmpassword.Visible = True
         txtBox_confirmpassword.Visible = True
-        btn_confirm.Visible = True
+        btn_confirm.Visible = True ' Show "Confirm"
         img_show.Visible = True
-
-        ' Hide these
-        lbl_username.Visible = False
-        txtBox_username.Visible = False
-        btn_sendcode.Visible = False
-        lbl_otp.Visible = False
-        txtbox_otp.Visible = False
-        btn_verifynum.Visible = False
         img_hide.Visible = False
 
         ' Reset password fields
@@ -95,11 +121,11 @@ Public Class ForgotPass_Student
             MessageBox.Show($"Verification code sent to {maskedEmail}.", "Code Sent", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
             _currentEmail = email ' Store the email for the next steps
-            StartOtpCountdown()
+            StartOtpCountdown() ' Move to State 2
 
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            btn_sendcode.Enabled = True
+            btn_sendcode.Enabled = True ' Re-enable on failure
             btn_sendcode.Text = "Send Code"
         End Try
     End Sub
@@ -120,7 +146,7 @@ Public Class ForgotPass_Student
                 ' Success! Move to the password reset state
                 otpTimer.Stop()
                 MessageBox.Show("Verification successful. Please enter your new password.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                SetVerifiedState()
+                SetVerifiedState() ' Move to State 3
             Else
                 ' Failure
                 MessageBox.Show("Invalid or expired verification code.", "Verification Failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -163,17 +189,7 @@ Public Class ForgotPass_Student
 
     ' --- HELPER FUNCTIONS (TIMER & UI) ---
 
-    Private Sub StartOtpCountdown()
-        _countdownSeconds = 60
-        btn_sendcode.Enabled = False
-        lbl_otp.Visible = True
-        txtbox_otp.Visible = True
-        btn_verifynum.Visible = True
-        txtBox_username.Enabled = False ' Lock the email field
-        otpTimer.Start()
-    End Sub
-
-    Private Sub otpTimer_Tick(sender As Object, e As EventArgs)
+    Private Sub otpTimer_Tick(sender As Object, e As EventArgs) Handles otpTimer.Tick
         If _countdownSeconds > 0 Then
             _countdownSeconds -= 1
             Dim timeRemaining = TimeSpan.FromSeconds(_countdownSeconds)
