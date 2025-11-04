@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class BorrowRequestList
+Partial Class UserAccountRequestList
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,7 +22,7 @@ Partial Class BorrowRequestList
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(BorrowRequestList))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(UserAccountRequestList))
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.title_panel = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
         Me.btn_profile = New Guna.UI2.WinForms.Guna2PictureBox()
@@ -34,17 +34,16 @@ Partial Class BorrowRequestList
         Me.lbl_title = New System.Windows.Forms.Label()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel5 = New System.Windows.Forms.TableLayoutPanel()
+        Me.Guna2Button3 = New Guna.UI2.WinForms.Guna2Button()
+        Me.Guna2Button4 = New Guna.UI2.WinForms.Guna2Button()
+        Me.Guna2Button5 = New Guna.UI2.WinForms.Guna2Button()
+        Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
         Me.Guna2CustomGradientPanel1 = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
         Me.TableLayoutPanel6 = New System.Windows.Forms.TableLayoutPanel()
-        Me.Guna2Button4 = New Guna.UI2.WinForms.Guna2Button()
-        Me.Guna2Button3 = New Guna.UI2.WinForms.Guna2Button()
-        Me.TableLayoutPanel7 = New System.Windows.Forms.TableLayoutPanel()
-        Me.Guna2Button6 = New Guna.UI2.WinForms.Guna2Button()
-        Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
-        Me.btn_Books = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
-        Me.Guna2CustomGradientPanel3 = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
+        Me.TableLayoutPanel7 = New System.Windows.Forms.TableLayoutPanel()
+        Me.Guna2Button6 = New Guna.UI2.WinForms.Guna2Button()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.title_panel.SuspendLayout()
         CType(Me.btn_profile, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -52,27 +51,26 @@ Partial Class BorrowRequestList
         Me.TableLayoutPanel2.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
         Me.TableLayoutPanel5.SuspendLayout()
+        Me.TableLayoutPanel4.SuspendLayout()
         Me.TableLayoutPanel6.SuspendLayout()
         Me.TableLayoutPanel7.SuspendLayout()
-        Me.TableLayoutPanel4.SuspendLayout()
-        Me.Guna2CustomGradientPanel3.SuspendLayout()
         Me.SuspendLayout()
         '
         'TableLayoutPanel1
         '
-        Me.TableLayoutPanel1.BackColor = System.Drawing.Color.Tan
         Me.TableLayoutPanel1.ColumnCount = 1
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.title_panel, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel3, 0, 1)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 0)
+        Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(0)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 2
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.0!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 88.0!))
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(800, 450)
-        Me.TableLayoutPanel1.TabIndex = 1
+        Me.TableLayoutPanel1.TabIndex = 0
         '
         'title_panel
         '
@@ -91,7 +89,7 @@ Partial Class BorrowRequestList
         Me.title_panel.Margin = New System.Windows.Forms.Padding(0)
         Me.title_panel.Name = "title_panel"
         Me.title_panel.Size = New System.Drawing.Size(800, 54)
-        Me.title_panel.TabIndex = 6
+        Me.title_panel.TabIndex = 7
         '
         'btn_profile
         '
@@ -209,7 +207,7 @@ Partial Class BorrowRequestList
         Me.lbl_title.Name = "lbl_title"
         Me.lbl_title.Size = New System.Drawing.Size(796, 54)
         Me.lbl_title.TabIndex = 13
-        Me.lbl_title.Text = "Borrow Requests"
+        Me.lbl_title.Text = "User Account Requests"
         Me.lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'TableLayoutPanel3
@@ -219,8 +217,8 @@ Partial Class BorrowRequestList
         Me.TableLayoutPanel3.ColumnCount = 2
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75.0!))
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
-        Me.TableLayoutPanel3.Controls.Add(Me.Guna2CustomGradientPanel3, 1, 0)
-        Me.TableLayoutPanel3.Controls.Add(Me.TableLayoutPanel5, 0, 0)
+        Me.TableLayoutPanel3.Controls.Add(Me.TableLayoutPanel4, 0, 0)
+        Me.TableLayoutPanel3.Controls.Add(Me.TableLayoutPanel5, 1, 0)
         Me.TableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel3.Location = New System.Drawing.Point(0, 54)
         Me.TableLayoutPanel3.Margin = New System.Windows.Forms.Padding(0)
@@ -228,25 +226,107 @@ Partial Class BorrowRequestList
         Me.TableLayoutPanel3.RowCount = 1
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel3.Size = New System.Drawing.Size(800, 396)
-        Me.TableLayoutPanel3.TabIndex = 7
+        Me.TableLayoutPanel3.TabIndex = 8
         '
         'TableLayoutPanel5
         '
-        Me.TableLayoutPanel5.BackColor = System.Drawing.Color.Transparent
         Me.TableLayoutPanel5.ColumnCount = 1
         Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel5.Controls.Add(Me.Guna2CustomGradientPanel1, 0, 1)
-        Me.TableLayoutPanel5.Controls.Add(Me.TableLayoutPanel6, 0, 2)
-        Me.TableLayoutPanel5.Controls.Add(Me.TableLayoutPanel7, 0, 0)
+        Me.TableLayoutPanel5.Controls.Add(Me.Guna2Button3, 0, 2)
+        Me.TableLayoutPanel5.Controls.Add(Me.Guna2Button4, 0, 1)
+        Me.TableLayoutPanel5.Controls.Add(Me.Guna2Button5, 0, 0)
         Me.TableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel5.Location = New System.Drawing.Point(6, 6)
+        Me.TableLayoutPanel5.Location = New System.Drawing.Point(599, 3)
+        Me.TableLayoutPanel5.Margin = New System.Windows.Forms.Padding(0)
         Me.TableLayoutPanel5.Name = "TableLayoutPanel5"
-        Me.TableLayoutPanel5.RowCount = 3
-        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.0!))
-        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85.0!))
+        Me.TableLayoutPanel5.RowCount = 10
         Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.TableLayoutPanel5.Size = New System.Drawing.Size(587, 384)
-        Me.TableLayoutPanel5.TabIndex = 9
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.TableLayoutPanel5.Size = New System.Drawing.Size(198, 390)
+        Me.TableLayoutPanel5.TabIndex = 26
+        '
+        'Guna2Button3
+        '
+        Me.Guna2Button3.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2Button3.BorderRadius = 10
+        Me.Guna2Button3.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2Button3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2Button3.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.Guna2Button3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.Guna2Button3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Guna2Button3.FillColor = System.Drawing.Color.BlueViolet
+        Me.Guna2Button3.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2Button3.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.Guna2Button3.Location = New System.Drawing.Point(5, 83)
+        Me.Guna2Button3.Margin = New System.Windows.Forms.Padding(5)
+        Me.Guna2Button3.Name = "Guna2Button3"
+        Me.Guna2Button3.Size = New System.Drawing.Size(188, 29)
+        Me.Guna2Button3.TabIndex = 20
+        Me.Guna2Button3.Text = "Notifications"
+        '
+        'Guna2Button4
+        '
+        Me.Guna2Button4.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2Button4.BorderRadius = 10
+        Me.Guna2Button4.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2Button4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2Button4.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.Guna2Button4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.Guna2Button4.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Guna2Button4.FillColor = System.Drawing.Color.DarkOrange
+        Me.Guna2Button4.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2Button4.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.Guna2Button4.Location = New System.Drawing.Point(5, 44)
+        Me.Guna2Button4.Margin = New System.Windows.Forms.Padding(5)
+        Me.Guna2Button4.Name = "Guna2Button4"
+        Me.Guna2Button4.Size = New System.Drawing.Size(188, 29)
+        Me.Guna2Button4.TabIndex = 19
+        Me.Guna2Button4.Text = "Users"
+        '
+        'Guna2Button5
+        '
+        Me.Guna2Button5.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2Button5.BorderRadius = 10
+        Me.Guna2Button5.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2Button5.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2Button5.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.Guna2Button5.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.Guna2Button5.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Guna2Button5.FillColor = System.Drawing.Color.MediumAquamarine
+        Me.Guna2Button5.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2Button5.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.Guna2Button5.Location = New System.Drawing.Point(5, 5)
+        Me.Guna2Button5.Margin = New System.Windows.Forms.Padding(5)
+        Me.Guna2Button5.Name = "Guna2Button5"
+        Me.Guna2Button5.Size = New System.Drawing.Size(188, 29)
+        Me.Guna2Button5.TabIndex = 18
+        Me.Guna2Button5.Text = "Books"
+        '
+        'TableLayoutPanel4
+        '
+        Me.TableLayoutPanel4.BackColor = System.Drawing.Color.Transparent
+        Me.TableLayoutPanel4.ColumnCount = 1
+        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel4.Controls.Add(Me.Guna2CustomGradientPanel1, 0, 1)
+        Me.TableLayoutPanel4.Controls.Add(Me.TableLayoutPanel6, 0, 2)
+        Me.TableLayoutPanel4.Controls.Add(Me.TableLayoutPanel7, 0, 0)
+        Me.TableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel4.Location = New System.Drawing.Point(6, 6)
+        Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
+        Me.TableLayoutPanel4.RowCount = 3
+        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.0!))
+        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85.0!))
+        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.TableLayoutPanel4.Size = New System.Drawing.Size(587, 384)
+        Me.TableLayoutPanel4.TabIndex = 27
         '
         'Guna2CustomGradientPanel1
         '
@@ -262,8 +342,8 @@ Partial Class BorrowRequestList
         Me.TableLayoutPanel6.ColumnCount = 2
         Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel6.Controls.Add(Me.Guna2Button4, 1, 0)
-        Me.TableLayoutPanel6.Controls.Add(Me.Guna2Button3, 0, 0)
+        Me.TableLayoutPanel6.Controls.Add(Me.Guna2Button1, 1, 0)
+        Me.TableLayoutPanel6.Controls.Add(Me.Guna2Button2, 0, 0)
         Me.TableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel6.Location = New System.Drawing.Point(3, 348)
         Me.TableLayoutPanel6.Name = "TableLayoutPanel6"
@@ -273,47 +353,46 @@ Partial Class BorrowRequestList
         Me.TableLayoutPanel6.Size = New System.Drawing.Size(581, 33)
         Me.TableLayoutPanel6.TabIndex = 1
         '
-        'Guna2Button4
+        'Guna2Button1
         '
-        Me.Guna2Button4.BackColor = System.Drawing.Color.Tomato
-        Me.Guna2Button4.BorderRadius = 10
-        Me.Guna2Button4.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button4.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.Guna2Button4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.Guna2Button4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Guna2Button4.FillColor = System.Drawing.Color.Tomato
-        Me.Guna2Button4.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2Button4.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Guna2Button4.Location = New System.Drawing.Point(292, 2)
-        Me.Guna2Button4.Margin = New System.Windows.Forms.Padding(2)
-        Me.Guna2Button4.Name = "Guna2Button4"
-        Me.Guna2Button4.Size = New System.Drawing.Size(287, 29)
-        Me.Guna2Button4.TabIndex = 20
-        Me.Guna2Button4.Text = "Reject"
+        Me.Guna2Button1.BackColor = System.Drawing.Color.Tomato
+        Me.Guna2Button1.BorderRadius = 10
+        Me.Guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.Guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.Guna2Button1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Guna2Button1.FillColor = System.Drawing.Color.Tomato
+        Me.Guna2Button1.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2Button1.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.Guna2Button1.Location = New System.Drawing.Point(292, 2)
+        Me.Guna2Button1.Margin = New System.Windows.Forms.Padding(2)
+        Me.Guna2Button1.Name = "Guna2Button1"
+        Me.Guna2Button1.Size = New System.Drawing.Size(287, 29)
+        Me.Guna2Button1.TabIndex = 20
+        Me.Guna2Button1.Text = "Reject"
         '
-        'Guna2Button3
+        'Guna2Button2
         '
-        Me.Guna2Button3.BackColor = System.Drawing.Color.DarkCyan
-        Me.Guna2Button3.BorderRadius = 10
-        Me.Guna2Button3.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button3.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.Guna2Button3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.Guna2Button3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Guna2Button3.FillColor = System.Drawing.Color.DarkCyan
-        Me.Guna2Button3.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2Button3.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Guna2Button3.Location = New System.Drawing.Point(2, 2)
-        Me.Guna2Button3.Margin = New System.Windows.Forms.Padding(2)
-        Me.Guna2Button3.Name = "Guna2Button3"
-        Me.Guna2Button3.Size = New System.Drawing.Size(286, 29)
-        Me.Guna2Button3.TabIndex = 19
-        Me.Guna2Button3.Text = "Approve"
+        Me.Guna2Button2.BackColor = System.Drawing.Color.DarkCyan
+        Me.Guna2Button2.BorderRadius = 10
+        Me.Guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.Guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.Guna2Button2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Guna2Button2.FillColor = System.Drawing.Color.DarkCyan
+        Me.Guna2Button2.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2Button2.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.Guna2Button2.Location = New System.Drawing.Point(2, 2)
+        Me.Guna2Button2.Margin = New System.Windows.Forms.Padding(2)
+        Me.Guna2Button2.Name = "Guna2Button2"
+        Me.Guna2Button2.Size = New System.Drawing.Size(286, 29)
+        Me.Guna2Button2.TabIndex = 19
+        Me.Guna2Button2.Text = "Approve"
         '
         'TableLayoutPanel7
         '
-        Me.TableLayoutPanel7.BackColor = System.Drawing.Color.Transparent
         Me.TableLayoutPanel7.ColumnCount = 2
         Me.TableLayoutPanel7.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70.0!))
         Me.TableLayoutPanel7.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.0!))
@@ -336,7 +415,7 @@ Partial Class BorrowRequestList
         Me.Guna2Button6.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.Guna2Button6.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.Guna2Button6.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Guna2Button6.FillColor = System.Drawing.Color.LightGreen
+        Me.Guna2Button6.FillColor = System.Drawing.Color.Coral
         Me.Guna2Button6.Font = New System.Drawing.Font("Arial", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2Button6.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.Guna2Button6.Location = New System.Drawing.Point(410, 0)
@@ -344,114 +423,19 @@ Partial Class BorrowRequestList
         Me.Guna2Button6.Name = "Guna2Button6"
         Me.Guna2Button6.Size = New System.Drawing.Size(177, 19)
         Me.Guna2Button6.TabIndex = 20
-        Me.Guna2Button6.Text = "USER REQUESTS"
+        Me.Guna2Button6.Text = "BORROW REQUESTS"
         '
-        'TableLayoutPanel4
-        '
-        Me.TableLayoutPanel4.ColumnCount = 1
-        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel4.Controls.Add(Me.Guna2Button2, 0, 2)
-        Me.TableLayoutPanel4.Controls.Add(Me.Guna2Button1, 0, 1)
-        Me.TableLayoutPanel4.Controls.Add(Me.btn_Books, 0, 0)
-        Me.TableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel4.Location = New System.Drawing.Point(0, 0)
-        Me.TableLayoutPanel4.Margin = New System.Windows.Forms.Padding(0)
-        Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
-        Me.TableLayoutPanel4.RowCount = 10
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.TableLayoutPanel4.Size = New System.Drawing.Size(198, 390)
-        Me.TableLayoutPanel4.TabIndex = 24
-        '
-        'btn_Books
-        '
-        Me.btn_Books.BackColor = System.Drawing.Color.Transparent
-        Me.btn_Books.BorderRadius = 10
-        Me.btn_Books.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btn_Books.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btn_Books.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btn_Books.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btn_Books.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btn_Books.FillColor = System.Drawing.Color.MediumAquamarine
-        Me.btn_Books.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_Books.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.btn_Books.Location = New System.Drawing.Point(5, 5)
-        Me.btn_Books.Margin = New System.Windows.Forms.Padding(5)
-        Me.btn_Books.Name = "btn_Books"
-        Me.btn_Books.Size = New System.Drawing.Size(188, 29)
-        Me.btn_Books.TabIndex = 18
-        Me.btn_Books.Text = "Books"
-        '
-        'Guna2Button1
-        '
-        Me.Guna2Button1.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2Button1.BorderRadius = 10
-        Me.Guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.Guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.Guna2Button1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Guna2Button1.FillColor = System.Drawing.Color.DarkOrange
-        Me.Guna2Button1.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2Button1.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Guna2Button1.Location = New System.Drawing.Point(5, 44)
-        Me.Guna2Button1.Margin = New System.Windows.Forms.Padding(5)
-        Me.Guna2Button1.Name = "Guna2Button1"
-        Me.Guna2Button1.Size = New System.Drawing.Size(188, 29)
-        Me.Guna2Button1.TabIndex = 19
-        Me.Guna2Button1.Text = "Users"
-        '
-        'Guna2Button2
-        '
-        Me.Guna2Button2.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2Button2.BorderRadius = 10
-        Me.Guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.Guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.Guna2Button2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Guna2Button2.FillColor = System.Drawing.Color.BlueViolet
-        Me.Guna2Button2.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2Button2.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Guna2Button2.Location = New System.Drawing.Point(5, 83)
-        Me.Guna2Button2.Margin = New System.Windows.Forms.Padding(5)
-        Me.Guna2Button2.Name = "Guna2Button2"
-        Me.Guna2Button2.Size = New System.Drawing.Size(188, 29)
-        Me.Guna2Button2.TabIndex = 20
-        Me.Guna2Button2.Text = "Notifications"
-        '
-        'Guna2CustomGradientPanel3
-        '
-        Me.Guna2CustomGradientPanel3.Controls.Add(Me.TableLayoutPanel4)
-        Me.Guna2CustomGradientPanel3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Guna2CustomGradientPanel3.FillColor = System.Drawing.Color.FloralWhite
-        Me.Guna2CustomGradientPanel3.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(240, Byte), Integer))
-        Me.Guna2CustomGradientPanel3.FillColor3 = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(232, Byte), Integer))
-        Me.Guna2CustomGradientPanel3.FillColor4 = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.Guna2CustomGradientPanel3.Location = New System.Drawing.Point(599, 3)
-        Me.Guna2CustomGradientPanel3.Margin = New System.Windows.Forms.Padding(0)
-        Me.Guna2CustomGradientPanel3.Name = "Guna2CustomGradientPanel3"
-        Me.Guna2CustomGradientPanel3.Size = New System.Drawing.Size(198, 390)
-        Me.Guna2CustomGradientPanel3.TabIndex = 8
-        '
-        'BorrowRequestList
+        'UserAccountRequestList
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.Tan
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "BorrowRequestList"
+        Me.Name = "UserAccountRequestList"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "BorrowRequestList"
+        Me.Text = "UserAccountRequestList"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.title_panel.ResumeLayout(False)
@@ -461,10 +445,9 @@ Partial Class BorrowRequestList
         Me.TableLayoutPanel2.PerformLayout()
         Me.TableLayoutPanel3.ResumeLayout(False)
         Me.TableLayoutPanel5.ResumeLayout(False)
+        Me.TableLayoutPanel4.ResumeLayout(False)
         Me.TableLayoutPanel6.ResumeLayout(False)
         Me.TableLayoutPanel7.ResumeLayout(False)
-        Me.TableLayoutPanel4.ResumeLayout(False)
-        Me.Guna2CustomGradientPanel3.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -480,15 +463,14 @@ Partial Class BorrowRequestList
     Friend WithEvents lbl_title As Label
     Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
     Friend WithEvents TableLayoutPanel5 As TableLayoutPanel
+    Friend WithEvents Guna2Button3 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Guna2Button4 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Guna2Button5 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents TableLayoutPanel4 As TableLayoutPanel
     Friend WithEvents Guna2CustomGradientPanel1 As Guna.UI2.WinForms.Guna2CustomGradientPanel
     Friend WithEvents TableLayoutPanel6 As TableLayoutPanel
-    Friend WithEvents Guna2Button4 As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Guna2Button3 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents TableLayoutPanel7 As TableLayoutPanel
     Friend WithEvents Guna2Button6 As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Guna2CustomGradientPanel3 As Guna.UI2.WinForms.Guna2CustomGradientPanel
-    Friend WithEvents TableLayoutPanel4 As TableLayoutPanel
-    Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents btn_Books As Guna.UI2.WinForms.Guna2Button
 End Class
