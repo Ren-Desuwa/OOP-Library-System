@@ -39,7 +39,7 @@ Partial Class Login_Panel_Librarian_Admin
         Me.img_hide = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Guna2DragControl2 = New Guna.UI2.WinForms.Guna2DragControl(Me.components)
         Me.Guna2Elipse1 = New Guna.UI2.WinForms.Guna2Elipse(Me.components)
-        Me.UC_Welcome_message_student1 = New OOP_Library_System.UC_Welcome_message_student()
+        Me.UC_Welcome_message_student1 = New OOP_Library_System.UC_welcome_message1_student()
         Me.title_panel.SuspendLayout()
         Me.login_form_container.SuspendLayout()
         Me.Guna2CustomGradientPanel3.SuspendLayout()
@@ -325,5 +325,5 @@ Partial Class Login_Panel_Librarian_Admin
     Friend WithEvents img_hide As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents img_show As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents login_form_container As Guna.UI2.WinForms.Guna2CustomGradientPanel
-    Friend WithEvents UC_Welcome_message_student1 As UC_Welcome_message_student
+    Friend WithEvents UC_Welcome_message_student1 As UC_welcome_message1_student
 End Class

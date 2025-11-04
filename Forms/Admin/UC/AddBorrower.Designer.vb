@@ -199,7 +199,7 @@ Partial Class AddBorrower
         Me.TableLayoutPanel2.Controls.Add(Me.txtboxConfirmPass, 4, 12)
         Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel2.Location = New System.Drawing.Point(0, 75)
-        Me.TableLayoutPanel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TableLayoutPanel2.Margin = New System.Windows.Forms.Padding(4)
         Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
         Me.TableLayoutPanel2.RowCount = 16
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.250893!))
@@ -272,7 +272,7 @@ Partial Class AddBorrower
         Me.dtpBirthDate.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.dtpBirthDate.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
         Me.dtpBirthDate.Location = New System.Drawing.Point(72, 338)
-        Me.dtpBirthDate.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.dtpBirthDate.Margin = New System.Windows.Forms.Padding(4)
         Me.dtpBirthDate.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
         Me.dtpBirthDate.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
         Me.dtpBirthDate.Name = "dtpBirthDate"
@@ -286,7 +286,7 @@ Partial Class AddBorrower
         Me.Guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2HtmlLabel1.Location = New System.Drawing.Point(41, 310)
-        Me.Guna2HtmlLabel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Guna2HtmlLabel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2HtmlLabel1.Name = "Guna2HtmlLabel1"
         Me.Guna2HtmlLabel1.Size = New System.Drawing.Size(83, 20)
         Me.Guna2HtmlLabel1.TabIndex = 15
@@ -299,7 +299,7 @@ Partial Class AddBorrower
         Me.Guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2HtmlLabel2.Location = New System.Drawing.Point(473, 38)
-        Me.Guna2HtmlLabel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Guna2HtmlLabel2.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2HtmlLabel2.Name = "Guna2HtmlLabel2"
         Me.Guna2HtmlLabel2.Size = New System.Drawing.Size(86, 20)
         Me.Guna2HtmlLabel2.TabIndex = 16
@@ -312,7 +312,7 @@ Partial Class AddBorrower
         Me.Guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2HtmlLabel3.Location = New System.Drawing.Point(473, 105)
-        Me.Guna2HtmlLabel3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Guna2HtmlLabel3.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2HtmlLabel3.Name = "Guna2HtmlLabel3"
         Me.Guna2HtmlLabel3.Size = New System.Drawing.Size(123, 20)
         Me.Guna2HtmlLabel3.TabIndex = 17
@@ -325,7 +325,7 @@ Partial Class AddBorrower
         Me.Guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2HtmlLabel4.Location = New System.Drawing.Point(473, 172)
-        Me.Guna2HtmlLabel4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Guna2HtmlLabel4.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2HtmlLabel4.Name = "Guna2HtmlLabel4"
         Me.Guna2HtmlLabel4.Size = New System.Drawing.Size(81, 20)
         Me.Guna2HtmlLabel4.TabIndex = 18
@@ -338,7 +338,7 @@ Partial Class AddBorrower
         Me.Guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2HtmlLabel5.Location = New System.Drawing.Point(473, 238)
-        Me.Guna2HtmlLabel5.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Guna2HtmlLabel5.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2HtmlLabel5.Name = "Guna2HtmlLabel5"
         Me.Guna2HtmlLabel5.Size = New System.Drawing.Size(50, 15)
         Me.Guna2HtmlLabel5.TabIndex = 19
@@ -351,7 +351,7 @@ Partial Class AddBorrower
         Me.Guna2HtmlLabel7.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2HtmlLabel7.Location = New System.Drawing.Point(41, 172)
-        Me.Guna2HtmlLabel7.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Guna2HtmlLabel7.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2HtmlLabel7.Name = "Guna2HtmlLabel7"
         Me.Guna2HtmlLabel7.Size = New System.Drawing.Size(106, 20)
         Me.Guna2HtmlLabel7.TabIndex = 21
@@ -364,7 +364,7 @@ Partial Class AddBorrower
         Me.Guna2HtmlLabel8.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2HtmlLabel8.Location = New System.Drawing.Point(41, 105)
-        Me.Guna2HtmlLabel8.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Guna2HtmlLabel8.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2HtmlLabel8.Name = "Guna2HtmlLabel8"
         Me.Guna2HtmlLabel8.Size = New System.Drawing.Size(91, 20)
         Me.Guna2HtmlLabel8.TabIndex = 22
@@ -376,7 +376,7 @@ Partial Class AddBorrower
         Me.Guna2HtmlLabel9.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2HtmlLabel9.Location = New System.Drawing.Point(41, 38)
-        Me.Guna2HtmlLabel9.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Guna2HtmlLabel9.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2HtmlLabel9.Name = "Guna2HtmlLabel9"
         Me.Guna2HtmlLabel9.Size = New System.Drawing.Size(89, 20)
         Me.Guna2HtmlLabel9.TabIndex = 23
@@ -389,7 +389,7 @@ Partial Class AddBorrower
         Me.Guna2HtmlLabel10.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2HtmlLabel10.Location = New System.Drawing.Point(41, 238)
-        Me.Guna2HtmlLabel10.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Guna2HtmlLabel10.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2HtmlLabel10.Name = "Guna2HtmlLabel10"
         Me.Guna2HtmlLabel10.Size = New System.Drawing.Size(50, 15)
         Me.Guna2HtmlLabel10.TabIndex = 24
@@ -496,7 +496,7 @@ Partial Class AddBorrower
         Me.cancelButton.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.cancelButton.ForeColor = System.Drawing.Color.Black
         Me.cancelButton.Location = New System.Drawing.Point(604, 470)
-        Me.cancelButton.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cancelButton.Margin = New System.Windows.Forms.Padding(4)
         Me.cancelButton.Name = "cancelButton"
         Me.cancelButton.Size = New System.Drawing.Size(138, 47)
         Me.cancelButton.TabIndex = 32
@@ -514,7 +514,7 @@ Partial Class AddBorrower
         Me.confirmButton.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.confirmButton.ForeColor = System.Drawing.Color.White
         Me.confirmButton.Location = New System.Drawing.Point(750, 470)
-        Me.confirmButton.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.confirmButton.Margin = New System.Windows.Forms.Padding(4)
         Me.confirmButton.Name = "confirmButton"
         Me.confirmButton.Size = New System.Drawing.Size(138, 47)
         Me.confirmButton.TabIndex = 31
@@ -526,7 +526,7 @@ Partial Class AddBorrower
         Me.Guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2HtmlLabel6.Location = New System.Drawing.Point(41, 382)
-        Me.Guna2HtmlLabel6.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Guna2HtmlLabel6.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2HtmlLabel6.Name = "Guna2HtmlLabel6"
         Me.Guna2HtmlLabel6.Size = New System.Drawing.Size(53, 20)
         Me.Guna2HtmlLabel6.TabIndex = 20
@@ -544,7 +544,7 @@ Partial Class AddBorrower
         Me.imgButton.ImageOffset = New System.Drawing.Point(0, 0)
         Me.imgButton.ImageRotate = 0!
         Me.imgButton.Location = New System.Drawing.Point(72, 410)
-        Me.imgButton.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.imgButton.Margin = New System.Windows.Forms.Padding(4)
         Me.imgButton.Name = "imgButton"
         Me.imgButton.PressedState.ImageSize = New System.Drawing.Size(64, 64)
         Me.imgButton.Size = New System.Drawing.Size(384, 30)
@@ -556,7 +556,7 @@ Partial Class AddBorrower
         Me.Guna2HtmlLabel11.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel11.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2HtmlLabel11.Location = New System.Drawing.Point(473, 310)
-        Me.Guna2HtmlLabel11.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Guna2HtmlLabel11.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2HtmlLabel11.Name = "Guna2HtmlLabel11"
         Me.Guna2HtmlLabel11.Size = New System.Drawing.Size(83, 20)
         Me.Guna2HtmlLabel11.TabIndex = 33
@@ -569,7 +569,7 @@ Partial Class AddBorrower
         Me.Guna2HtmlLabel12.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel12.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2HtmlLabel12.Location = New System.Drawing.Point(473, 382)
-        Me.Guna2HtmlLabel12.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Guna2HtmlLabel12.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2HtmlLabel12.Name = "Guna2HtmlLabel12"
         Me.Guna2HtmlLabel12.Size = New System.Drawing.Size(111, 20)
         Me.Guna2HtmlLabel12.TabIndex = 34
