@@ -65,7 +65,7 @@ Partial Class ViewCart
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1067, 73)
+        Me.Panel1.Size = New System.Drawing.Size(800, 59)
         Me.Panel1.TabIndex = 0
         '
         'title_panel
@@ -77,8 +77,9 @@ Partial Class ViewCart
         Me.title_panel.FillColor3 = System.Drawing.Color.FromArgb(CType(CType(154, Byte), Integer), CType(CType(111, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.title_panel.FillColor4 = System.Drawing.Color.FromArgb(CType(CType(139, Byte), Integer), CType(CType(103, Byte), Integer), CType(CType(67, Byte), Integer))
         Me.title_panel.Location = New System.Drawing.Point(0, 0)
+        Me.title_panel.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.title_panel.Name = "title_panel"
-        Me.title_panel.Size = New System.Drawing.Size(1067, 72)
+        Me.title_panel.Size = New System.Drawing.Size(800, 58)
         Me.title_panel.TabIndex = 7
         '
         'TableLayoutPanel2
@@ -97,10 +98,11 @@ Partial Class ViewCart
         Me.TableLayoutPanel2.Controls.Add(Me.txtbox_search, 1, 0)
         Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel2.Location = New System.Drawing.Point(0, 0)
+        Me.TableLayoutPanel2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
         Me.TableLayoutPanel2.RowCount = 1
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel2.Size = New System.Drawing.Size(1067, 72)
+        Me.TableLayoutPanel2.Size = New System.Drawing.Size(800, 58)
         Me.TableLayoutPanel2.TabIndex = 17
         '
         'picbox_logo
@@ -114,9 +116,10 @@ Partial Class ViewCart
         Me.picbox_logo.Image = Global.OOP_Library_System.My.Resources.Resources.Ucc_Logo_NoBG_Big1
         Me.picbox_logo.ImageLocation = ""
         Me.picbox_logo.ImageRotate = 0!
-        Me.picbox_logo.Location = New System.Drawing.Point(35, 3)
+        Me.picbox_logo.Location = New System.Drawing.Point(27, 2)
+        Me.picbox_logo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.picbox_logo.Name = "picbox_logo"
-        Me.picbox_logo.Size = New System.Drawing.Size(63, 66)
+        Me.picbox_logo.Size = New System.Drawing.Size(47, 54)
         Me.picbox_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.picbox_logo.TabIndex = 11
         Me.picbox_logo.TabStop = False
@@ -129,9 +132,10 @@ Partial Class ViewCart
         Me.lblUsername.BackColor = System.Drawing.Color.Transparent
         Me.lblUsername.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblUsername.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(232, Byte), Integer))
-        Me.lblUsername.Location = New System.Drawing.Point(741, 20)
+        Me.lblUsername.Location = New System.Drawing.Point(556, 16)
+        Me.lblUsername.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblUsername.Name = "lblUsername"
-        Me.lblUsername.Size = New System.Drawing.Size(219, 32)
+        Me.lblUsername.Size = New System.Drawing.Size(165, 26)
         Me.lblUsername.TabIndex = 12
         Me.lblUsername.Text = "User"
         Me.lblUsername.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -147,9 +151,10 @@ Partial Class ViewCart
         Me.picbox_profile.Image = Global.OOP_Library_System.My.Resources.Resources.Accountwhite0_icon
         Me.picbox_profile.ImageLocation = ""
         Me.picbox_profile.ImageRotate = 0!
-        Me.picbox_profile.Location = New System.Drawing.Point(966, 3)
+        Me.picbox_profile.Location = New System.Drawing.Point(725, 2)
+        Me.picbox_profile.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.picbox_profile.Name = "picbox_profile"
-        Me.picbox_profile.Size = New System.Drawing.Size(58, 66)
+        Me.picbox_profile.Size = New System.Drawing.Size(44, 54)
         Me.picbox_profile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.picbox_profile.TabIndex = 18
         Me.picbox_profile.TabStop = False
@@ -172,13 +177,13 @@ Partial Class ViewCart
         Me.txtbox_search.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.txtbox_search.ForeColor = System.Drawing.Color.Black
         Me.txtbox_search.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtbox_search.Location = New System.Drawing.Point(104, 14)
-        Me.txtbox_search.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtbox_search.Location = New System.Drawing.Point(78, 11)
+        Me.txtbox_search.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.txtbox_search.Name = "txtbox_search"
         Me.txtbox_search.PlaceholderForeColor = System.Drawing.Color.DarkGray
         Me.txtbox_search.PlaceholderText = "Search in Cart"
         Me.txtbox_search.SelectedText = ""
-        Me.txtbox_search.Size = New System.Drawing.Size(271, 44)
+        Me.txtbox_search.Size = New System.Drawing.Size(204, 36)
         Me.txtbox_search.TabIndex = 19
         '
         'TableLayoutPanel1
@@ -191,14 +196,13 @@ Partial Class ViewCart
         Me.TableLayoutPanel1.Controls.Add(Me.Guna2GradientPanel1, 0, 1)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 0)
-        Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(4)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 4
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 73.0!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 59.0!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.81081!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 89.18919!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(1067, 554)
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37.0!))
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(800, 450)
         Me.TableLayoutPanel1.TabIndex = 0
         '
         'Guna2GradientPanel1
@@ -209,11 +213,11 @@ Partial Class ViewCart
         Me.Guna2GradientPanel1.FillColor = System.Drawing.Color.Tan
         Me.Guna2GradientPanel1.FillColor2 = System.Drawing.Color.BurlyWood
         Me.Guna2GradientPanel1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal
-        Me.Guna2GradientPanel1.Location = New System.Drawing.Point(0, 73)
+        Me.Guna2GradientPanel1.Location = New System.Drawing.Point(0, 59)
         Me.Guna2GradientPanel1.Margin = New System.Windows.Forms.Padding(0)
         Me.Guna2GradientPanel1.Name = "Guna2GradientPanel1"
         Me.TableLayoutPanel1.SetRowSpan(Me.Guna2GradientPanel1, 3)
-        Me.Guna2GradientPanel1.Size = New System.Drawing.Size(1067, 481)
+        Me.Guna2GradientPanel1.Size = New System.Drawing.Size(800, 391)
         Me.Guna2GradientPanel1.TabIndex = 1
         '
         'Table_container
@@ -227,28 +231,28 @@ Partial Class ViewCart
         Me.Table_container.FillColor4 = System.Drawing.Color.FromArgb(CType(CType(198, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(143, Byte), Integer))
         Me.Table_container.ForeColor = System.Drawing.Color.Transparent
         Me.Table_container.Location = New System.Drawing.Point(0, 0)
+        Me.Table_container.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Table_container.Name = "Table_container"
-        Me.Table_container.Size = New System.Drawing.Size(1067, 481)
+        Me.Table_container.Size = New System.Drawing.Size(800, 391)
         Me.Table_container.TabIndex = 9
         '
         'TableLayoutPanel3
         '
         Me.TableLayoutPanel3.BackColor = System.Drawing.Color.Transparent
         Me.TableLayoutPanel3.ColumnCount = 3
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 27.0!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 27.0!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.TableLayoutPanel3.Controls.Add(Me.TableLayoutPanel4, 1, 2)
         Me.TableLayoutPanel3.Controls.Add(Me.flowlayout_container, 1, 1)
         Me.TableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel3.Location = New System.Drawing.Point(0, 0)
-        Me.TableLayoutPanel3.Margin = New System.Windows.Forms.Padding(4)
         Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
         Me.TableLayoutPanel3.RowCount = 3
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.829268!))
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 93.17073!))
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70.0!))
-        Me.TableLayoutPanel3.Size = New System.Drawing.Size(1067, 481)
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 57.0!))
+        Me.TableLayoutPanel3.Size = New System.Drawing.Size(800, 391)
         Me.TableLayoutPanel3.TabIndex = 0
         '
         'TableLayoutPanel4
@@ -261,12 +265,12 @@ Partial Class ViewCart
         Me.TableLayoutPanel4.Controls.Add(Me.btn_borrow, 2, 0)
         Me.TableLayoutPanel4.Controls.Add(Me.btn_remove, 1, 0)
         Me.TableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel4.Location = New System.Drawing.Point(27, 410)
+        Me.TableLayoutPanel4.Location = New System.Drawing.Point(20, 333)
         Me.TableLayoutPanel4.Margin = New System.Windows.Forms.Padding(0)
         Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
         Me.TableLayoutPanel4.RowCount = 1
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel4.Size = New System.Drawing.Size(1013, 71)
+        Me.TableLayoutPanel4.Size = New System.Drawing.Size(760, 58)
         Me.TableLayoutPanel4.TabIndex = 1
         '
         'btn_back
@@ -280,10 +284,11 @@ Partial Class ViewCart
         Me.btn_back.FillColor = System.Drawing.Color.White
         Me.btn_back.Font = New System.Drawing.Font("Segoe UI", 10.8!, System.Drawing.FontStyle.Bold)
         Me.btn_back.ForeColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(42, Byte), Integer))
-        Me.btn_back.Location = New System.Drawing.Point(3, 3)
-        Me.btn_back.MaximumSize = New System.Drawing.Size(171, 52)
+        Me.btn_back.Location = New System.Drawing.Point(2, 2)
+        Me.btn_back.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btn_back.MaximumSize = New System.Drawing.Size(128, 42)
         Me.btn_back.Name = "btn_back"
-        Me.btn_back.Size = New System.Drawing.Size(171, 52)
+        Me.btn_back.Size = New System.Drawing.Size(128, 42)
         Me.btn_back.TabIndex = 6
         Me.btn_back.Text = "Back"
         '
@@ -298,10 +303,11 @@ Partial Class ViewCart
         Me.btn_borrow.FillColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(42, Byte), Integer))
         Me.btn_borrow.Font = New System.Drawing.Font("Segoe UI", 10.8!, System.Drawing.FontStyle.Bold)
         Me.btn_borrow.ForeColor = System.Drawing.Color.White
-        Me.btn_borrow.Location = New System.Drawing.Point(835, 3)
-        Me.btn_borrow.MaximumSize = New System.Drawing.Size(171, 52)
+        Me.btn_borrow.Location = New System.Drawing.Point(625, 2)
+        Me.btn_borrow.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btn_borrow.MaximumSize = New System.Drawing.Size(128, 42)
         Me.btn_borrow.Name = "btn_borrow"
-        Me.btn_borrow.Size = New System.Drawing.Size(171, 52)
+        Me.btn_borrow.Size = New System.Drawing.Size(128, 42)
         Me.btn_borrow.TabIndex = 4
         Me.btn_borrow.Text = "Borrow"
         '
@@ -316,10 +322,11 @@ Partial Class ViewCart
         Me.btn_remove.FillColor = System.Drawing.Color.White
         Me.btn_remove.Font = New System.Drawing.Font("Segoe UI", 10.8!, System.Drawing.FontStyle.Bold)
         Me.btn_remove.ForeColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(42, Byte), Integer))
-        Me.btn_remove.Location = New System.Drawing.Point(654, 3)
-        Me.btn_remove.MaximumSize = New System.Drawing.Size(171, 52)
+        Me.btn_remove.Location = New System.Drawing.Point(490, 2)
+        Me.btn_remove.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btn_remove.MaximumSize = New System.Drawing.Size(128, 42)
         Me.btn_remove.Name = "btn_remove"
-        Me.btn_remove.Size = New System.Drawing.Size(171, 52)
+        Me.btn_remove.Size = New System.Drawing.Size(128, 42)
         Me.btn_remove.TabIndex = 5
         Me.btn_remove.Text = "Remove"
         '
@@ -329,10 +336,10 @@ Partial Class ViewCart
         Me.flowlayout_container.BorderRadius = 5
         Me.flowlayout_container.Controls.Add(Me.tlpViewCart)
         Me.flowlayout_container.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.flowlayout_container.Location = New System.Drawing.Point(27, 28)
+        Me.flowlayout_container.Location = New System.Drawing.Point(20, 22)
         Me.flowlayout_container.Margin = New System.Windows.Forms.Padding(0)
         Me.flowlayout_container.Name = "flowlayout_container"
-        Me.flowlayout_container.Size = New System.Drawing.Size(1013, 382)
+        Me.flowlayout_container.Size = New System.Drawing.Size(760, 311)
         Me.flowlayout_container.TabIndex = 2
         '
         'tlpViewCart
@@ -342,11 +349,10 @@ Partial Class ViewCart
         Me.tlpViewCart.Controls.Add(Me.Flow_BookCartList, 0, 0)
         Me.tlpViewCart.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tlpViewCart.Location = New System.Drawing.Point(0, 0)
-        Me.tlpViewCart.Margin = New System.Windows.Forms.Padding(4)
         Me.tlpViewCart.Name = "tlpViewCart"
         Me.tlpViewCart.RowCount = 1
         Me.tlpViewCart.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.tlpViewCart.Size = New System.Drawing.Size(1013, 382)
+        Me.tlpViewCart.Size = New System.Drawing.Size(760, 311)
         Me.tlpViewCart.TabIndex = 0
         '
         'Flow_BookCartList
@@ -354,11 +360,10 @@ Partial Class ViewCart
         Me.Flow_BookCartList.AutoScroll = True
         Me.Flow_BookCartList.BackColor = System.Drawing.Color.Transparent
         Me.Flow_BookCartList.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Flow_BookCartList.Location = New System.Drawing.Point(4, 4)
-        Me.Flow_BookCartList.Margin = New System.Windows.Forms.Padding(4)
+        Me.Flow_BookCartList.Location = New System.Drawing.Point(3, 3)
         Me.Flow_BookCartList.Name = "Flow_BookCartList"
-        Me.Flow_BookCartList.Padding = New System.Windows.Forms.Padding(13, 12, 13, 12)
-        Me.Flow_BookCartList.Size = New System.Drawing.Size(1005, 374)
+        Me.Flow_BookCartList.Padding = New System.Windows.Forms.Padding(10, 10, 10, 10)
+        Me.Flow_BookCartList.Size = New System.Drawing.Size(754, 305)
         Me.Flow_BookCartList.TabIndex = 0
         '
         'Guna2Elipse1
@@ -368,13 +373,12 @@ Partial Class ViewCart
         '
         'ViewCart
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
-        Me.ClientSize = New System.Drawing.Size(1067, 554)
+        Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "ViewCart"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "ViewCart"
