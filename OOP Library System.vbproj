@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{985F421D-0F74-4602-858B-EC5CA98B46E5}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>OOP_Library_System.UserAccountRequestList</StartupObject>
+    <StartupObject>OOP_Library_System.Program</StartupObject>
     <RootNamespace>OOP_Library_System</RootNamespace>
     <AssemblyName>OOP Library System</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -88,6 +88,84 @@
   <ItemGroup>
     <Compile Include="Classes\Services\BorrowedBookDetails.vb" />
     <Compile Include="Classes\Services\CartServices.vb" />
+    <Compile Include="Forms\Admin\Panel\BorrowRequestList.Designer.vb">
+      <DependentUpon>BorrowRequestList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\Panel\BorrowRequestList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\Panel\UserAccountRequestList.Designer.vb">
+      <DependentUpon>UserAccountRequestList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\Panel\UserAccountRequestList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\UC\AddBorrower.Designer.vb">
+      <DependentUpon>AddBorrower.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\UC\AddBorrower.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\UC\BookInfo.Designer.vb">
+      <DependentUpon>BookInfo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\UC\BookInfo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\UC\BorrowerProfile.Designer.vb">
+      <DependentUpon>BorrowerProfile.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\UC\BorrowerProfile.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\UC\BorrowHistoryLibrarian.Designer.vb">
+      <DependentUpon>BorrowHistoryLibrarian.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\UC\BorrowHistoryLibrarian.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\UC\CreateBook.Designer.vb">
+      <DependentUpon>CreateBook.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\UC\CreateBook.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\UC\EditBook.Designer.vb">
+      <DependentUpon>EditBook.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\UC\EditBook.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\UC\LibrarianList.Designer.vb">
+      <DependentUpon>LibrarianList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\UC\LibrarianList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\UC\LibrarianProfile.Designer.vb">
+      <DependentUpon>LibrarianProfile.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\UC\LibrarianProfile.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\UC\ManageAccBorrower.Designer.vb">
+      <DependentUpon>ManageAccBorrower.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\UC\ManageAccBorrower.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\UC\PenaltyView.Designer.vb">
+      <DependentUpon>PenaltyView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\UC\PenaltyView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\UC\UserReqViewProfile.Designer.vb">
+      <DependentUpon>UserReqViewProfile.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\UC\UserReqViewProfile.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\Student Interface\UC Student\UC_signup_step1_student.Designer.vb">
       <DependentUpon>UC_signup_step1_student.vb</DependentUpon>
     </Compile>
@@ -155,48 +233,6 @@
     <Compile Include="Classes\Services\catalougeService.vb" />
     <Compile Include="Classes\Services\NotificationService.vb" />
     <Compile Include="Classes\Services\OtpService.vb" />
-    <Compile Include="Forms\Admin\Panel\AddBorrower.Designer.vb">
-      <DependentUpon>AddBorrower.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Admin\Panel\AddBorrower.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Admin\Panel\BookInfo.Designer.vb">
-      <DependentUpon>BookInfo.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Admin\Panel\BookInfo.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Admin\Panel\Books_Panel%28Librarian-Admin%29.Designer.vb">
-      <DependentUpon>Books_Panel%28Librarian-Admin%29.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Admin\Panel\Books_Panel%28Librarian-Admin%29.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Admin\Panel\BorrowerProfile.Designer.vb">
-      <DependentUpon>BorrowerProfile.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Admin\Panel\BorrowerProfile.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Admin\Panel\BorrowHistoryLibrarian.Designer.vb">
-      <DependentUpon>BorrowHistoryLibrarian.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Admin\Panel\BorrowHistoryLibrarian.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Admin\Panel\CreateBook.Designer.vb">
-      <DependentUpon>CreateBook.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Admin\Panel\CreateBook.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Admin\Panel\EditBook.Designer.vb">
-      <DependentUpon>EditBook.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Admin\Panel\EditBook.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Forms\Student Interface\ForgotPass.Designer.vb">
       <DependentUpon>ForgotPass.vb</DependentUpon>
     </Compile>
@@ -209,40 +245,10 @@
     <Compile Include="Forms\Admin\Panel\Home_Panel_Admin_Librarian.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Admin\Panel\LibrarianList.Designer.vb">
-      <DependentUpon>LibrarianList.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Admin\Panel\LibrarianList.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Admin\Panel\LibrarianProfile.Designer.vb">
-      <DependentUpon>LibrarianProfile.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Admin\Panel\LibrarianProfile.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Forms\Admin\Panel\Login_Panel_Librarian_Admin.Designer.vb">
       <DependentUpon>Login_Panel_Librarian_Admin.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\Admin\Panel\Login_Panel_Librarian_Admin.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Admin\Panel\ManageAccBorrower.Designer.vb">
-      <DependentUpon>ManageAccBorrower.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Admin\Panel\ManageAccBorrower.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Admin\Panel\PenaltyView.Designer.vb">
-      <DependentUpon>PenaltyView.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Admin\Panel\PenaltyView.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Admin\Panel\UserReqViewProfile.Designer.vb">
-      <DependentUpon>UserReqViewProfile.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Admin\Panel\UserReqViewProfile.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Student Interface\Home_Panel_Guest.Designer.vb">
@@ -415,6 +421,45 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Forms\Admin\Panel\BorrowRequestList.resx">
+      <DependentUpon>BorrowRequestList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\Panel\UserAccountRequestList.resx">
+      <DependentUpon>UserAccountRequestList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\UC\AddBorrower.resx">
+      <DependentUpon>AddBorrower.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\UC\BookInfo.resx">
+      <DependentUpon>BookInfo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\UC\BorrowerProfile.resx">
+      <DependentUpon>BorrowerProfile.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\UC\BorrowHistoryLibrarian.resx">
+      <DependentUpon>BorrowHistoryLibrarian.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\UC\CreateBook.resx">
+      <DependentUpon>CreateBook.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\UC\EditBook.resx">
+      <DependentUpon>EditBook.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\UC\LibrarianList.resx">
+      <DependentUpon>LibrarianList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\UC\LibrarianProfile.resx">
+      <DependentUpon>LibrarianProfile.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\UC\ManageAccBorrower.resx">
+      <DependentUpon>ManageAccBorrower.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\UC\PenaltyView.resx">
+      <DependentUpon>PenaltyView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\UC\UserReqViewProfile.resx">
+      <DependentUpon>UserReqViewProfile.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Student Interface\UC Student\UC_signup_step1_student.resx">
       <DependentUpon>UC_signup_step1_student.vb</DependentUpon>
     </EmbeddedResource>
@@ -436,47 +481,14 @@
     <EmbeddedResource Include="Forms\Student Interface\UC Student\BorrowedBooksCard.resx">
       <DependentUpon>BorrowedBooksCard.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Admin\Panel\AddBorrower.resx">
-      <DependentUpon>AddBorrower.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Admin\Panel\BookInfo.resx">
-      <DependentUpon>BookInfo.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Admin\Panel\Books_Panel%28Librarian-Admin%29.resx">
-      <DependentUpon>Books_Panel%28Librarian-Admin%29.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Admin\Panel\BorrowerProfile.resx">
-      <DependentUpon>BorrowerProfile.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Admin\Panel\BorrowHistoryLibrarian.resx">
-      <DependentUpon>BorrowHistoryLibrarian.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Admin\Panel\EditBook.resx">
-      <DependentUpon>EditBook.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Student Interface\ForgotPass.resx">
       <DependentUpon>ForgotPass.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin\Panel\Home_Panel_Admin_Librarian.resx">
       <DependentUpon>Home_Panel_Admin_Librarian.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Admin\Panel\LibrarianList.resx">
-      <DependentUpon>LibrarianList.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Admin\Panel\LibrarianProfile.resx">
-      <DependentUpon>LibrarianProfile.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin\Panel\Login_Panel_Librarian_Admin.resx">
       <DependentUpon>Login_Panel_Librarian_Admin.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Admin\Panel\ManageAccBorrower.resx">
-      <DependentUpon>ManageAccBorrower.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Admin\Panel\PenaltyView.resx">
-      <DependentUpon>PenaltyView.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Admin\Panel\UserReqViewProfile.resx">
-      <DependentUpon>UserReqViewProfile.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Student Interface\Home_Panel_Guest.resx">
       <DependentUpon>Home_Panel_Guest.vb</DependentUpon>
