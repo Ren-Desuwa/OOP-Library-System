@@ -56,6 +56,8 @@ Partial Class Home_Panel_Guest
         '
         Me.TableLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.TableLayoutPanel1.BackColor = System.Drawing.Color.Transparent
+        Me.TableLayoutPanel1.BackgroundImage = Global.OOP_Library_System.My.Resources.Resources.titi_ni_ren_baluktot_nakita_ko
+        Me.TableLayoutPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.TableLayoutPanel1.ColumnCount = 5
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.502869!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.0249!))
@@ -175,7 +177,9 @@ Partial Class Home_Panel_Guest
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.UC_HPS_catalouge_tab1.BackColor = System.Drawing.Color.Transparent
+        Me.UC_HPS_catalouge_tab1.IsGuestMode = False
         Me.UC_HPS_catalouge_tab1.Location = New System.Drawing.Point(0, 56)
+        Me.UC_HPS_catalouge_tab1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.UC_HPS_catalouge_tab1.Name = "UC_HPS_catalouge_tab1"
         Me.UC_HPS_catalouge_tab1.Size = New System.Drawing.Size(918, 489)
         Me.UC_HPS_catalouge_tab1.TabIndex = 7

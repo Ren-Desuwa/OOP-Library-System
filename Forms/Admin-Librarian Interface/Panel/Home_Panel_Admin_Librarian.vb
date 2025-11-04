@@ -56,7 +56,7 @@
         ' If the user clicks "No", nothing happens.
     End Sub
 
-    Private Sub Guna2CustomGradientPanel1_Paint(sender As Object, e As PaintEventArgs) Handles Guna2CustomGradientPanel1.Paint
+    Private Sub Guna2CustomGradientPanel1_Paint(sender As Object, e As PaintEventArgs) Handles pnl_UC_container.Paint
 
     End Sub
 
