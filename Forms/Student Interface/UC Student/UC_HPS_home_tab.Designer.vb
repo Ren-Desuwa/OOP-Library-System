@@ -54,7 +54,7 @@ Partial Class UC_HPS_home_tab
         Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel3, 1, 2)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 0)
-        Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(4)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 4
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.73913!))
@@ -74,7 +74,7 @@ Partial Class UC_HPS_home_tab
         Me.TableLayoutPanel2.Controls.Add(Me.TableLayoutPanel4, 0, 1)
         Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel2.Location = New System.Drawing.Point(697, 22)
-        Me.TableLayoutPanel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TableLayoutPanel2.Margin = New System.Windows.Forms.Padding(4)
         Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
         Me.TableLayoutPanel2.RowCount = 3
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.30435!))
@@ -104,7 +104,7 @@ Partial Class UC_HPS_home_tab
         Me.TableLayoutPanel4.Controls.Add(Me.Guna2CircleProgressBar1, 1, 1)
         Me.TableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel4.Location = New System.Drawing.Point(4, 63)
-        Me.TableLayoutPanel4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TableLayoutPanel4.Margin = New System.Windows.Forms.Padding(4)
         Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
         Me.TableLayoutPanel4.RowCount = 3
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.6506!))
@@ -120,7 +120,7 @@ Partial Class UC_HPS_home_tab
         Me.Guna2CircleProgressBar1.Font = New System.Drawing.Font("Consolas", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2CircleProgressBar1.ForeColor = System.Drawing.Color.Black
         Me.Guna2CircleProgressBar1.Location = New System.Drawing.Point(32, 22)
-        Me.Guna2CircleProgressBar1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Guna2CircleProgressBar1.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2CircleProgressBar1.Minimum = 0
         Me.Guna2CircleProgressBar1.Name = "Guna2CircleProgressBar1"
         Me.Guna2CircleProgressBar1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
@@ -137,7 +137,7 @@ Partial Class UC_HPS_home_tab
         Me.TableLayoutPanel3.Controls.Add(Me.TableLayoutPanel5, 0, 1)
         Me.TableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel3.Location = New System.Drawing.Point(78, 22)
-        Me.TableLayoutPanel3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TableLayoutPanel3.Margin = New System.Windows.Forms.Padding(4)
         Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
         Me.TableLayoutPanel3.RowCount = 2
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.13043!))
@@ -166,7 +166,7 @@ Partial Class UC_HPS_home_tab
         Me.TableLayoutPanel5.Controls.Add(Me.Guna2Panel1, 1, 1)
         Me.TableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel5.Location = New System.Drawing.Point(4, 62)
-        Me.TableLayoutPanel5.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TableLayoutPanel5.Margin = New System.Windows.Forms.Padding(4)
         Me.TableLayoutPanel5.Name = "TableLayoutPanel5"
         Me.TableLayoutPanel5.RowCount = 3
         Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.465753!))
@@ -181,7 +181,7 @@ Partial Class UC_HPS_home_tab
         Me.Guna2Panel1.Controls.Add(Me.TableLayoutPanel6)
         Me.Guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Guna2Panel1.Location = New System.Drawing.Point(16, 15)
-        Me.Guna2Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Guna2Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2Panel1.Name = "Guna2Panel1"
         Me.Guna2Panel1.Size = New System.Drawing.Size(572, 426)
         Me.Guna2Panel1.TabIndex = 0
@@ -194,7 +194,7 @@ Partial Class UC_HPS_home_tab
         Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Top
         Me.TableLayoutPanel6.Location = New System.Drawing.Point(0, 0)
-        Me.TableLayoutPanel6.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TableLayoutPanel6.Margin = New System.Windows.Forms.Padding(4)
         Me.TableLayoutPanel6.Name = "TableLayoutPanel6"
         Me.TableLayoutPanel6.RowCount = 1
         Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 34.29395!))
@@ -214,7 +214,7 @@ Partial Class UC_HPS_home_tab
         Me.Guna2GradientPanel1.FillColor = System.Drawing.Color.PeachPuff
         Me.Guna2GradientPanel1.FillColor2 = System.Drawing.Color.Moccasin
         Me.Guna2GradientPanel1.Location = New System.Drawing.Point(39, 32)
-        Me.Guna2GradientPanel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Guna2GradientPanel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2GradientPanel1.Name = "Guna2GradientPanel1"
         Me.Guna2GradientPanel1.Size = New System.Drawing.Size(928, 566)
         Me.Guna2GradientPanel1.TabIndex = 2
