@@ -147,5 +147,13 @@ Partial Public Class Home_Panel_Students
         ' Send the "LogoutClicked" signal to Program.vb
         RaiseEvent LogoutClicked(Me, EventArgs.Empty)
     End Sub
+
+    Private Sub TableLayoutPanel1_Paint(sender As Object, e As PaintEventArgs) Handles TableLayoutPanel1.Paint
+
+    End Sub
+
+    Private Sub lbl_user_Click(sender As Object, e As EventArgs) Handles lbl_user.Click
+
+    End Sub
     ' --- END OF ADDITION ---
 End Class

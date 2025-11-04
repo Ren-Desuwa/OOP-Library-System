@@ -32,6 +32,10 @@ Partial Class Home_Panel_Students
         Me.btn_cart = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Guna2Elipse1 = New Guna.UI2.WinForms.Guna2Elipse(Me.components)
         Me.tab_container_panel = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
+        Me.UC_HPS_penalty_tab1 = New OOP_Library_System.UC_HPS_penalty_tab()
+        Me.UC_HPS_borrowed_books_tab1 = New OOP_Library_System.UC_HPS_borrowed_books_tab()
+        Me.UC_HPS_home_tab1 = New OOP_Library_System.UC_HPS_home_tab()
+        Me.UC_HPS_catalouge_tab1 = New OOP_Library_System.UC_HPS_catalouge_tab()
         Me.Guna2CustomGradientPanel1 = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
         Me.btn_logout = New Guna.UI2.WinForms.Guna2Button()
         Me.btn_Home_tab = New Guna.UI2.WinForms.Guna2Button()
@@ -40,10 +44,6 @@ Partial Class Home_Panel_Students
         Me.btn_Penalty_tab = New Guna.UI2.WinForms.Guna2Button()
         Me.color_holder_panel = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
         Me.UC_Loading_Panel1 = New OOP_Library_System.UC_Loading_Panel()
-        Me.UC_HPS_penalty_tab1 = New OOP_Library_System.UC_HPS_penalty_tab()
-        Me.UC_HPS_borrowed_books_tab1 = New OOP_Library_System.UC_HPS_borrowed_books_tab()
-        Me.UC_HPS_home_tab1 = New OOP_Library_System.UC_HPS_home_tab()
-        Me.UC_HPS_catalouge_tab1 = New OOP_Library_System.UC_HPS_catalouge_tab()
         Me.title_panel.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -62,8 +62,9 @@ Partial Class Home_Panel_Students
         Me.title_panel.FillColor3 = System.Drawing.Color.FromArgb(CType(CType(154, Byte), Integer), CType(CType(111, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.title_panel.FillColor4 = System.Drawing.Color.FromArgb(CType(CType(139, Byte), Integer), CType(CType(103, Byte), Integer), CType(CType(67, Byte), Integer))
         Me.title_panel.Location = New System.Drawing.Point(0, 0)
+        Me.title_panel.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.title_panel.Name = "title_panel"
-        Me.title_panel.Size = New System.Drawing.Size(918, 64)
+        Me.title_panel.Size = New System.Drawing.Size(688, 52)
         Me.title_panel.TabIndex = 6
         '
         'TableLayoutPanel1
@@ -83,10 +84,11 @@ Partial Class Home_Panel_Students
         Me.TableLayoutPanel1.Controls.Add(Me.btn_cart, 2, 0)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 0)
+        Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(918, 64)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(688, 52)
         Me.TableLayoutPanel1.TabIndex = 17
         '
         'Guna2PictureBox1
@@ -100,9 +102,10 @@ Partial Class Home_Panel_Students
         Me.Guna2PictureBox1.Image = Global.OOP_Library_System.My.Resources.Resources.Ucc_Logo_NoBG_Big1
         Me.Guna2PictureBox1.ImageLocation = ""
         Me.Guna2PictureBox1.ImageRotate = 0!
-        Me.Guna2PictureBox1.Location = New System.Drawing.Point(21, 3)
+        Me.Guna2PictureBox1.Location = New System.Drawing.Point(16, 2)
+        Me.Guna2PictureBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
-        Me.Guna2PictureBox1.Size = New System.Drawing.Size(63, 58)
+        Me.Guna2PictureBox1.Size = New System.Drawing.Size(47, 48)
         Me.Guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.Guna2PictureBox1.TabIndex = 11
         Me.Guna2PictureBox1.TabStop = False
@@ -115,9 +118,10 @@ Partial Class Home_Panel_Students
         Me.lbl_user.BackColor = System.Drawing.Color.Transparent
         Me.lbl_user.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_user.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(232, Byte), Integer))
-        Me.lbl_user.Location = New System.Drawing.Point(638, 16)
+        Me.lbl_user.Location = New System.Drawing.Point(478, 13)
+        Me.lbl_user.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbl_user.Name = "lbl_user"
-        Me.lbl_user.Size = New System.Drawing.Size(188, 32)
+        Me.lbl_user.Size = New System.Drawing.Size(141, 26)
         Me.lbl_user.TabIndex = 12
         Me.lbl_user.Text = "User"
         Me.lbl_user.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -133,9 +137,10 @@ Partial Class Home_Panel_Students
         Me.btn_profile.Image = Global.OOP_Library_System.My.Resources.Resources.Accountwhite0_icon
         Me.btn_profile.ImageLocation = ""
         Me.btn_profile.ImageRotate = 0!
-        Me.btn_profile.Location = New System.Drawing.Point(832, 3)
+        Me.btn_profile.Location = New System.Drawing.Point(623, 2)
+        Me.btn_profile.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btn_profile.Name = "btn_profile"
-        Me.btn_profile.Size = New System.Drawing.Size(58, 58)
+        Me.btn_profile.Size = New System.Drawing.Size(44, 48)
         Me.btn_profile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.btn_profile.TabIndex = 18
         Me.btn_profile.TabStop = False
@@ -158,13 +163,13 @@ Partial Class Home_Panel_Students
         Me.txtBox_search.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.txtBox_search.ForeColor = System.Drawing.Color.Black
         Me.txtBox_search.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtBox_search.Location = New System.Drawing.Point(90, 10)
-        Me.txtBox_search.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtBox_search.Location = New System.Drawing.Point(67, 8)
+        Me.txtBox_search.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.txtBox_search.Name = "txtBox_search"
         Me.txtBox_search.PlaceholderForeColor = System.Drawing.Color.DarkGray
         Me.txtBox_search.PlaceholderText = "Search"
         Me.txtBox_search.SelectedText = ""
-        Me.txtBox_search.Size = New System.Drawing.Size(232, 44)
+        Me.txtBox_search.Size = New System.Drawing.Size(175, 36)
         Me.txtBox_search.TabIndex = 19
         '
         'btn_cart
@@ -177,9 +182,10 @@ Partial Class Home_Panel_Students
         Me.btn_cart.Image = Global.OOP_Library_System.My.Resources.Resources.Cart_icon
         Me.btn_cart.ImageLocation = ""
         Me.btn_cart.ImageRotate = 0!
-        Me.btn_cart.Location = New System.Drawing.Point(574, 3)
+        Me.btn_cart.Location = New System.Drawing.Point(430, 2)
+        Me.btn_cart.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btn_cart.Name = "btn_cart"
-        Me.btn_cart.Size = New System.Drawing.Size(58, 58)
+        Me.btn_cart.Size = New System.Drawing.Size(44, 47)
         Me.btn_cart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.btn_cart.TabIndex = 20
         Me.btn_cart.TabStop = False
@@ -207,10 +213,58 @@ Partial Class Home_Panel_Students
         Me.tab_container_panel.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(216, Byte), Integer))
         Me.tab_container_panel.FillColor3 = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.tab_container_panel.FillColor4 = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(195, Byte), Integer), CType(CType(165, Byte), Integer))
-        Me.tab_container_panel.Location = New System.Drawing.Point(0, 64)
+        Me.tab_container_panel.Location = New System.Drawing.Point(0, 52)
+        Me.tab_container_panel.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.tab_container_panel.Name = "tab_container_panel"
-        Me.tab_container_panel.Size = New System.Drawing.Size(920, 541)
+        Me.tab_container_panel.Size = New System.Drawing.Size(690, 440)
         Me.tab_container_panel.TabIndex = 9
+        '
+        'UC_HPS_penalty_tab1
+        '
+        Me.UC_HPS_penalty_tab1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.UC_HPS_penalty_tab1.Location = New System.Drawing.Point(0, 39)
+        Me.UC_HPS_penalty_tab1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.UC_HPS_penalty_tab1.Name = "UC_HPS_penalty_tab1"
+        Me.UC_HPS_penalty_tab1.Size = New System.Drawing.Size(688, 397)
+        Me.UC_HPS_penalty_tab1.TabIndex = 11
+        '
+        'UC_HPS_borrowed_books_tab1
+        '
+        Me.UC_HPS_borrowed_books_tab1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.UC_HPS_borrowed_books_tab1.Location = New System.Drawing.Point(0, 39)
+        Me.UC_HPS_borrowed_books_tab1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.UC_HPS_borrowed_books_tab1.Name = "UC_HPS_borrowed_books_tab1"
+        Me.UC_HPS_borrowed_books_tab1.Size = New System.Drawing.Size(688, 397)
+        Me.UC_HPS_borrowed_books_tab1.TabIndex = 10
+        '
+        'UC_HPS_home_tab1
+        '
+        Me.UC_HPS_home_tab1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.UC_HPS_home_tab1.BackColor = System.Drawing.Color.AntiqueWhite
+        Me.UC_HPS_home_tab1.Location = New System.Drawing.Point(0, 39)
+        Me.UC_HPS_home_tab1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.UC_HPS_home_tab1.Name = "UC_HPS_home_tab1"
+        Me.UC_HPS_home_tab1.Size = New System.Drawing.Size(688, 397)
+        Me.UC_HPS_home_tab1.TabIndex = 9
+        '
+        'UC_HPS_catalouge_tab1
+        '
+        Me.UC_HPS_catalouge_tab1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.UC_HPS_catalouge_tab1.BackColor = System.Drawing.Color.FloralWhite
+        Me.UC_HPS_catalouge_tab1.IsGuestMode = False
+        Me.UC_HPS_catalouge_tab1.Location = New System.Drawing.Point(0, 39)
+        Me.UC_HPS_catalouge_tab1.Margin = New System.Windows.Forms.Padding(2)
+        Me.UC_HPS_catalouge_tab1.Name = "UC_HPS_catalouge_tab1"
+        Me.UC_HPS_catalouge_tab1.Size = New System.Drawing.Size(690, 396)
+        Me.UC_HPS_catalouge_tab1.TabIndex = 8
         '
         'Guna2CustomGradientPanel1
         '
@@ -228,8 +282,9 @@ Partial Class Home_Panel_Students
         Me.Guna2CustomGradientPanel1.FillColor3 = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.Guna2CustomGradientPanel1.FillColor4 = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(195, Byte), Integer), CType(CType(165, Byte), Integer))
         Me.Guna2CustomGradientPanel1.Location = New System.Drawing.Point(0, 0)
+        Me.Guna2CustomGradientPanel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Guna2CustomGradientPanel1.Name = "Guna2CustomGradientPanel1"
-        Me.Guna2CustomGradientPanel1.Size = New System.Drawing.Size(920, 56)
+        Me.Guna2CustomGradientPanel1.Size = New System.Drawing.Size(690, 46)
         Me.Guna2CustomGradientPanel1.TabIndex = 12
         '
         'btn_logout
@@ -244,9 +299,10 @@ Partial Class Home_Panel_Students
         Me.btn_logout.FillColor = System.Drawing.Color.Tan
         Me.btn_logout.Font = New System.Drawing.Font("Segoe UI", 10.2!)
         Me.btn_logout.ForeColor = System.Drawing.Color.Black
-        Me.btn_logout.Location = New System.Drawing.Point(728, 8)
+        Me.btn_logout.Location = New System.Drawing.Point(546, 6)
+        Me.btn_logout.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btn_logout.Name = "btn_logout"
-        Me.btn_logout.Size = New System.Drawing.Size(180, 32)
+        Me.btn_logout.Size = New System.Drawing.Size(135, 26)
         Me.btn_logout.TabIndex = 8
         Me.btn_logout.Text = "Log out"
         '
@@ -261,9 +317,10 @@ Partial Class Home_Panel_Students
         Me.btn_Home_tab.FillColor = System.Drawing.Color.Tan
         Me.btn_Home_tab.Font = New System.Drawing.Font("Segoe UI", 10.2!)
         Me.btn_Home_tab.ForeColor = System.Drawing.Color.Black
-        Me.btn_Home_tab.Location = New System.Drawing.Point(8, 8)
+        Me.btn_Home_tab.Location = New System.Drawing.Point(6, 6)
+        Me.btn_Home_tab.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btn_Home_tab.Name = "btn_Home_tab"
-        Me.btn_Home_tab.Size = New System.Drawing.Size(180, 32)
+        Me.btn_Home_tab.Size = New System.Drawing.Size(135, 26)
         Me.btn_Home_tab.TabIndex = 4
         Me.btn_Home_tab.Text = "Home"
         '
@@ -278,9 +335,10 @@ Partial Class Home_Panel_Students
         Me.btn_Catalouge_tab.FillColor = System.Drawing.Color.Tan
         Me.btn_Catalouge_tab.Font = New System.Drawing.Font("Segoe UI", 10.2!)
         Me.btn_Catalouge_tab.ForeColor = System.Drawing.Color.Black
-        Me.btn_Catalouge_tab.Location = New System.Drawing.Point(200, 8)
+        Me.btn_Catalouge_tab.Location = New System.Drawing.Point(150, 6)
+        Me.btn_Catalouge_tab.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btn_Catalouge_tab.Name = "btn_Catalouge_tab"
-        Me.btn_Catalouge_tab.Size = New System.Drawing.Size(180, 32)
+        Me.btn_Catalouge_tab.Size = New System.Drawing.Size(135, 26)
         Me.btn_Catalouge_tab.TabIndex = 5
         Me.btn_Catalouge_tab.Text = "Catalouge"
         '
@@ -295,9 +353,10 @@ Partial Class Home_Panel_Students
         Me.btn_Borrowed_Books_tab.FillColor = System.Drawing.Color.Tan
         Me.btn_Borrowed_Books_tab.Font = New System.Drawing.Font("Segoe UI", 10.2!)
         Me.btn_Borrowed_Books_tab.ForeColor = System.Drawing.Color.Black
-        Me.btn_Borrowed_Books_tab.Location = New System.Drawing.Point(392, 8)
+        Me.btn_Borrowed_Books_tab.Location = New System.Drawing.Point(294, 6)
+        Me.btn_Borrowed_Books_tab.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btn_Borrowed_Books_tab.Name = "btn_Borrowed_Books_tab"
-        Me.btn_Borrowed_Books_tab.Size = New System.Drawing.Size(180, 32)
+        Me.btn_Borrowed_Books_tab.Size = New System.Drawing.Size(135, 26)
         Me.btn_Borrowed_Books_tab.TabIndex = 6
         Me.btn_Borrowed_Books_tab.Text = "Borrowed Books"
         '
@@ -312,9 +371,10 @@ Partial Class Home_Panel_Students
         Me.btn_Penalty_tab.FillColor = System.Drawing.Color.Tan
         Me.btn_Penalty_tab.Font = New System.Drawing.Font("Segoe UI", 10.2!)
         Me.btn_Penalty_tab.ForeColor = System.Drawing.Color.Black
-        Me.btn_Penalty_tab.Location = New System.Drawing.Point(584, 8)
+        Me.btn_Penalty_tab.Location = New System.Drawing.Point(438, 6)
+        Me.btn_Penalty_tab.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btn_Penalty_tab.Name = "btn_Penalty_tab"
-        Me.btn_Penalty_tab.Size = New System.Drawing.Size(180, 32)
+        Me.btn_Penalty_tab.Size = New System.Drawing.Size(135, 26)
         Me.btn_Penalty_tab.TabIndex = 7
         Me.btn_Penalty_tab.Text = "Penalty"
         '
@@ -330,72 +390,33 @@ Partial Class Home_Panel_Students
         Me.color_holder_panel.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(216, Byte), Integer))
         Me.color_holder_panel.FillColor3 = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.color_holder_panel.FillColor4 = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(195, Byte), Integer), CType(CType(165, Byte), Integer))
-        Me.color_holder_panel.Location = New System.Drawing.Point(0, 64)
+        Me.color_holder_panel.Location = New System.Drawing.Point(0, 52)
+        Me.color_holder_panel.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.color_holder_panel.Name = "color_holder_panel"
-        Me.color_holder_panel.Size = New System.Drawing.Size(272, 541)
+        Me.color_holder_panel.Size = New System.Drawing.Size(204, 440)
         Me.color_holder_panel.TabIndex = 10
         '
         'UC_Loading_Panel1
         '
         Me.UC_Loading_Panel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.UC_Loading_Panel1.Location = New System.Drawing.Point(0, 64)
+        Me.UC_Loading_Panel1.Location = New System.Drawing.Point(0, 52)
+        Me.UC_Loading_Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.UC_Loading_Panel1.Name = "UC_Loading_Panel1"
-        Me.UC_Loading_Panel1.Size = New System.Drawing.Size(918, 538)
+        Me.UC_Loading_Panel1.Size = New System.Drawing.Size(688, 437)
         Me.UC_Loading_Panel1.TabIndex = 16
-        '
-        'UC_HPS_penalty_tab1
-        '
-        Me.UC_HPS_penalty_tab1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.UC_HPS_penalty_tab1.Location = New System.Drawing.Point(0, 48)
-        Me.UC_HPS_penalty_tab1.Name = "UC_HPS_penalty_tab1"
-        Me.UC_HPS_penalty_tab1.Size = New System.Drawing.Size(918, 489)
-        Me.UC_HPS_penalty_tab1.TabIndex = 11
-        '
-        'UC_HPS_borrowed_books_tab1
-        '
-        Me.UC_HPS_borrowed_books_tab1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.UC_HPS_borrowed_books_tab1.Location = New System.Drawing.Point(0, 48)
-        Me.UC_HPS_borrowed_books_tab1.Name = "UC_HPS_borrowed_books_tab1"
-        Me.UC_HPS_borrowed_books_tab1.Size = New System.Drawing.Size(918, 489)
-        Me.UC_HPS_borrowed_books_tab1.TabIndex = 10
-        '
-        'UC_HPS_home_tab1
-        '
-        Me.UC_HPS_home_tab1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.UC_HPS_home_tab1.Location = New System.Drawing.Point(0, 48)
-        Me.UC_HPS_home_tab1.Name = "UC_HPS_home_tab1"
-        Me.UC_HPS_home_tab1.Size = New System.Drawing.Size(918, 489)
-        Me.UC_HPS_home_tab1.TabIndex = 9
-        '
-        'UC_HPS_catalouge_tab1
-        '
-        Me.UC_HPS_catalouge_tab1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.UC_HPS_catalouge_tab1.BackColor = System.Drawing.Color.FloralWhite
-        Me.UC_HPS_catalouge_tab1.IsGuestMode = False
-        Me.UC_HPS_catalouge_tab1.Location = New System.Drawing.Point(0, 48)
-        Me.UC_HPS_catalouge_tab1.Name = "UC_HPS_catalouge_tab1"
-        Me.UC_HPS_catalouge_tab1.Size = New System.Drawing.Size(920, 488)
-        Me.UC_HPS_catalouge_tab1.TabIndex = 8
         '
         'Home_Panel_Students
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FloralWhite
-        Me.ClientSize = New System.Drawing.Size(918, 602)
+        Me.ClientSize = New System.Drawing.Size(688, 489)
         Me.Controls.Add(Me.UC_Loading_Panel1)
         Me.Controls.Add(Me.tab_container_panel)
         Me.Controls.Add(Me.title_panel)
         Me.Controls.Add(Me.color_holder_panel)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "Home_Panel_Students"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Home Panel"

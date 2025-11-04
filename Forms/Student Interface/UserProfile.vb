@@ -146,7 +146,7 @@
     End Sub
 
     Private Sub Guna2Button3_Click(sender As Object, e As EventArgs) Handles btn_editbookpreview.Click
-        Dim edit As New editDisplayedBooks()
+        Dim edit As New editDisplayedBooks(_account)
         edit.Show()
     End Sub
 
