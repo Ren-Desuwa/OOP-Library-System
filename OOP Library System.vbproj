@@ -88,6 +88,12 @@
   <ItemGroup>
     <Compile Include="Classes\Services\BorrowedBookDetails.vb" />
     <Compile Include="Classes\Services\CartServices.vb" />
+    <Compile Include="Forms\Student Interface\UC Student\UC_announcementBox.Designer.vb">
+      <DependentUpon>UC_announcementBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Student Interface\UC Student\UC_announcementBox.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Forms\Student Interface\UC Student\UC_signup_step1_student.Designer.vb">
       <DependentUpon>UC_signup_step1_student.vb</DependentUpon>
     </Compile>
@@ -415,6 +421,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Forms\Student Interface\UC Student\UC_announcementBox.resx">
+      <DependentUpon>UC_announcementBox.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Student Interface\UC Student\UC_signup_step1_student.resx">
       <DependentUpon>UC_signup_step1_student.vb</DependentUpon>
     </EmbeddedResource>
