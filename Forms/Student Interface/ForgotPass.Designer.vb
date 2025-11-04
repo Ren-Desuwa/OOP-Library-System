@@ -69,9 +69,9 @@ Partial Class ForgotPass_Student
         Me.Guna2CustomGradientPanel1.Controls.Add(Me.txtBox_confirmpassword)
         Me.Guna2CustomGradientPanel1.Controls.Add(Me.img_show)
         Me.Guna2CustomGradientPanel1.Controls.Add(Me.img_hide)
-        Me.Guna2CustomGradientPanel1.Controls.Add(Me.txtBox_password)
         Me.Guna2CustomGradientPanel1.Controls.Add(Me.lbl_password)
         Me.Guna2CustomGradientPanel1.Controls.Add(Me.btn_confirm)
+        Me.Guna2CustomGradientPanel1.Controls.Add(Me.txtBox_password)
         Me.Guna2CustomGradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Guna2CustomGradientPanel1.FillColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(230, Byte), Integer))
         Me.Guna2CustomGradientPanel1.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(211, Byte), Integer))

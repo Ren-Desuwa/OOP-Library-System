@@ -91,6 +91,9 @@ Public Class ForgotPass_Student
         btn_confirm.Visible = True ' Show "Confirm"
         img_show.Visible = True
         img_hide.Visible = False
+        img_hide.BringToFront()
+        img_show.BringToFront()
+
 
         ' Reset password fields
         txtBox_password.UseSystemPasswordChar = True
