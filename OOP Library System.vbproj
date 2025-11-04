@@ -166,6 +166,36 @@
     <Compile Include="Forms\Admin-Librarian Interface\UC\UserReqViewProfile.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\Admin-Librarian Interface\UC\UC_HPAL_Book_Tab.Designer.vb">
+      <DependentUpon>UC_HPAL_Book_Tab.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin-Librarian Interface\UC\UC_HPAL_Book_Tab.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin-Librarian Interface\UC\UC_HPAL_Librarian_Tab.Designer.vb">
+      <DependentUpon>UC_HPAL_Librarian_Tab.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin-Librarian Interface\UC\UC_HPAL_Librarian_Tab.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin-Librarian Interface\UC\UC_HPAL_Logs_Tab.Designer.vb">
+      <DependentUpon>UC_HPAL_Logs_Tab.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin-Librarian Interface\UC\UC_HPAL_Logs_Tab.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin-Librarian Interface\UC\UC_HPAL_Notification_Tab.Designer.vb">
+      <DependentUpon>UC_HPAL_Notification_Tab.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin-Librarian Interface\UC\UC_HPAL_Notification_Tab.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin-Librarian Interface\UC\UC_HPAL_User_Tab.Designer.vb">
+      <DependentUpon>UC_HPAL_User_Tab.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin-Librarian Interface\UC\UC_HPAL_User_Tab.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Forms\Student Interface\UC Student\UC_announcementBox.Designer.vb">
       <DependentUpon>UC_announcementBox.vb</DependentUpon>
     </Compile>
@@ -249,12 +279,6 @@
       <DependentUpon>Home_Panel_Admin_Librarian.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\Admin-Librarian Interface\Panel\Home_Panel_Admin_Librarian.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Admin-Librarian Interface\Panel\Login_Panel_Librarian_Admin.Designer.vb">
-      <DependentUpon>Login_Panel_Librarian_Admin.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Admin-Librarian Interface\Panel\Login_Panel_Librarian_Admin.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Student Interface\Home_Panel_Guest.Designer.vb">
@@ -436,6 +460,21 @@
     <EmbeddedResource Include="Forms\Admin-Librarian Interface\UC\UserReqViewProfile.resx">
       <DependentUpon>UserReqViewProfile.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin-Librarian Interface\UC\UC_HPAL_Book_Tab.resx">
+      <DependentUpon>UC_HPAL_Book_Tab.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin-Librarian Interface\UC\UC_HPAL_Librarian_Tab.resx">
+      <DependentUpon>UC_HPAL_Librarian_Tab.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin-Librarian Interface\UC\UC_HPAL_Logs_Tab.resx">
+      <DependentUpon>UC_HPAL_Logs_Tab.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin-Librarian Interface\UC\UC_HPAL_Notification_Tab.resx">
+      <DependentUpon>UC_HPAL_Notification_Tab.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin-Librarian Interface\UC\UC_HPAL_User_Tab.resx">
+      <DependentUpon>UC_HPAL_User_Tab.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Student Interface\UC Student\UC_announcementBox.resx">
       <DependentUpon>UC_announcementBox.vb</DependentUpon>
     </EmbeddedResource>
@@ -465,9 +504,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin-Librarian Interface\Panel\Home_Panel_Admin_Librarian.resx">
       <DependentUpon>Home_Panel_Admin_Librarian.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Admin-Librarian Interface\Panel\Login_Panel_Librarian_Admin.resx">
-      <DependentUpon>Login_Panel_Librarian_Admin.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Student Interface\Home_Panel_Guest.resx">
       <DependentUpon>Home_Panel_Guest.vb</DependentUpon>

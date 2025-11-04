@@ -102,7 +102,7 @@ Partial Class EditBook
         Me.TableLayoutPanel2.ColumnCount = 3
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 39.79592!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60.20408!))
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 318.0!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 319.0!))
         Me.TableLayoutPanel2.Controls.Add(Me.Label1, 0, 1)
         Me.TableLayoutPanel2.Controls.Add(Me.Guna2ImageButton1, 0, 2)
         Me.TableLayoutPanel2.Controls.Add(Me.txtTitle, 0, 3)
@@ -163,7 +163,7 @@ Partial Class EditBook
         Me.Guna2ImageButton1.Image = CType(resources.GetObject("Guna2ImageButton1.Image"), System.Drawing.Image)
         Me.Guna2ImageButton1.ImageOffset = New System.Drawing.Point(0, 0)
         Me.Guna2ImageButton1.ImageRotate = 0!
-        Me.Guna2ImageButton1.Location = New System.Drawing.Point(87, 59)
+        Me.Guna2ImageButton1.Location = New System.Drawing.Point(86, 59)
         Me.Guna2ImageButton1.Margin = New System.Windows.Forms.Padding(4, 3, 0, 3)
         Me.Guna2ImageButton1.Name = "Guna2ImageButton1"
         Me.Guna2ImageButton1.PressedState.ImageSize = New System.Drawing.Size(64, 64)
@@ -295,7 +295,7 @@ Partial Class EditBook
         Me.Guna2Button2.FillColor = System.Drawing.Color.Tan
         Me.Guna2Button2.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2Button2.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button2.Location = New System.Drawing.Point(403, 482)
+        Me.Guna2Button2.Location = New System.Drawing.Point(402, 482)
         Me.Guna2Button2.Margin = New System.Windows.Forms.Padding(11, 10, 11, 14)
         Me.Guna2Button2.Name = "Guna2Button2"
         Me.Guna2Button2.Size = New System.Drawing.Size(160, 49)
@@ -383,6 +383,7 @@ Partial Class EditBook
         '
         'Guna2Elipse1
         '
+        Me.Guna2Elipse1.BorderRadius = 30
         Me.Guna2Elipse1.TargetControl = Me
         '
         'Guna2DragControl1
