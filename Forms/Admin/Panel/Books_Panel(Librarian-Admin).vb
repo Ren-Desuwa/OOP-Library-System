@@ -1,3 +1,0 @@
-﻿Public Class Books_Panel_Librarian_Admin_
-
-End Class
