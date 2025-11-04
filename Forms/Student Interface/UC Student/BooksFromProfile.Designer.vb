@@ -45,6 +45,7 @@ Partial Class BooksFromProfile
         Me.FlowLayoutPanel1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.FlowLayoutPanel1.AutoScroll = True
         Me.FlowLayoutPanel1.BackColor = System.Drawing.Color.Transparent
         Me.FlowLayoutPanel1.Location = New System.Drawing.Point(22, 21)
         Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
@@ -57,7 +58,7 @@ Partial Class BooksFromProfile
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Linen
         Me.Controls.Add(Me.Guna2GradientPanel1)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "BooksFromProfile"
         Me.Size = New System.Drawing.Size(438, 584)
         Me.Guna2GradientPanel1.ResumeLayout(False)
