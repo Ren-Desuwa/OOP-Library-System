@@ -26,12 +26,12 @@ Partial Class UC_HPAL_Logs_Tab
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.lblDateTime = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.DataGridLogs = New System.Windows.Forms.DataGridView()
-        Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
+        Me.RichTextBoxLogs = New System.Windows.Forms.RichTextBox()
         Me.genre_panel = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
+        Me.Guna2Elipse1 = New Guna.UI2.WinForms.Guna2Elipse(Me.components)
         Me.TableLayoutPanel1.SuspendLayout()
-        CType(Me.DataGridLogs, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.genre_panel.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -61,7 +61,7 @@ Partial Class UC_HPAL_Logs_Tab
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 1.373626!))
         Me.TableLayoutPanel1.Controls.Add(Me.Label1, 1, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel2, 1, 2)
-        Me.TableLayoutPanel1.Controls.Add(Me.DataGridLogs, 1, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.RichTextBoxLogs, 1, 1)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 0)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
@@ -73,16 +73,19 @@ Partial Class UC_HPAL_Logs_Tab
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(729, 397)
         Me.TableLayoutPanel1.TabIndex = 17
         '
-        'DataGridLogs
+        'Label1
         '
-        Me.DataGridLogs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridLogs.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DataGridLogs.Location = New System.Drawing.Point(15, 34)
-        Me.DataGridLogs.Name = "DataGridLogs"
-        Me.DataGridLogs.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.White
-        Me.DataGridLogs.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black
-        Me.DataGridLogs.Size = New System.Drawing.Size(700, 342)
-        Me.DataGridLogs.TabIndex = 18
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label1.Font = New System.Drawing.Font("Consolas", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.Black
+        Me.Label1.Location = New System.Drawing.Point(14, 0)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(702, 31)
+        Me.Label1.TabIndex = 15
+        Me.Label1.Text = "Admin Logs"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'TableLayoutPanel2
         '
@@ -98,19 +101,14 @@ Partial Class UC_HPAL_Logs_Tab
         Me.TableLayoutPanel2.Size = New System.Drawing.Size(700, 12)
         Me.TableLayoutPanel2.TabIndex = 17
         '
-        'Label1
+        'RichTextBoxLogs
         '
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label1.Font = New System.Drawing.Font("Consolas", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(14, 0)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(702, 31)
-        Me.Label1.TabIndex = 15
-        Me.Label1.Text = "Admin Logs"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.RichTextBoxLogs.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.RichTextBoxLogs.Location = New System.Drawing.Point(15, 34)
+        Me.RichTextBoxLogs.Name = "RichTextBoxLogs"
+        Me.RichTextBoxLogs.Size = New System.Drawing.Size(700, 342)
+        Me.RichTextBoxLogs.TabIndex = 18
+        Me.RichTextBoxLogs.Text = ""
         '
         'genre_panel
         '
@@ -128,6 +126,11 @@ Partial Class UC_HPAL_Logs_Tab
         Me.genre_panel.Size = New System.Drawing.Size(729, 397)
         Me.genre_panel.TabIndex = 18
         '
+        'Guna2Elipse1
+        '
+        Me.Guna2Elipse1.BorderRadius = 10
+        Me.Guna2Elipse1.TargetControl = Me.RichTextBoxLogs
+        '
         'UC_HPAL_Logs_Tab
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -137,7 +140,6 @@ Partial Class UC_HPAL_Logs_Tab
         Me.Name = "UC_HPAL_Logs_Tab"
         Me.Size = New System.Drawing.Size(729, 397)
         Me.TableLayoutPanel1.ResumeLayout(False)
-        CType(Me.DataGridLogs, System.ComponentModel.ISupportInitialize).EndInit()
         Me.genre_panel.ResumeLayout(False)
         Me.ResumeLayout(False)
 
@@ -147,6 +149,7 @@ Partial Class UC_HPAL_Logs_Tab
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents Label1 As Label
     Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
-    Friend WithEvents DataGridLogs As DataGridView
     Friend WithEvents genre_panel As Guna.UI2.WinForms.Guna2CustomGradientPanel
+    Friend WithEvents RichTextBoxLogs As RichTextBox
+    Friend WithEvents Guna2Elipse1 As Guna.UI2.WinForms.Guna2Elipse
 End Class
