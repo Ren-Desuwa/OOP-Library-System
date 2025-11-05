@@ -22,7 +22,7 @@ Partial Class UC_HPAL_User_Tab
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.flow_panel_container = New System.Windows.Forms.FlowLayoutPanel()
+        Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.btn_add = New Guna.UI2.WinForms.Guna2Button()
         Me.btn_remove = New Guna.UI2.WinForms.Guna2Button()
@@ -30,16 +30,16 @@ Partial Class UC_HPAL_User_Tab
         Me.TableLayoutPanel3.SuspendLayout()
         Me.SuspendLayout()
         '
-        'flow_panel_container
+        'FlowLayoutPanel1
         '
-        Me.flow_panel_container.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.FlowLayoutPanel1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.flow_panel_container.BackColor = System.Drawing.Color.Transparent
-        Me.flow_panel_container.Location = New System.Drawing.Point(0, 0)
-        Me.flow_panel_container.Name = "flow_panel_container"
-        Me.flow_panel_container.Size = New System.Drawing.Size(522, 364)
-        Me.flow_panel_container.TabIndex = 16
+        Me.FlowLayoutPanel1.BackColor = System.Drawing.Color.White
+        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(0, 0)
+        Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(522, 364)
+        Me.FlowLayoutPanel1.TabIndex = 16
         '
         'TableLayoutPanel3
         '
@@ -119,7 +119,7 @@ Partial Class UC_HPAL_User_Tab
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Transparent
         Me.Controls.Add(Me.TableLayoutPanel3)
-        Me.Controls.Add(Me.flow_panel_container)
+        Me.Controls.Add(Me.FlowLayoutPanel1)
         Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "UC_HPAL_User_Tab"
         Me.Size = New System.Drawing.Size(756, 559)
@@ -129,7 +129,7 @@ Partial Class UC_HPAL_User_Tab
 
     End Sub
 
-    Friend WithEvents flow_panel_container As FlowLayoutPanel
+    Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
     Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
     Friend WithEvents btn_add As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btn_remove As Guna.UI2.WinForms.Guna2Button
