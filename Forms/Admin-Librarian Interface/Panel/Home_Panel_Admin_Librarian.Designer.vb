@@ -224,7 +224,7 @@ Partial Class Home_Panel_Admin_Librarian
         Me.btn_Books.Location = New System.Drawing.Point(44, 48)
         Me.btn_Books.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn_Books.Name = "btn_Books"
-        Me.btn_Books.Size = New System.Drawing.Size(180, 46)
+        Me.btn_Books.Size = New System.Drawing.Size(135, 37)
         Me.btn_Books.TabIndex = 18
         Me.btn_Books.Text = "Books"
         '
@@ -469,14 +469,14 @@ Partial Class Home_Panel_Admin_Librarian
         '
         'Home_Panel_Admin_Librarian
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1267, 754)
         Me.Controls.Add(Me.title_panel)
         Me.Controls.Add(Me.Guna2CustomGradientPanel3)
         Me.Controls.Add(Me.pnl_UC_container)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "Home_Panel_Admin_Librarian"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Home_Panel_Admin_"

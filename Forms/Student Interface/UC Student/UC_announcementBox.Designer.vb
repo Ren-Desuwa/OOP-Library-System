@@ -28,20 +28,20 @@ Partial Class UC_announcementBox
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
-        Me.Title = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.TableLayoutPanel6 = New System.Windows.Forms.TableLayoutPanel()
         Me.Message = New System.Windows.Forms.Label()
         Me.TableLayoutPanel5 = New System.Windows.Forms.TableLayoutPanel()
         Me.DatePosted = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Title = New System.Windows.Forms.Label()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.TableLayoutPanel6 = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
         Me.TableLayoutPanel4.SuspendLayout()
+        Me.TableLayoutPanel6.SuspendLayout()
         Me.TableLayoutPanel5.SuspendLayout()
         Me.Guna2Panel1.SuspendLayout()
-        Me.TableLayoutPanel6.SuspendLayout()
         Me.SuspendLayout()
         '
         'Guna2Elipse1
@@ -98,8 +98,8 @@ Partial Class UC_announcementBox
         Me.TableLayoutPanel3.Location = New System.Drawing.Point(3, 33)
         Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
         Me.TableLayoutPanel3.RowCount = 2
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.70358!))
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 87.29642!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.22314!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 86.77686!))
         Me.TableLayoutPanel3.Size = New System.Drawing.Size(657, 242)
         Me.TableLayoutPanel3.TabIndex = 0
         '
@@ -110,34 +110,26 @@ Partial Class UC_announcementBox
         Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 86.97422!))
         Me.TableLayoutPanel4.Controls.Add(Me.TableLayoutPanel6, 1, 0)
         Me.TableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel4.Location = New System.Drawing.Point(25, 33)
+        Me.TableLayoutPanel4.Location = New System.Drawing.Point(25, 35)
         Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
         Me.TableLayoutPanel4.RowCount = 1
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.407407!))
-        Me.TableLayoutPanel4.Size = New System.Drawing.Size(629, 206)
+        Me.TableLayoutPanel4.Size = New System.Drawing.Size(629, 204)
         Me.TableLayoutPanel4.TabIndex = 0
         '
-        'Title
+        'TableLayoutPanel6
         '
-        Me.Title.AutoSize = True
-        Me.Title.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Title.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Title.Location = New System.Drawing.Point(3, 0)
-        Me.Title.Name = "Title"
-        Me.Title.Size = New System.Drawing.Size(657, 30)
-        Me.Title.TabIndex = 1
-        Me.Title.Text = "Announcement Title"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label2.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(3, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(502, 24)
-        Me.Label2.TabIndex = 2
-        Me.Label2.Text = "From Staff"
+        Me.TableLayoutPanel6.ColumnCount = 2
+        Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 93.5433!))
+        Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.456693!))
+        Me.TableLayoutPanel6.Controls.Add(Me.Message, 0, 0)
+        Me.TableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel6.Location = New System.Drawing.Point(84, 3)
+        Me.TableLayoutPanel6.Name = "TableLayoutPanel6"
+        Me.TableLayoutPanel6.RowCount = 1
+        Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel6.Size = New System.Drawing.Size(542, 198)
+        Me.TableLayoutPanel6.TabIndex = 1
         '
         'Message
         '
@@ -146,7 +138,7 @@ Partial Class UC_announcementBox
         Me.Message.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Message.Location = New System.Drawing.Point(3, 0)
         Me.Message.Name = "Message"
-        Me.Message.Size = New System.Drawing.Size(501, 200)
+        Me.Message.Size = New System.Drawing.Size(501, 198)
         Me.Message.TabIndex = 0
         Me.Message.Text = "Long message"
         '
@@ -162,7 +154,7 @@ Partial Class UC_announcementBox
         Me.TableLayoutPanel5.Name = "TableLayoutPanel5"
         Me.TableLayoutPanel5.RowCount = 1
         Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel5.Size = New System.Drawing.Size(629, 24)
+        Me.TableLayoutPanel5.Size = New System.Drawing.Size(629, 26)
         Me.TableLayoutPanel5.TabIndex = 1
         '
         'DatePosted
@@ -172,9 +164,31 @@ Partial Class UC_announcementBox
         Me.DatePosted.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DatePosted.Location = New System.Drawing.Point(511, 0)
         Me.DatePosted.Name = "DatePosted"
-        Me.DatePosted.Size = New System.Drawing.Size(115, 24)
+        Me.DatePosted.Size = New System.Drawing.Size(115, 26)
         Me.DatePosted.TabIndex = 3
         Me.DatePosted.Text = "Date"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label2.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(3, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(502, 26)
+        Me.Label2.TabIndex = 2
+        Me.Label2.Text = "From Staff"
+        '
+        'Title
+        '
+        Me.Title.AutoSize = True
+        Me.Title.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Title.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Title.Location = New System.Drawing.Point(3, 0)
+        Me.Title.Name = "Title"
+        Me.Title.Size = New System.Drawing.Size(657, 30)
+        Me.Title.TabIndex = 1
+        Me.Title.Text = "Announcement Title"
         '
         'Guna2Panel1
         '
@@ -187,20 +201,6 @@ Partial Class UC_announcementBox
         Me.Guna2Panel1.Name = "Guna2Panel1"
         Me.Guna2Panel1.Size = New System.Drawing.Size(693, 303)
         Me.Guna2Panel1.TabIndex = 1
-        '
-        'TableLayoutPanel6
-        '
-        Me.TableLayoutPanel6.ColumnCount = 2
-        Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 93.5433!))
-        Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.456693!))
-        Me.TableLayoutPanel6.Controls.Add(Me.Message, 0, 0)
-        Me.TableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel6.Location = New System.Drawing.Point(84, 3)
-        Me.TableLayoutPanel6.Name = "TableLayoutPanel6"
-        Me.TableLayoutPanel6.RowCount = 1
-        Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel6.Size = New System.Drawing.Size(542, 200)
-        Me.TableLayoutPanel6.TabIndex = 1
         '
         'UC_announcementBox
         '
@@ -217,12 +217,12 @@ Partial Class UC_announcementBox
         Me.TableLayoutPanel2.PerformLayout()
         Me.TableLayoutPanel3.ResumeLayout(False)
         Me.TableLayoutPanel4.ResumeLayout(False)
+        Me.TableLayoutPanel6.ResumeLayout(False)
+        Me.TableLayoutPanel6.PerformLayout()
         Me.TableLayoutPanel5.ResumeLayout(False)
         Me.TableLayoutPanel5.PerformLayout()
         Me.Guna2Panel1.ResumeLayout(False)
         Me.Guna2Panel1.PerformLayout()
-        Me.TableLayoutPanel6.ResumeLayout(False)
-        Me.TableLayoutPanel6.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub

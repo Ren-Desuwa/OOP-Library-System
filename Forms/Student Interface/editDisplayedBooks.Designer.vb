@@ -132,7 +132,7 @@ Partial Class editDisplayedBooks
         '
         'editDisplayedBooks
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.NavajoWhite
         Me.ClientSize = New System.Drawing.Size(1069, 902)
