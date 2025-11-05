@@ -211,3 +211,17 @@ CREATE TABLE `book_genres` (
 
 SET foreign_key_checks = 1;
 
+--
+-- Table structure for table `displayed_books`
+--
+DROP TABLE IF EXISTS displayed_books;
+
+CREATE TABLE displayed_books (
+  account_id INT NOT NULL,
+  book_id INT NOT NULL,
+  display_order INT NOT NULL,
+  PRIMARY KEY (account_id, book_id),
+  FOREIGN KEY (account_id) REFERENCES accounts(account_id),
+  FOREIGN KEY (book_id) REFERENCES books(book_id)
+);
+

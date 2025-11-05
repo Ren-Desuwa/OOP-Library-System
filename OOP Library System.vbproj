@@ -220,6 +220,12 @@
     <Compile Include="Forms\Student Interface\UC Student\UC_announcementBox.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Forms\Student Interface\UC Student\UC_ProfileBookDisplay.Designer.vb">
+      <DependentUpon>UC_ProfileBookDisplay.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Student Interface\UC Student\UC_ProfileBookDisplay.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Forms\Student Interface\UC Student\UC_signup_step1_student.Designer.vb">
       <DependentUpon>UC_signup_step1_student.vb</DependentUpon>
     </Compile>
@@ -504,6 +510,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Student Interface\UC Student\UC_announcementBox.resx">
       <DependentUpon>UC_announcementBox.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Student Interface\UC Student\UC_ProfileBookDisplay.resx">
+      <DependentUpon>UC_ProfileBookDisplay.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Student Interface\UC Student\UC_signup_step1_student.resx">
       <DependentUpon>UC_signup_step1_student.vb</DependentUpon>

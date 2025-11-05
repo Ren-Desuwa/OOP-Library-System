@@ -3,300 +3,167 @@ Imports System.IO
 
 Public Class editDisplayedBooks
 
-
     Private _account As Account
+    ' --- NEW: List to track *only* the checked books ---
+    Private selectedBookCarts As New List(Of BookCart)
 
-    ' New constructor that accepts Account
+    ' Constructor
     Public Sub New(account As Account)
         InitializeComponent()
         _account = account
     End Sub
 
-
+    ' --- This runs when the form loads ---
     Private Sub editDisplayedBooks_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        LoadBooks()
-
-        Guna2Button3.Visible = False 'HIDE REMOVE BOOK BUTTON
-
+        LoadAllBooks()
     End Sub
 
-
-    Private Sub LoadBooks()
-        ' Clear the existing FlowLayoutPanel before adding new BookCarts
+    ' --- Loads ALL books and pre-selects the user's chosen 3 ---
+    Private Sub LoadAllBooks()
         FlowLayoutPanel1.Controls.Clear()
+        selectedBookCarts.Clear()
 
-        ' --- Database connection string ---
         Dim connStr As String = "server=localhost;userid=root;password=;database=ooplibrary"
-
+        ' --- Get the user's currently saved displayed books ---
+        Dim usersDisplayedBooks As New HashSet(Of Integer)
         Try
             Using conn As New MySqlConnection(connStr)
                 conn.Open()
-
-                ' --- Select all books ---
-                Dim query As String = "SELECT * FROM books"
+                Dim query As String = "SELECT book_id FROM displayed_books WHERE account_id = @account_id"
                 Using cmd As New MySqlCommand(query, conn)
-                    Using reader As MySqlDataReader = cmd.ExecuteReader()
-
-                        While reader.Read()
-                            ' --- Create a new BookCart control ---
-                            Dim bookUC As New BookCart()
-
-
-                            ' Set book title
-                            bookUC.BookTitleText = reader("title").ToString()
-
-                            ' Store the book_id in Tag for later use
-                            bookUC.Tag = Convert.ToInt32(reader("book_id"))
-
-                            ' Load book image
-                            Dim imgPath As String = reader("cover_url").ToString()
-                            If Not String.IsNullOrEmpty(imgPath) Then
-                                Try
-                                    If imgPath.StartsWith("http") Then
-                                        Using client As New Net.WebClient()
-                                            Dim imgBytes As Byte() = client.DownloadData(imgPath)
-                                            Using ms As New MemoryStream(imgBytes)
-                                                bookUC.BookImagePic = Image.FromStream(ms)
-                                            End Using
-                                        End Using
-                                    ElseIf File.Exists(imgPath) Then
-                                        bookUC.BookImagePic = Image.FromFile(imgPath)
-                                    Else
-                                        bookUC.BookImagePic = My.Resources.Ucc_Logo_NoBG_Big2
-                                    End If
-                                Catch ex As Exception
-                                    bookUC.BookImagePic = My.Resources.Ucc_Logo_NoBG_Big2
-                                End Try
-                            End If
-
-                            ' Resize checkbox and make image toggle it
-                            Dim checkboxes = bookUC.Controls.OfType(Of CheckBox)().ToList()
-                            If checkboxes.Count > 0 Then
-                                Dim cb = checkboxes(0)
-                                cb.AutoSize = False
-                                cb.Width = 26
-                                cb.Height = 26
-                                cb.Font = New Font(cb.Font.FontFamily, 20, FontStyle.Bold)
-                                cb.Text = "" ' remove text
-
-                                Dim pictures = bookUC.Controls.OfType(Of PictureBox)().ToList()
-                                If pictures.Count > 0 Then
-                                    Dim pic = pictures(0)
-                                    AddHandler pic.Click, Sub()
-                                                              cb.Checked = Not cb.Checked
-                                                          End Sub
-                                End If
-                            End If
-
-                            ' Add extra margin between books
-                            bookUC.Margin = New Padding(20)
-
-                            ' Add the control to the FlowLayoutPanel
-                            FlowLayoutPanel1.Controls.Add(bookUC)
-                        End While
-
-                    End Using
-                End Using
-            End Using
-
-            ' --- Adjust FlowLayoutPanel padding dynamically after loading all books ---
-            If FlowLayoutPanel1.Controls.Count > 0 Then
-                Dim bookUCSample = TryCast(FlowLayoutPanel1.Controls(0), BookCart)
-                If bookUCSample IsNot Nothing Then
-                    Dim itemsPerRow As Integer = Math.Max(1, FlowLayoutPanel1.ClientSize.Width \ (bookUCSample.Width + 20))
-                    Dim totalSpacing As Integer = FlowLayoutPanel1.ClientSize.Width - (itemsPerRow * bookUCSample.Width)
-                    Dim spacing As Integer = totalSpacing \ (itemsPerRow + 1)
-                    FlowLayoutPanel1.Padding = New Padding(spacing, 10, spacing, 10)
-                End If
-            End If
-
-        Catch ex As Exception
-            MessageBox.Show("Error loading books: " & ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
-    End Sub
-
-    Public Sub LoadFavoriteBooks(account As Account)
-        ' Clear existing books
-        FlowLayoutPanel1.Controls.Clear()
-
-        Dim connStr As String = "server=localhost;userid=root;password=;database=ooplibrary"
-
-        Try
-            Using conn As New MySqlConnection(connStr)
-                conn.Open()
-
-                ' Select only the user's favorite books
-                Dim query As String =
-                "SELECT b.* FROM books b " &
-                "INNER JOIN favorites f ON b.book_id = f.book_id " &
-                "WHERE f.account_id = @account_id"
-
-                Using cmd As New MySqlCommand(query, conn)
-                    cmd.Parameters.AddWithValue("@account_id", account.AccountID)
-
+                    cmd.Parameters.AddWithValue("@account_id", _account.AccountID)
                     Using reader As MySqlDataReader = cmd.ExecuteReader()
                         While reader.Read()
-                            Dim bookUC As New BookCart()
-
-                            ' Set title
-                            bookUC.BookTitleText = reader("title").ToString()
-
-                            ' Store book_id in Tag for later use
-                            bookUC.Tag = Convert.ToInt32(reader("book_id"))
-
-                            ' Load image
-                            Dim imgPath As String = reader("cover_url").ToString()
-                            Try
-                                If Not String.IsNullOrEmpty(imgPath) Then
-                                    If imgPath.StartsWith("http") Then
-                                        Using client As New Net.WebClient()
-                                            Dim imgBytes As Byte() = client.DownloadData(imgPath)
-                                            Using ms As New MemoryStream(imgBytes)
-                                                bookUC.BookImagePic = Image.FromStream(ms)
-                                            End Using
-                                        End Using
-                                    ElseIf File.Exists(imgPath) Then
-                                        bookUC.BookImagePic = Image.FromFile(imgPath)
-                                    Else
-                                        bookUC.BookImagePic = My.Resources.Ucc_Logo_NoBG_Big2
-                                    End If
-                                Else
-                                    bookUC.BookImagePic = My.Resources.Ucc_Logo_NoBG_Big2
-                                End If
-                            Catch ex As Exception
-                                bookUC.BookImagePic = My.Resources.Ucc_Logo_NoBG_Big2
-                            End Try
-
-                            ' Resize checkbox and make image toggle it
-                            Dim checkboxes = bookUC.Controls.OfType(Of CheckBox)().ToList()
-                            If checkboxes.Count > 0 Then
-                                Dim cb = checkboxes(0)
-                                cb.AutoSize = False
-                                cb.Width = 26
-                                cb.Height = 26
-                                cb.Font = New Font(cb.Font.FontFamily, 20, FontStyle.Bold)
-                                cb.Text = "" ' remove text
-
-                                Dim pictures = bookUC.Controls.OfType(Of PictureBox)().ToList()
-                                If pictures.Count > 0 Then
-                                    Dim pic = pictures(0)
-                                    AddHandler pic.Click, Sub()
-                                                              cb.Checked = Not cb.Checked
-                                                          End Sub
-                                End If
-                            End If
-
-                            ' Margin between books
-                            bookUC.Margin = New Padding(20)
-
-                            ' Add to FlowLayoutPanel
-                            FlowLayoutPanel1.Controls.Add(bookUC)
+                            usersDisplayedBooks.Add(reader.GetInt32("book_id"))
                         End While
                     End Using
                 End Using
             End Using
-
-            ' Adjust FlowLayoutPanel padding dynamically
-            If FlowLayoutPanel1.Controls.Count > 0 Then
-                Dim bookUCSample = TryCast(FlowLayoutPanel1.Controls(0), BookCart)
-                If bookUCSample IsNot Nothing Then
-                    Dim itemsPerRow As Integer = Math.Max(1, FlowLayoutPanel1.ClientSize.Width \ (bookUCSample.Width + 20))
-                    Dim totalSpacing As Integer = FlowLayoutPanel1.ClientSize.Width - (itemsPerRow * bookUCSample.Width)
-                    Dim spacing As Integer = totalSpacing \ (itemsPerRow + 1)
-                    FlowLayoutPanel1.Padding = New Padding(spacing, 10, spacing, 10)
-                End If
-            End If
-
         Catch ex As Exception
-            MessageBox.Show("Error loading favorite books: " & ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Error loading displayed books: " & ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
-    End Sub
 
-
-
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
-        Me.Close()
-    End Sub
-
-    Private Sub Guna2Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Guna2Panel1.Paint
-        ' optional custom drawing
-    End Sub
-
-    Private Sub AddToShelf_Click(sender As Object, e As EventArgs) Handles AddToShelf.Click
-        ' Get the current user's account_id
-        Dim currentAccountId As Integer = _account.AccountID
-
-
-        ' Database connection string
-        Dim connStr As String = "server=localhost;userid=root;password=;database=ooplibrary"
-
+        ' --- NEW: Load ALL books using the Catalogue Service ---
         Try
-            Using conn As New MySqlConnection(connStr)
-                conn.Open()
+            ' ---
+            ' --- THIS IS THE CORRECTED LINE ---
+            ' ---
+            Dim allBooks As List(Of Book) = Program.CatSvc.GetAllBooks()
 
-                For Each ctrl As Control In FlowLayoutPanel1.Controls
-                    Dim bookUC As BookCart = TryCast(ctrl, BookCart)
-                    If bookUC IsNot Nothing Then
-                        Dim cb = bookUC.Controls.OfType(Of CheckBox)().FirstOrDefault()
-                        If cb IsNot Nothing AndAlso cb.Checked Then
-                            Dim bookId As Integer = Convert.ToInt32(bookUC.Tag)
+            For Each book As Book In allBooks
+                Dim bookUC As New BookCart()
+                Dim bookId As Integer = book.BookID
 
-                            ' Avoid duplicates
-                            Dim existsQuery As String = "SELECT COUNT(*) FROM favorites WHERE account_id = @account_id AND book_id = @book_id"
-                            Using cmdCheck As New MySqlCommand(existsQuery, conn)
-                                cmdCheck.Parameters.AddWithValue("@account_id", currentAccountId)
-                                cmdCheck.Parameters.AddWithValue("@book_id", bookId)
-                                Dim count As Integer = Convert.ToInt32(cmdCheck.ExecuteScalar())
-                                If count = 0 Then
-                                    Dim insertQuery As String = "INSERT INTO favorites (account_id, book_id) VALUES (@account_id, @book_id)"
-                                    Using cmdInsert As New MySqlCommand(insertQuery, conn)
-                                        cmdInsert.Parameters.AddWithValue("@account_id", currentAccountId)
-                                        cmdInsert.Parameters.AddWithValue("@book_id", bookId)
-                                        cmdInsert.ExecuteNonQuery()
-                                    End Using
-                                End If
-                            End Using
+                bookUC.BookTitleText = book.Title
+                bookUC.Tag = bookId ' Store book_id
 
-                            ' Optional: uncheck after adding
-                            cb.Checked = False
-                        End If
+                ' --- Load Image (using GetCoverFileName from Book.vb) ---
+                Try
+                    Dim coverFileName As String = book.GetCoverFileName()
+                    Dim coverPath As String = Path.Combine(Application.StartupPath, "..\..\Assets\Bookcover", coverFileName)
+                    If File.Exists(coverPath) Then
+                        bookUC.BookImagePic = Image.FromFile(coverPath)
+                    Else
+                        ' Optional: Set a default image if cover is missing
+                        ' bookUC.BookImagePic = My.Resources.default_cover
                     End If
-                Next
-            End Using
+                Catch ex As Exception
+                    ' Use default image on error
+                End Try
 
-            MessageBox.Show("Selected books added to your shelf!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                ' --- Add the click event handler ---
+                AddHandler bookUC.BookCheckBox.CheckedChanged, AddressOf OnBookCheckedChanged
+
+                ' --- Pre-check the box if it's one of the user's saved books ---
+                If usersDisplayedBooks.Contains(bookId) Then
+                    bookUC.BookCheckBox.Checked = True
+                    ' The event handler will add it to 'selectedBookCarts'
+                End If
+
+                bookUC.Margin = New Padding(10)
+                FlowLayoutPanel1.Controls.Add(bookUC)
+            Next
+
         Catch ex As Exception
-            MessageBox.Show("Error adding to shelf: " & ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Error loading all books: " & ex.Message, "Service Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
-    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) 
+    ' --- NEW: This event enforces the 3-book limit ---
+    Private Sub OnBookCheckedChanged(sender As Object, e As EventArgs)
+        Dim checkbox = CType(sender, CheckBox)
+        ' Get the parent BookCart control
+        Dim bookCard = CType(checkbox.Parent, BookCart)
 
+        If checkbox.Checked Then
+            ' --- User is CHECKING a book ---
+            If selectedBookCarts.Count >= 3 Then
+                ' Too many! Show error and uncheck it.
+                MessageBox.Show("You can only select a maximum of 3 books to display.", "Limit Reached", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                checkbox.Checked = False
+                Return
+            End If
+            ' Add to our list
+            If Not selectedBookCarts.Contains(bookCard) Then
+                selectedBookCarts.Add(bookCard)
+            End If
+        Else
+            ' --- User is UNCHECKING a book ---
+            ' Remove from our list
+            If selectedBookCarts.Contains(bookCard) Then
+                selectedBookCarts.Remove(bookCard)
+            End If
+        End If
     End Sub
 
-    Private Sub Guna2Button1_Click_1(sender As Object, e As EventArgs) Handles Guna2Button1.Click
-        'ADD EDIT
+    ' --- NEW: This is the "Confirm" button ---
+    Private Sub btn_confirm_Click(sender As Object, e As EventArgs) Handles btn_confirm.Click
+        Dim connStr As String = "server=localhost;userid=root;password=;database=ooplibrary"
 
-        Guna2Button1.FillColor = Color.FromArgb(180, 145, 100)
-        Guna2Button2.FillColor = Color.FromArgb(217, 184, 140)
+        Using conn As New MySqlConnection(connStr)
+            conn.Open()
+            ' Use a transaction to delete all, then add all
+            Using transaction As MySqlTransaction = conn.BeginTransaction()
+                Try
+                    ' 1. Delete all old entries for this user
+                    Dim deleteQuery As String = "DELETE FROM displayed_books WHERE account_id = @account_id"
+                    Using cmdDelete As New MySqlCommand(deleteQuery, conn, transaction)
+                        cmdDelete.Parameters.AddWithValue("@account_id", _account.AccountID)
+                        cmdDelete.ExecuteNonQuery()
+                    End Using
 
-        LoadBooks() 'SHOW ADD THING'
-        Guna2Button3.Visible = False 'HIDE REMOVE BOOK BUTTON
+                    ' 2. Insert the new selected books (up to 3)
+                    Dim insertQuery As String = "INSERT INTO displayed_books (account_id, book_id, display_order) VALUES (@account_id, @book_id, @order)"
+                    Dim order As Integer = 1
+                    For Each bookCard As BookCart In selectedBookCarts
+                        Dim bookId As Integer = CType(bookCard.Tag, Integer)
+                        Using cmdInsert As New MySqlCommand(insertQuery, conn, transaction)
+                            cmdInsert.Parameters.AddWithValue("@account_id", _account.AccountID)
+                            cmdInsert.Parameters.AddWithValue("@book_id", bookId)
+                            cmdInsert.Parameters.AddWithValue("@order", order)
+                            cmdInsert.ExecuteNonQuery()
+                            order += 1
+                        End Using
+                    Next
+
+                    ' 3. Commit the changes
+                    transaction.Commit()
+                    MessageBox.Show("Displayed books updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    Me.DialogResult = DialogResult.OK ' Set result to OK
+                    Me.Close() ' Close the form
+
+                Catch ex As Exception
+                    ' Something went wrong, roll back
+                    transaction.Rollback()
+                    MessageBox.Show("Error saving changes: " & ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End Try
+            End Using
+        End Using
     End Sub
 
-    Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles Guna2Button2.Click
-        'REMOVE EDIT
-
-        Guna2Button1.FillColor = Color.FromArgb(217, 184, 140)
-        Guna2Button2.FillColor = Color.FromArgb(180, 145, 100)
-
-        LoadFavoriteBooks(_account)
-        Guna2Button3.Visible = True  'Show REMOVE BOOK BUTTON
-    End Sub
-
-
-    'THIS IS THE REMOVE BOOK BUTTON'
-    Private Sub Guna2Button3_Click(sender As Object, e As EventArgs) Handles Guna2Button3.Click
-
+    ' --- This is the "X" (Close) button ---
+    Private Sub btn_close_Click(sender As Object, e As EventArgs) Handles btn_close.Click
+        Me.DialogResult = DialogResult.Cancel
+        Me.Close()
     End Sub
 End Class

@@ -89,6 +89,11 @@ Public Class UC_HPS_catalouge_tab
             Await PopulateGenreButtons()
             Await DisplayCataloguePage(1)
 
+            ' --- START NEW ---
+            ' Highlight "Show All" by default on initial load
+            HighlightGenreButton("Show All")
+            ' --- END NEW ---
+
         Catch ex As Exception
             ' If something went wrong, show the error *before* hiding loading
             SetupLoadingState(True, "Error!")
@@ -179,28 +184,28 @@ Public Class UC_HPS_catalouge_tab
 
         ' --- Run the heavy work (creating buttons) on a BACKGROUND THREAD ---
         Dim buttons As List(Of Control) = Await Task.Run(Function()
-        Dim tempList As New List(Of Control)
+                                                             Dim tempList As New List(Of Control)
 
-        ' Add "Show All" button
-        Dim allButton = New UC_btn_genre()
-        allButton.GenreText = "Show All"
-        Dim leftMargin = CInt((genre_panel.ClientSize.Width - allButton.Width) / 2)
-        allButton.Margin = New Padding(If(leftMargin > 0, leftMargin, 0), 3, 3, 3)
-        AddHandler allButton.GenreClicked, AddressOf ShowAllBooks_Clicked
-        tempList.Add(allButton)
+                                                             ' Add "Show All" button
+                                                             Dim allButton = New UC_btn_genre()
+                                                             allButton.GenreText = "Show All"
+                                                             Dim leftMargin = CInt((genre_panel.ClientSize.Width - allButton.Width) / 2)
+                                                             allButton.Margin = New Padding(If(leftMargin > 0, leftMargin, 0), 3, 3, 3)
+                                                             AddHandler allButton.GenreClicked, AddressOf ShowAllBooks_Clicked
+                                                             tempList.Add(allButton)
 
-        ' Add a button for each unique genre
-        For Each genreName As String In uniqueGenres
-            Dim genreButton = New UC_btn_genre()
-            genreButton.GenreText = genreName
-            leftMargin = CInt((genre_panel.ClientSize.Width - genreButton.Width) / 2)
-            genreButton.Margin = New Padding(If(leftMargin > 0, leftMargin, 0), 3, 3, 3)
-            AddHandler genreButton.GenreClicked, AddressOf GenreButton_Clicked
-            tempList.Add(genreButton)
-        Next
+                                                             ' Add a button for each unique genre
+                                                             For Each genreName As String In uniqueGenres
+                                                                 Dim genreButton = New UC_btn_genre()
+                                                                 genreButton.GenreText = genreName
+                                                                 leftMargin = CInt((genre_panel.ClientSize.Width - genreButton.Width) / 2)
+                                                                 genreButton.Margin = New Padding(If(leftMargin > 0, leftMargin, 0), 3, 3, 3)
+                                                                 AddHandler genreButton.GenreClicked, AddressOf GenreButton_Clicked
+                                                                 tempList.Add(genreButton)
+                                                             Next
 
-        Return tempList
-    End Function)
+                                                             Return tempList
+                                                         End Function)
         ' --- We are now back on the UI thread ---
 
         ' Add all buttons at once (this is the only part that will freeze)
@@ -270,14 +275,14 @@ Public Class UC_HPS_catalouge_tab
 
             ' 8. Run the heavy work (creating book cards) on a background thread
             Dim bookCards As List(Of UC_book_container) = Await Task.Run(Function()
-                Dim tempList As New List(Of UC_book_container)
-                For Each book As Book In booksInGenre.Take(8)
-                    Dim bookCard = CreateBookCard(book) ' This loads the image
-                    bookCard.Margin = New Padding(BOOK_PREVIEW_SPACING)
-                    tempList.Add(bookCard)
-                Next
-                Return tempList
-            End Function)
+                                                                             Dim tempList As New List(Of UC_book_container)
+                                                                             For Each book As Book In booksInGenre.Take(8)
+                                                                                 Dim bookCard = CreateBookCard(book) ' This loads the image
+                                                                                 bookCard.Margin = New Padding(BOOK_PREVIEW_SPACING)
+                                                                                 tempList.Add(bookCard)
+                                                                             Next
+                                                                             Return tempList
+                                                                         End Function)
             ' --- We are now back on the UI thread ---
 
             ' 9. Add all cards at once to the *horizontal* panel
@@ -309,7 +314,10 @@ Public Class UC_HPS_catalouge_tab
         currentBookPage = pageNumber
         selectedGenre = genre ' Remember which genre we're viewing
         btn_Back.Visible = True ' Show the back button
-        flow_genre_panel.Visible = False ' Hide the genre buttons
+
+        ' --- MODIFICATION: This line is now REMOVED ---
+        ' flow_genre_panel.Visible = False ' <-- This line is gone
+
         flow_main_book_panel.FlowDirection = FlowDirection.LeftToRight ' Grid view
         flow_main_book_panel.WrapContents = True ' Allow wrapping for the grid
         flow_main_book_panel.AutoScroll = False ' Toggle AutoScroll
@@ -349,15 +357,15 @@ Public Class UC_HPS_catalouge_tab
 
         ' 7. --- Run the heavy work (creating cards) on a BACKGROUND THREAD ---
         Dim bookCards As List(Of UC_book_container) = Await Task.Run(Function()
-            Dim tempList As New List(Of UC_book_container)
-            For Each book As Book In booksToShow
-                Dim bookCard = CreateBookCard(book) ' This loads the image
-                bookCard.Width = cardWidth
-                bookCard.Margin = New Padding(actualSpacing)
-                tempList.Add(bookCard)
-            Next
-            Return tempList
-        End Function)
+                                                                         Dim tempList As New List(Of UC_book_container)
+                                                                         For Each book As Book In booksToShow
+                                                                             Dim bookCard = CreateBookCard(book) ' This loads the image
+                                                                             bookCard.Width = cardWidth
+                                                                             bookCard.Margin = New Padding(actualSpacing)
+                                                                             tempList.Add(bookCard)
+                                                                         Next
+                                                                         Return tempList
+                                                                     End Function)
         ' --- We are now back on the UI thread ---
 
         ' 8. Add all controls at once (this is the only part that will freeze)
@@ -380,9 +388,20 @@ Public Class UC_HPS_catalouge_tab
 
         If String.IsNullOrWhiteSpace(searchTerm) Then
             ' If search is empty, show the main catalogue
+
+            ' --- START NEW ---
+            HighlightGenreButton("Show All")
+            ' --- END NEW ---
+
             Await DisplayCataloguePage(1)
         Else
             ' If searching, show a simple grid of results
+
+            ' --- START NEW ---
+            ' Clear all highlights since this is a search view
+            HighlightGenreButton("")
+            ' --- END NEW ---
+
             currentView = "Search"
             btn_Back.Visible = False
             genre_panel.Visible = True
@@ -428,15 +447,15 @@ Public Class UC_HPS_catalouge_tab
 
             ' --- Run the heavy work (creating cards) on a BACKGROUND THREAD ---
             Dim bookCards As List(Of UC_book_container) = Await Task.Run(Function()
-                Dim tempList As New List(Of UC_book_container)
-                For Each book As Book In filteredBooks
-                    Dim bookCard = CreateBookCard(book) ' This loads the image
-                    bookCard.Width = cardWidth
-                    bookCard.Margin = New Padding(actualSpacing)
-                    tempList.Add(bookCard)
-                Next
-                Return tempList
-            End Function)
+                                                                             Dim tempList As New List(Of UC_book_container)
+                                                                             For Each book As Book In filteredBooks
+                                                                                 Dim bookCard = CreateBookCard(book) ' This loads the image
+                                                                                 bookCard.Width = cardWidth
+                                                                                 bookCard.Margin = New Padding(actualSpacing)
+                                                                                 tempList.Add(bookCard)
+                                                                             Next
+                                                                             Return tempList
+                                                                         End Function)
             ' --- We are now back on the UI thread ---
 
             ' Add all controls at once (this will freeze the UI)
@@ -482,10 +501,42 @@ Public Class UC_HPS_catalouge_tab
 
 #End Region
 
+    ' --- START NEW FUNCTION ---
+    ''' <summary>
+    ''' Highlights a single genre button by name and un-highlights all others.
+    ''' </summary>
+    ''' <param name="selectedGenreName">The GenreText of the button to highlight. Pass "" to clear all.</param>
+    Private Sub HighlightGenreButton(selectedGenreName As String)
+        flow_genre_panel.SuspendLayout()
+        Try
+            For Each ctrl As Control In flow_genre_panel.Controls
+                ' Check if the control is our genre button
+                If TypeOf ctrl Is UC_btn_genre Then
+                    Dim genreButton = CType(ctrl, UC_btn_genre)
+
+                    ' Compare the button's text to the one we want to select
+                    If genreButton.GenreText.Equals(selectedGenreName, StringComparison.OrdinalIgnoreCase) Then
+                        genreButton.Checked = True
+                    Else
+                        genreButton.Checked = False
+                    End If
+                End If
+            Next
+        Catch ex As Exception
+            Debug.WriteLine("Error during button highlight: " & ex.Message)
+        End Try
+        flow_genre_panel.ResumeLayout()
+    End Sub
+    ' --- END NEW FUNCTION ---
+
 #Region "Event Handlers"
 
     ' --- Navigation Clicks (Left Panel) ---
     Private Async Sub ShowAllBooks_Clicked(sender As Object, e As EventArgs)
+        ' --- START NEW ---
+        HighlightGenreButton("Show All")
+        ' --- END NEW ---
+
         SetupLoadingState(True, "Loading Catalogue...")
         Await Task.Delay(5) ' Give UI time to show loading
         Await DisplayCataloguePage(1)
@@ -494,6 +545,11 @@ Public Class UC_HPS_catalouge_tab
 
     Private Async Sub GenreButton_Clicked(sender As Object, e As EventArgs)
         Dim clickedButton = CType(sender, UC_btn_genre)
+
+        ' --- START NEW ---
+        HighlightGenreButton(clickedButton.GenreText)
+        ' --- END NEW ---
+
         SetupLoadingState(True, $"Loading {clickedButton.GenreText}...")
         Await Task.Delay(5) ' Give UI time to show loading
         Await DisplayBookPage(clickedButton.GenreText, 1)
@@ -503,12 +559,21 @@ Public Class UC_HPS_catalouge_tab
     ' --- Main UI Clicks ---
     Private Async Sub SeeAll_Clicked(sender As Object, e As EventArgs)
         Dim clickedList = CType(sender, UC_booklist_container)
+
+        ' --- START NEW ---
+        HighlightGenreButton(clickedList.GenreTitle)
+        ' --- END NEW ---
+
         SetupLoadingState(True, $"Loading {clickedList.GenreTitle}...")
         Await Task.Delay(5) ' Give UI time to show loading
         Await DisplayBookPage(clickedList.GenreTitle, 1)
         SetupLoadingState(False)
     End Sub
     Private Async Sub btn_Back_Click(sender As Object, e As EventArgs) Handles btn_Back.Click
+        ' --- START NEW ---
+        HighlightGenreButton("Show All")
+        ' --- END NEW ---
+
         SetupLoadingState(True, "Loading Catalogue...")
         Await Task.Delay(5) ' Give UI time to show loading
         Await DisplayCataloguePage(currentGenrePage)
