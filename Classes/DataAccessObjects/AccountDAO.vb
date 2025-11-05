@@ -12,8 +12,8 @@ Public Class AccountDAO
         ' Get ordinals for safety, especially for nullable fields
         Dim colEmail = reader.GetOrdinal("email")
         Dim colContactNumber = reader.GetOrdinal("contact_number")
-        Dim colBirthday = reader.GetOrdinal("birthday") ' <-- ADDED
-        Dim colFavBookDesign = reader.GetOrdinal("fav_book_design") ' <-- ADDED
+        Dim colBirthday = reader.GetOrdinal("birthday")
+        Dim colFavBookDesign = reader.GetOrdinal("fav_book_design")
         Dim colStudentID = reader.GetOrdinal("student_id")
 
         Return New Account With {
@@ -25,8 +25,8 @@ Public Class AccountDAO
             .StudentID = If(reader.IsDBNull(colStudentID), Nothing, reader.GetString(colStudentID)),
             .Email = If(reader.IsDBNull(colEmail), Nothing, reader.GetString(colEmail)),
             .ContactNumber = If(reader.IsDBNull(colContactNumber), Nothing, reader.GetString(colContactNumber)),
-            .Birthday = If(reader.IsDBNull(colBirthday), CType(Nothing, Date?), reader.GetDateTime(colBirthday)), ' <-- ADDED
-            .FavBookDesign = If(reader.IsDBNull(colFavBookDesign), False, reader.GetBoolean(colFavBookDesign)), ' <-- ADDED
+            .Birthday = If(reader.IsDBNull(colBirthday), CType(Nothing, Date?), reader.GetDateTime(colBirthday)),
+            .FavBookDesign = If(reader.IsDBNull(colFavBookDesign), False, reader.GetBoolean(colFavBookDesign)),
             .DateCreated = reader.GetDateTime("date_created"),
             .IsActive = reader.GetBoolean("is_active")
         }
@@ -47,8 +47,8 @@ Public Class AccountDAO
             ' Handle null values correctly for email and phone
             cmd.Parameters.AddWithValue("@Email", If(account.Email Is Nothing, CType(DBNull.Value, Object), account.Email))
             cmd.Parameters.AddWithValue("@ContactNumber", If(account.ContactNumber Is Nothing, CType(DBNull.Value, Object), account.ContactNumber))
-            cmd.Parameters.AddWithValue("@Birthday", If(account.Birthday.HasValue, CType(account.Birthday.Value, Object), DBNull.Value)) ' <-- ADDED
-            cmd.Parameters.AddWithValue("@FavBookDesign", account.FavBookDesign) ' <-- ADDED (Booleans map to tinyint)
+            cmd.Parameters.AddWithValue("@Birthday", If(account.Birthday.HasValue, CType(account.Birthday.Value, Object), DBNull.Value))
+            cmd.Parameters.AddWithValue("@FavBookDesign", account.FavBookDesign)
             cmd.Parameters.AddWithValue("@DateCreated", account.DateCreated)
             cmd.Parameters.AddWithValue("@IsActive", account.IsActive)
 
@@ -137,8 +137,8 @@ Public Class AccountDAO
             cmd.Parameters.AddWithValue("@StudentID", If(account.StudentID Is Nothing, CType(DBNull.Value, Object), account.StudentID))
             cmd.Parameters.AddWithValue("@Email", If(account.Email Is Nothing, CType(DBNull.Value, Object), account.Email))
             cmd.Parameters.AddWithValue("@ContactNumber", If(account.ContactNumber Is Nothing, CType(DBNull.Value, Object), account.ContactNumber))
-            cmd.Parameters.AddWithValue("@Birthday", If(account.Birthday.HasValue, CType(account.Birthday.Value, Object), DBNull.Value)) ' <-- ADDED
-            cmd.Parameters.AddWithValue("@FavBookDesign", account.FavBookDesign) ' <-- ADDED
+            cmd.Parameters.AddWithValue("@Birthday", If(account.Birthday.HasValue, CType(account.Birthday.Value, Object), DBNull.Value))
+            cmd.Parameters.AddWithValue("@FavBookDesign", account.FavBookDesign)
             cmd.Parameters.AddWithValue("@IsActive", account.IsActive)
             cmd.Parameters.AddWithValue("@Id", account.AccountID)
             cmd.ExecuteNonQuery()
@@ -155,4 +155,3 @@ Public Class AccountDAO
         End Using
     End Sub
 End Class
-

@@ -25,10 +25,10 @@ Partial Class UC_user_container
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.lbl_email = New System.Windows.Forms.Label()
         Me.lbl_name = New System.Windows.Forms.Label()
-        Me.lbl_id = New System.Windows.Forms.Label()
-        Me.pnl_table_container = New Guna.UI2.WinForms.Guna2Panel()
+        Me.lbl_StudentID = New System.Windows.Forms.Label()
+        Me.pnl_container = New Guna.UI2.WinForms.Guna2Panel()
         Me.TableLayoutPanel1.SuspendLayout()
-        Me.pnl_table_container.SuspendLayout()
+        Me.pnl_container.SuspendLayout()
         Me.SuspendLayout()
         '
         'TableLayoutPanel1
@@ -40,7 +40,7 @@ Partial Class UC_user_container
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.lbl_email, 2, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.lbl_name, 0, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.lbl_id, 1, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.lbl_StudentID, 1, 0)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 0)
         Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(2)
@@ -82,52 +82,52 @@ Partial Class UC_user_container
         Me.lbl_name.Text = "Name:"
         Me.lbl_name.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'lbl_id
+        'lbl_StudentID
         '
-        Me.lbl_id.AutoEllipsis = True
-        Me.lbl_id.AutoSize = True
-        Me.lbl_id.BackColor = System.Drawing.Color.Transparent
-        Me.lbl_id.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.lbl_id.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_id.ForeColor = System.Drawing.Color.FromArgb(CType(CType(122, Byte), Integer), CType(CType(107, Byte), Integer), CType(CType(84, Byte), Integer))
-        Me.lbl_id.Location = New System.Drawing.Point(228, 0)
-        Me.lbl_id.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.lbl_id.Name = "lbl_id"
-        Me.lbl_id.Size = New System.Drawing.Size(222, 69)
-        Me.lbl_id.TabIndex = 8
-        Me.lbl_id.Text = "Student ID#:"
-        Me.lbl_id.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.lbl_StudentID.AutoEllipsis = True
+        Me.lbl_StudentID.AutoSize = True
+        Me.lbl_StudentID.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_StudentID.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lbl_StudentID.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_StudentID.ForeColor = System.Drawing.Color.FromArgb(CType(CType(122, Byte), Integer), CType(CType(107, Byte), Integer), CType(CType(84, Byte), Integer))
+        Me.lbl_StudentID.Location = New System.Drawing.Point(228, 0)
+        Me.lbl_StudentID.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lbl_StudentID.Name = "lbl_StudentID"
+        Me.lbl_StudentID.Size = New System.Drawing.Size(222, 69)
+        Me.lbl_StudentID.TabIndex = 8
+        Me.lbl_StudentID.Text = "Student ID#:"
+        Me.lbl_StudentID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'pnl_table_container
+        'pnl_container
         '
-        Me.pnl_table_container.BackColor = System.Drawing.Color.Transparent
-        Me.pnl_table_container.BorderColor = System.Drawing.Color.FromArgb(CType(CType(122, Byte), Integer), CType(CType(107, Byte), Integer), CType(CType(84, Byte), Integer))
-        Me.pnl_table_container.BorderRadius = 10
-        Me.pnl_table_container.BorderThickness = 3
-        Me.pnl_table_container.Controls.Add(Me.TableLayoutPanel1)
-        Me.pnl_table_container.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.pnl_table_container.FillColor = System.Drawing.Color.Transparent
-        Me.pnl_table_container.ForeColor = System.Drawing.Color.Transparent
-        Me.pnl_table_container.Location = New System.Drawing.Point(0, 0)
-        Me.pnl_table_container.Margin = New System.Windows.Forms.Padding(2)
-        Me.pnl_table_container.Name = "pnl_table_container"
-        Me.pnl_table_container.ShadowDecoration.Color = System.Drawing.Color.Silver
-        Me.pnl_table_container.ShadowDecoration.Depth = 15
-        Me.pnl_table_container.ShadowDecoration.Enabled = True
-        Me.pnl_table_container.Size = New System.Drawing.Size(680, 69)
-        Me.pnl_table_container.TabIndex = 12
+        Me.pnl_container.BackColor = System.Drawing.Color.Transparent
+        Me.pnl_container.BorderColor = System.Drawing.Color.FromArgb(CType(CType(122, Byte), Integer), CType(CType(107, Byte), Integer), CType(CType(84, Byte), Integer))
+        Me.pnl_container.BorderRadius = 10
+        Me.pnl_container.BorderThickness = 3
+        Me.pnl_container.Controls.Add(Me.TableLayoutPanel1)
+        Me.pnl_container.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pnl_container.FillColor = System.Drawing.Color.Transparent
+        Me.pnl_container.ForeColor = System.Drawing.Color.Transparent
+        Me.pnl_container.Location = New System.Drawing.Point(0, 0)
+        Me.pnl_container.Margin = New System.Windows.Forms.Padding(2)
+        Me.pnl_container.Name = "pnl_container"
+        Me.pnl_container.ShadowDecoration.Color = System.Drawing.Color.Silver
+        Me.pnl_container.ShadowDecoration.Depth = 15
+        Me.pnl_container.ShadowDecoration.Enabled = True
+        Me.pnl_container.Size = New System.Drawing.Size(680, 69)
+        Me.pnl_container.TabIndex = 12
         '
         'UC_user_container
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Transparent
-        Me.Controls.Add(Me.pnl_table_container)
+        Me.Controls.Add(Me.pnl_container)
         Me.Name = "UC_user_container"
         Me.Size = New System.Drawing.Size(680, 69)
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TableLayoutPanel1.PerformLayout()
-        Me.pnl_table_container.ResumeLayout(False)
+        Me.pnl_container.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -135,6 +135,6 @@ Partial Class UC_user_container
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents lbl_email As Label
     Friend WithEvents lbl_name As Label
-    Friend WithEvents lbl_id As Label
-    Friend WithEvents pnl_table_container As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents lbl_StudentID As Label
+    Friend WithEvents pnl_container As Guna.UI2.WinForms.Guna2Panel
 End Class
