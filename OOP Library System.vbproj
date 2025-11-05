@@ -151,9 +151,7 @@
     <Compile Include="Forms\Admin-Librarian Interface\UC\LibrarianProfile.Designer.vb">
       <DependentUpon>LibrarianProfile.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Admin-Librarian Interface\UC\LibrarianProfile.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Forms\Admin-Librarian Interface\UC\LibrarianProfile.vb" />
     <Compile Include="Forms\Admin-Librarian Interface\UC\ManageAccBorrower.Designer.vb">
       <DependentUpon>ManageAccBorrower.vb</DependentUpon>
     </Compile>
@@ -634,9 +632,6 @@
     <Content Include="Resources\Ucc Logo NoBG1.png" />
     <Content Include="Resources\Ucc Logo NoBG2.png" />
     <Content Include="Resources\Ucc Logo NoBG3.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Analyzer Include="packages\MSTest.Analyzers.4.0.1\analyzers\dotnet\vb\MSTest.Analyzers.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
