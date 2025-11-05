@@ -94,28 +94,44 @@ Public Class Signup_Panel_Student
     ' Runs when Step 2's "Send Code" button is clicked
     Private Async Sub HandleSendCodeClicked(sender As Object, e As EventArgs)
         Dim contactInfo As String = UC_signup_step2_student1.ContactInfo
+
+        ' --- START OF MODIFIED LOGIC ---
+
+        ' --- NEW VALIDATION ---
+        ' Check if the contact info field is empty, just like in ForgotPass.vb
+        If String.IsNullOrWhiteSpace(contactInfo) Then
+            MessageBox.Show("Please enter your email or mobile number.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return ' Stop execution
+        End If
+        ' --- END NEW VALIDATION ---
+
+        ' 1. Set button to "Sending..." state
+        UC_signup_step2_student1.SetSendingState(True)
+
         Try
-            ' 1. Call the service to request the OTP
+            ' 2. Call the service to request the OTP
             If Await Program.AuthSvc.RequestRegistrationOtp(contactInfo) Then
-
+                ' 3. Success
                 MessageBox.Show("Verification code sent! Please check your email or phone.", "Code Sent", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                ' 4. Tell the UC to start its countdown
+                UC_signup_step2_student1.StartOtpCountdown()
+                UC_signup_step2_student1.SetContactInfoValid()
             Else
-                MessageBox.Show("Verification code not sent.", "Code Not Sent", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                ' 5. Handle a "false" return from the service
+                MessageBox.Show("Verification code could not be sent. Please check the email or phone number.", "Code Not Sent", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                ' Reset the button to its normal state
+                UC_signup_step2_student1.SetSendingState(False)
             End If
 
-            ' 2. If successful, tell the UC to start its countdown
-            UC_signup_step2_student1.StartOtpCountdown()
-
-            UC_signup_step2_student1.SetContactInfoValid()
         Catch ex As Exception
-            ' 3. If it fails, show an error
-            Dim errorDetails As String = $"Message: {ex.Message}" & vbCrLf & vbCrLf
-            If ex.InnerException IsNot Nothing Then
-                errorDetails &= $"Inner Exception: {ex.InnerException.Message}"
-
-            End If
+            ' 6. Handle any unexpected errors
+            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            ' Reset the button to its normal state
+            UC_signup_step2_student1.SetSendingState(False)
             UC_signup_step2_student1.SetContactInfoInvalid()
         End Try
+        ' --- END OF MODIFIED LOGIC ---
     End Sub
 
     ' --- THIS SUB IS NOW FIXED ---

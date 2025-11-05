@@ -113,7 +113,32 @@ Public Class UC_signup_step2_student
 
     ' --- 5. HANDLE THE TIMER COUNTDOWN (UNCHANGED) ---
     Private Sub otpTimer_Tick(sender As Object, e As EventArgs) Handles otpTimer.Tick
+        If _countdownSeconds > 0 Then
+            _countdownSeconds -= 1
+            Dim timeRemaining = TimeSpan.FromSeconds(_countdownSeconds)
+            ' Update button text to show countdown
+            btn_sendcode.Text = $"Resend in {timeRemaining:mm\:ss}"
+        Else
+            ' Timer finished, reset the button
+            otpTimer.Stop()
+            btn_sendcode.Enabled = True
+            btn_sendcode.Text = "Send Code"
+        End If
+    End Sub
 
+    ''' <summary>
+    ''' Sets the "Send Code" button to a sending or idle state.
+    ''' </summary>
+    Public Sub SetSendingState(ByVal isSending As Boolean)
+        If isSending Then
+            ' Set state to "Sending..."
+            btn_sendcode.Enabled = False
+            btn_sendcode.Text = "Sending..."
+        Else
+            ' Reset button to normal
+            btn_sendcode.Enabled = True
+            btn_sendcode.Text = "Send Code"
+        End If
     End Sub
 
     ' --- 6. HANDLE "VERIFY" CLICK (MODIFIED) ---
