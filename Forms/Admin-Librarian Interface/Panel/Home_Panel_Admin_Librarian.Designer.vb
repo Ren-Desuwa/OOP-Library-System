@@ -154,7 +154,7 @@ Partial Class Home_Panel_Admin_Librarian
         Me.btn_notification.Name = "btn_notification"
         Me.btn_notification.Size = New System.Drawing.Size(180, 46)
         Me.btn_notification.TabIndex = 27
-        Me.btn_notification.Text = "Notification"
+        Me.btn_notification.Text = "Request"
         '
         'btn_Librarian
         '
@@ -270,7 +270,7 @@ Partial Class Home_Panel_Admin_Librarian
         Me.UC_HPAL_Book_Tab1.Size = New System.Drawing.Size(1008, 688)
         Me.UC_HPAL_Book_Tab1.TabIndex = 0
         '
-        'UC_HPAL_Notification_Tab1
+        'UC_HPAL_Request_Tab1
         '
         Me.UC_HPAL_Request_Tab1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.UC_HPAL_Request_Tab1.Location = New System.Drawing.Point(0, 0)
@@ -282,6 +282,7 @@ Partial Class Home_Panel_Admin_Librarian
         '
         Me.UC_HPAL_Logs_Tab1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.UC_HPAL_Logs_Tab1.Location = New System.Drawing.Point(0, 0)
+        Me.UC_HPAL_Logs_Tab1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.UC_HPAL_Logs_Tab1.Name = "UC_HPAL_Logs_Tab1"
         Me.UC_HPAL_Logs_Tab1.Size = New System.Drawing.Size(1008, 688)
         Me.UC_HPAL_Logs_Tab1.TabIndex = 2

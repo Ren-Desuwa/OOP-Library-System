@@ -145,23 +145,21 @@ Public Class Home_Panel_Admin_Librarian
         ' Await UC_HPAL_Notification_Tab1.RefreshData()
     End Sub
 
+    ' --- USE THIS (The new, fixed code) ---
     Private Sub btn_Logs_Click(sender As Object, e As EventArgs) Handles btn_Logs.Click
-        ' Clear any existing controls in the panel
-        pnl_UC_container.Controls.Clear()
 
-        ' Create and store the logs tab instance globally
-        logsTab = New UC_HPAL_Logs_Tab()
+        ' 1. Show the correct tab using the existing ShowTab logic
+        ShowTab(UC_HPAL_Logs_Tab1)
 
-        ' Make it fill the panel
-        logsTab.Dock = DockStyle.Fill
+        ' 2. If you use the global 'logsTab' variable elsewhere,
+        '    assign it to the *correct* designer instance.
+        logsTab = UC_HPAL_Logs_Tab1
 
-        ' Add the UserControl to the panel
-        pnl_UC_container.Controls.Add(logsTab)
-
-        ' --- Flush pending logs ---
+        ' 3. Flush any pending logs to the correct, existing control
         If pendingLogs.Count > 0 Then
             For Each msg In pendingLogs
-                logsTab.AppendColoredLog(msg, Color.White)
+                ' Note: We are now appending to UC_HPAL_Logs_Tab1, not the new one
+                UC_HPAL_Logs_Tab1.AppendColoredLog(msg, Color.White)
             Next
             pendingLogs.Clear()
         End If
