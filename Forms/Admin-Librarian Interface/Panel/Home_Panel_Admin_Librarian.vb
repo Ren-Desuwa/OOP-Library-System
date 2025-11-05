@@ -93,7 +93,7 @@ Public Class Home_Panel_Admin_Librarian
         UC_HPAL_Book_Tab1.Visible = (controlToShow Is UC_HPAL_Book_Tab1)
         UC_HPAL_User_Tab1.Visible = (controlToShow Is UC_HPAL_User_Tab1)
         UC_HPAL_Librarian_Tab1.Visible = (controlToShow Is UC_HPAL_Librarian_Tab1)
-        UC_HPAL_Notification_Tab1.Visible = (controlToShow Is UC_HPAL_Notification_Tab1)
+        UC_HPAL_Request_Tab1.Visible = (controlToShow Is UC_HPAL_Request_Tab1)
         UC_HPAL_Logs_Tab1.Visible = (controlToShow Is UC_HPAL_Logs_Tab1)
 
         ' Bring the correct one to the front
@@ -140,7 +140,7 @@ Public Class Home_Panel_Admin_Librarian
 
     Private Sub btn_notification_Click(sender As Object, e As EventArgs) Handles btn_notification.Click
         ' TODO: You will need to apply the same Try/Finally/_isDataLoading pattern here
-        ShowTab(UC_HPAL_Notification_Tab1)
+        ShowTab(UC_HPAL_Request_Tab1)
         ' Await UC_HPAL_Notification_Tab1.RefreshData()
     End Sub
 

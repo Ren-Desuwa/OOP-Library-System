@@ -34,7 +34,7 @@ Partial Class Home_Panel_Admin_Librarian
         Me.pnl_UC_container = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
         Me.UC_Loading_Panel1 = New OOP_Library_System.UC_Loading_Panel()
         Me.UC_HPAL_Book_Tab1 = New OOP_Library_System.UC_HPAL_Book_Tab()
-        Me.UC_HPAL_Notification_Tab1 = New OOP_Library_System.UC_HPAL_Request_Tab()
+        Me.UC_HPAL_Request_Tab1 = New OOP_Library_System.UC_HPAL_Request_Tab()
         Me.UC_HPAL_Logs_Tab1 = New OOP_Library_System.UC_HPAL_Logs_Tab()
         Me.UC_HPAL_Librarian_Tab1 = New OOP_Library_System.UC_HPAL_Librarian_Tab()
         Me.UC_HPAL_User_Tab1 = New OOP_Library_System.UC_HPAL_User_Tab()
@@ -236,7 +236,7 @@ Partial Class Home_Panel_Admin_Librarian
         Me.pnl_UC_container.BackColor = System.Drawing.Color.Transparent
         Me.pnl_UC_container.Controls.Add(Me.UC_Loading_Panel1)
         Me.pnl_UC_container.Controls.Add(Me.UC_HPAL_Book_Tab1)
-        Me.pnl_UC_container.Controls.Add(Me.UC_HPAL_Notification_Tab1)
+        Me.pnl_UC_container.Controls.Add(Me.UC_HPAL_Request_Tab1)
         Me.pnl_UC_container.Controls.Add(Me.UC_HPAL_Logs_Tab1)
         Me.pnl_UC_container.Controls.Add(Me.UC_HPAL_Librarian_Tab1)
         Me.pnl_UC_container.Controls.Add(Me.UC_HPAL_User_Tab1)
@@ -272,11 +272,11 @@ Partial Class Home_Panel_Admin_Librarian
         '
         'UC_HPAL_Notification_Tab1
         '
-        Me.UC_HPAL_Notification_Tab1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.UC_HPAL_Notification_Tab1.Location = New System.Drawing.Point(0, 0)
-        Me.UC_HPAL_Notification_Tab1.Name = "UC_HPAL_Notification_Tab1"
-        Me.UC_HPAL_Notification_Tab1.Size = New System.Drawing.Size(1008, 688)
-        Me.UC_HPAL_Notification_Tab1.TabIndex = 3
+        Me.UC_HPAL_Request_Tab1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.UC_HPAL_Request_Tab1.Location = New System.Drawing.Point(0, 0)
+        Me.UC_HPAL_Request_Tab1.Name = "UC_HPAL_Request_Tab1"
+        Me.UC_HPAL_Request_Tab1.Size = New System.Drawing.Size(1008, 688)
+        Me.UC_HPAL_Request_Tab1.TabIndex = 3
         '
         'UC_HPAL_Logs_Tab1
         '
@@ -511,7 +511,7 @@ Partial Class Home_Panel_Admin_Librarian
     Friend WithEvents btn_User As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btn_notification As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btn_Librarian As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents UC_HPAL_Notification_Tab1 As UC_HPAL_Request_Tab
+    Friend WithEvents UC_HPAL_Request_Tab1 As UC_HPAL_Request_Tab
     Friend WithEvents UC_HPAL_Logs_Tab1 As UC_HPAL_Logs_Tab
     Friend WithEvents UC_HPAL_Librarian_Tab1 As UC_HPAL_Librarian_Tab
     Friend WithEvents UC_HPAL_User_Tab1 As UC_HPAL_User_Tab
