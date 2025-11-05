@@ -12,6 +12,7 @@ Public Module Program
     Public ReadOnly CartSvc As New CartService()
     Public ReadOnly BorrowSvc As BorrowService
     Public ReadOnly AnnounceSvc As AnnouncementService
+    Public ReadOnly AccountSvc As accountService
     ' ... other services ...
 
     ' --- Static Constructor (Runs ONCE) ---
@@ -28,6 +29,7 @@ Public Module Program
             AuthSvc = New AuthService(mainDbConnection, OtpSvc, NotifSvc)
             BorrowSvc = New BorrowService(mainDbConnection)
             AnnounceSvc = New AnnouncementService(mainDbConnection)
+            AccountSvc = New accountService(mainDbConnection)
 
         Catch ex As Exception
             ' If this fails, the app can't run
@@ -179,7 +181,7 @@ Public Module Program
             ' --- ROLE CHECKING LOGIC ---
             If loggedInAccount.Role.Equals("Admin", StringComparison.OrdinalIgnoreCase) OrElse
                loggedInAccount.Role.Equals("Librarian", StringComparison.OrdinalIgnoreCase) Then
-
+                Program.mainDbConnection.ElevateToAdminConnection()
                 ' --- ADMIN/LIBRARIAN PATH ---
                 ' 1. Show the AdminPanel (triggers "Shown")
                 AdminLibrarianPanel.Show()
@@ -257,7 +259,7 @@ Public Module Program
 
         ' 1. Get the AdminPanel
         Dim adminForm = CType(sender, Home_Panel_Admin_Librarian)
-
+        mainDbConnection.RevertToKioskConnection()
         ' (ASSUMPTION) Admin panel doesn't have a loading screen
         ' If it did, you would toggle it here.
         ' adminForm.ToggleLoading(True, "Logging out...")

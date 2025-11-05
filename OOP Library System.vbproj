@@ -77,6 +77,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Services\accountService.vb" />
     <Compile Include="Classes\Services\BorrowedBookDetails.vb" />
     <Compile Include="Classes\Services\CartServices.vb" />
     <Compile Include="Forms\Admin-Librarian Interface\Panel\BorrowRequestList.Designer.vb">
@@ -179,6 +180,12 @@
       <DependentUpon>UC_User_Request_Tab.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\Admin-Librarian Interface\UC\UC_User_Request_Tab.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin-Librarian Interface\UC\UC_LOGS_card.Designer.vb">
+      <DependentUpon>UC_LOGS_card.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin-Librarian Interface\UC\UC_LOGS_card.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Forms\Admin-Librarian Interface\UC\UserReqViewProfile.Designer.vb">
@@ -499,6 +506,9 @@
     <EmbeddedResource Include="Forms\Admin-Librarian Interface\UC\UC_User_Request_Tab.resx">
       <DependentUpon>UC_User_Request_Tab.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin-Librarian Interface\UC\UC_LOGS_card.resx">
+      <DependentUpon>UC_LOGS_card.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin-Librarian Interface\UC\UserReqViewProfile.resx">
       <DependentUpon>UserReqViewProfile.vb</DependentUpon>
     </EmbeddedResource>
@@ -636,23 +646,79 @@
     <Folder Include="Forms\Admin\Login\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Bookcover\177013.jpg" />
     <Content Include="Assets\Bookcover\1984.jpg" />
+    <Content Include="Assets\Bookcover\Sword_Art_Online.png" />
+    <Content Include="Assets\Bookcover\astrophysics_for_people_in_a_hurry.jpg" />
+    <Content Include="Assets\Bookcover\atomic_habits.jpg" />
+    <Content Include="Assets\Bookcover\a_brief_history_of_time.jpg" />
+    <Content Include="Assets\Bookcover\a_man_called_ove.jpg" />
     <Content Include="Assets\Bookcover\big_little_lies.jpg" />
+    <Content Include="Assets\Bookcover\bird_box.jpg" />
+    <Content Include="Assets\Bookcover\brief_answers_to_the_big_questions.jpg" />
+    <Content Include="Assets\Bookcover\call_me_by_your_name.jpg" />
+    <Content Include="Assets\Bookcover\coraline.jpg" />
+    <Content Include="Assets\Bookcover\cosmos.jpg" />
+    <Content Include="Assets\Bookcover\deep_work.jpg" />
+    <Content Include="Assets\Bookcover\don_quixote.jpg" />
+    <Content Include="Assets\Bookcover\dracula.jpg" />
+    <Content Include="Assets\Bookcover\educated.jpg" />
+    <Content Include="Assets\Bookcover\eleanor_oliphant_is_completely_fine.jpg" />
+    <Content Include="Assets\Bookcover\eleanor_park.jpg" />
+    <Content Include="Assets\Bookcover\frankenstein.jpg" />
+    <Content Include="Assets\Bookcover\gene.jpg" />
+    <Content Include="Assets\Bookcover\grit.png" />
+    <Content Include="Assets\Bookcover\hell_house.jpg" />
     <Content Include="Assets\Bookcover\hobbit.jpg" />
+    <Content Include="Assets\Bookcover\how_to_read_a_book.jpg" />
+    <Content Include="Assets\Bookcover\it.jpg" />
+    <Content Include="Assets\Bookcover\kissxsis.jpg" />
+    <Content Include="Assets\Bookcover\little_fires_everywhere.jpg" />
     <Content Include="Assets\Bookcover\lord_of_the_rings_fellowship.jpg" />
+    <Content Include="Assets\Bookcover\make_it_stick.jpg" />
+    <Content Include="Assets\Bookcover\mexican_gothic.jpg" />
+    <Content Include="Assets\Bookcover\me_before_you.jpg" />
+    <Content Include="Assets\Bookcover\mindset.jpg" />
+    <Content Include="Assets\Bookcover\mobydick.jpg" />
     <Content Include="Assets\Bookcover\pride_and_prejudice.jpg" />
+    <Content Include="Assets\Bookcover\redo_of_healer.jpg" />
     <Content Include="Assets\Bookcover\sharp_objects.jpg" />
+    <Content Include="Assets\Bookcover\silent_spring.jpg" />
     <Content Include="Assets\Bookcover\the_adventure.jpg" />
+    <Content Include="Assets\Bookcover\the_alchemist.jpg" />
+    <Content Include="Assets\Bookcover\the_body.jpg" />
+    <Content Include="Assets\Bookcover\the_craft_of_research.jpg" />
+    <Content Include="Assets\Bookcover\the_exorcist.jpg" />
+    <Content Include="Assets\Bookcover\the_fault_in_our_stars.jpg" />
+    <Content Include="Assets\Bookcover\the_goldfinch.jpg" />
     <Content Include="Assets\Bookcover\the_great_gatsby.jpg" />
     <Content Include="Assets\Bookcover\the_guest_list.jpg" />
+    <Content Include="Assets\Bookcover\the_haunting_of_hill_house.jpg" />
+    <Content Include="Assets\Bookcover\the_immortal_life_of_henrietta_lacks.jpg" />
+    <Content Include="Assets\Bookcover\the_kite_runner.jpg" />
+    <Content Include="Assets\Bookcover\the_midnight_library.jpg" />
+    <Content Include="Assets\Bookcover\the_night_circus.jpg" />
+    <Content Include="Assets\Bookcover\the_notebook.jpg" />
+    <Content Include="Assets\Bookcover\the_origin_of_species.jpg" />
     <Content Include="Assets\Bookcover\the_plot.jpg" />
+    <Content Include="Assets\Bookcover\the_power_of_habit.jpg" />
+    <Content Include="Assets\Bookcover\the_rosie_project.jpg" />
+    <Content Include="Assets\Bookcover\the_selfish_gene.jpg" />
+    <Content Include="Assets\Bookcover\the_shining.jpg" />
+    <Content Include="Assets\Bookcover\the_stranger.jpg" />
+    <Content Include="Assets\Bookcover\the_study_skills_handbook.jpg" />
+    <Content Include="Assets\Bookcover\the_time_travelers_wife.jpg" />
+    <Content Include="Assets\Bookcover\the_wedding_date.jpg" />
     <Content Include="Assets\Bookcover\the_woman_in_the_window.jpg" />
-    <Content Include="Assets\Bookcover\to_kill_a_mockingbird.jpg" />
+    <Content Include="Assets\Bookcover\to_kill_a_mocking_bird.jpg" />
+    <Content Include="Assets\Bookcover\twilight.jpg" />
+    <Content Include="Assets\Bookcover\where_the_crawdads_sing.jpg" />
     <Content Include="Classes\Download this\MySql.Data.dll" />
     <None Include="Resources\BooksDesignBG.png" />
     <None Include="Resources\BooksDesignBG1.png" />
     <None Include="Resources\BooksDesignBG2.png" />
     <None Include="Resources\BooksDesignBG3.png" />
+    <Content Include="Resources\bookshelf.png" />
     <Content Include="Resources\Cart_icon.png" />
     <None Include="Resources\istockphoto-1421303925-612x612-removebg-preview.png" />
     <Content Include="Resources\Loading_Circle.gif" />
@@ -661,6 +727,7 @@
     <None Include="Resources\Ucc Logo NoBG Big2.png" />
     <None Include="Resources\Show_icon1.png" />
     <None Include="Resources\titi ni ren baluktot nakita ko.png" />
+    <Content Include="Resources\OOP DESIGN.png" />
     <Content Include="Resources\Untitled design.png" />
     <None Include="Classes\sample.md" />
     <Content Include="Resources\Accountwhite0_icon.png" />
