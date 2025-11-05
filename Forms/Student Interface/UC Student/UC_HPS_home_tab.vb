@@ -1,4 +1,8 @@
-﻿Public Class UC_HPS_home_tab
+﻿' (Modified)
+Imports Classes.Models
+Imports Classes.Services ' Import the service layer
+
+Public Class UC_HPS_home_tab
 
     Private Sub UC_HPS_home_tab_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -8,45 +12,61 @@
         ' Re-adjust width when window resizes
         AddHandler Guna2Panel1.SizeChanged, AddressOf Guna2Panel1_SizeChanged
 
-        AddTestAnnouncements()
+        ' Call the new dynamic method instead of AddTestAnnouncements
+        LoadAnnouncements() '
     End Sub
 
-    Private Sub AddTestAnnouncements()
+    ' This method replaces the static AddTestAnnouncements
+    Private Sub LoadAnnouncements()
         ' Clear old controls
-        TableLayoutPanel6.Controls.Clear()
+        TableLayoutPanel6.Controls.Clear() '
         TableLayoutPanel6.RowCount = 0
         TableLayoutPanel6.RowStyles.Clear()
 
-        ' Add test announcements
-        For i As Integer = 1 To 5
-            Dim uc As New UC_announcementBox()
+        Try
+            ' 1. Get data from the service
+            Dim announcements As List(Of Announcement) = Program.AnnounceSvc.GetActiveAnnouncements()
 
-            uc.Dock = DockStyle.Top
-            uc.Anchor = AnchorStyles.Left Or AnchorStyles.Right
-            uc.Margin = New Padding(10)
+            ' 2. Loop through the real announcements
+            For Each announcement As Announcement In announcements
+                Dim uc As New UC_announcementBox()
 
-            uc.Title.Text = "Announcement " & i
-            uc.Message.Text = "This is a sample announcement message for testing. " &
-                          "Try making it long enough to see if it expands correctly. " &
-                          "Each UC should resize vertically depending on its text length."
-            uc.DatePosted.Text = DateTime.Now.ToShortDateString()
+                uc.Dock = DockStyle.Top
+                uc.Anchor = AnchorStyles.Left Or AnchorStyles.Right
+                uc.Margin = New Padding(10) '
 
-            ' Make the UC stretch horizontally
-            uc.Dock = DockStyle.Top
-            uc.Margin = New Padding(5)
+                ' 3. Populate the user control with data
+                uc.Populate(announcement)
 
-            ' Add new row style that autosizes
+                uc.Margin = New Padding(5) '
+
+                ' Add new row style that autosizes
+                TableLayoutPanel6.RowCount += 1
+                TableLayoutPanel6.RowStyles.Add(New RowStyle(SizeType.AutoSize)) '
+
+                ' Add control to the table
+                TableLayoutPanel6.Controls.Add(uc, 0, TableLayoutPanel6.RowCount - 1)
+            Next
+
+        Catch ex As Exception
+            ' Handle any errors (e.g., database connection failed)
+            ' You can display a single announcement box with the error
+            Dim errorUc As New UC_announcementBox()
+            errorUc.Dock = DockStyle.Top
+            errorUc.Margin = New Padding(10)
+            errorUc.Title.Text = "Error"
+            errorUc.Message.Text = "Could not load announcements: " & ex.Message
+            errorUc.DatePosted.Text = DateTime.Now.ToShortDateString()
+
             TableLayoutPanel6.RowCount += 1
             TableLayoutPanel6.RowStyles.Add(New RowStyle(SizeType.AutoSize))
-
-            ' Add control to the table
-            TableLayoutPanel6.Controls.Add(uc, 0, TableLayoutPanel6.RowCount - 1)
-        Next
+            TableLayoutPanel6.Controls.Add(errorUc, 0, 0)
+        End Try
     End Sub
 
 
     Private Sub Guna2Panel1_SizeChanged(sender As Object, e As EventArgs)
-        TableLayoutPanel6.Width = Guna2Panel1.ClientSize.Width
+        TableLayoutPanel6.Width = Guna2Panel1.ClientSize.Width '
     End Sub
 
     Private Sub TableLayoutPanel6_Paint(sender As Object, e As PaintEventArgs) Handles TableLayoutPanel6.Paint
