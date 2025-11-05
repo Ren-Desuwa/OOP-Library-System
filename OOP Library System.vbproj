@@ -612,6 +612,7 @@
     <Content Include="Assets\Bookcover\the_plot.jpg" />
     <Content Include="Assets\Bookcover\the_woman_in_the_window.jpg" />
     <Content Include="Assets\Bookcover\to_kill_a_mockingbird.jpg" />
+    <Content Include="Classes\Download this\MySql.Data.dll" />
     <Content Include="Resources\Cart_icon.png" />
     <Content Include="Resources\Loading_Circle.gif" />
     <Content Include="Resources\Loading_Circle1.gif" />
