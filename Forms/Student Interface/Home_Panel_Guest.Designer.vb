@@ -47,9 +47,9 @@ Partial Class Home_Panel_Guest
         Me.title_panel.FillColor3 = System.Drawing.Color.FromArgb(CType(CType(154, Byte), Integer), CType(CType(111, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.title_panel.FillColor4 = System.Drawing.Color.FromArgb(CType(CType(139, Byte), Integer), CType(CType(103, Byte), Integer), CType(CType(67, Byte), Integer))
         Me.title_panel.Location = New System.Drawing.Point(0, 0)
-        Me.title_panel.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.title_panel.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.title_panel.Name = "title_panel"
-        Me.title_panel.Size = New System.Drawing.Size(917, 64)
+        Me.title_panel.Size = New System.Drawing.Size(688, 52)
         Me.title_panel.TabIndex = 6
         '
         'TableLayoutPanel1
@@ -70,11 +70,11 @@ Partial Class Home_Panel_Guest
         Me.TableLayoutPanel1.Controls.Add(Me.txtBox_username, 1, 0)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 0)
-        Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(917, 64)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(688, 52)
         Me.TableLayoutPanel1.TabIndex = 17
         '
         'Guna2PictureBox1
@@ -88,10 +88,10 @@ Partial Class Home_Panel_Guest
         Me.Guna2PictureBox1.Image = Global.OOP_Library_System.My.Resources.Resources.Ucc_Logo_NoBG_Big1
         Me.Guna2PictureBox1.ImageLocation = ""
         Me.Guna2PictureBox1.ImageRotate = 0!
-        Me.Guna2PictureBox1.Location = New System.Drawing.Point(21, 2)
-        Me.Guna2PictureBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Guna2PictureBox1.Location = New System.Drawing.Point(16, 2)
+        Me.Guna2PictureBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
-        Me.Guna2PictureBox1.Size = New System.Drawing.Size(63, 60)
+        Me.Guna2PictureBox1.Size = New System.Drawing.Size(47, 48)
         Me.Guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.Guna2PictureBox1.TabIndex = 11
         Me.Guna2PictureBox1.TabStop = False
@@ -104,9 +104,10 @@ Partial Class Home_Panel_Guest
         Me.lbl_user.BackColor = System.Drawing.Color.Transparent
         Me.lbl_user.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_user.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(232, Byte), Integer))
-        Me.lbl_user.Location = New System.Drawing.Point(637, 16)
+        Me.lbl_user.Location = New System.Drawing.Point(478, 13)
+        Me.lbl_user.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbl_user.Name = "lbl_user"
-        Me.lbl_user.Size = New System.Drawing.Size(188, 32)
+        Me.lbl_user.Size = New System.Drawing.Size(141, 26)
         Me.lbl_user.TabIndex = 12
         Me.lbl_user.Text = "Guest"
         Me.lbl_user.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -122,10 +123,10 @@ Partial Class Home_Panel_Guest
         Me.btn_profile.Image = Global.OOP_Library_System.My.Resources.Resources.Accountwhite0_icon
         Me.btn_profile.ImageLocation = ""
         Me.btn_profile.ImageRotate = 0!
-        Me.btn_profile.Location = New System.Drawing.Point(831, 2)
-        Me.btn_profile.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btn_profile.Location = New System.Drawing.Point(623, 2)
+        Me.btn_profile.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btn_profile.Name = "btn_profile"
-        Me.btn_profile.Size = New System.Drawing.Size(59, 60)
+        Me.btn_profile.Size = New System.Drawing.Size(44, 48)
         Me.btn_profile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.btn_profile.TabIndex = 18
         Me.btn_profile.TabStop = False
@@ -148,13 +149,13 @@ Partial Class Home_Panel_Guest
         Me.txtBox_username.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.txtBox_username.ForeColor = System.Drawing.Color.Black
         Me.txtBox_username.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtBox_username.Location = New System.Drawing.Point(90, 10)
-        Me.txtBox_username.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtBox_username.Location = New System.Drawing.Point(67, 8)
+        Me.txtBox_username.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.txtBox_username.Name = "txtBox_username"
         Me.txtBox_username.PlaceholderForeColor = System.Drawing.Color.DarkGray
         Me.txtBox_username.PlaceholderText = "Search"
         Me.txtBox_username.SelectedText = ""
-        Me.txtBox_username.Size = New System.Drawing.Size(232, 44)
+        Me.txtBox_username.Size = New System.Drawing.Size(175, 36)
         Me.txtBox_username.TabIndex = 19
         '
         'Guna2Elipse1
@@ -165,9 +166,10 @@ Partial Class Home_Panel_Guest
         'UC_Loading_Panel1
         '
         Me.UC_Loading_Panel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.UC_Loading_Panel1.Location = New System.Drawing.Point(0, 64)
+        Me.UC_Loading_Panel1.Location = New System.Drawing.Point(0, 52)
+        Me.UC_Loading_Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.UC_Loading_Panel1.Name = "UC_Loading_Panel1"
-        Me.UC_Loading_Panel1.Size = New System.Drawing.Size(917, 485)
+        Me.UC_Loading_Panel1.Size = New System.Drawing.Size(688, 394)
         Me.UC_Loading_Panel1.TabIndex = 8
         Me.UC_Loading_Panel1.Visible = False
         '
@@ -178,23 +180,23 @@ Partial Class Home_Panel_Guest
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.UC_HPS_catalouge_tab1.BackColor = System.Drawing.Color.Transparent
         Me.UC_HPS_catalouge_tab1.IsGuestMode = False
-        Me.UC_HPS_catalouge_tab1.Location = New System.Drawing.Point(0, 56)
-        Me.UC_HPS_catalouge_tab1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.UC_HPS_catalouge_tab1.Location = New System.Drawing.Point(0, 46)
+        Me.UC_HPS_catalouge_tab1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.UC_HPS_catalouge_tab1.Name = "UC_HPS_catalouge_tab1"
-        Me.UC_HPS_catalouge_tab1.Size = New System.Drawing.Size(918, 489)
+        Me.UC_HPS_catalouge_tab1.Size = New System.Drawing.Size(688, 397)
         Me.UC_HPS_catalouge_tab1.TabIndex = 7
         '
         'Home_Panel_Guest
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FloralWhite
-        Me.ClientSize = New System.Drawing.Size(917, 549)
+        Me.ClientSize = New System.Drawing.Size(688, 446)
         Me.Controls.Add(Me.UC_Loading_Panel1)
         Me.Controls.Add(Me.title_panel)
         Me.Controls.Add(Me.UC_HPS_catalouge_tab1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "Home_Panel_Guest"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Home Panel"

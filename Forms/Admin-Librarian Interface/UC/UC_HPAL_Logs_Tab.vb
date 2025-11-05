@@ -112,7 +112,7 @@ Public Class UC_HPAL_Logs_Tab
     End Sub
 
     ' 🟥 Append Text with Color
-    Private Sub AppendColoredLog(text As String, color As Color)
+    Public Sub AppendColoredLog(text As String, color As Color)
         RichTextBoxLogs.SelectionStart = RichTextBoxLogs.TextLength
         RichTextBoxLogs.SelectionLength = 0
         RichTextBoxLogs.SelectionColor = color
