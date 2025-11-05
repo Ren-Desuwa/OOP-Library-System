@@ -247,12 +247,12 @@ UPDATE `book_copies` SET `status` = 'Available' WHERE `copy_id` IN (1, 24);
 
 -- Populating table `favorites` (Added more for student_alex)
 TRUNCATE TABLE `favorites`;
-INSERT INTO `favorites` (`account_id`, `book_id`, `date_added`) VALUES
-(3, 1, '2025-10-10 11:10:00'),
-(3, 3, '2025-10-11 15:00:00'),
-(3, 7, '2025-10-28 16:01:00'),
-(3, 10, '2025-10-11 15:01:00'),
-(3, 50, '2025-10-29 08:00:00');
+INSERT INTO `favorites` (`account_id`, `book_id`,`display_order`, `date_added`) VALUES
+(3, 1, 0, '2025-10-10 11:10:00'),
+(3, 3, 1,'2025-10-11 15:00:00'),
+(3, 7, 2,'2025-10-28 16:01:00'),
+(2, 10, 0,'2025-10-11 15:01:00'),
+(2, 50, 1,'2025-10-29 08:00:00');
 
 -- Populating table `announcements` (No changes, kept from previous script)
 TRUNCATE TABLE `announcements`;
