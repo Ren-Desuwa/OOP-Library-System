@@ -208,12 +208,6 @@
     <Compile Include="Forms\Student Interface\UC Student\UC_announcementBox.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\Student Interface\UC Student\UC_Librarian_container.Designer.vb">
-      <DependentUpon>UC_Librarian_container.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Student Interface\UC Student\UC_Librarian_container.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Include="Forms\Student Interface\UC Student\UC_signup_step1_student.Designer.vb">
       <DependentUpon>UC_signup_step1_student.vb</DependentUpon>
     </Compile>
