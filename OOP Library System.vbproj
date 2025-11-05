@@ -638,6 +638,7 @@
   <ItemGroup>
     <Content Include="Assets\Bookcover\177013.jpg" />
     <Content Include="Assets\Bookcover\1984.jpg" />
+    <Content Include="Assets\Bookcover\Sword_Art_Online.png" />
     <Content Include="Assets\Bookcover\astrophysics_for_people_in_a_hurry.jpg" />
     <Content Include="Assets\Bookcover\atomic_habits.jpg" />
     <Content Include="Assets\Bookcover\a_brief_history_of_time.jpg" />
