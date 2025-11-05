@@ -43,11 +43,9 @@ Public Class Book_PopUP
         If isGuest Then
             btn_Borrow.Visible = False
             btn_AddtoCart.Visible = False
-            ' You may also want to hide the status label
             lblStatus.Visible = False
-            Label6.Visible = False ' This is the "Status:" text label
+            Label6.Visible = False ' "Status:" label
         Else
-            ' This is the normal logic for a logged-in student
             btn_Borrow.Visible = True
             btn_AddtoCart.Visible = True
             lblStatus.Visible = True
@@ -82,41 +80,60 @@ Public Class Book_PopUP
     End Sub
 
     ''' <summary>
-    ''' 3. Handles the "Borrow" button click.
+    ''' Handles the "Borrow" button click.
+    ''' Opens BeforeApproval form and passes the selected book.
     ''' </summary>
     Private Sub btn_Borrow_Click(sender As Object, e As EventArgs) Handles btn_Borrow.Click
-        ' TODO: Add your borrow logic here
-        MessageBox.Show("Borrow logic for '" & _book.Title & "' goes here.")
-        ' Example: Program.BorrowSvc.BorrowBook(currentUser.ID, _book.BookID)
+        Try
+            ' Create a BeforeApproval form and pass the selected book
+            Dim approvalForm As New BeforeApproval()
+            approvalForm.BooksToBorrow = New List(Of Book) From {_book}
+            approvalForm.StudentUsername = Program.currentAccount.Username
 
-        Me.Close()
+            ' Optional: handle BorrowingConfirmed event
+            AddHandler approvalForm.BorrowingConfirmed, Sub()
+                                                            ' Remove the book from cart if needed
+                                                            Program.CartSvc.RemoveFromCart(_book)
+                                                        End Sub
+
+            ' Show BeforeApproval as modal
+            approvalForm.ShowDialog()
+
+            ' Refresh BorrowedBooks tab if it's open
+            Dim bbForm As UC_HPS_borrowed_books_tab = Application.OpenForms.OfType(Of Form)().
+                                                    SelectMany(Function(f) f.Controls.OfType(Of UC_HPS_borrowed_books_tab)()).
+                                                    FirstOrDefault()
+            If bbForm IsNot Nothing Then
+                bbForm.LoadData()
+            End If
+
+            ' Close the popup
+            Me.Close()
+
+        Catch ex As Exception
+            MessageBox.Show("Error opening approval form: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 
     ''' <summary>
-    ''' 4. Handles the "Add to Cart" button click.
+    ''' Handles the "Add to Cart" button click.
     ''' </summary>
     Private Sub btn_AddtoCart_Click(sender As Object, e As EventArgs) Handles btn_AddtoCart.Click
-        ' --- ADDED THIS LINE ---
-        ' Add the book (stored in Me._book) to the central cart service
         Program.CartSvc.AddToCart(Me._book)
-        ' --- END OF ADDITION ---
-
         messagedialogAdded.Show("Successfully Added to Cart.", "Success")
     End Sub
 
     ''' <summary>
-    ''' 5. Handles the "X" (Close) button click.
+    ''' Handles the "X" (Close) button click.
     ''' </summary>
     Private Sub btn_close_Click(sender As Object, e As EventArgs) Handles btn_close.Click
         Me.Close()
     End Sub
 
     ''' <summary>
-    ''' 6. Handles the form losing focus (clicking "outside").
+    ''' Handles the form losing focus (clicking "outside").
     ''' </summary>
     Private Sub Book_PopUP_Deactivate(sender As Object, e As EventArgs) Handles Me.Deactivate
-        ' This event fires when the user clicks onto another window,
-        ' effectively "clicking outside" the popup.
         Me.Close()
     End Sub
 End Class

@@ -1,35 +1,62 @@
-﻿Public Class BorrowedBooks
-    Friend Sub ShowDialog()
-        Throw New NotImplementedException()
-    End Sub
+﻿Imports MySql.Data.MySqlClient
+Imports System.IO
+
+Public Class BorrowedBooks
+
+    Private ReadOnly connectionString As String =
+        "server=localhost;userid=root;password=;database=ooplibrary"
 
     Private Sub BorrowedBooks_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadBorrowedBooks()
     End Sub
 
-    Private Sub LoadBorrowedBooks()
-        ' Halimbawa, static data lang muna
-        Dim sampleBooks As New List(Of (title As String, borrowDate As String, dueDate As String)) From {
-            ("Harry Potter", "Oct 1, 2025", "Oct 15, 2025"),
-            ("The Hobbit", "Oct 5, 2025", "Oct 25, 2025"),
-            ("Noli Me Tangere", "Sep 20, 2025", "Returned")
-        }
-
+    ' 🔹 Public para puwedeng i-access ng ibang forms
+    Public Sub LoadBorrowedBooks()
         flpBorrowedBooks.Controls.Clear()
 
-        For Each book In sampleBooks
-            Dim card As New BorrowedBooksCard()
-            card.BookTitle = book.title
-            card.BorrowedDate = book.borrowDate
-            card.DueDate = book.dueDate
+        Try
+            Using conn As New MySqlConnection(connectionString)
+                conn.Open()
 
-            ' Optional: lagyan ng kulay depende sa status
-            If book.dueDate = "Returned" Then
-                card.BackColor = Color.FromArgb(200, 255, 200)
-            End If
+                Dim query As String =
+                    "SELECT BookTitle, BorrowedDate, DueDate, BookCover, Status
+                     FROM borrowed_books
+                     ORDER BY BorrowedDate DESC"
 
-            flpBorrowedBooks.Controls.Add(card)
-        Next
+                Using cmd As New MySqlCommand(query, conn)
+                    Using reader As MySqlDataReader = cmd.ExecuteReader()
+                        While reader.Read()
+                            Dim card As New BorrowedBooksCard()
+                            card.BookTitle = reader("BookTitle").ToString()
+                            card.BorrowedDate = Convert.ToDateTime(reader("BorrowedDate")).ToString("MMM dd, yyyy")
+                            card.DueDate = Convert.ToDateTime(reader("DueDate")).ToString("MMM dd, yyyy")
+
+                            Select Case reader("Status").ToString().ToLower()
+                                Case "overdue"
+                                    card.SetStatusColor(Color.Red)
+                                Case "due soon"
+                                    card.SetStatusColor(Color.Yellow)
+                                Case "due today"
+                                    card.SetStatusColor(Color.Blue)
+                                Case "returned"
+                                    card.SetStatusColor(Color.Green)
+                            End Select
+
+
+                            ' ➕ Add to FlowLayoutPanel
+                            flpBorrowedBooks.Controls.Add(card)
+                        End While
+                    End Using
+                End Using
+            End Using
+
+        Catch ex As Exception
+            MessageBox.Show(
+                "Error loading borrowed books:" & vbCrLf & ex.Message,
+                "Database Error",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error)
+        End Try
     End Sub
 
 End Class
