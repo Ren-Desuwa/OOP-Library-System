@@ -38,7 +38,8 @@ Partial Class editDisplayedBooks
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(801, 25)
+        Me.Label1.Location = New System.Drawing.Point(601, 20)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(26, 25)
         Me.Label1.TabIndex = 0
@@ -54,21 +55,23 @@ Partial Class editDisplayedBooks
         Me.Guna2Button3.FillColor = System.Drawing.Color.Linen
         Me.Guna2Button3.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2Button3.ForeColor = System.Drawing.Color.Black
-        Me.Guna2Button3.Location = New System.Drawing.Point(694, 898)
+        Me.Guna2Button3.Location = New System.Drawing.Point(520, 730)
+        Me.Guna2Button3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Guna2Button3.Name = "Guna2Button3"
-        Me.Guna2Button3.Size = New System.Drawing.Size(113, 27)
+        Me.Guna2Button3.Size = New System.Drawing.Size(85, 22)
         Me.Guna2Button3.TabIndex = 22
         Me.Guna2Button3.Text = "Add"
         '
         'editDisplayedBooks
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(156, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(864, 969)
+        Me.ClientSize = New System.Drawing.Size(648, 787)
         Me.Controls.Add(Me.Guna2Button3)
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "editDisplayedBooks"
         Me.Text = "editDisplayedBooks"
         Me.ResumeLayout(False)
