@@ -166,6 +166,18 @@
     <Compile Include="Forms\Admin-Librarian Interface\UC\PenaltyView.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\Admin-Librarian Interface\UC\UC_Borrow_Request_Tab.Designer.vb">
+      <DependentUpon>UC_Borrow_Request_Tab.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin-Librarian Interface\UC\UC_Borrow_Request_Tab.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin-Librarian Interface\UC\UC_User_Request_Tab.Designer.vb">
+      <DependentUpon>UC_User_Request_Tab.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin-Librarian Interface\UC\UC_User_Request_Tab.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Forms\Admin-Librarian Interface\UC\UserReqViewProfile.Designer.vb">
       <DependentUpon>UserReqViewProfile.vb</DependentUpon>
     </Compile>
@@ -190,10 +202,10 @@
     <Compile Include="Forms\Admin-Librarian Interface\UC\UC_HPAL_Logs_Tab.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\Admin-Librarian Interface\UC\UC_HPAL_Notification_Tab.Designer.vb">
-      <DependentUpon>UC_HPAL_Notification_Tab.vb</DependentUpon>
+    <Compile Include="Forms\Admin-Librarian Interface\UC\UC_HPAL_Request_Tab.Designer.vb">
+      <DependentUpon>UC_HPAL_Request_Tab.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Admin-Librarian Interface\UC\UC_HPAL_Notification_Tab.vb">
+    <Compile Include="Forms\Admin-Librarian Interface\UC\UC_HPAL_Request_Tab.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Forms\Admin-Librarian Interface\UC\UC_HPAL_User_Tab.Designer.vb">
@@ -466,6 +478,12 @@
     <EmbeddedResource Include="Forms\Admin-Librarian Interface\UC\PenaltyView.resx">
       <DependentUpon>PenaltyView.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin-Librarian Interface\UC\UC_Borrow_Request_Tab.resx">
+      <DependentUpon>UC_Borrow_Request_Tab.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin-Librarian Interface\UC\UC_User_Request_Tab.resx">
+      <DependentUpon>UC_User_Request_Tab.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin-Librarian Interface\UC\UserReqViewProfile.resx">
       <DependentUpon>UserReqViewProfile.vb</DependentUpon>
     </EmbeddedResource>
@@ -478,8 +496,8 @@
     <EmbeddedResource Include="Forms\Admin-Librarian Interface\UC\UC_HPAL_Logs_Tab.resx">
       <DependentUpon>UC_HPAL_Logs_Tab.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Admin-Librarian Interface\UC\UC_HPAL_Notification_Tab.resx">
-      <DependentUpon>UC_HPAL_Notification_Tab.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\Admin-Librarian Interface\UC\UC_HPAL_Request_Tab.resx">
+      <DependentUpon>UC_HPAL_Request_Tab.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin-Librarian Interface\UC\UC_HPAL_User_Tab.resx">
       <DependentUpon>UC_HPAL_User_Tab.vb</DependentUpon>
@@ -613,7 +631,12 @@
     <Content Include="Assets\Bookcover\the_woman_in_the_window.jpg" />
     <Content Include="Assets\Bookcover\to_kill_a_mockingbird.jpg" />
     <Content Include="Classes\Download this\MySql.Data.dll" />
+    <None Include="Resources\BooksDesignBG.png" />
+    <None Include="Resources\BooksDesignBG1.png" />
+    <None Include="Resources\BooksDesignBG2.png" />
+    <None Include="Resources\BooksDesignBG3.png" />
     <Content Include="Resources\Cart_icon.png" />
+    <None Include="Resources\istockphoto-1421303925-612x612-removebg-preview.png" />
     <Content Include="Resources\Loading_Circle.gif" />
     <Content Include="Resources\Loading_Circle1.gif" />
     <None Include="Resources\Ucc Logo NoBG Big1.png" />

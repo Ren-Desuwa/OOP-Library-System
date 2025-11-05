@@ -34,7 +34,7 @@ Partial Class Home_Panel_Admin_Librarian
         Me.pnl_UC_container = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
         Me.UC_Loading_Panel1 = New OOP_Library_System.UC_Loading_Panel()
         Me.UC_HPAL_Book_Tab1 = New OOP_Library_System.UC_HPAL_Book_Tab()
-        Me.UC_HPAL_Notification_Tab1 = New OOP_Library_System.UC_HPAL_Notification_Tab()
+        Me.UC_HPAL_Notification_Tab1 = New OOP_Library_System.UC_HPAL_Request_Tab()
         Me.UC_HPAL_Logs_Tab1 = New OOP_Library_System.UC_HPAL_Logs_Tab()
         Me.UC_HPAL_Librarian_Tab1 = New OOP_Library_System.UC_HPAL_Librarian_Tab()
         Me.UC_HPAL_User_Tab1 = New OOP_Library_System.UC_HPAL_User_Tab()
@@ -511,7 +511,7 @@ Partial Class Home_Panel_Admin_Librarian
     Friend WithEvents btn_User As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btn_notification As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btn_Librarian As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents UC_HPAL_Notification_Tab1 As UC_HPAL_Notification_Tab
+    Friend WithEvents UC_HPAL_Notification_Tab1 As UC_HPAL_Request_Tab
     Friend WithEvents UC_HPAL_Logs_Tab1 As UC_HPAL_Logs_Tab
     Friend WithEvents UC_HPAL_Librarian_Tab1 As UC_HPAL_Librarian_Tab
     Friend WithEvents UC_HPAL_User_Tab1 As UC_HPAL_User_Tab
