@@ -1,10 +1,15 @@
-﻿Public Class UserProfile
+﻿Imports MySql.Data.MySqlClient
+Imports System.IO
+
+Public Class UserProfile
 
     ' This private variable will hold the account passed in from the home panel
     Private _account As Account
+    Private editForm As EditProfile = Nothing
 
     ''' <summary>
-    ''' This is the new constructor. It requires an Account object to be passed in.
+    ''' This is the new constructor.
+    ''' It requires an Account object to be passed in.
     ''' </summary>
     Public Sub New(ByVal account As Account)
         ' This call is required by the designer.
@@ -12,19 +17,10 @@
 
         ' Store the account object for the Load event to use
         Me._account = account
-
-        ' This is the original code from your UserProfile_Load event,
-        ' moved here to ensure the panel loads correctly.
-        Dim profileUC As New BooksFromProfile()
-        profileUC.Dock = DockStyle.Fill
-
-        Panel1.Controls.Clear()         ' remove previous UC (if any)
-        Panel1.Controls.Add(profileUC)  ' add the new one
-        profileUC.BringToFront()
     End Sub
 
     ''' <summary>
-    ''' This event now populates all the labels with the user's data.
+    ''' This event now populates all labels AND the new book display.
     ''' </summary>
     Private Sub UserProfile_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Safeguard in case no account was passed
@@ -58,22 +54,90 @@
 
         ' TODO: Populate Credit Score
         ' Guna2ProgressBar_CreditsPoints.Value = ...
+
+
+        ' --- 3. NEW LOGIC: Load the new Displayed Books control ---
+        LoadDisplayedBooks()
+
     End Sub
 
-    ' --- All your existing event handlers ---
+    ' --- NEW: This function loads the 1-3 displayed books ---
+    Private Sub LoadDisplayedBooks()
+        Dim booksToDisplay As New List(Of Book)
+        Dim connStr As String = "server=localhost;userid=root;password=;database=ooplibrary"
+
+        Try
+            Using conn As New MySqlConnection(connStr)
+                conn.Open()
+
+                ' --- UPDATED QUERY ---
+                ' This query matches the one in your BookDAO.vb
+                ' to correctly get total_copies and available_copies
+                Dim query As String =
+                    "SELECT b.*, " &
+                    " (SELECT COUNT(*) FROM book_copies bc WHERE bc.book_id = b.book_id) AS total_copies, " &
+                    " (SELECT COUNT(*) FROM book_copies bc WHERE bc.book_id = b.book_id AND bc.status = 'Available') AS available_copies " &
+                    "FROM books b " &
+                    "INNER JOIN displayed_books db ON b.book_id = db.book_id " &
+                    "WHERE db.account_id = @account_id " &
+                    "ORDER BY db.display_order ASC " &
+                    "LIMIT 3"
+
+                Using cmd As New MySqlCommand(query, conn)
+                    cmd.Parameters.AddWithValue("@account_id", _account.AccountID)
+                    Using reader As MySqlDataReader = cmd.ExecuteReader()
+
+                        ' --- Get column indexes once for safety (like BookDAO) ---
+                        Dim colPublisher = reader.GetOrdinal("publisher")
+                        Dim colYearPublished = reader.GetOrdinal("year_published")
+                        Dim colDescription = reader.GetOrdinal("description")
+                        Dim colCoverUrl = reader.GetOrdinal("cover_url")
+
+                        While reader.Read()
+                            ' --- Create Book object safely, handling DBNull ---
+                            Dim book = New Book() With {
+                                .BookID = reader.GetInt32("book_id"),
+                                .Title = reader.GetString("title"),
+                                .Author = reader.GetString("author"),
+                                .ISBN = reader.GetString("isbn"),
+                                .Publisher = If(reader.IsDBNull(colPublisher), Nothing, reader.GetString(colPublisher)),
+                                .YearPublished = If(reader.IsDBNull(colYearPublished), 0, reader.GetInt32(colYearPublished)),
+                                .Description = If(reader.IsDBNull(colDescription), Nothing, reader.GetString(colDescription)),
+                                .CoverUrl = If(reader.IsDBNull(colCoverUrl), Nothing, reader.GetString(colCoverUrl)),
+                                .TotalCopies = reader.GetInt32("total_copies"),
+                                .AvailableCopies = reader.GetInt32("available_copies")
+                            }
+                            booksToDisplay.Add(book)
+                        End While
+                    End Using
+                End Using
+            End Using
+        Catch ex As Exception
+            MessageBox.Show("Error loading displayed books: " & ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+
+        ' --- 4. Create and add the new User Control ---
+        Dim profileDisplayUC As New UC_ProfileBookDisplay()
+        profileDisplayUC.Dock = DockStyle.Fill
+        profileDisplayUC.LoadBooks(booksToDisplay) ' Pass the list of books
+
+        Display_Book_container.Controls.Clear() ' Remove the old control
+        Display_Book_container.Controls.Add(profileDisplayUC)
+        profileDisplayUC.BringToFront()
+    End Sub
+
+    ' --- (Your original event handlers) ---
 
     Private Sub Guna2PictureBox1_Click(sender As Object, e As EventArgs)
     End Sub
 
-    Private Sub TableLayoutPanel1_Paint(sender As Object, e As PaintEventArgs)
+    Private Sub TableLayoutPanel1_Paint(sender As Object, e As PaintEventArgs) Handles TableLayoutPanel1.Paint
     End Sub
 
     Private Sub Guna2PictureBox1_Click_1(sender As Object, e As EventArgs)
     End Sub
 
     Private Sub Guna2PictureBox2_Click(sender As Object, e As EventArgs) Handles picBox_profile.Click
-        ' This appears to be your original "close" button, I will leave it
-        Me.Close()
     End Sub
 
     Private Sub TableLayoutPanel4_Paint(sender As Object, e As PaintEventArgs) Handles TableLayoutPanel4.Paint
@@ -136,21 +200,26 @@
         MessageBox.Show(message, "Credit Score Info", MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
 
-    Private Sub Guna2ProgressBar1_ValueChanged(sender As Object, e As EventArgs) Handles Guna2ProgressBar_CreditsPoints.ValueChanged
+    Private Sub GGuna2ProgressBar1_ValueChanged(sender As Object, e As EventArgs) Handles Guna2ProgressBar_CreditsPoints.ValueChanged
     End Sub
 
-    Private Sub TableLayoutPanel1_Paint_1(sender As Object, e As PaintEventArgs) Handles TableLayoutPanel1.Paint
+    Private Sub TableLayoutPanel1_Paint_1(sender As Object, e As PaintEventArgs)
     End Sub
 
     Private Sub TableLayoutPanel3_Paint(sender As Object, e As PaintEventArgs) Handles TableLayoutPanel3.Paint
     End Sub
 
     Private Sub Guna2Button3_Click(sender As Object, e As EventArgs) Handles btn_editbookpreview.Click
-        Dim edit As New editDisplayedBooks()
-        edit.Show()
+        ' Show the edit form
+        Using edit As New editDisplayedBooks(_account)
+            ' Use ShowDialog() to make it modal (blocks user from clicking profile)
+            If edit.ShowDialog() = DialogResult.OK Then
+                ' --- NEW: Refresh the books after the edit form closes ---
+                LoadDisplayedBooks()
+            End If
+        End Using
     End Sub
 
-    Private editForm As EditProfile = Nothing
     Private Sub btn_Books_Click(sender As Object, e As EventArgs) Handles btn_edit.Click
         If editForm Is Nothing OrElse editForm.IsDisposed Then
             editForm = New EditProfile()
@@ -164,4 +233,5 @@
     Private Sub GGuna2Button4_Click(sender As Object, e As EventArgs) Handles btn_close.Click
         Me.Close()
     End Sub
+
 End Class

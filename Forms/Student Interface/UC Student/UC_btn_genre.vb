@@ -12,6 +12,19 @@ Public Class UC_btn_genre
         End Set
     End Property
 
+    ' --- START NEW ---
+    ' This property lets us get or set the "Checked" (highlighted) state
+    <Category("Custom Props")>
+    Public Property Checked As Boolean
+        Get
+            Return btn_genre.Checked
+        End Get
+        Set(ByVal value As Boolean)
+            btn_genre.Checked = value
+        End Set
+    End Property
+    ' --- END NEW ---
+
     ' This exposes the button's click event so the main form can listen for it
     Public Event GenreClicked As EventHandler
 

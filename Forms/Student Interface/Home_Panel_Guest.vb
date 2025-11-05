@@ -1,6 +1,7 @@
 ﻿Imports System.IO
 Imports System.Windows.Forms
 Imports System.Linq ' <-- Make sure this is at the top
+Imports MySql.Data.MySqlClient ' <-- Added for database logging
 
 Partial Class Home_Panel_Guest
     Implements ILoadingContainer  ' <-- 1. Implement the Interface
@@ -33,12 +34,70 @@ Partial Class Home_Panel_Guest
     Private Async Sub Home_Panel_Guest_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Await Task.Delay(50)
 
+        ' --- ADDED: Log system startup event ---
+        LogSystemEvent("System Startup", "System initialization successful >>>>> Entering operational state.", "info")
+        ' --- ADDED: Show the same log visually in your console tab ---
+        ' ---------------------------------------
+
         ' --- ADD THIS LINE ---
         UC_HPS_catalouge_tab1.IsGuestMode = True
         ' --- END ADDITION ---
 
         UC_HPS_catalouge_tab1.BeginLoading(Me)
     End Sub
+
+
+    ' --- ADDED: Minimal logging function ---
+    Private Sub LogSystemEvent(action As String, details As String, severity As String)
+        Try
+            Dim connStr As String = "Server=localhost;Database=ooplibrary;Uid=root;Pwd=;SslMode=None;"
+            Dim query As String = "
+            INSERT INTO logs (account_id, action, details, severity, timestamp)
+            VALUES (@account_id, @action, @details, @severity, NOW());
+        "
+
+            Using conn As New MySqlConnection(connStr)
+                Using cmd As New MySqlCommand(query, conn)
+                    cmd.Parameters.AddWithValue("@account_id", 1)
+                    cmd.Parameters.AddWithValue("@action", action)
+                    cmd.Parameters.AddWithValue("@details", details)
+                    cmd.Parameters.AddWithValue("@severity", severity)
+
+                    conn.Open()
+                    Dim rowsAffected As Integer = cmd.ExecuteNonQuery()
+                    'MessageBox.Show("Rows affected: " & rowsAffected.ToString(), "DB Insert Test")
+                End Using
+            End Using
+
+        Catch ex As Exception
+            ' MessageBox.Show("Database log failed: " & ex.Message, "Error")
+            File.AppendAllText("startup_log_error.txt",
+            $"[{DateTime.Now:yyyy-MM-dd HH:mm:ss}] Failed to log startup: {ex.Message}{Environment.NewLine}")
+        End Try
+
+        ' --- Also show it in the logs UI if it exists ---
+        Try
+            Dim adminForm = Application.OpenForms().OfType(Of Home_Panel_Admin_Librarian).FirstOrDefault()
+            Dim logMessage As String = $"[{DateTime.Now:yyyy-MM-dd HH:mm:ss}] (System) {action}: {details}"
+
+            If adminForm IsNot Nothing Then
+                ' If logs tab is open, append immediately
+                If adminForm.logsTab IsNot Nothing Then
+                    adminForm.logsTab.AppendColoredLog(logMessage, Color.White)
+                Else
+                    ' Otherwise, store for later
+                    adminForm.pendingLogs.Add(logMessage)
+                End If
+            End If
+        Catch ex2 As Exception
+            ' Optional: ignore UI update failures
+        End Try
+
+    End Sub
+    ' --- END OF ADDED SECTION ---
+
+
+
 
     ' --- 4. THIS HOOKS UP YOUR SEARCH BAR ---
     ' (This assumes your search textbox is named txtBox_username, based on your files)
@@ -50,6 +109,10 @@ Partial Class Home_Panel_Guest
     ' --- 5. THIS IS YOUR EXISTING LOGIN BUTTON CODE ---
     Private Sub btn_Open_Login(sender As Object, e As EventArgs) Handles btn_profile.Click, lbl_user.Click
         RaiseEvent OpenLogin(Me, EventArgs.Empty)
+    End Sub
+
+    Private Sub UC_Loading_Panel1_Load(sender As Object, e As EventArgs) Handles UC_Loading_Panel1.Load
+
     End Sub
 
     ' We no longer need any of the old book-loading or button-creating methods
