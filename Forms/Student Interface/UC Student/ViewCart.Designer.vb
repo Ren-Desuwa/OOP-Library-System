@@ -77,7 +77,7 @@ Partial Class ViewCart
         Me.title_panel.FillColor3 = System.Drawing.Color.FromArgb(CType(CType(154, Byte), Integer), CType(CType(111, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.title_panel.FillColor4 = System.Drawing.Color.FromArgb(CType(CType(139, Byte), Integer), CType(CType(103, Byte), Integer), CType(CType(67, Byte), Integer))
         Me.title_panel.Location = New System.Drawing.Point(0, 0)
-        Me.title_panel.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.title_panel.Margin = New System.Windows.Forms.Padding(2)
         Me.title_panel.Name = "title_panel"
         Me.title_panel.Size = New System.Drawing.Size(800, 58)
         Me.title_panel.TabIndex = 7
@@ -98,7 +98,7 @@ Partial Class ViewCart
         Me.TableLayoutPanel2.Controls.Add(Me.txtbox_search, 1, 0)
         Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel2.Location = New System.Drawing.Point(0, 0)
-        Me.TableLayoutPanel2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TableLayoutPanel2.Margin = New System.Windows.Forms.Padding(2)
         Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
         Me.TableLayoutPanel2.RowCount = 1
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
@@ -117,7 +117,7 @@ Partial Class ViewCart
         Me.picbox_logo.ImageLocation = ""
         Me.picbox_logo.ImageRotate = 0!
         Me.picbox_logo.Location = New System.Drawing.Point(27, 2)
-        Me.picbox_logo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.picbox_logo.Margin = New System.Windows.Forms.Padding(2)
         Me.picbox_logo.Name = "picbox_logo"
         Me.picbox_logo.Size = New System.Drawing.Size(47, 54)
         Me.picbox_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -152,7 +152,7 @@ Partial Class ViewCart
         Me.picbox_profile.ImageLocation = ""
         Me.picbox_profile.ImageRotate = 0!
         Me.picbox_profile.Location = New System.Drawing.Point(725, 2)
-        Me.picbox_profile.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.picbox_profile.Margin = New System.Windows.Forms.Padding(2)
         Me.picbox_profile.Name = "picbox_profile"
         Me.picbox_profile.Size = New System.Drawing.Size(44, 54)
         Me.picbox_profile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -231,7 +231,7 @@ Partial Class ViewCart
         Me.Table_container.FillColor4 = System.Drawing.Color.FromArgb(CType(CType(198, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(143, Byte), Integer))
         Me.Table_container.ForeColor = System.Drawing.Color.Transparent
         Me.Table_container.Location = New System.Drawing.Point(0, 0)
-        Me.Table_container.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Table_container.Margin = New System.Windows.Forms.Padding(2)
         Me.Table_container.Name = "Table_container"
         Me.Table_container.Size = New System.Drawing.Size(800, 391)
         Me.Table_container.TabIndex = 9
@@ -285,7 +285,7 @@ Partial Class ViewCart
         Me.btn_back.Font = New System.Drawing.Font("Segoe UI", 10.8!, System.Drawing.FontStyle.Bold)
         Me.btn_back.ForeColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(42, Byte), Integer))
         Me.btn_back.Location = New System.Drawing.Point(2, 2)
-        Me.btn_back.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btn_back.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_back.MaximumSize = New System.Drawing.Size(128, 42)
         Me.btn_back.Name = "btn_back"
         Me.btn_back.Size = New System.Drawing.Size(128, 42)
@@ -304,7 +304,7 @@ Partial Class ViewCart
         Me.btn_borrow.Font = New System.Drawing.Font("Segoe UI", 10.8!, System.Drawing.FontStyle.Bold)
         Me.btn_borrow.ForeColor = System.Drawing.Color.White
         Me.btn_borrow.Location = New System.Drawing.Point(625, 2)
-        Me.btn_borrow.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btn_borrow.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_borrow.MaximumSize = New System.Drawing.Size(128, 42)
         Me.btn_borrow.Name = "btn_borrow"
         Me.btn_borrow.Size = New System.Drawing.Size(128, 42)
@@ -323,7 +323,7 @@ Partial Class ViewCart
         Me.btn_remove.Font = New System.Drawing.Font("Segoe UI", 10.8!, System.Drawing.FontStyle.Bold)
         Me.btn_remove.ForeColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(42, Byte), Integer))
         Me.btn_remove.Location = New System.Drawing.Point(490, 2)
-        Me.btn_remove.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btn_remove.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_remove.MaximumSize = New System.Drawing.Size(128, 42)
         Me.btn_remove.Name = "btn_remove"
         Me.btn_remove.Size = New System.Drawing.Size(128, 42)
@@ -362,7 +362,7 @@ Partial Class ViewCart
         Me.Flow_BookCartList.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Flow_BookCartList.Location = New System.Drawing.Point(3, 3)
         Me.Flow_BookCartList.Name = "Flow_BookCartList"
-        Me.Flow_BookCartList.Padding = New System.Windows.Forms.Padding(10, 10, 10, 10)
+        Me.Flow_BookCartList.Padding = New System.Windows.Forms.Padding(10)
         Me.Flow_BookCartList.Size = New System.Drawing.Size(754, 305)
         Me.Flow_BookCartList.TabIndex = 0
         '

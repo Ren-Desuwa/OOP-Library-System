@@ -15,7 +15,7 @@
 
         ' This is the original code from your UserProfile_Load event,
         ' moved here to ensure the panel loads correctly.
-        Dim profileUC As New BooksFromProfile()
+        Dim profileUC As New BooksFromProfile(_account)  ' <-- pass the account
         profileUC.Dock = DockStyle.Fill
 
         Panel1.Controls.Clear()         ' remove previous UC (if any)
@@ -146,7 +146,7 @@
     End Sub
 
     Private Sub Guna2Button3_Click(sender As Object, e As EventArgs) Handles btn_editbookpreview.Click
-        Dim edit As New editDisplayedBooks()
+        Dim edit As New editDisplayedBooks(_account)
         edit.Show()
     End Sub
 
