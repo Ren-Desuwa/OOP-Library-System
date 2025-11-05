@@ -31,8 +31,11 @@ Partial Class UC_HPAL_Logs_Tab
         Me.RichTextBoxLogs = New System.Windows.Forms.RichTextBox()
         Me.genre_panel = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
         Me.Guna2Elipse1 = New Guna.UI2.WinForms.Guna2Elipse(Me.components)
+        Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.genre_panel.SuspendLayout()
+        Me.TableLayoutPanel3.SuspendLayout()
         Me.SuspendLayout()
         '
         'Timer1
@@ -59,15 +62,15 @@ Partial Class UC_HPAL_Logs_Tab
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 1.646091!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 96.84499!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 1.373626!))
-        Me.TableLayoutPanel1.Controls.Add(Me.Label1, 1, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel2, 1, 2)
         Me.TableLayoutPanel1.Controls.Add(Me.RichTextBoxLogs, 1, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel3, 1, 0)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 0)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 3
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.060453!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 87.90932!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.312343!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 87.15366!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.282116!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(729, 397)
@@ -77,12 +80,12 @@ Partial Class UC_HPAL_Logs_Tab
         '
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label1.Font = New System.Drawing.Font("Consolas", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Consolas", 18.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(14, 0)
+        Me.Label1.Location = New System.Drawing.Point(2, 0)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(702, 31)
+        Me.Label1.Size = New System.Drawing.Size(383, 27)
         Me.Label1.TabIndex = 15
         Me.Label1.Text = "Admin Logs"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -104,9 +107,10 @@ Partial Class UC_HPAL_Logs_Tab
         'RichTextBoxLogs
         '
         Me.RichTextBoxLogs.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.RichTextBoxLogs.Location = New System.Drawing.Point(15, 34)
+        Me.RichTextBoxLogs.Font = New System.Drawing.Font("Consolas", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RichTextBoxLogs.Location = New System.Drawing.Point(15, 36)
         Me.RichTextBoxLogs.Name = "RichTextBoxLogs"
-        Me.RichTextBoxLogs.Size = New System.Drawing.Size(700, 342)
+        Me.RichTextBoxLogs.Size = New System.Drawing.Size(700, 340)
         Me.RichTextBoxLogs.TabIndex = 18
         Me.RichTextBoxLogs.Text = ""
         '
@@ -131,6 +135,34 @@ Partial Class UC_HPAL_Logs_Tab
         Me.Guna2Elipse1.BorderRadius = 10
         Me.Guna2Elipse1.TargetControl = Me.RichTextBoxLogs
         '
+        'TableLayoutPanel3
+        '
+        Me.TableLayoutPanel3.ColumnCount = 2
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55.28571!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.71429!))
+        Me.TableLayoutPanel3.Controls.Add(Me.Label1, 0, 0)
+        Me.TableLayoutPanel3.Controls.Add(Me.Label2, 1, 0)
+        Me.TableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel3.Location = New System.Drawing.Point(15, 3)
+        Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
+        Me.TableLayoutPanel3.RowCount = 1
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel3.Size = New System.Drawing.Size(700, 27)
+        Me.TableLayoutPanel3.TabIndex = 19
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label2.Font = New System.Drawing.Font("Consolas", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.DarkGreen
+        Me.Label2.Location = New System.Drawing.Point(390, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(307, 27)
+        Me.Label2.TabIndex = 16
+        Me.Label2.Text = "-"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
         'UC_HPAL_Logs_Tab
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -141,6 +173,8 @@ Partial Class UC_HPAL_Logs_Tab
         Me.Size = New System.Drawing.Size(729, 397)
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.genre_panel.ResumeLayout(False)
+        Me.TableLayoutPanel3.ResumeLayout(False)
+        Me.TableLayoutPanel3.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -152,4 +186,6 @@ Partial Class UC_HPAL_Logs_Tab
     Friend WithEvents genre_panel As Guna.UI2.WinForms.Guna2CustomGradientPanel
     Friend WithEvents RichTextBoxLogs As RichTextBox
     Friend WithEvents Guna2Elipse1 As Guna.UI2.WinForms.Guna2Elipse
+    Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
+    Friend WithEvents Label2 As Label
 End Class
