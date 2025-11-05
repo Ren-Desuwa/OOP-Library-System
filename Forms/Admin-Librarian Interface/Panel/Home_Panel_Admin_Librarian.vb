@@ -2,7 +2,8 @@
 
 Public Class Home_Panel_Admin_Librarian
     Implements ILoadingContainer
-
+    Public logsTab As UC_HPAL_Logs_Tab
+    Public pendingLogs As New List(Of String)
     Public Event LogoutClicked As EventHandler
 
     ' Change 'Private' to 'Friend' so the Book Tab can set this flag
@@ -145,9 +146,25 @@ Public Class Home_Panel_Admin_Librarian
     End Sub
 
     Private Sub btn_Logs_Click(sender As Object, e As EventArgs) Handles btn_Logs.Click
-        ' TODO: You will need to apply the same Try/Finally/_isDataLoading pattern here
-        ShowTab(UC_HPAL_Logs_Tab1)
-        ' AGitA Await UC_HPAL_Logs_Tab1.RefreshData()
+        ' Clear any existing controls in the panel
+        pnl_UC_container.Controls.Clear()
+
+        ' Create and store the logs tab instance globally
+        logsTab = New UC_HPAL_Logs_Tab()
+
+        ' Make it fill the panel
+        logsTab.Dock = DockStyle.Fill
+
+        ' Add the UserControl to the panel
+        pnl_UC_container.Controls.Add(logsTab)
+
+        ' --- Flush pending logs ---
+        If pendingLogs.Count > 0 Then
+            For Each msg In pendingLogs
+                logsTab.AppendColoredLog(msg, Color.White)
+            Next
+            pendingLogs.Clear()
+        End If
     End Sub
 
     Private Sub btn_logout_Click(sender As Object, e As EventArgs) Handles btn_logout.Click
