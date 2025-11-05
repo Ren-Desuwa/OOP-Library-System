@@ -231,21 +231,109 @@ Public Class UC_HPAL_Book_Tab
         End If
     End Sub
 
+    ' --- THIS IS THE NEW BUTTON CLICK ---
+    ' It no longer uses "Using" or "ShowDialog"
     Private Sub btn_Addbooks_Click(sender As Object, e As EventArgs) Handles btn_Addbooks.Click
-        ' TODO: Implement Add logic (e.g., show CreateBook form)
-        MessageBox.Show("Add Book Clicked")
+        Try
+            ' 1. Create the new form instance
+            Dim createForm As New CreateBook()
+
+            ' 2. Add a handler to its FormClosed event.
+            '    This tells VB: "When this form closes, run my 'HandleCreateFormClosed' sub."
+            AddHandler createForm.FormClosed, AddressOf HandleCreateFormClosed
+
+            ' 3. Show the form non-modally.
+            '    Your code does NOT pause here; it finishes immediately.
+            createForm.Show()
+
+        Catch ex As Exception
+            ' --- This will catch any crash if the form itself is broken ---
+            MessageBox.Show("The 'Create Book' form failed to load." & vbCrLf &
+                            "Please copy and paste this error text:" & vbCrLf & vbCrLf &
+                            ex.ToString(),
+                            "Form Load Error",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+    ' --- ADD THIS NEW SUBROUTINE ---
+    ' This sub will be called automatically when the CreateBook form closes.
+    Private Async Sub HandleCreateFormClosed(sender As Object, e As FormClosedEventArgs)
+        ' 1. Get the form that just closed
+        Dim closedForm = CType(sender, CreateBook)
+
+        ' 2. Check the public property we are about to add to it
+        If closedForm.BookWasCreated Then
+
+            ' 3. If so, refresh the entire book list.
+            _parentForm._isDataLoading = True
+            _parentForm.ToggleLoading(True, "Refreshing book list...")
+            Await Task.Delay(1) ' Let loading panel draw
+            Try
+                Await RefreshBookData()
+            Finally
+                _parentForm._isDataLoading = False
+                _parentForm.ToggleLoading(False)
+            End Try
+        End If
+
+        ' 4. Clean up the event handler
+        RemoveHandler closedForm.FormClosed, AddressOf HandleCreateFormClosed
     End Sub
 
     Private Sub btn_Editbook_Click(sender As Object, e As EventArgs) Handles btn_Editbook.Click
-        ' You will implement this later
-        If _selectedBookControl IsNot Nothing Then
-            ' --- We have the selected book! ---
-            Dim bookToEdit As Book = _selectedBookControl.Book
-            MessageBox.Show($"Editing book: {bookToEdit.Title}")
-            ' TODO: Implement Edit logic (e.g., show EditBook form)
-        Else
+        If _selectedBookControl Is Nothing Then
             MessageBox.Show("Please select a book to edit.", "No Book Selected", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             btn_Editbook.Enabled = False
+            Return
         End If
+
+        Try
+            ' 1. Get the book object from the selected control
+            Dim bookToEdit As Book = _selectedBookControl.Book
+
+            ' 2. Create the new form instance, passing the book to its constructor
+            Dim editForm As New EditBook(bookToEdit)
+
+            ' 3. Add a handler to its FormClosed event
+            AddHandler editForm.FormClosed, AddressOf HandleEditFormClosed
+
+            ' 4. Show the form non-modally
+            editForm.Show()
+
+        Catch ex As Exception
+            MessageBox.Show("The 'Edit Book' form failed to load." & vbCrLf &
+                            "Please copy and paste this error text:" & vbCrLf & vbCrLf &
+                            ex.ToString(),
+                            "Form Load Error",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+    ' --- ADD THIS NEW SUBROUTINE ---
+    ' This sub will be called automatically when the EditBook form closes.
+    Private Async Sub HandleEditFormClosed(sender As Object, e As FormClosedEventArgs)
+        ' 1. Get the form that just closed
+        Dim closedForm = CType(sender, EditBook)
+
+        ' 2. Check the public property we added to it
+        If closedForm.BookWasUpdated Then
+
+            ' 3. If so, refresh the entire book list.
+            _parentForm._isDataLoading = True
+            _parentForm.ToggleLoading(True, "Refreshing book list...")
+            Await Task.Delay(1) ' Let loading panel draw
+            Try
+                Await RefreshBookData()
+            Finally
+                _parentForm._isDataLoading = False
+                _parentForm.ToggleLoading(False)
+            End Try
+        End If
+
+        ' 4. Clean up the event handler
+        RemoveHandler closedForm.FormClosed, AddressOf HandleEditFormClosed
     End Sub
 End Class
