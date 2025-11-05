@@ -5,7 +5,9 @@ Public Class Home_Panel_Admin_Librarian
     Implements ILoadingContainer
 
     Public Event LogoutClicked As EventHandler
-
+    'ADD THIS FOR LOGS TAB AND MAKE IT ACCESSIBLE GLOBALLY FOR BEING LOGGED WHEN SYSTEM OPENS (WHEN GUESTVIEW IS OPENED)
+    Public logsTab As UC_HPAL_Logs_Tab
+    Public pendingLogs As New List(Of String)
     ' Change 'Private' to 'Friend' so the Book Tab can set this flag
     Friend _isDataLoading As Boolean = False
 
@@ -117,10 +119,14 @@ Public Class Home_Panel_Admin_Librarian
             ' 4. NOW that all the data is loaded, show the tab.
             ShowTab(UC_HPAL_Book_Tab1)
 
-            'ADD THIS FOR LOGS TAB AND MAKE IT ACCESSIBLE GLOBALLY FOR BEING LOGGED WHEN SYSTEM OPENS (WHEN GUESTVIEW IS OPENED)
-            Public logsTab As UC_HPAL_Logs_Tab
-            Public pendingLogs As New List(Of String)
-
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Finally
+            ' 5. ALWAYS hide the loading panel and reset the flag
+            _isDataLoading = False ' Reset the flag
+            ToggleLoading(False)
+        End Try
+    End Sub
     Private Sub btn_Logs_Click(sender As Object, e As EventArgs) Handles btn_Logs.Click
         ' Clear any existing controls in the panel
         pnl_UC_container.Controls.Clear()
@@ -142,14 +148,6 @@ Public Class Home_Panel_Admin_Librarian
             pendingLogs.Clear()
         End If
     End Sub
-    Catch ex As Exception
-            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        Finally
-            ' 5. ALWAYS hide the loading panel and reset the flag
-            _isDataLoading = False ' Reset the flag
-            ToggleLoading(False)
-        End Try
-    End Sub
 
 
     Private Sub btn_User_Click(sender As Object, e As EventArgs) Handles btn_User.Click
@@ -168,12 +166,6 @@ Public Class Home_Panel_Admin_Librarian
         ' TODO: You will need to apply the same Try/Finally/_isDataLoading pattern here
         ShowTab(UC_HPAL_Request_Tab1)
         ' Await UC_HPAL_Notification_Tab1.RefreshData()
-    End Sub
-
-    Private Sub btn_Logs_Click(sender As Object, e As EventArgs) Handles btn_Logs.Click
-        ' TODO: You will need to apply the same Try/Finally/_isDataLoading pattern here
-        ShowTab(UC_HPAL_Logs_Tab1)
-        ' AGitA Await UC_HPAL_Logs_Tab1.RefreshData()
     End Sub
 
     Private Sub btn_logout_Click(sender As Object, e As EventArgs) Handles btn_logout.Click
