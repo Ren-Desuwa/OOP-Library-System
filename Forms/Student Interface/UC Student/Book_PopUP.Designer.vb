@@ -62,9 +62,10 @@ Partial Class Book_PopUP
         Me.picbox_book.FillColor = System.Drawing.Color.Transparent
         Me.picbox_book.Image = Global.OOP_Library_System.My.Resources.Resources.Ucc_Logo_NoBG_Big2
         Me.picbox_book.ImageRotate = 0!
-        Me.picbox_book.Location = New System.Drawing.Point(24, 28)
+        Me.picbox_book.Location = New System.Drawing.Point(18, 23)
+        Me.picbox_book.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.picbox_book.Name = "picbox_book"
-        Me.picbox_book.Size = New System.Drawing.Size(250, 346)
+        Me.picbox_book.Size = New System.Drawing.Size(188, 281)
         Me.picbox_book.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.picbox_book.TabIndex = 0
         Me.picbox_book.TabStop = False
@@ -75,9 +76,10 @@ Partial Class Book_PopUP
         Me.lbl_book_title.AutoSize = True
         Me.lbl_book_title.Font = New System.Drawing.Font("Segoe UI", 19.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_book_title.ForeColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(42, Byte), Integer))
-        Me.lbl_book_title.Location = New System.Drawing.Point(15, 8)
+        Me.lbl_book_title.Location = New System.Drawing.Point(11, 6)
+        Me.lbl_book_title.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbl_book_title.Name = "lbl_book_title"
-        Me.lbl_book_title.Size = New System.Drawing.Size(88, 45)
+        Me.lbl_book_title.Size = New System.Drawing.Size(75, 37)
         Me.lbl_book_title.TabIndex = 1
         Me.lbl_book_title.Text = "Title"
         Me.lbl_book_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -92,9 +94,10 @@ Partial Class Book_PopUP
         Me.btn_AddtoCart.FillColor = System.Drawing.Color.White
         Me.btn_AddtoCart.Font = New System.Drawing.Font("Segoe UI", 10.8!, System.Drawing.FontStyle.Bold)
         Me.btn_AddtoCart.ForeColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(42, Byte), Integer))
-        Me.btn_AddtoCart.Location = New System.Drawing.Point(392, 392)
+        Me.btn_AddtoCart.Location = New System.Drawing.Point(294, 318)
+        Me.btn_AddtoCart.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btn_AddtoCart.Name = "btn_AddtoCart"
-        Me.btn_AddtoCart.Size = New System.Drawing.Size(171, 52)
+        Me.btn_AddtoCart.Size = New System.Drawing.Size(128, 42)
         Me.btn_AddtoCart.TabIndex = 2
         Me.btn_AddtoCart.Text = "Add to Cart"
         '
@@ -108,9 +111,10 @@ Partial Class Book_PopUP
         Me.btn_Borrow.FillColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(42, Byte), Integer))
         Me.btn_Borrow.Font = New System.Drawing.Font("Segoe UI", 10.8!, System.Drawing.FontStyle.Bold)
         Me.btn_Borrow.ForeColor = System.Drawing.Color.White
-        Me.btn_Borrow.Location = New System.Drawing.Point(688, 392)
+        Me.btn_Borrow.Location = New System.Drawing.Point(516, 318)
+        Me.btn_Borrow.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btn_Borrow.Name = "btn_Borrow"
-        Me.btn_Borrow.Size = New System.Drawing.Size(171, 52)
+        Me.btn_Borrow.Size = New System.Drawing.Size(128, 42)
         Me.btn_Borrow.TabIndex = 3
         Me.btn_Borrow.Text = "Borrow"
         '
@@ -119,9 +123,10 @@ Partial Class Book_PopUP
         Me.lblAuthorData.AutoSize = True
         Me.lblAuthorData.Font = New System.Drawing.Font("Segoe UI", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblAuthorData.ForeColor = System.Drawing.Color.FromArgb(CType(CType(122, Byte), Integer), CType(CType(107, Byte), Integer), CType(CType(84, Byte), Integer))
-        Me.lblAuthorData.Location = New System.Drawing.Point(15, 51)
+        Me.lblAuthorData.Location = New System.Drawing.Point(11, 41)
+        Me.lblAuthorData.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblAuthorData.Name = "lblAuthorData"
-        Me.lblAuthorData.Size = New System.Drawing.Size(83, 25)
+        Me.lblAuthorData.Size = New System.Drawing.Size(68, 20)
         Me.lblAuthorData.TabIndex = 4
         Me.lblAuthorData.Text = "Author: "
         '
@@ -130,9 +135,10 @@ Partial Class Book_PopUP
         Me.lblISBNData.AutoSize = True
         Me.lblISBNData.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblISBNData.ForeColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(42, Byte), Integer))
-        Me.lblISBNData.Location = New System.Drawing.Point(148, 80)
+        Me.lblISBNData.Location = New System.Drawing.Point(110, 64)
+        Me.lblISBNData.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblISBNData.Name = "lblISBNData"
-        Me.lblISBNData.Size = New System.Drawing.Size(108, 20)
+        Me.lblISBNData.Size = New System.Drawing.Size(85, 15)
         Me.lblISBNData.TabIndex = 6
         Me.lblISBNData.Text = "(Place Holder)"
         '
@@ -141,9 +147,10 @@ Partial Class Book_PopUP
         Me.lblYearData.AutoSize = True
         Me.lblYearData.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblYearData.ForeColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(42, Byte), Integer))
-        Me.lblYearData.Location = New System.Drawing.Point(148, 60)
+        Me.lblYearData.Location = New System.Drawing.Point(110, 49)
+        Me.lblYearData.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblYearData.Name = "lblYearData"
-        Me.lblYearData.Size = New System.Drawing.Size(108, 20)
+        Me.lblYearData.Size = New System.Drawing.Size(85, 15)
         Me.lblYearData.TabIndex = 5
         Me.lblYearData.Text = "(Place Holder)"
         '
@@ -153,9 +160,10 @@ Partial Class Book_PopUP
         Me.lblGenreData.Dock = System.Windows.Forms.DockStyle.Fill
         Me.lblGenreData.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblGenreData.ForeColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(42, Byte), Integer))
-        Me.lblGenreData.Location = New System.Drawing.Point(148, 0)
+        Me.lblGenreData.Location = New System.Drawing.Point(110, 0)
+        Me.lblGenreData.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblGenreData.Name = "lblGenreData"
-        Me.lblGenreData.Size = New System.Drawing.Size(429, 40)
+        Me.lblGenreData.Size = New System.Drawing.Size(323, 34)
         Me.lblGenreData.TabIndex = 2
         Me.lblGenreData.Text = "(Place Holder)"
         Me.lblGenreData.TextAlign = System.Drawing.ContentAlignment.BottomLeft
@@ -165,9 +173,10 @@ Partial Class Book_PopUP
         Me.lblPublisherData.AutoSize = True
         Me.lblPublisherData.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPublisherData.ForeColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(42, Byte), Integer))
-        Me.lblPublisherData.Location = New System.Drawing.Point(148, 40)
+        Me.lblPublisherData.Location = New System.Drawing.Point(110, 34)
+        Me.lblPublisherData.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblPublisherData.Name = "lblPublisherData"
-        Me.lblPublisherData.Size = New System.Drawing.Size(108, 20)
+        Me.lblPublisherData.Size = New System.Drawing.Size(85, 15)
         Me.lblPublisherData.TabIndex = 1
         Me.lblPublisherData.Text = "(Place Holder)"
         '
@@ -177,9 +186,10 @@ Partial Class Book_PopUP
         Me.lblDescription.Dock = System.Windows.Forms.DockStyle.Fill
         Me.lblDescription.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblDescription.ForeColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(42, Byte), Integer))
-        Me.lblDescription.Location = New System.Drawing.Point(148, 120)
+        Me.lblDescription.Location = New System.Drawing.Point(110, 94)
+        Me.lblDescription.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblDescription.Name = "lblDescription"
-        Me.lblDescription.Size = New System.Drawing.Size(429, 134)
+        Me.lblDescription.Size = New System.Drawing.Size(323, 112)
         Me.lblDescription.TabIndex = 0
         Me.lblDescription.Text = "(Place Holder)"
         '
@@ -191,9 +201,10 @@ Partial Class Book_PopUP
         Me.pnl_Title.Controls.Add(Me.lblAuthorData)
         Me.pnl_Title.FillColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(201, Byte), Integer), CType(CType(166, Byte), Integer))
         Me.pnl_Title.ForeColor = System.Drawing.Color.Transparent
-        Me.pnl_Title.Location = New System.Drawing.Point(293, 28)
+        Me.pnl_Title.Location = New System.Drawing.Point(220, 23)
+        Me.pnl_Title.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.pnl_Title.Name = "pnl_Title"
-        Me.pnl_Title.Size = New System.Drawing.Size(580, 80)
+        Me.pnl_Title.Size = New System.Drawing.Size(435, 65)
         Me.pnl_Title.TabIndex = 6
         '
         'messagedialogAdded
@@ -221,9 +232,10 @@ Partial Class Book_PopUP
         Me.btn_close.FillColor = System.Drawing.Color.Transparent
         Me.btn_close.Font = New System.Drawing.Font("Segoe UI Semibold", 19.8!, System.Drawing.FontStyle.Bold)
         Me.btn_close.ForeColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(42, Byte), Integer))
-        Me.btn_close.Location = New System.Drawing.Point(885, 0)
+        Me.btn_close.Location = New System.Drawing.Point(664, 0)
+        Me.btn_close.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btn_close.Name = "btn_close"
-        Me.btn_close.Size = New System.Drawing.Size(56, 52)
+        Me.btn_close.Size = New System.Drawing.Size(42, 42)
         Me.btn_close.TabIndex = 7
         Me.btn_close.Text = "X"
         '
@@ -244,8 +256,9 @@ Partial Class Book_PopUP
         Me.Guna2CustomGradientPanel1.FillColor4 = System.Drawing.Color.FromArgb(CType(CType(198, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(143, Byte), Integer))
         Me.Guna2CustomGradientPanel1.ForeColor = System.Drawing.Color.Transparent
         Me.Guna2CustomGradientPanel1.Location = New System.Drawing.Point(0, 0)
+        Me.Guna2CustomGradientPanel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Guna2CustomGradientPanel1.Name = "Guna2CustomGradientPanel1"
-        Me.Guna2CustomGradientPanel1.Size = New System.Drawing.Size(941, 457)
+        Me.Guna2CustomGradientPanel1.Size = New System.Drawing.Size(706, 371)
         Me.Guna2CustomGradientPanel1.TabIndex = 8
         '
         'table_container
@@ -255,9 +268,10 @@ Partial Class Book_PopUP
         Me.table_container.BorderThickness = 1
         Me.table_container.Controls.Add(Me.TableLayoutPanel1)
         Me.table_container.FillColor = System.Drawing.Color.WhiteSmoke
-        Me.table_container.Location = New System.Drawing.Point(296, 120)
+        Me.table_container.Location = New System.Drawing.Point(222, 98)
+        Me.table_container.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.table_container.Name = "table_container"
-        Me.table_container.Size = New System.Drawing.Size(580, 254)
+        Me.table_container.Size = New System.Drawing.Size(435, 206)
         Me.table_container.TabIndex = 9
         '
         'TableLayoutPanel1
@@ -280,6 +294,7 @@ Partial Class Book_PopUP
         Me.TableLayoutPanel1.Controls.Add(Me.lblDescription, 1, 5)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 0)
+        Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 6
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23.37164!))
@@ -288,7 +303,7 @@ Partial Class Book_PopUP
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 76.62836!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(580, 254)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(435, 206)
         Me.TableLayoutPanel1.TabIndex = 8
         '
         'Label4
@@ -297,9 +312,10 @@ Partial Class Book_PopUP
         Me.Label4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label4.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(122, Byte), Integer), CType(CType(107, Byte), Integer), CType(CType(84, Byte), Integer))
-        Me.Label4.Location = New System.Drawing.Point(3, 80)
+        Me.Label4.Location = New System.Drawing.Point(2, 64)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(139, 20)
+        Me.Label4.Size = New System.Drawing.Size(104, 15)
         Me.Label4.TabIndex = 11
         Me.Label4.Text = "ISBN:"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -310,9 +326,10 @@ Partial Class Book_PopUP
         Me.Label3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label3.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(122, Byte), Integer), CType(CType(107, Byte), Integer), CType(CType(84, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(3, 60)
+        Me.Label3.Location = New System.Drawing.Point(2, 49)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(139, 20)
+        Me.Label3.Size = New System.Drawing.Size(104, 15)
         Me.Label3.TabIndex = 10
         Me.Label3.Text = "Year: "
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -323,9 +340,10 @@ Partial Class Book_PopUP
         Me.Label2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(122, Byte), Integer), CType(CType(107, Byte), Integer), CType(CType(84, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(3, 40)
+        Me.Label2.Location = New System.Drawing.Point(2, 34)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(139, 20)
+        Me.Label2.Size = New System.Drawing.Size(104, 15)
         Me.Label2.TabIndex = 9
         Me.Label2.Text = "Publisher: "
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -336,9 +354,10 @@ Partial Class Book_PopUP
         Me.Label1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(122, Byte), Integer), CType(CType(107, Byte), Integer), CType(CType(84, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(3, 0)
+        Me.Label1.Location = New System.Drawing.Point(2, 0)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(139, 40)
+        Me.Label1.Size = New System.Drawing.Size(104, 34)
         Me.Label1.TabIndex = 8
         Me.Label1.Text = "Genre(s):"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.BottomRight
@@ -349,9 +368,10 @@ Partial Class Book_PopUP
         Me.Label6.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label6.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(122, Byte), Integer), CType(CType(107, Byte), Integer), CType(CType(84, Byte), Integer))
-        Me.Label6.Location = New System.Drawing.Point(3, 100)
+        Me.Label6.Location = New System.Drawing.Point(2, 79)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(139, 20)
+        Me.Label6.Size = New System.Drawing.Size(104, 15)
         Me.Label6.TabIndex = 13
         Me.Label6.Text = "Status:"
         Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -362,9 +382,10 @@ Partial Class Book_PopUP
         Me.Label5.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label5.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(122, Byte), Integer), CType(CType(107, Byte), Integer), CType(CType(84, Byte), Integer))
-        Me.Label5.Location = New System.Drawing.Point(3, 120)
+        Me.Label5.Location = New System.Drawing.Point(2, 94)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(139, 134)
+        Me.Label5.Size = New System.Drawing.Size(104, 112)
         Me.Label5.TabIndex = 12
         Me.Label5.Text = "Book Description:"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.TopRight
@@ -374,9 +395,10 @@ Partial Class Book_PopUP
         Me.lblStatus.AutoSize = True
         Me.lblStatus.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblStatus.ForeColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(42, Byte), Integer))
-        Me.lblStatus.Location = New System.Drawing.Point(148, 100)
+        Me.lblStatus.Location = New System.Drawing.Point(110, 79)
+        Me.lblStatus.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblStatus.Name = "lblStatus"
-        Me.lblStatus.Size = New System.Drawing.Size(108, 20)
+        Me.lblStatus.Size = New System.Drawing.Size(85, 15)
         Me.lblStatus.TabIndex = 7
         Me.lblStatus.Text = "(Place Holder)"
         '
@@ -387,19 +409,21 @@ Partial Class Book_PopUP
         Me.Guna2PictureBox1.Image = Global.OOP_Library_System.My.Resources.Resources.titi_ni_ren_baluktot_nakita_ko
         Me.Guna2PictureBox1.ImageRotate = 0!
         Me.Guna2PictureBox1.Location = New System.Drawing.Point(0, 0)
+        Me.Guna2PictureBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
-        Me.Guna2PictureBox1.Size = New System.Drawing.Size(941, 457)
+        Me.Guna2PictureBox1.Size = New System.Drawing.Size(706, 371)
         Me.Guna2PictureBox1.TabIndex = 10
         Me.Guna2PictureBox1.TabStop = False
         '
         'Book_PopUP
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.NavajoWhite
-        Me.ClientSize = New System.Drawing.Size(941, 457)
+        Me.ClientSize = New System.Drawing.Size(706, 371)
         Me.Controls.Add(Me.Guna2CustomGradientPanel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "Book_PopUP"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         CType(Me.picbox_book, System.ComponentModel.ISupportInitialize).EndInit()

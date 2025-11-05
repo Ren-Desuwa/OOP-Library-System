@@ -55,6 +55,9 @@ Public Class BorrowedBookDetails
         End Select
     End Sub
 
+    Public Sub New()
+    End Sub
+
     ''' <summary>
     ''' Helper function to get the full path of the cover image.
     ''' </summary>

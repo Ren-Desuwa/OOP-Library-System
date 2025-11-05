@@ -1,11 +1,31 @@
 ﻿Public Class BorrowedBooksCard
-    ' Optional: expose properties para sa data
+    Inherits UserControl
+
+    Public Sub New()
+        InitializeComponent()
+
+        ' Make labels wrap text and autosize
+        lblBookTitle.AutoSize = False
+        lblBookTitle.MaximumSize = New Size(Me.Width - 20, 0)
+        lblBookTitle.AutoEllipsis = True
+        lblBookTitle.TextAlign = ContentAlignment.MiddleLeft
+
+        lblBorrowedDate.AutoSize = True
+        lblDueDate.AutoSize = True
+
+        ' Enable auto-size for card
+        Me.AutoSize = True
+        Me.AutoSizeMode = AutoSizeMode.GrowAndShrink
+    End Sub
+
+    ' Properties to set labels from parent
     Public Property BookTitle As String
         Get
             Return lblBookTitle.Text
         End Get
         Set(value As String)
             lblBookTitle.Text = value
+            AdjustCardHeight()
         End Set
     End Property
 
@@ -27,26 +47,15 @@
         End Set
     End Property
 
-    ' --- ADD THIS NEW FUNCTION ---
-    Public Property BookCover As Image
-        Get
-            Return picbox_bookcover.Image
-        End Get
-        Set(value As Image)
-            picbox_bookcover.Image = value
-        End Set
-    End Property
-
-    ' --- ADD THIS NEW FUNCTION ---
-    ''' <summary>
-    ''' Sets the background color of the card and the status indicator.
-    ''' </summary>
-    Public Sub SetCardColor(color As Color)
-        ' Guna2Panel1 is the main background panel
-        Guna2Panel1.FillColor = color
-        ' pnl_colorindicate is the small square
-        pnl_colorindicate.FillColor = color
+    ' Adjust card height dynamically
+    Private Sub AdjustCardHeight()
+        Dim textHeight = TextRenderer.MeasureText(lblBookTitle.Text, lblBookTitle.Font, New Size(lblBookTitle.MaximumSize.Width, 0), TextFormatFlags.WordBreak).Height
+        lblBookTitle.Height = textHeight
+        Me.Height = lblBookTitle.Height + lblBorrowedDate.Height + lblDueDate.Height + 20
     End Sub
-    ' --- END OF NEW FUNCTION ---
 
+    ' Set status color
+    Public Sub SetStatusColor(color As Color)
+        pnlStatus.BackColor = color
+    End Sub
 End Class
