@@ -1,6 +1,4 @@
-﻿Imports MySql.Data.MySqlClient
-Imports System.IO
-
+﻿
 Public Class UserProfile
 
     ' This private variable will hold the account passed in from the home panel
@@ -64,54 +62,9 @@ Public Class UserProfile
     ' --- NEW: This function loads the 1-3 displayed books ---
     Private Sub LoadDisplayedBooks()
         Dim booksToDisplay As New List(Of Book)
-        Dim connStr As String = "server=localhost;userid=root;password=;database=ooplibrary"
 
         Try
-            Using conn As New MySqlConnection(connStr)
-                conn.Open()
-
-                ' --- UPDATED QUERY ---
-                ' This query matches the one in your BookDAO.vb
-                ' to correctly get total_copies and available_copies
-                Dim query As String =
-                    "SELECT b.*, " &
-                    " (SELECT COUNT(*) FROM book_copies bc WHERE bc.book_id = b.book_id) AS total_copies, " &
-                    " (SELECT COUNT(*) FROM book_copies bc WHERE bc.book_id = b.book_id AND bc.status = 'Available') AS available_copies " &
-                    "FROM books b " &
-                    "INNER JOIN displayed_books db ON b.book_id = db.book_id " &
-                    "WHERE db.account_id = @account_id " &
-                    "ORDER BY db.display_order ASC " &
-                    "LIMIT 3"
-
-                Using cmd As New MySqlCommand(query, conn)
-                    cmd.Parameters.AddWithValue("@account_id", _account.AccountID)
-                    Using reader As MySqlDataReader = cmd.ExecuteReader()
-
-                        ' --- Get column indexes once for safety (like BookDAO) ---
-                        Dim colPublisher = reader.GetOrdinal("publisher")
-                        Dim colYearPublished = reader.GetOrdinal("year_published")
-                        Dim colDescription = reader.GetOrdinal("description")
-                        Dim colCoverUrl = reader.GetOrdinal("cover_url")
-
-                        While reader.Read()
-                            ' --- Create Book object safely, handling DBNull ---
-                            Dim book = New Book() With {
-                                .BookID = reader.GetInt32("book_id"),
-                                .Title = reader.GetString("title"),
-                                .Author = reader.GetString("author"),
-                                .ISBN = reader.GetString("isbn"),
-                                .Publisher = If(reader.IsDBNull(colPublisher), Nothing, reader.GetString(colPublisher)),
-                                .YearPublished = If(reader.IsDBNull(colYearPublished), 0, reader.GetInt32(colYearPublished)),
-                                .Description = If(reader.IsDBNull(colDescription), Nothing, reader.GetString(colDescription)),
-                                .CoverUrl = If(reader.IsDBNull(colCoverUrl), Nothing, reader.GetString(colCoverUrl)),
-                                .TotalCopies = reader.GetInt32("total_copies"),
-                                .AvailableCopies = reader.GetInt32("available_copies")
-                            }
-                            booksToDisplay.Add(book)
-                        End While
-                    End Using
-                End Using
-            End Using
+            booksToDisplay = Program.AccountSvc.GetDisplayedBooksForAccount(_account.AccountID)
         Catch ex As Exception
             MessageBox.Show("Error loading displayed books: " & ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try

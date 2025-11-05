@@ -86,6 +86,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Services\accountService.vb" />
     <Compile Include="Classes\Services\BorrowedBookDetails.vb" />
     <Compile Include="Classes\Services\CartServices.vb" />
     <Compile Include="Forms\Admin-Librarian Interface\Panel\BorrowRequestList.Designer.vb">

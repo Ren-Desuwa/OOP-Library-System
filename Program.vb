@@ -12,6 +12,7 @@ Public Module Program
     Public ReadOnly CartSvc As New CartService()
     Public ReadOnly BorrowSvc As BorrowService
     Public ReadOnly AnnounceSvc As AnnouncementService
+    Public ReadOnly AccountSvc As accountService
     ' ... other services ...
 
     ' --- Static Constructor (Runs ONCE) ---
@@ -28,6 +29,7 @@ Public Module Program
             AuthSvc = New AuthService(mainDbConnection, OtpSvc, NotifSvc)
             BorrowSvc = New BorrowService(mainDbConnection)
             AnnounceSvc = New AnnouncementService(mainDbConnection)
+            AccountSvc = New accountService(mainDbConnection)
 
         Catch ex As Exception
             ' If this fails, the app can't run

@@ -98,7 +98,7 @@ CREATE TABLE `favorites` (
   `fav_id` int(11) NOT NULL AUTO_INCREMENT,
   `account_id` int(11) NOT NULL,
   `book_id` int(11) NOT NULL,
-`display_order` int(11) NOT NULL DEFAULT 0,
+  `display_order` int(11) NOT NULL DEFAULT 0,
   `date_added` datetime DEFAULT current_timestamp(),
   PRIMARY KEY (`fav_id`),
   UNIQUE KEY `UK_account_book` (`account_id`,`book_id`),
