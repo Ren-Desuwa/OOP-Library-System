@@ -112,6 +112,12 @@
     <Compile Include="Forms\Admin-Librarian Interface\UC\BookInfo.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\Admin-Librarian Interface\UC\UC_Booktable_container.Designer.vb">
+      <DependentUpon>UC_Booktable_container.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin-Librarian Interface\UC\UC_Booktable_container.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Forms\Admin-Librarian Interface\UC\BorrowerProfile.Designer.vb">
       <DependentUpon>BorrowerProfile.vb</DependentUpon>
     </Compile>
@@ -432,6 +438,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin-Librarian Interface\UC\BookInfo.resx">
       <DependentUpon>BookInfo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin-Librarian Interface\UC\UC_Booktable_container.resx">
+      <DependentUpon>UC_Booktable_container.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin-Librarian Interface\UC\BorrowerProfile.resx">
       <DependentUpon>BorrowerProfile.vb</DependentUpon>

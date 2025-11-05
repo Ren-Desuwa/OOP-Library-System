@@ -42,6 +42,9 @@ Public Module Program
     Private LoginPanel As Login_Panel_Student
     Private SignupPanel As Signup_Panel_Student
     Private StudentPanel As Home_Panel_Students
+    ' --- ADD THIS DECLARATION ---
+    Private AdminLibrarianPanel As Home_Panel_Admin_Librarian
+
     Public currentAccount As Account
 
 
@@ -58,24 +61,26 @@ Public Module Program
             GuestPanel = New Home_Panel_Guest()
             LoginPanel = New Login_Panel_Student()
             SignupPanel = New Signup_Panel_Student()
-            StudentPanel = New Home_Panel_Students() ' Assumes Home_Panel_Students exists
+            StudentPanel = New Home_Panel_Students()
+            ' --- ADD THIS INITIALIZATION ---
+            AdminLibrarianPanel = New Home_Panel_Admin_Librarian()
 
             ' --- 3. MODIFIED: Wire up all event handlers ---
             AddHandler GuestPanel.OpenLogin, AddressOf ShowLoginPanel
 
             ' Connect to the new events from LoginPanel
             AddHandler LoginPanel.RegisterClicked, AddressOf ShowSignupPanel
-            AddHandler LoginPanel.LoginSuccess, AddressOf ShowStudentPanel
+            ' --- MODIFIED THIS HANDLER ---
+            AddHandler LoginPanel.LoginSuccess, AddressOf HandleLoginSuccess
 
             ' We now listen for our custom "Back" event
             AddHandler SignupPanel.BackToLoginClicked, AddressOf ShowLoginPanelFromSignup
             AddHandler StudentPanel.LogoutClicked, AddressOf ShowGuestPanel
-            ' Connect to the (assumed) Logout button from StudentPanel
-            ' AddHandler StudentPanel.LogoutClicked, AddressOf ShowGuestPanel
+
+            ' --- ADD THIS HANDLER FOR ADMIN LOGOUT ---
+            AddHandler AdminLibrarianPanel.LogoutClicked, AddressOf ShowGuestPanelFromAdmin
 
             ' 4. Start by showing the Guest Panel
-            ' --- EDITED THIS LINE ---
-            ' Dim panel As New EditProfile() ' (This line seemed to be for testing, I've commented it out)
             Application.Run(GuestPanel)
 
         Catch ex As Exception
@@ -83,13 +88,11 @@ Public Module Program
                           "Application Startup Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End
         End Try
-        ' --- END OF MOVED CODE ---
-
     End Sub
 
     ' --- 4. MODIFIED: All Navigation Subroutines are now Async ---
 
-    ' This is the one you specifically asked for!
+    ' From Guest Panel -> Login Panel
     Private Async Sub ShowLoginPanel(sender As Object, e As EventArgs)
         ' Get the form that is currently open
         Dim guestForm = CType(sender, Home_Panel_Guest)
@@ -123,10 +126,6 @@ Public Module Program
 
     ' From Login Panel "Register" Button -> Signup Panel
     Private Async Sub ShowSignupPanel(sender As Object, e As EventArgs)
-        ' 1. Show the loading panel on the CURRENT form (LoginPanel)
-        ' NOTE: LoginPanel does not have a loading panel.
-        ' We will just hide/show it. For forms without loading panels,
-        ' the transition will be fast but still correct.
         LoginPanel.Hide()
 
         Try
@@ -146,7 +145,6 @@ Public Module Program
         End Try
     End Sub
 
-    ' --- THIS IS THE FIXED SUBROUTINE ---
     ' From Signup Panel "Back to Login" Button -> Login Panel
     Private Async Sub ShowLoginPanelFromSignup(sender As Object, e As EventArgs)
         ' 1. The "sender" is the SignupPanel
@@ -165,37 +163,59 @@ Public Module Program
         End Try
     End Sub
 
-    ' From Login Panel (Successful Login) -> Student Panel
-    Private Async Sub ShowStudentPanel(sender As Object, loggedInAccount As Account)
+    ' --- THIS IS THE MODIFIED SUBROUTINE ---
+    ' From Login Panel (Successful Login) -> Student OR Admin Panel
+    Private Async Sub HandleLoginSuccess(sender As Object, loggedInAccount As Account)
+
         currentAccount = loggedInAccount ' Store the logged-in user
 
-        ' 1. Show a loading message on the LoginPanel
-        ' (Again, no loading panel, so we'll just hide it)
+        ' 1. Hide the LoginPanel
         LoginPanel.Hide()
 
+        ' 2. Check the user's role and navigate
         Try
-            ' 2. Show the StudentPanel (triggers "Shown")
-            StudentPanel.Show()
+            ' --- ROLE CHECKING LOGIC ---
+            If loggedInAccount.Role.Equals("Admin", StringComparison.OrdinalIgnoreCase) OrElse
+               loggedInAccount.Role.Equals("Librarian", StringComparison.OrdinalIgnoreCase) Then
 
-            ' --- NEW LINE ADDED ---
-            ' Use the method we created to set the student's name on the panel
-            StudentPanel.SetStudentName(currentAccount.Name)
-            ' --- END OF NEW LINE ---
+                ' --- ADMIN/LIBRARIAN PATH ---
+                ' 1. Show the AdminPanel (triggers "Shown")
+                AdminLibrarianPanel.Show()
 
-            ' 3. Home_Panel_Students ALREADY has an async loading method!
-            ' We will wait for its *internal* loading to finish.
-            Await StudentPanel.UC_HPS_catalouge_tab1.AwaitInitialLoad()
+                ' 2. (ASSUMPTION) No async load, so just bring to front.
+                ' If AdminLibrarianPanel gets an AwaitInitialLoad, add it here.
+                AdminLibrarianPanel.BringToFront()
 
-            ' 4. --- Loading is Complete ---
-            StudentPanel.BringToFront()
+            ElseIf loggedInAccount.Role.Equals("Student", StringComparison.OrdinalIgnoreCase) Then
+
+                ' --- STUDENT PATH (Original Code) ---
+                ' 2. Show the StudentPanel (triggers "Shown")
+                StudentPanel.Show()
+
+                ' Use the method we created to set the student's name on the panel
+                StudentPanel.SetStudentName(currentAccount.Name)
+
+                ' 3. Home_Panel_Students ALREADY has an async loading method!
+                Await StudentPanel.UC_HPS_catalouge_tab1.AwaitInitialLoad()
+
+                ' 4. --- Loading is Complete ---
+                StudentPanel.BringToFront()
+
+            Else
+                ' --- FALLBACK for unknown roles ---
+                MessageBox.Show($"Error: Unknown user role '{loggedInAccount.Role}'. Please contact support.",
+                                "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                LoginPanel.Show() ' Show login panel again
+                currentAccount = Nothing ' Clear the invalid account
+            End If
+            ' --- END OF ROLE CHECKING ---
 
         Catch ex As Exception
-            MessageBox.Show("Error loading student panel: " & ex.Message)
+            MessageBox.Show("Error loading user panel: " & ex.Message)
+            ' Hide all panels and show login again as a failsafe
             StudentPanel.Hide()
-            LoginPanel.Show() ' Show login panel again
-        Finally
-            ' 5. Hide the loading screen (if StudentPanel had one)
-            ' StudentPanel.ToggleLoading(False)
+            AdminLibrarianPanel.Hide()
+            LoginPanel.Show()
         End Try
     End Sub
 
@@ -212,7 +232,6 @@ Public Module Program
             GuestPanel.Show()
 
             ' 3. Wait for GuestPanel's catalogue to load
-            ' (We'll use its AwaitInitialLoad, just like the student panel)
             Await GuestPanel.UC_HPS_catalouge_tab1.AwaitInitialLoad()
 
             ' 4. --- Loading is Complete ---
@@ -226,6 +245,39 @@ Public Module Program
         Finally
             ' 5. Always hide the student panel's loading screen
             studentForm.ToggleLoading(False)
+        End Try
+    End Sub
+
+    ' --- ADD THIS NEW SUBROUTINE ---
+    ' From Admin Panel (Logout) -> Guest Panel
+    Private Async Sub ShowGuestPanelFromAdmin(sender As Object, e As EventArgs)
+        currentAccount = Nothing ' Clear logged-in user
+
+        ' 1. Get the AdminPanel
+        Dim adminForm = CType(sender, Home_Panel_Admin_Librarian)
+
+        ' (ASSUMPTION) Admin panel doesn't have a loading screen
+        ' If it did, you would toggle it here.
+        ' adminForm.ToggleLoading(True, "Logging out...")
+
+        Try
+            ' 2. Show the GuestPanel (triggers "Shown")
+            GuestPanel.Show()
+
+            ' 3. Wait for GuestPanel's catalogue to load
+            Await GuestPanel.UC_HPS_catalouge_tab1.AwaitInitialLoad()
+
+            ' 4. --- Loading is Complete ---
+            adminForm.Hide()
+            GuestPanel.BringToFront()
+
+        Catch ex As Exception
+            MessageBox.Show("Error loading guest panel: " & ex.Message)
+            GuestPanel.Hide()
+            adminForm.Show() ' Show admin panel again
+        Finally
+            ' 5. Hide loading screen (if admin panel had one)
+            ' adminForm.ToggleLoading(False)
         End Try
     End Sub
 

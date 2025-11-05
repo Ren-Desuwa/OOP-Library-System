@@ -37,13 +37,13 @@ Partial Class UC_HPAL_Librarian_Tab
         Me.lbl_username.Text = "This is where librarian will show"
         Me.lbl_username.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'US_HPAL_Librarian_Tab
+        'UC_HPAL_Librarian_Tab
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.Controls.Add(Me.lbl_username)
-        Me.Name = "US_HPAL_Librarian_Tab"
-        Me.Size = New System.Drawing.Size(808, 488)
+        Me.Name = "UC_HPAL_Librarian_Tab"
+        Me.Size = New System.Drawing.Size(1008, 688)
         Me.ResumeLayout(False)
 
     End Sub
