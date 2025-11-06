@@ -53,7 +53,7 @@ Partial Class PendingApprovalDialog
         Me.btnConfirm.DisabledState.BorderColor = System.Drawing.Color.DarkGray
         Me.btnConfirm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
         Me.btnConfirm.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnConfirm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnConfirm.DisabledState.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.btnConfirm.FillColor = System.Drawing.Color.White
         Me.btnConfirm.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnConfirm.ForeColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(42, Byte), Integer))
