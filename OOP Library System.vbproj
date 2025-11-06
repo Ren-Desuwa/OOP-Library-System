@@ -644,9 +644,7 @@
     </None>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Forms\Admin\Login\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Assets\Bookcover\177013.jpg" />
     <Content Include="Assets\Bookcover\1984.jpg" />
@@ -715,11 +713,11 @@
     <Content Include="Assets\Bookcover\to_kill_a_mocking_bird.jpg" />
     <Content Include="Assets\Bookcover\twilight.jpg" />
     <Content Include="Assets\Bookcover\where_the_crawdads_sing.jpg" />
-    <Content Include="Classes\Download this\MySql.Data.dll" />
     <None Include="Resources\BooksDesignBG.png" />
     <None Include="Resources\BooksDesignBG1.png" />
     <None Include="Resources\BooksDesignBG2.png" />
     <None Include="Resources\BooksDesignBG3.png" />
+    <Content Include="Classes\ooplibrary.sql" />
     <Content Include="Resources\bookshelf.png" />
     <Content Include="Resources\Cart_icon.png" />
     <None Include="Resources\istockphoto-1421303925-612x612-removebg-preview.png" />
