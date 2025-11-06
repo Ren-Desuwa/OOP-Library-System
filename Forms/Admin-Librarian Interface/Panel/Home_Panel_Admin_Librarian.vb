@@ -223,4 +223,8 @@ Public Class Home_Panel_Admin_Librarian
     Private Sub btn_profile_Click(sender As Object, e As EventArgs) Handles btn_profile.Click
         ' TODO: Implement profile logic
     End Sub
+
+    Private Sub UC_Loading_Panel1_Load(sender As Object, e As EventArgs) Handles UC_Loading_Panel1.Load
+
+    End Sub
 End Class

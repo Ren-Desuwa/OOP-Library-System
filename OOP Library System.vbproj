@@ -79,6 +79,9 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\DataAccessObjects\Penalty.vb" />
+    <Compile Include="Classes\DataAccessObjects\PenaltyDAO.vb" />
+    <Compile Include="Classes\DataAccessObjects\PenaltyService.vb" />
     <Compile Include="Classes\Services\accountService.vb" />
     <Compile Include="Classes\Services\BorrowedBookDetails.vb" />
     <Compile Include="Classes\Services\CartServices.vb" />
@@ -167,16 +170,22 @@
     <Compile Include="Forms\Admin-Librarian Interface\UC\PenaltyView.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\Admin-Librarian Interface\UC\UC_Borrow_Container.Designer.vb">
+      <DependentUpon>UC_Borrow_Container.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin-Librarian Interface\UC\UC_Borrow_Container.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Forms\Admin-Librarian Interface\UC\UC_Borrow_Request_Tab.Designer.vb">
       <DependentUpon>UC_Borrow_Request_Tab.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\Admin-Librarian Interface\UC\UC_Borrow_Request_Tab.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\Admin-Librarian Interface\UC\UC_Librarian_container.Designer.vb">
-      <DependentUpon>UC_Librarian_container.vb</DependentUpon>
+    <Compile Include="Forms\Admin-Librarian Interface\UC\UC_UserRequest_Container.Designer.vb">
+      <DependentUpon>UC_UserRequest_Container.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Admin-Librarian Interface\UC\UC_Librarian_container.vb">
+    <Compile Include="Forms\Admin-Librarian Interface\UC\UC_UserRequest_Container.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Forms\Admin-Librarian Interface\UC\UC_user_container.Designer.vb">
@@ -500,11 +509,14 @@
     <EmbeddedResource Include="Forms\Admin-Librarian Interface\UC\PenaltyView.resx">
       <DependentUpon>PenaltyView.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin-Librarian Interface\UC\UC_Borrow_Container.resx">
+      <DependentUpon>UC_Borrow_Container.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin-Librarian Interface\UC\UC_Borrow_Request_Tab.resx">
       <DependentUpon>UC_Borrow_Request_Tab.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Admin-Librarian Interface\UC\UC_Librarian_container.resx">
-      <DependentUpon>UC_Librarian_container.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\Admin-Librarian Interface\UC\UC_UserRequest_Container.resx">
+      <DependentUpon>UC_UserRequest_Container.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin-Librarian Interface\UC\UC_user_container.resx">
       <DependentUpon>UC_user_container.vb</DependentUpon>

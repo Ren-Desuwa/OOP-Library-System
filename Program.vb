@@ -14,6 +14,7 @@ Public Module Program
     Public ReadOnly AnnounceSvc As AnnouncementService
     Public ReadOnly AccountSvc As AccountService
     Public ReadOnly LogSvc As LogService
+    Public ReadOnly PenaltySvc As PenaltyService
 
     ' ... other services ...
 
@@ -33,6 +34,7 @@ Public Module Program
             AnnounceSvc = New AnnouncementService(mainDbConnection)
             AccountSvc = New AccountService(mainDbConnection)
             LogSvc = New LogService(mainDbConnection)
+            PenaltySvc = New PenaltyService(mainDbConnection)
 
         Catch ex As Exception
             ' If this fails, the app can't run

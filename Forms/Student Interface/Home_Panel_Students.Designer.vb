@@ -225,8 +225,9 @@ Partial Class Home_Panel_Students
         Me.UC_HPS_penalty_tab1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.UC_HPS_penalty_tab1.BackColor = System.Drawing.Color.Wheat
         Me.UC_HPS_penalty_tab1.Location = New System.Drawing.Point(0, 59)
-        Me.UC_HPS_penalty_tab1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.UC_HPS_penalty_tab1.Margin = New System.Windows.Forms.Padding(4)
         Me.UC_HPS_penalty_tab1.Name = "UC_HPS_penalty_tab1"
         Me.UC_HPS_penalty_tab1.Size = New System.Drawing.Size(1224, 602)
         Me.UC_HPS_penalty_tab1.TabIndex = 11
@@ -237,7 +238,7 @@ Partial Class Home_Panel_Students
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.UC_HPS_borrowed_books_tab1.Location = New System.Drawing.Point(0, 59)
-        Me.UC_HPS_borrowed_books_tab1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.UC_HPS_borrowed_books_tab1.Margin = New System.Windows.Forms.Padding(4)
         Me.UC_HPS_borrowed_books_tab1.Name = "UC_HPS_borrowed_books_tab1"
         Me.UC_HPS_borrowed_books_tab1.Size = New System.Drawing.Size(1224, 602)
         Me.UC_HPS_borrowed_books_tab1.TabIndex = 10
@@ -248,6 +249,7 @@ Partial Class Home_Panel_Students
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.UC_HPS_home_tab1.BackColor = System.Drawing.Color.AntiqueWhite
+        Me.UC_HPS_home_tab1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.UC_HPS_home_tab1.Location = New System.Drawing.Point(0, 59)
         Me.UC_HPS_home_tab1.Margin = New System.Windows.Forms.Padding(4, 2, 4, 2)
         Me.UC_HPS_home_tab1.Name = "UC_HPS_home_tab1"
@@ -378,7 +380,6 @@ Partial Class Home_Panel_Students
         Me.btn_Penalty_tab.Size = New System.Drawing.Size(180, 32)
         Me.btn_Penalty_tab.TabIndex = 7
         Me.btn_Penalty_tab.Text = "Penalty"
-        Me.btn_Penalty_tab.Visible = False
         '
         'color_holder_panel
         '
