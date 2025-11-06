@@ -40,7 +40,7 @@ Public Class DBcon
             Case ConnectionRole.Admin
 
 
-                Return $"Server=127.0.0.1;Port=3306;Database={appDbName};Uid=root;Pwd=;"
+                Return $"Server=10.207.186.185;Port=3306;Database={appDbName};Uid=root;Pwd=;"
             Case Else ' Default to Kiosk
 
                 Return $"Server={KIOSK_SERVER_IP};Port=3306;Database={appDbName};Uid=kiosk_user;Pwd={KIOSK_PASSWORD};"
