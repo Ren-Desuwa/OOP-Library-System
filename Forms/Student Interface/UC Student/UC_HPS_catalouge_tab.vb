@@ -1,6 +1,7 @@
 ﻿Imports System.IO
+Imports System.Linq ' <-- Make sure this is imported   -SABI DAW MAY DELETED DITO WAG MO I MERGE YUN DELETED DITO
 Imports System.Windows.Forms
-Imports System.Linq ' <-- Make sure this is imported
+Imports Guna.UI2.WinForms
 
 Public Class UC_HPS_catalouge_tab
 
@@ -37,7 +38,7 @@ Public Class UC_HPS_catalouge_tab
     Private selectedGenre As String = ""
 
     ' --- Mock Data Toggle ---
-    Private Const USE_MOCK_DATA As Boolean = False ' <-- Set to False to use your real database
+    Private Const USE_MOCK_DATA As Boolean = False ' <-- Set to False to use your real database GAWIN FALSE ULIT
 
 #End Region
 
@@ -48,10 +49,59 @@ Public Class UC_HPS_catalouge_tab
     ''' It will set up the loading screen, then call the async method
     ''' without waiting for it. This lets the UI load smoothly.
     ''' </summary>
+
+    ' === SIDEBAR POPUP ANIMATION SECTION ===
+
+    'THIS IS FOR HIDIDING THE SIDEBAR AND SIDEBAR POPOUP'
+    Private sidebarVisible As Boolean = False
+
     Private Sub UC_HPS_catalouge_tab_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' LEAVE THIS COMPLETELY EMPTY.
-        ' We are no longer starting the load from here.
+        genre_panel.Visible = False
+        genre_panel.Dock = DockStyle.None
+        genre_panel.Width = 300
+        genre_panel.Left = -genre_panel.Width
+        genre_panel.Top = 0
+
+        btnToggleSidebar.Text = "⮞"
+        btn_Back.Left = -btn_Back.Width
     End Sub
+
+    Private Sub btnToggleSidebar_Click_1(sender As Object, e As EventArgs) Handles btnToggleSidebar.Click
+        If sidebarVisible Then
+            HideSidebar()
+        Else
+            ShowSidebar()
+        End If
+    End Sub
+
+    Private Sub ShowSidebar()
+        genre_panel.Visible = True
+        genre_panel.Left = 0
+        sidebarVisible = True
+        btnToggleSidebar.Text = "⮜"
+
+        ' Snap main content and toggle button to new positions
+        flow_main_book_panel.Left += 250
+        btnToggleSidebar.Left += 250
+    End Sub
+
+    Private Sub HideSidebar()
+        genre_panel.Left = -genre_panel.Width
+        genre_panel.Visible = False
+        sidebarVisible = False
+        btnToggleSidebar.Text = "⮞"
+
+        ' Snap elements back to original positions
+        flow_main_book_panel.Left -= 250
+        btnToggleSidebar.Left -= 250
+    End Sub
+
+
+
+
+
+
+
 
     Public Sub BeginLoading(ByVal parentForm As ILoadingContainer, Optional ByVal showLoading As Boolean = True)
         Me._parentContainer = parentForm
@@ -569,7 +619,7 @@ Public Class UC_HPS_catalouge_tab
         Await DisplayBookPage(clickedList.GenreTitle, 1)
         SetupLoadingState(False)
     End Sub
-    Private Async Sub btn_Back_Click(sender As Object, e As EventArgs) Handles btn_Back.Click
+    Private Async Sub btn_Back_Click(sender As Object, e As EventArgs)
         ' --- START NEW ---
         HighlightGenreButton("Show All")
         ' --- END NEW ---
@@ -707,6 +757,8 @@ Public Class UC_HPS_catalouge_tab
 
         Return mockList
     End Function
+
+
 
 #End Region
 
