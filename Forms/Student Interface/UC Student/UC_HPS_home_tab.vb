@@ -14,7 +14,28 @@ Public Class UC_HPS_home_tab
 
         ' Call the new dynamic method instead of AddTestAnnouncements
         LoadAnnouncements() '
+
+        ' --- EXAMPLE: Set an initial score ---
+        ' You can now call your new method here or from the parent form
+        SetCreditScore(75) ' Sets the progress bar to 75
+
     End Sub
+
+    ' --- NEW PUBLIC METHOD ---
+    ''' <summary>
+    ''' Updates the Credit Score progress bar with a new value.
+    ''' </summary>
+    ''' <param name="score">The credit score value (0-100).</param>
+    Public Sub SetCreditScore(ByVal score As Integer)
+        ' Ensure the score is within the 0-100 range
+        If score < 0 Then score = 0
+        If score > 100 Then score = 100
+
+        ' Update the progress bar's value
+        Guna2CircleProgressBar1.Value = score
+    End Sub
+    ' --- END OF NEW METHOD ---
+
 
     ' This method replaces the static AddTestAnnouncements
     Private Sub LoadAnnouncements()
