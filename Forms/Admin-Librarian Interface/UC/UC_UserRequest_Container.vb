@@ -3,6 +3,8 @@
 Public Class UC_UserRequest_Container
     Public Event InstanceClicked(selected As Object)
 
+    Public AccountID As Integer
+
     Private isSelected As Boolean = False
     Private currentStatus As String = "P"
 
