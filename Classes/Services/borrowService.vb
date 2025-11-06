@@ -123,7 +123,7 @@ Public Class BorrowService
                     .DateBorrowed = DateTime.Now,
                     .DateDue = DateTime.Now.AddDays(borrowDays), ' Was: DateTime.Now.AddDays(7)
                     .Fine = 0,
-                    .Status = "Active"
+                    .Status = "Pending"
                 }
 
                 transactionDAO.Create(newTransaction) ' Creates the new transaction record

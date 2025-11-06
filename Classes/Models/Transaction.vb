@@ -7,7 +7,7 @@
     Public Property DateDue As DateTime?
     Public Property DateReturned As DateTime?
     Public Property Fine As Decimal
-    Public Property Status As String ' "Active", "Completed", "Overdue"
+    Public Property Status As String ' "Pending", "Active", "Completed", "Overdue"
 
     Private Const BORROW_PERIOD_DAYS As Integer = 14
 
