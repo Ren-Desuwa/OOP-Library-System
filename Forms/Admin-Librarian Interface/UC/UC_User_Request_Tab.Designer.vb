@@ -40,7 +40,7 @@ Partial Class UC_User_Request_Tab
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(111, Byte), Integer), CType(CType(78, Byte), Integer), CType(CType(55, Byte), Integer))
         Me.Controls.Add(Me.Borrow_Container_FlowLayout)
-        Me.Margin = New System.Windows.Forms.Padding(10)
+        Me.Margin = New System.Windows.Forms.Padding(10, 2, 10, 10)
         Me.Name = "UC_User_Request_Tab"
         Me.Padding = New System.Windows.Forms.Padding(3)
         Me.Size = New System.Drawing.Size(695, 353)

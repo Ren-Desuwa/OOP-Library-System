@@ -28,8 +28,11 @@ Partial Class UC_Borrow_Container
         Me.BorrowDate_Lbl = New System.Windows.Forms.Label()
         Me.Borrower_Lbl = New System.Windows.Forms.Label()
         Me.BookName_Lbl = New System.Windows.Forms.Label()
+        Me.StatusPanel = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
+        Me.StatusLbl = New System.Windows.Forms.Label()
         Me.Guna2Panel1.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
+        Me.StatusPanel.SuspendLayout()
         Me.SuspendLayout()
         '
         'Guna2Panel1
@@ -47,15 +50,17 @@ Partial Class UC_Borrow_Container
         '
         Me.TableLayoutPanel1.BackColor = System.Drawing.Color.Tan
         Me.TableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Inset
-        Me.TableLayoutPanel1.ColumnCount = 4
+        Me.TableLayoutPanel1.ColumnCount = 5
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 47.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.DueDate_Lbl, 3, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.BorrowDate_Lbl, 2, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.Borrower_Lbl, 1, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.BookName_Lbl, 0, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.StatusPanel, 4, 0)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(3, 3)
         Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(10)
@@ -71,7 +76,7 @@ Partial Class UC_Borrow_Container
         Me.DueDate_Lbl.AutoSize = True
         Me.DueDate_Lbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DueDate_Lbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(111, Byte), Integer), CType(CType(78, Byte), Integer), CType(CType(55, Byte), Integer))
-        Me.DueDate_Lbl.Location = New System.Drawing.Point(518, 19)
+        Me.DueDate_Lbl.Location = New System.Drawing.Point(482, 19)
         Me.DueDate_Lbl.Name = "DueDate_Lbl"
         Me.DueDate_Lbl.Size = New System.Drawing.Size(90, 24)
         Me.DueDate_Lbl.TabIndex = 3
@@ -83,7 +88,7 @@ Partial Class UC_Borrow_Container
         Me.BorrowDate_Lbl.AutoSize = True
         Me.BorrowDate_Lbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BorrowDate_Lbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(111, Byte), Integer), CType(CType(78, Byte), Integer), CType(CType(55, Byte), Integer))
-        Me.BorrowDate_Lbl.Location = New System.Drawing.Point(347, 19)
+        Me.BorrowDate_Lbl.Location = New System.Drawing.Point(323, 19)
         Me.BorrowDate_Lbl.Name = "BorrowDate_Lbl"
         Me.BorrowDate_Lbl.Size = New System.Drawing.Size(118, 24)
         Me.BorrowDate_Lbl.TabIndex = 2
@@ -95,7 +100,7 @@ Partial Class UC_Borrow_Container
         Me.Borrower_Lbl.AutoSize = True
         Me.Borrower_Lbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Borrower_Lbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(111, Byte), Integer), CType(CType(78, Byte), Integer), CType(CType(55, Byte), Integer))
-        Me.Borrower_Lbl.Location = New System.Drawing.Point(176, 19)
+        Me.Borrower_Lbl.Location = New System.Drawing.Point(164, 19)
         Me.Borrower_Lbl.Name = "Borrower_Lbl"
         Me.Borrower_Lbl.Size = New System.Drawing.Size(95, 24)
         Me.Borrower_Lbl.TabIndex = 1
@@ -113,6 +118,34 @@ Partial Class UC_Borrow_Container
         Me.BookName_Lbl.TabIndex = 0
         Me.BookName_Lbl.Text = "BookName"
         '
+        'StatusPanel
+        '
+        Me.StatusPanel.Controls.Add(Me.StatusLbl)
+        Me.StatusPanel.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.StatusPanel.FillColor = System.Drawing.Color.LightSeaGreen
+        Me.StatusPanel.FillColor2 = System.Drawing.Color.LightSkyBlue
+        Me.StatusPanel.FillColor3 = System.Drawing.Color.WhiteSmoke
+        Me.StatusPanel.FillColor4 = System.Drawing.Color.DeepSkyBlue
+        Me.StatusPanel.Location = New System.Drawing.Point(638, 2)
+        Me.StatusPanel.Margin = New System.Windows.Forms.Padding(0)
+        Me.StatusPanel.Name = "StatusPanel"
+        Me.StatusPanel.Size = New System.Drawing.Size(49, 59)
+        Me.StatusPanel.TabIndex = 4
+        '
+        'StatusLbl
+        '
+        Me.StatusLbl.AutoSize = True
+        Me.StatusLbl.BackColor = System.Drawing.Color.Transparent
+        Me.StatusLbl.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.StatusLbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.StatusLbl.ForeColor = System.Drawing.Color.White
+        Me.StatusLbl.Location = New System.Drawing.Point(0, 0)
+        Me.StatusLbl.Margin = New System.Windows.Forms.Padding(0)
+        Me.StatusLbl.Name = "StatusLbl"
+        Me.StatusLbl.Size = New System.Drawing.Size(23, 24)
+        Me.StatusLbl.TabIndex = 4
+        Me.StatusLbl.Text = "P"
+        '
         'UC_Borrow_Container
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -123,6 +156,8 @@ Partial Class UC_Borrow_Container
         Me.Guna2Panel1.ResumeLayout(False)
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TableLayoutPanel1.PerformLayout()
+        Me.StatusPanel.ResumeLayout(False)
+        Me.StatusPanel.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -133,4 +168,6 @@ Partial Class UC_Borrow_Container
     Friend WithEvents BookName_Lbl As Label
     Friend WithEvents DueDate_Lbl As Label
     Friend WithEvents BorrowDate_Lbl As Label
+    Friend WithEvents StatusPanel As Guna.UI2.WinForms.Guna2CustomGradientPanel
+    Friend WithEvents StatusLbl As Label
 End Class

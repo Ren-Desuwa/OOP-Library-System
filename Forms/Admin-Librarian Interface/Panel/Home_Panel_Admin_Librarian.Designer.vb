@@ -98,7 +98,7 @@ Partial Class Home_Panel_Admin_Librarian
         Me.btn_Logs.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(201, Byte), Integer), CType(CType(166, Byte), Integer))
         Me.btn_Logs.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(42, Byte), Integer))
         Me.btn_Logs.Location = New System.Drawing.Point(33, 256)
-        Me.btn_Logs.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btn_Logs.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_Logs.Name = "btn_Logs"
         Me.btn_Logs.Size = New System.Drawing.Size(135, 37)
         Me.btn_Logs.TabIndex = 29
@@ -124,7 +124,7 @@ Partial Class Home_Panel_Admin_Librarian
         Me.btn_User.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(201, Byte), Integer), CType(CType(166, Byte), Integer))
         Me.btn_User.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(42, Byte), Integer))
         Me.btn_User.Location = New System.Drawing.Point(33, 93)
-        Me.btn_User.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btn_User.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_User.Name = "btn_User"
         Me.btn_User.Size = New System.Drawing.Size(135, 37)
         Me.btn_User.TabIndex = 28
@@ -150,11 +150,11 @@ Partial Class Home_Panel_Admin_Librarian
         Me.btn_notification.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(201, Byte), Integer), CType(CType(166, Byte), Integer))
         Me.btn_notification.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(42, Byte), Integer))
         Me.btn_notification.Location = New System.Drawing.Point(33, 203)
-        Me.btn_notification.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btn_notification.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_notification.Name = "btn_notification"
         Me.btn_notification.Size = New System.Drawing.Size(135, 37)
         Me.btn_notification.TabIndex = 27
-        Me.btn_notification.Text = "Notification"
+        Me.btn_notification.Text = "Requests"
         '
         'btn_Librarian
         '
@@ -176,7 +176,7 @@ Partial Class Home_Panel_Admin_Librarian
         Me.btn_Librarian.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(201, Byte), Integer), CType(CType(166, Byte), Integer))
         Me.btn_Librarian.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(42, Byte), Integer))
         Me.btn_Librarian.Location = New System.Drawing.Point(33, 148)
-        Me.btn_Librarian.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btn_Librarian.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_Librarian.Name = "btn_Librarian"
         Me.btn_Librarian.Size = New System.Drawing.Size(135, 37)
         Me.btn_Librarian.TabIndex = 26
@@ -196,7 +196,7 @@ Partial Class Home_Panel_Admin_Librarian
         Me.btn_logout.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.btn_logout.ForeColor = System.Drawing.Color.Black
         Me.btn_logout.Location = New System.Drawing.Point(33, 500)
-        Me.btn_logout.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btn_logout.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_logout.Name = "btn_logout"
         Me.btn_logout.Size = New System.Drawing.Size(135, 37)
         Me.btn_logout.TabIndex = 23
@@ -222,7 +222,7 @@ Partial Class Home_Panel_Admin_Librarian
         Me.btn_Books.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(201, Byte), Integer), CType(CType(166, Byte), Integer))
         Me.btn_Books.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(42, Byte), Integer))
         Me.btn_Books.Location = New System.Drawing.Point(33, 39)
-        Me.btn_Books.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btn_Books.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_Books.Name = "btn_Books"
         Me.btn_Books.Size = New System.Drawing.Size(135, 37)
         Me.btn_Books.TabIndex = 18
@@ -245,7 +245,7 @@ Partial Class Home_Panel_Admin_Librarian
         Me.pnl_UC_container.FillColor3 = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(201, Byte), Integer), CType(CType(166, Byte), Integer))
         Me.pnl_UC_container.FillColor4 = System.Drawing.Color.FromArgb(CType(CType(198, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(143, Byte), Integer))
         Me.pnl_UC_container.Location = New System.Drawing.Point(0, 52)
-        Me.pnl_UC_container.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.pnl_UC_container.Margin = New System.Windows.Forms.Padding(2)
         Me.pnl_UC_container.Name = "pnl_UC_container"
         Me.pnl_UC_container.Size = New System.Drawing.Size(756, 559)
         Me.pnl_UC_container.TabIndex = 6
@@ -267,7 +267,7 @@ Partial Class Home_Panel_Admin_Librarian
         Me.UC_HPAL_Book_Tab1.BackgroundImage = CType(resources.GetObject("UC_HPAL_Book_Tab1.BackgroundImage"), System.Drawing.Image)
         Me.UC_HPAL_Book_Tab1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.UC_HPAL_Book_Tab1.Location = New System.Drawing.Point(0, 0)
-        Me.UC_HPAL_Book_Tab1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.UC_HPAL_Book_Tab1.Margin = New System.Windows.Forms.Padding(2)
         Me.UC_HPAL_Book_Tab1.Name = "UC_HPAL_Book_Tab1"
         Me.UC_HPAL_Book_Tab1.Size = New System.Drawing.Size(756, 559)
         Me.UC_HPAL_Book_Tab1.TabIndex = 0
@@ -336,7 +336,7 @@ Partial Class Home_Panel_Admin_Librarian
         Me.TableLayoutPanel1.Controls.Add(Me.lbl_username, 2, 0)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 0)
-        Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(2)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
@@ -354,7 +354,7 @@ Partial Class Home_Panel_Admin_Librarian
         Me.btn_profile.ImageLocation = ""
         Me.btn_profile.ImageRotate = 0!
         Me.btn_profile.Location = New System.Drawing.Point(74, 2)
-        Me.btn_profile.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btn_profile.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_profile.Name = "btn_profile"
         Me.btn_profile.Size = New System.Drawing.Size(70, 48)
         Me.btn_profile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -373,7 +373,7 @@ Partial Class Home_Panel_Admin_Librarian
         Me.Guna2PictureBox1.ImageLocation = ""
         Me.Guna2PictureBox1.ImageRotate = 0!
         Me.Guna2PictureBox1.Location = New System.Drawing.Point(2, 2)
-        Me.Guna2PictureBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Guna2PictureBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
         Me.Guna2PictureBox1.Size = New System.Drawing.Size(68, 48)
         Me.Guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -422,7 +422,7 @@ Partial Class Home_Panel_Admin_Librarian
         Me.title_panel.FillColor3 = System.Drawing.Color.FromArgb(CType(CType(154, Byte), Integer), CType(CType(111, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.title_panel.FillColor4 = System.Drawing.Color.FromArgb(CType(CType(139, Byte), Integer), CType(CType(103, Byte), Integer), CType(CType(67, Byte), Integer))
         Me.title_panel.Location = New System.Drawing.Point(0, 0)
-        Me.title_panel.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.title_panel.Margin = New System.Windows.Forms.Padding(2)
         Me.title_panel.Name = "title_panel"
         Me.title_panel.Size = New System.Drawing.Size(950, 52)
         Me.title_panel.TabIndex = 5
@@ -439,7 +439,7 @@ Partial Class Home_Panel_Admin_Librarian
         Me.Guna2ControlBox2.ForeColor = System.Drawing.Color.Brown
         Me.Guna2ControlBox2.IconColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(232, Byte), Integer))
         Me.Guna2ControlBox2.Location = New System.Drawing.Point(816, -13)
-        Me.Guna2ControlBox2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Guna2ControlBox2.Margin = New System.Windows.Forms.Padding(2)
         Me.Guna2ControlBox2.Name = "Guna2ControlBox2"
         Me.Guna2ControlBox2.Size = New System.Drawing.Size(42, 65)
         Me.Guna2ControlBox2.TabIndex = 16
@@ -454,7 +454,7 @@ Partial Class Home_Panel_Admin_Librarian
         Me.Guna2ControlBox1.ForeColor = System.Drawing.Color.Black
         Me.Guna2ControlBox1.IconColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(232, Byte), Integer))
         Me.Guna2ControlBox1.Location = New System.Drawing.Point(900, 0)
-        Me.Guna2ControlBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Guna2ControlBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.Guna2ControlBox1.Name = "Guna2ControlBox1"
         Me.Guna2ControlBox1.Size = New System.Drawing.Size(48, 52)
         Me.Guna2ControlBox1.TabIndex = 13
@@ -471,7 +471,7 @@ Partial Class Home_Panel_Admin_Librarian
         Me.Guna2ControlBox3.ForeColor = System.Drawing.Color.Brown
         Me.Guna2ControlBox3.IconColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(232, Byte), Integer))
         Me.Guna2ControlBox3.Location = New System.Drawing.Point(858, 0)
-        Me.Guna2ControlBox3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Guna2ControlBox3.Margin = New System.Windows.Forms.Padding(2)
         Me.Guna2ControlBox3.Name = "Guna2ControlBox3"
         Me.Guna2ControlBox3.Size = New System.Drawing.Size(44, 52)
         Me.Guna2ControlBox3.TabIndex = 15
@@ -485,7 +485,7 @@ Partial Class Home_Panel_Admin_Librarian
         Me.Controls.Add(Me.Guna2CustomGradientPanel3)
         Me.Controls.Add(Me.pnl_UC_container)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "Home_Panel_Admin_Librarian"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Home_Panel_Admin_"
