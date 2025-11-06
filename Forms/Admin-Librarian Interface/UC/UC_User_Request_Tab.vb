@@ -48,31 +48,13 @@
     ' === Approve/Reject ===
     Public Sub ApproveSelected()
         If selectedItem IsNot Nothing Then
-            If selectedItem.CurrentStatus = "A" OrElse selectedItem.CurrentStatus = "R" Then
-                MessageBox.Show("This request has already been processed.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                Return
-            End If
-
-            If MessageBox.Show("Are you sure you want to approve this request?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
-                selectedItem.UpdateStatus("A")
-                selectedItem.SetSelected(False)
-                selectedItem = Nothing
-            End If
+            selectedItem.UpdateStatus("A")
         End If
     End Sub
 
     Public Sub RejectSelected()
         If selectedItem IsNot Nothing Then
-            If selectedItem.CurrentStatus = "A" OrElse selectedItem.CurrentStatus = "R" Then
-                MessageBox.Show("This request has already been processed.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                Return
-            End If
-
-            If MessageBox.Show("Are you sure you want to reject this request?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
-                selectedItem.UpdateStatus("R")
-                selectedItem.SetSelected(False)
-                selectedItem = Nothing
-            End If
+            selectedItem.UpdateStatus("R")
         End If
     End Sub
 
