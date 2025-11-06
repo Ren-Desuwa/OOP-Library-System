@@ -224,6 +224,7 @@ Partial Class UC_HPS_home_tab
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.AntiqueWhite
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.Controls.Add(Me.Guna2GradientPanel1)
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "UC_HPS_home_tab"

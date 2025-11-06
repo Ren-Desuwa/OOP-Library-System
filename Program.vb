@@ -11,6 +11,7 @@ Public Module Program
     Public ReadOnly NotifSvc As NotificationService
     Public ReadOnly CartSvc As New CartService()
     Public ReadOnly BorrowSvc As BorrowService
+    Public ReadOnly PenaltySvc As PenaltyService
     ' ... other services ...
 
     ' --- Static Constructor (Runs ONCE) ---
@@ -26,6 +27,7 @@ Public Module Program
             NotifSvc = New NotificationService()
             AuthSvc = New AuthService(mainDbConnection, OtpSvc, NotifSvc)
             BorrowSvc = New BorrowService(mainDbConnection)
+            PenaltySvc = New PenaltyService(mainDbConnection)
 
         Catch ex As Exception
             ' If this fails, the app can't run
