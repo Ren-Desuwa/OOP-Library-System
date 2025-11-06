@@ -23,15 +23,15 @@ Partial Class UC_HPAL_Request_Tab
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
-        Me.RejectBtn = New Guna.UI2.WinForms.Guna2GradientTileButton()
         Me.ApproveBtn = New Guna.UI2.WinForms.Guna2GradientTileButton()
+        Me.RejectBtn = New Guna.UI2.WinForms.Guna2GradientTileButton()
         Me.RequestsPanels = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.BorrowReqBtn = New Guna.UI2.WinForms.Guna2GradientTileButton()
         Me.UserReqBtn = New Guna.UI2.WinForms.Guna2GradientTileButton()
-        Me.Guna2CustomGradientPanel1 = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
+        Me.BorrowReqBtn = New Guna.UI2.WinForms.Guna2GradientTileButton()
+        Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         Me.RequestsTitle = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2CustomGradientPanel1 = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
         Me.TableLayoutPanel2.SuspendLayout()
         Me.RequestsPanels.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
@@ -56,26 +56,6 @@ Partial Class UC_HPAL_Request_Tab
         Me.TableLayoutPanel2.Size = New System.Drawing.Size(756, 57)
         Me.TableLayoutPanel2.TabIndex = 0
         '
-        'RejectBtn
-        '
-        Me.RejectBtn.CustomBorderColor = System.Drawing.Color.Maroon
-        Me.RejectBtn.CustomBorderThickness = New System.Windows.Forms.Padding(2)
-        Me.RejectBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.RejectBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.RejectBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.RejectBtn.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.RejectBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.RejectBtn.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.RejectBtn.FillColor = System.Drawing.Color.Tomato
-        Me.RejectBtn.FillColor2 = System.Drawing.Color.Firebrick
-        Me.RejectBtn.Font = New System.Drawing.Font("Yu Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RejectBtn.ForeColor = System.Drawing.Color.White
-        Me.RejectBtn.Location = New System.Drawing.Point(381, 3)
-        Me.RejectBtn.Name = "RejectBtn"
-        Me.RejectBtn.Size = New System.Drawing.Size(372, 51)
-        Me.RejectBtn.TabIndex = 1
-        Me.RejectBtn.Text = "Reject"
-        '
         'ApproveBtn
         '
         Me.ApproveBtn.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
@@ -95,6 +75,26 @@ Partial Class UC_HPAL_Request_Tab
         Me.ApproveBtn.Size = New System.Drawing.Size(372, 51)
         Me.ApproveBtn.TabIndex = 0
         Me.ApproveBtn.Text = "Approve"
+        '
+        'RejectBtn
+        '
+        Me.RejectBtn.CustomBorderColor = System.Drawing.Color.Maroon
+        Me.RejectBtn.CustomBorderThickness = New System.Windows.Forms.Padding(2)
+        Me.RejectBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.RejectBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.RejectBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.RejectBtn.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.RejectBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.RejectBtn.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.RejectBtn.FillColor = System.Drawing.Color.Tomato
+        Me.RejectBtn.FillColor2 = System.Drawing.Color.Firebrick
+        Me.RejectBtn.Font = New System.Drawing.Font("Yu Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RejectBtn.ForeColor = System.Drawing.Color.White
+        Me.RejectBtn.Location = New System.Drawing.Point(381, 3)
+        Me.RejectBtn.Name = "RejectBtn"
+        Me.RejectBtn.Size = New System.Drawing.Size(372, 51)
+        Me.RejectBtn.TabIndex = 1
+        Me.RejectBtn.Text = "Reject"
         '
         'RequestsPanels
         '
@@ -131,39 +131,6 @@ Partial Class UC_HPAL_Request_Tab
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(756, 27)
         Me.TableLayoutPanel1.TabIndex = 1
         '
-        'Guna2Panel1
-        '
-        Me.Guna2Panel1.Controls.Add(Me.BorrowReqBtn)
-        Me.Guna2Panel1.Controls.Add(Me.UserReqBtn)
-        Me.Guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Guna2Panel1.Location = New System.Drawing.Point(378, 0)
-        Me.Guna2Panel1.Margin = New System.Windows.Forms.Padding(0)
-        Me.Guna2Panel1.Name = "Guna2Panel1"
-        Me.Guna2Panel1.Size = New System.Drawing.Size(378, 27)
-        Me.Guna2Panel1.TabIndex = 4
-        '
-        'BorrowReqBtn
-        '
-        Me.BorrowReqBtn.Anchor = System.Windows.Forms.AnchorStyles.Right
-        Me.BorrowReqBtn.BackColor = System.Drawing.Color.Tan
-        Me.BorrowReqBtn.BorderRadius = 15
-        Me.BorrowReqBtn.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.BorrowReqBtn.CustomBorderThickness = New System.Windows.Forms.Padding(2)
-        Me.BorrowReqBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.BorrowReqBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.BorrowReqBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.BorrowReqBtn.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.BorrowReqBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.BorrowReqBtn.FillColor = System.Drawing.Color.LimeGreen
-        Me.BorrowReqBtn.FillColor2 = System.Drawing.Color.Green
-        Me.BorrowReqBtn.Font = New System.Drawing.Font("Yu Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BorrowReqBtn.ForeColor = System.Drawing.Color.White
-        Me.BorrowReqBtn.Location = New System.Drawing.Point(157, 1)
-        Me.BorrowReqBtn.Name = "BorrowReqBtn"
-        Me.BorrowReqBtn.Size = New System.Drawing.Size(222, 26)
-        Me.BorrowReqBtn.TabIndex = 3
-        Me.BorrowReqBtn.Text = "Go To Borrow Requests"
-        '
         'UserReqBtn
         '
         Me.UserReqBtn.Anchor = System.Windows.Forms.AnchorStyles.Right
@@ -187,6 +154,51 @@ Partial Class UC_HPAL_Request_Tab
         Me.UserReqBtn.TabIndex = 2
         Me.UserReqBtn.Text = "Go to User Requests"
         '
+        'BorrowReqBtn
+        '
+        Me.BorrowReqBtn.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.BorrowReqBtn.BackColor = System.Drawing.Color.Tan
+        Me.BorrowReqBtn.BorderRadius = 15
+        Me.BorrowReqBtn.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.BorrowReqBtn.CustomBorderThickness = New System.Windows.Forms.Padding(2)
+        Me.BorrowReqBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.BorrowReqBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.BorrowReqBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.BorrowReqBtn.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.BorrowReqBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.BorrowReqBtn.FillColor = System.Drawing.Color.LimeGreen
+        Me.BorrowReqBtn.FillColor2 = System.Drawing.Color.Green
+        Me.BorrowReqBtn.Font = New System.Drawing.Font("Yu Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BorrowReqBtn.ForeColor = System.Drawing.Color.White
+        Me.BorrowReqBtn.Location = New System.Drawing.Point(157, 1)
+        Me.BorrowReqBtn.Name = "BorrowReqBtn"
+        Me.BorrowReqBtn.Size = New System.Drawing.Size(222, 26)
+        Me.BorrowReqBtn.TabIndex = 3
+        Me.BorrowReqBtn.Text = "Go To Borrow Requests"
+        '
+        'Guna2Panel1
+        '
+        Me.Guna2Panel1.Controls.Add(Me.BorrowReqBtn)
+        Me.Guna2Panel1.Controls.Add(Me.UserReqBtn)
+        Me.Guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Guna2Panel1.Location = New System.Drawing.Point(378, 0)
+        Me.Guna2Panel1.Margin = New System.Windows.Forms.Padding(0)
+        Me.Guna2Panel1.Name = "Guna2Panel1"
+        Me.Guna2Panel1.Size = New System.Drawing.Size(378, 27)
+        Me.Guna2Panel1.TabIndex = 4
+        '
+        'RequestsTitle
+        '
+        Me.RequestsTitle.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.RequestsTitle.BackColor = System.Drawing.Color.Transparent
+        Me.RequestsTitle.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RequestsTitle.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.RequestsTitle.Location = New System.Drawing.Point(27, -1)
+        Me.RequestsTitle.Name = "RequestsTitle"
+        Me.RequestsTitle.Size = New System.Drawing.Size(136, 27)
+        Me.RequestsTitle.TabIndex = 2
+        Me.RequestsTitle.Text = "Requests Title"
+        '
         'Guna2CustomGradientPanel1
         '
         Me.Guna2CustomGradientPanel1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(111, Byte), Integer), CType(CType(78, Byte), Integer), CType(CType(55, Byte), Integer))
@@ -204,18 +216,6 @@ Partial Class UC_HPAL_Request_Tab
         Me.Guna2CustomGradientPanel1.Name = "Guna2CustomGradientPanel1"
         Me.Guna2CustomGradientPanel1.Size = New System.Drawing.Size(378, 27)
         Me.Guna2CustomGradientPanel1.TabIndex = 5
-        '
-        'RequestsTitle
-        '
-        Me.RequestsTitle.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.RequestsTitle.BackColor = System.Drawing.Color.Transparent
-        Me.RequestsTitle.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RequestsTitle.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.RequestsTitle.Location = New System.Drawing.Point(27, -1)
-        Me.RequestsTitle.Name = "RequestsTitle"
-        Me.RequestsTitle.Size = New System.Drawing.Size(167, 27)
-        Me.RequestsTitle.TabIndex = 2
-        Me.RequestsTitle.Text = "Borrow Requests"
         '
         'UC_HPAL_Request_Tab
         '

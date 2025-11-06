@@ -1,5 +1,5 @@
 ﻿Public Class UC_User_Request_Tab
-    Private selectedItem As UC_UserRequest_Container = Nothing
+    Private selectedItem As UC_User_Container = Nothing
 
     Private Sub UC_User_Request_Tab_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Borrow_Container_FlowLayout.Dock = DockStyle.Fill
@@ -10,7 +10,7 @@
 
         ' Add sample items
         For i As Integer = 1 To 5
-            Dim userItem As New UC_UserRequest_Container()
+            Dim userItem As New UC_User_Container()
             userItem.Margin = New Padding(5)
             userItem.Height = 100
             userItem.Width = Borrow_Container_FlowLayout.ClientSize.Width - 20
@@ -24,7 +24,7 @@
 
     Private Sub OnInstanceClicked(selected As Object)
         If selectedItem IsNot Nothing Then selectedItem.SetSelected(False)
-        selectedItem = CType(selected, UC_UserRequest_Container)
+        selectedItem = CType(selected, UC_User_Container)
         selectedItem.SetSelected(True)
     End Sub
 
