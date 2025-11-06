@@ -63,11 +63,22 @@ Public Class BorrowService
     ''' This is the inventory-aware replacement for the old simplified borrowing.
     ''' It validates availability, updates BookCopy status, and creates a Transaction record.
     ''' </summary>
-    Public Sub ProcessBorrowing(accountId As Integer, booksToBorrow As List(Of Book))
+    ' --- SIGNATURE MODIFIED: Added borrowDays parameter ---
+    Public Sub ProcessBorrowing(accountId As Integer, booksToBorrow As List(Of Book), borrowDays As Integer)
         ' 1. Business Logic Validation
         If booksToBorrow Is Nothing OrElse booksToBorrow.Count = 0 Then
             Throw New ArgumentException("No books provided for borrowing.")
         End If
+
+        ' --- NEW: Validate borrowDays ---
+        If borrowDays <= 0 Then
+            Throw New ArgumentException("Borrowing duration must be at least 1 day.")
+        End If
+        If borrowDays > 30 Then
+            ' You can change this business rule (e.g., 14 days)
+            Throw New ArgumentException("You cannot borrow a book for more than 30 days.")
+        End If
+        ' --- END NEW ---
 
         ' 2. Transaction Management
         If Not _dbCon.OpenConnection() Then Throw New Exception("Could not connect to the database.")
@@ -110,7 +121,7 @@ Public Class BorrowService
                     .CopyID = availableCopy.CopyID,
                     .TransactionType = "Borrow",
                     .DateBorrowed = DateTime.Now,
-                    .DateDue = DateTime.Now.AddDays(7), ' 7-day period as per BeforeApproval.vb's original logic
+                    .DateDue = DateTime.Now.AddDays(borrowDays), ' Was: DateTime.Now.AddDays(7)
                     .Fine = 0,
                     .Status = "Active"
                 }
