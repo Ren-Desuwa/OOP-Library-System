@@ -56,6 +56,7 @@ Public Class UserProfile
 
         ' --- 3. NEW LOGIC: Load the new Displayed Books control ---
         LoadDisplayedBooks()
+        UpdateProfileDetails(_account)
 
     End Sub
 
@@ -78,6 +79,57 @@ Public Class UserProfile
         Display_Book_container.Controls.Add(profileDisplayUC)
         profileDisplayUC.BringToFront()
     End Sub
+
+
+
+
+    ''' <summary>
+    ''' Populates all labels and progress bars with the current account's details.
+    ''' 
+    ''' TRY KO LNG LAGYAN NG FUNCTION KASO WALA PA SYA PARA SA EDIT PROFILE
+    '''
+    ''' </summary>
+    Public Sub UpdateProfileDetails(account As Account)
+        If account Is Nothing Then
+            MessageBox.Show("Error: No account information available.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End If
+
+        ' --- Basic Info ---
+        lbl_username.Text = account.Username
+        lbl_fullname.Text = account.Name
+        lbl_email.Text = If(Not String.IsNullOrWhiteSpace(account.Email), account.Email, "N/A")
+
+        ' --- Birthday and Age ---
+        If account.Birthday.HasValue Then
+            lbl_birthdate.Text = account.Birthday.Value.ToString("MMMM dd, yyyy")
+            Dim today As Date = Date.Today
+            Dim age As Integer = today.Year - account.Birthday.Value.Year
+            If account.Birthday.Value.Date > today.AddYears(-age) Then
+                age -= 1
+            End If
+            lbl_age.Text = age.ToString()
+        Else
+            lbl_birthdate.Text = "N/A"
+            lbl_age.Text = "N/A"
+        End If
+
+        ' --- Credit Score (fetch from AccountService) ---
+        'Try
+        'Dim creditScore As Integer = Program.AccountSvc.GetCreditScore(account.AccountID)
+        'Guna2ProgressBar_CreditsPoints.Value = Math.Max(0, Math.Min(100, creditScore)) ' Clamp between 0-100
+        'Catch ex As Exception
+        ' Guna2ProgressBar_CreditsPoints.Value = 0
+        ' End Try
+
+        ' --- Refresh displayed books ---
+        LoadDisplayedBooks()
+    End Sub
+
+
+
+
+
 
     ' --- (Your original event handlers) ---
 
@@ -187,4 +239,7 @@ Public Class UserProfile
         Me.Close()
     End Sub
 
+    Private Sub TableLayoutPanel2_Paint(sender As Object, e As PaintEventArgs) Handles TableLayoutPanel2.Paint
+
+    End Sub
 End Class
