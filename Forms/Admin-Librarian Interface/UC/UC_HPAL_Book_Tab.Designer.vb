@@ -43,8 +43,9 @@ Partial Class UC_HPAL_Book_Tab
         Me.flow_panel_container.AutoScroll = True
         Me.flow_panel_container.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
         Me.flow_panel_container.Location = New System.Drawing.Point(0, 0)
+        Me.flow_panel_container.Margin = New System.Windows.Forms.Padding(2)
         Me.flow_panel_container.Name = "flow_panel_container"
-        Me.flow_panel_container.Size = New System.Drawing.Size(696, 448)
+        Me.flow_panel_container.Size = New System.Drawing.Size(522, 364)
         Me.flow_panel_container.TabIndex = 0
         Me.flow_panel_container.WrapContents = False
         '
@@ -59,10 +60,11 @@ Partial Class UC_HPAL_Book_Tab
         Me.btn_Editbook.FillColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(42, Byte), Integer))
         Me.btn_Editbook.Font = New System.Drawing.Font("Segoe UI", 10.8!, System.Drawing.FontStyle.Bold)
         Me.btn_Editbook.ForeColor = System.Drawing.Color.White
-        Me.btn_Editbook.Location = New System.Drawing.Point(554, 3)
-        Me.btn_Editbook.MaximumSize = New System.Drawing.Size(184, 52)
+        Me.btn_Editbook.Location = New System.Drawing.Point(415, 2)
+        Me.btn_Editbook.Margin = New System.Windows.Forms.Padding(2)
+        Me.btn_Editbook.MaximumSize = New System.Drawing.Size(138, 42)
         Me.btn_Editbook.Name = "btn_Editbook"
-        Me.btn_Editbook.Size = New System.Drawing.Size(107, 52)
+        Me.btn_Editbook.Size = New System.Drawing.Size(81, 42)
         Me.btn_Editbook.TabIndex = 5
         Me.btn_Editbook.Text = "Edit"
         '
@@ -77,10 +79,11 @@ Partial Class UC_HPAL_Book_Tab
         Me.btn_Addbooks.FillColor = System.Drawing.Color.White
         Me.btn_Addbooks.Font = New System.Drawing.Font("Segoe UI", 10.8!, System.Drawing.FontStyle.Bold)
         Me.btn_Addbooks.ForeColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(42, Byte), Integer))
-        Me.btn_Addbooks.Location = New System.Drawing.Point(443, 3)
-        Me.btn_Addbooks.MaximumSize = New System.Drawing.Size(184, 52)
+        Me.btn_Addbooks.Location = New System.Drawing.Point(332, 2)
+        Me.btn_Addbooks.Margin = New System.Windows.Forms.Padding(2)
+        Me.btn_Addbooks.MaximumSize = New System.Drawing.Size(138, 42)
         Me.btn_Addbooks.Name = "btn_Addbooks"
-        Me.btn_Addbooks.Size = New System.Drawing.Size(105, 52)
+        Me.btn_Addbooks.Size = New System.Drawing.Size(79, 42)
         Me.btn_Addbooks.TabIndex = 4
         Me.btn_Addbooks.Text = "Add"
         '
@@ -91,10 +94,11 @@ Partial Class UC_HPAL_Book_Tab
         Me.lbl_allbookcount.Dock = System.Windows.Forms.DockStyle.Fill
         Me.lbl_allbookcount.Font = New System.Drawing.Font("Segoe UI", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_allbookcount.ForeColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(42, Byte), Integer))
-        Me.lbl_allbookcount.Location = New System.Drawing.Point(3, 0)
-        Me.lbl_allbookcount.MaximumSize = New System.Drawing.Size(432, 56)
+        Me.lbl_allbookcount.Location = New System.Drawing.Point(2, 0)
+        Me.lbl_allbookcount.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lbl_allbookcount.MaximumSize = New System.Drawing.Size(324, 46)
         Me.lbl_allbookcount.Name = "lbl_allbookcount"
-        Me.lbl_allbookcount.Size = New System.Drawing.Size(186, 56)
+        Me.lbl_allbookcount.Size = New System.Drawing.Size(140, 46)
         Me.lbl_allbookcount.TabIndex = 6
         Me.lbl_allbookcount.Text = "Number of Books:"
         Me.lbl_allbookcount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -112,11 +116,12 @@ Partial Class UC_HPAL_Book_Tab
         Me.TableLayoutPanel1.Controls.Add(Me.lbl_allbookcount, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.btn_Editbook, 3, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.btn_Addbooks, 2, 0)
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 464)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 377)
+        Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(2)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(664, 64)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(498, 52)
         Me.TableLayoutPanel1.TabIndex = 7
         '
         'TableLayoutPanel2
@@ -129,13 +134,13 @@ Partial Class UC_HPAL_Book_Tab
         Me.TableLayoutPanel2.Controls.Add(Me.btn_next, 2, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.lbl_PageInfo, 1, 0)
         Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel2.Location = New System.Drawing.Point(195, 2)
-        Me.TableLayoutPanel2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.TableLayoutPanel2.MaximumSize = New System.Drawing.Size(488, 57)
+        Me.TableLayoutPanel2.Location = New System.Drawing.Point(146, 2)
+        Me.TableLayoutPanel2.Margin = New System.Windows.Forms.Padding(2)
+        Me.TableLayoutPanel2.MaximumSize = New System.Drawing.Size(366, 46)
         Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
         Me.TableLayoutPanel2.RowCount = 1
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel2.Size = New System.Drawing.Size(242, 57)
+        Me.TableLayoutPanel2.Size = New System.Drawing.Size(182, 46)
         Me.TableLayoutPanel2.TabIndex = 15
         '
         'btn_previous
@@ -149,10 +154,11 @@ Partial Class UC_HPAL_Book_Tab
         Me.btn_previous.FillColor = System.Drawing.Color.Wheat
         Me.btn_previous.Font = New System.Drawing.Font("Segoe UI", 10.8!, System.Drawing.FontStyle.Bold)
         Me.btn_previous.ForeColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(42, Byte), Integer))
-        Me.btn_previous.Location = New System.Drawing.Point(3, 3)
-        Me.btn_previous.MaximumSize = New System.Drawing.Size(184, 52)
+        Me.btn_previous.Location = New System.Drawing.Point(2, 2)
+        Me.btn_previous.Margin = New System.Windows.Forms.Padding(2)
+        Me.btn_previous.MaximumSize = New System.Drawing.Size(138, 42)
         Me.btn_previous.Name = "btn_previous"
-        Me.btn_previous.Size = New System.Drawing.Size(74, 51)
+        Me.btn_previous.Size = New System.Drawing.Size(56, 42)
         Me.btn_previous.TabIndex = 15
         Me.btn_previous.Text = "Previous"
         '
@@ -167,10 +173,11 @@ Partial Class UC_HPAL_Book_Tab
         Me.btn_next.FillColor = System.Drawing.Color.Wheat
         Me.btn_next.Font = New System.Drawing.Font("Segoe UI", 10.8!, System.Drawing.FontStyle.Bold)
         Me.btn_next.ForeColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(42, Byte), Integer))
-        Me.btn_next.Location = New System.Drawing.Point(163, 3)
-        Me.btn_next.MaximumSize = New System.Drawing.Size(184, 52)
+        Me.btn_next.Location = New System.Drawing.Point(122, 2)
+        Me.btn_next.Margin = New System.Windows.Forms.Padding(2)
+        Me.btn_next.MaximumSize = New System.Drawing.Size(138, 42)
         Me.btn_next.Name = "btn_next"
-        Me.btn_next.Size = New System.Drawing.Size(76, 51)
+        Me.btn_next.Size = New System.Drawing.Size(58, 42)
         Me.btn_next.TabIndex = 14
         Me.btn_next.Text = "Next"
         '
@@ -183,25 +190,27 @@ Partial Class UC_HPAL_Book_Tab
         Me.lbl_PageInfo.BackColor = System.Drawing.Color.Transparent
         Me.lbl_PageInfo.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_PageInfo.ForeColor = System.Drawing.Color.Black
-        Me.lbl_PageInfo.Location = New System.Drawing.Point(83, 0)
-        Me.lbl_PageInfo.MaximumSize = New System.Drawing.Size(156, 57)
+        Me.lbl_PageInfo.Location = New System.Drawing.Point(62, 0)
+        Me.lbl_PageInfo.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lbl_PageInfo.MaximumSize = New System.Drawing.Size(117, 46)
         Me.lbl_PageInfo.Name = "lbl_PageInfo"
-        Me.lbl_PageInfo.Size = New System.Drawing.Size(74, 57)
+        Me.lbl_PageInfo.Size = New System.Drawing.Size(56, 46)
         Me.lbl_PageInfo.TabIndex = 13
         Me.lbl_PageInfo.Text = "Page"
         Me.lbl_PageInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'UC_HPAL_Book_Tab
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Transparent
         Me.BackgroundImage = Global.OOP_Library_System.My.Resources.Resources.titi_ni_ren_baluktot_nakita_ko
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Controls.Add(Me.flow_panel_container)
         Me.DoubleBuffered = True
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "UC_HPAL_Book_Tab"
-        Me.Size = New System.Drawing.Size(1008, 688)
+        Me.Size = New System.Drawing.Size(756, 559)
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TableLayoutPanel2.ResumeLayout(False)
         Me.TableLayoutPanel2.PerformLayout()
