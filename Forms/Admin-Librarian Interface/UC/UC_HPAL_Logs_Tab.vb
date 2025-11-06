@@ -18,7 +18,7 @@ Public Class UC_HPAL_Logs_Tab
         LoadLogsFromDatabase()
     End Sub
 
-    ' 🟩 Setup RichTextBox for Console Look
+    ' 🟩 Setup RichTextBox for Console Look (updated font)
     Private Sub SetupConsoleBox()
         With RichTextBoxLogs
             .Multiline = True
@@ -26,7 +26,7 @@ Public Class UC_HPAL_Logs_Tab
             .Dock = DockStyle.Fill
             .BackColor = Color.Bisque
             .ForeColor = Color.Black
-            .Font = New Font("Consolas", GetResponsiveFontSize(), FontStyle.Regular)
+            .Font = New Font("Consolas", GetResponsiveFontSize(), FontStyle.Regular) ' font is now bigger
             .BorderStyle = BorderStyle.None
             .ScrollBars = RichTextBoxScrollBars.Vertical
             .WordWrap = False
@@ -34,17 +34,17 @@ Public Class UC_HPAL_Logs_Tab
 
         ' 🟫 Add left/right padding inside RichTextBox
         SendMessage(RichTextBoxLogs.Handle, EM_SETMARGINS,
-                    CType(EC_LEFTMARGIN Or EC_RIGHTMARGIN, IntPtr),
-                    CType((20 << 16) Or 20, IntPtr)) ' Left=20px, Right=20px
+                CType(EC_LEFTMARGIN Or EC_RIGHTMARGIN, IntPtr),
+                CType((20 << 16) Or 20, IntPtr)) ' Left=20px, Right=20px
     End Sub
 
-    ' 🟨 Responsive Font Scaling
+    ' 🟨 Responsive Font Scaling (increased base font size)
     Private Function GetResponsiveFontSize() As Single
-        Dim baseSize As Single = 11
+        Dim baseSize As Single = 14 ' ↑ increased from 11 to 14 for bigger text
         Dim scaleFactor As Single = Me.Width / 900.0F
         Dim newSize As Single = baseSize * scaleFactor
-        If newSize < 9 Then newSize = 10
-        If newSize > 16 Then newSize = 20
+        If newSize < 12 Then newSize = 12
+        If newSize > 20 Then newSize = 24
         Return newSize
     End Function
 
@@ -149,6 +149,10 @@ Public Class UC_HPAL_Logs_Tab
     End Sub
 
     Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
+
+    End Sub
+
+    Private Sub RichTextBoxLogs_TextChanged_1(sender As Object, e As EventArgs) Handles RichTextBoxLogs.TextChanged
 
     End Sub
 End Class
