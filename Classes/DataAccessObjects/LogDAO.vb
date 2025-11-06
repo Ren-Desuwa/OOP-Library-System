@@ -28,7 +28,7 @@ Public Class LogDAO
     ' #################### CREATE ####################
     Public Function Create(log As Log) As Integer
         Dim sql = "INSERT INTO logs (account_id, action, timestamp, details, ip_address, severity) " &
-                  "VALUES (@AccountID, @Action, @Timestamp, @Details, @IPAddress, @Severity); " &
+                  "VALUES (@AccountID, @Action, @Timestamp, @Details, @IPAddress, @Severity);" &
                   "SELECT LAST_INSERT_ID();"
         Using cmd As New MySqlCommand(sql, _transaction.Connection, _transaction)
             cmd.Parameters.AddWithValue("@AccountID", If(log.AccountID.HasValue, CType(log.AccountID.Value, Object), DBNull.Value))
@@ -64,6 +64,47 @@ Public Class LogDAO
             End Using
         End Using
         Return list
+    End Function
+
+    ' #################### READ - Specialized for UI ####################
+    ''' <summary>
+    ''' Retrieves the last 100 logs with user details by joining 'logs' and 'accounts'.
+    ''' Returns a List(Of Object) with the necessary fields for the Admin UI display.
+    ''' </summary>
+    Public Function GetLatestLogsWithUserDetails() As List(Of Object)
+        Dim logsList As New List(Of Object)
+
+        Dim sql = "
+            SELECT 
+                logs.account_id,
+                accounts.username,
+                logs.action,
+                logs.details,
+                logs.severity,
+                logs.timestamp
+            FROM logs
+            INNER JOIN accounts ON logs.account_id = accounts.account_id
+            ORDER BY logs.timestamp DESC
+            LIMIT 100
+        "
+
+        Using cmd As New MySqlCommand(sql, _transaction.Connection, _transaction)
+            Using reader As MySqlDataReader = cmd.ExecuteReader()
+                While reader.Read()
+                    ' DAO performs the specific mapping logic
+                    logsList.Add(New With {
+                        .account_id = reader("account_id").ToString(),
+                        .username = reader("username").ToString(),
+                        .action = reader("action").ToString(),
+                        .details = reader("details").ToString(),
+                        .severity = reader("severity").ToString(),
+                        .timestamp = Convert.ToDateTime(reader("timestamp")).ToString("yyyy-MM-dd HH:mm:ss")
+                    })
+                End While
+            End Using
+        End Using
+
+        Return logsList
     End Function
 
     ' #################### UPDATE ####################

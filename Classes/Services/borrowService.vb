@@ -58,5 +58,77 @@ Public Class BorrowService
             _dbCon.CloseConnection()
         End Try
     End Function
+    ''' <summary>
+    ''' Performs the full transactional process for borrowing multiple books.
+    ''' This is the inventory-aware replacement for the old simplified borrowing.
+    ''' It validates availability, updates BookCopy status, and creates a Transaction record.
+    ''' </summary>
+    Public Sub ProcessBorrowing(accountId As Integer, booksToBorrow As List(Of Book))
+        ' 1. Business Logic Validation
+        If booksToBorrow Is Nothing OrElse booksToBorrow.Count = 0 Then
+            Throw New ArgumentException("No books provided for borrowing.")
+        End If
 
+        ' 2. Transaction Management
+        If Not _dbCon.OpenConnection() Then Throw New Exception("Could not connect to the database.")
+        Dim transaction As MySqlTransaction = _dbCon.GetConnection().BeginTransaction()
+
+        Try
+            ' Instantiate all necessary DAOs
+            Dim bookCopyDAO As New BookCopyDAO(transaction)
+            Dim transactionDAO As New TransactionDAO(transaction)
+            Dim bookDAO As New BookDAO(transaction)
+
+            For Each book As Book In booksToBorrow
+                ' A. RE-READ THE BOOK: Get the most accurate count within this transaction
+                Dim currentBook = bookDAO.GetById(book.BookID)
+
+                If currentBook Is Nothing Then
+                    Throw New Exception($"Book not found for ID: {book.BookID}.")
+                End If
+
+                ' B. INVENTORY CHECK (Business Logic)
+                If Not currentBook.IsAvailable() Then
+                    Throw New Exception($"Book '{currentBook.Title}' is currently not available for borrowing (0 copies left).")
+                End If
+
+                ' C. FIND AVAILABLE COPY (Delegation to DAO)
+                Dim availableCopy = bookCopyDAO.GetAvailableCopyByBookId(currentBook.BookID)
+
+                If availableCopy Is Nothing Then
+                    ' This is a safeguard against inconsistent inventory data
+                    Throw New Exception($"Could not find an available copy for book '{currentBook.Title}'. Inventory data inconsistent.")
+                End If
+
+                ' D. UPDATE BOOK COPY STATUS (Business Logic & Delegation to DAO)
+                availableCopy.UpdateStatus("Borrowed")
+                bookCopyDAO.Update(availableCopy) ' Updates the copy status to 'Borrowed'
+
+                ' E. CREATE NEW TRANSACTION (Business Logic & Delegation to DAO)
+                Dim newTransaction As New Transaction With {
+                    .AccountID = accountId,
+                    .CopyID = availableCopy.CopyID,
+                    .TransactionType = "Borrow",
+                    .DateBorrowed = DateTime.Now,
+                    .DateDue = DateTime.Now.AddDays(7), ' 7-day period as per BeforeApproval.vb's original logic
+                    .Fine = 0,
+                    .Status = "Active"
+                }
+
+                transactionDAO.Create(newTransaction) ' Creates the new transaction record
+            Next
+
+            ' 4. Commit on success (Transaction Management)
+            transaction.Commit()
+
+        Catch ex As Exception
+            ' 5. Rollback on failure (Transaction Management)
+            If transaction IsNot Nothing Then transaction.Rollback()
+            ' Re-throw the original error to the UI (e.g., if a book is unavailable)
+            Throw ex
+        Finally
+            ' 6. Close the connection
+            _dbCon.CloseConnection()
+        End Try
+    End Sub
 End Class

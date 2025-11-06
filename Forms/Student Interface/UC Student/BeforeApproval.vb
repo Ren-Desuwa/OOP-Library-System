@@ -1,5 +1,5 @@
 ﻿Imports System.Windows.Forms
-Imports MySql.Data.MySqlClient
+' Imports MySql.Data.MySqlClient <-- REMOVED
 
 Public Class BeforeApproval
 
@@ -10,8 +10,7 @@ Public Class BeforeApproval
     Public Event BorrowingConfirmed()
     ' ------------------------------
 
-    Private connectionString As String =
-        "server=localhost;userid=root;password=;database=ooplibrary"
+    ' Private connectionString As String = ... <-- REMOVED
 
     Private Sub BeforeApproval_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Set date and time
@@ -38,30 +37,13 @@ Public Class BeforeApproval
                 Return
             End If
 
-            Using conn As New MySqlConnection(connectionString)
-                conn.Open()
-
-                For Each book As Book In BooksToBorrow
-                    Using cmd As New MySqlCommand("
-                        INSERT INTO borrowed_books
-                        (UserID, BookTitle, BorrowedDate, DueDate, Status)
-                        VALUES (@UserID, @BookTitle, @BorrowedDate, @DueDate, @Status)", conn)
-
-                        ' Use actual logged-in user ID
-                        cmd.Parameters.AddWithValue("@UserID", Program.currentAccount.AccountID)
-                        cmd.Parameters.AddWithValue("@BookTitle", book.Title)
-                        cmd.Parameters.AddWithValue("@BorrowedDate", DateTime.Now)
-                        cmd.Parameters.AddWithValue("@DueDate", DateTime.Now.AddDays(7)) ' 7 days due
-                        cmd.Parameters.AddWithValue("@Status", "Borrowed")
-
-                        cmd.ExecuteNonQuery()
-                    End Using
-                Next
-            End Using
+            ' --- MODIFIED LOGIC: Call the Service Layer for transactional borrow ---
+            Program.BorrowSvc.ProcessBorrowing(Program.currentAccount.AccountID, BooksToBorrow)
 
             MessageBox.Show("Books successfully borrowed!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
             ' Refresh BorrowedBooks form if open
+            ' NOTE: This still uses the old 'BorrowedBooks' form
             Dim bbForm As BorrowedBooks = Application.OpenForms.OfType(Of BorrowedBooks)().FirstOrDefault()
             If bbForm Is Nothing Then
                 bbForm = New BorrowedBooks()
@@ -75,7 +57,8 @@ Public Class BeforeApproval
             Me.Close()
 
         Catch ex As Exception
-            MessageBox.Show("Error: " & ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            ' The Service Layer throws an informative exception on inventory or database failure
+            MessageBox.Show("Error processing borrowing request: " & ex.Message, "Borrow Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 

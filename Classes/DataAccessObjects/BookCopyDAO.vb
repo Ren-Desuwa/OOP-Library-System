@@ -62,6 +62,19 @@ Public Class BookCopyDAO
         Return list
     End Function
 
+    ''' <summary>
+    ''' Retrieves the first available copy for a given book ID.
+    ''' </summary>
+    Public Function GetAvailableCopyByBookId(bookId As Integer) As BookCopy
+        Dim sql = "SELECT * FROM book_copies WHERE book_id = @BookID AND status = 'Available' LIMIT 1"
+        Using cmd As New MySqlCommand(sql, _transaction.Connection, _transaction)
+            cmd.Parameters.AddWithValue("@BookID", bookId)
+            Using reader = cmd.ExecuteReader()
+                Return If(reader.Read(), MapToBookCopy(reader), Nothing)
+            End Using
+        End Using
+    End Function
+
     ' #################### UPDATE ####################
     Public Sub Update(copy As BookCopy)
         Dim sql = "UPDATE book_copies SET " &

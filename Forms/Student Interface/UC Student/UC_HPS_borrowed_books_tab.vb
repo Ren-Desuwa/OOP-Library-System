@@ -1,10 +1,9 @@
 ﻿Imports System.IO
-Imports MySql.Data.MySqlClient
+' Imports MySql.Data.MySqlClient <-- REMOVED
 
 Public Class UC_HPS_borrowed_books_tab
 
-    Private ReadOnly connectionString As String =
-        "server=localhost;userid=root;password=;database=ooplibrary"
+    ' Private ReadOnly connectionString As String = ... <-- REMOVED
 
     Private allBorrowedBooks As New List(Of BorrowedBookDetails)
 
@@ -18,50 +17,10 @@ Public Class UC_HPS_borrowed_books_tab
         allBorrowedBooks.Clear()
 
         Try
-            Using conn As New MySqlConnection(connectionString)
-                conn.Open()
-
-                Dim query As String = "
-                    SELECT BookTitle, BorrowedDate, DueDate, Status
-                    FROM borrowed_books
-                    WHERE UserID = @UserID
-                    ORDER BY BorrowedDate DESC"
-
-                Using cmd As New MySqlCommand(query, conn)
-                    cmd.Parameters.AddWithValue("@UserID", If(Program.currentAccount IsNot Nothing, Program.currentAccount.AccountID, 1))
-
-                    Using reader As MySqlDataReader = cmd.ExecuteReader()
-                        While reader.Read()
-                            Dim book As New BorrowedBookDetails()
-                            book.Title = reader("BookTitle").ToString()
-                            book.BorrowedDate = If(IsDBNull(reader("BorrowedDate")), Nothing, CType(reader("BorrowedDate"), DateTime?))
-                            book.DueDate = If(IsDBNull(reader("DueDate")), Nothing, CType(reader("DueDate"), DateTime?))
-
-                            ' Dynamic status calculation
-                            If reader("Status").ToString().ToLower() = "returned" Then
-                                book.Status = BorrowedBookStatus.Returned
-                            ElseIf book.DueDate.HasValue Then
-                                Dim today = DateTime.Now.Date
-                                Dim due = book.DueDate.Value.Date
-
-                                If today > due Then
-                                    book.Status = BorrowedBookStatus.Overdue
-                                ElseIf today = due Then
-                                    book.Status = BorrowedBookStatus.DueToday
-                                ElseIf (due - today).Days <= 3 Then
-                                    book.Status = BorrowedBookStatus.DueSoon
-                                Else
-                                    book.Status = BorrowedBookStatus.Borrowed
-                                End If
-                            Else
-                                book.Status = BorrowedBookStatus.Borrowed
-                            End If
-
-                            allBorrowedBooks.Add(book)
-                        End While
-                    End Using
-                End Using
-            End Using
+            ' --- MODIFIED LOGIC: Call the Service Layer ---
+            Dim accountId As Integer = If(Program.currentAccount IsNot Nothing, Program.currentAccount.AccountID, 1)
+            allBorrowedBooks = Program.BorrowSvc.GetBorrowedBooksDetails(accountId)
+            ' --- END OF MODIFIED LOGIC ---
 
             UpdateDisplay()
 
