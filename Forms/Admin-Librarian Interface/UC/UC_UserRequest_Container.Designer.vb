@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class UC_User_Container
+Partial Class UC_UserRequest_Container
     Inherits System.Windows.Forms.UserControl
 
     'UserControl overrides dispose to clean up the component list.
