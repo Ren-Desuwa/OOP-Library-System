@@ -35,7 +35,7 @@ Public Class PenaltyDAO
                     Dim p As New Penalty()
                     p.PenaltyID = reader.GetInt32("PenaltyID")
                     p.AccountID = reader.GetInt32("AccountID")
-                    p.TransactionID = If(reader.IsDBNull("TransactionID"), CType(Nothing, Integer?), reader.GetInt32("TransactionID"))
+                    p.TransactionID = If(reader.IsDBNull(CInt("TransactionID")), CType(Nothing, Integer?), reader.GetInt32("TransactionID"))
                     p.ViolationType = reader.GetString("ViolationType")
                     p.FineAmount = reader.GetDecimal("FineAmount")
                     p.ScoreDeduction = reader.GetInt32("ScoreDeduction")
