@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class UC_User_Container
+Partial Class UC_UserRequest_Container
     Inherits System.Windows.Forms.UserControl
 
     'UserControl overrides dispose to clean up the component list.
@@ -38,7 +38,7 @@ Partial Class UC_User_Container
         Me.TableLayoutPanel1.ColumnCount = 3
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 35.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 39.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.StatusPanel, 2, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.DateCreated_Lbl, 1, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.UserName_Lbl, 0, 0)
@@ -49,7 +49,7 @@ Partial Class UC_User_Container
         Me.TableLayoutPanel1.RowCount = 1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(689, 63)
-        Me.TableLayoutPanel1.TabIndex = 1
+        Me.TableLayoutPanel1.TabIndex = 2
         '
         'StatusPanel
         '
@@ -59,10 +59,10 @@ Partial Class UC_User_Container
         Me.StatusPanel.FillColor2 = System.Drawing.Color.LightSkyBlue
         Me.StatusPanel.FillColor3 = System.Drawing.Color.WhiteSmoke
         Me.StatusPanel.FillColor4 = System.Drawing.Color.DeepSkyBlue
-        Me.StatusPanel.Location = New System.Drawing.Point(652, 2)
+        Me.StatusPanel.Location = New System.Drawing.Point(648, 2)
         Me.StatusPanel.Margin = New System.Windows.Forms.Padding(0)
         Me.StatusPanel.Name = "StatusPanel"
-        Me.StatusPanel.Size = New System.Drawing.Size(35, 59)
+        Me.StatusPanel.Size = New System.Drawing.Size(39, 59)
         Me.StatusPanel.TabIndex = 5
         '
         'StatusLbl
@@ -85,7 +85,7 @@ Partial Class UC_User_Container
         Me.DateCreated_Lbl.AutoSize = True
         Me.DateCreated_Lbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DateCreated_Lbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(111, Byte), Integer), CType(CType(78, Byte), Integer), CType(CType(55, Byte), Integer))
-        Me.DateCreated_Lbl.Location = New System.Drawing.Point(330, 19)
+        Me.DateCreated_Lbl.Location = New System.Drawing.Point(328, 19)
         Me.DateCreated_Lbl.Name = "DateCreated_Lbl"
         Me.DateCreated_Lbl.Size = New System.Drawing.Size(125, 24)
         Me.DateCreated_Lbl.TabIndex = 1
@@ -99,17 +99,17 @@ Partial Class UC_User_Container
         Me.UserName_Lbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(111, Byte), Integer), CType(CType(78, Byte), Integer), CType(CType(55, Byte), Integer))
         Me.UserName_Lbl.Location = New System.Drawing.Point(5, 19)
         Me.UserName_Lbl.Name = "UserName_Lbl"
-        Me.UserName_Lbl.Size = New System.Drawing.Size(108, 24)
+        Me.UserName_Lbl.Size = New System.Drawing.Size(130, 24)
         Me.UserName_Lbl.TabIndex = 0
-        Me.UserName_Lbl.Text = "UserName"
+        Me.UserName_Lbl.Text = "UserRequest"
         '
-        'UC_User_Container
+        'UC_UserRequest_Container
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(111, Byte), Integer), CType(CType(78, Byte), Integer), CType(CType(55, Byte), Integer))
         Me.Controls.Add(Me.TableLayoutPanel1)
-        Me.Name = "UC_User_Container"
+        Me.Name = "UC_UserRequest_Container"
         Me.Padding = New System.Windows.Forms.Padding(3)
         Me.Size = New System.Drawing.Size(695, 69)
         Me.TableLayoutPanel1.ResumeLayout(False)
@@ -121,8 +121,8 @@ Partial Class UC_User_Container
     End Sub
 
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
-    Friend WithEvents DateCreated_Lbl As Label
-    Friend WithEvents UserName_Lbl As Label
     Friend WithEvents StatusPanel As Guna.UI2.WinForms.Guna2CustomGradientPanel
     Friend WithEvents StatusLbl As Label
+    Friend WithEvents DateCreated_Lbl As Label
+    Friend WithEvents UserName_Lbl As Label
 End Class

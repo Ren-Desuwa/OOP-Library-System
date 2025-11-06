@@ -1,6 +1,6 @@
 ﻿Imports System.Drawing.Drawing2D
 
-Public Class UC_User_Container
+Public Class UC_UserRequest_Container
     Public Event InstanceClicked(selected As Object)
 
     Private isSelected As Boolean = False

@@ -178,10 +178,10 @@
     <Compile Include="Forms\Admin-Librarian Interface\UC\UC_Borrow_Request_Tab.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\Admin-Librarian Interface\UC\UC_User_Container.Designer.vb">
-      <DependentUpon>UC_User_Container.vb</DependentUpon>
+    <Compile Include="Forms\Admin-Librarian Interface\UC\UC_UserRequest_Container.Designer.vb">
+      <DependentUpon>UC_UserRequest_Container.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Admin-Librarian Interface\UC\UC_User_Container.vb">
+    <Compile Include="Forms\Admin-Librarian Interface\UC\UC_UserRequest_Container.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Forms\Admin-Librarian Interface\UC\UC_User_Request_Tab.Designer.vb">
@@ -496,8 +496,8 @@
     <EmbeddedResource Include="Forms\Admin-Librarian Interface\UC\UC_Borrow_Request_Tab.resx">
       <DependentUpon>UC_Borrow_Request_Tab.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Admin-Librarian Interface\UC\UC_User_Container.resx">
-      <DependentUpon>UC_User_Container.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\Admin-Librarian Interface\UC\UC_UserRequest_Container.resx">
+      <DependentUpon>UC_UserRequest_Container.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin-Librarian Interface\UC\UC_User_Request_Tab.resx">
       <DependentUpon>UC_User_Request_Tab.vb</DependentUpon>
