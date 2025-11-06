@@ -40,7 +40,8 @@ Public Class DBcon
             Case ConnectionRole.Admin
                 MessageBox.Show("Connecting as Admin (root@localhost)")
 
-                Return $"Server=127.0.0.1;Port=3306;Database={appDbName};Uid=root;Pwd=;"
+                Return $"Server={KIOSK_SERVER_IP};Port=3306;Database={appDbName};Uid=kiosk_user;Pwd={KIOSK_PASSWORD};"
+                'Return $"Server=127.0.0.1;Port=3306;Database={appDbName};Uid=root;Pwd=;"
             Case Else ' Default to Kiosk
                 MessageBox.Show("Connecting as Kiosk (kiosk_user@)" & KIOSK_SERVER_IP)
                 Return $"Server={KIOSK_SERVER_IP};Port=3306;Database={appDbName};Uid=kiosk_user;Pwd={KIOSK_PASSWORD};"
