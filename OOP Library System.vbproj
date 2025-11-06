@@ -89,6 +89,12 @@
     <Compile Include="Forms\Admin-Librarian Interface\Panel\BorrowRequestList.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\Admin-Librarian Interface\Panel\Home_Panel_Admin_Librarian.Designer.vb">
+      <DependentUpon>Home_Panel_Admin_Librarian.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin-Librarian Interface\Panel\Home_Panel_Admin_Librarian.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\Admin-Librarian Interface\Panel\UserAccountRequestList.Designer.vb">
       <DependentUpon>UserAccountRequestList.vb</DependentUpon>
     </Compile>
@@ -312,12 +318,6 @@
     <Compile Include="Forms\Student Interface\ForgotPass.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Admin-Librarian Interface\Panel\Home_Panel_Admin_Librarian.Designer.vb">
-      <DependentUpon>Home_Panel_Admin_Librarian.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Admin-Librarian Interface\Panel\Home_Panel_Admin_Librarian.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Forms\Student Interface\Home_Panel_Guest.Designer.vb">
       <DependentUpon>Home_Panel_Guest.vb</DependentUpon>
     </Compile>
@@ -461,6 +461,9 @@
     <EmbeddedResource Include="Forms\Admin-Librarian Interface\Panel\BorrowRequestList.resx">
       <DependentUpon>BorrowRequestList.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin-Librarian Interface\Panel\Home_Panel_Admin_Librarian.resx">
+      <DependentUpon>Home_Panel_Admin_Librarian.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin-Librarian Interface\Panel\UserAccountRequestList.resx">
       <DependentUpon>UserAccountRequestList.vb</DependentUpon>
     </EmbeddedResource>
@@ -559,9 +562,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Student Interface\ForgotPass.resx">
       <DependentUpon>ForgotPass.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Admin-Librarian Interface\Panel\Home_Panel_Admin_Librarian.resx">
-      <DependentUpon>Home_Panel_Admin_Librarian.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Student Interface\Home_Panel_Guest.resx">
       <DependentUpon>Home_Panel_Guest.vb</DependentUpon>

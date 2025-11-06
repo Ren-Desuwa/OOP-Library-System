@@ -275,4 +275,159 @@ Public Class AuthService
         End Try
     End Sub
 
+    ' ##################################################################
+    ' --- 4. ACCOUNT MANAGEMENT (for Admin Panel) ---
+    ' ##################################################################
+
+    ''' <summary>
+    ''' (FOR UC_HPAL_User_Tab)
+    ''' Retrieves a complete list of all user accounts from the database.
+    ''' </summary>
+    Public Function GetAllAccounts() As List(Of Account)
+        If Not _dbCon.OpenConnection() Then
+            Throw New Exception("Could not connect to the database.")
+        End If
+        Dim transaction As MySqlTransaction = _dbCon.GetConnection().BeginTransaction()
+
+        Try
+            ' 1. Instantiate the DAO with the transaction
+            Dim accountDAO As New AccountDAO(transaction)
+
+            ' 2. Call the DAO's GetAll method
+            Dim accounts = accountDAO.GetAll()
+
+            ' 3. Commit the transaction (even for reads, to close it properly)
+            transaction.Commit()
+
+            ' 4. Return the list
+            Return accounts
+
+        Catch ex As Exception
+            transaction.Rollback()
+            Throw New Exception("Failed to retrieve all accounts: " & ex.Message)
+        Finally
+            _dbCon.CloseConnection()
+        End Try
+    End Function
+
+    ''' <summary>
+    ''' (FOR UC_HPAL_User_Tab)
+    ''' Deletes a user account from the database by its ID.
+    ''' </summary>
+    Public Sub DeleteAccount(accountId As Integer)
+        If Not _dbCon.OpenConnection() Then
+            Throw New Exception("Could not connect to the database.")
+        End If
+        Dim transaction As MySqlTransaction = _dbCon.GetConnection().BeginTransaction()
+
+        Try
+            Dim accountDAO As New AccountDAO(transaction)
+            Dim logDAO As New LogDAO(transaction)
+
+            ' Optional: Get the account before deleting to log its name
+            Dim accountToDelete = accountDAO.GetById(accountId)
+            Dim username = "Unknown"
+            If accountToDelete IsNot Nothing Then
+                username = accountToDelete.Username
+            End If
+
+            ' 1. Call the DAO's Delete method
+            accountDAO.Delete(accountId)
+
+            ' 2. Log the admin action
+            logDAO.Create(Log.RecordAction(Nothing, "Account Deleted", $"Admin deleted account ID {accountId} ({username})."))
+
+            ' 3. Commit the changes
+            transaction.Commit()
+
+        Catch ex As Exception
+            transaction.Rollback()
+            Throw New Exception("Failed to delete account: " & ex.Message)
+        Finally
+            _dbCon.CloseConnection()
+        End Try
+    End Sub
+
+    ''' <summary>
+    ''' (FOR EditUser Form)
+    ''' Updates an existing user's information in the database.
+    ''' </summary>
+    Public Sub UpdateAccount(account As Account)
+        If Not _dbCon.OpenConnection() Then
+            Throw New Exception("Could not connect to the database.")
+        End If
+        Dim transaction As MySqlTransaction = _dbCon.GetConnection().BeginTransaction()
+
+        Try
+            Dim accountDAO As New AccountDAO(transaction)
+            Dim logDAO As New LogDAO(transaction)
+
+            ' Note: This assumes the password hash is NOT changed here.
+            ' If you are resetting a password, you must hash it first.
+            ' userAccount.PasswordHash = Account.HashPassword(newPassword)
+
+            ' 1. Call the DAO's Update method
+            accountDAO.Update(account)
+
+            ' 2. Log the admin action
+            logDAO.Create(Log.RecordAction(account.AccountID, "Account Updated", $"Admin updated details for account '{account.Username}'."))
+
+            ' 3. Commit the changes
+            transaction.Commit()
+
+        Catch ex As Exception
+            transaction.Rollback()
+            Throw New Exception("Failed to update account: " & ex.Message)
+        Finally
+            _dbCon.CloseConnection()
+        End Try
+    End Sub
+
+    ''' <summary>
+    ''' (FOR AddUser Form)
+    ''' Creates a new user account as an administrator.
+    ''' </summary>
+    Public Function CreateAccount(account As Account, plainTextPassword As String) As Integer
+        If Not _dbCon.OpenConnection() Then
+            Throw New Exception("Could not connect to the database.")
+        End If
+        Dim transaction As MySqlTransaction = _dbCon.GetConnection().BeginTransaction()
+
+        Try
+            Dim accountDAO As New AccountDAO(transaction)
+            Dim logDAO As New LogDAO(transaction)
+
+            ' 1. Check for duplicate username
+            If accountDAO.GetByUsername(account.Username) IsNot Nothing Then
+                Throw New Exception("This username is already taken.")
+            End If
+
+            ' 2. Check for duplicate email (if provided)
+            If Not String.IsNullOrEmpty(account.Email) AndAlso accountDAO.GetByEmail(account.Email) IsNot Nothing Then
+                Throw New Exception("This email address is already in use.")
+            End If
+
+            ' 3. Hash the plain-text password
+            account.PasswordHash = Account.HashPassword(plainTextPassword)
+
+            ' 4. Call the DAO's Create method
+            Dim newAccountId As Integer = accountDAO.Create(account)
+
+            ' 5. Log the admin action
+            logDAO.Create(Log.RecordAction(newAccountId, "Account Created", $"Admin created new account '{account.Username}'."))
+
+            ' 6. Commit the changes
+            transaction.Commit()
+
+            ' 7. Return the new ID
+            Return newAccountId
+
+        Catch ex As Exception
+            transaction.Rollback()
+            Throw New Exception("Failed to create account: " & ex.Message)
+        Finally
+            _dbCon.CloseConnection()
+        End Try
+    End Function
+
 End Class

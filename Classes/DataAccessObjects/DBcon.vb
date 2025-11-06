@@ -38,12 +38,11 @@ Public Class DBcon
     Private Function BuildConnectionString(role As ConnectionRole) As String
         Select Case role
             Case ConnectionRole.Admin
-                MessageBox.Show("Librarian logged in. Elevating to Admin connection.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                ' Admin (Librarian) connects to localhost with root
+
+
                 Return $"Server=127.0.0.1;Port=3306;Database={appDbName};Uid=root;Pwd=;"
             Case Else ' Default to Kiosk
-                MessageBox.Show("Starting in Kiosk mode.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                ' Kiosk (Student) connects to the remote server IP with kiosk_user
+
                 Return $"Server={KIOSK_SERVER_IP};Port=3306;Database={appDbName};Uid=kiosk_user;Pwd={KIOSK_PASSWORD};"
         End Select
     End Function
