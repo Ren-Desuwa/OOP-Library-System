@@ -9,7 +9,7 @@ Public Class DBcon
 
     ' --- NEW: Store these for rebuilding connections ---
     Private appDbName As String
-    Private Const KIOSK_SERVER_IP As String = "10.207.186.185" ' !! PUT YOUR SERVER IP HERE !!
+    Private Const KIOSK_SERVER_IP As String = "192.168.0.109" ' !! PUT YOUR SERVER IP HERE !!
     Private Const KIOSK_PASSWORD As String = "bantutan123" ' !! PUT KIOSK PASSWORD HERE !!
 
     Public Enum ConnectionRole
