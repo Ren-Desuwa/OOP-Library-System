@@ -44,12 +44,11 @@ Partial Class UC_HPAL_User_Tab
         Me.TableLayoutPanel1.Controls.Add(Me.btn_AddUser, 1, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.btn_DeleteUser, 3, 0)
         Me.TableLayoutPanel1.Font = New System.Drawing.Font("Segoe UI", 10.8!, System.Drawing.FontStyle.Bold)
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 624)
-        Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 507)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(1008, 64)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(756, 52)
         Me.TableLayoutPanel1.TabIndex = 4
         '
         'lbl_allusercount
@@ -58,10 +57,9 @@ Partial Class UC_HPAL_User_Tab
         Me.lbl_allusercount.Dock = System.Windows.Forms.DockStyle.Fill
         Me.lbl_allusercount.Font = New System.Drawing.Font("Segoe UI", 10.8!, System.Drawing.FontStyle.Bold)
         Me.lbl_allusercount.ForeColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(42, Byte), Integer))
-        Me.lbl_allusercount.Location = New System.Drawing.Point(4, 0)
-        Me.lbl_allusercount.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbl_allusercount.Location = New System.Drawing.Point(3, 0)
         Me.lbl_allusercount.Name = "lbl_allusercount"
-        Me.lbl_allusercount.Size = New System.Drawing.Size(496, 64)
+        Me.lbl_allusercount.Size = New System.Drawing.Size(372, 52)
         Me.lbl_allusercount.TabIndex = 0
         Me.lbl_allusercount.Text = "No. of Users:"
         Me.lbl_allusercount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -77,11 +75,10 @@ Partial Class UC_HPAL_User_Tab
         Me.btn_AddUser.FillColor = System.Drawing.Color.White
         Me.btn_AddUser.Font = New System.Drawing.Font("Segoe UI", 10.8!, System.Drawing.FontStyle.Bold)
         Me.btn_AddUser.ForeColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(42, Byte), Integer))
-        Me.btn_AddUser.Location = New System.Drawing.Point(508, 4)
-        Me.btn_AddUser.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.btn_AddUser.MaximumSize = New System.Drawing.Size(184, 52)
+        Me.btn_AddUser.Location = New System.Drawing.Point(381, 3)
+        Me.btn_AddUser.MaximumSize = New System.Drawing.Size(138, 42)
         Me.btn_AddUser.Name = "btn_AddUser"
-        Me.btn_AddUser.Size = New System.Drawing.Size(184, 52)
+        Me.btn_AddUser.Size = New System.Drawing.Size(138, 42)
         Me.btn_AddUser.TabIndex = 1
         Me.btn_AddUser.Text = "Add User"
         '
@@ -96,11 +93,10 @@ Partial Class UC_HPAL_User_Tab
         Me.btn_DeleteUser.FillColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(42, Byte), Integer))
         Me.btn_DeleteUser.Font = New System.Drawing.Font("Segoe UI", 10.8!, System.Drawing.FontStyle.Bold)
         Me.btn_DeleteUser.ForeColor = System.Drawing.Color.White
-        Me.btn_DeleteUser.Location = New System.Drawing.Point(759, 4)
-        Me.btn_DeleteUser.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.btn_DeleteUser.MaximumSize = New System.Drawing.Size(184, 52)
+        Me.btn_DeleteUser.Location = New System.Drawing.Point(569, 3)
+        Me.btn_DeleteUser.MaximumSize = New System.Drawing.Size(138, 42)
         Me.btn_DeleteUser.Name = "btn_DeleteUser"
-        Me.btn_DeleteUser.Size = New System.Drawing.Size(184, 52)
+        Me.btn_DeleteUser.Size = New System.Drawing.Size(138, 42)
         Me.btn_DeleteUser.TabIndex = 2
         Me.btn_DeleteUser.Text = "Remove"
         '
@@ -112,23 +108,23 @@ Partial Class UC_HPAL_User_Tab
         Me.flow_panel_users.AutoScroll = True
         Me.flow_panel_users.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
         Me.flow_panel_users.Location = New System.Drawing.Point(0, 0)
-        Me.flow_panel_users.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.flow_panel_users.Margin = New System.Windows.Forms.Padding(2)
         Me.flow_panel_users.Name = "flow_panel_users"
-        Me.flow_panel_users.Size = New System.Drawing.Size(1008, 616)
+        Me.flow_panel_users.Size = New System.Drawing.Size(756, 500)
         Me.flow_panel_users.TabIndex = 3
         Me.flow_panel_users.WrapContents = False
         '
         'UC_HPAL_User_Tab
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange
         Me.BackColor = System.Drawing.Color.Transparent
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Controls.Add(Me.flow_panel_users)
-        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "UC_HPAL_User_Tab"
-        Me.Size = New System.Drawing.Size(1008, 688)
+        Me.Size = New System.Drawing.Size(756, 559)
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TableLayoutPanel1.PerformLayout()
         Me.ResumeLayout(False)

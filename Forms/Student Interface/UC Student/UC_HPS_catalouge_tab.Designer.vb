@@ -26,14 +26,14 @@ Partial Class UC_HPS_catalouge_tab
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(UC_HPS_catalouge_tab))
         Me.genre_panel = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.flow_genre_panel = New System.Windows.Forms.FlowLayoutPanel()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.flow_genre_panel = New System.Windows.Forms.FlowLayoutPanel()
         Me.container_panel = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
-        Me.flow_main_book_panel = New System.Windows.Forms.FlowLayoutPanel()
-        Me.Guna2Transition1 = New Guna.UI2.WinForms.Guna2Transition()
         Me.btnToggleSidebar = New Guna.UI2.WinForms.Guna2Button()
         Me.btn_Back = New Guna.UI2.WinForms.Guna2Button()
         Me.UC_pagination_controls1 = New OOP_Library_System.UC_pagination_controls()
+        Me.flow_main_book_panel = New System.Windows.Forms.FlowLayoutPanel()
+        Me.Guna2Transition1 = New Guna.UI2.WinForms.Guna2Transition()
         Me.genre_panel.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.container_panel.SuspendLayout()
@@ -51,10 +51,10 @@ Partial Class UC_HPS_catalouge_tab
         Me.genre_panel.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(216, Byte), Integer))
         Me.genre_panel.FillColor3 = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.genre_panel.FillColor4 = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(195, Byte), Integer), CType(CType(165, Byte), Integer))
-        Me.genre_panel.Location = New System.Drawing.Point(747, 686)
+        Me.genre_panel.Location = New System.Drawing.Point(428, 634)
         Me.genre_panel.Margin = New System.Windows.Forms.Padding(2)
         Me.genre_panel.Name = "genre_panel"
-        Me.genre_panel.Size = New System.Drawing.Size(436, 740)
+        Me.genre_panel.Size = New System.Drawing.Size(379, 637)
         Me.genre_panel.TabIndex = 8
         '
         'TableLayoutPanel1
@@ -74,8 +74,21 @@ Partial Class UC_HPS_catalouge_tab
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 3.918919!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 3.513514!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 88.51351!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(436, 740)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(379, 637)
         Me.TableLayoutPanel1.TabIndex = 0
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Guna2Transition1.SetDecoration(Me.Label1, Guna.UI2.AnimatorNS.DecorationType.None)
+        Me.Label1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(24, 27)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(322, 24)
+        Me.Label1.TabIndex = 1
+        Me.Label1.Text = "    GENRES:"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         '
         'flow_genre_panel
         '
@@ -86,24 +99,11 @@ Partial Class UC_HPS_catalouge_tab
         Me.flow_genre_panel.BackColor = System.Drawing.Color.Transparent
         Me.Guna2Transition1.SetDecoration(Me.flow_genre_panel, Guna.UI2.AnimatorNS.DecorationType.None)
         Me.flow_genre_panel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
-        Me.flow_genre_panel.Location = New System.Drawing.Point(26, 86)
+        Me.flow_genre_panel.Location = New System.Drawing.Point(23, 75)
         Me.flow_genre_panel.Margin = New System.Windows.Forms.Padding(2)
         Me.flow_genre_panel.Name = "flow_genre_panel"
-        Me.flow_genre_panel.Size = New System.Drawing.Size(373, 652)
+        Me.flow_genre_panel.Size = New System.Drawing.Size(324, 560)
         Me.flow_genre_panel.TabIndex = 0
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Guna2Transition1.SetDecoration(Me.Label1, Guna.UI2.AnimatorNS.DecorationType.None)
-        Me.Label1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(27, 31)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(371, 28)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "    GENRES:"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         '
         'container_panel
         '
@@ -128,41 +128,6 @@ Partial Class UC_HPS_catalouge_tab
         Me.container_panel.Name = "container_panel"
         Me.container_panel.Size = New System.Drawing.Size(856, 744)
         Me.container_panel.TabIndex = 9
-        '
-        'flow_main_book_panel
-        '
-        Me.flow_main_book_panel.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Guna2Transition1.SetDecoration(Me.flow_main_book_panel, Guna.UI2.AnimatorNS.DecorationType.None)
-        Me.flow_main_book_panel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
-        Me.flow_main_book_panel.Location = New System.Drawing.Point(203, 24)
-        Me.flow_main_book_panel.Margin = New System.Windows.Forms.Padding(2)
-        Me.flow_main_book_panel.Name = "flow_main_book_panel"
-        Me.flow_main_book_panel.Size = New System.Drawing.Size(564, 535)
-        Me.flow_main_book_panel.TabIndex = 0
-        Me.flow_main_book_panel.WrapContents = False
-        '
-        'Guna2Transition1
-        '
-        Me.Guna2Transition1.AnimationType = Guna.UI2.AnimatorNS.AnimationType.HorizSlide
-        Me.Guna2Transition1.Cursor = Nothing
-        Animation1.AnimateOnlyDifferences = True
-        Animation1.BlindCoeff = CType(resources.GetObject("Animation1.BlindCoeff"), System.Drawing.PointF)
-        Animation1.LeafCoeff = 0!
-        Animation1.MaxTime = 1.0!
-        Animation1.MinTime = 0!
-        Animation1.MosaicCoeff = CType(resources.GetObject("Animation1.MosaicCoeff"), System.Drawing.PointF)
-        Animation1.MosaicShift = CType(resources.GetObject("Animation1.MosaicShift"), System.Drawing.PointF)
-        Animation1.MosaicSize = 0
-        Animation1.Padding = New System.Windows.Forms.Padding(0)
-        Animation1.RotateCoeff = 0!
-        Animation1.RotateLimit = 0!
-        Animation1.ScaleCoeff = CType(resources.GetObject("Animation1.ScaleCoeff"), System.Drawing.PointF)
-        Animation1.SlideCoeff = CType(resources.GetObject("Animation1.SlideCoeff"), System.Drawing.PointF)
-        Animation1.TimeCoeff = 0!
-        Animation1.TransparencyCoeff = 0!
-        Me.Guna2Transition1.DefaultAnimation = Animation1
         '
         'btnToggleSidebar
         '
@@ -206,6 +171,41 @@ Partial Class UC_HPS_catalouge_tab
         Me.UC_pagination_controls1.Name = "UC_pagination_controls1"
         Me.UC_pagination_controls1.Size = New System.Drawing.Size(850, 79)
         Me.UC_pagination_controls1.TabIndex = 15
+        '
+        'flow_main_book_panel
+        '
+        Me.flow_main_book_panel.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Guna2Transition1.SetDecoration(Me.flow_main_book_panel, Guna.UI2.AnimatorNS.DecorationType.None)
+        Me.flow_main_book_panel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
+        Me.flow_main_book_panel.Location = New System.Drawing.Point(203, 24)
+        Me.flow_main_book_panel.Margin = New System.Windows.Forms.Padding(2)
+        Me.flow_main_book_panel.Name = "flow_main_book_panel"
+        Me.flow_main_book_panel.Size = New System.Drawing.Size(564, 535)
+        Me.flow_main_book_panel.TabIndex = 0
+        Me.flow_main_book_panel.WrapContents = False
+        '
+        'Guna2Transition1
+        '
+        Me.Guna2Transition1.AnimationType = Guna.UI2.AnimatorNS.AnimationType.HorizSlide
+        Me.Guna2Transition1.Cursor = Nothing
+        Animation1.AnimateOnlyDifferences = True
+        Animation1.BlindCoeff = CType(resources.GetObject("Animation1.BlindCoeff"), System.Drawing.PointF)
+        Animation1.LeafCoeff = 0!
+        Animation1.MaxTime = 1.0!
+        Animation1.MinTime = 0!
+        Animation1.MosaicCoeff = CType(resources.GetObject("Animation1.MosaicCoeff"), System.Drawing.PointF)
+        Animation1.MosaicShift = CType(resources.GetObject("Animation1.MosaicShift"), System.Drawing.PointF)
+        Animation1.MosaicSize = 0
+        Animation1.Padding = New System.Windows.Forms.Padding(0)
+        Animation1.RotateCoeff = 0!
+        Animation1.RotateLimit = 0!
+        Animation1.ScaleCoeff = CType(resources.GetObject("Animation1.ScaleCoeff"), System.Drawing.PointF)
+        Animation1.SlideCoeff = CType(resources.GetObject("Animation1.SlideCoeff"), System.Drawing.PointF)
+        Animation1.TimeCoeff = 0!
+        Animation1.TransparencyCoeff = 0!
+        Me.Guna2Transition1.DefaultAnimation = Animation1
         '
         'UC_HPS_catalouge_tab
         '
