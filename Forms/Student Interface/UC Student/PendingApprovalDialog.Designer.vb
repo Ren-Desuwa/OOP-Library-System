@@ -27,6 +27,7 @@ Partial Class PendingApprovalDialog
         Me.btnConfirm = New Guna.UI2.WinForms.Guna2Button()
         Me.lblStatus = New System.Windows.Forms.Label()
         Me.StatusPollTimer = New System.Windows.Forms.Timer(Me.components)
+        Me.Guna2Elipse1 = New Guna.UI2.WinForms.Guna2Elipse(Me.components)
         Me.Guna2CustomGradientPanel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -71,12 +72,17 @@ Partial Class PendingApprovalDialog
         Me.lblStatus.ForeColor = System.Drawing.Color.FromArgb(CType(CType(122, Byte), Integer), CType(CType(107, Byte), Integer), CType(CType(84, Byte), Integer))
         Me.lblStatus.Location = New System.Drawing.Point(16, 40)
         Me.lblStatus.Name = "lblStatus"
-        Me.lblStatus.Size = New System.Drawing.Size(86, 25)
+        Me.lblStatus.Size = New System.Drawing.Size(196, 25)
         Me.lblStatus.TabIndex = 5
-        Me.lblStatus.Text = "Message"
+        Me.lblStatus.Text = "Waiting for Approval "
         '
         'StatusPollTimer
         '
+        '
+        'Guna2Elipse1
+        '
+        Me.Guna2Elipse1.BorderRadius = 30
+        Me.Guna2Elipse1.TargetControl = Me
         '
         'PendingApprovalDialog
         '
@@ -99,4 +105,5 @@ Partial Class PendingApprovalDialog
     Friend WithEvents lblStatus As Label
     Friend WithEvents btnConfirm As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents StatusPollTimer As Timer
+    Friend WithEvents Guna2Elipse1 As Guna.UI2.WinForms.Guna2Elipse
 End Class

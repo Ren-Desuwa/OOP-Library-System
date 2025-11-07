@@ -9,7 +9,8 @@ Public Class BeforeApproval
     Public Property StudentUsername As String
     Public Event BorrowingConfirmed()
     ' ------------------------------
-
+    Private newTransactionIds As List(Of Integer)
+    Private WithEvents StatusPollTimer As New Timer()
     Private Sub BeforeApproval_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Set date and time
         lblDate.Text = Date.Now.ToString("MMMM dd, yyyy")
@@ -29,18 +30,26 @@ Public Class BeforeApproval
     ' ✅ Confirm Borrow button
     Private Sub btnConfirm_Click(sender As Object, e As EventArgs) Handles btnConfirm.Click
 
+        If btnConfirm.Text = "Waiting..." Then
+            Return ' Do nothing, still processing
+        End If
+
+        If btnConfirm.Text = "Confirm" AndAlso newTransactionIds IsNot Nothing AndAlso newTransactionIds.Count > 0 Then
+            ' This is the SECOND click (after approval).
+            ' It now just acts as a "Close" button.
+            RaiseEvent BorrowingConfirmed()
+            Me.Close()
+            Return
+        End If
+
         ' --- START NEW LOGIC ---
-        ' 1. Ask the user for the number of days
         Dim daysInput As String = InputBox("How many days would you like to borrow this book for?", "Borrow Duration", "7")
         Dim borrowDays As Integer
-
-        ' 2. Validate the input
         If String.IsNullOrWhiteSpace(daysInput) Then
             Return ' User clicked Cancel
         End If
-
-        If Not Integer.TryParse(daysInput, borrowDays) OrElse borrowDays <= 0 Then
-            MessageBox.Show("Please enter a valid number of days (e.g., 7).", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        If Not Integer.TryParse(daysInput, borrowDays) OrElse borrowDays <= 0 OrElse borrowDays > 30 Then
+            MessageBox.Show("Please enter a valid number of days (1-30).", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return
         End If
 
@@ -59,23 +68,14 @@ Public Class BeforeApproval
             End If
 
             ' --- MODIFIED LOGIC: Call the Service Layer with borrowDays ---
-            Program.BorrowSvc.ProcessBorrowing(Program.currentAccount.AccountID, BooksToBorrow, borrowDays)
+            newTransactionIds = Program.BorrowSvc.ProcessBorrowing(Program.currentAccount.AccountID, BooksToBorrow, borrowDays)
 
-            MessageBox.Show($"Books successfully borrowed for {borrowDays} days!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Label5.Text = "Request sent! Waiting for librarian approval..."
+            btnConfirm.Enabled = False
+            btnConfirm.Text = "Waiting..."
 
-            ' Refresh BorrowedBooks form if open
-            ' NOTE: This still uses the old 'BorrowedBooks' form
-            Dim bbForm As BorrowedBooks = Application.OpenForms.OfType(Of BorrowedBooks)().FirstOrDefault()
-            If bbForm Is Nothing Then
-                bbForm = New BorrowedBooks()
-                bbForm.Show()
-            End If
-            bbForm.LoadBorrowedBooks()
-
-            ' Notify ViewCart to remove borrowed items
-            RaiseEvent BorrowingConfirmed()
-
-            Me.Close()
+            StatusPollTimer.Interval = 5000 ' 5 seconds
+            StatusPollTimer.Start()
 
         Catch ex As Exception
             ' The Service Layer throws an informative exception on inventory or database failure

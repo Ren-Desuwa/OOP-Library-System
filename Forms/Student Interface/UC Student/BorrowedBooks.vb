@@ -1,4 +1,5 @@
 ﻿Imports System.IO
+Imports OOP_Library_System.Models
 ' Imports MySql.Data.MySqlClient <-- REMOVED
 
 Public Class BorrowedBooks

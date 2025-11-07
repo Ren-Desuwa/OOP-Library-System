@@ -107,4 +107,20 @@ Public Class TransactionDAO
             cmd.ExecuteNonQuery()
         End Using
     End Sub
+
+    ' #################### READ - Specialized ####################
+
+    Public Function GetByStatus(status As String) As List(Of Transaction)
+        Dim list As New List(Of Transaction)
+        Dim sql = "SELECT * FROM transactions WHERE status = @Status"
+        Using cmd As New MySqlCommand(sql, _transaction.Connection, _transaction)
+            cmd.Parameters.AddWithValue("@Status", status)
+            Using reader = cmd.ExecuteReader()
+                While reader.Read()
+                    list.Add(MapToTransaction(reader))
+                End While
+            End Using
+        End Using
+        Return list
+    End Function
 End Class

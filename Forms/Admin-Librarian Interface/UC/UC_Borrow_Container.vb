@@ -3,9 +3,9 @@
 Public Class UC_Borrow_Container
     Public Event InstanceClicked(selected As Object)
 
+    Public TransactionID As Integer
     Private isSelected As Boolean = False
     Private currentStatus As String = "P"
-
     ' Store the default and selected colors
     Private ReadOnly defaultColor As Color = Color.Tan
     Private ReadOnly selectedColor As Color = Color.FromArgb(198, 158, 107) ' slightly darker tan
