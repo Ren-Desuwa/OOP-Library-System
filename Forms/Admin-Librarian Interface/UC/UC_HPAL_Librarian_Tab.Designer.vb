@@ -22,27 +22,13 @@ Partial Class UC_HPAL_Librarian_Tab
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.flow_panel_container = New System.Windows.Forms.FlowLayoutPanel()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.lbl_number = New System.Windows.Forms.Label()
         Me.btn_add = New Guna.UI2.WinForms.Guna2Button()
         Me.btn_remove = New Guna.UI2.WinForms.Guna2Button()
+        Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'flow_panel_container
-        '
-        Me.flow_panel_container.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.flow_panel_container.AutoScroll = True
-        Me.flow_panel_container.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
-        Me.flow_panel_container.Location = New System.Drawing.Point(0, 0)
-        Me.flow_panel_container.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.flow_panel_container.Name = "flow_panel_container"
-        Me.flow_panel_container.Size = New System.Drawing.Size(1008, 616)
-        Me.flow_panel_container.TabIndex = 1
-        Me.flow_panel_container.WrapContents = False
         '
         'TableLayoutPanel1
         '
@@ -58,12 +44,11 @@ Partial Class UC_HPAL_Librarian_Tab
         Me.TableLayoutPanel1.Controls.Add(Me.btn_add, 1, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.btn_remove, 3, 0)
         Me.TableLayoutPanel1.Font = New System.Drawing.Font("Segoe UI", 10.8!, System.Drawing.FontStyle.Bold)
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 624)
-        Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 507)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(1008, 64)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(756, 52)
         Me.TableLayoutPanel1.TabIndex = 2
         '
         'lbl_number
@@ -72,10 +57,9 @@ Partial Class UC_HPAL_Librarian_Tab
         Me.lbl_number.Dock = System.Windows.Forms.DockStyle.Fill
         Me.lbl_number.Font = New System.Drawing.Font("Segoe UI", 10.8!, System.Drawing.FontStyle.Bold)
         Me.lbl_number.ForeColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(42, Byte), Integer))
-        Me.lbl_number.Location = New System.Drawing.Point(4, 0)
-        Me.lbl_number.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbl_number.Location = New System.Drawing.Point(3, 0)
         Me.lbl_number.Name = "lbl_number"
-        Me.lbl_number.Size = New System.Drawing.Size(496, 64)
+        Me.lbl_number.Size = New System.Drawing.Size(372, 52)
         Me.lbl_number.TabIndex = 0
         Me.lbl_number.Text = "No. of Librarians:"
         Me.lbl_number.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -91,11 +75,10 @@ Partial Class UC_HPAL_Librarian_Tab
         Me.btn_add.FillColor = System.Drawing.Color.White
         Me.btn_add.Font = New System.Drawing.Font("Segoe UI", 10.8!, System.Drawing.FontStyle.Bold)
         Me.btn_add.ForeColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(42, Byte), Integer))
-        Me.btn_add.Location = New System.Drawing.Point(508, 4)
-        Me.btn_add.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.btn_add.MaximumSize = New System.Drawing.Size(184, 52)
+        Me.btn_add.Location = New System.Drawing.Point(381, 3)
+        Me.btn_add.MaximumSize = New System.Drawing.Size(138, 42)
         Me.btn_add.Name = "btn_add"
-        Me.btn_add.Size = New System.Drawing.Size(184, 52)
+        Me.btn_add.Size = New System.Drawing.Size(138, 42)
         Me.btn_add.TabIndex = 1
         Me.btn_add.Text = "Add Librarian"
         '
@@ -110,33 +93,44 @@ Partial Class UC_HPAL_Librarian_Tab
         Me.btn_remove.FillColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(42, Byte), Integer))
         Me.btn_remove.Font = New System.Drawing.Font("Segoe UI", 10.8!, System.Drawing.FontStyle.Bold)
         Me.btn_remove.ForeColor = System.Drawing.Color.White
-        Me.btn_remove.Location = New System.Drawing.Point(759, 4)
-        Me.btn_remove.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.btn_remove.MaximumSize = New System.Drawing.Size(184, 52)
+        Me.btn_remove.Location = New System.Drawing.Point(569, 3)
+        Me.btn_remove.MaximumSize = New System.Drawing.Size(138, 42)
         Me.btn_remove.Name = "btn_remove"
-        Me.btn_remove.Size = New System.Drawing.Size(184, 52)
+        Me.btn_remove.Size = New System.Drawing.Size(138, 42)
         Me.btn_remove.TabIndex = 2
         Me.btn_remove.Text = "Remove"
         '
+        'FlowLayoutPanel1
+        '
+        Me.FlowLayoutPanel1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.FlowLayoutPanel1.AutoScroll = True
+        Me.FlowLayoutPanel1.BackColor = System.Drawing.Color.Transparent
+        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(3, 12)
+        Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(738, 489)
+        Me.FlowLayoutPanel1.TabIndex = 3
+        Me.FlowLayoutPanel1.WrapContents = False
+        '
         'UC_HPAL_Librarian_Tab
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Transparent
+        Me.Controls.Add(Me.FlowLayoutPanel1)
         Me.Controls.Add(Me.TableLayoutPanel1)
-        Me.Controls.Add(Me.flow_panel_container)
-        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "UC_HPAL_Librarian_Tab"
-        Me.Size = New System.Drawing.Size(1008, 688)
+        Me.Size = New System.Drawing.Size(756, 559)
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TableLayoutPanel1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
-
-    Friend WithEvents flow_panel_container As FlowLayoutPanel
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents lbl_number As Label
     Friend WithEvents btn_add As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btn_remove As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
 End Class
