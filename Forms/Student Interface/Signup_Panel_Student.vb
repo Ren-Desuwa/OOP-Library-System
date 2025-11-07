@@ -147,7 +147,18 @@ Public Class Signup_Panel_Student
             Dim newAccountId As Integer = Program.AuthSvc.CompleteRegistration(studentUsername, studentPassword, studentID, contactInfo, otpInput)
 
             ' 3. Success!
-            MessageBox.Show("Registration Successful! You can now log in.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            ' 3a. Instantiate the dialog
+            Dim pendingDialog As New PendingApprovalDialog()
+
+            ' 3b. Pass the new account ID to it
+            pendingDialog.StudentAccountID = newAccountId
+
+            ' 3c. Show it as a modal dialog. The code will PAUSE here
+            ' until the user clicks "Confirm" (after being approved)
+            pendingDialog.ShowDialog()
+
+            ' --- 3d. (Original code) Runs AFTER the dialog is closed ---
+            MessageBox.Show("Thank you! You can now log in.", "Account Approved", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
             ' --- 4. CLEAR ALL FIELDS ---
             UC_signup_step1_student1.txtBox_username.Clear()

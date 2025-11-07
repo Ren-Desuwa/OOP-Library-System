@@ -1,35 +1,50 @@
 ﻿Imports MySql.Data.MySqlClient
 Imports System.Drawing
+Imports System.Runtime.InteropServices
 
 Public Class UC_HPAL_Logs_Tab
+
+    ' === Add internal padding for RichTextBox ===
+    <DllImport("user32.dll", CharSet:=CharSet.Auto)>
+    Private Shared Function SendMessage(hWnd As IntPtr, msg As Integer, wParam As IntPtr, lParam As IntPtr) As IntPtr
+    End Function
+
+    Private Const EM_SETMARGINS As Integer = &HD3
+    Private Const EC_LEFTMARGIN As Integer = &H1
+    Private Const EC_RIGHTMARGIN As Integer = &H2
 
     Private Sub UC_HPAL_Logs_Tab_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         SetupConsoleBox()
         LoadLogsFromDatabase()
     End Sub
 
-    ' 🟩 Setup RichTextBox for Console Look
+    ' 🟩 Setup RichTextBox for Console Look (updated font)
     Private Sub SetupConsoleBox()
         With RichTextBoxLogs
             .Multiline = True
             .ReadOnly = True
             .Dock = DockStyle.Fill
-            .BackColor = Color.FromArgb(33, 33, 33)
-            .ForeColor = Color.Lime
-            .Font = New Font("Consolas", GetResponsiveFontSize(), FontStyle.Regular)
+            .BackColor = Color.Bisque
+            .ForeColor = Color.Black
+            .Font = New Font("Consolas", GetResponsiveFontSize(), FontStyle.Regular) ' font is now bigger
             .BorderStyle = BorderStyle.None
             .ScrollBars = RichTextBoxScrollBars.Vertical
             .WordWrap = False
         End With
+
+        ' 🟫 Add left/right padding inside RichTextBox
+        SendMessage(RichTextBoxLogs.Handle, EM_SETMARGINS,
+                CType(EC_LEFTMARGIN Or EC_RIGHTMARGIN, IntPtr),
+                CType((20 << 16) Or 20, IntPtr)) ' Left=20px, Right=20px
     End Sub
 
-    ' 🟨 Responsive Font Scaling
+    ' 🟨 Responsive Font Scaling (increased base font size)
     Private Function GetResponsiveFontSize() As Single
-        Dim baseSize As Single = 11
+        Dim baseSize As Single = 14 ' ↑ increased from 11 to 14 for bigger text
         Dim scaleFactor As Single = Me.Width / 900.0F
         Dim newSize As Single = baseSize * scaleFactor
-        If newSize < 9 Then newSize = 10
-        If newSize > 16 Then newSize = 20
+        If newSize < 12 Then newSize = 12
+        If newSize > 20 Then newSize = 24
         Return newSize
     End Function
 
@@ -43,7 +58,6 @@ Public Class UC_HPAL_Logs_Tab
             ' Ignore any rare RichTextBox scaling errors
         End Try
     End Sub
-
 
     ' 🟦 Load Logs from Database
     Private Sub LoadLogsFromDatabase()
@@ -107,7 +121,7 @@ Public Class UC_HPAL_Logs_Tab
             End Using
 
         Catch ex As Exception
-            AppendColoredLog("[Error] Failed to load logs: " & ex.Message, Color.Red)
+            AppendColoredLog("[Error] Failed to load logs: " & ex.Message, Color.Black)
         End Try
     End Sub
 
@@ -123,14 +137,22 @@ Public Class UC_HPAL_Logs_Tab
     ' 🕒 Timer for Live Clock
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         Label2.Text = DateTime.Now.ToString("MMM dd, yyyy | hh:mm:ss tt")
+        Label2.Font = New Font("Century Gothic", 10.0!, FontStyle.Bold)
     End Sub
 
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
-
-    End Sub
-
-    Private Sub RichTextBoxLogs_TextChanged(sender As Object, e As EventArgs) Handles RichTextBoxLogs.TextChanged
+    Private Sub Label1_Click(sender As Object, e As EventArgs)
 
     End Sub
 
+    Private Sub RichTextBoxLogs_TextChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
+
+    End Sub
+
+    Private Sub RichTextBoxLogs_TextChanged_1(sender As Object, e As EventArgs) Handles RichTextBoxLogs.TextChanged
+
+    End Sub
 End Class

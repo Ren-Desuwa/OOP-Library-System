@@ -55,7 +55,7 @@ Partial Class UC_Borrow_Container
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 47.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 51.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.DueDate_Lbl, 3, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.BorrowDate_Lbl, 2, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.Borrower_Lbl, 1, 0)
@@ -76,7 +76,7 @@ Partial Class UC_Borrow_Container
         Me.DueDate_Lbl.AutoSize = True
         Me.DueDate_Lbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DueDate_Lbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(111, Byte), Integer), CType(CType(78, Byte), Integer), CType(CType(55, Byte), Integer))
-        Me.DueDate_Lbl.Location = New System.Drawing.Point(482, 19)
+        Me.DueDate_Lbl.Location = New System.Drawing.Point(479, 19)
         Me.DueDate_Lbl.Name = "DueDate_Lbl"
         Me.DueDate_Lbl.Size = New System.Drawing.Size(90, 24)
         Me.DueDate_Lbl.TabIndex = 3
@@ -88,7 +88,7 @@ Partial Class UC_Borrow_Container
         Me.BorrowDate_Lbl.AutoSize = True
         Me.BorrowDate_Lbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BorrowDate_Lbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(111, Byte), Integer), CType(CType(78, Byte), Integer), CType(CType(55, Byte), Integer))
-        Me.BorrowDate_Lbl.Location = New System.Drawing.Point(323, 19)
+        Me.BorrowDate_Lbl.Location = New System.Drawing.Point(321, 19)
         Me.BorrowDate_Lbl.Name = "BorrowDate_Lbl"
         Me.BorrowDate_Lbl.Size = New System.Drawing.Size(118, 24)
         Me.BorrowDate_Lbl.TabIndex = 2
@@ -100,7 +100,7 @@ Partial Class UC_Borrow_Container
         Me.Borrower_Lbl.AutoSize = True
         Me.Borrower_Lbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Borrower_Lbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(111, Byte), Integer), CType(CType(78, Byte), Integer), CType(CType(55, Byte), Integer))
-        Me.Borrower_Lbl.Location = New System.Drawing.Point(164, 19)
+        Me.Borrower_Lbl.Location = New System.Drawing.Point(163, 19)
         Me.Borrower_Lbl.Name = "Borrower_Lbl"
         Me.Borrower_Lbl.Size = New System.Drawing.Size(95, 24)
         Me.Borrower_Lbl.TabIndex = 1
@@ -126,10 +126,10 @@ Partial Class UC_Borrow_Container
         Me.StatusPanel.FillColor2 = System.Drawing.Color.LightSkyBlue
         Me.StatusPanel.FillColor3 = System.Drawing.Color.WhiteSmoke
         Me.StatusPanel.FillColor4 = System.Drawing.Color.DeepSkyBlue
-        Me.StatusPanel.Location = New System.Drawing.Point(638, 2)
+        Me.StatusPanel.Location = New System.Drawing.Point(634, 2)
         Me.StatusPanel.Margin = New System.Windows.Forms.Padding(0)
         Me.StatusPanel.Name = "StatusPanel"
-        Me.StatusPanel.Size = New System.Drawing.Size(49, 59)
+        Me.StatusPanel.Size = New System.Drawing.Size(53, 59)
         Me.StatusPanel.TabIndex = 4
         '
         'StatusLbl
