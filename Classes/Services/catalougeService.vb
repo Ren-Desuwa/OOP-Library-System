@@ -1,5 +1,6 @@
 ﻿' Import all your DAOs and Models
 Imports MySql.Data.MySqlClient
+Imports System.Threading.Tasks
 
 Public Class CatalougeService
     Private ReadOnly _dbCon As DBcon
@@ -39,7 +40,7 @@ Public Class CatalougeService
             _dbCon.CloseConnection()
         End Try
     End Function
-    ' --- ADD THIS NEW FUNCTION ---
+
     ''' <summary>
     ''' Gets a list of all known genres.
     ''' </summary>
@@ -59,92 +60,6 @@ Public Class CatalougeService
         Catch ex As Exception
             transaction.Rollback()
             Throw New Exception("Error getting all genres: " & ex.Message)
-        Finally
-            _dbCon.CloseConnection()
-        End Try
-    End Function
-
-    ' #################### WRITE (Management) ####################
-
-    ' --- THIS FUNCTION IS MODIFIED ---
-    ''' <summary>
-    ''' Adds a brand new book to the database, along with one or more initial copies.
-    ''' This version now processes genre names from a string list.
-    ''' </summary>
-    ''' <returns>The BookID of the newly created book.</returns>
-    Public Function AddNewBook(book As Book, genreNames As List(Of String), initialCopies As Integer, shelfLocation As String, condition As String, adminAccountId As Integer?) As Integer
-        If Not _dbCon.OpenConnection() Then
-            Throw New Exception("Could not connect to the database.")
-        End If
-
-        Dim transaction As MySqlTransaction = _dbCon.GetConnection().BeginTransaction()
-
-        Try
-            Dim bookDAO As New BookDAO(transaction)
-            Dim bookCopyDAO As New BookCopyDAO(transaction)
-            Dim bookGenreDAO As New BookGenreDAO(transaction)
-            Dim genreDAO As New GenreDAO(transaction) ' <-- We need this now
-            Dim logDAO As New LogDAO(transaction)
-
-            ' 1. Create the main book entry
-            Dim newBookId As Integer = bookDAO.Create(book)
-            book.BookID = newBookId
-
-            ' --- NEW GENRE LOGIC ---
-            If genreNames IsNot Nothing AndAlso genreNames.Any() Then
-                ' Get all existing genres ONCE to check against.
-                Dim allGenres As List(Of Genre) = genreDAO.GetAll()
-
-                For Each rawName As String In genreNames
-                    Dim trimmedName = rawName.Trim()
-                    If String.IsNullOrEmpty(trimmedName) Then Continue For
-
-                    ' Find existing genre, ignoring case (e.g., "hoRRoR" matches "Horror")
-                    Dim foundGenre = allGenres.FirstOrDefault(Function(g) g.Name.Equals(trimmedName, StringComparison.OrdinalIgnoreCase))
-
-                    Dim genreIdToLink As Integer
-
-                    If foundGenre IsNot Nothing Then
-                        ' A. Genre exists. Use its ID.
-                        genreIdToLink = foundGenre.GenreID
-                    Else
-                        ' B. Genre is new. Create it (using the user's casing) and get the new ID.
-                        Dim newGenre As New Genre With {.Name = trimmedName}
-                        genreIdToLink = genreDAO.Create(newGenre)
-                        ' Add to our local list so we don't create it twice in one loop
-                        newGenre.GenreID = genreIdToLink
-                        allGenres.Add(newGenre)
-                    End If
-
-                    ' Link the book to the genre
-                    bookGenreDAO.AddGenreToBook(newBookId, genreIdToLink)
-                Next
-            End If
-            ' --- END OF NEW GENRE LOGIC ---
-
-            ' 2. Create the initial copies
-            If initialCopies <= 0 Then initialCopies = 1 ' Must add at least one copy
-
-            For i = 1 To initialCopies
-                Dim copy As New BookCopy With {
-                    .BookID = newBookId,
-                    .ShelfLocation = shelfLocation,
-                    .Condition = condition, ' <-- Use the parameter
-                    .Status = "Available"
-                }
-                bookCopyDAO.Create(copy)
-            Next
-
-            ' 3. Log the action
-            logDAO.Create(Log.RecordAction(adminAccountId, "Catalogue Add", $"New book '{book.Title}' (ID: {newBookId}) added with {initialCopies} copies.", "Info"))
-
-            ' 4. Commit
-            transaction.Commit()
-
-            Return newBookId
-        Catch ex As Exception
-            transaction.Rollback()
-            Throw New Exception("Error adding new book: " & ex.Message)
         Finally
             _dbCon.CloseConnection()
         End Try
@@ -228,13 +143,39 @@ Public Class CatalougeService
         End Try
     End Function
 
+    Public Function SearchCatalogue(searchTerm As String) As List(Of Book)
+        If String.IsNullOrWhiteSpace(searchTerm) Then Return New List(Of Book)() ' Return empty if search is blank
+
+        If Not _dbCon.OpenConnection() Then
+            Throw New Exception("Could not connect to the database.")
+        End If
+
+        Dim transaction As MySqlTransaction = _dbCon.GetConnection().BeginTransaction()
+
+        Try
+            Dim bookDAO As New BookDAO(transaction)
+            ' Note: Assuming SearchBooks also attaches genres or it's not needed for search.
+            ' If it is, you'll need to loop here too.
+            Dim results = bookDAO.SearchBooks(searchTerm)
+
+            transaction.Rollback() ' Read-only operation
+            Return results
+        Catch ex As Exception
+            transaction.Rollback()
+            Throw New Exception("Error searching catalogue: " & ex.Message)
+        Finally
+            _dbCon.CloseConnection()
+        End Try
+    End Function
+
     ' #################### WRITE (Management) ####################
 
     ''' <summary>
     ''' Adds a brand new book to the database, along with one or more initial copies.
+    ''' This version now processes genre names from a string list.
     ''' </summary>
     ''' <returns>The BookID of the newly created book.</returns>
-    Public Function AddNewBook(book As Book, initialCopies As Integer, shelfLocation As String, condition As String, adminAccountId As Integer?) As Integer
+    Public Function AddNewBook(book As Book, genreNames As List(Of String), initialCopies As Integer, shelfLocation As String, condition As String, adminAccountId As Integer?) As Integer
         If Not _dbCon.OpenConnection() Then
             Throw New Exception("Could not connect to the database.")
         End If
@@ -245,18 +186,44 @@ Public Class CatalougeService
             Dim bookDAO As New BookDAO(transaction)
             Dim bookCopyDAO As New BookCopyDAO(transaction)
             Dim bookGenreDAO As New BookGenreDAO(transaction)
-
+            Dim genreDAO As New GenreDAO(transaction) ' <-- We need this now
             Dim logDAO As New LogDAO(transaction)
 
             ' 1. Create the main book entry
             Dim newBookId As Integer = bookDAO.Create(book)
             book.BookID = newBookId
 
-            If book.Genres IsNot Nothing AndAlso book.Genres.Any() Then
-                For Each genre As Genre In book.Genres
-                    bookGenreDAO.AddGenreToBook(newBookId, genre.GenreID)
+            ' --- NEW GENRE LOGIC ---
+            If genreNames IsNot Nothing AndAlso genreNames.Any() Then
+                ' Get all existing genres ONCE to check against.
+                Dim allGenres As List(Of Genre) = genreDAO.GetAll()
+
+                For Each rawName As String In genreNames
+                    Dim trimmedName = rawName.Trim()
+                    If String.IsNullOrEmpty(trimmedName) Then Continue For
+
+                    ' Find existing genre, ignoring case (e.g., "hoRRoR" matches "Horror")
+                    Dim foundGenre = allGenres.FirstOrDefault(Function(g) g.Name.Equals(trimmedName, StringComparison.OrdinalIgnoreCase))
+
+                    Dim genreIdToLink As Integer
+
+                    If foundGenre IsNot Nothing Then
+                        ' A. Genre exists. Use its ID.
+                        genreIdToLink = foundGenre.GenreID
+                    Else
+                        ' B. Genre is new. Create it (using the user's casing) and get the new ID.
+                        Dim newGenre As New Genre With {.Name = trimmedName}
+                        genreIdToLink = genreDAO.Create(newGenre)
+                        ' Add to our local list so we don't create it twice in one loop
+                        newGenre.GenreID = genreIdToLink
+                        allGenres.Add(newGenre)
+                    End If
+
+                    ' Link the book to the genre
+                    bookGenreDAO.AddGenreToBook(newBookId, genreIdToLink)
                 Next
             End If
+            ' --- END OF NEW GENRE LOGIC ---
 
             ' 2. Create the initial copies
             If initialCopies <= 0 Then initialCopies = 1 ' Must add at least one copy
@@ -265,7 +232,7 @@ Public Class CatalougeService
                 Dim copy As New BookCopy With {
                     .BookID = newBookId,
                     .ShelfLocation = shelfLocation,
-                    .Condition = condition,
+                    .Condition = condition, ' <-- Use the parameter
                     .Status = "Available"
                 }
                 bookCopyDAO.Create(copy)
@@ -285,6 +252,8 @@ Public Class CatalougeService
             _dbCon.CloseConnection()
         End Try
     End Function
+
+    ' Note: Removed the duplicate/older AddNewBook function that was here.
 
     ''' <summary>
     ''' Updates the core details of an existing book.
@@ -394,27 +363,83 @@ Public Class CatalougeService
         End Try
     End Function
 
-    Public Function SearchCatalogue(searchTerm As String) As List(Of Book)
-        If String.IsNullOrWhiteSpace(searchTerm) Then Return New List(Of Book)() ' Return empty if search is blank
+    ' ##################################################
+    ' --- NEW PAGINATION FUNCTIONS (IMPLEMENTED) ---
+    ' ##################################################
+
+    ''' <summary>
+    ''' Gets the total count of all books in the database.
+    ''' </summary>
+    Public Function GetTotalBookCount() As Integer
+        If Not _dbCon.OpenConnection() Then
+            Throw New Exception("Could not connect to the database.")
+        End If
+
+        Dim transaction As MySqlTransaction = _dbCon.GetConnection().BeginTransaction()
+        Try
+            ' Call the new BookDAO function that runs:
+            ' "SELECT COUNT(BookID) FROM Book"
+            Dim bookDAO As New BookDAO(transaction)
+            Dim count As Integer = bookDAO.GetTotalBookCount()
+
+            transaction.Rollback() ' Read-only operation
+            Return count
+        Catch ex As Exception
+            transaction.Rollback()
+            Throw New Exception("Error getting total book count: " & ex.Message)
+        Finally
+            _dbCon.CloseConnection()
+        End Try
+    End Function
+
+    ''' <summary>
+    ''' Fetches a single page of books from the database.
+    ''' </summary>
+    Public Function GetBooksByPage(pageNumber As Integer, pageSize As Integer) As List(Of Book)
+        ' The pageNumber here is 1-based, but SQL OFFSET is 0-based.
+        Dim offset As Integer = (pageNumber - 1) * pageSize
 
         If Not _dbCon.OpenConnection() Then
             Throw New Exception("Could not connect to the database.")
         End If
 
         Dim transaction As MySqlTransaction = _dbCon.GetConnection().BeginTransaction()
-
         Try
+            ' Call the new BookDAO function that runs SQL for pagination
             Dim bookDAO As New BookDAO(transaction)
-            Dim results = bookDAO.SearchBooks(searchTerm)
+            Dim genreDAO As New GenreDAO(transaction) ' <-- Needed to attach genres
+            Dim books = bookDAO.GetBooksByPage(offset, pageSize)
+
+            ' --- CRITICAL ---
+            ' We must also load the genres for the books on this page,
+            ' just like GetAllBooks() does.
+            For Each book In books
+                book.Genres = genreDAO.GetGenresByBookId(book.BookID)
+            Next
+            ' --- END CRITICAL ---
 
             transaction.Rollback() ' Read-only operation
-            Return results
+            Return books
         Catch ex As Exception
             transaction.Rollback()
-            Throw New Exception("Error searching catalogue: " & ex.Message)
+            Throw New Exception("Error getting books by page: " & ex.Message)
         Finally
             _dbCon.CloseConnection()
         End Try
+    End Function
+
+    ' --- We also add ASYNC wrappers for the UI to call ---
+
+    Public Function GetTotalBookCountAsync() As Task(Of Integer)
+        Return Task.Run(Function()
+                            Return GetTotalBookCount()
+                        End Function)
+    End Function
+
+    Public Function GetBooksByPageAsync(pageNumber As Integer, pageSize As Integer) As Task(Of List(Of Book))
+        Return Task.Run(Function()
+                            Return GetBooksByPage(pageNumber, pageSize)
+                        End Function)
     End Function
 
 End Class

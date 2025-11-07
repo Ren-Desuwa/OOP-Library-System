@@ -31,10 +31,10 @@ Partial Class Signup_Panel_Student
         Me.UC_welcome_message1_student1 = New OOP_Library_System.UC_welcome_message1_student()
         Me.UC_signup_step1_student1 = New OOP_Library_System.UC_signup_step1_student()
         Me.UC_signup_step2_student1 = New OOP_Library_System.UC_signup_step2_student()
-        Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Guna2Elipse1 = New Guna.UI2.WinForms.Guna2Elipse(Me.components)
         Me.Guna2Transition1 = New Guna.UI2.WinForms.Guna2Transition()
         Me.Guna2Transition2 = New Guna.UI2.WinForms.Guna2Transition()
+        Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.title_panel.SuspendLayout()
         Me.signup_form_container.SuspendLayout()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -52,9 +52,9 @@ Partial Class Signup_Panel_Student
         Me.title_panel.FillColor3 = System.Drawing.Color.FromArgb(CType(CType(154, Byte), Integer), CType(CType(111, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.title_panel.FillColor4 = System.Drawing.Color.FromArgb(CType(CType(139, Byte), Integer), CType(CType(103, Byte), Integer), CType(CType(67, Byte), Integer))
         Me.title_panel.Location = New System.Drawing.Point(0, 0)
-        Me.title_panel.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.title_panel.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.title_panel.Name = "title_panel"
-        Me.title_panel.Size = New System.Drawing.Size(1248, 705)
+        Me.title_panel.Size = New System.Drawing.Size(1857, 975)
         Me.title_panel.TabIndex = 1
         '
         'signup_form_container
@@ -72,11 +72,11 @@ Partial Class Signup_Panel_Student
         Me.signup_form_container.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(240, Byte), Integer))
         Me.signup_form_container.FillColor3 = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(232, Byte), Integer))
         Me.signup_form_container.FillColor4 = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.signup_form_container.Location = New System.Drawing.Point(100, 98)
-        Me.signup_form_container.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.signup_form_container.MaximumSize = New System.Drawing.Size(1048, 505)
+        Me.signup_form_container.Location = New System.Drawing.Point(535, 281)
+        Me.signup_form_container.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.signup_form_container.MaximumSize = New System.Drawing.Size(786, 410)
         Me.signup_form_container.Name = "signup_form_container"
-        Me.signup_form_container.Size = New System.Drawing.Size(1048, 505)
+        Me.signup_form_container.Size = New System.Drawing.Size(786, 410)
         Me.signup_form_container.TabIndex = 14
         '
         'UC_welcome_message1_student1
@@ -86,8 +86,9 @@ Partial Class Signup_Panel_Student
         Me.Guna2Transition2.SetDecoration(Me.UC_welcome_message1_student1, Guna.UI2.AnimatorNS.DecorationType.None)
         Me.UC_welcome_message1_student1.Dock = System.Windows.Forms.DockStyle.Left
         Me.UC_welcome_message1_student1.Location = New System.Drawing.Point(0, 0)
+        Me.UC_welcome_message1_student1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.UC_welcome_message1_student1.Name = "UC_welcome_message1_student1"
-        Me.UC_welcome_message1_student1.Size = New System.Drawing.Size(525, 505)
+        Me.UC_welcome_message1_student1.Size = New System.Drawing.Size(394, 410)
         Me.UC_welcome_message1_student1.TabIndex = 2
         '
         'UC_signup_step1_student1
@@ -95,10 +96,10 @@ Partial Class Signup_Panel_Student
         Me.UC_signup_step1_student1.BackColor = System.Drawing.Color.Transparent
         Me.Guna2Transition1.SetDecoration(Me.UC_signup_step1_student1, Guna.UI2.AnimatorNS.DecorationType.None)
         Me.Guna2Transition2.SetDecoration(Me.UC_signup_step1_student1, Guna.UI2.AnimatorNS.DecorationType.None)
-        Me.UC_signup_step1_student1.Location = New System.Drawing.Point(520, 0)
-        Me.UC_signup_step1_student1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.UC_signup_step1_student1.Location = New System.Drawing.Point(390, 0)
+        Me.UC_signup_step1_student1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.UC_signup_step1_student1.Name = "UC_signup_step1_student1"
-        Me.UC_signup_step1_student1.Size = New System.Drawing.Size(525, 505)
+        Me.UC_signup_step1_student1.Size = New System.Drawing.Size(394, 410)
         Me.UC_signup_step1_student1.TabIndex = 0
         '
         'UC_signup_step2_student1
@@ -106,25 +107,11 @@ Partial Class Signup_Panel_Student
         Me.UC_signup_step2_student1.BackColor = System.Drawing.Color.Transparent
         Me.Guna2Transition1.SetDecoration(Me.UC_signup_step2_student1, Guna.UI2.AnimatorNS.DecorationType.None)
         Me.Guna2Transition2.SetDecoration(Me.UC_signup_step2_student1, Guna.UI2.AnimatorNS.DecorationType.None)
-        Me.UC_signup_step2_student1.Location = New System.Drawing.Point(520, 0)
+        Me.UC_signup_step2_student1.Location = New System.Drawing.Point(390, 0)
+        Me.UC_signup_step2_student1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.UC_signup_step2_student1.Name = "UC_signup_step2_student1"
-        Me.UC_signup_step2_student1.Size = New System.Drawing.Size(525, 505)
+        Me.UC_signup_step2_student1.Size = New System.Drawing.Size(394, 410)
         Me.UC_signup_step2_student1.TabIndex = 1
-        '
-        'Guna2PictureBox1
-        '
-        Me.Guna2PictureBox1.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2Transition1.SetDecoration(Me.Guna2PictureBox1, Guna.UI2.AnimatorNS.DecorationType.None)
-        Me.Guna2Transition2.SetDecoration(Me.Guna2PictureBox1, Guna.UI2.AnimatorNS.DecorationType.None)
-        Me.Guna2PictureBox1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Guna2PictureBox1.FillColor = System.Drawing.Color.Transparent
-        Me.Guna2PictureBox1.Image = Global.OOP_Library_System.My.Resources.Resources.titi_ni_ren_baluktot_nakita_ko
-        Me.Guna2PictureBox1.ImageRotate = 0!
-        Me.Guna2PictureBox1.Location = New System.Drawing.Point(0, 0)
-        Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
-        Me.Guna2PictureBox1.Size = New System.Drawing.Size(1248, 705)
-        Me.Guna2PictureBox1.TabIndex = 17
-        Me.Guna2PictureBox1.TabStop = False
         '
         'Guna2Elipse1
         '
@@ -173,16 +160,31 @@ Partial Class Signup_Panel_Student
         Animation2.TransparencyCoeff = 1.0!
         Me.Guna2Transition2.DefaultAnimation = Animation2
         '
+        'Guna2PictureBox1
+        '
+        Me.Guna2PictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2Transition1.SetDecoration(Me.Guna2PictureBox1, Guna.UI2.AnimatorNS.DecorationType.None)
+        Me.Guna2Transition2.SetDecoration(Me.Guna2PictureBox1, Guna.UI2.AnimatorNS.DecorationType.None)
+        Me.Guna2PictureBox1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Guna2PictureBox1.FillColor = System.Drawing.Color.Transparent
+        Me.Guna2PictureBox1.Image = Global.OOP_Library_System.My.Resources.Resources.titi_ni_ren_baluktot_nakita_ko
+        Me.Guna2PictureBox1.ImageRotate = 0!
+        Me.Guna2PictureBox1.Location = New System.Drawing.Point(0, 0)
+        Me.Guna2PictureBox1.Margin = New System.Windows.Forms.Padding(2)
+        Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
+        Me.Guna2PictureBox1.Size = New System.Drawing.Size(1857, 975)
+        Me.Guna2PictureBox1.TabIndex = 17
+        Me.Guna2PictureBox1.TabStop = False
+        '
         'Signup_Panel_Student
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1248, 705)
+        Me.ClientSize = New System.Drawing.Size(1857, 975)
         Me.Controls.Add(Me.title_panel)
         Me.Guna2Transition2.SetDecoration(Me, Guna.UI2.AnimatorNS.DecorationType.None)
         Me.Guna2Transition1.SetDecoration(Me, Guna.UI2.AnimatorNS.DecorationType.None)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Signup_Panel_Student"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "SignUp"

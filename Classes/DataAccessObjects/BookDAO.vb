@@ -14,7 +14,7 @@ Public Class BookDAO
         Dim colPublisher = reader.GetOrdinal("publisher")
         Dim colYearPublished = reader.GetOrdinal("year_published")
         Dim colDescription = reader.GetOrdinal("description")
-        Dim colCoverUrl = reader.GetOrdinal("cover_url") ' <-- ADD THIS LINE
+        Dim colCoverUrl = reader.GetOrdinal("cover_url")
 
         Return New Book With {
             .BookID = reader.GetInt32("book_id"),
@@ -24,7 +24,7 @@ Public Class BookDAO
             .Publisher = If(reader.IsDBNull(colPublisher), Nothing, reader.GetString(colPublisher)),
             .YearPublished = If(reader.IsDBNull(colYearPublished), 0, reader.GetInt32(colYearPublished)),
             .Description = If(reader.IsDBNull(colDescription), Nothing, reader.GetString(colDescription)),
-            .CoverUrl = If(reader.IsDBNull(colCoverUrl), Nothing, reader.GetString(colCoverUrl)), ' <-- ADD THIS LINE
+            .CoverUrl = If(reader.IsDBNull(colCoverUrl), Nothing, reader.GetString(colCoverUrl)),
             .TotalCopies = reader.GetInt32("total_copies"),
             .AvailableCopies = reader.GetInt32("available_copies")
         }
@@ -36,14 +36,13 @@ Public Class BookDAO
         "  (SELECT COUNT(*) FROM book_copies bc WHERE bc.book_id = b.book_id) AS total_copies, " &
         "  (SELECT COUNT(*) FROM book_copies bc WHERE bc.book_id = b.book_id AND bc.status = 'Available') AS available_copies " &
         "FROM books b "
-    ' (No change needed here, "b.*" will automatically pick up the new column)
 
     ' 
     '#################### CREATE ####################
     Public Function Create(book As Book) As Integer
         ' Note: We only insert the non-calculated fields
-        Dim sql = "INSERT INTO books (title, author, isbn, publisher, year_published, description, cover_url) " & ' <-- ADD cover_url
-                  "VALUES (@Title, @Author, @ISBN, @Publisher, @YearPublished, @Description, @CoverUrl);" & ' <-- ADD @CoverUrl
+        Dim sql = "INSERT INTO books (title, author, isbn, publisher, year_published, description, cover_url) " &
+                  "VALUES (@Title, @Author, @ISBN, @Publisher, @YearPublished, @Description, @CoverUrl);" &
                   "SELECT LAST_INSERT_ID();"
         Using cmd As New MySqlCommand(sql, _transaction.Connection, _transaction)
             cmd.Parameters.AddWithValue("@Title", book.Title)
@@ -52,7 +51,7 @@ Public Class BookDAO
             cmd.Parameters.AddWithValue("@Publisher", If(book.Publisher Is Nothing, Nothing, book.Publisher))
             cmd.Parameters.AddWithValue("@YearPublished", If(book.YearPublished = 0, Nothing, book.YearPublished))
             cmd.Parameters.AddWithValue("@Description", If(book.Description Is Nothing, Nothing, book.Description))
-            cmd.Parameters.AddWithValue("@CoverUrl", If(book.CoverUrl Is Nothing, Nothing, book.CoverUrl)) ' <-- ADD THIS LINE
+            cmd.Parameters.AddWithValue("@CoverUrl", If(book.CoverUrl Is Nothing, Nothing, book.CoverUrl))
             Return Convert.ToInt32(cmd.ExecuteScalar())
         End Using
     End Function
@@ -101,7 +100,7 @@ Public Class BookDAO
         Dim sql = "UPDATE books SET " &
                   "title = @Title, author = @Author, isbn = @ISBN, " &
                   "publisher = @Publisher, year_published = @YearPublished, description = @Description, " &
-                  "cover_url = @CoverUrl " & ' <-- ADD cover_url
+                  "cover_url = @CoverUrl " &
                   "WHERE book_id = @Id"
         Using cmd As New MySqlCommand(sql, _transaction.Connection, _transaction)
             cmd.Parameters.AddWithValue("@Title", book.Title)
@@ -110,7 +109,7 @@ Public Class BookDAO
             cmd.Parameters.AddWithValue("@Publisher", If(book.Publisher Is Nothing, Nothing, book.Publisher))
             cmd.Parameters.AddWithValue("@YearPublished", If(book.YearPublished = 0, Nothing, book.YearPublished))
             cmd.Parameters.AddWithValue("@Description", If(book.Description Is Nothing, Nothing, book.Description))
-            cmd.Parameters.AddWithValue("@CoverUrl", If(book.CoverUrl Is Nothing, Nothing, book.CoverUrl)) ' <-- ADD THIS LINE
+            cmd.Parameters.AddWithValue("@CoverUrl", If(book.CoverUrl Is Nothing, Nothing, book.CoverUrl))
             cmd.Parameters.AddWithValue("@Id", book.BookID)
             cmd.ExecuteNonQuery()
         End Using
@@ -144,6 +143,42 @@ Public Class BookDAO
             Using reader = cmd.ExecuteReader()
                 While reader.Read()
                     list.Add(MapToBook(reader)) ' Use existing mapping function
+                End While
+            End Using
+        End Using
+        Return list
+    End Function
+
+    ' --- NEW PAGINATION FUNCTIONS ---
+
+    ''' <summary>
+    ''' Gets the total count of all books.
+    ''' </summary>
+    Public Function GetTotalBookCount() As Integer
+        Dim sql = "SELECT COUNT(book_id) FROM books"
+        Using cmd As New MySqlCommand(sql, _transaction.Connection, _transaction)
+            ' ExecuteScalar is used for queries that return a single value
+            Return Convert.ToInt32(cmd.ExecuteScalar())
+        End Using
+    End Function
+
+    ''' <summary>
+    ''' Gets a specific page of books, ordered by title.
+    ''' </summary>
+    Public Function GetBooksByPage(offset As Integer, pageSize As Integer) As List(Of Book)
+        Dim list As New List(Of Book)
+        ' Use the base SELECT_SQL to get calculated columns
+        ' Use LIMIT/OFFSET for MySQL pagination. A stable order is required.
+        Dim sql = SELECT_SQL & " ORDER BY b.title LIMIT @PageSize OFFSET @Offset"
+
+        Using cmd As New MySqlCommand(sql, _transaction.Connection, _transaction)
+            ' Add parameters as integers
+            cmd.Parameters.AddWithValue("@Offset", offset)
+            cmd.Parameters.AddWithValue("@PageSize", pageSize)
+
+            Using reader = cmd.ExecuteReader()
+                While reader.Read()
+                    list.Add(MapToBook(reader)) ' Reuse the existing mapper
                 End While
             End Using
         End Using
