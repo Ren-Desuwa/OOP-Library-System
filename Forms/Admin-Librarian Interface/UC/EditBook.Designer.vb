@@ -80,7 +80,7 @@ Partial Class EditBook
         Me.Guna2CustomGradientPanel1.FillColor3 = System.Drawing.Color.FromArgb(CType(CType(154, Byte), Integer), CType(CType(111, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.Guna2CustomGradientPanel1.FillColor4 = System.Drawing.Color.FromArgb(CType(CType(139, Byte), Integer), CType(CType(103, Byte), Integer), CType(CType(67, Byte), Integer))
         Me.Guna2CustomGradientPanel1.Location = New System.Drawing.Point(0, 0)
-        Me.Guna2CustomGradientPanel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Guna2CustomGradientPanel1.Margin = New System.Windows.Forms.Padding(2)
         Me.Guna2CustomGradientPanel1.Name = "Guna2CustomGradientPanel1"
         Me.Guna2CustomGradientPanel1.Size = New System.Drawing.Size(533, 77)
         Me.Guna2CustomGradientPanel1.TabIndex = 0
@@ -96,7 +96,7 @@ Partial Class EditBook
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.lbl_title, 0, 0)
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 8)
-        Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(2)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
@@ -142,7 +142,7 @@ Partial Class EditBook
         Me.TableLayoutPanel2.Controls.Add(Me.Label5, 0, 8)
         Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel2.Location = New System.Drawing.Point(0, 77)
-        Me.TableLayoutPanel2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TableLayoutPanel2.Margin = New System.Windows.Forms.Padding(2)
         Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
         Me.TableLayoutPanel2.RowCount = 11
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.44676!))
@@ -231,7 +231,7 @@ Partial Class EditBook
         Me.Label2.Location = New System.Drawing.Point(2, 190)
         Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(67, 24)
+        Me.Label2.Size = New System.Drawing.Size(68, 24)
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "Author:"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -291,7 +291,7 @@ Partial Class EditBook
         Me.txtTitle.Location = New System.Drawing.Point(2, 117)
         Me.txtTitle.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.txtTitle.Name = "txtTitle"
-        Me.txtTitle.Size = New System.Drawing.Size(47, 33)
+        Me.txtTitle.Size = New System.Drawing.Size(48, 33)
         Me.txtTitle.TabIndex = 1
         Me.txtTitle.Text = "Title:"
         Me.txtTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -342,7 +342,7 @@ Partial Class EditBook
         Me.Label6.Location = New System.Drawing.Point(296, 117)
         Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(129, 33)
+        Me.Label6.Size = New System.Drawing.Size(127, 33)
         Me.Label6.TabIndex = 15
         Me.Label6.Text = "Year Published:"
         Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -414,7 +414,7 @@ Partial Class EditBook
         Me.Label3.Location = New System.Drawing.Point(296, 259)
         Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(54, 32)
+        Me.Label3.Size = New System.Drawing.Size(51, 32)
         Me.Label3.TabIndex = 5
         Me.Label3.Text = "ISBN:"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -448,10 +448,10 @@ Partial Class EditBook
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label1.Location = New System.Drawing.Point(54, 0)
+        Me.Label1.Location = New System.Drawing.Point(53, 0)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(61, 53)
+        Me.Label1.Size = New System.Drawing.Size(62, 53)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Image:"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -483,7 +483,7 @@ Partial Class EditBook
         Me.Label5.Location = New System.Drawing.Point(2, 335)
         Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(103, 28)
+        Me.Label5.Size = New System.Drawing.Size(102, 28)
         Me.Label5.TabIndex = 7
         Me.Label5.Text = "Description:"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -497,7 +497,7 @@ Partial Class EditBook
         Me.Controls.Add(Me.TableLayoutPanel2)
         Me.Controls.Add(Me.Guna2CustomGradientPanel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "EditBook"
         Me.Text = "EditBook"
         Me.Guna2CustomGradientPanel1.ResumeLayout(False)

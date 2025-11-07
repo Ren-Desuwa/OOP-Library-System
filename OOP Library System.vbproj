@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{985F421D-0F74-4602-858B-EC5CA98B46E5}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>OOP_Library_System.Program</StartupObject>
+    <StartupObject>OOP_Library_System.ReturnBook</StartupObject>
     <RootNamespace>OOP_Library_System</RootNamespace>
     <AssemblyName>OOP Library System</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -116,6 +116,12 @@
     <Compile Include="Forms\Admin-Librarian Interface\UC\BookInfo.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\Admin-Librarian Interface\UC\ReturnBook.Designer.vb">
+      <DependentUpon>ReturnBook.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin-Librarian Interface\UC\ReturnBook.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\Admin-Librarian Interface\UC\UC_Booktable_container.Designer.vb">
       <DependentUpon>UC_Booktable_container.vb</DependentUpon>
     </Compile>
@@ -186,6 +192,18 @@
       <DependentUpon>UC_Librarian_container.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\Admin-Librarian Interface\UC\UC_Librarian_container.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin-Librarian Interface\UC\UC_ReturnBook_BookInfo.Designer.vb">
+      <DependentUpon>UC_ReturnBook_BookInfo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin-Librarian Interface\UC\UC_ReturnBook_BookInfo.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin-Librarian Interface\UC\UC_ReturnBook_Penalty.Designer.vb">
+      <DependentUpon>UC_ReturnBook_Penalty.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin-Librarian Interface\UC\UC_ReturnBook_Penalty.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Forms\Admin-Librarian Interface\UC\UC_UserRequest_Container.Designer.vb">
@@ -497,6 +515,9 @@
     <EmbeddedResource Include="Forms\Admin-Librarian Interface\UC\BookInfo.resx">
       <DependentUpon>BookInfo.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin-Librarian Interface\UC\ReturnBook.resx">
+      <DependentUpon>ReturnBook.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin-Librarian Interface\UC\UC_Booktable_container.resx">
       <DependentUpon>UC_Booktable_container.vb</DependentUpon>
     </EmbeddedResource>
@@ -532,6 +553,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin-Librarian Interface\UC\UC_Librarian_container.resx">
       <DependentUpon>UC_Librarian_container.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin-Librarian Interface\UC\UC_ReturnBook_BookInfo.resx">
+      <DependentUpon>UC_ReturnBook_BookInfo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin-Librarian Interface\UC\UC_ReturnBook_Penalty.resx">
+      <DependentUpon>UC_ReturnBook_Penalty.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin-Librarian Interface\UC\UC_UserRequest_Container.resx">
       <DependentUpon>UC_UserRequest_Container.vb</DependentUpon>

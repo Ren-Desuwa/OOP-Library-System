@@ -72,9 +72,10 @@ Partial Class CreateBook
         Me.lbl_title.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_title.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(232, Byte), Integer))
         Me.lbl_title.Image = Global.OOP_Library_System.My.Resources.Resources.BooksDesignBG3
-        Me.lbl_title.Location = New System.Drawing.Point(3, 0)
+        Me.lbl_title.Location = New System.Drawing.Point(2, 0)
+        Me.lbl_title.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbl_title.Name = "lbl_title"
-        Me.lbl_title.Size = New System.Drawing.Size(705, 95)
+        Me.lbl_title.Size = New System.Drawing.Size(529, 77)
         Me.lbl_title.TabIndex = 13
         Me.lbl_title.Text = "Create Book"
         Me.lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -88,9 +89,9 @@ Partial Class CreateBook
         Me.Guna2CustomGradientPanel1.FillColor3 = System.Drawing.Color.FromArgb(CType(CType(154, Byte), Integer), CType(CType(111, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.Guna2CustomGradientPanel1.FillColor4 = System.Drawing.Color.FromArgb(CType(CType(139, Byte), Integer), CType(CType(103, Byte), Integer), CType(CType(67, Byte), Integer))
         Me.Guna2CustomGradientPanel1.Location = New System.Drawing.Point(0, 0)
-        Me.Guna2CustomGradientPanel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Guna2CustomGradientPanel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Guna2CustomGradientPanel1.Name = "Guna2CustomGradientPanel1"
-        Me.Guna2CustomGradientPanel1.Size = New System.Drawing.Size(711, 95)
+        Me.Guna2CustomGradientPanel1.Size = New System.Drawing.Size(533, 77)
         Me.Guna2CustomGradientPanel1.TabIndex = 0
         '
         'TableLayoutPanel1
@@ -102,12 +103,12 @@ Partial Class CreateBook
         Me.TableLayoutPanel1.Controls.Add(Me.lbl_title, 0, 0)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 0)
-        Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(711, 95)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(533, 77)
         Me.TableLayoutPanel1.TabIndex = 14
         '
         'TableLayoutPanel2
@@ -136,8 +137,8 @@ Partial Class CreateBook
         Me.TableLayoutPanel2.Controls.Add(Me.picbox, 1, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.Label5, 0, 8)
         Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel2.Location = New System.Drawing.Point(0, 95)
-        Me.TableLayoutPanel2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.TableLayoutPanel2.Location = New System.Drawing.Point(0, 77)
+        Me.TableLayoutPanel2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
         Me.TableLayoutPanel2.RowCount = 11
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.44676!))
@@ -149,12 +150,12 @@ Partial Class CreateBook
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.930723!))
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.08274!))
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.80341!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 95.0!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 71.0!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel2.Size = New System.Drawing.Size(711, 620)
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 77.0!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 58.0!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16.0!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16.0!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16.0!))
+        Me.TableLayoutPanel2.Size = New System.Drawing.Size(533, 504)
         Me.TableLayoutPanel2.TabIndex = 1
         '
         'btn_Create
@@ -170,10 +171,10 @@ Partial Class CreateBook
         Me.btn_Create.FillColor = System.Drawing.Color.White
         Me.btn_Create.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btn_Create.ForeColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(42, Byte), Integer))
-        Me.btn_Create.Location = New System.Drawing.Point(187, 554)
-        Me.btn_Create.Margin = New System.Windows.Forms.Padding(31, 10, 11, 14)
+        Me.btn_Create.Location = New System.Drawing.Point(140, 448)
+        Me.btn_Create.Margin = New System.Windows.Forms.Padding(23, 8, 8, 11)
         Me.btn_Create.Name = "btn_Create"
-        Me.btn_Create.Size = New System.Drawing.Size(160, 52)
+        Me.btn_Create.Size = New System.Drawing.Size(120, 45)
         Me.btn_Create.TabIndex = 11
         Me.btn_Create.Text = "Create"
         '
@@ -189,10 +190,10 @@ Partial Class CreateBook
         Me.btn_cancel.FillColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(42, Byte), Integer))
         Me.btn_cancel.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btn_cancel.ForeColor = System.Drawing.Color.White
-        Me.btn_cancel.Location = New System.Drawing.Point(403, 554)
-        Me.btn_cancel.Margin = New System.Windows.Forms.Padding(11, 10, 11, 14)
+        Me.btn_cancel.Location = New System.Drawing.Point(302, 448)
+        Me.btn_cancel.Margin = New System.Windows.Forms.Padding(8, 8, 8, 11)
         Me.btn_cancel.Name = "btn_cancel"
-        Me.btn_cancel.Size = New System.Drawing.Size(160, 52)
+        Me.btn_cancel.Size = New System.Drawing.Size(120, 45)
         Me.btn_cancel.TabIndex = 11
         Me.btn_cancel.Text = "Cancel"
         '
@@ -209,12 +210,12 @@ Partial Class CreateBook
         Me.txtbox_description.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtbox_description.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtbox_description.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtbox_description.Location = New System.Drawing.Point(15, 451)
-        Me.txtbox_description.Margin = New System.Windows.Forms.Padding(4, 2, 19, 2)
+        Me.txtbox_description.Location = New System.Drawing.Point(11, 365)
+        Me.txtbox_description.Margin = New System.Windows.Forms.Padding(3, 2, 14, 2)
         Me.txtbox_description.Name = "txtbox_description"
         Me.txtbox_description.PlaceholderText = ""
         Me.txtbox_description.SelectedText = ""
-        Me.txtbox_description.Size = New System.Drawing.Size(665, 91)
+        Me.txtbox_description.Size = New System.Drawing.Size(499, 73)
         Me.txtbox_description.TabIndex = 8
         '
         'Label2
@@ -223,9 +224,10 @@ Partial Class CreateBook
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label2.Location = New System.Drawing.Point(3, 235)
+        Me.Label2.Location = New System.Drawing.Point(2, 190)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(84, 29)
+        Me.Label2.Size = New System.Drawing.Size(68, 24)
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "Author:"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -244,13 +246,13 @@ Partial Class CreateBook
         Me.txtbox_author.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtbox_author.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtbox_author.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtbox_author.Location = New System.Drawing.Point(40, 266)
-        Me.txtbox_author.Margin = New System.Windows.Forms.Padding(4, 2, 19, 2)
-        Me.txtbox_author.MaximumSize = New System.Drawing.Size(296, 42)
+        Me.txtbox_author.Location = New System.Drawing.Point(30, 216)
+        Me.txtbox_author.Margin = New System.Windows.Forms.Padding(3, 2, 14, 2)
+        Me.txtbox_author.MaximumSize = New System.Drawing.Size(222, 34)
         Me.txtbox_author.Name = "txtbox_author"
         Me.txtbox_author.PlaceholderText = ""
         Me.txtbox_author.SelectedText = ""
-        Me.txtbox_author.Size = New System.Drawing.Size(296, 42)
+        Me.txtbox_author.Size = New System.Drawing.Size(222, 34)
         Me.txtbox_author.TabIndex = 4
         '
         'txtbox_Title
@@ -267,13 +269,13 @@ Partial Class CreateBook
         Me.txtbox_Title.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtbox_Title.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtbox_Title.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtbox_Title.Location = New System.Drawing.Point(40, 187)
-        Me.txtbox_Title.Margin = New System.Windows.Forms.Padding(4, 2, 19, 2)
-        Me.txtbox_Title.MaximumSize = New System.Drawing.Size(296, 42)
+        Me.txtbox_Title.Location = New System.Drawing.Point(30, 152)
+        Me.txtbox_Title.Margin = New System.Windows.Forms.Padding(3, 2, 14, 2)
+        Me.txtbox_Title.MaximumSize = New System.Drawing.Size(222, 34)
         Me.txtbox_Title.Name = "txtbox_Title"
         Me.txtbox_Title.PlaceholderText = ""
         Me.txtbox_Title.SelectedText = ""
-        Me.txtbox_Title.Size = New System.Drawing.Size(296, 42)
+        Me.txtbox_Title.Size = New System.Drawing.Size(222, 34)
         Me.txtbox_Title.TabIndex = 3
         '
         'txtTitle
@@ -282,9 +284,10 @@ Partial Class CreateBook
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.txtTitle.AutoSize = True
         Me.txtTitle.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.txtTitle.Location = New System.Drawing.Point(3, 144)
+        Me.txtTitle.Location = New System.Drawing.Point(2, 117)
+        Me.txtTitle.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.txtTitle.Name = "txtTitle"
-        Me.txtTitle.Size = New System.Drawing.Size(60, 41)
+        Me.txtTitle.Size = New System.Drawing.Size(48, 33)
         Me.txtTitle.TabIndex = 1
         Me.txtTitle.Text = "Title:"
         Me.txtTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -295,9 +298,10 @@ Partial Class CreateBook
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label4.Location = New System.Drawing.Point(3, 320)
+        Me.Label4.Location = New System.Drawing.Point(2, 259)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(68, 40)
+        Me.Label4.Size = New System.Drawing.Size(55, 32)
         Me.Label4.TabIndex = 13
         Me.Label4.Text = "Genre"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -316,13 +320,13 @@ Partial Class CreateBook
         Me.txtbox_genre.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtbox_genre.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtbox_genre.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtbox_genre.Location = New System.Drawing.Point(40, 362)
-        Me.txtbox_genre.Margin = New System.Windows.Forms.Padding(4, 2, 19, 2)
-        Me.txtbox_genre.MaximumSize = New System.Drawing.Size(296, 42)
+        Me.txtbox_genre.Location = New System.Drawing.Point(30, 293)
+        Me.txtbox_genre.Margin = New System.Windows.Forms.Padding(3, 2, 14, 2)
+        Me.txtbox_genre.MaximumSize = New System.Drawing.Size(222, 34)
         Me.txtbox_genre.Name = "txtbox_genre"
         Me.txtbox_genre.PlaceholderText = ""
         Me.txtbox_genre.SelectedText = ""
-        Me.txtbox_genre.Size = New System.Drawing.Size(296, 42)
+        Me.txtbox_genre.Size = New System.Drawing.Size(222, 34)
         Me.txtbox_genre.TabIndex = 14
         '
         'Label6
@@ -331,9 +335,10 @@ Partial Class CreateBook
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label6.Location = New System.Drawing.Point(395, 144)
+        Me.Label6.Location = New System.Drawing.Point(296, 117)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(155, 41)
+        Me.Label6.Size = New System.Drawing.Size(127, 33)
         Me.Label6.TabIndex = 15
         Me.Label6.Text = "Year Published:"
         Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -351,13 +356,13 @@ Partial Class CreateBook
         Me.txtbox_yearpublished.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtbox_yearpublished.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtbox_yearpublished.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtbox_yearpublished.Location = New System.Drawing.Point(396, 187)
-        Me.txtbox_yearpublished.Margin = New System.Windows.Forms.Padding(4, 2, 19, 2)
-        Me.txtbox_yearpublished.MaximumSize = New System.Drawing.Size(296, 42)
+        Me.txtbox_yearpublished.Location = New System.Drawing.Point(297, 152)
+        Me.txtbox_yearpublished.Margin = New System.Windows.Forms.Padding(3, 2, 14, 2)
+        Me.txtbox_yearpublished.MaximumSize = New System.Drawing.Size(222, 34)
         Me.txtbox_yearpublished.Name = "txtbox_yearpublished"
         Me.txtbox_yearpublished.PlaceholderText = ""
         Me.txtbox_yearpublished.SelectedText = ""
-        Me.txtbox_yearpublished.Size = New System.Drawing.Size(296, 42)
+        Me.txtbox_yearpublished.Size = New System.Drawing.Size(222, 34)
         Me.txtbox_yearpublished.TabIndex = 16
         '
         'Label7
@@ -366,9 +371,10 @@ Partial Class CreateBook
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label7.Location = New System.Drawing.Point(395, 235)
+        Me.Label7.Location = New System.Drawing.Point(296, 190)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(109, 29)
+        Me.Label7.Size = New System.Drawing.Size(90, 24)
         Me.Label7.TabIndex = 17
         Me.Label7.Text = "Condition:"
         Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -386,13 +392,13 @@ Partial Class CreateBook
         Me.txtbox_condition.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtbox_condition.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtbox_condition.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtbox_condition.Location = New System.Drawing.Point(396, 266)
-        Me.txtbox_condition.Margin = New System.Windows.Forms.Padding(4, 2, 19, 2)
-        Me.txtbox_condition.MaximumSize = New System.Drawing.Size(296, 42)
+        Me.txtbox_condition.Location = New System.Drawing.Point(297, 216)
+        Me.txtbox_condition.Margin = New System.Windows.Forms.Padding(3, 2, 14, 2)
+        Me.txtbox_condition.MaximumSize = New System.Drawing.Size(222, 34)
         Me.txtbox_condition.Name = "txtbox_condition"
         Me.txtbox_condition.PlaceholderText = ""
         Me.txtbox_condition.SelectedText = ""
-        Me.txtbox_condition.Size = New System.Drawing.Size(296, 42)
+        Me.txtbox_condition.Size = New System.Drawing.Size(222, 34)
         Me.txtbox_condition.TabIndex = 18
         '
         'Label3
@@ -401,9 +407,10 @@ Partial Class CreateBook
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label3.Location = New System.Drawing.Point(395, 320)
+        Me.Label3.Location = New System.Drawing.Point(296, 259)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(63, 40)
+        Me.Label3.Size = New System.Drawing.Size(51, 32)
         Me.Label3.TabIndex = 5
         Me.Label3.Text = "ISBN:"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -422,13 +429,13 @@ Partial Class CreateBook
         Me.txtbox_isbn.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtbox_isbn.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtbox_isbn.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtbox_isbn.Location = New System.Drawing.Point(396, 362)
-        Me.txtbox_isbn.Margin = New System.Windows.Forms.Padding(4, 2, 19, 2)
-        Me.txtbox_isbn.MaximumSize = New System.Drawing.Size(296, 42)
+        Me.txtbox_isbn.Location = New System.Drawing.Point(297, 293)
+        Me.txtbox_isbn.Margin = New System.Windows.Forms.Padding(3, 2, 14, 2)
+        Me.txtbox_isbn.MaximumSize = New System.Drawing.Size(222, 34)
         Me.txtbox_isbn.Name = "txtbox_isbn"
         Me.txtbox_isbn.PlaceholderText = ""
         Me.txtbox_isbn.SelectedText = ""
-        Me.txtbox_isbn.Size = New System.Drawing.Size(296, 42)
+        Me.txtbox_isbn.Size = New System.Drawing.Size(222, 34)
         Me.txtbox_isbn.TabIndex = 6
         '
         'Label1
@@ -437,9 +444,10 @@ Partial Class CreateBook
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label1.Location = New System.Drawing.Point(78, 0)
+        Me.Label1.Location = New System.Drawing.Point(53, 0)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(75, 65)
+        Me.Label1.Size = New System.Drawing.Size(62, 53)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Image:"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -453,12 +461,12 @@ Partial Class CreateBook
         Me.picbox.Image = CType(resources.GetObject("picbox.Image"), System.Drawing.Image)
         Me.picbox.ImageOffset = New System.Drawing.Point(0, 0)
         Me.picbox.ImageRotate = 0!
-        Me.picbox.Location = New System.Drawing.Point(160, 2)
-        Me.picbox.Margin = New System.Windows.Forms.Padding(4, 2, 0, 2)
+        Me.picbox.Location = New System.Drawing.Point(120, 2)
+        Me.picbox.Margin = New System.Windows.Forms.Padding(3, 2, 0, 2)
         Me.picbox.Name = "picbox"
         Me.picbox.PressedState.ImageSize = New System.Drawing.Size(64, 64)
         Me.TableLayoutPanel2.SetRowSpan(Me.picbox, 2)
-        Me.picbox.Size = New System.Drawing.Size(128, 140)
+        Me.picbox.Size = New System.Drawing.Size(96, 113)
         Me.picbox.TabIndex = 12
         '
         'Label5
@@ -468,23 +476,24 @@ Partial Class CreateBook
         Me.Label5.AutoSize = True
         Me.TableLayoutPanel2.SetColumnSpan(Me.Label5, 2)
         Me.Label5.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label5.Location = New System.Drawing.Point(3, 414)
+        Me.Label5.Location = New System.Drawing.Point(2, 335)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(126, 35)
+        Me.Label5.Size = New System.Drawing.Size(102, 28)
         Me.Label5.TabIndex = 7
         Me.Label5.Text = "Description:"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'CreateBook
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(201, Byte), Integer), CType(CType(166, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(711, 715)
+        Me.ClientSize = New System.Drawing.Size(533, 581)
         Me.Controls.Add(Me.TableLayoutPanel2)
         Me.Controls.Add(Me.Guna2CustomGradientPanel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "CreateBook"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "CreateBook"
