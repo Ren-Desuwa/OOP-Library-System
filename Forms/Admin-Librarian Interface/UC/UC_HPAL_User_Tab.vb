@@ -77,7 +77,7 @@ Public Class UC_HPAL_User_Tab
 
             ' 2. Fetch the *entire* list from the database (on a background thread)
             _allAccounts = Await Task.Run(Function()
-                                              Return Program.AuthSvc.GetAllAccounts()
+                                              Return Program.AccountSvc.GetAllAccounts()
                                           End Function)
 
             ' 3. Display ALL users
@@ -169,7 +169,7 @@ Public Class UC_HPAL_User_Tab
 
                     ' Call the service on a background thread
                     Await Task.Run(Sub()
-                                       Program.AuthSvc.DeleteAccount(userToDelete.AccountID)
+                                       Program.AccountSvc.DeleteAccount(userToDelete.AccountID)
                                    End Sub)
 
                     MessageBox.Show("User deleted successfully.")

@@ -17,7 +17,7 @@
     Private Sub LoadPendingUsers()
         Try
             Borrow_Container_FlowLayout.Controls.Clear() ' Clear old items
-            Dim pendingAccounts = Program.AuthSvc.GetPendingAccounts()
+            Dim pendingAccounts = Program.AccountSvc.GetPendingAccounts()
 
             If pendingAccounts.Count = 0 Then
                 ' Optional: Show a label if no requests
@@ -76,7 +76,7 @@
         If selectedItem IsNot Nothing Then
             Try
                 ' 1. Call the service to update the database
-                Program.AuthSvc.ApproveAccount(selectedItem.AccountID)
+                Program.AccountSvc.ApproveAccount(selectedItem.AccountID)
 
                 ' 2. Update UI
                 selectedItem.UpdateStatus("A")
@@ -99,7 +99,7 @@
             If result = DialogResult.Yes Then
                 Try
                     ' 1. Call the service to delete from database
-                    Program.AuthSvc.RejectAccount(selectedItem.AccountID)
+                    Program.AccountSvc.RejectAccount(selectedItem.AccountID)
 
                     ' 2. Update UI by removing it
                     Borrow_Container_FlowLayout.Controls.Remove(selectedItem)

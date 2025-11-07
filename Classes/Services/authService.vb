@@ -8,7 +8,7 @@ Public Class AuthService
     Private ReadOnly _otpService As OtpService
     Private ReadOnly _notificationService As NotificationService
 
-    ' --- MODIFIED: Constructor now takes all required services ---
+    ' Constructor now takes all required services
     Public Sub New(dbConnector As DBcon, otpSvc As OtpService, notifSvc As NotificationService)
         _dbCon = dbConnector
         _otpService = otpSvc
@@ -72,7 +72,7 @@ Public Class AuthService
     End Function
 
     ' ##################################################################
-    ' --- 2. REGISTRATION (Moved from RegistrationService) ---
+    ' --- 2. REGISTRATION ---
     ' ##################################################################
 
     Private Enum ContactType
@@ -94,7 +94,8 @@ Public Class AuthService
     Public Async Function RequestRegistrationOtp(contactInfo As String) As Task(Of Boolean)
         Dim contactType As ContactType = GetContactType(contactInfo)
         If contactType = ContactType.Invalid Then
-            Throw New Exception("Invalid contact format. Please enter a valid email or PH phone number (e.g., +63 917 123 4567).")
+            Throw New Exception("Invalid contact format.
+Please enter a valid email or PH phone number (e.g., +63 917 123 4567).")
         End If
 
         If Not _dbCon.OpenConnection() Then Throw New Exception("Could not connect to the database.")
@@ -119,7 +120,8 @@ Public Class AuthService
         Try
             Dim otpCode As String = _otpService.GenerateOtpForRegistration(contactInfo)
             If String.IsNullOrEmpty(otpCode) Then
-                Throw New Exception("Failed to generate a verification code. Please try again.")
+                Throw New Exception("Failed to generate a verification code.
+Please try again.")
             End If
 
             If contactType = ContactType.Email Then
@@ -152,14 +154,14 @@ Public Class AuthService
 
             Dim passwordHash = Account.HashPassword(password)
             Dim newAccount As New Account With {
-            .Username = username,
-            .PasswordHash = passwordHash,
-            .Name = username,
-            .StudentID = studentID,
-            .Role = "Student",
-            .DateCreated = DateTime.Now, ' Set the creation date
-            .IsActive = False ' <<< THIS IS THE KEY CHANGE
-        }
+                .Username = username,
+                .PasswordHash = passwordHash,
+                .Name = username,
+                .StudentID = studentID,
+                .Role = "Student",
+                .DateCreated = DateTime.Now,
+                .IsActive = False ' Awaiting approval
+            }
 
             Dim contactType As ContactType = GetContactType(contactInfo)
             If contactType = ContactType.Email Then
@@ -181,7 +183,7 @@ Public Class AuthService
     End Function
 
     ' ##################################################################
-    ' --- 3. PASSWORD RECOVERY (FINDS BY EMAIL) ---
+    ' --- 3. PASSWORD RECOVERY ---
     ' ##################################################################
 
     Private Function MaskEmail(email As String) As String
@@ -227,6 +229,7 @@ Public Class AuthService
         Try
             ' Use the user's email as the target
             Dim otpCode As String = _otpService.GenerateOtpForRegistration(userAccount.Email)
+
             If String.IsNullOrEmpty(otpCode) Then
                 Throw New Exception("Failed to generate a verification code.")
             End If
@@ -246,8 +249,6 @@ Public Class AuthService
     ''' Step 2: Verifies the OTP provided by the user (using their email as the key).
     ''' </summary>
     Public Function VerifyPasswordResetOtp(email As String, otpInput As String) As Boolean
-        ' This function doesn't need to access the DB, it just passes through
-        ' to the OtpService.
         Return _otpService.VerifyOtpForRegistration(email, otpInput)
     End Function
 
@@ -278,257 +279,6 @@ Public Class AuthService
         End Try
     End Sub
 
-    ' ##################################################################
-    ' --- 4. ACCOUNT MANAGEMENT (for Admin Panel) ---
-    ' ##################################################################
+    ' The entire '4. ACCOUNT MANAGEMENT (for Admin Panel)' section has been removed.
 
-    ''' <summary>
-    ''' (FOR UC_HPAL_User_Tab)
-    ''' Retrieves a complete list of all user accounts from the database.
-    ''' </summary>
-    Public Function GetAllAccounts() As List(Of Account)
-        If Not _dbCon.OpenConnection() Then
-            Throw New Exception("Could not connect to the database.")
-        End If
-        Dim transaction As MySqlTransaction = _dbCon.GetConnection().BeginTransaction()
-
-        Try
-            ' 1. Instantiate the DAO with the transaction
-            Dim accountDAO As New AccountDAO(transaction)
-
-            ' 2. Call the DAO's GetAll method
-            Dim accounts = accountDAO.GetAll()
-
-            ' 3. Commit the transaction (even for reads, to close it properly)
-            transaction.Commit()
-
-            ' 4. Return the list
-            Return accounts
-
-        Catch ex As Exception
-            transaction.Rollback()
-            Throw New Exception("Failed to retrieve all accounts: " & ex.Message)
-        Finally
-            _dbCon.CloseConnection()
-        End Try
-    End Function
-
-    ''' <summary>
-    ''' (FOR UC_HPAL_User_Tab)
-    ''' Deletes a user account from the database by its ID.
-    ''' </summary>
-    Public Sub DeleteAccount(accountId As Integer)
-        If Not _dbCon.OpenConnection() Then
-            Throw New Exception("Could not connect to the database.")
-        End If
-        Dim transaction As MySqlTransaction = _dbCon.GetConnection().BeginTransaction()
-
-        Try
-            Dim accountDAO As New AccountDAO(transaction)
-            Dim logDAO As New LogDAO(transaction)
-
-            ' Optional: Get the account before deleting to log its name
-            Dim accountToDelete = accountDAO.GetById(accountId)
-            Dim username = "Unknown"
-            If accountToDelete IsNot Nothing Then
-                username = accountToDelete.Username
-            End If
-
-            ' 1. Call the DAO's Delete method
-            accountDAO.Delete(accountId)
-
-            ' 2. Log the admin action
-            logDAO.Create(Log.RecordAction(Nothing, "Account Deleted", $"Admin deleted account ID {accountId} ({username})."))
-
-            ' 3. Commit the changes
-            transaction.Commit()
-
-        Catch ex As Exception
-            transaction.Rollback()
-            Throw New Exception("Failed to delete account: " & ex.Message)
-        Finally
-            _dbCon.CloseConnection()
-        End Try
-    End Sub
-
-    ''' <summary>
-    ''' (FOR EditUser Form)
-    ''' Updates an existing user's information in the database.
-    ''' </summary>
-    Public Sub UpdateAccount(account As Account)
-        If Not _dbCon.OpenConnection() Then
-            Throw New Exception("Could not connect to the database.")
-        End If
-        Dim transaction As MySqlTransaction = _dbCon.GetConnection().BeginTransaction()
-
-        Try
-            Dim accountDAO As New AccountDAO(transaction)
-            Dim logDAO As New LogDAO(transaction)
-
-            ' Note: This assumes the password hash is NOT changed here.
-            ' If you are resetting a password, you must hash it first.
-            ' userAccount.PasswordHash = Account.HashPassword(newPassword)
-
-            ' 1. Call the DAO's Update method
-            accountDAO.Update(account)
-
-            ' 2. Log the admin action
-            logDAO.Create(Log.RecordAction(account.AccountID, "Account Updated", $"Admin updated details for account '{account.Username}'."))
-
-            ' 3. Commit the changes
-            transaction.Commit()
-
-        Catch ex As Exception
-            transaction.Rollback()
-            Throw New Exception("Failed to update account: " & ex.Message)
-        Finally
-            _dbCon.CloseConnection()
-        End Try
-    End Sub
-
-    ''' <summary>
-    ''' (FOR AddUser Form)
-    ''' Creates a new user account as an administrator.
-    ''' </summary>
-    Public Function CreateAccount(account As Account, plainTextPassword As String) As Integer
-        If Not _dbCon.OpenConnection() Then
-            Throw New Exception("Could not connect to the database.")
-        End If
-        Dim transaction As MySqlTransaction = _dbCon.GetConnection().BeginTransaction()
-
-        Try
-            Dim accountDAO As New AccountDAO(transaction)
-            Dim logDAO As New LogDAO(transaction)
-
-            ' 1. Check for duplicate username
-            If accountDAO.GetByUsername(account.Username) IsNot Nothing Then
-                Throw New Exception("This username is already taken.")
-            End If
-
-            ' 2. Check for duplicate email (if provided)
-            If Not String.IsNullOrEmpty(account.Email) AndAlso accountDAO.GetByEmail(account.Email) IsNot Nothing Then
-                Throw New Exception("This email address is already in use.")
-            End If
-
-            ' 3. Hash the plain-text password
-            account.PasswordHash = Account.HashPassword(plainTextPassword)
-
-            ' 4. Call the DAO's Create method
-            Dim newAccountId As Integer = accountDAO.Create(account)
-
-            ' 5. Log the admin action
-            logDAO.Create(Log.RecordAction(newAccountId, "Account Created", $"Admin created new account '{account.Username}'."))
-
-            ' 6. Commit the changes
-            transaction.Commit()
-
-            ' 7. Return the new ID
-            Return newAccountId
-
-        Catch ex As Exception
-            transaction.Rollback()
-            Throw New Exception("Failed to create account: " & ex.Message)
-        Finally
-            _dbCon.CloseConnection()
-        End Try
-    End Function
-    ''' <summary>
-    ''' (FOR PendingApprovalDialog)
-    ''' Checks if a single account is active.
-    ''' </summary>
-    Public Async Function IsAccountActive(accountId As Integer) As Task(Of Boolean)
-        ' Use Task.Run to avoid blocking the UI thread
-        Return Await Task.Run(Function()
-                                  If Not _dbCon.OpenConnection() Then
-                                      ' If DB fails, just return False, timer will try again
-                                      Return False
-                                  End If
-
-                                  Dim transaction As MySqlTransaction = _dbCon.GetConnection().BeginTransaction()
-                                  Try
-                                      Dim accountDAO As New AccountDAO(transaction)
-                                      Dim userAccount = accountDAO.GetById(accountId)
-                                      transaction.Commit() ' Commit the read
-
-                                      If userAccount IsNot Nothing Then
-                                          Return userAccount.IsActive
-                                      Else
-                                          Return False
-                                      End If
-                                  Catch ex As Exception
-                                      transaction.Rollback()
-                                      Return False ' Return false on error
-                                  Finally
-                                      _dbCon.CloseConnection()
-                                  End Try
-                              End Function)
-    End Function
-
-    ''' <summary>
-    ''' (FOR UC_User_Request_Tab)
-    ''' Retrieves all inactive student accounts ("Pending").
-    ''' </summary>
-    Public Function GetPendingAccounts() As List(Of Account)
-        If Not _dbCon.OpenConnection() Then
-            Throw New Exception("Could not connect to the database.")
-        End If
-        Dim transaction As MySqlTransaction = _dbCon.GetConnection().BeginTransaction()
-        Try
-            Dim accountDAO As New AccountDAO(transaction)
-            ' We can re-use the GetAll() method and filter here
-            ' Or you can create a new DAO method "GetByIsActive(False)"
-            Dim allAccounts = accountDAO.GetAll()
-            Dim pendingAccounts = allAccounts.Where(Function(acc)
-                                                        Return acc.Role = "Student" AndAlso Not acc.IsActive
-                                                    End Function).ToList()
-
-            transaction.Commit()
-            Return pendingAccounts
-        Catch ex As Exception
-            transaction.Rollback()
-            Throw New Exception("Failed to retrieve pending accounts: " & ex.Message)
-        Finally
-            _dbCon.CloseConnection()
-        End Try
-    End Function
-
-    ''' <summary>
-    ''' (FOR UC_User_Request_Tab)
-    ''' Approves a user account by setting IsActive = True.
-    ''' </summary>
-    Public Sub ApproveAccount(accountId As Integer)
-        If Not _dbCon.OpenConnection() Then
-            Throw New Exception("Could not connect to the database.")
-        End If
-        Dim transaction As MySqlTransaction = _dbCon.GetConnection().BeginTransaction()
-        Try
-            Dim accountDAO As New AccountDAO(transaction)
-            Dim logDAO As New LogDAO(transaction)
-            Dim userAccount = accountDAO.GetById(accountId)
-
-            If userAccount IsNot Nothing Then
-                userAccount.IsActive = True
-                accountDAO.Update(userAccount)
-                logDAO.Create(Log.RecordAction(userAccount.AccountID, "Account Approved", $"Account '{userAccount.Username}' approved by admin."))
-                transaction.Commit()
-            Else
-                Throw New Exception("Account not found.")
-            End If
-        Catch ex As Exception
-            transaction.Rollback()
-            Throw New Exception("Failed to approve account: " & ex.Message)
-        Finally
-            _dbCon.CloseConnection()
-        End Try
-    End Sub
-
-    ''' <summary>
-    ''' (FOR UC_User_Request_Tab)
-    ''' Rejects (deletes) a user account.
-    ''' </summary>
-    Public Sub RejectAccount(accountId As Integer)
-        ' This re-uses the existing DeleteAccount method
-        ' You already confirmed this method exists in your authService.vb
-        DeleteAccount(accountId)
-    End Sub
 End Class
