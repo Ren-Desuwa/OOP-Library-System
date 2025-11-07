@@ -27,60 +27,85 @@ Public Class BeforeApproval
         lblUsername.Text = StudentUsername
     End Sub
 
-    ' ✅ Confirm Borrow button
-    Private Sub btnConfirm_Click(sender As Object, e As EventArgs) Handles btnConfirm.Click
 
+
+
+    ' ✅ Confirm Borrow button
+    Private Async Sub btnConfirm_Click(sender As Object, e As EventArgs) Handles btnConfirm.Click
         If btnConfirm.Text = "Waiting..." Then
-            Return ' Do nothing, still processing
+            Return
         End If
 
+
         If btnConfirm.Text = "Confirm" AndAlso newTransactionIds IsNot Nothing AndAlso newTransactionIds.Count > 0 Then
-            ' This is the SECOND click (after approval).
-            ' It now just acts as a "Close" button.
             RaiseEvent BorrowingConfirmed()
             Me.Close()
             Return
         End If
 
-        ' --- START NEW LOGIC ---
+        ' Ask for borrow duration
         Dim daysInput As String = InputBox("How many days would you like to borrow this book for?", "Borrow Duration", "7")
         Dim borrowDays As Integer
-        If String.IsNullOrWhiteSpace(daysInput) Then
-            Return ' User clicked Cancel
-        End If
+        If String.IsNullOrWhiteSpace(daysInput) Then Return
         If Not Integer.TryParse(daysInput, borrowDays) OrElse borrowDays <= 0 OrElse borrowDays > 30 Then
-            MessageBox.Show("Please enter a valid number of days (1-30).", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            MessageBox.Show("Please enter a valid number of days (1–30).", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return
         End If
-
-        ' You can also add a maximum limit here
-        If borrowDays > 30 Then
-            MessageBox.Show("You cannot borrow a book for more than 30 days.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            Return
-        End If
-        ' --- END NEW LOGIC ---
 
         Try
-            ' Ensure there are books to borrow
+            ' Validate book list
             If BooksToBorrow Is Nothing OrElse BooksToBorrow.Count = 0 Then
                 MessageBox.Show("No books selected to borrow.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Return
             End If
 
-            ' --- MODIFIED LOGIC: Call the Service Layer with borrowDays ---
-            newTransactionIds = Program.BorrowSvc.ProcessBorrowing(Program.currentAccount.AccountID, BooksToBorrow, borrowDays)
+            ' Disable button while processing
+            btnConfirm.Enabled = False
+            btnConfirm.Text = "Processing..."
+
+            ' 🔹 Connect to DB through BorrowService
+            ' BorrowService handles transaction & DB logic internally
+            newTransactionIds = Await Task.Run(Function()
+                                                   Return Program.BorrowSvc.ProcessBorrowing(Program.currentAccount.AccountID, BooksToBorrow, borrowDays)
+                                               End Function)
 
             Label5.Text = "Request sent! Waiting for librarian approval..."
-            btnConfirm.Enabled = False
+            btnConfirm.Enabled = True
             btnConfirm.Text = "Waiting..."
 
-            StatusPollTimer.Interval = 5000 ' 5 seconds
+            ' Start polling every 5s to check if approved
+            StatusPollTimer.Interval = 500
             StatusPollTimer.Start()
 
         Catch ex As Exception
-            ' The Service Layer throws an informative exception on inventory or database failure
-            MessageBox.Show("Error processing borrowing request: " & ex.Message, "Borrow Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Error processing borrowing request: " & ex.Message,
+                        "Borrow Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            btnConfirm.Enabled = True
+            btnConfirm.Text = "Confirm"
         End Try
     End Sub
+
+    ' 🔁 Polling every few seconds for librarian approval
+    Private Async Sub StatusPollTimer_Tick(sender As Object, e As EventArgs) Handles StatusPollTimer.Tick
+        If newTransactionIds Is Nothing OrElse newTransactionIds.Count = 0 Then Return
+
+        ' Check if all transactions are processed (approved or rejected)
+        Dim allProcessed As Boolean = Await Program.BorrowSvc.AreTransactionsApproved(newTransactionIds)
+
+        If allProcessed Then
+            ' Stop polling
+            StatusPollTimer.Stop()
+
+            ' Enable button and change text
+            btnConfirm.Enabled = True
+            btnConfirm.Text = "Confirm"
+
+            ' Notify user
+            MessageBox.Show("Your borrow request has been processed. Click Confirm to close.", "Borrow Request", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
+    End Sub
+
+
+
 
 End Class
