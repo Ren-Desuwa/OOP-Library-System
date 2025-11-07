@@ -124,8 +124,9 @@ Partial Class UC_Booktable_container
         Me.pnl_table_container.ForeColor = System.Drawing.Color.Transparent
         Me.pnl_table_container.Location = New System.Drawing.Point(0, 0)
         Me.pnl_table_container.Name = "pnl_table_container"
+        Me.pnl_table_container.ShadowDecoration.BorderRadius = 20
         Me.pnl_table_container.ShadowDecoration.Color = System.Drawing.Color.Silver
-        Me.pnl_table_container.ShadowDecoration.Depth = 15
+        Me.pnl_table_container.ShadowDecoration.Depth = 90
         Me.pnl_table_container.ShadowDecoration.Enabled = True
         Me.pnl_table_container.Size = New System.Drawing.Size(906, 85)
         Me.pnl_table_container.TabIndex = 11

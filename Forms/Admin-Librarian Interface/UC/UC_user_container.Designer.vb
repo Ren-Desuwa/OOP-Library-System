@@ -37,17 +37,17 @@ Partial Class UC_user_container
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 27.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.lbl_email, 2, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.lbl_name, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.lbl_StudentID, 1, 0)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 0)
-        Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(2)
+        Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(680, 69)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(907, 85)
         Me.TableLayoutPanel1.TabIndex = 10
         '
         'lbl_email
@@ -58,10 +58,9 @@ Partial Class UC_user_container
         Me.lbl_email.Dock = System.Windows.Forms.DockStyle.Fill
         Me.lbl_email.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_email.ForeColor = System.Drawing.Color.FromArgb(CType(CType(122, Byte), Integer), CType(CType(107, Byte), Integer), CType(CType(84, Byte), Integer))
-        Me.lbl_email.Location = New System.Drawing.Point(454, 0)
-        Me.lbl_email.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lbl_email.Location = New System.Drawing.Point(607, 0)
         Me.lbl_email.Name = "lbl_email"
-        Me.lbl_email.Size = New System.Drawing.Size(224, 69)
+        Me.lbl_email.Size = New System.Drawing.Size(297, 85)
         Me.lbl_email.TabIndex = 10
         Me.lbl_email.Text = "Email:"
         Me.lbl_email.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -74,10 +73,9 @@ Partial Class UC_user_container
         Me.lbl_name.Dock = System.Windows.Forms.DockStyle.Fill
         Me.lbl_name.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_name.ForeColor = System.Drawing.Color.FromArgb(CType(CType(122, Byte), Integer), CType(CType(107, Byte), Integer), CType(CType(84, Byte), Integer))
-        Me.lbl_name.Location = New System.Drawing.Point(2, 0)
-        Me.lbl_name.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lbl_name.Location = New System.Drawing.Point(3, 0)
         Me.lbl_name.Name = "lbl_name"
-        Me.lbl_name.Size = New System.Drawing.Size(222, 69)
+        Me.lbl_name.Size = New System.Drawing.Size(296, 85)
         Me.lbl_name.TabIndex = 7
         Me.lbl_name.Text = "Name:"
         Me.lbl_name.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -90,10 +88,9 @@ Partial Class UC_user_container
         Me.lbl_StudentID.Dock = System.Windows.Forms.DockStyle.Fill
         Me.lbl_StudentID.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_StudentID.ForeColor = System.Drawing.Color.FromArgb(CType(CType(122, Byte), Integer), CType(CType(107, Byte), Integer), CType(CType(84, Byte), Integer))
-        Me.lbl_StudentID.Location = New System.Drawing.Point(228, 0)
-        Me.lbl_StudentID.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lbl_StudentID.Location = New System.Drawing.Point(305, 0)
         Me.lbl_StudentID.Name = "lbl_StudentID"
-        Me.lbl_StudentID.Size = New System.Drawing.Size(222, 69)
+        Me.lbl_StudentID.Size = New System.Drawing.Size(296, 85)
         Me.lbl_StudentID.TabIndex = 8
         Me.lbl_StudentID.Text = "Student ID#:"
         Me.lbl_StudentID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -109,22 +106,24 @@ Partial Class UC_user_container
         Me.pnl_container.FillColor = System.Drawing.Color.Transparent
         Me.pnl_container.ForeColor = System.Drawing.Color.Transparent
         Me.pnl_container.Location = New System.Drawing.Point(0, 0)
-        Me.pnl_container.Margin = New System.Windows.Forms.Padding(2)
+        Me.pnl_container.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.pnl_container.Name = "pnl_container"
+        Me.pnl_container.ShadowDecoration.BorderRadius = 20
         Me.pnl_container.ShadowDecoration.Color = System.Drawing.Color.Silver
-        Me.pnl_container.ShadowDecoration.Depth = 15
+        Me.pnl_container.ShadowDecoration.Depth = 90
         Me.pnl_container.ShadowDecoration.Enabled = True
-        Me.pnl_container.Size = New System.Drawing.Size(680, 69)
+        Me.pnl_container.Size = New System.Drawing.Size(907, 85)
         Me.pnl_container.TabIndex = 12
         '
         'UC_user_container
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Transparent
         Me.Controls.Add(Me.pnl_container)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "UC_user_container"
-        Me.Size = New System.Drawing.Size(680, 69)
+        Me.Size = New System.Drawing.Size(907, 85)
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TableLayoutPanel1.PerformLayout()
         Me.pnl_container.ResumeLayout(False)

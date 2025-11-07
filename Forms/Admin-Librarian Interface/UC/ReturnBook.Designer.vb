@@ -26,6 +26,9 @@ Partial Class ReturnBook
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.Guna2CustomGradientPanel2 = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
         Me.Guna2GradientPanel1 = New Guna.UI2.WinForms.Guna2GradientPanel()
+        Me.LabelContainer = New Guna.UI2.WinForms.Guna2Panel()
+        Me.CloseBtn = New System.Windows.Forms.Label()
+        Me.lbl_title = New System.Windows.Forms.Label()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.Guna2CustomGradientPanel3 = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
@@ -46,13 +49,11 @@ Partial Class ReturnBook
         Me.CreditScore_Lbl = New System.Windows.Forms.Label()
         Me.Borrower_Lbl = New System.Windows.Forms.Label()
         Me.ContentPanel = New Guna.UI2.WinForms.Guna2Panel()
-        Me.LabelContainer = New Guna.UI2.WinForms.Guna2Panel()
-        Me.CloseBtn = New System.Windows.Forms.Label()
-        Me.lbl_title = New System.Windows.Forms.Label()
         Me.Guna2CustomGradientPanel1.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.Guna2CustomGradientPanel2.SuspendLayout()
         Me.Guna2GradientPanel1.SuspendLayout()
+        Me.LabelContainer.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
         Me.Guna2CustomGradientPanel3.SuspendLayout()
@@ -64,7 +65,6 @@ Partial Class ReturnBook
         Me.TableLayoutPanel12.SuspendLayout()
         Me.TableLayoutPanel13.SuspendLayout()
         Me.TableLayoutPanel14.SuspendLayout()
-        Me.LabelContainer.SuspendLayout()
         Me.SuspendLayout()
         '
         'Guna2CustomGradientPanel1
@@ -79,8 +79,9 @@ Partial Class ReturnBook
         Me.Guna2CustomGradientPanel1.FillColor3 = System.Drawing.Color.Tan
         Me.Guna2CustomGradientPanel1.FillColor4 = System.Drawing.Color.BurlyWood
         Me.Guna2CustomGradientPanel1.Location = New System.Drawing.Point(0, 0)
+        Me.Guna2CustomGradientPanel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2CustomGradientPanel1.Name = "Guna2CustomGradientPanel1"
-        Me.Guna2CustomGradientPanel1.Size = New System.Drawing.Size(800, 450)
+        Me.Guna2CustomGradientPanel1.Size = New System.Drawing.Size(1067, 554)
         Me.Guna2CustomGradientPanel1.TabIndex = 0
         '
         'TableLayoutPanel1
@@ -92,12 +93,12 @@ Partial Class ReturnBook
         Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel2, 0, 1)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 0)
-        Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(5)
+        Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 2
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.0!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(800, 450)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(1067, 554)
         Me.TableLayoutPanel1.TabIndex = 0
         '
         'Guna2CustomGradientPanel2
@@ -111,7 +112,7 @@ Partial Class ReturnBook
         Me.Guna2CustomGradientPanel2.Location = New System.Drawing.Point(0, 0)
         Me.Guna2CustomGradientPanel2.Margin = New System.Windows.Forms.Padding(0)
         Me.Guna2CustomGradientPanel2.Name = "Guna2CustomGradientPanel2"
-        Me.Guna2CustomGradientPanel2.Size = New System.Drawing.Size(800, 67)
+        Me.Guna2CustomGradientPanel2.Size = New System.Drawing.Size(1067, 83)
         Me.Guna2CustomGradientPanel2.TabIndex = 0
         '
         'Guna2GradientPanel1
@@ -121,9 +122,49 @@ Partial Class ReturnBook
         Me.Guna2GradientPanel1.CustomBorderThickness = New System.Windows.Forms.Padding(3)
         Me.Guna2GradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Guna2GradientPanel1.Location = New System.Drawing.Point(0, 0)
+        Me.Guna2GradientPanel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2GradientPanel1.Name = "Guna2GradientPanel1"
-        Me.Guna2GradientPanel1.Size = New System.Drawing.Size(800, 67)
+        Me.Guna2GradientPanel1.Size = New System.Drawing.Size(1067, 83)
         Me.Guna2GradientPanel1.TabIndex = 0
+        '
+        'LabelContainer
+        '
+        Me.LabelContainer.BackgroundImage = Global.OOP_Library_System.My.Resources.Resources.BooksDesignBG3
+        Me.LabelContainer.Controls.Add(Me.CloseBtn)
+        Me.LabelContainer.Controls.Add(Me.lbl_title)
+        Me.LabelContainer.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.LabelContainer.Location = New System.Drawing.Point(0, 0)
+        Me.LabelContainer.Margin = New System.Windows.Forms.Padding(4)
+        Me.LabelContainer.Name = "LabelContainer"
+        Me.LabelContainer.Size = New System.Drawing.Size(1067, 83)
+        Me.LabelContainer.TabIndex = 0
+        '
+        'CloseBtn
+        '
+        Me.CloseBtn.AutoSize = True
+        Me.CloseBtn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.CloseBtn.Font = New System.Drawing.Font("MS UI Gothic", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CloseBtn.ForeColor = System.Drawing.SystemColors.Control
+        Me.CloseBtn.Location = New System.Drawing.Point(1000, 22)
+        Me.CloseBtn.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.CloseBtn.Name = "CloseBtn"
+        Me.CloseBtn.Size = New System.Drawing.Size(46, 44)
+        Me.CloseBtn.TabIndex = 0
+        Me.CloseBtn.Text = "X"
+        '
+        'lbl_title
+        '
+        Me.lbl_title.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_title.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lbl_title.Font = New System.Drawing.Font("Century Gothic", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_title.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(232, Byte), Integer))
+        Me.lbl_title.Location = New System.Drawing.Point(0, 0)
+        Me.lbl_title.Margin = New System.Windows.Forms.Padding(0)
+        Me.lbl_title.Name = "lbl_title"
+        Me.lbl_title.Size = New System.Drawing.Size(1067, 83)
+        Me.lbl_title.TabIndex = 14
+        Me.lbl_title.Text = "Return Book"
+        Me.lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'TableLayoutPanel2
         '
@@ -132,12 +173,13 @@ Partial Class ReturnBook
         Me.TableLayoutPanel2.Controls.Add(Me.TableLayoutPanel3, 0, 1)
         Me.TableLayoutPanel2.Controls.Add(Me.ContentPanel, 0, 0)
         Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel2.Location = New System.Drawing.Point(3, 70)
+        Me.TableLayoutPanel2.Location = New System.Drawing.Point(4, 87)
+        Me.TableLayoutPanel2.Margin = New System.Windows.Forms.Padding(4)
         Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
         Me.TableLayoutPanel2.RowCount = 2
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55.0!))
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45.0!))
-        Me.TableLayoutPanel2.Size = New System.Drawing.Size(794, 377)
+        Me.TableLayoutPanel2.Size = New System.Drawing.Size(1059, 463)
         Me.TableLayoutPanel2.TabIndex = 1
         '
         'TableLayoutPanel3
@@ -147,13 +189,13 @@ Partial Class ReturnBook
         Me.TableLayoutPanel3.Controls.Add(Me.Guna2CustomGradientPanel3, 0, 0)
         Me.TableLayoutPanel3.Controls.Add(Me.TableLayoutPanel11, 0, 1)
         Me.TableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel3.Location = New System.Drawing.Point(0, 207)
+        Me.TableLayoutPanel3.Location = New System.Drawing.Point(0, 254)
         Me.TableLayoutPanel3.Margin = New System.Windows.Forms.Padding(0)
         Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
         Me.TableLayoutPanel3.RowCount = 2
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80.0!))
-        Me.TableLayoutPanel3.Size = New System.Drawing.Size(794, 170)
+        Me.TableLayoutPanel3.Size = New System.Drawing.Size(1059, 209)
         Me.TableLayoutPanel3.TabIndex = 3
         '
         'Guna2CustomGradientPanel3
@@ -168,7 +210,7 @@ Partial Class ReturnBook
         Me.Guna2CustomGradientPanel3.Location = New System.Drawing.Point(0, 0)
         Me.Guna2CustomGradientPanel3.Margin = New System.Windows.Forms.Padding(0)
         Me.Guna2CustomGradientPanel3.Name = "Guna2CustomGradientPanel3"
-        Me.Guna2CustomGradientPanel3.Size = New System.Drawing.Size(794, 34)
+        Me.Guna2CustomGradientPanel3.Size = New System.Drawing.Size(1059, 41)
         Me.Guna2CustomGradientPanel3.TabIndex = 0
         '
         'TableLayoutPanel10
@@ -187,7 +229,7 @@ Partial Class ReturnBook
         Me.TableLayoutPanel10.Name = "TableLayoutPanel10"
         Me.TableLayoutPanel10.RowCount = 1
         Me.TableLayoutPanel10.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel10.Size = New System.Drawing.Size(794, 34)
+        Me.TableLayoutPanel10.Size = New System.Drawing.Size(1059, 41)
         Me.TableLayoutPanel10.TabIndex = 0
         '
         'Guna2CustomGradientPanel4
@@ -199,21 +241,26 @@ Partial Class ReturnBook
         Me.Guna2CustomGradientPanel4.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(48, Byte), Integer), CType(CType(48, Byte), Integer))
         Me.Guna2CustomGradientPanel4.FillColor3 = System.Drawing.Color.FromArgb(CType(CType(114, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(55, Byte), Integer))
         Me.Guna2CustomGradientPanel4.FillColor4 = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(48, Byte), Integer), CType(CType(48, Byte), Integer))
-        Me.Guna2CustomGradientPanel4.Location = New System.Drawing.Point(531, 3)
+        Me.Guna2CustomGradientPanel4.Location = New System.Drawing.Point(710, 4)
+        Me.Guna2CustomGradientPanel4.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2CustomGradientPanel4.Name = "Guna2CustomGradientPanel4"
-        Me.Guna2CustomGradientPanel4.Size = New System.Drawing.Size(260, 28)
+        Me.Guna2CustomGradientPanel4.Size = New System.Drawing.Size(345, 33)
         Me.Guna2CustomGradientPanel4.TabIndex = 2
         '
         'Status_Lbl
         '
+        Me.Status_Lbl.AutoSize = False
         Me.Status_Lbl.BackColor = System.Drawing.Color.Transparent
+        Me.Status_Lbl.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Status_Lbl.Font = New System.Drawing.Font("Century Gothic", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Status_Lbl.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Status_Lbl.Location = New System.Drawing.Point(86, 5)
+        Me.Status_Lbl.Location = New System.Drawing.Point(0, 0)
+        Me.Status_Lbl.Margin = New System.Windows.Forms.Padding(4)
         Me.Status_Lbl.Name = "Status_Lbl"
-        Me.Status_Lbl.Size = New System.Drawing.Size(47, 20)
+        Me.Status_Lbl.Size = New System.Drawing.Size(345, 33)
         Me.Status_Lbl.TabIndex = 6
         Me.Status_Lbl.Text = "Status"
+        Me.Status_Lbl.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Guna2CustomGradientPanel5
         '
@@ -224,21 +271,26 @@ Partial Class ReturnBook
         Me.Guna2CustomGradientPanel5.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(48, Byte), Integer), CType(CType(48, Byte), Integer))
         Me.Guna2CustomGradientPanel5.FillColor3 = System.Drawing.Color.FromArgb(CType(CType(114, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(55, Byte), Integer))
         Me.Guna2CustomGradientPanel5.FillColor4 = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(48, Byte), Integer), CType(CType(48, Byte), Integer))
-        Me.Guna2CustomGradientPanel5.Location = New System.Drawing.Point(267, 3)
+        Me.Guna2CustomGradientPanel5.Location = New System.Drawing.Point(357, 4)
+        Me.Guna2CustomGradientPanel5.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2CustomGradientPanel5.Name = "Guna2CustomGradientPanel5"
-        Me.Guna2CustomGradientPanel5.Size = New System.Drawing.Size(258, 28)
+        Me.Guna2CustomGradientPanel5.Size = New System.Drawing.Size(345, 33)
         Me.Guna2CustomGradientPanel5.TabIndex = 1
         '
         'DueDate_Lbl
         '
+        Me.DueDate_Lbl.AutoSize = False
         Me.DueDate_Lbl.BackColor = System.Drawing.Color.Transparent
+        Me.DueDate_Lbl.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DueDate_Lbl.Font = New System.Drawing.Font("Century Gothic", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DueDate_Lbl.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.DueDate_Lbl.Location = New System.Drawing.Point(92, 6)
+        Me.DueDate_Lbl.Location = New System.Drawing.Point(0, 0)
+        Me.DueDate_Lbl.Margin = New System.Windows.Forms.Padding(4)
         Me.DueDate_Lbl.Name = "DueDate_Lbl"
-        Me.DueDate_Lbl.Size = New System.Drawing.Size(69, 20)
+        Me.DueDate_Lbl.Size = New System.Drawing.Size(345, 33)
         Me.DueDate_Lbl.TabIndex = 6
         Me.DueDate_Lbl.Text = "DueDate"
+        Me.DueDate_Lbl.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Guna2CustomGradientPanel10
         '
@@ -249,21 +301,26 @@ Partial Class ReturnBook
         Me.Guna2CustomGradientPanel10.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(48, Byte), Integer), CType(CType(48, Byte), Integer))
         Me.Guna2CustomGradientPanel10.FillColor3 = System.Drawing.Color.FromArgb(CType(CType(114, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(55, Byte), Integer))
         Me.Guna2CustomGradientPanel10.FillColor4 = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(48, Byte), Integer), CType(CType(48, Byte), Integer))
-        Me.Guna2CustomGradientPanel10.Location = New System.Drawing.Point(3, 3)
+        Me.Guna2CustomGradientPanel10.Location = New System.Drawing.Point(4, 4)
+        Me.Guna2CustomGradientPanel10.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2CustomGradientPanel10.Name = "Guna2CustomGradientPanel10"
-        Me.Guna2CustomGradientPanel10.Size = New System.Drawing.Size(258, 28)
+        Me.Guna2CustomGradientPanel10.Size = New System.Drawing.Size(345, 33)
         Me.Guna2CustomGradientPanel10.TabIndex = 0
         '
         'BorrowDate_Lbl
         '
+        Me.BorrowDate_Lbl.AutoSize = False
         Me.BorrowDate_Lbl.BackColor = System.Drawing.Color.Transparent
+        Me.BorrowDate_Lbl.Dock = System.Windows.Forms.DockStyle.Fill
         Me.BorrowDate_Lbl.Font = New System.Drawing.Font("Century Gothic", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BorrowDate_Lbl.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.BorrowDate_Lbl.Location = New System.Drawing.Point(83, 5)
+        Me.BorrowDate_Lbl.Location = New System.Drawing.Point(0, 0)
+        Me.BorrowDate_Lbl.Margin = New System.Windows.Forms.Padding(4)
         Me.BorrowDate_Lbl.Name = "BorrowDate_Lbl"
-        Me.BorrowDate_Lbl.Size = New System.Drawing.Size(91, 20)
+        Me.BorrowDate_Lbl.Size = New System.Drawing.Size(345, 33)
         Me.BorrowDate_Lbl.TabIndex = 5
         Me.BorrowDate_Lbl.Text = "BorrowDate"
+        Me.BorrowDate_Lbl.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
         '
         'TableLayoutPanel11
         '
@@ -274,13 +331,13 @@ Partial Class ReturnBook
         Me.TableLayoutPanel11.Controls.Add(Me.TableLayoutPanel12, 1, 0)
         Me.TableLayoutPanel11.Controls.Add(Me.TableLayoutPanel14, 0, 0)
         Me.TableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel11.Location = New System.Drawing.Point(0, 34)
+        Me.TableLayoutPanel11.Location = New System.Drawing.Point(0, 41)
         Me.TableLayoutPanel11.Margin = New System.Windows.Forms.Padding(0)
         Me.TableLayoutPanel11.Name = "TableLayoutPanel11"
         Me.TableLayoutPanel11.RowCount = 1
         Me.TableLayoutPanel11.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel11.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 136.0!))
-        Me.TableLayoutPanel11.Size = New System.Drawing.Size(794, 136)
+        Me.TableLayoutPanel11.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 168.0!))
+        Me.TableLayoutPanel11.Size = New System.Drawing.Size(1059, 168)
         Me.TableLayoutPanel11.TabIndex = 1
         '
         'TableLayoutPanel12
@@ -291,13 +348,13 @@ Partial Class ReturnBook
         Me.TableLayoutPanel12.Controls.Add(Me.Penalty__Lbl, 0, 0)
         Me.TableLayoutPanel12.Controls.Add(Me.TableLayoutPanel13, 0, 1)
         Me.TableLayoutPanel12.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel12.Location = New System.Drawing.Point(397, 0)
+        Me.TableLayoutPanel12.Location = New System.Drawing.Point(529, 0)
         Me.TableLayoutPanel12.Margin = New System.Windows.Forms.Padding(0)
         Me.TableLayoutPanel12.Name = "TableLayoutPanel12"
         Me.TableLayoutPanel12.RowCount = 2
         Me.TableLayoutPanel12.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel12.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel12.Size = New System.Drawing.Size(397, 136)
+        Me.TableLayoutPanel12.Size = New System.Drawing.Size(530, 168)
         Me.TableLayoutPanel12.TabIndex = 1
         '
         'Penalty__Lbl
@@ -309,8 +366,8 @@ Partial Class ReturnBook
         Me.Penalty__Lbl.Location = New System.Drawing.Point(1, 1)
         Me.Penalty__Lbl.Margin = New System.Windows.Forms.Padding(1, 1, 1, 0)
         Me.Penalty__Lbl.Name = "Penalty__Lbl"
-        Me.Penalty__Lbl.Padding = New System.Windows.Forms.Padding(10)
-        Me.Penalty__Lbl.Size = New System.Drawing.Size(395, 67)
+        Me.Penalty__Lbl.Padding = New System.Windows.Forms.Padding(13, 12, 13, 12)
+        Me.Penalty__Lbl.Size = New System.Drawing.Size(528, 83)
         Me.Penalty__Lbl.TabIndex = 2
         Me.Penalty__Lbl.Text = "Penalty: None"
         '
@@ -322,11 +379,12 @@ Partial Class ReturnBook
         Me.TableLayoutPanel13.Controls.Add(Me.AddPenaltyBtn, 1, 0)
         Me.TableLayoutPanel13.Controls.Add(Me.ReturnBtn, 0, 0)
         Me.TableLayoutPanel13.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel13.Location = New System.Drawing.Point(3, 71)
+        Me.TableLayoutPanel13.Location = New System.Drawing.Point(4, 88)
+        Me.TableLayoutPanel13.Margin = New System.Windows.Forms.Padding(4)
         Me.TableLayoutPanel13.Name = "TableLayoutPanel13"
         Me.TableLayoutPanel13.RowCount = 1
         Me.TableLayoutPanel13.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel13.Size = New System.Drawing.Size(391, 62)
+        Me.TableLayoutPanel13.Size = New System.Drawing.Size(522, 76)
         Me.TableLayoutPanel13.TabIndex = 3
         '
         'AddPenaltyBtn
@@ -344,9 +402,10 @@ Partial Class ReturnBook
         Me.AddPenaltyBtn.FillColor2 = System.Drawing.Color.Firebrick
         Me.AddPenaltyBtn.Font = New System.Drawing.Font("Yu Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.AddPenaltyBtn.ForeColor = System.Drawing.Color.White
-        Me.AddPenaltyBtn.Location = New System.Drawing.Point(198, 3)
+        Me.AddPenaltyBtn.Location = New System.Drawing.Point(265, 4)
+        Me.AddPenaltyBtn.Margin = New System.Windows.Forms.Padding(4)
         Me.AddPenaltyBtn.Name = "AddPenaltyBtn"
-        Me.AddPenaltyBtn.Size = New System.Drawing.Size(190, 56)
+        Me.AddPenaltyBtn.Size = New System.Drawing.Size(253, 68)
         Me.AddPenaltyBtn.TabIndex = 2
         Me.AddPenaltyBtn.Text = "Add Penalty"
         '
@@ -365,9 +424,10 @@ Partial Class ReturnBook
         Me.ReturnBtn.FillColor2 = System.Drawing.Color.Green
         Me.ReturnBtn.Font = New System.Drawing.Font("Yu Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ReturnBtn.ForeColor = System.Drawing.Color.White
-        Me.ReturnBtn.Location = New System.Drawing.Point(3, 3)
+        Me.ReturnBtn.Location = New System.Drawing.Point(4, 4)
+        Me.ReturnBtn.Margin = New System.Windows.Forms.Padding(4)
         Me.ReturnBtn.Name = "ReturnBtn"
-        Me.ReturnBtn.Size = New System.Drawing.Size(189, 56)
+        Me.ReturnBtn.Size = New System.Drawing.Size(253, 68)
         Me.ReturnBtn.TabIndex = 1
         Me.ReturnBtn.Text = "Return"
         '
@@ -385,7 +445,7 @@ Partial Class ReturnBook
         Me.TableLayoutPanel14.RowCount = 2
         Me.TableLayoutPanel14.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel14.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel14.Size = New System.Drawing.Size(397, 136)
+        Me.TableLayoutPanel14.Size = New System.Drawing.Size(529, 168)
         Me.TableLayoutPanel14.TabIndex = 0
         '
         'CreditScore_Lbl
@@ -394,11 +454,11 @@ Partial Class ReturnBook
         Me.CreditScore_Lbl.Dock = System.Windows.Forms.DockStyle.Fill
         Me.CreditScore_Lbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CreditScore_Lbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(111, Byte), Integer), CType(CType(78, Byte), Integer), CType(CType(55, Byte), Integer))
-        Me.CreditScore_Lbl.Location = New System.Drawing.Point(1, 69)
+        Me.CreditScore_Lbl.Location = New System.Drawing.Point(1, 85)
         Me.CreditScore_Lbl.Margin = New System.Windows.Forms.Padding(1)
         Me.CreditScore_Lbl.Name = "CreditScore_Lbl"
-        Me.CreditScore_Lbl.Padding = New System.Windows.Forms.Padding(10)
-        Me.CreditScore_Lbl.Size = New System.Drawing.Size(395, 66)
+        Me.CreditScore_Lbl.Padding = New System.Windows.Forms.Padding(13, 12, 13, 12)
+        Me.CreditScore_Lbl.Size = New System.Drawing.Size(527, 82)
         Me.CreditScore_Lbl.TabIndex = 3
         Me.CreditScore_Lbl.Text = "Credit Score: 100"
         '
@@ -411,8 +471,8 @@ Partial Class ReturnBook
         Me.Borrower_Lbl.Location = New System.Drawing.Point(1, 1)
         Me.Borrower_Lbl.Margin = New System.Windows.Forms.Padding(1, 1, 1, 0)
         Me.Borrower_Lbl.Name = "Borrower_Lbl"
-        Me.Borrower_Lbl.Padding = New System.Windows.Forms.Padding(10)
-        Me.Borrower_Lbl.Size = New System.Drawing.Size(395, 67)
+        Me.Borrower_Lbl.Padding = New System.Windows.Forms.Padding(13, 12, 13, 12)
+        Me.Borrower_Lbl.Size = New System.Drawing.Size(527, 83)
         Me.Borrower_Lbl.TabIndex = 2
         Me.Borrower_Lbl.Text = "Borrower"
         '
@@ -422,53 +482,17 @@ Partial Class ReturnBook
         Me.ContentPanel.Location = New System.Drawing.Point(0, 0)
         Me.ContentPanel.Margin = New System.Windows.Forms.Padding(0)
         Me.ContentPanel.Name = "ContentPanel"
-        Me.ContentPanel.Size = New System.Drawing.Size(794, 207)
+        Me.ContentPanel.Size = New System.Drawing.Size(1059, 254)
         Me.ContentPanel.TabIndex = 4
-        '
-        'LabelContainer
-        '
-        Me.LabelContainer.BackgroundImage = Global.OOP_Library_System.My.Resources.Resources.BooksDesignBG3
-        Me.LabelContainer.Controls.Add(Me.CloseBtn)
-        Me.LabelContainer.Controls.Add(Me.lbl_title)
-        Me.LabelContainer.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.LabelContainer.Location = New System.Drawing.Point(0, 0)
-        Me.LabelContainer.Name = "LabelContainer"
-        Me.LabelContainer.Size = New System.Drawing.Size(800, 67)
-        Me.LabelContainer.TabIndex = 0
-        '
-        'CloseBtn
-        '
-        Me.CloseBtn.AutoSize = True
-        Me.CloseBtn.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.CloseBtn.Font = New System.Drawing.Font("MS UI Gothic", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CloseBtn.ForeColor = System.Drawing.SystemColors.Control
-        Me.CloseBtn.Location = New System.Drawing.Point(750, 18)
-        Me.CloseBtn.Name = "CloseBtn"
-        Me.CloseBtn.Size = New System.Drawing.Size(37, 35)
-        Me.CloseBtn.TabIndex = 0
-        Me.CloseBtn.Text = "X"
-        '
-        'lbl_title
-        '
-        Me.lbl_title.BackColor = System.Drawing.Color.Transparent
-        Me.lbl_title.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.lbl_title.Font = New System.Drawing.Font("Century Gothic", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_title.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(232, Byte), Integer))
-        Me.lbl_title.Location = New System.Drawing.Point(0, 0)
-        Me.lbl_title.Margin = New System.Windows.Forms.Padding(0)
-        Me.lbl_title.Name = "lbl_title"
-        Me.lbl_title.Size = New System.Drawing.Size(800, 67)
-        Me.lbl_title.TabIndex = 14
-        Me.lbl_title.Text = "Return Book"
-        Me.lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'ReturnBook
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(1067, 554)
         Me.Controls.Add(Me.Guna2CustomGradientPanel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "ReturnBook"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "ReturnBook"
@@ -476,22 +500,19 @@ Partial Class ReturnBook
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.Guna2CustomGradientPanel2.ResumeLayout(False)
         Me.Guna2GradientPanel1.ResumeLayout(False)
+        Me.LabelContainer.ResumeLayout(False)
+        Me.LabelContainer.PerformLayout()
         Me.TableLayoutPanel2.ResumeLayout(False)
         Me.TableLayoutPanel3.ResumeLayout(False)
         Me.Guna2CustomGradientPanel3.ResumeLayout(False)
         Me.TableLayoutPanel10.ResumeLayout(False)
         Me.Guna2CustomGradientPanel4.ResumeLayout(False)
-        Me.Guna2CustomGradientPanel4.PerformLayout()
         Me.Guna2CustomGradientPanel5.ResumeLayout(False)
-        Me.Guna2CustomGradientPanel5.PerformLayout()
         Me.Guna2CustomGradientPanel10.ResumeLayout(False)
-        Me.Guna2CustomGradientPanel10.PerformLayout()
         Me.TableLayoutPanel11.ResumeLayout(False)
         Me.TableLayoutPanel12.ResumeLayout(False)
         Me.TableLayoutPanel13.ResumeLayout(False)
         Me.TableLayoutPanel14.ResumeLayout(False)
-        Me.LabelContainer.ResumeLayout(False)
-        Me.LabelContainer.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
