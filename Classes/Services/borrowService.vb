@@ -12,6 +12,8 @@ Public Class BorrowService
         _dbCon = dbConnector
     End Sub
 
+
+
     ' --- MODIFIED FUNCTION FOR THE RETURNS TAB ---
     ''' <summary>
     ''' Gets a paginated list of active transactions, supporting a multi-field search query.
@@ -172,22 +174,22 @@ Public Class BorrowService
         End Try
     End Function
 
-    ' --- NEW FUNCTION TO PROCESS RETURN ---
     ''' <summary>
-    ''' Performs the full transactional process for returning a single book.
+    ''' (MODIFIED) Performs the full transactional process for returning a single book,
+    ''' using the manually-set fine and credit score from the librarian.
     ''' </summary>
-    ''' <param name="transactionId">The ID of the transaction (loan) being returned.</param>
-    ''' <returns>The calculated fine amount (Decimal).</returns>
-    Public Function ProcessBookReturn(transactionId As Integer) As Decimal
+    Public Function ProcessBookReturn(transactionId As Integer, manualFine As Decimal, creditScoreChange As Short) As Decimal
         If Not _dbCon.OpenConnection() Then Throw New Exception("Could not connect to the database.")
         Dim transaction As MySqlTransaction = _dbCon.GetConnection().BeginTransaction()
-
-        Dim finalFine As Decimal = 0D
 
         Try
             Dim transactionDAO As New TransactionDAO(transaction)
             Dim bookCopyDAO As New BookCopyDAO(transaction)
-            ' Dim penaltyDAO As New PenaltyDAO(transaction) ' Assuming you have a DAO for recording penalties
+            Dim accountDAO As New AccountDAO(transaction)
+
+            ' (NEW) Define DAOs for logging - (Assuming these files exist in your project)
+            ' Dim creditHistoryDAO As New CreditScoreHistoryDAO(transaction)
+            ' Dim penaltyDAO As New PenaltyDAO(transaction)
 
             ' 1. Get the transaction
             Dim tx = transactionDAO.GetById(transactionId)
@@ -196,31 +198,50 @@ Public Class BorrowService
                 Throw New Exception("This book has already been returned.")
             End If
 
-            ' 2. Calculate fine (uses logic in Transaction.vb)
-            finalFine = tx.CalculateFine() ' Assumes Transaction.vb has a CalculateFine() method
-
-            ' 3. Update the Transaction record
+            ' 2. Update the Transaction record
             tx.DateReturned = DateTime.Now
-            tx.Fine = finalFine
-            tx.Status = If(finalFine > 0, "Overdue", "Returned") ' Set final status
+            tx.Fine = manualFine ' <-- (MODIFIED) Use manual fine
+            tx.Status = If(manualFine > 0, "Overdue", "Returned")
             transactionDAO.Update(tx)
 
-            ' 4. Update the Book Copy status
+            ' 3. Update the Book Copy status
             Dim bookCopy = bookCopyDAO.GetById(tx.CopyID)
             If bookCopy IsNot Nothing Then
                 bookCopy.UpdateStatus("Available") ' Return copy to shelf
                 bookCopyDAO.Update(bookCopy)
             End If
 
-            ' 5. OPTIONAL: If fine > 0, insert a Penalty record
-            ' If finalFine > 0 Then
-            '   Dim penalty = New Penalty() With { .TransactionID = transactionId, .Amount = finalFine, .IsPaid = False }
-            '   penaltyDAO.Create(penalty) 
+            ' 4. (NEW) Update Credit Score and log history
+            Dim account = accountDAO.GetById(tx.AccountID)
+            If account IsNot Nothing Then
+                account.CreditScore += creditScoreChange
+                If account.CreditScore < 0 Then account.CreditScore = 0
+                accountDAO.Update(account)
+
+                ' (NEW) Log the credit score change (Uncomment if you have this DAO)
+                'Dim creditLog = New CreditScoreHistory With {
+                '    .AccountID = account.AccountID,
+                '    .ChangeAmount = creditScoreChange,
+                '    .ChangeDate = DateTime.Now,
+                '    .Reason = $"Book Return Transaction: {tx.TransactionID}"
+                '}
+                'creditHistoryDAO.Create(creditLog)
+            End If
+
+            ' 5. (NEW) Create Penalty record if fine exists (Uncomment if you have this DAO)
+            ' If manualFine > 0 Then
+            '     Dim penalty = New Penalty() With {
+            '         .TransactionID = transactionId,
+            '         .Amount = manualFine,
+            '         .IsPaid = False, ' <-- Assuming fine must be paid separately
+            '         .Reason = "Overdue or damaged book"
+            '     }
+            '     penaltyDAO.Create(penalty)
             ' End If
 
             ' 6. Commit changes
             transaction.Commit()
-            Return finalFine
+            Return manualFine
 
         Catch ex As Exception
             transaction.Rollback()
@@ -508,4 +529,51 @@ Public Class BorrowService
                                   End Try
                               End Function)
     End Function
+
+    ''' <summary>
+    ''' (NEW) Gets all details for a single transaction by its ID.
+    ''' </summary>
+    Public Function GetBorrowedBookDetailsById(transactionId As Integer) As BorrowedBookDetails
+        If Not _dbCon.OpenConnection() Then
+            Throw New Exception("Could not connect to the database.")
+        End If
+        Dim transaction As MySqlTransaction = _dbCon.GetConnection().BeginTransaction()
+
+        Try
+            Dim transactionDAO As New TransactionDAO(transaction)
+            Dim bookCopyDAO As New BookCopyDAO(transaction)
+            Dim bookDAO As New BookDAO(transaction)
+            Dim accountDAO As New AccountDAO(transaction)
+
+            ' 1. Get the transaction
+            Dim tx = transactionDAO.GetById(transactionId)
+            If tx Is Nothing Then
+                Throw New Exception("Transaction not found.")
+            End If
+
+            ' 2. Get details
+            Dim bookCopy = bookCopyDAO.GetById(tx.CopyID)
+            Dim book As Book = Nothing
+            If bookCopy IsNot Nothing Then
+                book = bookDAO.GetById(bookCopy.BookID)
+            End If
+
+            Dim account = accountDAO.GetById(tx.AccountID)
+            Dim accountName = If(account IsNot Nothing, account.Username, "Unknown")
+
+            ' 3. Create the details object
+            Dim details As New BorrowedBookDetails(tx, book)
+            details.BorrowerName = accountName
+
+            transaction.Commit()
+            Return details
+
+        Catch ex As Exception
+            transaction.Rollback()
+            Throw New Exception("Error fetching book details by ID: " & ex.Message)
+        Finally
+            _dbCon.CloseConnection()
+        End Try
+    End Function
+
 End Class

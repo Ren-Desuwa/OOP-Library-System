@@ -2,6 +2,7 @@
 
 Public Class UC_Borrow_Container
     Public Event InstanceClicked(selected As Object)
+    Public Event ViewDetailsClicked(transactionId As Integer)
 
     Public TransactionID As Integer
     Private isSelected As Boolean = False
@@ -31,10 +32,27 @@ Public Class UC_Borrow_Container
     End Sub
 
     Private Sub OnMouseDownInstance(sender As Object, e As MouseEventArgs)
+        ' (NEW) Check if the control that was clicked is the button
+        Dim clickedControl = CType(sender, Control)
+        If IsControlOrChildOf(clickedControl, btn_viewbook) Then
+            Exit Sub ' Do not select if the button was clicked
+        End If
+
         ' Notify selection
         SetSelected(True)
         RaiseEvent InstanceClicked(Me)
     End Sub
+
+    ' (NEW) Add this helper function to check if a control is the button
+    Private Function IsControlOrChildOf(control As Control, parent As Control) As Boolean
+        If control Is Nothing OrElse parent Is Nothing Then Return False
+        Dim current = control
+        Do While current IsNot Nothing
+            If current Is parent Then Return True
+            current = current.Parent
+        Loop
+        Return False
+    End Function
 
     ' Change colors when selected/unselected
     Public Sub SetSelected(value As Boolean)
@@ -90,5 +108,9 @@ Public Class UC_Borrow_Container
 
     Private Sub TableLayoutPanel1_Paint(sender As Object, e As PaintEventArgs) Handles TableLayoutPanel1.Paint
 
+    End Sub
+
+    Private Sub ViewDetailsBtn_Click(sender As Object, e As EventArgs) Handles btn_viewbook.Click
+        RaiseEvent ViewDetailsClicked(Me.TransactionID)
     End Sub
 End Class

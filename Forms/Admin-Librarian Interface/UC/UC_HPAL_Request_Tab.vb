@@ -17,6 +17,30 @@
         UserReqBtn.BringToFront()
     End Sub
 
+    ' --- ADD THIS NEW ASYNC FUNCTION ---
+    ''' <summary>
+    ''' Asynchronously refreshes the data for both child tabs (User Requests and Borrow Requests).
+    ''' This is designed to be called from the main form *before* this tab is shown.
+    ''' </summary>
+    Public Async Function RefreshRequestData() As Task
+        ' We wrap the synchronous refresh calls in a Task.Run
+        ' so this method is awaitable and doesn't block the UI thread.
+        Await Task.Run(Sub()
+                           ' UI updates must be invoked back to the main UI thread
+                           If UserReqUC.InvokeRequired Then
+                               UserReqUC.Invoke(New Action(AddressOf UserReqUC.RefreshData))
+                           Else
+                               UserReqUC.RefreshData()
+                           End If
+
+                           If BorrowReqUC.InvokeRequired Then
+                               BorrowReqUC.Invoke(New Action(AddressOf BorrowReqUC.RefreshData))
+                           Else
+                               BorrowReqUC.RefreshData()
+                           End If
+                       End Sub)
+    End Function
+
     Private Sub UserReqBtn_Click(sender As Object, e As EventArgs)
         UserReqUC.BringToFront()
         activeTab = UserReqUC

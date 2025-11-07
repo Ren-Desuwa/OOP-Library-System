@@ -183,8 +183,7 @@ Public Class Home_Panel_Admin_Librarian
             ToggleLoading(True, "Loading Requests...")
             Await Task.Delay(1)
 
-            ' TODO: Call the RefreshData function for your Request Tab
-            ' Await UC_HPAL_Request_Tab1.RefreshRequestData()
+            Await UC_HPAL_Request_Tab1.RefreshRequestData()
 
             ShowTab(UC_HPAL_Request_Tab1)
         Catch ex As Exception

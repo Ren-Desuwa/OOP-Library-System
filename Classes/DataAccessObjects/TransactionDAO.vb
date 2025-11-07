@@ -117,7 +117,7 @@ Public Class TransactionDAO
               "INNER JOIN accounts a ON t.account_id = a.account_id " & vbCrLf &
               "LEFT JOIN book_genres bg ON b.book_id = bg.book_id " & vbCrLf &
               "LEFT JOIN genres g ON bg.genre_id = g.genre_id " & vbCrLf &
-              "WHERE t.status = 'Pending' " ' Only pending requests
+              "WHERE (t.status = 'Pending' OR t.status = 'Approved') "
 
         If Not String.IsNullOrWhiteSpace(searchTerm) Then
             ' Search across book title, author, account name/username, and genre name

@@ -14,6 +14,15 @@
         AddHandler Borrow_Container_FlowLayout.MouseDown, AddressOf OnOutsideClick
         AddHandler Me.MouseDown, AddressOf OnOutsideClick
     End Sub
+
+    ''' <summary>
+    ''' Public wrapper to allow the parent container to refresh this tab's data.
+    ''' </summary>
+    Public Sub RefreshData()
+        ' We are just calling the existing data loading logic
+        LoadPendingUsers()
+    End Sub
+
     Private Sub LoadPendingUsers()
         Try
             Borrow_Container_FlowLayout.Controls.Clear() ' Clear old items

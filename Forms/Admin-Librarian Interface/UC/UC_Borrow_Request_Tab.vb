@@ -26,6 +26,13 @@ Public Class UC_Borrow_Request_Tab
         AddHandler Me.MouseDown, AddressOf OnOutsideClick
     End Sub
 
+    ''' <summary>
+    ''' Public wrapper to allow the parent container to refresh this tab's data.
+    ''' </summary>
+    Public Sub RefreshData()
+        ' Call LoadPendingRequests with default parameters to refresh the current view
+        LoadPendingRequests()
+    End Sub
     ' --- CORE FUNCTION: Refactored for Search and Paging ---
     ''' <summary>
     ''' Loads pending requests based on search term and page number.
@@ -75,6 +82,7 @@ Public Class UC_Borrow_Request_Tab
                 item.Width = Borrow_Container_FlowLayout.ClientSize.Width - 20
 
                 AddHandler item.InstanceClicked, AddressOf OnInstanceClicked
+                AddHandler item.ViewDetailsClicked, AddressOf OnViewDetailsClicked
                 Borrow_Container_FlowLayout.Controls.Add(item)
             Next
 
@@ -83,6 +91,28 @@ Public Class UC_Borrow_Request_Tab
 
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Error Loading Requests", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+    ' (NEW) Add this entire Sub to the class. This handles the button click.
+    Private Sub OnViewDetailsClicked(transactionId As Integer)
+        Try
+            ' 1. Get the full details using the new service function
+            Dim details As BorrowedBookDetails = Program.BorrowSvc.GetBorrowedBookDetailsById(transactionId)
+
+            If details Is Nothing Then
+                Throw New Exception("Could not find transaction details.")
+            End If
+
+            ' 2. Open the ReturnBook form and pass it the data
+            Dim returnForm As New ReturnBook(details)
+            returnForm.ShowDialog()
+
+            ' 3. Refresh the list after the form closes
+            LoadPendingRequests()
+
+        Catch ex As Exception
+            MessageBox.Show($"Error opening book details: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
