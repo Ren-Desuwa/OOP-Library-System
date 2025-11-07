@@ -27,7 +27,7 @@ Public Class UC_Borrow_Request_Tab
             End If
 
             For Each req As BorrowedBookDetails In pendingRequests
-                Dim item As New UC_Borrow_Container()
+                Dim item = New UC_Borrow_Container()
                 item.TransactionID = req.Transaction.TransactionID
 
                 ' --- POPULATE LABELS (Adjust label names to match your .Designer.vb) ---

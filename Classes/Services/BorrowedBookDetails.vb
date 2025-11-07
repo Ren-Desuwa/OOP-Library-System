@@ -26,6 +26,8 @@ Namespace Models
 
         ' This constructor does all the hard work of combining the data
         Public Sub New(tx As Transaction, book As Book)
+            Me.Transaction = tx
+            Me.Book = book
             Me.BorrowedDate = tx.DateBorrowed
             Me.DueDate = tx.DateDue
             Me.TransactionID = tx.TransactionID

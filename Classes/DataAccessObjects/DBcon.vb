@@ -9,7 +9,7 @@ Public Class DBcon
 
     ' --- NEW: Store these for rebuilding connections ---
     Private appDbName As String
-    Private Const KIOSK_SERVER_IP As String = "192.168.0.109" ' !! PUT YOUR SERVER IP HERE !!
+    Private Const KIOSK_SERVER_IP As String = "192.168.0.101" ' !! PUT YOUR SERVER IP HERE !!
     Private Const KIOSK_PASSWORD As String = "bantutan123" ' !! PUT KIOSK PASSWORD HERE !!
 
     Public Enum ConnectionRole
@@ -40,8 +40,8 @@ Public Class DBcon
             Case ConnectionRole.Admin
                 MessageBox.Show("Connecting as Admin (root@localhost)")
 
-                Return $"Server={KIOSK_SERVER_IP};Port=3306;Database={appDbName};Uid=kiosk_user;Pwd={KIOSK_PASSWORD};"
                 'Return $"Server=127.0.0.1;Port=3306;Database={appDbName};Uid=root;Pwd=;"
+                Return $"Server={KIOSK_SERVER_IP};Port=3306;Database={appDbName};Uid=kiosk_user;Pwd={KIOSK_PASSWORD};"
             Case Else ' Default to Kiosk
                 MessageBox.Show("Connecting as Kiosk (kiosk_user@" & KIOSK_SERVER_IP)
                 'Return $"Server=127.0.0.1;Port=3306;Database={appDbName};Uid=root;Pwd=;"
