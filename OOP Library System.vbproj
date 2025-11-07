@@ -86,22 +86,10 @@
     <Compile Include="Classes\Services\BorrowedBookDetails.vb" />
     <Compile Include="Classes\Services\CartServices.vb" />
     <Compile Include="Classes\Services\LogService.vb" />
-    <Compile Include="Forms\Admin-Librarian Interface\Panel\BorrowRequestList.Designer.vb">
-      <DependentUpon>BorrowRequestList.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Admin-Librarian Interface\Panel\BorrowRequestList.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Forms\Admin-Librarian Interface\Panel\Home_Panel_Admin_Librarian.Designer.vb">
       <DependentUpon>Home_Panel_Admin_Librarian.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\Admin-Librarian Interface\Panel\Home_Panel_Admin_Librarian.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Admin-Librarian Interface\Panel\UserAccountRequestList.Designer.vb">
-      <DependentUpon>UserAccountRequestList.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Admin-Librarian Interface\Panel\UserAccountRequestList.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Admin-Librarian Interface\UC\AddBorrower.Designer.vb">
@@ -144,12 +132,6 @@
       <DependentUpon>EditBook.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\Admin-Librarian Interface\UC\EditBook.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Admin-Librarian Interface\UC\LibrarianList.Designer.vb">
-      <DependentUpon>LibrarianList.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Admin-Librarian Interface\UC\LibrarianList.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Admin-Librarian Interface\UC\LibrarianProfile.Designer.vb">
@@ -482,14 +464,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Forms\Admin-Librarian Interface\Panel\BorrowRequestList.resx">
-      <DependentUpon>BorrowRequestList.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin-Librarian Interface\Panel\Home_Panel_Admin_Librarian.resx">
       <DependentUpon>Home_Panel_Admin_Librarian.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Admin-Librarian Interface\Panel\UserAccountRequestList.resx">
-      <DependentUpon>UserAccountRequestList.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin-Librarian Interface\UC\AddBorrower.resx">
       <DependentUpon>AddBorrower.vb</DependentUpon>
@@ -511,9 +487,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin-Librarian Interface\UC\EditBook.resx">
       <DependentUpon>EditBook.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Admin-Librarian Interface\UC\LibrarianList.resx">
-      <DependentUpon>LibrarianList.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin-Librarian Interface\UC\LibrarianProfile.resx">
       <DependentUpon>LibrarianProfile.vb</DependentUpon>
