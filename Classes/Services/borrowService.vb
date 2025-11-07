@@ -12,6 +12,224 @@ Public Class BorrowService
         _dbCon = dbConnector
     End Sub
 
+    ' --- MODIFIED FUNCTION FOR THE RETURNS TAB ---
+    ''' <summary>
+    ''' Gets a paginated list of active transactions, supporting a multi-field search query.
+    ''' </summary>
+    Public Function GetBooksCurrentlyOnLoan(Optional searchTerm As String = "", Optional pageNumber As Integer = 1, Optional pageSize As Integer = 20) As List(Of BorrowedBookDetails)
+        Dim detailsList As New List(Of BorrowedBookDetails)
+
+        If Not _dbCon.OpenConnection() Then
+            Throw New Exception("Could not connect to the database.")
+        End If
+
+        Dim transaction As MySqlTransaction = _dbCon.GetConnection().BeginTransaction()
+
+        Try
+            ' 1. Initialize all DAOs needed for this operation
+            Dim transactionDAO As New TransactionDAO(transaction)
+            Dim bookCopyDAO As New BookCopyDAO(transaction)
+            Dim bookDAO As New BookDAO(transaction)
+            Dim accountDAO As New AccountDAO(transaction)
+
+            ' 2. Get active transactions using the NEW search DAO
+            ' NOTE: Pagination is applied here at the DAO level
+            Dim activeTransactions = transactionDAO.SearchActiveLoans(searchTerm, pageNumber, pageSize)
+
+            ' 3. Loop through each active transaction to find the details
+            For Each tx As Transaction In activeTransactions
+                ' Find the copy...
+                Dim bookCopy = bookCopyDAO.GetById(tx.CopyID)
+
+                ' Find the main book...
+                Dim book As Book = If(bookCopy IsNot Nothing, bookDAO.GetById(bookCopy.BookID), Nothing)
+
+                ' Get the account name...
+                Dim account = accountDAO.GetById(tx.AccountID)
+                Dim accountName = If(account IsNot Nothing, account.Username, "Unknown")
+
+                ' 4. Create the new helper object with the combined data
+                Dim details As New BorrowedBookDetails(tx, book)
+                details.BorrowerName = accountName
+                detailsList.Add(details)
+            Next
+
+            transaction.Commit()
+            Return detailsList
+
+        Catch ex As Exception
+            transaction.Rollback()
+            Throw New Exception("Error fetching books on loan for returns: " & ex.Message)
+        Finally
+            _dbCon.CloseConnection()
+        End Try
+    End Function
+
+    ' ... (ProcessBookReturn and GetBorrowedBooksDetails remain the same) ...
+
+    ''' <summary>
+    ''' (FOR Admin UI) Retrieves all borrow requests that are "Pending" with search and pagination.
+    ''' </summary>
+    Public Function GetPendingBorrowRequests(Optional searchTerm As String = "", Optional pageNumber As Integer = 1, Optional pageSize As Integer = 20) As List(Of BorrowedBookDetails)
+        Dim detailsList As New List(Of BorrowedBookDetails)
+        If Not _dbCon.OpenConnection() Then
+            Throw New Exception("Could not connect to the database.")
+        End If
+        Dim transaction As MySqlTransaction = _dbCon.GetConnection().BeginTransaction()
+        Try
+            Dim transactionDAO As New TransactionDAO(transaction)
+            Dim bookCopyDAO As New BookCopyDAO(transaction)
+            Dim bookDAO As New BookDAO(transaction)
+            Dim accountDAO As New AccountDAO(transaction)
+
+            ' 1. Get all *pending* transactions using the NEW search DAO with pagination
+            ' NOTE: Changed this call from GetPendingRequestsPaginated to SearchPendingRequests
+            Dim pendingTransactions = transactionDAO.SearchPendingRequests(searchTerm, pageNumber, pageSize)
+
+            ' 2. Get details for each one
+            For Each tx As Transaction In pendingTransactions
+                Dim bookCopy = bookCopyDAO.GetById(tx.CopyID)
+                Dim book As Book = Nothing
+                If bookCopy IsNot Nothing Then
+                    book = bookDAO.GetById(bookCopy.BookID)
+                End If
+
+                Dim account = accountDAO.GetById(tx.AccountID)
+                Dim accountName = If(account IsNot Nothing, account.Username, "Unknown")
+
+                ' 3. Create the details object
+                Dim details As New BorrowedBookDetails(tx, book)
+                details.BorrowerName = accountName
+                detailsList.Add(details)
+            Next
+
+            transaction.Commit()
+            Return detailsList
+        Catch ex As Exception
+            transaction.Rollback()
+            Throw New Exception("Error fetching pending borrow requests: " & ex.Message)
+        Finally
+            _dbCon.CloseConnection()
+        End Try
+    End Function
+
+
+
+    ' --- NEW FUNCTION FOR THE RETURNS TAB ---
+    ''' <summary>
+    ''' Gets a list of all transactions that are currently active (not Returned or Rejected).
+    ''' </summary>
+    Public Function GetBooksCurrentlyOnLoan() As List(Of BorrowedBookDetails)
+        Dim detailsList As New List(Of BorrowedBookDetails)
+
+        If Not _dbCon.OpenConnection() Then
+            Throw New Exception("Could not connect to the database.")
+        End If
+
+        ' Note: Using BeginTransaction() even for reads ensures snapshot isolation.
+        Dim transaction As MySqlTransaction = _dbCon.GetConnection().BeginTransaction()
+
+        Try
+            ' 1. Initialize all DAOs needed for this operation
+            Dim transactionDAO As New TransactionDAO(transaction)
+            Dim bookCopyDAO As New BookCopyDAO(transaction)
+            Dim bookDAO As New BookDAO(transaction)
+            Dim accountDAO As New AccountDAO(transaction) ' Needed to get borrower name
+
+            ' 2. Get all ACTIVE transactions (Status is NOT 'Returned' and NOT 'Rejected')
+            ' The DAO should handle the specific query (e.g., SELECT * WHERE Status <> 'Returned' AND Status <> 'Rejected')
+            ' For simplicity here, we will fetch all and filter, assuming TransactionDAO.GetAll() or similar exists.
+            Dim activeTransactions = transactionDAO.GetActiveLoans()
+            ' NOTE: You will need to implement TransactionDAO.GetActiveLoans() to fetch transactions 
+            ' where Status is not 'Returned' and DateReturned is NULL or Status is 'Overdue', 'Borrowed', or 'DueSoon'.
+
+            ' 3. Loop through each active transaction to find the details
+            For Each tx As Transaction In activeTransactions
+                ' Find the copy...
+                Dim bookCopy = bookCopyDAO.GetById(tx.CopyID)
+
+                ' Find the main book...
+                Dim book As Book = If(bookCopy IsNot Nothing, bookDAO.GetById(bookCopy.BookID), Nothing)
+
+                ' Get the account name...
+                Dim account = accountDAO.GetById(tx.AccountID)
+                Dim accountName = If(account IsNot Nothing, account.Username, "Unknown")
+
+                ' 4. Create the new helper object with the combined data
+                Dim details As New BorrowedBookDetails(tx, book)
+                details.BorrowerName = accountName
+                detailsList.Add(details)
+            Next
+
+            transaction.Commit()
+            Return detailsList
+
+        Catch ex As Exception
+            transaction.Rollback()
+            Throw New Exception("Error fetching books on loan for returns: " & ex.Message)
+        Finally
+            _dbCon.CloseConnection()
+        End Try
+    End Function
+
+    ' --- NEW FUNCTION TO PROCESS RETURN ---
+    ''' <summary>
+    ''' Performs the full transactional process for returning a single book.
+    ''' </summary>
+    ''' <param name="transactionId">The ID of the transaction (loan) being returned.</param>
+    ''' <returns>The calculated fine amount (Decimal).</returns>
+    Public Function ProcessBookReturn(transactionId As Integer) As Decimal
+        If Not _dbCon.OpenConnection() Then Throw New Exception("Could not connect to the database.")
+        Dim transaction As MySqlTransaction = _dbCon.GetConnection().BeginTransaction()
+
+        Dim finalFine As Decimal = 0D
+
+        Try
+            Dim transactionDAO As New TransactionDAO(transaction)
+            Dim bookCopyDAO As New BookCopyDAO(transaction)
+            ' Dim penaltyDAO As New PenaltyDAO(transaction) ' Assuming you have a DAO for recording penalties
+
+            ' 1. Get the transaction
+            Dim tx = transactionDAO.GetById(transactionId)
+            If tx Is Nothing Then Throw New Exception("Transaction not found.")
+            If tx.Status = "Returned" OrElse tx.DateReturned.HasValue Then
+                Throw New Exception("This book has already been returned.")
+            End If
+
+            ' 2. Calculate fine (uses logic in Transaction.vb)
+            finalFine = tx.CalculateFine() ' Assumes Transaction.vb has a CalculateFine() method
+
+            ' 3. Update the Transaction record
+            tx.DateReturned = DateTime.Now
+            tx.Fine = finalFine
+            tx.Status = If(finalFine > 0, "Overdue", "Returned") ' Set final status
+            transactionDAO.Update(tx)
+
+            ' 4. Update the Book Copy status
+            Dim bookCopy = bookCopyDAO.GetById(tx.CopyID)
+            If bookCopy IsNot Nothing Then
+                bookCopy.UpdateStatus("Available") ' Return copy to shelf
+                bookCopyDAO.Update(bookCopy)
+            End If
+
+            ' 5. OPTIONAL: If fine > 0, insert a Penalty record
+            ' If finalFine > 0 Then
+            '   Dim penalty = New Penalty() With { .TransactionID = transactionId, .Amount = finalFine, .IsPaid = False }
+            '   penaltyDAO.Create(penalty) 
+            ' End If
+
+            ' 6. Commit changes
+            transaction.Commit()
+            Return finalFine
+
+        Catch ex As Exception
+            transaction.Rollback()
+            Throw New Exception("Error processing book return: " & ex.Message)
+        Finally
+            _dbCon.CloseConnection()
+        End Try
+    End Function
+
     ''' <summary>
     ''' Gets a complete list of borrowed book details for a specific user.
     ''' This function joins data from Transactions, BookCopies, and Books.

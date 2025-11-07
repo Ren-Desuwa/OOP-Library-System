@@ -78,6 +78,114 @@ Public Class TransactionDAO
         Return list
     End Function
 
+    ''' <summary>
+    ''' Retrieves pending borrow requests with pagination.
+    ''' </summary>
+    Public Function GetPendingRequestsPaginated(pageNumber As Integer, pageSize As Integer) As List(Of Transaction)
+        Dim list As New List(Of Transaction)
+        Dim offset As Integer = (pageNumber - 1) * pageSize
+        Dim sql = "SELECT * FROM transactions WHERE status = 'Pending' " & vbCrLf &
+                  "ORDER BY date_borrowed ASC " & vbCrLf &
+                  "LIMIT @PageSize OFFSET @Offset"
+        Using cmd As New MySqlCommand(sql, _transaction.Connection, _transaction)
+            cmd.Parameters.AddWithValue("@PageSize", pageSize)
+            cmd.Parameters.AddWithValue("@Offset", offset)
+            Using reader = cmd.ExecuteReader()
+                While reader.Read()
+                    list.Add(MapToTransaction(reader))
+                End While
+            End Using
+        End Using
+        Return list
+    End Function
+
+    ''' <summary>
+    ''' Retrieves active loans with search and pagination, joining book and account details.
+    ''' Search terms are applied against Title, Author, Borrower Name, and Transaction Status.
+    ''' </summary>
+    ''' <summary>
+
+    Public Function SearchPendingRequests(searchTerm As String, pageNumber As Integer, pageSize As Integer) As List(Of Transaction)
+        Dim list As New List(Of Transaction)
+        Dim offset As Integer = (pageNumber - 1) * pageSize
+        Dim sql As String = ""
+
+        ' Note: Using DISTINCT to avoid duplicate transactions if a book has multiple genres
+        sql = "SELECT DISTINCT t.* FROM transactions t " & vbCrLf &
+              "INNER JOIN book_copies bc ON t.copy_id = bc.copy_id " & vbCrLf &
+              "INNER JOIN books b ON bc.book_id = b.book_id " & vbCrLf &
+              "INNER JOIN accounts a ON t.account_id = a.account_id " & vbCrLf &
+              "LEFT JOIN book_genres bg ON b.book_id = bg.book_id " & vbCrLf &
+              "LEFT JOIN genres g ON bg.genre_id = g.genre_id " & vbCrLf &
+              "WHERE t.status = 'Pending' " ' Only pending requests
+
+        If Not String.IsNullOrWhiteSpace(searchTerm) Then
+            ' Search across book title, author, account name/username, and genre name
+            sql &= "AND (b.title LIKE @SearchPattern OR b.author LIKE @SearchPattern OR a.name LIKE @SearchPattern OR a.username LIKE @SearchPattern OR g.name LIKE @SearchPattern) "
+        End If
+
+        sql &= "ORDER BY t.date_borrowed ASC " & vbCrLf &
+               "LIMIT @PageSize OFFSET @Offset"
+
+        Using cmd As New MySqlCommand(sql, _transaction.Connection, _transaction)
+            If Not String.IsNullOrWhiteSpace(searchTerm) Then
+                cmd.Parameters.AddWithValue("@SearchPattern", "%" & searchTerm & "%")
+            End If
+            cmd.Parameters.AddWithValue("@PageSize", pageSize)
+            cmd.Parameters.AddWithValue("@Offset", offset)
+
+            Using reader = cmd.ExecuteReader()
+                While reader.Read()
+                    list.Add(MapToTransaction(reader))
+                End While
+            End Using
+        End Using
+        Return list
+    End Function
+
+
+    ''' <summary>
+    ''' Retrieves active loans with search and pagination, joining book and account details.
+    ''' Search terms are applied against Borrower Name, Book Title, Author, Genre Name, and Transaction Status.
+    ''' </summary>
+    Public Function SearchActiveLoans(searchTerm As String, pageNumber As Integer, pageSize As Integer) As List(Of Transaction)
+        Dim list As New List(Of Transaction)
+        Dim offset As Integer = (pageNumber - 1) * pageSize
+        Dim sql As String = ""
+
+        ' Note: Using DISTINCT to avoid duplicate transactions if a book has multiple genres
+        sql = "SELECT DISTINCT t.* FROM transactions t " & vbCrLf &
+              "INNER JOIN book_copies bc ON t.copy_id = bc.copy_id " & vbCrLf &
+              "INNER JOIN books b ON bc.book_id = b.book_id " & vbCrLf &
+              "INNER JOIN accounts a ON t.account_id = a.account_id " & vbCrLf &
+              "LEFT JOIN book_genres bg ON b.book_id = bg.book_id " & vbCrLf &
+              "LEFT JOIN genres g ON bg.genre_id = g.genre_id " & vbCrLf &
+              "WHERE t.date_returned IS NULL AND t.status != 'Rejected' " ' Only active loans
+
+        If Not String.IsNullOrWhiteSpace(searchTerm) Then
+            ' Search across book title, author, account name/username, genre name, and status
+            sql &= "AND (b.title LIKE @SearchPattern OR b.author LIKE @SearchPattern OR a.name LIKE @SearchPattern OR a.username LIKE @SearchPattern OR g.name LIKE @SearchPattern OR t.status LIKE @SearchPattern) "
+        End If
+
+        sql &= "ORDER BY t.date_due ASC " & vbCrLf &
+               "LIMIT @PageSize OFFSET @Offset"
+
+        Using cmd As New MySqlCommand(sql, _transaction.Connection, _transaction)
+            If Not String.IsNullOrWhiteSpace(searchTerm) Then
+                cmd.Parameters.AddWithValue("@SearchPattern", "%" & searchTerm & "%")
+            End If
+            cmd.Parameters.AddWithValue("@PageSize", pageSize)
+            cmd.Parameters.AddWithValue("@Offset", offset)
+
+            Using reader = cmd.ExecuteReader()
+                While reader.Read()
+                    list.Add(MapToTransaction(reader))
+                End While
+            End Using
+        End Using
+        Return list
+    End Function
+
     ' #################### UPDATE ####################
     Public Sub Update(tx As Transaction)
         Dim sql = "UPDATE transactions SET " &
@@ -115,6 +223,25 @@ Public Class TransactionDAO
         Dim sql = "SELECT * FROM transactions WHERE status = @Status"
         Using cmd As New MySqlCommand(sql, _transaction.Connection, _transaction)
             cmd.Parameters.AddWithValue("@Status", status)
+            Using reader = cmd.ExecuteReader()
+                While reader.Read()
+                    list.Add(MapToTransaction(reader))
+                End While
+            End Using
+        End Using
+        Return list
+    End Function
+
+    ''' <summary>
+    ''' Retrieves all active loans, meaning the book has not been officially returned 
+    ''' and the original request was not rejected. Used for the Librarian's "Book Returns" tab.
+    ''' </summary>
+    Public Function GetActiveLoans() As List(Of Transaction)
+        Dim list As New List(Of Transaction)
+        ' Filter for transactions where date_returned is NULL (still on loan) 
+        ' AND status is not 'Rejected' (to exclude canceled requests).
+        Dim sql = "SELECT * FROM transactions WHERE date_returned IS NULL AND status != 'Rejected'"
+        Using cmd As New MySqlCommand(sql, _transaction.Connection, _transaction)
             Using reader = cmd.ExecuteReader()
                 While reader.Read()
                     list.Add(MapToTransaction(reader))
