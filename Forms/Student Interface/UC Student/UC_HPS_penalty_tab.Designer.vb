@@ -47,16 +47,16 @@ Partial Class UC_HPS_penalty_tab
         Me.gbSummary.Controls.Add(Me.lblScoreTitle)
         Me.gbSummary.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.gbSummary.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
-        Me.gbSummary.Location = New System.Drawing.Point(8, 8)
+        Me.gbSummary.Location = New System.Drawing.Point(23, 23)
         Me.gbSummary.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.gbSummary.Name = "gbSummary"
-        Me.gbSummary.Size = New System.Drawing.Size(333, 122)
+        Me.gbSummary.Size = New System.Drawing.Size(364, 180)
         Me.gbSummary.TabIndex = 0
         Me.gbSummary.Text = "Credit Score Summary"
         '
         'pbScore
         '
-        Me.pbScore.Location = New System.Drawing.Point(5, 53)
+        Me.pbScore.Location = New System.Drawing.Point(8, 73)
         Me.pbScore.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.pbScore.Name = "pbScore"
         Me.pbScore.Size = New System.Drawing.Size(310, 20)
@@ -69,7 +69,7 @@ Partial Class UC_HPS_penalty_tab
         Me.lblScoreValue.AutoSize = True
         Me.lblScoreValue.BackColor = System.Drawing.Color.Transparent
         Me.lblScoreValue.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblScoreValue.Location = New System.Drawing.Point(142, 32)
+        Me.lblScoreValue.Location = New System.Drawing.Point(145, 52)
         Me.lblScoreValue.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblScoreValue.Name = "lblScoreValue"
         Me.lblScoreValue.Size = New System.Drawing.Size(32, 18)
@@ -81,7 +81,7 @@ Partial Class UC_HPS_penalty_tab
         Me.lblScoreTitle.AutoSize = True
         Me.lblScoreTitle.BackColor = System.Drawing.Color.Transparent
         Me.lblScoreTitle.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblScoreTitle.Location = New System.Drawing.Point(2, 32)
+        Me.lblScoreTitle.Location = New System.Drawing.Point(5, 52)
         Me.lblScoreTitle.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblScoreTitle.Name = "lblScoreTitle"
         Me.lblScoreTitle.Size = New System.Drawing.Size(148, 18)
@@ -94,17 +94,17 @@ Partial Class UC_HPS_penalty_tab
         Me.gbActions.Controls.Add(Me.lblActionSummary)
         Me.gbActions.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.gbActions.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
-        Me.gbActions.Location = New System.Drawing.Point(348, 8)
+        Me.gbActions.Location = New System.Drawing.Point(404, 23)
         Me.gbActions.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.gbActions.Name = "gbActions"
-        Me.gbActions.Size = New System.Drawing.Size(333, 122)
+        Me.gbActions.Size = New System.Drawing.Size(361, 180)
         Me.gbActions.TabIndex = 1
         Me.gbActions.Text = "How to Improve Score"
         '
         'rtbActions
         '
         Me.rtbActions.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.rtbActions.Location = New System.Drawing.Point(12, 54)
+        Me.rtbActions.Location = New System.Drawing.Point(17, 73)
         Me.rtbActions.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rtbActions.Name = "rtbActions"
         Me.rtbActions.ReadOnly = True
@@ -117,7 +117,7 @@ Partial Class UC_HPS_penalty_tab
         Me.lblActionSummary.AutoSize = True
         Me.lblActionSummary.BackColor = System.Drawing.Color.Transparent
         Me.lblActionSummary.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblActionSummary.Location = New System.Drawing.Point(2, 36)
+        Me.lblActionSummary.Location = New System.Drawing.Point(7, 55)
         Me.lblActionSummary.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblActionSummary.Name = "lblActionSummary"
         Me.lblActionSummary.Size = New System.Drawing.Size(257, 18)
@@ -126,13 +126,16 @@ Partial Class UC_HPS_penalty_tab
         '
         'gbHistory
         '
+        Me.gbHistory.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.gbHistory.Controls.Add(Me.dgvPenalties)
         Me.gbHistory.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.gbHistory.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
-        Me.gbHistory.Location = New System.Drawing.Point(8, 135)
+        Me.gbHistory.Location = New System.Drawing.Point(23, 225)
         Me.gbHistory.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.gbHistory.Name = "gbHistory"
-        Me.gbHistory.Size = New System.Drawing.Size(674, 251)
+        Me.gbHistory.Size = New System.Drawing.Size(742, 256)
         Me.gbHistory.TabIndex = 2
         Me.gbHistory.Text = "Penalty History "
         '
@@ -171,7 +174,7 @@ Partial Class UC_HPS_penalty_tab
         Me.dgvPenalties.RowHeadersVisible = False
         Me.dgvPenalties.RowHeadersWidth = 51
         Me.dgvPenalties.RowTemplate.Height = 24
-        Me.dgvPenalties.Size = New System.Drawing.Size(643, 202)
+        Me.dgvPenalties.Size = New System.Drawing.Size(711, 207)
         Me.dgvPenalties.TabIndex = 0
         Me.dgvPenalties.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.dgvPenalties.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -205,7 +208,7 @@ Partial Class UC_HPS_penalty_tab
         Me.Controls.Add(Me.gbSummary)
         Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "UC_HPS_penalty_tab"
-        Me.Size = New System.Drawing.Size(688, 397)
+        Me.Size = New System.Drawing.Size(813, 494)
         Me.gbSummary.ResumeLayout(False)
         Me.gbSummary.PerformLayout()
         Me.gbActions.ResumeLayout(False)
