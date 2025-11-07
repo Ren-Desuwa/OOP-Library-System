@@ -7,17 +7,21 @@ Public Class Account
     Public Property PasswordHash As String
     Public Property Role As String ' "Admin", "Librarian", "Member"
     Public Property Name As String
-    Public Property StudentID As String  ' <-- ADD THIS LINE
+    Public Property StudentID As String
     Public Property Email As String
-    Public Property ContactNumber As String ' <-- ADDED (to match DAO)
-    Public Property Birthday As Date? ' <-- ADDED (from schema)
-    Public Property FavBookDesign As Boolean ' <-- ADDED (from schema, tinyint(1) -> Boolean)
+    Public Property ContactNumber As String
+    Public Property Birthday As Date?
+    Public Property FavBookDesign As Boolean
+    ' === ADDED FOR CREDIT SCORE ===
+    Public Property CreditScore As Short
+    ' ==============================
     Public Property DateCreated As DateTime
     Public Property IsActive As Boolean
 
     Public Sub New()
         DateCreated = DateTime.Now
-        IsActive = True
+        IsActive = False
+        CreditScore = 75 ' Initialize to the default score of 75
     End Sub
 
     ' Hash password using SHA256

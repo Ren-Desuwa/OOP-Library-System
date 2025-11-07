@@ -6,9 +6,6 @@ Public Class PendingApprovalDialog
     Public StudentAccountID As Integer
 
     Private Sub PendingApprovalDialog_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' 1. Set initial button state
-        btnConfirm.Enabled = False
-        btnConfirm.Text = "Waiting for Approval"
 
         ' 2. Configure and start the timer
         StatusPollTimer.Interval = 5000 ' Check every 5 seconds

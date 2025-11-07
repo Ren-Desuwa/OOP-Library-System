@@ -95,8 +95,6 @@ Public Class Signup_Panel_Student
     Private Async Sub HandleSendCodeClicked(sender As Object, e As EventArgs)
         Dim contactInfo As String = UC_signup_step2_student1.ContactInfo
 
-        ' --- START OF MODIFIED LOGIC ---
-
         ' --- NEW VALIDATION ---
         ' Check if the contact info field is empty, just like in ForgotPass.vb
         If String.IsNullOrWhiteSpace(contactInfo) Then
@@ -108,31 +106,97 @@ Public Class Signup_Panel_Student
         ' 1. Set button to "Sending..." state
         UC_signup_step2_student1.SetSendingState(True)
 
+        ' --- START OF NEW TIMEOUT LOGIC ---
+        Const TIMEOUT_MS As Integer = 10000 ' 10 seconds
+
         Try
-            ' 2. Call the service to request the OTP
-            If Await Program.AuthSvc.RequestRegistrationOtp(contactInfo) Then
-                ' 3. Success
+            ' 2. Start the main task (calling the service) and the timer task
+            Dim otpTask As Task(Of Boolean) = Program.AuthSvc.RequestRegistrationOtp(contactInfo)
+            Dim delayTask As Task = Task.Delay(TIMEOUT_MS)
+
+            ' 3. Race the two tasks. The Await returns the first one that completes.
+            Dim completedTask As Task = Await Task.WhenAny(otpTask, delayTask)
+
+            If completedTask Is delayTask Then
+                ' --- TIMEOUT OCCURRED ---
+                MessageBox.Show($"OTP sending failed. The service timed out after {TIMEOUT_MS / 1000} seconds. Please try again.", "Timeout Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+
+                ' Reset the button state and indicate failure
+                UC_signup_step2_student1.SetSendingState(False)
+                UC_signup_step2_student1.SetContactInfoInvalid()
+                Exit Sub
+            End If
+
+            ' 4. If we reach here, the otpTask completed. Re-await it to get the result 
+            ' and ensure any exceptions it may have thrown are caught below.
+            If Await otpTask Then ' (The original Await call, now wrapped)
+                ' 5. Success
                 MessageBox.Show("Verification code sent! Please check your email or phone.", "Code Sent", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
-                ' 4. Tell the UC to start its countdown
+                ' 6. Tell the UC to start its countdown
                 UC_signup_step2_student1.StartOtpCountdown()
                 UC_signup_step2_student1.SetContactInfoValid()
             Else
-                ' 5. Handle a "false" return from the service
+                ' 7. Handle a "false" return from the service (e.g., AuthSvc failed internally)
                 MessageBox.Show("Verification code could not be sent. Please check the email or phone number.", "Code Not Sent", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 ' Reset the button to its normal state
                 UC_signup_step2_student1.SetSendingState(False)
+                UC_signup_step2_student1.SetContactInfoInvalid() ' Indicate failure
             End If
 
         Catch ex As Exception
-            ' 6. Handle any unexpected errors
+            ' 8. Handle any unexpected errors (e.g., database connection issue)
             MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             ' Reset the button to its normal state
             UC_signup_step2_student1.SetSendingState(False)
             UC_signup_step2_student1.SetContactInfoInvalid()
         End Try
-        ' --- END OF MODIFIED LOGIC ---
+        ' --- END OF NEW TIMEOUT LOGIC ---
     End Sub
+    ' Add this constant somewhere globally accessible, like in your Program module or a Constants class
+    ' Public Const OTP_TIMEOUT_SECONDS As Integer = 10 
+    ' I will use 10000ms (10 seconds) directly in the code for this example.
+
+    ' Assuming this code is inside an Async Sub or Async Function where the OTP is sent.
+    ' (e.g., in a Signup button click handler in Forms/Student Interface/Signup_Panel_Student.vb)
+
+    Private Async Function SendOtpWithTimeout(email As String) As Task(Of Boolean)
+        Const TIMEOUT_MS As Integer = 10000 ' 10 seconds
+
+        Try
+            ' 1. Start the main task (sending the OTP)
+            Dim otpTask As Task(Of Boolean) = Program.AuthSvc.RequestRegistrationOtp(email)
+
+            ' 2. Create a delay task for the timeout
+            Dim delayTask As Task = Task.Delay(TIMEOUT_MS)
+
+            ' 3. Race the two tasks
+            Dim completedTask As Task = Await Task.WhenAny(otpTask, delayTask)
+
+            If completedTask Is delayTask Then
+                ' --- TIMEOUT OCCURRED ---
+                MessageBox.Show($"OTP sending failed. The request timed out after {TIMEOUT_MS / 1000} seconds. Please try again.", "Timeout Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                Return False
+            Else
+                ' --- OTP TASK COMPLETED ---
+
+                ' Re-await the original task to propagate its result or any exceptions
+                Dim success As Boolean = Await otpTask
+
+                If success Then
+                    MessageBox.Show("OTP sent successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    Return True
+                Else
+                    MessageBox.Show("Failed to send OTP. Please check the email and try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Return False
+                End If
+            End If
+
+        Catch ex As Exception
+            MessageBox.Show($"An unexpected error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return False
+        End Try
+    End Function
 
     ' --- THIS SUB IS NOW FIXED ---
     ' Runs when Step 2's "Verify" (Confirm) button is clicked
@@ -156,9 +220,6 @@ Public Class Signup_Panel_Student
             ' 3c. Show it as a modal dialog. The code will PAUSE here
             ' until the user clicks "Confirm" (after being approved)
             pendingDialog.ShowDialog()
-
-            ' --- 3d. (Original code) Runs AFTER the dialog is closed ---
-            MessageBox.Show("Thank you! You can now log in.", "Account Approved", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
             ' --- 4. CLEAR ALL FIELDS ---
             UC_signup_step1_student1.txtBox_username.Clear()

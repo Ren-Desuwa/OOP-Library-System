@@ -15,6 +15,9 @@ Public Class AccountDAO
         Dim colBirthday = reader.GetOrdinal("birthday")
         Dim colFavBookDesign = reader.GetOrdinal("fav_book_design")
         Dim colStudentID = reader.GetOrdinal("student_id")
+        ' === ADDED FOR CREDIT SCORE ===
+        Dim colCreditScore = reader.GetOrdinal("credit_score")
+        ' ==============================
 
         Return New Account With {
             .AccountID = reader.GetInt32("account_id"),
@@ -27,7 +30,8 @@ Public Class AccountDAO
             .ContactNumber = If(reader.IsDBNull(colContactNumber), Nothing, reader.GetString(colContactNumber)),
             .Birthday = If(reader.IsDBNull(colBirthday), CType(Nothing, Date?), reader.GetDateTime(colBirthday)),
             .FavBookDesign = If(reader.IsDBNull(colFavBookDesign), False, reader.GetBoolean(colFavBookDesign)),
-            .DateCreated = reader.GetDateTime("date_created"),
+        .CreditScore = If(reader.IsDBNull(colCreditScore), CType(75, Short), reader.GetInt16(colCreditScore)),
+        .DateCreated = reader.GetDateTime("date_created"),
             .IsActive = reader.GetBoolean("is_active")
         }
     End Function
@@ -35,8 +39,8 @@ Public Class AccountDAO
     ' #################### CREATE ####################
     Public Function Create(account As Account) As Integer
         ' --- REFACTORED SQL STRING ---
-        Dim sql = "INSERT INTO accounts (username, password_hash, role, name, student_id, email, contact_number, birthday, fav_book_design, date_created, is_active) " & vbCrLf &
-                  "VALUES (@Username, @PasswordHash, @Role, @Name, @StudentID, @Email, @ContactNumber, @Birthday, @FavBookDesign, @DateCreated, @IsActive);" & vbCrLf &
+        Dim sql = "INSERT INTO accounts (username, password_hash, role, name, student_id, email, contact_number, birthday, fav_book_design, credit_score, date_created, is_active) " & vbCrLf &
+                  "VALUES (@Username, @PasswordHash, @Role, @Name, @StudentID, @Email, @ContactNumber, @Birthday, @FavBookDesign, @CreditScore, @DateCreated, @IsActive);" & vbCrLf &
                   "SELECT LAST_INSERT_ID();"
         ' ----------------------------
         Using cmd As New MySqlCommand(sql, _transaction.Connection, _transaction)
@@ -45,11 +49,13 @@ Public Class AccountDAO
             cmd.Parameters.AddWithValue("@Role", account.Role)
             cmd.Parameters.AddWithValue("@Name", account.Name)
             cmd.Parameters.AddWithValue("@StudentID", If(account.StudentID Is Nothing, CType(DBNull.Value, Object), account.StudentID))
-            ' Handle null values correctly for email and phone
             cmd.Parameters.AddWithValue("@Email", If(account.Email Is Nothing, CType(DBNull.Value, Object), account.Email))
             cmd.Parameters.AddWithValue("@ContactNumber", If(account.ContactNumber Is Nothing, CType(DBNull.Value, Object), account.ContactNumber))
             cmd.Parameters.AddWithValue("@Birthday", If(account.Birthday.HasValue, CType(account.Birthday.Value, Object), DBNull.Value))
             cmd.Parameters.AddWithValue("@FavBookDesign", account.FavBookDesign)
+            ' === ADDED FOR CREDIT SCORE ===
+            cmd.Parameters.AddWithValue("@CreditScore", account.CreditScore)
+            ' ==============================
             cmd.Parameters.AddWithValue("@DateCreated", account.DateCreated)
             cmd.Parameters.AddWithValue("@IsActive", account.IsActive)
 
@@ -228,7 +234,7 @@ Public Class AccountDAO
         Dim sql = "UPDATE accounts SET " & vbCrLf &
                   "username = @Username, password_hash = @PasswordHash, role = @Role, " & vbCrLf &
                   "name = @Name, student_id = @StudentID, email = @Email, contact_number = @ContactNumber, " & vbCrLf &
-                  "birthday = @Birthday, fav_book_design = @FavBookDesign, is_active = @IsActive " & vbCrLf &
+                  "birthday = @Birthday, fav_book_design = @FavBookDesign, credit_score = @CreditScore, is_active = @IsActive " & vbCrLf &
                   "WHERE account_id = @Id"
         ' ----------------------------
         Using cmd As New MySqlCommand(sql, _transaction.Connection, _transaction)
@@ -241,8 +247,12 @@ Public Class AccountDAO
             cmd.Parameters.AddWithValue("@ContactNumber", If(account.ContactNumber Is Nothing, CType(DBNull.Value, Object), account.ContactNumber))
             cmd.Parameters.AddWithValue("@Birthday", If(account.Birthday.HasValue, CType(account.Birthday.Value, Object), DBNull.Value))
             cmd.Parameters.AddWithValue("@FavBookDesign", account.FavBookDesign)
+            ' === ADDED FOR CREDIT SCORE ===
+            cmd.Parameters.AddWithValue("@CreditScore", account.CreditScore)
+            ' ==============================
             cmd.Parameters.AddWithValue("@IsActive", account.IsActive)
             cmd.Parameters.AddWithValue("@Id", account.AccountID)
+
             cmd.ExecuteNonQuery()
         End Using
     End Sub

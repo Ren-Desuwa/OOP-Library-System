@@ -79,12 +79,15 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\DataAccessObjects\CreditScoreHistoryDAO.vb" />
     <Compile Include="Classes\DataAccessObjects\Penalty.vb" />
     <Compile Include="Classes\DataAccessObjects\PenaltyDAO.vb" />
     <Compile Include="Classes\DataAccessObjects\PenaltyService.vb" />
+    <Compile Include="Classes\Models\CreditScoreHistory.vb" />
     <Compile Include="Classes\Services\accountService.vb" />
     <Compile Include="Classes\Services\BorrowedBookDetails.vb" />
     <Compile Include="Classes\Services\CartServices.vb" />
+    <Compile Include="Classes\Services\CreditScoreService.vb" />
     <Compile Include="Classes\Services\LogService.vb" />
     <Compile Include="Forms\Admin-Librarian Interface\Panel\Home_Panel_Admin_Librarian.Designer.vb">
       <DependentUpon>Home_Panel_Admin_Librarian.vb</DependentUpon>

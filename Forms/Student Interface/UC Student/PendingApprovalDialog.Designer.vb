@@ -43,9 +43,9 @@ Partial Class PendingApprovalDialog
         Me.Guna2CustomGradientPanel1.FillColor4 = System.Drawing.Color.FromArgb(CType(CType(198, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(143, Byte), Integer))
         Me.Guna2CustomGradientPanel1.ForeColor = System.Drawing.Color.Transparent
         Me.Guna2CustomGradientPanel1.Location = New System.Drawing.Point(0, 0)
-        Me.Guna2CustomGradientPanel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Guna2CustomGradientPanel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Guna2CustomGradientPanel1.Name = "Guna2CustomGradientPanel1"
-        Me.Guna2CustomGradientPanel1.Size = New System.Drawing.Size(332, 153)
+        Me.Guna2CustomGradientPanel1.Size = New System.Drawing.Size(249, 124)
         Me.Guna2CustomGradientPanel1.TabIndex = 9
         '
         'btnConfirm
@@ -58,10 +58,10 @@ Partial Class PendingApprovalDialog
         Me.btnConfirm.FillColor = System.Drawing.Color.White
         Me.btnConfirm.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnConfirm.ForeColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(42, Byte), Integer))
-        Me.btnConfirm.Location = New System.Drawing.Point(216, 104)
-        Me.btnConfirm.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnConfirm.Location = New System.Drawing.Point(123, 84)
+        Me.btnConfirm.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnConfirm.Name = "btnConfirm"
-        Me.btnConfirm.Size = New System.Drawing.Size(108, 38)
+        Me.btnConfirm.Size = New System.Drawing.Size(120, 31)
         Me.btnConfirm.TabIndex = 6
         Me.btnConfirm.Text = "Confirm"
         '
@@ -70,11 +70,12 @@ Partial Class PendingApprovalDialog
         Me.lblStatus.AutoSize = True
         Me.lblStatus.Font = New System.Drawing.Font("Segoe UI", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblStatus.ForeColor = System.Drawing.Color.FromArgb(CType(CType(122, Byte), Integer), CType(CType(107, Byte), Integer), CType(CType(84, Byte), Integer))
-        Me.lblStatus.Location = New System.Drawing.Point(16, 40)
+        Me.lblStatus.Location = New System.Drawing.Point(12, 32)
+        Me.lblStatus.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblStatus.Name = "lblStatus"
-        Me.lblStatus.Size = New System.Drawing.Size(196, 25)
+        Me.lblStatus.Size = New System.Drawing.Size(183, 18)
         Me.lblStatus.TabIndex = 5
-        Me.lblStatus.Text = "Waiting for Approval "
+        Me.lblStatus.Text = "Please Wait For Approval"
         '
         'StatusPollTimer
         '
@@ -86,12 +87,13 @@ Partial Class PendingApprovalDialog
         '
         'PendingApprovalDialog
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(332, 153)
+        Me.ClientSize = New System.Drawing.Size(249, 124)
         Me.ControlBox = False
         Me.Controls.Add(Me.Guna2CustomGradientPanel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "PendingApprovalDialog"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "PendingApprovalDialog"
