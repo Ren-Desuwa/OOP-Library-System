@@ -58,6 +58,7 @@
     Private Sub ApproveBtn_Click(sender As Object, e As EventArgs) Handles ApproveBtn.Click
         If activeTab Is BorrowReqUC Then
             BorrowReqUC.ApproveSelected()
+            ' BorrowReqUC.StatusPanel.UpdateStatus("A")
         ElseIf activeTab Is UserReqUC Then
             UserReqUC.ApproveSelected()
         End If
@@ -66,6 +67,7 @@
     Private Sub RejectBtn_Click(sender As Object, e As EventArgs) Handles RejectBtn.Click
         If activeTab Is BorrowReqUC Then
             BorrowReqUC.RejectSelected()
+            ' BorrowReqUC.StatusPanel.UpdateStatus("R")
         ElseIf activeTab Is UserReqUC Then
             UserReqUC.RejectSelected()
         End If

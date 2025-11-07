@@ -68,7 +68,6 @@ Partial Public Class UC_Librarian_container
     End Sub
 
     Private Sub Container_Clicked(sender As Object, e As EventArgs)
-        MessageBox.Show("Librarian container clicked: " & Me.lbl_name.Text)
         RaiseEvent Selected(Me, EventArgs.Empty)
     End Sub
 

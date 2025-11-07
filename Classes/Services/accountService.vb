@@ -330,6 +330,40 @@ See inner exception for details.", ex)
         End Try
     End Sub
 
+
+
+
+    ' SHAN CHANGES FOR GETTING LIBRARIAN ACCOUNTS
+
+    ''' <summary>
+    ''' Retrieves all librarian accounts.
+    ''' </summary>
+    Public Function GetLibrarianAccounts() As List(Of Account)
+        If Not _dbcon.OpenConnection() Then
+            Throw New Exception("Could not connect to the database.")
+        End If
+        Dim transaction As MySqlTransaction = _dbcon.GetConnection().BeginTransaction()
+
+        Try
+            Dim accountDAO As New AccountDAO(transaction)
+            Dim allAccounts = accountDAO.GetAll()
+            Dim librarianAccounts = allAccounts.Where(Function(acc)
+                                                          Return acc.Role = "Librarian"
+                                                      End Function).ToList()
+            transaction.Commit()
+            Return librarianAccounts
+        Catch ex As Exception
+            transaction.Rollback()
+            Throw New Exception("Failed to retrieve librarian accounts: " & ex.Message)
+        Finally
+            _dbcon.CloseConnection()
+        End Try
+    End Function
+
+
+
+    ' END CHANGES
+
     ''' <summary>
     ''' Rejects (deletes) a user account.
     ''' </summary>

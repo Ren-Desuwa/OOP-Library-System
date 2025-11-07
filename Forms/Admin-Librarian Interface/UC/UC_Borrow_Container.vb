@@ -113,4 +113,8 @@ Public Class UC_Borrow_Container
     Private Sub ViewDetailsBtn_Click(sender As Object, e As EventArgs) Handles btn_viewbook.Click
         RaiseEvent ViewDetailsClicked(Me.TransactionID)
     End Sub
+
+    Private Sub StatusPanel_Paint(sender As Object, e As PaintEventArgs) Handles StatusPanel.Paint
+
+    End Sub
 End Class
