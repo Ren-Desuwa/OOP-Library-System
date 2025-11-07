@@ -47,9 +47,9 @@ Partial Class UC_btn_genre
         Me.btn_genre.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(201, Byte), Integer), CType(CType(166, Byte), Integer))
         Me.btn_genre.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(42, Byte), Integer))
         Me.btn_genre.Location = New System.Drawing.Point(0, 0)
-        Me.btn_genre.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btn_genre.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btn_genre.Name = "btn_genre"
-        Me.btn_genre.Size = New System.Drawing.Size(180, 32)
+        Me.btn_genre.Size = New System.Drawing.Size(201, 49)
         Me.btn_genre.TabIndex = 5
         Me.btn_genre.Text = "Genre1"
         '
@@ -59,12 +59,15 @@ Partial Class UC_btn_genre
         '
         'UC_btn_genre
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSize = True
+        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.Color.Transparent
         Me.Controls.Add(Me.btn_genre)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "UC_btn_genre"
-        Me.Size = New System.Drawing.Size(180, 32)
+        Me.Size = New System.Drawing.Size(203, 51)
         Me.ResumeLayout(False)
 
     End Sub
