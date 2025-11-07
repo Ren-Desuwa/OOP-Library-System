@@ -90,6 +90,13 @@ Public Class CreateBook
             Return
         End If
 
+        ' --- 2. VALIDATE NEW BOOK COUNT (Using your new textbox) ---
+        ' (Assuming your new textbox is named txtbox_bookcount)
+        If Not Integer.TryParse(txtbox_bookcount.Text, copiesInt) OrElse copiesInt <= 0 Then
+            MessageBox.Show("Please enter a valid number of copies (1 or more).", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return
+        End If
+
         ' --- 3. Process Genre(s) ---
         Dim genreString As String = txtbox_genre.Text '
         ' Split the string by commas, trim whitespace, and remove any empty entries

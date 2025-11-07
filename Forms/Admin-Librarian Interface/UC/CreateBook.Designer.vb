@@ -48,6 +48,8 @@ Partial Class CreateBook
         Me.Label1 = New System.Windows.Forms.Label()
         Me.picbox = New Guna.UI2.WinForms.Guna2ImageButton()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.txtbox_bookcount = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.Guna2CustomGradientPanel1.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
@@ -117,6 +119,7 @@ Partial Class CreateBook
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.98701!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.31365!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.69933!))
+        Me.TableLayoutPanel2.Controls.Add(Me.Label8, 2, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.btn_Create, 1, 10)
         Me.TableLayoutPanel2.Controls.Add(Me.btn_cancel, 2, 10)
         Me.TableLayoutPanel2.Controls.Add(Me.txtbox_description, 0, 9)
@@ -135,6 +138,7 @@ Partial Class CreateBook
         Me.TableLayoutPanel2.Controls.Add(Me.Label1, 0, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.picbox, 1, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.Label5, 0, 8)
+        Me.TableLayoutPanel2.Controls.Add(Me.txtbox_bookcount, 2, 1)
         Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel2.Location = New System.Drawing.Point(0, 95)
         Me.TableLayoutPanel2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
@@ -475,6 +479,41 @@ Partial Class CreateBook
         Me.Label5.Text = "Description:"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'txtbox_bookcount
+        '
+        Me.txtbox_bookcount.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
+        Me.txtbox_bookcount.BorderRadius = 10
+        Me.txtbox_bookcount.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtbox_bookcount.DefaultText = ""
+        Me.txtbox_bookcount.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtbox_bookcount.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtbox_bookcount.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtbox_bookcount.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtbox_bookcount.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtbox_bookcount.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtbox_bookcount.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtbox_bookcount.Location = New System.Drawing.Point(396, 67)
+        Me.txtbox_bookcount.Margin = New System.Windows.Forms.Padding(4, 2, 19, 2)
+        Me.txtbox_bookcount.MaximumSize = New System.Drawing.Size(296, 42)
+        Me.txtbox_bookcount.Name = "txtbox_bookcount"
+        Me.txtbox_bookcount.PlaceholderText = ""
+        Me.txtbox_bookcount.SelectedText = ""
+        Me.txtbox_bookcount.Size = New System.Drawing.Size(296, 42)
+        Me.txtbox_bookcount.TabIndex = 19
+        '
+        'Label8
+        '
+        Me.Label8.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Label8.Location = New System.Drawing.Point(395, 0)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(127, 65)
+        Me.Label8.TabIndex = 20
+        Me.Label8.Text = "Book Count:"
+        Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'CreateBook
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -520,4 +559,6 @@ Partial Class CreateBook
     Friend WithEvents txtbox_yearpublished As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label7 As Label
     Friend WithEvents txtbox_condition As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Label8 As Label
+    Friend WithEvents txtbox_bookcount As Guna.UI2.WinForms.Guna2TextBox
 End Class
