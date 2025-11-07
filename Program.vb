@@ -15,6 +15,9 @@ Public Module Program
     Public ReadOnly AccountSvc As AccountService
     Public ReadOnly LogSvc As LogService
     Public ReadOnly PenaltySvc As PenaltyService
+    ' === ADDED FOR CREDIT SCORE ===
+    Public ReadOnly CreditScoreSvc As CreditScoreService
+    ' ==============================
 
     ' ... other services ...
 
@@ -35,11 +38,14 @@ Public Module Program
             AccountSvc = New AccountService(mainDbConnection)
             LogSvc = New LogService(mainDbConnection)
             PenaltySvc = New PenaltyService(mainDbConnection)
+            ' === ADDED FOR CREDIT SCORE ===
+            CreditScoreSvc = New CreditScoreService(mainDbConnection)
+            ' ==============================
 
         Catch ex As Exception
             ' If this fails, the app can't run
             MessageBox.Show("Fatal Error: Could not initialize services." & vbCrLf & ex.Message,
-                          "Application Startup Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                            "Application Startup Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End
         End Try
     End Sub
@@ -201,8 +207,10 @@ Public Module Program
                 ' 2. Show the StudentPanel (triggers "Shown")
                 StudentPanel.Show()
 
-                ' Use the method we created to set the student's name on the panel
-                StudentPanel.SetStudentName(currentAccount.Name)
+                ' --- *** MODIFICATION HERE *** ---
+                ' Use the new method to set all student info at once
+                StudentPanel.SetStudentInfo(currentAccount)
+                ' --- *** END MODIFICATION *** ---
 
                 ' 3. Home_Panel_Students ALREADY has an async loading method!
                 Await StudentPanel.UC_HPS_catalouge_tab1.AwaitInitialLoad()
@@ -213,10 +221,11 @@ Public Module Program
             Else
                 ' --- FALLBACK for unknown roles ---
                 MessageBox.Show($"Error: Unknown user role '{loggedInAccount.Role}'. Please contact support.",
-                                "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                                 "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 LoginPanel.Show() ' Show login panel again
                 currentAccount = Nothing ' Clear the invalid account
             End If
+
             ' --- END OF ROLE CHECKING ---
 
         Catch ex As Exception

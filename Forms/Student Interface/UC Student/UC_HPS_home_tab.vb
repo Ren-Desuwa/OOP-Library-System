@@ -1,108 +1,91 @@
-﻿' (Modified)
-Imports Classes.Models
-Imports Classes.Services ' Import the service layer
+﻿Imports System.Threading.Tasks
+Imports System.Windows.Forms
 
 Public Class UC_HPS_home_tab
+    ' This event tells the parent form (Home_Panel_Students) that we are done loading.
+    Public Event AsyncLoadComplete As EventHandler
 
-    Private Sub UC_HPS_home_tab_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-        ' Make TableLayoutPanel always match parent width
-        TableLayoutPanel6.Width = Guna2Panel1.ClientSize.Width
-
-        ' Re-adjust width when window resizes
-        AddHandler Guna2Panel1.SizeChanged, AddressOf Guna2Panel1_SizeChanged
-
-        ' Call the new dynamic method instead of AddTestAnnouncements
-        LoadAnnouncements() '
-
-        ' --- EXAMPLE: Set an initial score ---
-        ' You can now call your new method here or from the parent form
-        SetCreditScore(75) ' Sets the progress bar to 75
-
+    Public Sub New()
+        InitializeComponent()
     End Sub
 
-    ' --- NEW PUBLIC METHOD ---
     ''' <summary>
-    ''' Updates the Credit Score progress bar with a new value.
+    ''' Public method to start loading announcements and other data asynchronously.
     ''' </summary>
-    ''' <param name="score">The credit score value (0-100).</param>
-    Public Sub SetCreditScore(ByVal score As Integer)
-        ' Ensure the score is within the 0-100 range
-        If score < 0 Then score = 0
-        If score > 100 Then score = 100
-
-        ' Update the progress bar's value
-        Guna2CircleProgressBar1.Value = score
-    End Sub
-    ' --- END OF NEW METHOD ---
-
-
-    ' This method replaces the static AddTestAnnouncements
-    Private Sub LoadAnnouncements()
-        ' Clear old controls
-        TableLayoutPanel6.Controls.Clear() '
-        TableLayoutPanel6.RowCount = 0
-        TableLayoutPanel6.RowStyles.Clear()
-
+    Public Async Sub LoadDataAsync()
+        ' This is called by the parent form (Home_Panel_Students)
         Try
-            ' 1. Get data from the service
-            Dim announcements As List(Of Announcement) = Program.AnnounceSvc.GetActiveAnnouncements()
+            ' 1. Load Announcements
+            Dim announcements As List(Of Announcement) = Nothing
+            Await Task.Run(Sub()
+                               announcements = Program.AnnounceSvc.GetActiveAnnouncements()
+                           End Sub)
 
-            ' 2. Loop through the real announcements
-            For Each announcement As Announcement In announcements
-                Dim uc As New UC_announcementBox()
+            ' 2. Populate Announcements Flow Panel
+            ' --- FIX: Use the correct designer name 'TableLayoutPanel6' ---
+            TableLayoutPanel6.Controls.Clear()
+            If announcements IsNot Nothing AndAlso announcements.Any() Then
+                For Each ann As Announcement In announcements
+                    Dim card As New UC_announcementBox()
+                    card.Populate(ann)
+                    ' --- FIX: Use the correct designer name 'TableLayoutPanel6' ---
+                    TableLayoutPanel6.Controls.Add(card)
+                Next
+            Else
+                ' Show a friendly message if no announcements
+                Dim lbl As New Label()
+                lbl.Text = "No announcements at this time."
+                lbl.Font = New Font("Segoe UI", 12, FontStyle.Italic)
+                lbl.ForeColor = Color.Gray
+                lbl.AutoSize = True
+                ' --- FIX: Use the correct designer name 'TableLayoutPanel6' ---
+                TableLayoutPanel6.Controls.Add(lbl)
+            End If
 
-                uc.Dock = DockStyle.Top
-                uc.Anchor = AnchorStyles.Left Or AnchorStyles.Right
-                uc.Margin = New Padding(10) '
-
-                ' 3. Populate the user control with data
-                uc.Populate(announcement)
-
-                uc.Margin = New Padding(5) '
-
-                ' Add new row style that autosizes
-                TableLayoutPanel6.RowCount += 1
-                TableLayoutPanel6.RowStyles.Add(New RowStyle(SizeType.AutoSize)) '
-
-                ' Add control to the table
-                TableLayoutPanel6.Controls.Add(uc, 0, TableLayoutPanel6.RowCount - 1)
-            Next
+            ' 3. Load other data for the home tab (e.g., recommended books)
+            ' (Add any other async loading here)
 
         Catch ex As Exception
-            ' Handle any errors (e.g., database connection failed)
-            ' You can display a single announcement box with the error
-            Dim errorUc As New UC_announcementBox()
-            errorUc.Dock = DockStyle.Top
-            errorUc.Margin = New Padding(10)
-            errorUc.Title.Text = "Error"
-            errorUc.Message.Text = "Could not load announcements: " & ex.Message
-            errorUc.DatePosted.Text = DateTime.Now.ToShortDateString()
-
-            TableLayoutPanel6.RowCount += 1
-            TableLayoutPanel6.RowStyles.Add(New RowStyle(SizeType.AutoSize))
-            TableLayoutPanel6.Controls.Add(errorUc, 0, 0)
+            MessageBox.Show("Error loading home dashboard: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Finally
+            ' 4. Signal the parent form that we are done
+            RaiseEvent AsyncLoadComplete(Me, EventArgs.Empty)
         End Try
     End Sub
 
+    ' --- *** THIS IS THE CORRECTED FUNCTION *** ---
+    ''' <summary>
+    ''' Updates the Credit Score UI elements with the user's current score.
+    ''' Called by the parent form (Home_Panel_Students).
+    ''' </summary>
+    ''' <param name="score">The user's credit score (0-100).</param>
+    Public Sub UpdateCreditScoreUI(score As Short)
+        ' Use the correct control names from your .Designer.vb file
 
-    Private Sub Guna2Panel1_SizeChanged(sender As Object, e As EventArgs)
-        TableLayoutPanel6.Width = Guna2Panel1.ClientSize.Width '
+        ' --- 1. Update the Progress Bar ---
+        ' This is the correct name from your designer: Guna2CircleProgressBar1
+        Guna2CircleProgressBar1.Minimum = 0
+        Guna2CircleProgressBar1.Maximum = 100
+        Guna2CircleProgressBar1.Value = score
+
+        ' The Guna2CircleProgressBar shows text automatically when ShowText = True
+        ' so the 'lbl_creditScore.Text' line is not needed.
+
+        ' --- 2. (Optional) Change color based on score ---
+        If score >= CreditScoreService.SCORE_MIN_ALLOWED_BORROW Then
+            ' Good score
+            Guna2CircleProgressBar1.ProgressColor = Color.FromArgb(0, 192, 0) ' Green
+            Guna2CircleProgressBar1.ProgressColor2 = Color.FromArgb(0, 192, 0)
+        ElseIf score > 50 Then
+            ' Medium score
+            Guna2CircleProgressBar1.ProgressColor = Color.FromArgb(255, 193, 7) ' Yellow
+            Guna2CircleProgressBar1.ProgressColor2 = Color.FromArgb(255, 193, 7)
+        Else
+            ' Low score
+            Guna2CircleProgressBar1.ProgressColor = Color.FromArgb(211, 47, 47) ' Red
+            Guna2CircleProgressBar1.ProgressColor2 = Color.FromArgb(211, 47, 47)
+        End If
     End Sub
+    ' --- *** END OF CORRECTED FUNCTION *** ---
 
-    Private Sub TableLayoutPanel6_Paint(sender As Object, e As PaintEventArgs) Handles TableLayoutPanel6.Paint
-
-    End Sub
-
-    Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
-
-    End Sub
-
-    Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
-
-    End Sub
-
-    Private Sub Label5_Click(sender As Object, e As EventArgs) Handles Label5.Click
-
-    End Sub
 End Class
