@@ -1,70 +1,97 @@
 ﻿Public Class UC_HPAL_Librarian_Tab
-    ' Keeps track of the currently selected container
-    Private selectedContainer As UC_Librarian_container = Nothing
+    Private selectedContainer As UC_Librarian_container = Nothing ' Track selected container
 
     Private Sub UC_HPAL_Librarian_Tab_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' Safety check: make sure FlowLayoutPanel exists
-        If FlowLayoutPanel1 Is Nothing Then
-            MessageBox.Show("FlowLayoutPanel1 not found. Check the control name in the designer.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Return
-        End If
-
-        ' Clear old controls before loading new ones
+        ' --- Clear any existing controls ---
         FlowLayoutPanel1.Controls.Clear()
 
-        Dim librarianContainer As New UC_Librarian_container()
+        ' Disable Remove button initially
+        btn_remove.Enabled = False
 
+        ' --- FlowLayoutPanel settings ---
+        FlowLayoutPanel1.FlowDirection = FlowDirection.LeftToRight
+        FlowLayoutPanel1.WrapContents = True
+        FlowLayoutPanel1.AutoScroll = True
+        FlowLayoutPanel1.Padding = New Padding(0)
+        FlowLayoutPanel1.Margin = New Padding(0)
 
+        ' --- Create five librarian containers manually ---
+        Dim librarian1 As New UC_Librarian_container()
+        Dim librarian2 As New UC_Librarian_container()
+        Dim librarian3 As New UC_Librarian_container()
+        Dim librarian4 As New UC_Librarian_container()
+        Dim librarian5 As New UC_Librarian_container()
 
-        ' Dynamically add librarian containers
-        For i As Integer = 1 To 10
+        ' --- Assign mock data ---
+        SetLibrarianData(librarian1, "Librarian 1", "librarian1@library.com", "Active")
+        SetLibrarianData(librarian2, "Librarian 2", "librarian2@library.com", "On Break")
+        SetLibrarianData(librarian3, "Librarian 3", "librarian3@library.com", "Active")
+        SetLibrarianData(librarian4, "Librarian 4", "librarian4@library.com", "On Break")
+        SetLibrarianData(librarian5, "Librarian 5", "librarian5@library.com", "Active")
 
-            ' OPTIONAL: adjust width/margin to fit nicely in the flow layout
-            librarianContainer.Width = FlowLayoutPanel1.ClientSize.Width - 25
-            librarianContainer.Margin = New Padding(5, 5, 5, 5)
+        ' --- Add click event handlers for selection ---
+        AddHandler librarian1.Selected, AddressOf Librarian_Selected
+        AddHandler librarian2.Selected, AddressOf Librarian_Selected
+        AddHandler librarian3.Selected, AddressOf Librarian_Selected
+        AddHandler librarian4.Selected, AddressOf Librarian_Selected
+        AddHandler librarian5.Selected, AddressOf Librarian_Selected
 
-            ' If your UserControl has labels inside it, set their text here:
-            If librarianContainer.Controls.ContainsKey("lblName") Then
-                librarianContainer.Controls("lblName").Text = $"Librarian {i}"
-            End If
-            If librarianContainer.Controls.ContainsKey("lbl_email") Then
-                librarianContainer.Controls("lbl_email").Text = $"librarian{i}@library.com"
-            End If
-            If librarianContainer.Controls.ContainsKey("Label1") Then
-                librarianContainer.Controls("Label1").Text = If(i Mod 2 = 0, "Active", "On Break")
-            End If
+        ' --- Add them to the FlowLayoutPanel ---
+        FlowLayoutPanel1.Controls.Add(librarian1)
+        FlowLayoutPanel1.Controls.Add(librarian2)
+        FlowLayoutPanel1.Controls.Add(librarian3)
+        FlowLayoutPanel1.Controls.Add(librarian4)
+        FlowLayoutPanel1.Controls.Add(librarian5)
 
-            ' Subscribe to its Selected event
-            AddHandler librarianContainer.Selected, AddressOf LibrarianContainer_Selected
-
-            ' Add to the FlowLayoutPanel
-            FlowLayoutPanel1.Controls.Add(librarianContainer)
+        ' --- Adjust widths ---
+        For Each ctrl As Control In FlowLayoutPanel1.Controls
+            ctrl.Width = FlowLayoutPanel1.ClientSize.Width - 15
+            ctrl.Margin = New Padding(0, 0, 0, 5)
         Next
     End Sub
 
-    ''' <summary>
-    ''' Handles when a librarian container is clicked (Selected event triggered)
-    ''' </summary>
-    Private Sub LibrarianContainer_Selected(sender As Object, e As EventArgs)
-        Dim clicked As UC_Librarian_container = DirectCast(sender, UC_Librarian_container)
+    Private Sub SetLibrarianData(container As UC_Librarian_container, name As String, email As String, status As String)
+        Try
+            container.Controls("lbl_Name").Text = name
+            container.Controls("lbl_email").Text = email
+            container.Controls("Label1").Text = status
+        Catch
+            ' Ignore if labels not found
+        End Try
+    End Sub
 
-        ' Deselect the previously selected container
+    Private Sub Librarian_Selected(sender As Object, e As EventArgs)
+        Dim clicked = DirectCast(sender, UC_Librarian_container)
+
+        ' Deselect previous one
         If selectedContainer IsNot Nothing AndAlso selectedContainer IsNot clicked Then
             selectedContainer.IsSelected = False
         End If
 
-        ' Select the newly clicked one
+        ' Select clicked one
         clicked.IsSelected = True
         selectedContainer = clicked
-    End Sub
 
-    ' --- Resize Logic ---
+        ' Enable Remove button once a librarian is selected
+        btn_remove.Enabled = True
+    End Sub
 
     Private Sub FlowLayoutPanel1_Resize(sender As Object, e As EventArgs) Handles FlowLayoutPanel1.Resize
         For Each ctrl As Control In FlowLayoutPanel1.Controls
-            ' Use the original width adjustment logic for consistency
-            ctrl.Width = FlowLayoutPanel1.ClientSize.Width - 40
+            ctrl.Width = FlowLayoutPanel1.ClientSize.Width - 15
         Next
     End Sub
 
+    Private Sub btn_remove_Click(sender As Object, e As EventArgs) Handles btn_remove.Click
+        If selectedContainer IsNot Nothing Then
+            FlowLayoutPanel1.Controls.Remove(selectedContainer)
+            selectedContainer = Nothing
+            btn_remove.Enabled = False ' disable again after removal
+        End If
+    End Sub
+
+    Private Sub btn_add_Click(sender As Object, e As EventArgs) Handles btn_add.Click
+        Dim add As New LibrarianADD()
+        add.Show()
+    End Sub
 End Class
