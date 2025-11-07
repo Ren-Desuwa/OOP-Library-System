@@ -19,7 +19,7 @@ Public Class PendingApprovalDialog
         Try
             ' 3. Check the account's active status
             ' (We will create this IsAccountActive function in Step 2)
-            If Await Program.AuthSvc.IsAccountActive(StudentAccountID) Then
+            If Await Program.AccountSvc.IsAccountActive(StudentAccountID) Then
 
                 ' 4. APPROVED! Stop the timer and update the UI
                 StatusPollTimer.Stop()
