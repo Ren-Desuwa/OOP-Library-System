@@ -107,6 +107,12 @@
     <Compile Include="Forms\Admin-Librarian Interface\UC\BookInfo.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\Admin-Librarian Interface\UC\LibrarianADD.Designer.vb">
+      <DependentUpon>LibrarianADD.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin-Librarian Interface\UC\LibrarianADD.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\Admin-Librarian Interface\UC\ReturnBook.Designer.vb">
       <DependentUpon>ReturnBook.vb</DependentUpon>
     </Compile>
@@ -493,6 +499,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin-Librarian Interface\UC\BookInfo.resx">
       <DependentUpon>BookInfo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin-Librarian Interface\UC\LibrarianADD.resx">
+      <DependentUpon>LibrarianADD.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin-Librarian Interface\UC\ReturnBook.resx">
       <DependentUpon>ReturnBook.vb</DependentUpon>
