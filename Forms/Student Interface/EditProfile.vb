@@ -10,15 +10,10 @@ Public Class EditProfile
         ' *** 1. Get user input and correct the original bug ***
         ' NOTE: Assuming there is a control for the Nickname/Name, 
         ' I will call it 'txtbox_name'. If your control is named differently, adjust this line.
-        Dim email As String = txtbox_username.Text.Trim()
         Dim name As String = txtbox_username.Text.Trim() ' Corrected to get the name/nickname
         Dim birthday As Date = Guna2DateTimePicker1.Value
 
         ' *** 2. Basic validations ***
-        If String.IsNullOrEmpty(email) Then
-            MessageBox.Show("Please enter your email.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            Exit Sub
-        End If
 
         If String.IsNullOrEmpty(name) Then
             MessageBox.Show("Please enter your nickname/name.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
