@@ -380,6 +380,7 @@ Partial Class Home_Panel_Students
         Me.btn_Penalty_tab.Size = New System.Drawing.Size(180, 32)
         Me.btn_Penalty_tab.TabIndex = 7
         Me.btn_Penalty_tab.Text = "Penalty"
+        Me.btn_Penalty_tab.Visible = False
         '
         'color_holder_panel
         '
