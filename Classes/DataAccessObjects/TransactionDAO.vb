@@ -207,6 +207,11 @@ Public Class TransactionDAO
         End Using
     End Sub
 
+    ' --- (REMOVED) ---
+    ' The problematic 'UpdateTransactionStatusAsync' function was here.
+    ' It has been removed as it is inconsistent and not used by the new service logic.
+    ' -----------------
+
     ' #################### DELETE ####################
     Public Sub Delete(id As Integer)
         Dim sql = "DELETE FROM transactions WHERE transaction_id = @Id"
@@ -234,7 +239,8 @@ Public Class TransactionDAO
 
     ''' <summary>
     ''' Retrieves all active loans, meaning the book has not been officially returned 
-    ''' and the original request was not rejected. Used for the Librarian's "Book Returns" tab.
+    ''' and the original request was not rejected.
+    ''' Used for the Librarian's "Book Returns" tab.
     ''' </summary>
     Public Function GetActiveLoans() As List(Of Transaction)
         Dim list As New List(Of Transaction)

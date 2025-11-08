@@ -12,9 +12,102 @@ Public Class BorrowService
         _dbCon = dbConnector
     End Sub
 
+    ' --- ################################################################## ---
+    ' --- NEW FUNCTION TO FIX ReturnBook.vb
+    ' --- ################################################################## ---
 
+    ''' <summary>
+    ''' (NEW) Processes a book return within a single database transaction.
+    ''' This is the synchronous function called by the ReturnBook form.
+    ''' It updates the transaction, book copy status, and credit score.
+    ''' </summary>
+    ''' <param name="transactionId">The ID of the transaction being returned.</param>
+    ''' <param name="manualFine">The final fine amount (either auto-calculated or manually set).</param>
+    ''' <param name="creditScoreChange">The amount to change the credit score by (e.g., +1 or -10).</param>
+    Public Sub ProcessBookReturn(transactionId As Integer, manualFine As Decimal, creditScoreChange As Short)
+        If Not _dbCon.OpenConnection() Then
+            Throw New Exception("Could not connect to the database.")
+        End If
 
-    ' --- MODIFIED FUNCTION FOR THE RETURNS TAB ---
+        Dim transaction As MySqlTransaction = _dbCon.GetConnection().BeginTransaction()
+
+        Try
+            ' 1. Instantiate all DAOs needed for this operation
+            Dim transactionDAO As New TransactionDAO(transaction)
+            Dim bookCopyDAO As New BookCopyDAO(transaction)
+            Dim accountDAO As New AccountDAO(transaction)
+            Dim historyDAO As New CreditScoreHistoryDAO(transaction)
+            Dim logDAO As New LogDAO(transaction)
+
+            ' 2. Get the transaction
+            Dim tx As Transaction = transactionDAO.GetById(transactionId)
+            If tx Is Nothing Then Throw New Exception("Transaction not found.")
+
+            ' 3. Get the Account
+            Dim account As Account = accountDAO.GetById(tx.AccountID)
+            If account Is Nothing Then Throw New Exception("Account not found.")
+
+            ' 4. Get the Book Copy
+            Dim bookCopy As BookCopy = bookCopyDAO.GetById(tx.CopyID)
+            If bookCopy Is Nothing Then Throw New Exception("Book copy not found.")
+
+            ' 5. Update the Transaction
+            tx.Status = "Returned"
+            tx.DateReturned = DateTime.Now
+            tx.Fine = manualFine ' Update with the final fine
+            transactionDAO.Update(tx)
+
+            ' 6. Update the Book Copy
+            bookCopy.UpdateStatus("Available")
+            bookCopyDAO.Update(bookCopy)
+
+            ' 7. Handle Credit Score Change (if any)
+            If creditScoreChange <> 0 Then
+                ' 7a. Calculate new score
+                Dim oldScore As Short = account.CreditScore
+                Dim newScore As Short = CShort(oldScore + creditScoreChange)
+
+                ' Clamp score between 0 and 100
+                If newScore < 0 Then newScore = 0
+                If newScore > CreditScoreService.SCORE_MAX Then newScore = CreditScoreService.SCORE_MAX
+
+                ' 7b. Update the account's score
+                account.CreditScore = newScore
+                accountDAO.Update(account)
+
+                ' 7c. Log the credit score change
+                Dim reason As String = "On-time return"
+                If creditScoreChange < 0 Then reason = "Late return"
+                If manualFine > 0 And creditScoreChange < 0 Then reason = "Late return with fine"
+
+                Dim history = New CreditScoreHistory With {
+                    .ScoredAccountID = account.AccountID,
+                    .AdminID = Nothing, ' System-initiated
+                    .ScoreChange = creditScoreChange,
+                    .NewScore = newScore,
+                    .Reason = reason,
+                    .TransactionID = transactionId
+                }
+                historyDAO.Create(history)
+            End If
+
+            ' 8. Log the return event
+            logDAO.Create(Log.RecordAction(account.AccountID, "Book Return", $"Book copy ID {tx.CopyID} returned for transaction {transactionId}.", "Info"))
+
+            ' 9. Commit the entire operation
+            transaction.Commit()
+
+        Catch ex As Exception
+            ' If anything fails, roll back everything
+            transaction.Rollback()
+            Throw New Exception("Failed to process book return. The operation was rolled back. Error: " & ex.Message, ex)
+        Finally
+            _dbCon.CloseConnection()
+        End Try
+    End Sub
+
+    ' --- END NEW FUNCTION ---
+
     ''' <summary>
     ''' Gets a paginated list of active transactions, supporting a multi-field search query.
     ''' </summary>
@@ -67,8 +160,6 @@ Public Class BorrowService
         End Try
     End Function
 
-    ' ... (ProcessBookReturn and GetBorrowedBooksDetails remain the same) ...
-
     ''' <summary>
     ''' (FOR Admin UI) Retrieves all borrow requests that are "Pending" with search and pagination.
     ''' </summary>
@@ -115,9 +206,6 @@ Public Class BorrowService
         End Try
     End Function
 
-
-
-    ' --- NEW FUNCTION FOR THE RETURNS TAB ---
     ''' <summary>
     ''' Gets a list of all transactions that are currently active (not Returned or Rejected).
     ''' </summary>
@@ -139,11 +227,7 @@ Public Class BorrowService
             Dim accountDAO As New AccountDAO(transaction) ' Needed to get borrower name
 
             ' 2. Get all ACTIVE transactions (Status is NOT 'Returned' and NOT 'Rejected')
-            ' The DAO should handle the specific query (e.g., SELECT * WHERE Status <> 'Returned' AND Status <> 'Rejected')
-            ' For simplicity here, we will fetch all and filter, assuming TransactionDAO.GetAll() or similar exists.
             Dim activeTransactions = transactionDAO.GetActiveLoans()
-            ' NOTE: You will need to implement TransactionDAO.GetActiveLoans() to fetch transactions 
-            ' where Status is not 'Returned' and DateReturned is NULL or Status is 'Overdue', 'Borrowed', or 'DueSoon'.
 
             ' 3. Loop through each active transaction to find the details
             For Each tx As Transaction In activeTransactions
@@ -175,80 +259,14 @@ Public Class BorrowService
     End Function
 
     ''' <summary>
-    ''' (MODIFIED) Performs the full transactional process for returning a single book,
-    ''' using the manually-set fine and credit score from the librarian.
+    ''' Gets all display details for an active (un-returned) transaction.
     ''' </summary>
-    Public Function ProcessBookReturn(transactionId As Integer, manualFine As Decimal, creditScoreChange As Short) As Decimal
-        If Not _dbCon.OpenConnection() Then Throw New Exception("Could not connect to the database.")
-        Dim transaction As MySqlTransaction = _dbCon.GetConnection().BeginTransaction()
-
-        Try
-            Dim transactionDAO As New TransactionDAO(transaction)
-            Dim bookCopyDAO As New BookCopyDAO(transaction)
-            Dim accountDAO As New AccountDAO(transaction)
-
-            ' (NEW) Define DAOs for logging - (Assuming these files exist in your project)
-            ' Dim creditHistoryDAO As New CreditScoreHistoryDAO(transaction)
-            ' Dim penaltyDAO As New PenaltyDAO(transaction)
-
-            ' 1. Get the transaction
-            Dim tx = transactionDAO.GetById(transactionId)
-            If tx Is Nothing Then Throw New Exception("Transaction not found.")
-            If tx.Status = "Returned" OrElse tx.DateReturned.HasValue Then
-                Throw New Exception("This book has already been returned.")
-            End If
-
-            ' 2. Update the Transaction record
-            tx.DateReturned = DateTime.Now
-            tx.Fine = manualFine ' <-- (MODIFIED) Use manual fine
-            tx.Status = If(manualFine > 0, "Overdue", "Returned")
-            transactionDAO.Update(tx)
-
-            ' 3. Update the Book Copy status
-            Dim bookCopy = bookCopyDAO.GetById(tx.CopyID)
-            If bookCopy IsNot Nothing Then
-                bookCopy.UpdateStatus("Available") ' Return copy to shelf
-                bookCopyDAO.Update(bookCopy)
-            End If
-
-            ' 4. (NEW) Update Credit Score and log history
-            Dim account = accountDAO.GetById(tx.AccountID)
-            If account IsNot Nothing Then
-                account.CreditScore += creditScoreChange
-                If account.CreditScore < 0 Then account.CreditScore = 0
-                accountDAO.Update(account)
-
-                ' (NEW) Log the credit score change (Uncomment if you have this DAO)
-                'Dim creditLog = New CreditScoreHistory With {
-                '    .AccountID = account.AccountID,
-                '    .ChangeAmount = creditScoreChange,
-                '    .ChangeDate = DateTime.Now,
-                '    .Reason = $"Book Return Transaction: {tx.TransactionID}"
-                '}
-                'creditHistoryDAO.Create(creditLog)
-            End If
-
-            ' 5. (NEW) Create Penalty record if fine exists (Uncomment if you have this DAO)
-            ' If manualFine > 0 Then
-            '     Dim penalty = New Penalty() With {
-            '         .TransactionID = transactionId,
-            '         .Amount = manualFine,
-            '         .IsPaid = False, ' <-- Assuming fine must be paid separately
-            '         .Reason = "Overdue or damaged book"
-            '     }
-            '     penaltyDAO.Create(penalty)
-            ' End If
-
-            ' 6. Commit changes
-            transaction.Commit()
-            Return manualFine
-
-        Catch ex As Exception
-            transaction.Rollback()
-            Throw New Exception("Error processing book return: " & ex.Message)
-        Finally
-            _dbCon.CloseConnection()
-        End Try
+    ''' <param name="transactionId">The ID of the transaction to find.</param>
+    ''' <returns>A BorrowedBookDetails object, or Nothing if not found.</returns>
+    Public Async Function GetActiveTransactionDetails(transactionId As Integer) As Task(Of BorrowedBookDetails)
+        Return Await Task.Run(Function()
+                                  Return GetBorrowedBookDetailsById(transactionId)
+                              End Function)
     End Function
 
     ''' <summary>
@@ -529,6 +547,7 @@ Public Class BorrowService
                                   End Try
                               End Function)
     End Function
+
 
     ''' <summary>
     ''' (NEW) Gets all details for a single transaction by its ID.

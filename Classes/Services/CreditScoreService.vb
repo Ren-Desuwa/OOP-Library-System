@@ -1,5 +1,5 @@
 ﻿Imports MySql.Data.MySqlClient
-Imports System.Transactions
+' Imports System.Transactions ' (REMOVED - No longer using TransactionScope)
 
 Public Class CreditScoreService
     Private ReadOnly _dbCon As DBcon
@@ -18,69 +18,67 @@ Public Class CreditScoreService
 
     ''' <summary>
     ''' Applies a credit score change to a user and logs the action.
-    ''' This operation is transactional.
+    ''' This operation is transactional. (MODIFIED to use standard pattern)
     ''' </summary>
-    ''' <param name="accountID">The ID of the user whose score is being changed.</param>
-    ''' <param name="changeAmount">The score change amount (e.g., -10 for penalty, +1 for bonus).</param>
-    ''' <param name="reason">A description of the score change.</param>
-    ''' <param name="adminID">The ID of the staff member making a manual change (null for system).</param>
-    ''' <param name="transactionID">The related transaction ID (null if not transaction-based).</param>
     Public Sub UpdateCreditScore(accountID As Integer, changeAmount As Short, reason As String, adminID As Integer?, transactionID As Integer?)
-        Using scope As New TransactionScope()
-            _dbCon.OpenConnection()
-            Dim dbTransaction As MySqlTransaction = _dbCon.GetConnection.BeginTransaction()
+        ' Using scope As New TransactionScope() ' (REMOVED)
 
-            Try
-                ' 1. Get the current account object
-                Dim accountDAO As New AccountDAO(dbTransaction)
-                Dim account As Account = accountDAO.GetById(accountID)
+        If Not _dbCon.OpenConnection() Then
+            Throw New Exception("Could not connect to the database.")
+        End If
+        Dim dbTransaction As MySqlTransaction = _dbCon.GetConnection.BeginTransaction()
 
-                If account Is Nothing Then
-                    Throw New Exception($"Account with ID {accountID} not found.")
-                End If
+        Try
+            ' 1. Get the current account object
+            Dim accountDAO As New AccountDAO(dbTransaction)
+            Dim account As Account = accountDAO.GetById(accountID)
 
-                ' 2. Calculate the new score
-                Dim oldScore As Short = account.CreditScore
-                Dim newScore As Short = CShort(account.CreditScore + changeAmount)
+            If account Is Nothing Then
+                Throw New Exception($"Account with ID {accountID} not found.")
+            End If
 
-                ' Enforce minimum score (0)
-                If newScore < 0 Then
-                    newScore = 0
-                End If
+            ' 2. Calculate the new score
+            Dim oldScore As Short = account.CreditScore
+            Dim newScore As Short = CShort(account.CreditScore + changeAmount)
 
-                ' Enforce maximum score (100)
-                If newScore > SCORE_MAX Then
-                    newScore = SCORE_MAX
-                End If
+            ' Enforce minimum score (0)
+            If newScore < 0 Then
+                newScore = 0
+            End If
 
-                ' 3. Update the account's score in the database
-                account.CreditScore = newScore
-                accountDAO.Update(account)
+            ' Enforce maximum score (100)
+            If newScore > SCORE_MAX Then
+                newScore = SCORE_MAX
+            End If
 
-                ' 4. Create a history log entry
-                Dim history = New CreditScoreHistory With {
-                    .ScoredAccountID = accountID,
-                    .AdminID = adminID,
-                    .ScoreChange = changeAmount,
-                    .NewScore = newScore,
-                    .Reason = reason,
-                    .TransactionID = transactionID
-                }
+            ' 3. Update the account's score in the database
+            account.CreditScore = newScore
+            accountDAO.Update(account)
 
-                Dim historyDAO As New CreditScoreHistoryDAO(dbTransaction)
-                historyDAO.Create(history)
+            ' 4. Create a history log entry
+            Dim history = New CreditScoreHistory With {
+                .ScoredAccountID = accountID,
+                .AdminID = adminID,
+                .ScoreChange = changeAmount,
+                .NewScore = newScore,
+                .Reason = reason,
+                .TransactionID = transactionID
+            }
 
-                ' 5. Commit the changes
-                dbTransaction.Commit()
-                scope.Complete()
+            Dim historyDAO As New CreditScoreHistoryDAO(dbTransaction)
+            historyDAO.Create(history)
 
-            Catch ex As Exception
-                dbTransaction.Rollback()
-                Throw New Exception($"Failed to update credit score for user {accountID}. Details: {ex.Message}", ex)
-            Finally
-                _dbCon.CloseConnection()
-            End Try
-        End Using
+            ' 5. Commit the changes
+            dbTransaction.Commit()
+            ' scope.Complete() ' (REMOVED)
+
+        Catch ex As Exception
+            dbTransaction.Rollback()
+            Throw New Exception($"Failed to update credit score for user {accountID}. Details: {ex.Message}", ex)
+        Finally
+            _dbCon.CloseConnection()
+        End Try
+        ' End Using ' (REMOVED)
     End Sub
 
     ''' <summary>

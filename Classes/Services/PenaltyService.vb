@@ -50,4 +50,34 @@ Public Class PenaltyService
         End Try
     End Function
 
+    ' --- (MODIFIED) THIS FUNCTION ---
+    ''' <summary>
+    ''' Calculates the penalty for an overdue book.
+    ''' </summary>
+    ''' <param name="dueDate">The date the book was due.</param>
+    ''' <returns>A new Penalty object if overdue, otherwise Nothing.</returns>
+    Public Function CalculatePenalty(dueDate As Date) As Penalty
+        ' Check if today's date is past the due date
+        If DateTime.Today <= dueDate.Date Then
+            Return Nothing ' Not overdue
+        End If
+
+        Dim daysOverdue As Integer = (DateTime.Today - dueDate.Date).Days
+        ' Assuming a flat rate for simplicity.
+        ' You can make this calculation more complex (e.g., $1.00 per day).
+        Dim penaltyRatePerDay As Double = 1.0
+        Dim penaltyAmount As Double = daysOverdue * penaltyRatePerDay
+
+        ' (MODIFIED) Create a new Penalty object using the correct model properties
+        Dim newPenalty As New Penalty With {
+            .FineAmount = penaltyAmount,
+            .ViolationType = "Overdue",
+            .ScoreDeduction = 0,
+            .Status = "Outstanding",
+            .PenaltyDate = DateTime.Today
+        }
+
+        Return newPenalty
+    End Function
+
 End Class

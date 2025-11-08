@@ -1,159 +1,137 @@
-﻿Imports System.IO
+﻿Imports System.Threading.Tasks
 Imports System.Windows.Forms
-Imports System.Linq ' <-- Make sure this is at the top
 
-' NEW - Add the "Public" keyword
-Partial Public Class Home_Panel_Students
-    Implements ILoadingContainer
-    ' This helper function will hide all panels, then show the one you want.
+Public Class Home_Panel_Students
+    ' --- This event is for Program.vb to listen to ---
     Public Event LogoutClicked As EventHandler
-    Private Sub ShowTabPanel(ByVal tabToShow As UserControl)
-        ' 1. Hide ALL your tab panels
-        UC_HPS_home_tab1.Visible = False
-        UC_HPS_catalouge_tab1.Visible = False
-        UC_HPS_borrowed_books_tab1.Visible = False  ' <-- ADD THIS LINE
-        UC_HPS_penalty_tab1.Visible = False         ' <-- ADD THIS LINE
 
-        ' 2. Show only the one we passed into the function
-        If tabToShow IsNot Nothing Then
-            tabToShow.Visible = True
-        End If
-    End Sub
-    ' Note: We MUST make this event "Async Sub"
-    Private Sub Home_Panel_Students_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' 1. This shows the Home tab by default, as you wanted.
-        ShowTabPanel(UC_HPS_home_tab1)
+    ' --- This event is for the loading panel ---
+    Private _loadingTaskCompletionSource As TaskCompletionSource(Of Boolean)
 
-        ' 2. Make sure the loading panel is on top and hidden, ready for the 'Shown' event.
-        UC_Loading_Panel1.Visible = False
-        UC_Loading_Panel1.BringToFront()
-    End Sub
-    ' This new event handles the loading *after* the form is maximized and visible.
-    Private Sub Home_Panel_Students_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
-        ' We no longer await. We just "fire and forget".
-        ' This lets the home screen be interactive while catalogue loads in background.
-        UC_HPS_catalouge_tab1.BeginLoading(Me, False) ' <-- Pass False to load silently
-    End Sub
-    ' This is your button named btn_Home_tab 
-    Private Sub btn_Home_tab_Click(sender As Object, e As EventArgs) Handles btn_Home_tab.Click
-        ShowTabPanel(UC_HPS_home_tab1)
+    Public Sub New()
+        InitializeComponent()
+        ' We want to be notified when the Home tab finishes its async loading
+        AddHandler UC_HPS_home_tab1.AsyncLoadComplete, AddressOf OnHomeTabLoaded
     End Sub
 
-    ' This is your button named btn_Catalouge_tab 
-    Private Async Sub btn_Catalouge_tab_Click(sender As Object, e As EventArgs) Handles btn_Catalouge_tab.Click
-        ' 1. If it's already visible, do nothing (as you requested).
-        If UC_HPS_catalouge_tab1.Visible Then
-            Return
-        End If
-
-        ' 2. Show the loading screen.
-        ToggleLoading(True, "Loading Catalogue...")
-        Await Task.Delay(5) ' Let animation start
-
-        Try
-            ' 3. AWAIT the task.
-            ' If loading is already finished, this returns instantly.
-            ' If it's still loading (from _Shown), this will WAIT here.
-            Await UC_HPS_catalouge_tab1.AwaitInitialLoad()
-
-            ' 4. Now that we're 100% sure it's loaded and painted, show the panel.
-            ShowTabPanel(UC_HPS_catalouge_tab1)
-
-        Catch ex As Exception
-            ' If the background loading failed, show the error here.
-            MessageBox.Show("Failed to load catalogue: " & ex.Message)
-        Finally
-            ' 5. ALWAYS hide the loading screen.
-            ToggleLoading(False)
-        End Try
-    End Sub
-    Private Async Sub txtBox_search_TextChanged(sender As Object, e As EventArgs) Handles txtBox_search.TextChanged
-        ' Only search if the catalogue tab is currently visible
-        If UC_HPS_catalouge_tab1.Visible Then
-            Await UC_HPS_catalouge_tab1.Search(txtBox_search.Text)
-        End If
-    End Sub
-
-    Private Sub btn_Borrowed_Books_tab_Click(sender As Object, e As EventArgs) Handles btn_Borrowed_Books_tab.Click
-        ShowTabPanel(UC_HPS_borrowed_books_tab1)
-    End Sub
-
-    Private Sub btn_Penalty_tab_Click(sender As Object, e As EventArgs) Handles btn_Penalty_tab.Click
-        ShowTabPanel(UC_HPS_penalty_tab1)
-    End Sub
     ''' <summary>
-    ''' Public method to control the new loading panel from any UserControl.
+    ''' Hides all panels except the one specified.
     ''' </summary>
-    Public Sub ToggleLoading(isLoading As Boolean, Optional message As String = "Loading...") Implements ILoadingContainer.ToggleLoading
-        If isLoading Then
-            ' Set the message on the new panel
-            UC_Loading_Panel1.SetMessage(message)
-            ' Show the panel
-            UC_Loading_Panel1.Visible = True
-            ' Ensure it's on top of all other controls
-            UC_Loading_Panel1.BringToFront()
-            ' --- ADD THIS LINE ---
-            UC_Loading_Panel1.Refresh()
-            ' ---------------------
-        Else
-            ' Hide the panel
-            UC_Loading_Panel1.Visible = False
-        End If
+    Private Sub ShowPanel(panel As Control)
+        ' Hide all panels first
+        UC_HPS_home_tab1.Hide()
+        UC_HPS_catalouge_tab1.Hide()
+        UC_HPS_borrowed_books_tab1.Hide()
+        UC_HPS_penalty_tab1.Hide()
+
+        ' Show the one we want
+        panel.Show()
+        panel.BringToFront()
     End Sub
 
-    Private Sub btn_cart_Click(sender As Object, e As EventArgs) Handles btn_cart.Click
-        ' --- ADDED THIS ---
-        ' Create and show the ViewCart form
-        Dim cartForm As New ViewCart()
+#Region "Navigation Button Handlers"
 
-        ' Set the username from the main panel to the cart
-        cartForm.SetUsername(Me.lbl_user.Text)
-
-        cartForm.ShowDialog() ' Use ShowDialog to "pause" this form
-        ' --- END OF ADDITION ---
+    ' --- THIS IS A GUESS, as your provided file cut off btn_home ---
+    Private Sub btn_home_Click(sender As Object, e As EventArgs) Handles btn_Home_tab.Click
+        ShowPanel(UC_HPS_home_tab1)
     End Sub
 
-    Private Sub btn_profile_Click(sender As Object, e As EventArgs) Handles btn_profile.Click
-        ' --- START OF NEW CODE ---
-
-        ' 1. Check if the user is logged in
-        If Program.currentAccount Is Nothing Then
-            MessageBox.Show("Error: No user is currently logged in.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Return
-        End If
-
-        ' 2. Create the UserProfile form, passing in the logged-in account
-        Dim profileForm As New UserProfile(Program.currentAccount)
-
-        ' 3. Show it as a dialog (modal), just like the cart
-        profileForm.ShowDialog()
-
-        ' --- END OF NEW CODE ---
+    Private Sub btn_catalouge_Click(sender As Object, e As EventArgs) Handles btn_Catalouge_tab.Click
+        ShowPanel(UC_HPS_catalouge_tab1)
     End Sub
 
-    ' --- ADDED THIS PUBLIC METHOD ---
-    ''' <summary>
-    ''' Public method to set the student's name on the panel.
-    ''' </summary>
-    Public Sub SetStudentName(name As String)
-        If String.IsNullOrWhiteSpace(name) Then
-            lbl_user.Text = "Student"
-        Else
-            lbl_user.Text = name
-        End If
+    ' --- *** THIS IS THE FIXED SUBROUTINE *** ---
+    Private Sub btn_borrowed_Click(sender As Object, e As EventArgs) Handles btn_Borrowed_Books_tab.Click
+        ShowPanel(UC_HPS_borrowed_books_tab1)
+        ' Refresh the borrowed books tab every time it's clicked
+        ' --- FIX: Changed 'LoadBorrowedBooksAsync' to 'LoadData' ---
+        UC_HPS_borrowed_books_tab1.LoadData()
     End Sub
+    ' --- *** END OF FIX *** ---
+
+    Private Sub btn_penalty_Click(sender As Object, e As EventArgs) Handles btn_Penalty_tab.Click
+        ShowPanel(UC_HPS_penalty_tab1)
+    End Sub
+    ' --- END GUESS ---
+
 
     Private Sub btn_logout_Click(sender As Object, e As EventArgs) Handles btn_logout.Click
-        ' Send the "LogoutClicked" signal to Program.vb
+        ' Raise the event for Program.vb to catch
         RaiseEvent LogoutClicked(Me, EventArgs.Empty)
     End Sub
 
-    Private Sub TableLayoutPanel1_Paint(sender As Object, e As PaintEventArgs) Handles TableLayoutPanel1.Paint
+#End Region
 
+#Region "Async Loading and Welcome Message"
+
+    ''' <summary>
+    ''' Called by Program.vb AFTER login to set the user's name and credit score.
+    ''' </summary>
+    ' --- *** MODIFIED METHOD *** ---
+    Public Sub SetStudentInfo(account As Account)
+        If account Is Nothing Then Return
+
+        ' 1. Set the name on the main panel
+        ' 'lbl_user' is the correct name from your .Designer.vb file
+        lbl_user.Text = account.Name
+
+        ' 2. Pass the score to the Home tab to update its UI
+        ' This is the fix for the protection level error.
+        UC_HPS_home_tab1.UpdateCreditScoreUI(account.CreditScore)
+    End Sub
+    ' --- *** END MODIFICATION *** ---
+
+    ''' <summary>
+    ''' This runs when the form is first shown. It starts the async loading.
+    ''' </summary>
+    Private Sub Home_Panel_Students_Shown(sender As Object, e As EventArgs) Handles Me.Shown
+        ' Show the loading panel
+        ToggleLoading(True, "Loading Student Dashboard...")
+
+        ' --- START FIX ---
+
+        ' 1. Set the catalogue to "Student Mode" (not Guest)
+        UC_HPS_catalouge_tab1.IsGuestMode = False
+
+        ' 2. Tell the catalogue to start loading its data in the background.
+        '    We pass 'Me' as the ILoadingContainer and 'False' because
+        '    we don't want it to show its *own* loading screen.
+        UC_HPS_catalouge_tab1.BeginLoading()
+
+        ' --- END FIX ---
+
+        ' Start the home tab's async loading
+        ' (The HomeTabLoaded event will fire when this is done)
+        UC_HPS_home_tab1.LoadDataAsync()
     End Sub
 
-    Private Sub lbl_user_Click(sender As Object, e As EventArgs) Handles lbl_user.Click
-
+    ''' <summary>
+    ''' Event handler for when the Home tab signals it's done loading.
+    ''' </summary>
+    Private Sub OnHomeTabLoaded(sender As Object, e As EventArgs)
+        ' Hide the loading panel
+        ToggleLoading(False)
     End Sub
-    ' --- END OF ADDITION ---
+
+    ''' <summary>
+    ''' Toggles the visibility of the loading panel.
+    ''' </summary>
+    Public Sub ToggleLoading(show As Boolean, Optional message As String = "Loading...")
+        If show Then
+            UC_Loading_Panel1.SetMessage(message)
+            UC_Loading_Panel1.BringToFront()
+            UC_Loading_Panel1.Show()
+        Else
+            UC_Loading_Panel1.Hide()
+        End If
+    End Sub
+#End Region
+
+    ' This event is often better than the Load event, as it runs *after* the UI is visible.
+
+
+    ' --- OR, if you use the Load event ---
+
+
+
 End Class

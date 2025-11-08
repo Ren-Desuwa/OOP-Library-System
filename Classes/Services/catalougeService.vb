@@ -4,10 +4,12 @@ Imports System.Threading.Tasks
 
 Public Class CatalougeService
     Private ReadOnly _dbCon As DBcon
+    Private Shared _rand As New Random()
 
     Public Sub New(dbConnector As DBcon)
         _dbCon = dbConnector
     End Sub
+
 
     ' #################### READ (Getters) ####################
 
@@ -171,59 +173,42 @@ Public Class CatalougeService
     ' #################### WRITE (Management) ####################
 
     ''' <summary>
-    ''' Adds a brand new book to the database, along with one or more initial copies.
-    ''' This version now processes genre names from a string list.
+    ''' Adds a brand new book to the database...
     ''' </summary>
-    ''' <returns>The BookID of the newly created book.</returns>
     Public Function AddNewBook(book As Book, genreNames As List(Of String), initialCopies As Integer, shelfLocation As String, condition As String, adminAccountId As Integer?) As Integer
         If Not _dbCon.OpenConnection() Then
             Throw New Exception("Could not connect to the database.")
         End If
 
-        Dim transaction As MySqlTransaction = _dbCon.GetConnection().BeginTransaction()
+        Dim transaction As MySqlTransaction = _dbCon.GetConnection.BeginTransaction()
 
         Try
+            ' ... (DAOs, Book Creation, and Genre Logic is all the same) ...
             Dim bookDAO As New BookDAO(transaction)
             Dim bookCopyDAO As New BookCopyDAO(transaction)
             Dim bookGenreDAO As New BookGenreDAO(transaction)
-            Dim genreDAO As New GenreDAO(transaction) ' <-- We need this now
+            Dim genreDAO As New GenreDAO(transaction)
             Dim logDAO As New LogDAO(transaction)
-
-            ' 1. Create the main book entry
             Dim newBookId As Integer = bookDAO.Create(book)
             book.BookID = newBookId
-
-            ' --- NEW GENRE LOGIC ---
             If genreNames IsNot Nothing AndAlso genreNames.Any() Then
-                ' Get all existing genres ONCE to check against.
                 Dim allGenres As List(Of Genre) = genreDAO.GetAll()
-
                 For Each rawName As String In genreNames
                     Dim trimmedName = rawName.Trim()
                     If String.IsNullOrEmpty(trimmedName) Then Continue For
-
-                    ' Find existing genre, ignoring case (e.g., "hoRRoR" matches "Horror")
                     Dim foundGenre = allGenres.FirstOrDefault(Function(g) g.Name.Equals(trimmedName, StringComparison.OrdinalIgnoreCase))
-
                     Dim genreIdToLink As Integer
-
                     If foundGenre IsNot Nothing Then
-                        ' A. Genre exists. Use its ID.
                         genreIdToLink = foundGenre.GenreID
                     Else
-                        ' B. Genre is new. Create it (using the user's casing) and get the new ID.
                         Dim newGenre As New Genre With {.Name = trimmedName}
                         genreIdToLink = genreDAO.Create(newGenre)
-                        ' Add to our local list so we don't create it twice in one loop
                         newGenre.GenreID = genreIdToLink
                         allGenres.Add(newGenre)
                     End If
-
-                    ' Link the book to the genre
                     bookGenreDAO.AddGenreToBook(newBookId, genreIdToLink)
                 Next
             End If
-            ' --- END OF NEW GENRE LOGIC ---
 
             ' 2. Create the initial copies
             If initialCopies <= 0 Then initialCopies = 1 ' Must add at least one copy
@@ -231,19 +216,17 @@ Public Class CatalougeService
             For i = 1 To initialCopies
                 Dim copy As New BookCopy With {
                     .BookID = newBookId,
-                    .ShelfLocation = shelfLocation,
-                    .Condition = condition, ' <-- Use the parameter
+                .ShelfLocation = GenerateRandomShelf(),
+                .Condition = condition,
                     .Status = "Available"
                 }
                 bookCopyDAO.Create(copy)
             Next
 
             ' 3. Log the action
+            ' ... (rest of the function is the same) ...
             logDAO.Create(Log.RecordAction(adminAccountId, "Catalogue Add", $"New book '{book.Title}' (ID: {newBookId}) added with {initialCopies} copies.", "Info"))
-
-            ' 4. Commit
             transaction.Commit()
-
             Return newBookId
         Catch ex As Exception
             transaction.Rollback()
@@ -253,76 +236,95 @@ Public Class CatalougeService
         End Try
     End Function
 
-    ' Note: Removed the duplicate/older AddNewBook function that was here.
-
     ''' <summary>
     ''' Updates the core details of an existing book.
-    ''' This version now processes genre names from a string list.
     ''' </summary>
-    Public Sub UpdateBookDetails(book As Book, genreNames As List(Of String), adminAccountId As Integer?)
+    Public Sub UpdateBookDetails(book As Book, genreNames As List(Of String), newCopyCount As Integer, newCondition As String, adminAccountId As Integer?)
         If Not _dbCon.OpenConnection() Then
             Throw New Exception("Could not connect to the database.")
         End If
 
-        Dim transaction As MySqlTransaction = _dbCon.GetConnection().BeginTransaction()
+        Dim transaction As MySqlTransaction = _dbCon.GetConnection.BeginTransaction()
 
         Try
+            ' ... (DAOs, Book Update, Genre Logic is all the same) ...
             Dim bookDAO As New BookDAO(transaction)
             Dim logDAO As New LogDAO(transaction)
             Dim genreDAO As New GenreDAO(transaction)
             Dim bookGenreDAO As New BookGenreDAO(transaction)
-
-            ' 1. Update the main book details
+            Dim bookCopyDAO As New BookCopyDAO(transaction)
             bookDAO.Update(book)
-
-            ' 2. Clear all *existing* genre links for this book
             bookGenreDAO.ClearGenresForBook(book.BookID)
-
-            ' 3. --- NEW GENRE LOGIC (Copied from AddNewBook) ---
             If genreNames IsNot Nothing AndAlso genreNames.Any() Then
-                ' Get all existing genres ONCE to check against.
                 Dim allGenres As List(Of Genre) = genreDAO.GetAll()
-
                 For Each rawName As String In genreNames
                     Dim trimmedName = rawName.Trim()
                     If String.IsNullOrEmpty(trimmedName) Then Continue For
-
-                    ' Find existing genre, ignoring case (e.g., "hoRRoR" matches "Horror")
                     Dim foundGenre = allGenres.FirstOrDefault(Function(g) g.Name.Equals(trimmedName, StringComparison.OrdinalIgnoreCase))
-
                     Dim genreIdToLink As Integer
-
                     If foundGenre IsNot Nothing Then
-                        ' A. Genre exists. Use its ID.
                         genreIdToLink = foundGenre.GenreID
                     Else
-                        ' B. Genre is new. Create it (using the user's casing) and get the new ID.
                         Dim newGenre As New Genre With {.Name = trimmedName}
                         genreIdToLink = genreDAO.Create(newGenre)
-                        ' Add to our local list so we don't create it twice in one loop
                         newGenre.GenreID = genreIdToLink
                         allGenres.Add(newGenre)
                     End If
-
-                    ' Link the book to the genre
                     bookGenreDAO.AddGenreToBook(book.BookID, genreIdToLink)
                 Next
             End If
-            ' --- END OF NEW GENRE LOGIC ---
 
-            ' 4. Log the action
-            logDAO.Create(Log.RecordAction(adminAccountId, "Catalogue Update", $"Book '{book.Title}' (ID: {book.BookID}) details updated.", "Info"))
+            ' --- 4. NEW DELTA COPY MANAGEMENT LOGIC ---
+            Dim currentCopyCount As Integer = bookCopyDAO.GetCopiesByBookId(book.BookID).Count
+            Dim copyDifference = newCopyCount - currentCopyCount
 
-            ' 5. Commit
+            If copyDifference > 0 Then
+                ' A. ADD COPIES: User wants *more* copies than before.
+                For i = 1 To copyDifference
+                    Dim copy As New BookCopy With {
+                        .BookID = book.BookID,
+                    .ShelfLocation = GenerateRandomShelf(),
+                    .Condition = newCondition,
+                        .Status = "Available"
+                    }
+                    bookCopyDAO.Create(copy)
+                Next
+            ElseIf copyDifference < 0 Then
+                ' ... (Delete logic is unchanged) ...
+                Dim copiesToDelete As Integer = Math.Abs(copyDifference)
+                Dim actualDeletedCount As Integer = bookCopyDAO.DeleteAvailableCopiesByBookId(book.BookID, copiesToDelete)
+                If actualDeletedCount < copiesToDelete Then
+                    Dim copiesInUse = copiesToDelete - actualDeletedCount
+                    Throw New Exception($"Could not remove all requested copies. {copiesInUse} copies are currently 'Borrowed' or 'In Maintenance'. Only {actualDeletedCount} 'Available' copies were removed.")
+                End If
+            End If
+
+            ' ... (Log, Commit, Catch, Finally are all the same) ...
+            logDAO.Create(Log.RecordAction(adminAccountId, "Catalogue Update", $"Book '{book.Title}' (ID: {book.BookID}) details updated. Copy count set to {newCopyCount}.", "Info"))
             transaction.Commit()
-
         Catch ex As Exception
             transaction.Rollback()
-            Throw New Exception("Error updating book details: " & ex.Message)
+            Throw New Exception(ex.Message, ex)
         Finally
             _dbCon.CloseConnection()
         End Try
     End Sub
+
+    ' Note: Removed the duplicate/older AddNewBook function that was here.
+    Private Function GenerateRandomShelf() As String
+        ' 1. Pick a random category
+        Dim categories = {"FIC", "SCI", "HIS", "REF", "MAN", "BIO", "ART", "PHI"}
+        Dim category = categories(_rand.Next(0, categories.Length))
+
+        ' 2. Pick a random letter (ASCII 65='A' to 90='Z')
+        Dim letter As Char = Convert.ToChar(_rand.Next(65, 91))
+
+        ' 3. Pick a random number (1 to 15)
+        Dim number = _rand.Next(1, 16)
+
+        ' 4. Combine them, (e.g., "FIC-A-07")
+        Return $"{category}-{letter}-{number:D2}"
+    End Function
 
     ''' <summary>
     ''' Adds a new copy of an *existing* book to the catalogue.

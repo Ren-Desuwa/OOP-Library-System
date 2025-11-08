@@ -4,7 +4,7 @@
     Public Property AccountID As Integer
     Public Property TransactionID As Integer? ' (The related book, if any)
     Public Property ViolationType As String ' e.g., "Overdue", "Damaged"
-    Public Property FineAmount As Decimal
+    Public Property FineAmount As Double
     Public Property ScoreDeduction As Integer
     Public Property PenaltyDate As DateTime
     Public Property Status As String ' e.g., "Outstanding", "Paid"

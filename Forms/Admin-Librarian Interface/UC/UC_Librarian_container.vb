@@ -1,6 +1,7 @@
-﻿Imports System.Windows.Forms
-Imports System.Drawing
+﻿Imports System.ComponentModel
 Imports System.Diagnostics
+Imports System.Drawing
+Imports System.Windows.Forms
 
 Partial Public Class UC_Librarian_container
     Inherits UserControl
@@ -71,5 +72,43 @@ Partial Public Class UC_Librarian_container
         MessageBox.Show("Librarian container clicked: " & Me.lbl_name.Text)
         RaiseEvent Selected(Me, EventArgs.Empty)
     End Sub
+
+    ' Add this code inside your "Partial Public Class UC_Librarian_container"
+    '
+
+    ' --- Public Properties for setting data ---
+
+    <Category("Data")>
+    Public Property LibrarianName As String
+        Get
+            ' Assumes your label is named lbl_name, as seen in
+            Return Me.lbl_name.Text
+        End Get
+        Set(value As String)
+            Me.lbl_name.Text = value
+        End Set
+    End Property
+
+    <Category("Data")>
+    Public Property Email As String
+        Get
+            ' Assumes your label is named lbl_email based on
+            Return Me.lbl_email.Text
+        End Get
+        Set(value As String)
+            Me.lbl_email.Text = value
+        End Set
+    End Property
+
+    <Category("Data")>
+    Public Property Status As String
+        Get
+            ' Assumes your label is named Label1 based on
+            Return Me.Label1.Text
+        End Get
+        Set(value As String)
+            Me.Label1.Text = value
+        End Set
+    End Property
 
 End Class

@@ -101,4 +101,36 @@ Public Class BookCopyDAO
             cmd.ExecuteNonQuery()
         End Using
     End Sub
+
+
+    ' --- ADD THIS NEW FUNCTION ---
+    ''' <summary>
+    ''' Deletes a specific number of copies for a book that are 'Available'.
+    ''' This is safer than deleting all copies, as it won't delete "Borrowed" ones.
+    ''' </summary>
+    ''' <returns>The number of copies that were actually deleted.</returns>
+    Public Function DeleteAvailableCopiesByBookId(bookId As Integer, limit As Integer) As Integer
+        ' MySQL makes it difficult to use 'LIMIT' in a simple 'DELETE' statement.
+        ' This subquery method finds the 'copy_id's of 'limit' number of available
+        ' copies and then deletes those specific IDs.
+
+        ' --- FIXED SQL ---
+        Dim sql = "DELETE FROM book_copies " &
+                  "WHERE copy_id IN (" &
+                    "SELECT copy_id FROM (" &
+                        "SELECT copy_id FROM book_copies " &
+                        "WHERE book_id = @BookID AND status = 'Available' " &
+                        "LIMIT @Limit " &
+                    ") AS tmptable" &
+                  ")"
+        ' --- END FIXED SQL ---
+
+        Using cmd As New MySqlCommand(sql, _transaction.Connection, _transaction)
+            cmd.Parameters.AddWithValue("@BookID", bookId)
+            cmd.Parameters.AddWithValue("@Limit", limit)
+            ' ExecuteNonQuery returns the number of rows affected
+            Return cmd.ExecuteNonQuery()
+        End Using
+    End Function
+    ' --- END OF NEW FUNCTION ---
 End Class

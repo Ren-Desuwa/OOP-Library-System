@@ -11,21 +11,27 @@ Public Class UC_ReturnBook_BookInfo
     End Sub
 
     ' (NEW) Populate controls when the UC loads
+    ' (NEW) Populate controls when the UC loads
     Private Sub UC_ReturnBook_BookInfo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        ' I am ASSUMING you have controls on this UC.
-        ' Please change these names to match your .Designer.vb file
+        If _book IsNot Nothing Then
+            ' Use the control names from your Designer.vb file
+            BookName_Lbl.Text = _book.Title
+            Author_Lbl.Text = _book.Author
 
-        ' If _book IsNot Nothing Then
-        '    BookTitle_Lbl.Text = _book.Title
-        '    Author_Lbl.Text = _book.Author
-        '    Description_Txt.Text = _book.Description
-        '    ' (Assuming GetCoverPath() exists on your Book model)
-        '    BookCover_Img.LoadAsync(_book.GetCoverPath()) 
-        ' Else
-        '    BookTitle_Lbl.Text = "Book Details Not Found"
-        '    Author_Lbl.Text = "N/A"
-        '    Description_Txt.Text = "Could not load book details for this transaction."
-        ' End If
+            ' Assuming your Book model has properties for ISBN and Genre
+            ISBN_Lbl.Text = $"ISBN: {_book.ISBN}"
+            Genre_Lbl.Text = $"{_book.GenreToString()}"
+
+            ' (Assuming GetCoverPath() exists on your Book model)
+            Guna2PictureBox1.LoadAsync(_book.GetCoverFileName())
+        Else
+            ' Handle case where book data is missing
+            BookName_Lbl.Text = "Book Details Not Found"
+            Author_Lbl.Text = "N/A"
+            ISBN_Lbl.Text = "ISBN: N/A"
+            Genre_Lbl.Text = "Genre: N/A"
+        End If
+
     End Sub
 End Class
