@@ -209,7 +209,7 @@ Public Module Program
 
                 ' --- *** MODIFICATION HERE *** ---
                 ' Use the new method to set all student info at once
-                StudentPanel.SetStudentInfo(currentAccount)
+                StudentPanel.SetStudentName(currentAccount.Name)
                 ' --- *** END MODIFICATION *** ---
 
                 ' 3. Home_Panel_Students ALREADY has an async loading method!
