@@ -88,6 +88,18 @@ Public Class Home_Panel_Students
         ' Show the loading panel
         ToggleLoading(True, "Loading Student Dashboard...")
 
+        ' --- START FIX ---
+
+        ' 1. Set the catalogue to "Student Mode" (not Guest)
+        UC_HPS_catalouge_tab1.IsGuestMode = False
+
+        ' 2. Tell the catalogue to start loading its data in the background.
+        '    We pass 'Me' as the ILoadingContainer and 'False' because
+        '    we don't want it to show its *own* loading screen.
+        UC_HPS_catalouge_tab1.BeginLoading()
+
+        ' --- END FIX ---
+
         ' Start the home tab's async loading
         ' (The HomeTabLoaded event will fire when this is done)
         UC_HPS_home_tab1.LoadDataAsync()
@@ -114,5 +126,12 @@ Public Class Home_Panel_Students
         End If
     End Sub
 #End Region
+
+    ' This event is often better than the Load event, as it runs *after* the UI is visible.
+
+
+    ' --- OR, if you use the Load event ---
+
+
 
 End Class

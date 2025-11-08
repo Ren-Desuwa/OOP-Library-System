@@ -42,10 +42,9 @@ Partial Class UC_Borrow_Container
         Me.Guna2Panel1.Controls.Add(Me.TableLayoutPanel1)
         Me.Guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Guna2Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Guna2Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2Panel1.Name = "Guna2Panel1"
-        Me.Guna2Panel1.Padding = New System.Windows.Forms.Padding(4)
-        Me.Guna2Panel1.Size = New System.Drawing.Size(927, 85)
+        Me.Guna2Panel1.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.Guna2Panel1.Size = New System.Drawing.Size(695, 69)
         Me.Guna2Panel1.TabIndex = 0
         '
         'TableLayoutPanel1
@@ -58,7 +57,7 @@ Partial Class UC_Borrow_Container
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.5006!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.24195!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.88439!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 77.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 61.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.DueDate_Lbl, 3, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.BorrowDate_Lbl, 2, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.Borrower_Lbl, 1, 0)
@@ -66,12 +65,12 @@ Partial Class UC_Borrow_Container
         Me.TableLayoutPanel1.Controls.Add(Me.StatusPanel, 5, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.btn_viewbook, 4, 0)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(4, 4)
-        Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(13, 12, 13, 12)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(3, 3)
+        Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(10, 10, 10, 10)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(919, 77)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(689, 63)
         Me.TableLayoutPanel1.TabIndex = 0
         '
         'DueDate_Lbl
@@ -80,10 +79,9 @@ Partial Class UC_Borrow_Container
         Me.DueDate_Lbl.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DueDate_Lbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DueDate_Lbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(111, Byte), Integer), CType(CType(78, Byte), Integer), CType(CType(55, Byte), Integer))
-        Me.DueDate_Lbl.Location = New System.Drawing.Point(457, 2)
-        Me.DueDate_Lbl.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.DueDate_Lbl.Location = New System.Drawing.Point(340, 2)
         Me.DueDate_Lbl.Name = "DueDate_Lbl"
-        Me.DueDate_Lbl.Size = New System.Drawing.Size(184, 73)
+        Me.DueDate_Lbl.Size = New System.Drawing.Size(136, 59)
         Me.DueDate_Lbl.TabIndex = 3
         Me.DueDate_Lbl.Text = "DueDate"
         '
@@ -93,10 +91,9 @@ Partial Class UC_Borrow_Container
         Me.BorrowDate_Lbl.Dock = System.Windows.Forms.DockStyle.Fill
         Me.BorrowDate_Lbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BorrowDate_Lbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(111, Byte), Integer), CType(CType(78, Byte), Integer), CType(CType(55, Byte), Integer))
-        Me.BorrowDate_Lbl.Location = New System.Drawing.Point(286, 2)
-        Me.BorrowDate_Lbl.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.BorrowDate_Lbl.Location = New System.Drawing.Point(213, 2)
         Me.BorrowDate_Lbl.Name = "BorrowDate_Lbl"
-        Me.BorrowDate_Lbl.Size = New System.Drawing.Size(161, 73)
+        Me.BorrowDate_Lbl.Size = New System.Drawing.Size(119, 59)
         Me.BorrowDate_Lbl.TabIndex = 2
         Me.BorrowDate_Lbl.Text = "BorrowDate"
         '
@@ -106,10 +103,9 @@ Partial Class UC_Borrow_Container
         Me.Borrower_Lbl.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Borrower_Lbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Borrower_Lbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(111, Byte), Integer), CType(CType(78, Byte), Integer), CType(CType(55, Byte), Integer))
-        Me.Borrower_Lbl.Location = New System.Drawing.Point(174, 2)
-        Me.Borrower_Lbl.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Borrower_Lbl.Location = New System.Drawing.Point(130, 2)
         Me.Borrower_Lbl.Name = "Borrower_Lbl"
-        Me.Borrower_Lbl.Size = New System.Drawing.Size(102, 73)
+        Me.Borrower_Lbl.Size = New System.Drawing.Size(75, 59)
         Me.Borrower_Lbl.TabIndex = 1
         Me.Borrower_Lbl.Text = "Borrower"
         '
@@ -119,10 +115,9 @@ Partial Class UC_Borrow_Container
         Me.BookName_Lbl.Dock = System.Windows.Forms.DockStyle.Fill
         Me.BookName_Lbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BookName_Lbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(111, Byte), Integer), CType(CType(78, Byte), Integer), CType(CType(55, Byte), Integer))
-        Me.BookName_Lbl.Location = New System.Drawing.Point(6, 2)
-        Me.BookName_Lbl.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.BookName_Lbl.Location = New System.Drawing.Point(5, 2)
         Me.BookName_Lbl.Name = "BookName_Lbl"
-        Me.BookName_Lbl.Size = New System.Drawing.Size(158, 73)
+        Me.BookName_Lbl.Size = New System.Drawing.Size(117, 59)
         Me.BookName_Lbl.TabIndex = 0
         Me.BookName_Lbl.Text = "BookName"
         '
@@ -134,10 +129,10 @@ Partial Class UC_Borrow_Container
         Me.StatusPanel.FillColor2 = System.Drawing.Color.LightSkyBlue
         Me.StatusPanel.FillColor3 = System.Drawing.Color.WhiteSmoke
         Me.StatusPanel.FillColor4 = System.Drawing.Color.DeepSkyBlue
-        Me.StatusPanel.Location = New System.Drawing.Point(838, 2)
+        Me.StatusPanel.Location = New System.Drawing.Point(623, 2)
         Me.StatusPanel.Margin = New System.Windows.Forms.Padding(0)
         Me.StatusPanel.Name = "StatusPanel"
-        Me.StatusPanel.Size = New System.Drawing.Size(79, 73)
+        Me.StatusPanel.Size = New System.Drawing.Size(64, 59)
         Me.StatusPanel.TabIndex = 4
         '
         'StatusLbl
@@ -150,7 +145,7 @@ Partial Class UC_Borrow_Container
         Me.StatusLbl.Location = New System.Drawing.Point(0, 0)
         Me.StatusLbl.Margin = New System.Windows.Forms.Padding(0)
         Me.StatusLbl.Name = "StatusLbl"
-        Me.StatusLbl.Size = New System.Drawing.Size(30, 29)
+        Me.StatusLbl.Size = New System.Drawing.Size(23, 24)
         Me.StatusLbl.TabIndex = 4
         Me.StatusLbl.Text = "P"
         '
@@ -165,22 +160,20 @@ Partial Class UC_Borrow_Container
         Me.btn_viewbook.FillColor = System.Drawing.Color.White
         Me.btn_viewbook.Font = New System.Drawing.Font("Segoe UI", 10.8!, System.Drawing.FontStyle.Bold)
         Me.btn_viewbook.ForeColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(42, Byte), Integer))
-        Me.btn_viewbook.Location = New System.Drawing.Point(651, 6)
-        Me.btn_viewbook.Margin = New System.Windows.Forms.Padding(4)
-        Me.btn_viewbook.MaximumSize = New System.Drawing.Size(184, 52)
+        Me.btn_viewbook.Location = New System.Drawing.Point(484, 5)
+        Me.btn_viewbook.MaximumSize = New System.Drawing.Size(138, 42)
         Me.btn_viewbook.Name = "btn_viewbook"
-        Me.btn_viewbook.Size = New System.Drawing.Size(181, 52)
+        Me.btn_viewbook.Size = New System.Drawing.Size(134, 42)
         Me.btn_viewbook.TabIndex = 5
         Me.btn_viewbook.Text = "View"
         '
         'UC_Borrow_Container
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.Controls.Add(Me.Guna2Panel1)
-        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "UC_Borrow_Container"
-        Me.Size = New System.Drawing.Size(927, 85)
+        Me.Size = New System.Drawing.Size(695, 69)
         Me.Guna2Panel1.ResumeLayout(False)
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TableLayoutPanel1.PerformLayout()

@@ -103,7 +103,7 @@ Public Class UC_HPS_catalouge_tab
 
 
 
-    Public Sub BeginLoading(ByVal parentForm As ILoadingContainer, Optional ByVal showLoading As Boolean = True)
+    Public Sub BeginLoading(Optional ByVal parentForm As ILoadingContainer = Nothing, Optional ByVal showLoading As Boolean = True)
         Me._parentContainer = parentForm
         If showLoading Then SetupLoadingState(True, "Loading Catalogue...")
 

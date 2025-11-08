@@ -38,4 +38,15 @@
     End Function
     ' --- END OF NEW FUNCTION ---
 
+    Public Function GenreToString() As String
+        If Genres Is Nothing OrElse Genres.Count = 0 Then
+            Return ""
+        End If
+        GenreToString = ""
+        For genre As Integer = 0 To Genres.Count - 1
+            GenreToString &= Genres(genre).ToString()
+        Next
+        Return GenreToString
+    End Function
+
 End Class

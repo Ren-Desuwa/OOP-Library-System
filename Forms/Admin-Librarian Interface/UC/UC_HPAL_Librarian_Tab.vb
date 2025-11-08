@@ -50,14 +50,13 @@
         Next
     End Sub
 
+    ' This replaces the sub in UC_HPAL_Librarian_Tab.vb
     Private Sub SetLibrarianData(container As UC_Librarian_container, name As String, email As String, status As String)
-        Try
-            container.Controls("lbl_Name").Text = name
-            container.Controls("lbl_email").Text = email
-            container.Controls("Label1").Text = status
-        Catch
-            ' Ignore if labels not found
-        End Try
+        ' Set the public properties.
+        ' This is much safer and won't cause a NullReferenceException.
+        container.LibrarianName = name
+        container.Email = email
+        container.Status = status
     End Sub
 
     Private Sub Librarian_Selected(sender As Object, e As EventArgs)
