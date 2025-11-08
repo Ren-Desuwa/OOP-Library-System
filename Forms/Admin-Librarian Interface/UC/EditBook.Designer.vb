@@ -30,6 +30,7 @@ Partial Class EditBook
         Me.Guna2Elipse1 = New Guna.UI2.WinForms.Guna2Elipse(Me.components)
         Me.Guna2DragControl1 = New Guna.UI2.WinForms.Guna2DragControl(Me.components)
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.btn_Edit = New Guna.UI2.WinForms.Guna2Button()
         Me.btn_cancel = New Guna.UI2.WinForms.Guna2Button()
         Me.txtbox_description = New Guna.UI2.WinForms.Guna2TextBox()
@@ -48,7 +49,6 @@ Partial Class EditBook
         Me.Label1 = New System.Windows.Forms.Label()
         Me.picbox = New Guna.UI2.WinForms.Guna2ImageButton()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
         Me.txtbox_bookcount = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2CustomGradientPanel1.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
@@ -164,6 +164,19 @@ Partial Class EditBook
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.TableLayoutPanel2.Size = New System.Drawing.Size(711, 620)
         Me.TableLayoutPanel2.TabIndex = 2
+        '
+        'Label8
+        '
+        Me.Label8.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Label8.Location = New System.Drawing.Point(395, 0)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(127, 65)
+        Me.Label8.TabIndex = 21
+        Me.Label8.Text = "Book Count:"
+        Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'btn_Edit
         '
@@ -482,19 +495,6 @@ Partial Class EditBook
         Me.Label5.TabIndex = 7
         Me.Label5.Text = "Description:"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label8
-        '
-        Me.Label8.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label8.Location = New System.Drawing.Point(395, 0)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(127, 65)
-        Me.Label8.TabIndex = 21
-        Me.Label8.Text = "Book Count:"
-        Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'txtbox_bookcount
         '

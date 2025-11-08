@@ -58,7 +58,7 @@ Partial Class UC_Borrow_Container
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.5006!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.24195!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.88439!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 77.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 81.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.DueDate_Lbl, 3, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.BorrowDate_Lbl, 2, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.Borrower_Lbl, 1, 0)
@@ -80,10 +80,10 @@ Partial Class UC_Borrow_Container
         Me.DueDate_Lbl.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DueDate_Lbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DueDate_Lbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(111, Byte), Integer), CType(CType(78, Byte), Integer), CType(CType(55, Byte), Integer))
-        Me.DueDate_Lbl.Location = New System.Drawing.Point(457, 2)
+        Me.DueDate_Lbl.Location = New System.Drawing.Point(454, 2)
         Me.DueDate_Lbl.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.DueDate_Lbl.Name = "DueDate_Lbl"
-        Me.DueDate_Lbl.Size = New System.Drawing.Size(184, 73)
+        Me.DueDate_Lbl.Size = New System.Drawing.Size(183, 73)
         Me.DueDate_Lbl.TabIndex = 3
         Me.DueDate_Lbl.Text = "DueDate"
         '
@@ -93,10 +93,10 @@ Partial Class UC_Borrow_Container
         Me.BorrowDate_Lbl.Dock = System.Windows.Forms.DockStyle.Fill
         Me.BorrowDate_Lbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BorrowDate_Lbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(111, Byte), Integer), CType(CType(78, Byte), Integer), CType(CType(55, Byte), Integer))
-        Me.BorrowDate_Lbl.Location = New System.Drawing.Point(286, 2)
+        Me.BorrowDate_Lbl.Location = New System.Drawing.Point(284, 2)
         Me.BorrowDate_Lbl.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.BorrowDate_Lbl.Name = "BorrowDate_Lbl"
-        Me.BorrowDate_Lbl.Size = New System.Drawing.Size(161, 73)
+        Me.BorrowDate_Lbl.Size = New System.Drawing.Size(160, 73)
         Me.BorrowDate_Lbl.TabIndex = 2
         Me.BorrowDate_Lbl.Text = "BorrowDate"
         '
@@ -106,10 +106,10 @@ Partial Class UC_Borrow_Container
         Me.Borrower_Lbl.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Borrower_Lbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Borrower_Lbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(111, Byte), Integer), CType(CType(78, Byte), Integer), CType(CType(55, Byte), Integer))
-        Me.Borrower_Lbl.Location = New System.Drawing.Point(174, 2)
+        Me.Borrower_Lbl.Location = New System.Drawing.Point(173, 2)
         Me.Borrower_Lbl.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Borrower_Lbl.Name = "Borrower_Lbl"
-        Me.Borrower_Lbl.Size = New System.Drawing.Size(102, 73)
+        Me.Borrower_Lbl.Size = New System.Drawing.Size(101, 73)
         Me.Borrower_Lbl.TabIndex = 1
         Me.Borrower_Lbl.Text = "Borrower"
         '
@@ -122,7 +122,7 @@ Partial Class UC_Borrow_Container
         Me.BookName_Lbl.Location = New System.Drawing.Point(6, 2)
         Me.BookName_Lbl.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.BookName_Lbl.Name = "BookName_Lbl"
-        Me.BookName_Lbl.Size = New System.Drawing.Size(158, 73)
+        Me.BookName_Lbl.Size = New System.Drawing.Size(157, 73)
         Me.BookName_Lbl.TabIndex = 0
         Me.BookName_Lbl.Text = "BookName"
         '
@@ -134,10 +134,10 @@ Partial Class UC_Borrow_Container
         Me.StatusPanel.FillColor2 = System.Drawing.Color.LightSkyBlue
         Me.StatusPanel.FillColor3 = System.Drawing.Color.WhiteSmoke
         Me.StatusPanel.FillColor4 = System.Drawing.Color.DeepSkyBlue
-        Me.StatusPanel.Location = New System.Drawing.Point(838, 2)
+        Me.StatusPanel.Location = New System.Drawing.Point(833, 2)
         Me.StatusPanel.Margin = New System.Windows.Forms.Padding(0)
         Me.StatusPanel.Name = "StatusPanel"
-        Me.StatusPanel.Size = New System.Drawing.Size(79, 73)
+        Me.StatusPanel.Size = New System.Drawing.Size(84, 73)
         Me.StatusPanel.TabIndex = 4
         '
         'StatusLbl
@@ -165,11 +165,11 @@ Partial Class UC_Borrow_Container
         Me.btn_viewbook.FillColor = System.Drawing.Color.White
         Me.btn_viewbook.Font = New System.Drawing.Font("Segoe UI", 10.8!, System.Drawing.FontStyle.Bold)
         Me.btn_viewbook.ForeColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(42, Byte), Integer))
-        Me.btn_viewbook.Location = New System.Drawing.Point(651, 6)
+        Me.btn_viewbook.Location = New System.Drawing.Point(647, 6)
         Me.btn_viewbook.Margin = New System.Windows.Forms.Padding(4)
         Me.btn_viewbook.MaximumSize = New System.Drawing.Size(184, 52)
         Me.btn_viewbook.Name = "btn_viewbook"
-        Me.btn_viewbook.Size = New System.Drawing.Size(181, 52)
+        Me.btn_viewbook.Size = New System.Drawing.Size(180, 52)
         Me.btn_viewbook.TabIndex = 5
         Me.btn_viewbook.Text = "View"
         '

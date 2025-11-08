@@ -27,6 +27,8 @@ Partial Class UC_HPAL_User_Tab
         Me.btn_AddUser = New Guna.UI2.WinForms.Guna2Button()
         Me.btn_DeleteUser = New Guna.UI2.WinForms.Guna2Button()
         Me.flow_panel_users = New System.Windows.Forms.FlowLayoutPanel()
+        Me.UC_Librarian_container1 = New OOP_Library_System.UC_Librarian_container()
+        Me.UC_Librarian_container2 = New OOP_Library_System.UC_Librarian_container()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -43,9 +45,11 @@ Partial Class UC_HPAL_User_Tab
         Me.TableLayoutPanel1.Controls.Add(Me.lbl_allusercount, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.btn_AddUser, 1, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.btn_DeleteUser, 3, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.UC_Librarian_container1, 2, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.UC_Librarian_container2, 4, 0)
         Me.TableLayoutPanel1.Font = New System.Drawing.Font("Segoe UI", 10.8!, System.Drawing.FontStyle.Bold)
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 624)
-        Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(4)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
@@ -78,12 +82,13 @@ Partial Class UC_HPAL_User_Tab
         Me.btn_AddUser.Font = New System.Drawing.Font("Segoe UI", 10.8!, System.Drawing.FontStyle.Bold)
         Me.btn_AddUser.ForeColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(42, Byte), Integer))
         Me.btn_AddUser.Location = New System.Drawing.Point(508, 4)
-        Me.btn_AddUser.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btn_AddUser.Margin = New System.Windows.Forms.Padding(4)
         Me.btn_AddUser.MaximumSize = New System.Drawing.Size(184, 52)
         Me.btn_AddUser.Name = "btn_AddUser"
         Me.btn_AddUser.Size = New System.Drawing.Size(184, 52)
         Me.btn_AddUser.TabIndex = 1
         Me.btn_AddUser.Text = "Add User"
+        Me.btn_AddUser.Visible = False
         '
         'btn_DeleteUser
         '
@@ -97,7 +102,7 @@ Partial Class UC_HPAL_User_Tab
         Me.btn_DeleteUser.Font = New System.Drawing.Font("Segoe UI", 10.8!, System.Drawing.FontStyle.Bold)
         Me.btn_DeleteUser.ForeColor = System.Drawing.Color.White
         Me.btn_DeleteUser.Location = New System.Drawing.Point(759, 4)
-        Me.btn_DeleteUser.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btn_DeleteUser.Margin = New System.Windows.Forms.Padding(4)
         Me.btn_DeleteUser.MaximumSize = New System.Drawing.Size(184, 52)
         Me.btn_DeleteUser.Name = "btn_DeleteUser"
         Me.btn_DeleteUser.Size = New System.Drawing.Size(184, 52)
@@ -117,6 +122,26 @@ Partial Class UC_HPAL_User_Tab
         Me.flow_panel_users.Size = New System.Drawing.Size(1008, 616)
         Me.flow_panel_users.TabIndex = 3
         Me.flow_panel_users.WrapContents = False
+        '
+        'UC_Librarian_container1
+        '
+        Me.UC_Librarian_container1.BackColor = System.Drawing.Color.Transparent
+        Me.UC_Librarian_container1.IsSelected = False
+        Me.UC_Librarian_container1.Location = New System.Drawing.Point(711, 6)
+        Me.UC_Librarian_container1.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.UC_Librarian_container1.Name = "UC_Librarian_container1"
+        Me.UC_Librarian_container1.Size = New System.Drawing.Size(38, 52)
+        Me.UC_Librarian_container1.TabIndex = 3
+        '
+        'UC_Librarian_container2
+        '
+        Me.UC_Librarian_container2.BackColor = System.Drawing.Color.Transparent
+        Me.UC_Librarian_container2.IsSelected = False
+        Me.UC_Librarian_container2.Location = New System.Drawing.Point(962, 6)
+        Me.UC_Librarian_container2.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.UC_Librarian_container2.Name = "UC_Librarian_container2"
+        Me.UC_Librarian_container2.Size = New System.Drawing.Size(40, 52)
+        Me.UC_Librarian_container2.TabIndex = 4
         '
         'UC_HPAL_User_Tab
         '
@@ -140,4 +165,6 @@ Partial Class UC_HPAL_User_Tab
     Friend WithEvents btn_AddUser As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btn_DeleteUser As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents flow_panel_users As FlowLayoutPanel
+    Friend WithEvents UC_Librarian_container1 As UC_Librarian_container
+    Friend WithEvents UC_Librarian_container2 As UC_Librarian_container
 End Class

@@ -1,5 +1,6 @@
-﻿Imports OOP_Library_System.Models
-Imports System.IO
+﻿Imports System.IO
+Imports OOP_Library_System.Models
+Imports Org.BouncyCastle.Ocsp
 ' You may need to add Imports System.Windows.Forms if not implicit
 
 Public Class UC_Borrow_Request_Tab
@@ -143,43 +144,53 @@ Public Class UC_Borrow_Request_Tab
     End Sub
 
     ' --- ACTION FUNCTIONS: Approve and Reject ---
+    ' --- ACTION FUNCTIONS: Approve and Reject ---
+
     Public Sub ApproveSelected()
         If selectedItem IsNot Nothing Then
             Try
-                ' 1. Call the Service
+                ' 1. Call the Service to approve the request
                 Program.BorrowSvc.ApproveBorrowRequest(selectedItem.TransactionID)
+
+                ' 2. Update the UI status to "A" (Approved)
+                selectedItem.UpdateStatus("A")
 
                 MessageBox.Show("Borrow request approved successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
-                ' 2. Refresh the entire list to remove the approved item
+                ' 3. Refresh the list to remove the approved request
                 LoadPendingRequests()
 
             Catch ex As Exception
                 MessageBox.Show(ex.Message, "Approval Failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                LoadPendingRequests() ' Reload to show current status if failed
+                LoadPendingRequests()
             End Try
         Else
             MessageBox.Show("Please select a request to approve.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End If
     End Sub
 
+
     Public Sub RejectSelected()
         If selectedItem IsNot Nothing Then
             Try
-                ' 1. Call the Service
+                ' 1. Call the Service to reject the request
                 Program.BorrowSvc.RejectBorrowRequest(selectedItem.TransactionID)
+
+                ' 2. Update the UI status to "R" (Rejected)
+                selectedItem.UpdateStatus("R")
 
                 MessageBox.Show("Borrow request rejected successfully. Book copy made available.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
-                ' 2. Refresh the entire list to remove the rejected item
+                ' 3. Refresh the list to remove the rejected request
                 LoadPendingRequests()
 
             Catch ex As Exception
                 MessageBox.Show(ex.Message, "Rejection Failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                LoadPendingRequests() ' Reload to show current status if failed
+                LoadPendingRequests()
             End Try
         Else
             MessageBox.Show("Please select a request to reject.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End If
     End Sub
+
 End Class

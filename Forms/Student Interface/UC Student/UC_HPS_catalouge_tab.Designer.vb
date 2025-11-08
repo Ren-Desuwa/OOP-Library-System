@@ -51,31 +51,31 @@ Partial Class UC_HPS_catalouge_tab
         Me.genre_panel.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(216, Byte), Integer))
         Me.genre_panel.FillColor3 = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.genre_panel.FillColor4 = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(195, Byte), Integer), CType(CType(165, Byte), Integer))
-        Me.genre_panel.Location = New System.Drawing.Point(996, 844)
+        Me.genre_panel.Location = New System.Drawing.Point(448, 792)
         Me.genre_panel.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.genre_panel.Name = "genre_panel"
-        Me.genre_panel.Size = New System.Drawing.Size(581, 911)
+        Me.genre_panel.Size = New System.Drawing.Size(584, 903)
         Me.genre_panel.TabIndex = 8
         '
         'TableLayoutPanel1
         '
         Me.TableLayoutPanel1.ColumnCount = 3
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.682858!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 86.61778!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.699358!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 88.35616!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.993151!))
         Me.TableLayoutPanel1.Controls.Add(Me.Label1, 1, 1)
         Me.TableLayoutPanel1.Controls.Add(Me.flow_genre_panel, 1, 3)
         Me.Guna2Transition1.SetDecoration(Me.TableLayoutPanel1, Guna.UI2.AnimatorNS.DecorationType.None)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 0)
-        Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(4)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 4
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.301075!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 3.918919!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 3.513514!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 88.51351!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(581, 911)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(584, 903)
         Me.TableLayoutPanel1.TabIndex = 0
         '
         'Label1
@@ -84,10 +84,10 @@ Partial Class UC_HPS_catalouge_tab
         Me.Guna2Transition1.SetDecoration(Me.Label1, Guna.UI2.AnimatorNS.DecorationType.None)
         Me.Label1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(37, 39)
+        Me.Label1.Location = New System.Drawing.Point(37, 38)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(495, 35)
+        Me.Label1.Size = New System.Drawing.Size(507, 35)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "    GENRES:"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.BottomLeft
@@ -101,10 +101,10 @@ Partial Class UC_HPS_catalouge_tab
         Me.flow_genre_panel.BackColor = System.Drawing.Color.Transparent
         Me.Guna2Transition1.SetDecoration(Me.flow_genre_panel, Guna.UI2.AnimatorNS.DecorationType.None)
         Me.flow_genre_panel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
-        Me.flow_genre_panel.Location = New System.Drawing.Point(36, 107)
+        Me.flow_genre_panel.Location = New System.Drawing.Point(36, 106)
         Me.flow_genre_panel.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.flow_genre_panel.Name = "flow_genre_panel"
-        Me.flow_genre_panel.Size = New System.Drawing.Size(497, 802)
+        Me.flow_genre_panel.Size = New System.Drawing.Size(509, 795)
         Me.flow_genre_panel.TabIndex = 0
         Me.flow_genre_panel.WrapContents = False
         '
@@ -143,7 +143,7 @@ Partial Class UC_HPS_catalouge_tab
         Me.btnToggleSidebar.Font = New System.Drawing.Font("Segoe UI", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnToggleSidebar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(88, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.btnToggleSidebar.Location = New System.Drawing.Point(105, 16)
-        Me.btnToggleSidebar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnToggleSidebar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnToggleSidebar.Name = "btnToggleSidebar"
         Me.btnToggleSidebar.Size = New System.Drawing.Size(139, 79)
         Me.btnToggleSidebar.TabIndex = 16
@@ -159,7 +159,7 @@ Partial Class UC_HPS_catalouge_tab
         Me.btn_Back.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.btn_Back.ForeColor = System.Drawing.Color.White
         Me.btn_Back.Location = New System.Drawing.Point(1087, 41)
-        Me.btn_Back.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btn_Back.Margin = New System.Windows.Forms.Padding(4)
         Me.btn_Back.Name = "btn_Back"
         Me.btn_Back.Size = New System.Drawing.Size(240, 55)
         Me.btn_Back.TabIndex = 17
